@@ -85,7 +85,7 @@ const Step: React.FC<StepProps> = ({ step, title, children }) => {
   );
 };
 
-const Home: Page = () => {
+const Home: Page = (props) => {
   const size = useBreakpointValue({ base: "sm", md: "md" });
 
   return (
@@ -104,8 +104,8 @@ const Home: Page = () => {
               Connect all devices without concern at any platform, any time and any where.
             </Heading>
             <Text maxW="2xl" color="gray.700" py="4">
-              Omniedge's distrubuted VPN solutions is not only a great and affordable network solution for small team,
-              but also for big companies with thousands of devices all around the world.
+              {`Omniedge's distrubuted VPN solutions is not only a great and affordable network solution for small team,
+              but also for big companies with thousands of devices all around the world.`}
             </Text>
             <Button colorScheme="brand">Get Started</Button>
           </VStack>

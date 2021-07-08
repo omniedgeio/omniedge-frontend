@@ -1,0 +1,45 @@
+# This file is a template, and might need editing before it works on your project.
+image: node:latest
+
+variables:
+  # Please edit to your GitLab project
+  REPO_NAME: gitlab.com/omniedge/omniedge-frontend
+
+# The problem is that to be able to use go get, one needs to put
+# the repository in the $GOPATH. So for example if your gitlab domain
+# is gitlab.com, and that your repository is namespace/project, and
+# the default GOPATH being /go, then you'd need to have your
+# repository in /go/src/gitlab.com/namespace/project
+# Thus, making a symbolic link corrects this.
+before_script:
+  - yarn install
+
+stages:
+  - build
+  - deploy
+
+compile:
+  stage: build
+  script:
+    - yarn build
+
+deploy_dev:
+  stage: deploy
+  environment:
+    name: development
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH == "dev"
+  dependencies:
+    - compile
+  before_script:
+    - ENV_VAR_SUFFIX="__${CI_ENVIRONMENT_NAME}"; for var in $(compgen -e | grep "${ENV_VAR_SUFFIX}$"); do declare -x ${var%${ENV_VAR_SUFFIX}}="${!var}"; done
+    - 'command -v ssh-agent >/dev/null || ( apt-get update -y && apt-get install openssh-client -y )'
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+    - apt-get update -y && apt-get -y install rsync
+  script:
+    - echo "Deploying ${CI_COMMIT_SHA} from ${CI_COMMIT_REF_NAME} to production server"
+    - rsync -a --progress --human-readable --delete $CI_PROJECT_DIR/ root@$HOST:/home/ec2-user/frontend

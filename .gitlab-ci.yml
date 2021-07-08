@@ -12,7 +12,7 @@ variables:
 # repository in /go/src/gitlab.com/namespace/project
 # Thus, making a symbolic link corrects this.
 before_script:
-  - yarn install --production
+  - yarn install
 
 stages:
   - build

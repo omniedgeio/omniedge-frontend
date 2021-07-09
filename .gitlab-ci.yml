@@ -40,6 +40,7 @@ deploy_dev:
     - chmod 700 ~/.ssh
     - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
     - apt-get update -y && apt-get -y install rsync
+    - yarn install
     - yarn build 
   script:
     - echo "Deploying ${CI_COMMIT_SHA} from ${CI_COMMIT_REF_NAME} to production server"

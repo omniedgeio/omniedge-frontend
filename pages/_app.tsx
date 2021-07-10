@@ -1,6 +1,7 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import { QueryClient, QueryClientProvider } from "react-query";
 import theme from "../lib/theme";
 import { Page } from "../types";
 type AppWithLayoutProps = {
@@ -8,23 +9,27 @@ type AppWithLayoutProps = {
 } & AppProps;
 
 function App({ Component, pageProps }: AppWithLayoutProps) {
-  const Layout = Component.layout || ((children) => <>{children}</>);
+  const Layout = Component.layout || (({ children }) => <>{children}</>);
+  const queryClient = new QueryClient();
+
   return (
-    <ChakraProvider theme={theme}>
-      <Head>
-        <title>OmniEdge</title>
-        <meta name="description" content="Connect without concern" />
-        <meta charSet="utf-8" />
-        <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
-        <meta content="width=device-width, initial-scale=1" name="viewport" />
-        <meta name="msapplication-TileColor" content="#ffffff" />
-        <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
-        <meta name="theme-color" content="#ffffff" />
-      </Head>
-      <Layout>
-        <Component {...pageProps}></Component>
-      </Layout>
-    </ChakraProvider>
+    <QueryClientProvider client={queryClient}>
+      <ChakraProvider theme={theme}>
+        <Head>
+          <title>OmniEdge</title>
+          <meta name="description" content="Connect without concern" />
+          <meta charSet="utf-8" />
+          <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
+          <meta content="width=device-width, initial-scale=1" name="viewport" />
+          <meta name="msapplication-TileColor" content="#ffffff" />
+          <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
+          <meta name="theme-color" content="#ffffff" />
+        </Head>
+        <Layout>
+          <Component {...pageProps}></Component>
+        </Layout>
+      </ChakraProvider>
+    </QueryClientProvider>
   );
 }
 export default App;

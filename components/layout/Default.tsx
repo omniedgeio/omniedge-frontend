@@ -59,7 +59,9 @@ const DefaultLayout: React.FC<{}> = (props) => {
           </Stack>
           <HStack>
             <Button colorScheme="brand">Get Started</Button>
-            <Button>Login</Button>
+            <Link href="/login">
+              <Button>Login</Button>
+            </Link>
           </HStack>
         </Flex>
       </nav>

@@ -1,0 +1,102 @@
+import { Button, FormControl, FormErrorMessage, FormLabel, HStack, Input, Text, VStack } from "@chakra-ui/react";
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import YupPassword from "yup-password";
+import PasswordInput from "../components/input/PasswordInput";
+import EntryLayout from "../components/layout/Entry";
+import Link from "../components/next/Link";
+import { Page } from "../types";
+YupPassword(Yup);
+
+const RegisterPage: Page = function (props) {
+  const { handleChange, handleBlur, handleSubmit, values, touched, errors } = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      password: "",
+      confirm_password: "",
+    },
+    validationSchema: Yup.object().shape({
+      name: Yup.string().required("Required"),
+      email: Yup.string().required("Required").email(),
+      password: Yup.string()
+        .minLowercase(1, "At least one lowercase character")
+        .minUppercase(1, "At least one uppercase character")
+        .minNumbers(1, "At least one number")
+        .minSymbols(1, "At least one symbol")
+        .min(8, "At least 8 characters")
+        .max(20, "At most 20 characters")
+        .required("Required"),
+      confirm_password: Yup.string()
+        .oneOf([Yup.ref("password"), null], "Passwords must match")
+        .required("Required"),
+    }),
+    onSubmit: (values, actions) => {
+      console.log(values);
+    },
+  });
+
+  return (
+    <form onSubmit={handleSubmit} style={{ width: "100%" }}>
+      <VStack w="full" spacing="4">
+        <FormControl isInvalid={!!(touched.name && errors.name)} isRequired>
+          <FormLabel>Name</FormLabel>
+          <Input
+            type="text"
+            name="name"
+            placeholder="Display name"
+            onChange={handleChange}
+            onBlur={handleBlur}
+            value={values.name}
+          ></Input>
+          <FormErrorMessage>{errors.name}</FormErrorMessage>
+        </FormControl>
+        <FormControl isInvalid={!!(touched.email && errors.email)} isRequired>
+          <FormLabel>Email</FormLabel>
+          <Input
+            type="email"
+            name="email"
+            onChange={handleChange}
+            onBlur={handleBlur}
+            value={values.email}
+            placeholder="mail@host"
+          ></Input>
+          <FormErrorMessage>{errors.email}</FormErrorMessage>
+        </FormControl>
+        <FormControl isInvalid={!!(touched.password && errors.password)} isRequired>
+          <FormLabel>Password</FormLabel>
+          <PasswordInput name="password" onChange={handleChange} onBlur={handleBlur} value={values.password} />
+          <FormErrorMessage>{errors.password}</FormErrorMessage>
+        </FormControl>
+        <FormControl isInvalid={!!(touched.confirm_password && errors.confirm_password)} isRequired>
+          <FormLabel>Confirm Password</FormLabel>
+          <PasswordInput
+            name="confirm_password"
+            onChange={handleChange}
+            onBlur={handleBlur}
+            value={values.confirm_password}
+            placeholder="Enter password again"
+          />
+          <FormErrorMessage>{errors.confirm_password}</FormErrorMessage>
+        </FormControl>
+        <VStack w="full">
+          <Button type="submit" colorScheme="brand" isFullWidth>
+            Login
+          </Button>
+          <HStack w="full">
+            <Text fontSize="xs" color="gray.500">
+              Already have an account?{" "}
+              <Link href="/login" color="brand.500">
+                Login here
+              </Link>
+            </Text>
+          </HStack>
+        </VStack>
+      </VStack>
+    </form>
+  );
+};
+
+RegisterPage.layout = EntryLayout;
+
+export default RegisterPage;

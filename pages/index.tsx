@@ -12,7 +12,6 @@ import {
   Skeleton,
   Stack,
   Text,
-  useBreakpointValue,
   VStack,
 } from "@chakra-ui/react";
 import React from "react";
@@ -32,7 +31,7 @@ interface StepIconFrameProps {
 
 const StepIconFrame: React.FC<BoxProps & StepIconFrameProps> = ({ icon, ...props }) => {
   return (
-    <Box backgroundColor="brand.50" color="brand.500" p="3" borderRadius="md" fontSize="2xl" {...props}>
+    <Box backgroundColor="brand.50" color="brand.500" p="3" borderRadius="md" fontSize={["xl", "2xl"]} {...props}>
       {icon}
     </Box>
   );
@@ -86,10 +85,8 @@ const Step: React.FC<StepProps> = ({ step, title, children }) => {
 };
 
 const Home: Page = (props) => {
-  const size = useBreakpointValue({ base: "sm", md: "md" });
-
   return (
-    <>
+    <VStack spacing={["8", "12"]} alignItems="stretch">
       <Box as="header" py={["6", "12", "36"]} position="relative">
         <Stack
           direction={{ base: "column", md: "row" }}
@@ -185,19 +182,19 @@ const Home: Page = (props) => {
               <Step step={2} title="Join a virtual network">
                 <HStack alignItems="center">
                   <StepIconFrame icon={<FiMonitor />} />
-                  <Box w="48" textAlign="center">
+                  <Box w={["36", "48"]} textAlign="center">
                     <Text>Assigning IP</Text>
                     <Skeleton mx="2" my="1" h="0.5" startColor="brand.500" endColor="teal.500"></Skeleton>
                     <Code backgroundColor="white">100.100.1.111</Code>
                   </Box>
                   <StepVirtualNetwork>
                     <SimpleGrid spacing="2" columns={3}>
-                      <StepIconFrame p="3" icon={<FiMonitor />}></StepIconFrame>
-                      <StepIconFrame p="3" icon={<FiServer />}></StepIconFrame>
-                      <StepIconFrame p="3" icon={<FiMonitor />}></StepIconFrame>
-                      <StepIconFrame p="3" icon={<FiDatabase />}></StepIconFrame>
-                      <StepIconFrame p="3" icon={<FiMonitor />}></StepIconFrame>
-                      <StepIconFrame p="3" icon={<FiDatabase />}></StepIconFrame>
+                      <StepIconFrame p={["1.5", "3"]} icon={<FiMonitor />}></StepIconFrame>
+                      <StepIconFrame p={["1.5", "3"]} icon={<FiServer />}></StepIconFrame>
+                      <StepIconFrame p={["1.5", "3"]} icon={<FiMonitor />}></StepIconFrame>
+                      <StepIconFrame p={["1.5", "3"]} icon={<FiDatabase />}></StepIconFrame>
+                      <StepIconFrame p={["1.5", "3"]} icon={<FiMonitor />}></StepIconFrame>
+                      <StepIconFrame p={["1.5", "3"]} icon={<FiDatabase />}></StepIconFrame>
                     </SimpleGrid>
                   </StepVirtualNetwork>
                 </HStack>
@@ -313,7 +310,7 @@ const Home: Page = (props) => {
           </VStack>
         </SimpleGrid>
       </Box>
-    </>
+    </VStack>
   );
 };
 

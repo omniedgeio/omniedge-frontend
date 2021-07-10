@@ -11,6 +11,8 @@ export function useUser(redirect: string | null = "/login") {
     error,
   } = useQuery<AxiosResponse, AxiosResponse>("user", retrieveUser, {
     retry: 0,
+    refetchOnMount: !!redirect,
+    refetchOnWindowFocus: !!redirect,
   });
   const router = useRouter();
 

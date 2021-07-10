@@ -42,5 +42,5 @@ deploy_dev:
     - apt-get update -y && apt-get -y install rsync
   script:
     - echo "Deploying ${CI_COMMIT_SHA} from ${CI_COMMIT_REF_NAME} to production server"
-    - rsync -a --delete $CI_PROJECT_DIR/ root@$HOST:/home/ec2-user/frontend
+    - rsync -a --delete --exclude=*.local $CI_PROJECT_DIR/ root@$HOST:/home/ec2-user/frontend
     - ssh root@"$HOST" 'cd /home/ec2-user/frontend && yarn install && yarn build && pm2 reload frontend'

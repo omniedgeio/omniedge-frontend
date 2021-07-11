@@ -1,7 +1,9 @@
-import { Button, Center, Divider, Heading, Spinner, Text, VStack } from "@chakra-ui/react";
+import { Center, Divider, Heading, Spinner, Text, VStack } from "@chakra-ui/react";
 import { useRouter } from "next/dist/client/router";
-import { FcGoogle } from "react-icons/fc";
+import { loginByGoogle } from "../../lib/api/auth";
+import { showError, showSuccess } from "../../lib/helpers/toast";
 import { useUser } from "../../lib/hook/useUser";
+import GoogleLogin from "../auth/GoogleLogin";
 import Logo from "../Logo";
 
 const EntryLayout: React.FC = function ({ children }) {
@@ -27,9 +29,28 @@ const EntryLayout: React.FC = function ({ children }) {
           <Spinner />
         ) : (
           <>
-            <Button leftIcon={<FcGoogle />} variant="outline" isFullWidth>
-              Continue with Google
-            </Button>
+            <GoogleLogin
+              onFailure={(e) => {
+                showError("Login with Google", "Unexpected error occured when login with google.");
+              }}
+              onSuccess={(e) => {
+                loginByGoogle({
+                  id_token: e.getAuthResponse().id_token,
+                })
+                  .then(() => {
+                    showSuccess(
+                      "Login with Google",
+                      `Successfully login with your google account : ${e.getBasicProfile().getEmail()}`
+                    );
+                    router.push("/dashboard");
+                  })
+                  .catch(() => {
+                    showError("Login with Google", "Unexpected error occured when login with google.");
+                  });
+              }}
+              variant="outline"
+              isFullWidth
+            ></GoogleLogin>
             <Divider
               textAlign="center"
               py="2"

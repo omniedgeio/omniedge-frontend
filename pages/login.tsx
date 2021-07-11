@@ -23,10 +23,9 @@ import { Page } from "../types";
 
 const LoginPage: Page = function (props) {
   const router = useRouter();
-  const [isLoading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
 
-  const { handleChange, handleBlur, handleSubmit, values, touched, errors } = useFormik({
+  const { handleChange, handleBlur, handleSubmit, values, touched, errors, isSubmitting } = useFormik({
     initialValues: {
       email: "",
       password: "",
@@ -36,17 +35,16 @@ const LoginPage: Page = function (props) {
       password: Yup.string().required("Required"),
     }),
     onSubmit: (values, actions) => {
-      setLoading(true);
       loginByPassword(values)
-        .then((res) => {
+        .then(() => {
           router.push("/dashboard");
         })
         .catch((err) => {
           if (err.data) {
             setErrorMsg(err.data.message);
           }
-        })
-        .then(() => setLoading(false));
+          actions.setSubmitting(false);
+        });
     },
   });
 
@@ -82,12 +80,12 @@ const LoginPage: Page = function (props) {
           </HStack>
         </FormControl>
         <VStack w="full">
-          <Button isLoading={isLoading} type="submit" colorScheme="brand" isFullWidth>
+          <Button isLoading={isSubmitting} type="submit" colorScheme="brand" isFullWidth>
             Login
           </Button>
           <HStack w="full">
             <Text fontSize="xs" color="gray.500">
-              {`Still don't have an account?`}
+              {`Still don't have an account? `}
               <Link href="/register" color="brand.500">
                 Register here
               </Link>

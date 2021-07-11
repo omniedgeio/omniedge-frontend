@@ -1,6 +1,7 @@
 import { Button } from "@chakra-ui/button";
 import Icon from "@chakra-ui/icon";
 import { HStack, Text } from "@chakra-ui/layout";
+import { ButtonProps } from "@chakra-ui/react";
 import { createRef, useEffect, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 
@@ -9,7 +10,7 @@ interface IGoogleLoginProps {
   onFailure: (err: any) => void;
 }
 
-const GoogleLogin: React.FC<IGoogleLoginProps> = function ({ onSuccess, onFailure, ...props }) {
+const GoogleLogin: React.FC<IGoogleLoginProps & ButtonProps> = function ({ onSuccess, onFailure, ...props }) {
   const googleLoginButton = createRef<HTMLButtonElement>();
   const [googleLoginLoading, setGoogleLoginLoading] = useState(false);
 

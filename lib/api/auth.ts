@@ -1,6 +1,6 @@
 import { setToken } from "../helpers/token";
 import request from "./client";
-import { IPasswordLoginRequest, IRegisterRequest } from "./request";
+import { IGoogleLoginRequest, IPasswordLoginRequest, IRegisterRequest } from "./request";
 
 export function register(data: IRegisterRequest) {
   return request({
@@ -26,12 +26,15 @@ export async function loginByPassword({ email, password }: IPasswordLoginRequest
   return res;
 }
 
-export function loginByGoogle(googleIdToken: string) {
-  return request({
+export async function loginByGoogle(data: IGoogleLoginRequest) {
+  let res = await request({
     url: "/auth/login/google",
     method: "POST",
-    data: {
-      google_id_token: googleIdToken,
-    },
+    data,
   });
+  let responseData = res?.data.data;
+  setToken({
+    accessToken: responseData.token,
+  });
+  return res;
 }

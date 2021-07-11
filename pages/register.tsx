@@ -1,15 +1,32 @@
-import { Button, FormControl, FormErrorMessage, FormLabel, HStack, Input, Text, VStack } from "@chakra-ui/react";
+import {
+  Alert,
+  AlertDescription,
+  AlertIcon,
+  Button,
+  FormControl,
+  FormErrorMessage,
+  FormLabel,
+  HStack,
+  Input,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
 import { useFormik } from "formik";
+import { useRouter } from "next/dist/client/router";
+import { useState } from "react";
 import * as Yup from "yup";
 import YupPassword from "yup-password";
 import PasswordInput from "../components/input/PasswordInput";
 import EntryLayout from "../components/layout/Entry";
 import Link from "../components/next/Link";
+import { register } from "../lib/api/auth";
 import { Page } from "../types";
 YupPassword(Yup);
 
 const RegisterPage: Page = function (props) {
-  const { handleChange, handleBlur, handleSubmit, values, touched, errors } = useFormik({
+  const router = useRouter();
+  const [errorMsg, setErrorMsg] = useState("");
+  const { handleChange, handleBlur, handleSubmit, values, touched, errors, isSubmitting } = useFormik({
     initialValues: {
       name: "",
       email: "",
@@ -32,12 +49,27 @@ const RegisterPage: Page = function (props) {
         .required("Required"),
     }),
     onSubmit: (values, actions) => {
-      console.log(values);
+      register(values)
+        .then(() => {
+          router.push("/login");
+        })
+        .catch((err) => {
+          if (err.data) {
+            setErrorMsg(err.data.message);
+          }
+          actions.setSubmitting(false);
+        });
     },
   });
 
   return (
     <form onSubmit={handleSubmit} style={{ width: "100%" }}>
+      {errorMsg && (
+        <Alert my={2} status="error">
+          <AlertIcon />
+          <AlertDescription>{errorMsg}</AlertDescription>
+        </Alert>
+      )}
       <VStack w="full" spacing="4">
         <FormControl isInvalid={!!(touched.name && errors.name)} isRequired>
           <FormLabel>Name</FormLabel>
@@ -80,8 +112,8 @@ const RegisterPage: Page = function (props) {
           <FormErrorMessage>{errors.confirm_password}</FormErrorMessage>
         </FormControl>
         <VStack w="full">
-          <Button type="submit" colorScheme="brand" isFullWidth>
-            Login
+          <Button isLoading={isSubmitting} type="submit" colorScheme="brand" isFullWidth>
+            Register
           </Button>
           <HStack w="full">
             <Text fontSize="xs" color="gray.500">

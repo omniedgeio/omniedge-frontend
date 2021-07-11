@@ -26,10 +26,8 @@ export interface IDeviceResponse {
   uuid: string;
   name: string;
   os: string;
-  virtual_networks: string;
+  virtual_networks: IDeviceVirtualNetworkResponse[];
 }
-
-export interface IDeviceVirtualNetworkResponse {}
 
 export interface IDeviceVirtualNetworkResponse {
   uuid: string;

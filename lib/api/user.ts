@@ -1,4 +1,4 @@
-import request from "./request";
+import request from "./client";
 
 export function retrieveUser() {
   return request({

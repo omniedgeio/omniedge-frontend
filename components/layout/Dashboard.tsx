@@ -20,7 +20,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { useRouter } from "next/dist/client/router";
-import { FiChevronDown, FiGlobe, FiKey, FiMenu, FiServer, FiSettings, FiX } from "react-icons/fi";
+import { FiChevronDown, FiGlobe, FiMenu, FiServer, FiX } from "react-icons/fi";
 import { clearToken } from "../../lib/helpers/token";
 import { useUser } from "../../lib/hook/useUser";
 import Brand from "../Brand";
@@ -30,8 +30,8 @@ import NoSSR from "../next/NoSSR";
 const LINKS = [
   { name: "Virtual Networks", href: "/virtual-networks", icon: FiGlobe },
   { name: "Devices", href: "/devices", icon: FiServer },
-  { name: "Security Keys", href: "/security-keys", icon: FiKey },
-  { name: "Settings", href: "/security-keys", icon: FiSettings },
+  // { name: "Security Keys", href: "/security-keys", icon: FiKey },
+  // { name: "Settings", href: "/security-keys", icon: FiSettings },
 ];
 
 const SideBar: React.FC<StackProps> = function (props) {
@@ -119,7 +119,9 @@ const DashboardLayout: React.FC = function ({ children }) {
                       </Text>
                     </VStack>
                     <Divider mt={2}></Divider>
-                    <MenuItem>Support</MenuItem>
+                    <Link target="_blank" href="mailto:admin@omniedge.io">
+                      <MenuItem>Support</MenuItem>
+                    </Link>
                     <MenuItem
                       onClick={() => {
                         clearToken();

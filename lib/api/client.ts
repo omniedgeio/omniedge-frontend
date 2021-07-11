@@ -44,6 +44,16 @@ client.interceptors.response.use(
     }
 
     if (res.response) {
+      if (res.response.status == 500) {
+        toast({
+          isClosable: true,
+          position: "top",
+          status: "error",
+          title: "Server Error",
+          description: "Unexpected error occured. Please try again later.",
+        });
+      }
+
       return Promise.reject(res.response);
     }
 

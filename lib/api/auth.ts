@@ -1,14 +1,8 @@
 import { setToken } from "../helpers/token";
-import request from "./request";
+import request from "./client";
+import { IPasswordLoginRequest, IRegisterRequest } from "./request";
 
-export interface IRegister {
-  name: string;
-  email: string;
-  password: string;
-  confirm_password: string;
-}
-
-export function register(data: IRegister) {
+export function register(data: IRegisterRequest) {
   return request({
     url: "/auth/register",
     method: "POST",
@@ -16,12 +10,7 @@ export function register(data: IRegister) {
   });
 }
 
-export interface IPasswordLogin {
-  email: string;
-  password: string;
-}
-
-export async function loginByPassword({ email, password }: IPasswordLogin) {
+export async function loginByPassword({ email, password }: IPasswordLoginRequest) {
   let res = await request({
     url: "/auth/login/password",
     method: "POST",

@@ -9,20 +9,32 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { useFormik } from "formik";
+import isCidr from "is-cidr";
+import { useRouter } from "next/dist/client/router";
 import * as Yup from "yup";
 import DashboardLayout from "../../../components/layout/Dashboard";
+import { createVirtualNetwork } from "../../../lib/api/virtualNetwork";
 import { Page } from "../../../types";
 
 const CreateVirtualNetworkPage: Page = function (props) {
+  const router = useRouter();
+
   const { handleChange, handleBlur, handleSubmit, values, touched, errors } = useFormik({
     initialValues: {
       name: "",
-      ip_range: "",
+      ip_range: "100.100.0.0/24",
     },
     validationSchema: Yup.object().shape({
       name: Yup.string().required("Required"),
+      ip_range: Yup.string()
+        .required("Required")
+        .test("is-cidr", "It is not a valid cidr", (value, context) => isCidr(value as string) != 0),
     }),
-    onSubmit: (values, actions) => {},
+    onSubmit: (values, actions) => {
+      createVirtualNetwork(values).then((res) => {
+        router.push("/dashboard/virtual-networks");
+      });
+    },
   });
 
   return (
@@ -30,7 +42,7 @@ const CreateVirtualNetworkPage: Page = function (props) {
       <Heading fontWeight="semibold" size="md">
         Create Virtual Network
       </Heading>
-      <form style={{ width: "100%" }}>
+      <form style={{ width: "100%" }} onSubmit={handleSubmit}>
         <VStack alignItems="flex-start" spacing="4" w="full" maxW="sm">
           <FormControl isInvalid={!!(touched.name && errors.name)} isRequired>
             <FormLabel>Name</FormLabel>
@@ -44,12 +56,23 @@ const CreateVirtualNetworkPage: Page = function (props) {
             ></Input>
             <FormErrorMessage>{errors.name}</FormErrorMessage>
           </FormControl>
-          <FormControl>
+          <FormControl isInvalid={!!(touched.ip_range && errors.ip_range)} isRequired>
             <FormLabel>IP Range</FormLabel>
-            <Input type="text" defaultValue="100.100.0.0/24" disabled fontFamily="mono"></Input>
-            <FormHelperText>{`Currently we don't support change of ip range`}</FormHelperText>
+            <Input
+              type="text"
+              name="ip_range"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.ip_range}
+              placeholder="100.100.0.0/24"
+              fontFamily="mono"
+            ></Input>
+            <FormErrorMessage>{errors.ip_range}</FormErrorMessage>
+            <FormHelperText>{`Currently we don't support change of ip range in future`}</FormHelperText>
           </FormControl>
-          <Button colorScheme="brand">Create</Button>
+          <Button type="submit" colorScheme="brand">
+            Create
+          </Button>
         </VStack>
       </form>
     </VStack>

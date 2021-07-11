@@ -15,6 +15,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { useFormik } from "formik";
+import { useEffect } from "react";
 import { FiLock } from "react-icons/fi";
 import * as Yup from "yup";
 import ActivatePasswordModal from "../../../components/auth/ActivatePasswordModal";
@@ -29,10 +30,10 @@ import { Page } from "../../../types";
 const UpdateUserProfileForm: React.FC = function (props) {
   const { user, refetch } = useUser("/login");
 
-  const { handleChange, handleBlur, handleSubmit, values, touched, errors, isSubmitting } = useFormik({
+  const { handleChange, handleBlur, handleSubmit, values, setValues, touched, errors, isSubmitting } = useFormik({
     initialValues: {
-      name: user?.name as string,
-      email: user?.email as string,
+      name: "",
+      email: "",
     },
     validationSchema: Yup.object().shape({
       name: Yup.string().required("Required"),
@@ -45,6 +46,10 @@ const UpdateUserProfileForm: React.FC = function (props) {
       });
     },
   });
+
+  useEffect(() => {
+    setValues({ name: user?.name || "", email: user?.email || "" });
+  }, [user]);
 
   return (
     <form onSubmit={handleSubmit}>
@@ -135,7 +140,7 @@ const LinkWithGoogle: React.FC = function (props) {
       {user?.identities.find(({ provider }) => provider == "google").enabled ? (
         <Text>
           Your account has already been{" "}
-          <Text display="inline" color="green.500">
+          <Text as="span" display="inline" color="green.500">
             successfully linked
           </Text>{" "}
           with google account.

@@ -1,5 +1,6 @@
 import {
   Button,
+  Code,
   FormControl,
   FormErrorMessage,
   FormLabel,
@@ -132,18 +133,19 @@ const LinkWithGoogle: React.FC = function (props) {
   const { user, refetch } = useUser("/login");
   const showErr = () =>
     showError("Link with Google", "Unexpected error when linked with your google accounts. Please try again later.");
+  const provider = user?.identities.find(({ provider }) => provider == "google");
   return (
     <VStack spacing={2} alignItems="flex-start">
       <Heading fontWeight="medium" size="md">
         Link with Google
       </Heading>
-      {user?.identities.find(({ provider }) => provider == "google").enabled ? (
+      {provider?.enabled ? (
         <Text>
           Your account has already been{" "}
           <Text as="span" display="inline" color="green.500">
             successfully linked
           </Text>{" "}
-          with google account.
+          with google account. <Code>{provider.metadata.email}</Code>
         </Text>
       ) : (
         <>

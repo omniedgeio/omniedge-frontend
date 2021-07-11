@@ -12,6 +12,7 @@ export interface IAuthTokenResponse {
 export interface IIdentityResponse {
   provider: string;
   enabled: string;
+  metadata: Object;
 }
 
 export interface IProfileResponse {

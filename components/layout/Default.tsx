@@ -72,7 +72,7 @@ const DefaultLayout: React.FC<{}> = (props) => {
             <Link href="/">About us</Link>
           </Stack>
           <HStack>
-            {isLoading && <Skeleton h="8"></Skeleton>}
+            {isLoading && <Skeleton h="8" w="20"></Skeleton>}
             {!isLoading && user && (
               <Link href="/dashboard">
                 <Button colorScheme="brand">Dashboard</Button>

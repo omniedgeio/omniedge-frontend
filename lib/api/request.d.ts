@@ -6,18 +6,16 @@ export interface IRegisterRequest {
 }
 
 export interface IAuthSessionRequest {
-  auth_session_uuid: string;
+  auth_session_uuid?: string;
 }
 
 export interface IPasswordLoginRequest extends IAuthSessionRequest {
   email: string;
   password: string;
-  client_id: string;
 }
 
 export interface IGoogleLoginRequest extends IAuthSessionRequest {
   id_token: string;
-  client_id: string;
 }
 
 export interface IResetPasswordRequest {

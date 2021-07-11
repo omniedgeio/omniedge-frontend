@@ -8,6 +8,7 @@ import {
   MenuButton,
   MenuItem,
   MenuList,
+  Skeleton,
   Table,
   TableCaption,
   Tbody,
@@ -68,8 +69,22 @@ const DevicesTable: React.FC = function (props) {
           </Tr>
         </Thead>
         <Tbody>
-          {!isLoading &&
-            !isError &&
+          {isLoading || isError ? (
+            <Tr>
+              <Td pl="0">
+                <Skeleton h="4" />
+              </Td>
+              <Td display={["none", "table-cell"]}>
+                <Skeleton h="4" />
+              </Td>
+              <Td display={{ base: "none", md: "table-cell" }}>
+                <Skeleton h="4" />
+              </Td>
+              <Td display={["none", "table-cell"]}>
+                <Skeleton h="4" />
+              </Td>
+            </Tr>
+          ) : (
             devices?.map((device) => {
               const VirtualNetworksList = () => (
                 <VStack mt={[2, 0]} alignItems="flex-start">
@@ -131,7 +146,8 @@ const DevicesTable: React.FC = function (props) {
                   </Td>
                 </Tr>
               );
-            })}
+            })
+          )}
         </Tbody>
       </Table>
     </>

@@ -17,6 +17,7 @@ class MyDocument extends Document {
           <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
           <link rel="manifest" href="/favicon/site.webmanifest" />
           <link rel="shortcut icon" href="/favicon/favicon.ico" />
+          <script src="https://apis.google.com/js/platform.js" async defer></script>
         </Head>
         <body>
           <Main />

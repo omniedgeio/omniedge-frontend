@@ -14,7 +14,8 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "preserve",
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "types": ["gapi", "gapi.auth2"]
   },
   "include": ["next-env.d.ts", "index.d.ts", "*/**/*.ts", "*/**/*.tsx"],
   "exclude": ["node_modules"]

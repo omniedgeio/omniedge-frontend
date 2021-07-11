@@ -1,49 +1,51 @@
 import request from "./client";
+import {
+  IActivateGoogleLoginRequest,
+  IActivatePasswordLoginRequest,
+  IChangePasswordRequest,
+  IUpdateProfileRequest,
+} from "./request";
+import { IProfileResponse } from "./response";
 
-export function retrieveUser() {
-  return request({
+export async function retrieveUser(): Promise<IProfileResponse | undefined> {
+  let res = await request<IProfileResponse>({
     url: "/user/profile",
     method: "GET",
   });
+
+  return res?.data.data;
 }
 
-export interface IUpdateProfileRequest {
-  name: string;
-  email: string;
-}
-
-export function updateProfile(profile: IUpdateProfileRequest) {
-  return request({
-    url: "/user",
+export async function updateProfile(data: IUpdateProfileRequest) {
+  let res = await request({
+    url: "/user/profile",
     method: "POST",
-    data: profile,
+    data,
+  });
+
+  return res?.data.data;
+}
+
+export function changePassword(data: IChangePasswordRequest) {
+  return request({
+    url: "/user/auth/change-password",
+    method: "POST",
+    data,
   });
 }
 
-export interface IChangePasswordRequest {
-  oldPassword: string;
-  password: string;
-  confirmPassword: string;
-}
-
-export function changePassword(req: IChangePasswordRequest) {
+export function activatePasswordLogin(data: IActivatePasswordLoginRequest) {
   return request({
-    url: "/user/auth/password/update",
+    url: "/user/auth/identities/password",
     method: "POST",
-    data: {
-      old_password: req.oldPassword,
-      password: req.password,
-      confirm_password: req.confirmPassword,
-    },
+    data,
   });
 }
 
-export function linkGoogleLogin(idToken: string) {
+export function activateGoogleLogin(data: IActivateGoogleLoginRequest) {
   return request({
-    url: "/user/auth/google/enable",
+    url: "/user/auth/identities/google",
     method: "POST",
-    data: {
-      google_id_token: idToken,
-    },
+    data,
   });
 }

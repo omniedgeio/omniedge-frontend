@@ -1,15 +1,17 @@
 import { AxiosResponse } from "axios";
 import { useRouter } from "next/dist/client/router";
 import { useQuery } from "react-query";
+import { IProfileResponse } from "../api/response";
 import { retrieveUser } from "../api/user";
 
 export function useUser(redirect: string | null = "/login") {
   const {
-    data: res,
+    data: user,
     isLoading,
     isError,
     error,
-  } = useQuery<AxiosResponse, AxiosResponse>("user", retrieveUser, {
+    refetch,
+  } = useQuery<IProfileResponse | undefined, AxiosResponse>("user", retrieveUser, {
     retry: 0,
     refetchOnMount: !!redirect,
     refetchOnWindowFocus: !!redirect,
@@ -23,7 +25,8 @@ export function useUser(redirect: string | null = "/login") {
   }
 
   return {
-    user: res?.data.data,
+    user,
+    refetch,
     isLoading,
     isError,
   };

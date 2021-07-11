@@ -5,6 +5,7 @@ import { showError, showSuccess } from "../../lib/helpers/toast";
 import { useUser } from "../../lib/hook/useUser";
 import GoogleLogin from "../auth/GoogleLogin";
 import Logo from "../Logo";
+import Link from "../next/Link";
 
 const EntryLayout: React.FC = function ({ children }) {
   const router = useRouter();
@@ -17,10 +18,14 @@ const EntryLayout: React.FC = function ({ children }) {
   return (
     <Center mt="4" py="4">
       <VStack w={["full", "80"]} px={[8, 0]} spacing="4">
-        <Logo h="12"></Logo>
-        <Heading fontWeight="semibold" fontSize="xl">
-          OmniEdge
-        </Heading>
+        <Link href="/">
+          <VStack spacing="4">
+            <Logo h="12"></Logo>
+            <Heading fontWeight="semibold" fontSize="xl">
+              OmniEdge
+            </Heading>
+          </VStack>
+        </Link>
         <Text textAlign="center">
           Connect without concern at <br />
           any platform, anytime, anywhere.

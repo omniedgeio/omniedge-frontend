@@ -1,11 +1,24 @@
-import { Box, Button, Container, Flex, Heading, HStack, IconButton, Stack, useBoolean } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Container,
+  Flex,
+  Heading,
+  HStack,
+  IconButton,
+  Skeleton,
+  Stack,
+  useBoolean,
+} from "@chakra-ui/react";
 import React from "react";
 import { FiMenu, FiX } from "react-icons/fi";
+import { useUser } from "../../lib/hook/useUser";
 import Logo from "../Logo";
 import Link from "../next/Link";
 
 const DefaultLayout: React.FC<{}> = (props) => {
   const [isNavBarOpen, setNavBarOpen] = useBoolean(false);
+  const { user, isLoading, isError } = useUser(null);
 
   return (
     <Container maxW="container.xl" px={["0", "4"]}>
@@ -59,10 +72,22 @@ const DefaultLayout: React.FC<{}> = (props) => {
             <Link href="/">About us</Link>
           </Stack>
           <HStack>
-            <Button colorScheme="brand">Get Started</Button>
-            <Link href="/login">
-              <Button>Login</Button>
-            </Link>
+            {isLoading && <Skeleton h="8"></Skeleton>}
+            {!isLoading && user && (
+              <Link href="/dashboard">
+                <Button colorScheme="brand">Dashboard</Button>
+              </Link>
+            )}
+            {!isLoading && !user && (
+              <>
+                <Link href="/register">
+                  <Button colorScheme="brand">Get Started</Button>
+                </Link>
+                <Link href="/login">
+                  <Button>Login</Button>
+                </Link>
+              </>
+            )}
           </HStack>
         </Flex>
       </nav>

@@ -97,7 +97,9 @@ const DashboardLayout: React.FC = function ({ children }) {
             icon={isOpen ? <FiX /> : <FiMenu />}
             onClick={onToggle}
           ></IconButton>
-          <Brand />
+          <Link href="/">
+            <Brand />
+          </Link>
         </HStack>
         <HStack spacing="4">
           <NoSSR>

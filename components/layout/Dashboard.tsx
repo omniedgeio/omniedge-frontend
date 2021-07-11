@@ -34,7 +34,7 @@ const LINKS = [
   // { name: "Settings", href: "/security-keys", icon: FiSettings },
 ];
 
-const SideBar: React.FC<StackProps> = function (props) {
+const SideBar: React.FC<StackProps & { onClose: () => void }> = function (props) {
   const router = useRouter();
 
   return (
@@ -58,11 +58,13 @@ const SideBar: React.FC<StackProps> = function (props) {
             textDecoration: "none",
             color: "brand.700",
           }}
+          onClick={props.onClose}
           color={router.pathname.includes(href) ? "brand.500" : "gray.800"}
           fontSize="md"
+          w="full"
           href={`/dashboard` + href}
         >
-          <HStack spacing="2">
+          <HStack spacing="2" w="full">
             <Icon fontSize="xl" as={icon}></Icon>
             <Text fontSize="md" fontWeight="medium">
               {name}
@@ -141,7 +143,7 @@ const DashboardLayout: React.FC = function ({ children }) {
       <Flex alignItems="flex-start">
         <Box pos="relative">
           <SideBar
-            onClick={onClose}
+            onClose={onClose}
             pos={{ base: "absolute", md: "relative" }}
             transition="left 200ms"
             left={{

@@ -1,6 +1,6 @@
 import { Box, Button, Container, Flex, Heading, HStack, IconButton, Stack, useBoolean } from "@chakra-ui/react";
 import React from "react";
-import { FiMenu } from "react-icons/fi";
+import { FiMenu, FiX } from "react-icons/fi";
 import Logo from "../Logo";
 import Link from "../next/Link";
 
@@ -28,11 +28,12 @@ const DefaultLayout: React.FC<{}> = (props) => {
             borderRadius="md"
             fontSize="lg"
             onClick={setNavBarOpen.toggle}
-            icon={<FiMenu />}
+            icon={isNavBarOpen ? <FiX /> : <FiMenu />}
           ></IconButton>
         </Flex>
         <Flex
           py="4"
+          px={["4", "0"]}
           direction={["column", "row"]}
           alignContent="center"
           justifyContent="space-between"
@@ -47,7 +48,7 @@ const DefaultLayout: React.FC<{}> = (props) => {
             </Heading>
           </HStack>
           <Stack
-            spacing={["0", "5"]}
+            spacing={["2", "5"]}
             mb={["4", "0"]}
             alignItems={["flex-start", "center"]}
             direction={["column", "row"]}

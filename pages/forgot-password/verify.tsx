@@ -49,7 +49,7 @@ const ForgotPasswordVerifyPage: Page = function (props) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <VStack spacing={4} maxW="sm" alignItems="flex-start" margin="2rem auto">
+      <VStack spacing={4} maxW="sm" alignItems="flex-start" margin="2rem auto" px={4}>
         <Heading fontWeight="semibold" fontSize="lg">
           Create New Password
         </Heading>

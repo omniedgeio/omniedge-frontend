@@ -46,7 +46,7 @@ const ForgotPasswordPage: Page = function (props) {
   });
 
   return (
-    <VStack maxW="sm" margin="2rem auto">
+    <VStack maxW="sm" margin="2rem auto" px={4}>
       {!success ? (
         <form style={{ width: "100%" }} onSubmit={handleSubmit}>
           <VStack w="full" spacing={4} alignItems="flex-start">

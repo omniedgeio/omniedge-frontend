@@ -36,6 +36,13 @@ const theme = extendTheme({
         colorScheme: "brand",
       },
     },
+    Modal: {
+      baseStyle: {
+        dialog: {
+          mx: 4,
+        },
+      },
+    },
   },
 });
 

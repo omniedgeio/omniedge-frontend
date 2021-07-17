@@ -31,6 +31,7 @@
     "yup-password": "^0.2.1"
   },
   "devDependencies": {
+    "@types/date-fns": "^2.6.0",
     "@types/react": "17.0.13",
     "@types/vivus": "^0.4.3",
     "eslint": "7.29.0",

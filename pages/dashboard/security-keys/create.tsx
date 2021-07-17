@@ -18,7 +18,7 @@ import {
   useDisclosure,
   VStack,
 } from "@chakra-ui/react";
-import { format } from "date-fns/esm";
+import { format } from "date-fns";
 import { useFormik } from "formik";
 import { useRouter } from "next/dist/client/router";
 import { useState } from "react";

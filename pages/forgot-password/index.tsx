@@ -16,6 +16,7 @@ import { useRouter } from "next/dist/client/router";
 import { useState } from "react";
 import * as Yup from "yup";
 import YupPassword from "yup-password";
+import Link from "../../components/next/Link";
 import { resetPassword } from "../../lib/api/auth";
 import { showError } from "../../lib/helpers/toast";
 import { Page } from "../../types";
@@ -77,7 +78,7 @@ const ForgotPasswordPage: Page = function (props) {
           alignItems="center"
           justifyContent="center"
           textAlign="center"
-          height="200px"
+          py={6}
         >
           <AlertIcon boxSize="40px" mr={0} />
           <AlertTitle mt={4} mb={1} fontSize="lg">
@@ -85,6 +86,9 @@ const ForgotPasswordPage: Page = function (props) {
           </AlertTitle>
           <AlertDescription maxWidth="sm">
             We have send instruction to your email. Please check your inbox.
+            <Button colorScheme="green" mt={4}>
+              <Link href="/">Back to Homepage</Link>
+            </Button>
           </AlertDescription>
         </Alert>
       )}

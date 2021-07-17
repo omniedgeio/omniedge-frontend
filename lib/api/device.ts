@@ -18,3 +18,12 @@ export async function removeDevice(uuid: string) {
 
   return res.data.data;
 }
+
+export async function retrieveDevice(uuid: string): Promise<IDeviceResponse | undefined> {
+  let res = await request<IDeviceResponse>({
+    url: "/devices/" + uuid,
+    method: "GET",
+  });
+
+  return res.data.data;
+}

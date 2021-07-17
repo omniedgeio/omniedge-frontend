@@ -6,6 +6,7 @@ import {
   IconButtonProps,
   Menu,
   MenuButton,
+  MenuDivider,
   MenuItem,
   MenuList,
   Skeleton,
@@ -21,8 +22,9 @@ import {
   useDisclosure,
   VStack,
 } from "@chakra-ui/react";
+import { useRouter } from "next/dist/client/router";
 import { useState } from "react";
-import { FiMoreVertical, FiX } from "react-icons/fi";
+import { FiMoreVertical, FiServer, FiX } from "react-icons/fi";
 import { useQuery } from "react-query";
 import ConfirmModal from "../../../components/ConfirmModal";
 import DashboardLayout from "../../../components/layout/Dashboard";
@@ -32,6 +34,7 @@ import { IDeviceResponse } from "../../../lib/api/response";
 import { Page } from "../../../types";
 
 const DevicesTable: React.FC = function (props) {
+  const router = useRouter();
   const isPhone = useBreakpointValue({ base: true, sm: false });
   const { data: devices, isLoading, isError, refetch } = useQuery("devices", listDevices);
 
@@ -113,6 +116,10 @@ const DevicesTable: React.FC = function (props) {
                     icon={<FiMoreVertical />}
                   ></MenuButton>
                   <MenuList>
+                    <Link href={"/dashboard/devices/" + device.uuid + "/subnets"}>
+                      <MenuItem icon={<FiServer />}>View Device</MenuItem>
+                    </Link>
+                    <MenuDivider />
                     <MenuItem
                       color="red.500"
                       icon={<FiX />}
@@ -131,7 +138,9 @@ const DevicesTable: React.FC = function (props) {
                   <Td px="0">
                     <HStack justifyContent="space-between">
                       <VStack alignItems="flex-start">
-                        <Text>{device.name}</Text>
+                        <Link href={"/dashboard/devices/" + device.uuid + "/subnets"}>
+                          <Text>{device.name}</Text>
+                        </Link>
                         {isPhone && <VirtualNetworksList />}
                       </VStack>
                       {isPhone && <Action aria-label="menu" variant="ghost" />}

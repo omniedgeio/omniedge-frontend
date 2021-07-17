@@ -1,4 +1,5 @@
 import { SecurityKeyType } from "./request.d";
+import { IDeviceSubnetRouteResponse } from "./response.d";
 export interface IResponse<T = any, E = any> {
   code?: number;
   message: string;
@@ -29,6 +30,7 @@ export interface IDeviceResponse {
   name: string;
   os: string;
   virtual_networks: IDeviceVirtualNetworkResponse[];
+  subnets?: IDeviceSubnetRouteResponse[];
 }
 
 export interface IDeviceVirtualNetworkResponse {
@@ -37,6 +39,19 @@ export interface IDeviceVirtualNetworkResponse {
   virtual_ip: string;
   last_seen: Date;
   online: boolean;
+}
+
+export interface IDeviceSubnetRouteResponse {
+  ip: string;
+  mac_addr: string;
+  subnet_mask: string;
+  devices: ISubnetRouteDeviceResponse[];
+}
+
+export interface ISubnetRouteDeviceResponse {
+  ip: string;
+  mac_addr: string;
+  manufacturer: string;
 }
 
 export interface IServerResponse {

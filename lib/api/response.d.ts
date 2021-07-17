@@ -1,3 +1,4 @@
+import { SecurityKeyType } from "./request.d";
 export interface IResponse<T = any, E = any> {
   code?: number;
   message: string;
@@ -67,4 +68,12 @@ export interface IJoinVirtualNetworkResponse {
   virtual_ip: string;
   subnet_mask: string;
   server: IServerResponse;
+}
+
+export interface ISecurityKeyResponse {
+  uuid: string;
+  key: string;
+  key_type: SecurityKeyType;
+  expired_at: Date;
+  created_at: Date;
 }

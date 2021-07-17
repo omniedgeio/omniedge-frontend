@@ -20,7 +20,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { useRouter } from "next/dist/client/router";
-import { FiChevronDown, FiGlobe, FiMenu, FiServer, FiSettings, FiX } from "react-icons/fi";
+import { FiChevronDown, FiGlobe, FiKey, FiMenu, FiServer, FiSettings, FiX } from "react-icons/fi";
 import { clearToken } from "../../lib/helpers/token";
 import { useUser } from "../../lib/hook/useUser";
 import Brand from "../Brand";
@@ -30,7 +30,7 @@ import NoSSR from "../next/NoSSR";
 const LINKS = [
   { name: "Virtual Networks", href: "/virtual-networks", icon: FiGlobe },
   { name: "Devices", href: "/devices", icon: FiServer },
-  //{ name: "Security Keys", href: "/security-keys", icon: FiKey },
+  { name: "Security Keys", href: "/security-keys", icon: FiKey },
   { name: "Settings", href: "/settings", icon: FiSettings },
 ];
 

@@ -1,6 +1,7 @@
 import { setToken } from "../helpers/token";
 import request from "./client";
-import { IGoogleLoginRequest, IPasswordLoginRequest, IRegisterRequest } from "./request";
+import { IGoogleLoginRequest, IPasswordLoginRequest, IRegisterRequest, IResetPasswordVerifyRequest } from "./request";
+import { IResetPasswordRequest } from "./request.d";
 
 export function register(data: IRegisterRequest) {
   return request({
@@ -37,4 +38,24 @@ export async function loginByGoogle(data: IGoogleLoginRequest) {
     accessToken: responseData.token,
   });
   return res;
+}
+
+export async function resetPassword(data: IResetPasswordRequest) {
+  let res = await request({
+    url: "/auth/reset-password/code",
+    method: "POST",
+    data,
+  });
+
+  return res.data.data;
+}
+
+export async function resetPasswordVerify(data: IResetPasswordVerifyRequest) {
+  let res = await request({
+    url: "/auth/reset-password/verify",
+    method: "POST",
+    data,
+  });
+
+  return res.data.data;
 }

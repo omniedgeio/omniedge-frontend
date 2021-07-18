@@ -59,6 +59,15 @@ export interface IUpdateDeviceRequest {
   name: string;
 }
 
+export interface IUpdateDeviceSubnetRouteRequest {
+  devices: IUpdateDeviceSubnetRouteDeviceRequest[];
+}
+
+export interface IUpdateDeviceSubnetRouteDeviceRequest {
+  uuid: string;
+  name: string;
+}
+
 export interface ICreateVirtualNetworkRequest {
   name: string;
   ip_range: string;

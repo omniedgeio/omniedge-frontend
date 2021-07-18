@@ -42,6 +42,7 @@ export interface IDeviceVirtualNetworkResponse {
 }
 
 export interface IDeviceSubnetRouteResponse {
+  uuid: string;
   ip: string;
   mac_addr: string;
   subnet_mask: string;
@@ -49,6 +50,8 @@ export interface IDeviceSubnetRouteResponse {
 }
 
 export interface ISubnetRouteDeviceResponse {
+  uuid: string;
+  name: string;
   ip: string;
   mac_addr: string;
   manufacturer: string;

@@ -117,7 +117,7 @@ const DevicesTable: React.FC = function (props) {
                     icon={<FiMoreVertical />}
                   ></MenuButton>
                   <MenuList>
-                    <Link href={"/dashboard/devices/" + device.uuid + "/subnets"}>
+                    <Link href={"/dashboard/devices/" + device.uuid}>
                       <MenuItem icon={<FiServer />}>View Device</MenuItem>
                     </Link>
                     <MenuDivider />
@@ -139,7 +139,7 @@ const DevicesTable: React.FC = function (props) {
                   <Td px="0">
                     <HStack justifyContent="space-between">
                       <VStack alignItems="flex-start">
-                        <Link href={"/dashboard/devices/" + device.uuid + "/subnets"}>
+                        <Link href={"/dashboard/devices/" + device.uuid}>
                           <Text>{device.name}</Text>
                         </Link>
                         {isPhone && <VirtualNetworksList />}

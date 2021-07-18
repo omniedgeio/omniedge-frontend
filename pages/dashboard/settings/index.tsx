@@ -6,6 +6,7 @@ import {
   FormLabel,
   Heading,
   Input,
+  Spinner,
   Tab,
   TabList,
   TabPanel,
@@ -29,7 +30,7 @@ import { useUser } from "../../../lib/hook/useUser";
 import { Page } from "../../../types";
 
 const UpdateUserProfileForm: React.FC = function (props) {
-  const { user, refetch } = useUser("/login");
+  const { user, refetch, isLoading } = useUser("/login");
 
   const { handleChange, handleBlur, handleSubmit, values, setValues, touched, errors, isSubmitting } = useFormik({
     initialValues: {
@@ -51,6 +52,10 @@ const UpdateUserProfileForm: React.FC = function (props) {
   useEffect(() => {
     setValues({ name: user?.name || "", email: user?.email || "" });
   }, [user]);
+
+  if (isLoading) {
+    return <Spinner />;
+  }
 
   return (
     <form onSubmit={handleSubmit}>

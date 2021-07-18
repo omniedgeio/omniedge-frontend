@@ -19,7 +19,7 @@ import { Page } from "../../../types";
 const CreateVirtualNetworkPage: Page = function (props) {
   const router = useRouter();
 
-  const { handleChange, handleBlur, handleSubmit, values, touched, errors } = useFormik({
+  const { handleChange, handleBlur, handleSubmit, values, touched, errors, isSubmitting } = useFormik({
     initialValues: {
       name: "",
       ip_range: "100.100.0.0/24",
@@ -31,9 +31,13 @@ const CreateVirtualNetworkPage: Page = function (props) {
         .test("is-cidr", "It is not a valid cidr", (value, context) => isCidr(value as string) != 0),
     }),
     onSubmit: (values, actions) => {
-      createVirtualNetwork(values).then((res) => {
-        router.push("/dashboard/virtual-networks");
-      });
+      createVirtualNetwork(values)
+        .then((res) => {
+          router.push("/dashboard/virtual-networks");
+        })
+        .catch(() => {
+          actions.setSubmitting(false);
+        });
     },
   });
 
@@ -70,7 +74,7 @@ const CreateVirtualNetworkPage: Page = function (props) {
             <FormErrorMessage>{errors.ip_range}</FormErrorMessage>
             <FormHelperText>{`Currently we don't support change of ip range in future`}</FormHelperText>
           </FormControl>
-          <Button type="submit" colorScheme="brand">
+          <Button isLoading={isSubmitting} type="submit" colorScheme="brand">
             Create
           </Button>
         </VStack>

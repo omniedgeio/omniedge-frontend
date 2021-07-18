@@ -173,6 +173,7 @@ const VirtualNetworkListTable: React.FC = function () {
               const ActionMenu = () => (
                 <Menu placement="bottom-end">
                   <MenuButton
+                    aria-label="menu"
                     variant={variant}
                     borderRadius="md"
                     as={IconButton}

@@ -110,6 +110,7 @@ const DevicesTable: React.FC = function (props) {
                 <Menu placement="bottom-end">
                   <MenuButton
                     {...props}
+                    aria-label="menu"
                     borderRadius="md"
                     as={IconButton}
                     size="sm"

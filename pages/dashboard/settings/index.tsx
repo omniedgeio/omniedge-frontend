@@ -150,7 +150,7 @@ const LinkWithGoogle: React.FC = function (props) {
           <Text as="span" display="inline" color="green.500">
             successfully linked
           </Text>{" "}
-          with google account. <Code>{provider.metadata.email}</Code>
+          with google account. <Code>{provider?.metadata?.email}</Code>
         </Text>
       ) : (
         <>

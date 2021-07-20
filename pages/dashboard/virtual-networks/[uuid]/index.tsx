@@ -19,6 +19,7 @@ import {
   ModalHeader,
   ModalOverlay,
   Skeleton,
+  SkeletonText,
   Stack,
   Tab,
   Table,
@@ -44,7 +45,7 @@ import { useFormik } from "formik";
 import { useRouter } from "next/dist/client/router";
 import { useState } from "react";
 import { FiMoreVertical, FiPlus, FiX } from "react-icons/fi";
-import { useQuery } from "react-query";
+import { useQuery, UseQueryResult } from "react-query";
 import * as Yup from "yup";
 import ConfirmModal from "../../../../components/ConfirmModal";
 import DashboardLayout from "../../../../components/layout/Dashboard";
@@ -52,6 +53,7 @@ import Link from "../../../../components/next/Link";
 import {
   IInvitationResponse,
   IVirtualNetworkDeviceResponse,
+  IVirtualNetworkResponse,
   IVirtualNetworkUserResponse,
 } from "../../../../lib/api/response";
 import {
@@ -302,13 +304,15 @@ const VirtualNetworkInvitationsSection: React.FC<{ uuid: string }> = function ({
   );
 };
 
-const VirtualNetworkUsersTable: React.FC<{ uuid: string }> = function ({ uuid }) {
+const VirtualNetworkUsersTable: React.FC<UseQueryResult<IVirtualNetworkResponse | null | undefined>> = function ({
+  isError,
+  isLoading,
+  data,
+  refetch,
+}) {
   const isPhone = useBreakpointValue({ base: true, sm: false });
   const variant = useBreakpointValue({ base: "ghost", sm: "solid" });
-
-  const { data, isLoading, isError, refetch } = useQuery(["virtual-network", uuid], () =>
-    uuid ? retrieveVirtualNetwork(uuid) : null
-  );
+  const uuid = data?.uuid || null;
 
   const confirmModal = useDisclosure();
   const [userToRemove, setUserToRemove] = useState<IVirtualNetworkUserResponse>();
@@ -420,18 +424,20 @@ const VirtualNetworkUsersTable: React.FC<{ uuid: string }> = function ({ uuid })
           )}
         </Tbody>
       </Table>
-      {isAdmin && <VirtualNetworkInvitationsSection uuid={uuid} />}
+      {isAdmin && <VirtualNetworkInvitationsSection uuid={uuid as string} />}
     </>
   );
 };
 
-const VirtualNetworkDevicesTable: React.FC<{ uuid: string }> = function ({ uuid }) {
+const VirtualNetworkDevicesTable: React.FC<UseQueryResult<IVirtualNetworkResponse | null | undefined>> = function ({
+  isLoading,
+  isError,
+  refetch,
+  data,
+}) {
   const isPhone = useBreakpointValue({ base: true, sm: false });
   const variant = useBreakpointValue({ base: "ghost", sm: "solid" });
-
-  const { data, isLoading, isError, refetch } = useQuery(["virtual-network", uuid], ({ queryKey }) =>
-    queryKey[1] ? retrieveVirtualNetwork(queryKey[1]) : null
-  );
+  const uuid = data?.uuid || null;
 
   const confirmModal = useDisclosure();
   const [deviceToRemove, setDeviceToRemove] = useState<IVirtualNetworkDeviceResponse>();
@@ -556,10 +562,12 @@ const VirtualNetworkDetailPage: Page = function (props) {
   const router = useRouter();
   const { uuid } = router.query;
 
+  const result = useQuery(["virtual-network", uuid], () => (uuid ? retrieveVirtualNetwork(uuid as string) : null));
+
   return (
     <VStack alignItems="flex-start" spacing="4">
       <Heading size="md" fontWeight="semibold">
-        My Omni Network
+        <SkeletonText isLoaded={!result.isLoading || !result.isError}>{result.data?.name}</SkeletonText>
       </Heading>
       <Tabs variant="enclosed" colorScheme="brand" w="full">
         <TabList>
@@ -568,10 +576,10 @@ const VirtualNetworkDetailPage: Page = function (props) {
         </TabList>
         <TabPanels>
           <TabPanel px={0}>
-            <VirtualNetworkDevicesTable uuid={uuid as string} />
+            <VirtualNetworkDevicesTable {...result} />
           </TabPanel>
           <TabPanel px={0}>
-            <VirtualNetworkUsersTable uuid={uuid as string} />
+            <VirtualNetworkUsersTable {...result} />
           </TabPanel>
         </TabPanels>
       </Tabs>

@@ -1,6 +1,6 @@
 import request from "./client";
-import { ICreateVirtualNetworkRequest, IUpdateVirtualNetworkRequest } from "./request";
-import { IVirtualNetworkResponse } from "./response";
+import { ICreateInvitationRequest, ICreateVirtualNetworkRequest, IUpdateVirtualNetworkRequest } from "./request";
+import { IInvitationResponse, IVirtualNetworkResponse } from "./response";
 
 export async function listVirtualNetworks(): Promise<IVirtualNetworkResponse[] | undefined> {
   let res = await request<IVirtualNetworkResponse[]>({
@@ -52,6 +52,34 @@ export async function updateVirtualNetwork(uuid: string, data: IUpdateVirtualNet
 export async function removeDeviceFromVirtualNetwork(vnUUID: string, devUUID: string) {
   let res = await request({
     url: "/virtual-networks/" + vnUUID + "/devices/" + devUUID,
+    method: "DELETE",
+  });
+
+  return res.data.data;
+}
+
+export async function createInvitationsInVirtualNetwork(vnUUID: string, data: ICreateInvitationRequest) {
+  let res = await request({
+    url: "/virtual-networks/" + vnUUID + "/invitations",
+    method: "POST",
+    data,
+  });
+
+  return res.data.data;
+}
+
+export async function listInvitationsInVirtualNetwork(vnUUID: string): Promise<IInvitationResponse[] | undefined> {
+  let res = await request({
+    url: "/virtual-networks/" + vnUUID + "/invitations",
+    method: "GET",
+  });
+
+  return res.data.data;
+}
+
+export async function revokeInvitationInVirtualNetwork(vnUUID: string, invUUID: string) {
+  let res = await request({
+    url: "/virtual-networks/" + vnUUID + "/invitations/" + invUUID,
     method: "DELETE",
   });
 

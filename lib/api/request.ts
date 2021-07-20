@@ -1,4 +1,3 @@
-import { SecurityKeyType } from "./request.d";
 export interface IRegisterRequest {
   name: string;
   email: string;
@@ -77,11 +76,24 @@ export interface IUpdateVirtualNetworkRequest {
   name: string;
 }
 
-export enum SecurityKeyType {
+export enum SecurityKeyTypeEnum {
   Normal = 1,
   OneTime = 2,
 }
 
 export interface ICreateSecurityKeyRequest {
-  type: SecurityKeyType;
+  type: SecurityKeyTypeEnum;
+}
+
+export interface ICreateInvitationRequest {
+  emails: string[];
+}
+
+export enum InvitationStatusEnum {
+  Accepted = 1,
+  Rejected = 2,
+}
+
+export interface IUpdateInvitationRequest {
+  status: InvitationStatusEnum;
 }

@@ -1,7 +1,12 @@
 import { setToken } from "../helpers/token";
 import request from "./client";
-import { IGoogleLoginRequest, IPasswordLoginRequest, IRegisterRequest, IResetPasswordVerifyRequest } from "./request";
-import { IResetPasswordRequest } from "./request.d";
+import {
+  IGoogleLoginRequest,
+  IPasswordLoginRequest,
+  IRegisterRequest,
+  IResetPasswordRequest,
+  IResetPasswordVerifyRequest,
+} from "./request";
 
 export function register(data: IRegisterRequest) {
   return request({

@@ -1,5 +1,5 @@
 import request from "./client";
-import { IUpdateDeviceSubnetRouteRequest } from "./request.d";
+import { IUpdateDeviceSubnetRouteRequest } from "./request";
 import { IDeviceResponse } from "./response";
 
 export async function listDevices(): Promise<IDeviceResponse[] | undefined> {

@@ -1,6 +1,6 @@
 import request from "./client";
-import { ICreateSecurityKeyRequest } from "./request.d";
-import { ISecurityKeyResponse } from "./response.d";
+import { ICreateSecurityKeyRequest } from "./request";
+import { ISecurityKeyResponse } from "./response";
 
 export async function createSecurityKey(data: ICreateSecurityKeyRequest): Promise<ISecurityKeyResponse | undefined> {
   let res = await request<ISecurityKeyResponse>({

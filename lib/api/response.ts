@@ -1,5 +1,5 @@
-import { SecurityKeyType } from "./request.d";
-import { IDeviceSubnetRouteResponse } from "./response.d";
+import { SecurityKeyTypeEnum } from "./request";
+
 export interface IResponse<T = any, E = any> {
   code?: number;
   message: string;
@@ -14,7 +14,7 @@ export interface IAuthTokenResponse {
 export interface IIdentityResponse {
   provider: string;
   enabled: string;
-  metadata: Object;
+  metadata?: any;
 }
 
 export interface IProfileResponse {
@@ -22,7 +22,7 @@ export interface IProfileResponse {
   name: string;
   email: string;
   picture: string;
-  identities: IdentityResponse[];
+  identities: IIdentityResponse[];
 }
 
 export interface IDeviceResponse {
@@ -70,6 +70,7 @@ export interface IVirtualNetworkResponse {
   ip_range: string;
   server: IServerResponse;
   devices: IVirtualNetworkDeviceResponse[];
+  users: IVirtualNetworkUserResponse[];
 }
 
 export interface IVirtualNetworkDeviceResponse {
@@ -91,7 +92,23 @@ export interface IJoinVirtualNetworkResponse {
 export interface ISecurityKeyResponse {
   uuid: string;
   key: string;
-  key_type: SecurityKeyType;
+  key_type: SecurityKeyTypeEnum;
   expired_at: Date;
   created_at: Date;
+}
+
+export interface IVirtualNetworkUserResponse {
+  UUID: string;
+  Email: string;
+  Name: string;
+  Role: string;
+  JoinedAt: Date;
+}
+
+export interface IInvitationResponse {
+  UUID: string;
+  User: IVirtualNetworkUserResponse;
+  InvitedBy: string;
+  InvitedAt: Date;
+  VirtualNetwork: string;
 }

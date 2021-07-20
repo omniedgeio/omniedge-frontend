@@ -1,18 +1,37 @@
 import {
+  Button,
   Code,
+  FormControl,
+  FormErrorMessage,
   Heading,
   HStack,
   IconButton,
+  Input,
   Menu,
   MenuButton,
   MenuItem,
   MenuList,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
   Skeleton,
+  Stack,
+  Tab,
   Table,
   TableCaption,
+  TabList,
+  TabPanel,
+  TabPanels,
+  Tabs,
+  Tag,
   Tbody,
   Td,
   Text,
+  TextProps,
   Th,
   Thead,
   Tr,
@@ -20,18 +39,393 @@ import {
   useDisclosure,
   VStack,
 } from "@chakra-ui/react";
+import { formatDistanceToNow } from "date-fns";
+import { useFormik } from "formik";
 import { useRouter } from "next/dist/client/router";
 import { useState } from "react";
-import { FiMoreVertical, FiX } from "react-icons/fi";
+import { FiMoreVertical, FiPlus, FiX } from "react-icons/fi";
 import { useQuery } from "react-query";
+import * as Yup from "yup";
 import ConfirmModal from "../../../../components/ConfirmModal";
 import DashboardLayout from "../../../../components/layout/Dashboard";
 import Link from "../../../../components/next/Link";
-import { IVirtualNetworkDeviceResponse } from "../../../../lib/api/response";
-import { removeDeviceFromVirtualNetwork, retrieveVirtualNetwork } from "../../../../lib/api/virtualNetwork";
+import {
+  IInvitationResponse,
+  IVirtualNetworkDeviceResponse,
+  IVirtualNetworkUserResponse,
+} from "../../../../lib/api/response";
+import {
+  createInvitationsInVirtualNetwork,
+  listInvitationsInVirtualNetwork,
+  removeDeviceFromVirtualNetwork,
+  retrieveVirtualNetwork,
+  revokeInvitationInVirtualNetwork,
+} from "../../../../lib/api/virtualNetwork";
+import { showError, showSuccess } from "../../../../lib/helpers/toast";
+import { useUser } from "../../../../lib/hook/useUser";
 import { Page } from "../../../../types";
 
-const VirtualNetworkDeviceTable: React.FC<{ uuid: string }> = function ({ uuid }) {
+const VirtualNetworkInvitationsTable: React.FC<{
+  uuid: string;
+  isLoading: boolean;
+  isError: boolean;
+  data: IInvitationResponse[] | undefined | null;
+  refetch: any;
+}> = function ({ uuid, isLoading, isError, data, refetch }) {
+  const isPhone = useBreakpointValue({ base: true, sm: false });
+  const variant = useBreakpointValue({ base: "ghost", sm: "solid" });
+
+  const confirmModal = useDisclosure();
+  const [invitationToRemove, setInvitationToRemove] = useState<IInvitationResponse>();
+
+  return (
+    <>
+      <ConfirmModal
+        isOpen={confirmModal.isOpen}
+        title="Remove Virtual Network"
+        onConfirm={() => {
+          revokeInvitationInVirtualNetwork(uuid as string, invitationToRemove?.uuid as string).then(() => {
+            refetch();
+            confirmModal.onClose();
+          });
+        }}
+        onCancel={confirmModal.onClose}
+      >
+        Are you sure you want to revoke invitation to <Code>{invitationToRemove?.user.name}</Code>?
+      </ConfirmModal>
+      <Table w="full" maxW="container.sm">
+        <Thead>
+          <Tr>
+            <Th pl="0">{isPhone ? "Email" : "Email"}</Th>
+            <Th display={["none", "table-cell"]}>Invited at</Th>
+            <Th display={["none", "table-cell"]}>Action</Th>
+          </Tr>
+        </Thead>
+        <Tbody>
+          {isLoading || isError ? (
+            <Tr>
+              <Td pl="0">
+                <Skeleton h="4" />
+              </Td>
+              <Td display={["none", "table-cell"]}>
+                <Skeleton h="4" />
+              </Td>
+              <Td display={["none", "table-cell"]}>
+                <Skeleton h="4" />
+              </Td>
+            </Tr>
+          ) : (
+            data?.map((invitation) => {
+              const Email = () => <Text>{invitation.user.email}</Text>;
+              const InvitedAt = (props: TextProps) => (
+                <Text fontSize={["sm", "md"]} color={["gray.600", "black"]} {...props}>
+                  {formatDistanceToNow(new Date(invitation.invited_at))}
+                </Text>
+              );
+
+              const ActionMenu = () => (
+                <Menu placement="bottom-end">
+                  <MenuButton
+                    variant={variant}
+                    borderRadius="md"
+                    as={IconButton}
+                    size="sm"
+                    icon={<FiMoreVertical />}
+                  ></MenuButton>
+                  <MenuList py="1.5">
+                    <MenuItem
+                      color="red.500"
+                      onClick={() => {
+                        setInvitationToRemove(invitation);
+                        confirmModal.onOpen();
+                      }}
+                      icon={<FiX />}
+                    >
+                      Remove
+                    </MenuItem>
+                  </MenuList>
+                </Menu>
+              );
+
+              return (
+                <Tr key={invitation.uuid}>
+                  <Td px="0">
+                    {!isPhone ? (
+                      <Email />
+                    ) : (
+                      <HStack justifyContent="space-between">
+                        <VStack spacing="1" alignItems="flex-start">
+                          <Email />
+                          <InvitedAt />
+                        </VStack>
+                        <ActionMenu />
+                      </HStack>
+                    )}
+                  </Td>
+                  <Td display={["none", "table-cell"]}>
+                    <InvitedAt />
+                  </Td>
+                  <Td display={["none", "table-cell"]}>
+                    <ActionMenu />
+                  </Td>
+                </Tr>
+              );
+            })
+          )}
+        </Tbody>
+      </Table>
+    </>
+  );
+};
+
+const CreateInvitationModal: React.FC<{
+  uuid: string;
+  onClose: () => void;
+  isOpen: boolean;
+}> = function ({ uuid, onClose, isOpen }) {
+  const [emails, setEmails] = useState<string[]>([]);
+  const { handleChange, handleBlur, handleSubmit, values, touched, errors, isSubmitting } = useFormik({
+    initialValues: {
+      email: "",
+    },
+    validationSchema: Yup.object().shape({
+      email: Yup.string().required("Required").email(),
+    }),
+    onSubmit: (values, actions) => {
+      setEmails([values.email, ...emails].filter((value, index, self) => self.indexOf(value) === index));
+      actions.resetForm();
+    },
+  });
+  return (
+    <Modal onClose={onClose} isOpen={isOpen}>
+      <ModalOverlay />
+      <ModalContent>
+        <ModalHeader>Invite user</ModalHeader>
+        <ModalCloseButton />
+        <ModalBody>
+          <VStack w="full">
+            <form onSubmit={handleSubmit} style={{ width: "100%" }}>
+              <Stack direction={["column", "row"]} w="full" alignItems="flex-start">
+                <FormControl flex="1" isInvalid={!!(touched.email && errors.email)} isRequired>
+                  <Input
+                    type="email"
+                    name="email"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.email}
+                    placeholder="mail@host"
+                  ></Input>
+                  <FormErrorMessage>{errors.email}</FormErrorMessage>
+                </FormControl>
+                <IconButton aria-label="add" type="submit" isLoading={isSubmitting} icon={<FiPlus />}></IconButton>
+              </Stack>
+            </form>
+            <VStack w="full">
+              {emails.map((email, index) => {
+                return (
+                  <HStack justifyContent="space-between" w="full" key={index}>
+                    <Text>{email}</Text>
+                    <IconButton
+                      onClick={() => {
+                        setEmails(emails.filter((value) => value != email));
+                      }}
+                      aria-label="remove"
+                      icon={<FiX />}
+                      size="xs"
+                      colorScheme="red"
+                      borderRadius="sm"
+                    ></IconButton>
+                  </HStack>
+                );
+              })}
+            </VStack>
+          </VStack>
+        </ModalBody>
+
+        <ModalFooter>
+          <Button variant="ghost" mr={3} onClick={onClose}>
+            Cancel
+          </Button>
+          <Button
+            colorScheme="brand"
+            onClick={() => {
+              createInvitationsInVirtualNetwork(uuid, { emails })
+                .then(() => {
+                  showSuccess("Invite successfully");
+                  onClose();
+                })
+                .catch((err) => {
+                  showError("Invite failed", err?.data?.message);
+                });
+            }}
+          >
+            Invite
+          </Button>
+        </ModalFooter>
+      </ModalContent>
+    </Modal>
+  );
+};
+
+const VirtualNetworkInvitationsSection: React.FC<{ uuid: string }> = function ({ uuid }) {
+  const createInvitationModal = useDisclosure();
+  const { data, isLoading, isError, refetch } = useQuery(["virtual-network-invitations", uuid], () =>
+    uuid ? listInvitationsInVirtualNetwork(uuid) : null
+  );
+
+  return (
+    <VStack w="full" maxW="container.sm" alignItems="flex-start" mt={[4, 8]}>
+      <HStack w="full" alignItems="center" justifyContent="space-between">
+        <Heading fontSize="md" fontWeight="semibold">
+          Invitation
+        </Heading>
+        <Button onClick={createInvitationModal.onOpen} size="sm">
+          Invite
+        </Button>
+      </HStack>
+      <VirtualNetworkInvitationsTable
+        refetch={refetch}
+        data={data}
+        isLoading={isLoading}
+        isError={isError}
+        uuid={uuid}
+      />
+      <CreateInvitationModal
+        uuid={uuid}
+        isOpen={createInvitationModal.isOpen}
+        onClose={() => {
+          refetch();
+          createInvitationModal.onClose();
+        }}
+      />
+    </VStack>
+  );
+};
+
+const VirtualNetworkUsersTable: React.FC<{ uuid: string }> = function ({ uuid }) {
+  const isPhone = useBreakpointValue({ base: true, sm: false });
+  const variant = useBreakpointValue({ base: "ghost", sm: "solid" });
+
+  const { data, isLoading, isError, refetch } = useQuery(["virtual-network", uuid], () =>
+    uuid ? retrieveVirtualNetwork(uuid) : null
+  );
+
+  const confirmModal = useDisclosure();
+  const [userToRemove, setUserToRemove] = useState<IVirtualNetworkUserResponse>();
+  const { user } = useUser("/login");
+  const isAdmin = !!(data?.users.find(({ uuid }) => user?.uuid == uuid)?.role == "admin");
+
+  return (
+    <>
+      <ConfirmModal
+        isOpen={confirmModal.isOpen}
+        title="Remove Virtual Network"
+        onConfirm={() => {
+          revokeInvitationInVirtualNetwork(uuid as string, userToRemove?.uuid as string).then(() => {
+            refetch();
+            confirmModal.onClose();
+          });
+        }}
+        onCancel={confirmModal.onClose}
+      >
+        Are you sure you want to revoke invitation to <Code>{userToRemove?.name}</Code>?
+      </ConfirmModal>
+      <Table w="full" maxW="container.sm">
+        <Thead>
+          <Tr>
+            <Th pl="0">{isPhone ? "User" : "Name"}</Th>
+            <Th display={["none", "table-cell"]}>Email</Th>
+            <Th display={["none", "table-cell"]}>Action</Th>
+          </Tr>
+        </Thead>
+        <Tbody>
+          {isLoading || isError ? (
+            <Tr>
+              <Td pl="0">
+                <Skeleton h="4" />
+              </Td>
+              <Td display={["none", "table-cell"]}>
+                <Skeleton h="4" />
+              </Td>
+              <Td display={["none", "table-cell"]}>
+                <Skeleton h="4" />
+              </Td>
+            </Tr>
+          ) : (
+            data?.users?.map((user) => {
+              const Name = () => (
+                <Text>
+                  {user.name}
+                  {user.role == "admin" && (
+                    <Tag ml={2} size="sm" colorScheme="green">
+                      {user.role}
+                    </Tag>
+                  )}
+                </Text>
+              );
+              const Email = () => (
+                <Text fontSize={["sm", "md"]} color={["gray.600", "black"]}>
+                  {user.email}
+                </Text>
+              );
+
+              const ActionMenu = () => (
+                <Menu placement="bottom-end">
+                  <MenuButton
+                    variant={variant}
+                    borderRadius="md"
+                    as={IconButton}
+                    size="sm"
+                    icon={<FiMoreVertical />}
+                  ></MenuButton>
+                  <MenuList py="1.5">
+                    <MenuItem
+                      color="red.500"
+                      onClick={() => {
+                        setUserToRemove(user);
+                        confirmModal.onOpen();
+                      }}
+                      icon={<FiX />}
+                    >
+                      Remove
+                    </MenuItem>
+                  </MenuList>
+                </Menu>
+              );
+
+              return (
+                <Tr key={user.uuid}>
+                  <Td px="0">
+                    {!isPhone ? (
+                      <Name />
+                    ) : (
+                      <HStack justifyContent="space-between">
+                        <VStack spacing="1" alignItems="flex-start">
+                          <Name />
+                          <Email />
+                        </VStack>
+                        <ActionMenu />
+                      </HStack>
+                    )}
+                  </Td>
+                  <Td display={["none", "table-cell"]}>
+                    <Email />
+                  </Td>
+                  <Td display={["none", "table-cell"]}>
+                    <ActionMenu />
+                  </Td>
+                </Tr>
+              );
+            })
+          )}
+        </Tbody>
+      </Table>
+      {isAdmin && <VirtualNetworkInvitationsSection uuid={uuid} />}
+    </>
+  );
+};
+
+const VirtualNetworkDevicesTable: React.FC<{ uuid: string }> = function ({ uuid }) {
   const isPhone = useBreakpointValue({ base: true, sm: false });
   const variant = useBreakpointValue({ base: "ghost", sm: "solid" });
 
@@ -88,7 +482,7 @@ const VirtualNetworkDeviceTable: React.FC<{ uuid: string }> = function ({ uuid }
               </Td>
             </Tr>
           ) : (
-            data?.devices.map((device) => {
+            data?.devices?.map((device) => {
               const Name = () => <Text>{device.name}</Text>;
               const VirtualIP = () => (
                 <Code fontSize={["xs", "sm"]} px="0" bg="white">
@@ -122,7 +516,7 @@ const VirtualNetworkDeviceTable: React.FC<{ uuid: string }> = function ({ uuid }
               );
 
               return (
-                <Tr key={uuid}>
+                <Tr key={device.uuid}>
                   <Td px="0">
                     {!isPhone ? (
                       device.name
@@ -167,7 +561,20 @@ const VirtualNetworkDetailPage: Page = function (props) {
       <Heading size="md" fontWeight="semibold">
         My Omni Network
       </Heading>
-      <VirtualNetworkDeviceTable uuid={uuid as string} />
+      <Tabs variant="enclosed" colorScheme="brand" w="full">
+        <TabList>
+          <Tab>Devices</Tab>
+          <Tab>Users</Tab>
+        </TabList>
+        <TabPanels>
+          <TabPanel px={0}>
+            <VirtualNetworkDevicesTable uuid={uuid as string} />
+          </TabPanel>
+          <TabPanel px={0}>
+            <VirtualNetworkUsersTable uuid={uuid as string} />
+          </TabPanel>
+        </TabPanels>
+      </Tabs>
     </VStack>
   );
 };

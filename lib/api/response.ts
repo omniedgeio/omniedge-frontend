@@ -98,17 +98,17 @@ export interface ISecurityKeyResponse {
 }
 
 export interface IVirtualNetworkUserResponse {
-  UUID: string;
-  Email: string;
-  Name: string;
-  Role: string;
-  JoinedAt: Date;
+  uuid: string;
+  email: string;
+  name: string;
+  role: string;
+  joined_at: Date;
 }
 
 export interface IInvitationResponse {
-  UUID: string;
-  User: IVirtualNetworkUserResponse;
-  InvitedBy: string;
-  InvitedAt: Date;
-  VirtualNetwork: string;
+  uuid: string;
+  user: IVirtualNetworkUserResponse;
+  invited_by: string;
+  invited_at: Date;
+  virtual_network: string;
 }

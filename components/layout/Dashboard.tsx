@@ -130,6 +130,9 @@ const DashboardLayout: React.FC = function ({ children }) {
                       </Text>
                     </VStack>
                     <Divider mt={2}></Divider>
+                    <Link href="/dashboard/settings">
+                      <MenuItem>Settings</MenuItem>
+                    </Link>
                     <Link target="_blank" href="mailto:support@omniedge.io">
                       <MenuItem>Support</MenuItem>
                     </Link>

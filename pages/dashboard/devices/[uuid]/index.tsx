@@ -32,12 +32,14 @@ const DeviceSubnetTable: React.FC<{ subnet: IDeviceSubnetRouteResponse; uuid: st
       return;
     }
     let originalName = device.name;
-    device.name = name;
-    updateDeviceSubnet(uuid, subnet.uuid, subnet)
-      .then(() => {
-        showSuccess("Rename successfully");
-      })
-      .catch(() => (device.name = originalName));
+    if (name != originalName) {
+      device.name = name;
+      updateDeviceSubnet(uuid, subnet.uuid, subnet)
+        .then(() => {
+          showSuccess("Rename successfully");
+        })
+        .catch(() => (device.name = originalName));
+    }
   };
 
   return (
@@ -72,6 +74,9 @@ const DeviceSubnetTable: React.FC<{ subnet: IDeviceSubnetRouteResponse; uuid: st
           ))}
         </Tbody>
       </Table>
+      <Text fontWeight="semibold" fontSize="xs" color="gray.500">
+        Click to rename
+      </Text>
     </VStack>
   );
 };
@@ -115,7 +120,7 @@ const DeviceSubnetsPage: Page = function (props) {
           </Text>
         )}
         <SimpleGrid columns={2} spacing={4} alignItems="center">
-          {device?.virtual_networks.map((vn) => (
+          {device?.virtual_networks?.map((vn) => (
             <>
               <Text>{vn.name}</Text>
               <Code background="white">{vn.virtual_ip}</Code>

@@ -237,7 +237,7 @@ const VirtualNetworkListTable: React.FC = function () {
                           View Devices
                         </Button>
                       </Link>
-                      <ActionMenu />
+                      {vn.role == "admin" && <ActionMenu />}
                     </HStack>
                   </Td>
                 </Tr>

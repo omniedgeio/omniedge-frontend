@@ -21,25 +21,29 @@ import {
 } from "@chakra-ui/react";
 import { useRouter } from "next/dist/client/router";
 import { FiChevronDown, FiGlobe, FiKey, FiMenu, FiServer, FiSettings, FiX } from "react-icons/fi";
+import { useQuery } from "react-query";
+import { listInvitations } from "../../lib/api/invitations";
 import { clearToken } from "../../lib/helpers/token";
 import { useUser } from "../../lib/hook/useUser";
 import Brand from "../Brand";
 import Link from "../next/Link";
 import NoSSR from "../next/NoSSR";
 
-const LINKS = [
-  { name: "Virtual Networks", href: "/virtual-networks", icon: FiGlobe },
-  { name: "Devices", href: "/devices", icon: FiServer },
-  { name: "Security Keys", href: "/security-keys", icon: FiKey },
-  { name: "Settings", href: "/settings", icon: FiSettings },
-];
-
-const SideBar: React.FC<StackProps & { onClose: () => void }> = function (props) {
+const SideBar: React.FC<StackProps & { onClose: () => void; isOpen: boolean }> = function (props) {
   const router = useRouter();
+  const { onClose, isOpen, ...stackProps } = props;
+  const { data: invitations } = useQuery(["invitations", isOpen], listInvitations, {});
+
+  const LINKS = [
+    { name: "Virtual Networks", href: "/virtual-networks", icon: FiGlobe },
+    { name: "Devices", href: "/devices", icon: FiServer },
+    { name: "Security Keys", href: "/security-keys", icon: FiKey },
+    { name: "Settings", href: "/settings", icon: FiSettings, active: !!invitations?.length },
+  ];
 
   return (
     <VStack
-      {...props}
+      {...stackProps}
       p="4"
       w="52"
       bg="white"
@@ -51,14 +55,14 @@ const SideBar: React.FC<StackProps & { onClose: () => void }> = function (props)
       spacing="4"
       alignItems="flex-start"
     >
-      {LINKS.map(({ name, href, icon }) => (
+      {LINKS.map(({ name, href, icon, active }) => (
         <Link
           key={name}
           _hover={{
             textDecoration: "none",
             color: "brand.700",
           }}
-          onClick={props.onClose}
+          onClick={onClose}
           color={router.pathname.includes(href) ? "brand.500" : "gray.800"}
           fontSize="md"
           w="full"
@@ -66,8 +70,11 @@ const SideBar: React.FC<StackProps & { onClose: () => void }> = function (props)
         >
           <HStack spacing="2" w="full">
             <Icon fontSize="xl" as={icon}></Icon>
-            <Text fontSize="md" fontWeight="medium">
+            <Text fontSize="md" fontWeight="medium" position="relative">
               {name}
+              {active && (
+                <Box w="2" h="2" borderRadius="100%" position="absolute" bg="green.500" top="1" left="100%"></Box>
+              )}
             </Text>
           </HStack>
         </Link>
@@ -146,6 +153,7 @@ const DashboardLayout: React.FC = function ({ children }) {
         <Box pos="relative">
           <SideBar
             onClose={onClose}
+            isOpen={isOpen}
             pos={{ base: "absolute", md: "relative" }}
             transition="left 200ms"
             left={{

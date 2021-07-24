@@ -49,6 +49,15 @@ export async function updateVirtualNetwork(uuid: string, data: IUpdateVirtualNet
   return res.data.data;
 }
 
+export async function removeUserFromVirtualNetwork(vnUUID: string, userUUID: string) {
+  let res = await request({
+    url: "/virtual-networks/" + vnUUID + "/users/" + userUUID,
+    method: "DELETE",
+  });
+
+  return res.data.data;
+}
+
 export async function removeDeviceFromVirtualNetwork(vnUUID: string, devUUID: string) {
   let res = await request({
     url: "/virtual-networks/" + vnUUID + "/devices/" + devUUID,

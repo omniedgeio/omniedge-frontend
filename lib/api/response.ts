@@ -68,6 +68,7 @@ export interface IVirtualNetworkResponse {
   uuid: string;
   name: string;
   ip_range: string;
+  role: string;
   server: IServerResponse;
   devices: IVirtualNetworkDeviceResponse[];
   users: IVirtualNetworkUserResponse[];

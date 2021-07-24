@@ -60,6 +60,7 @@ import {
   createInvitationsInVirtualNetwork,
   listInvitationsInVirtualNetwork,
   removeDeviceFromVirtualNetwork,
+  removeUserFromVirtualNetwork,
   retrieveVirtualNetwork,
   revokeInvitationInVirtualNetwork,
 } from "../../../../lib/api/virtualNetwork";
@@ -310,6 +311,7 @@ const VirtualNetworkUsersTable: React.FC<UseQueryResult<IVirtualNetworkResponse 
   data,
   refetch,
 }) {
+  const router = useRouter();
   const isPhone = useBreakpointValue({ base: true, sm: false });
   const variant = useBreakpointValue({ base: "ghost", sm: "solid" });
   const uuid = data?.uuid || null;
@@ -325,21 +327,25 @@ const VirtualNetworkUsersTable: React.FC<UseQueryResult<IVirtualNetworkResponse 
         isOpen={confirmModal.isOpen}
         title="Remove Virtual Network"
         onConfirm={() => {
-          revokeInvitationInVirtualNetwork(uuid as string, userToRemove?.uuid as string).then(() => {
-            refetch();
-            confirmModal.onClose();
+          removeUserFromVirtualNetwork(uuid as string, userToRemove?.uuid as string).then(() => {
+            if (userToRemove?.uuid == user?.uuid) {
+              router.push("/dashboard");
+            } else {
+              refetch();
+              confirmModal.onClose();
+            }
           });
         }}
         onCancel={confirmModal.onClose}
       >
-        Are you sure you want to revoke invitation to <Code>{userToRemove?.name}</Code>?
+        Are you sure you want to remove user <Code>{userToRemove?.name}</Code> from this virtual network?
       </ConfirmModal>
       <Table w="full" maxW="container.sm">
         <Thead>
           <Tr>
             <Th pl="0">{isPhone ? "User" : "Name"}</Th>
             <Th display={["none", "table-cell"]}>Email</Th>
-            <Th display={["none", "table-cell"]}>Action</Th>
+            {isAdmin && data?.users && data?.users?.length > 1 && <Th display={["none", "table-cell"]}>Action</Th>}
           </Tr>
         </Thead>
         <Tbody>
@@ -356,20 +362,20 @@ const VirtualNetworkUsersTable: React.FC<UseQueryResult<IVirtualNetworkResponse 
               </Td>
             </Tr>
           ) : (
-            data?.users?.map((user) => {
+            data?.users?.map((vnUser) => {
               const Name = () => (
                 <Text>
-                  {user.name}
-                  {user.role == "admin" && (
+                  {vnUser.name}
+                  {vnUser.role == "admin" && (
                     <Tag ml={2} size="sm" colorScheme="green">
-                      {user.role}
+                      {vnUser.role}
                     </Tag>
                   )}
                 </Text>
               );
               const Email = () => (
                 <Text fontSize={["sm", "md"]} color={["gray.600", "black"]}>
-                  {user.email}
+                  {vnUser.email}
                 </Text>
               );
 
@@ -386,19 +392,19 @@ const VirtualNetworkUsersTable: React.FC<UseQueryResult<IVirtualNetworkResponse 
                     <MenuItem
                       color="red.500"
                       onClick={() => {
-                        setUserToRemove(user);
+                        setUserToRemove(vnUser);
                         confirmModal.onOpen();
                       }}
                       icon={<FiX />}
                     >
-                      Remove
+                      {user?.uuid == vnUser.uuid ? "Leave" : "Remove"}
                     </MenuItem>
                   </MenuList>
                 </Menu>
               );
 
               return (
-                <Tr key={user.uuid}>
+                <Tr key={vnUser.uuid}>
                   <Td px="0">
                     {!isPhone ? (
                       <Name />
@@ -415,9 +421,11 @@ const VirtualNetworkUsersTable: React.FC<UseQueryResult<IVirtualNetworkResponse 
                   <Td display={["none", "table-cell"]}>
                     <Email />
                   </Td>
-                  <Td display={["none", "table-cell"]}>
-                    <ActionMenu />
-                  </Td>
+                  {isAdmin && data.users.length > 1 && (
+                    <Td display={["none", "table-cell"]}>
+                      <ActionMenu />
+                    </Td>
+                  )}
                 </Tr>
               );
             })

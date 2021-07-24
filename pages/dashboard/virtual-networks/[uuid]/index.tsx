@@ -187,7 +187,8 @@ const CreateInvitationModal: React.FC<{
   isOpen: boolean;
 }> = function ({ uuid, onClose, isOpen }) {
   const [emails, setEmails] = useState<string[]>([]);
-  const { handleChange, handleBlur, handleSubmit, values, touched, errors, isSubmitting } = useFormik({
+  const [isSubmitting, setSubmitting] = useState(false);
+  const { handleChange, handleBlur, handleSubmit, values, touched, errors } = useFormik({
     initialValues: {
       email: "",
     },
@@ -246,20 +247,24 @@ const CreateInvitationModal: React.FC<{
         </ModalBody>
 
         <ModalFooter>
-          <Button variant="ghost" mr={3} onClick={onClose}>
+          <Button variant="ghost" mr={3} onClick={onClose} disabled={isSubmitting}>
             Cancel
           </Button>
           <Button
+            isLoading={isSubmitting}
             colorScheme="brand"
             onClick={() => {
+              setSubmitting(true);
               createInvitationsInVirtualNetwork(uuid, { emails })
                 .then(() => {
                   showSuccess("Invite successfully");
+                  setEmails([]);
                   onClose();
                 })
                 .catch((err) => {
                   showError("Invite failed", err?.data?.message);
-                });
+                })
+                .then(() => setSubmitting(false));
             }}
           >
             Invite

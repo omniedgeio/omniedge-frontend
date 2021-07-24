@@ -31,7 +31,7 @@ const ForgotPasswordVerifyPage: Page = function (props) {
         .required("Required"),
     }),
     onSubmit: (values, actions) => {
-      let token = router.query["sess"] as string;
+      let token = router.query["code"] as string;
       resetPasswordVerify({
         token: token,
         ...values,

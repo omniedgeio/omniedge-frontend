@@ -16,18 +16,15 @@ export function register(data: IRegisterRequest) {
   });
 }
 
-export async function loginByPassword({ email, password }: IPasswordLoginRequest) {
+export async function loginByPassword(data: IPasswordLoginRequest) {
   let res = await request({
     url: "/auth/login/password",
     method: "POST",
-    data: {
-      email,
-      password,
-    },
+    data,
   });
-  let data = res.data.data;
+  let resdata = res.data.data;
   setToken({
-    accessToken: data.token,
+    accessToken: resdata.token,
   });
   return res;
 }

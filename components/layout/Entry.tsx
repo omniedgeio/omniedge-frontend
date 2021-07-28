@@ -41,6 +41,7 @@ const EntryLayout: React.FC = function ({ children }) {
               onSuccess={(e) => {
                 loginByGoogle({
                   id_token: e.getAuthResponse().id_token,
+                  auth_session_uuid: router.query["auth_session_uuid"]?.toString(),
                 })
                   .then(() => {
                     showSuccess(

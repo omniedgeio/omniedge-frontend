@@ -35,9 +35,17 @@ const LoginPage: Page = function (props) {
       password: Yup.string().required("Required"),
     }),
     onSubmit: (values, actions) => {
-      loginByPassword(values)
+      let auth_session_uuid = router.query["auth_session_uuid"]?.toString();
+      loginByPassword({
+        ...(auth_session_uuid ? { auth_session_uuid } : {}),
+        ...values,
+      })
         .then(() => {
-          router.push("/dashboard");
+          if (auth_session_uuid) {
+            router.push("/login_success");
+          } else {
+            router.push("/dashboard");
+          }
         })
         .catch((err) => {
           if (err.data) {

@@ -1,6 +1,6 @@
 import { Center, Divider, Heading, Spinner, Text, VStack } from "@chakra-ui/react";
 import { useRouter } from "next/dist/client/router";
-import { loginByGoogle } from "../../lib/api/auth";
+import { loginByGoogle, notifyAuthSession } from "../../lib/api/auth";
 import { showError, showSuccess } from "../../lib/helpers/toast";
 import { useUser } from "../../lib/hook/useUser";
 import GoogleLogin from "../auth/GoogleLogin";
@@ -12,6 +12,10 @@ const EntryLayout: React.FC = function ({ children }) {
   const { isLoading, user } = useUser(null);
 
   if (user) {
+    let auth_session_uuid = router.query["auth_session_uuid"]?.toString();
+    if (auth_session_uuid) {
+      notifyAuthSession({ auth_session_uuid });
+    }
     router.push("/dashboard/virtual-networks");
   }
 

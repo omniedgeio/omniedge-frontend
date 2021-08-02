@@ -17,7 +17,8 @@ function forceLogout() {
 }
 
 client.interceptors.request.use((config: AxiosRequestConfig) => {
-  if (!config.url?.match(/^\/auth\/*/)) {
+  if (!config.url?.match(/^\/auth\/*/) || config.url == "/auth/login/session/notify") {
+    console.log(config.url);
     const token = getToken();
     if (token.accessToken) {
       config.headers["Authorization"] = "Bearer " + token.accessToken;

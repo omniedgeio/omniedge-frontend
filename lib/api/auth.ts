@@ -1,6 +1,7 @@
 import { setToken } from "../helpers/token";
 import request from "./client";
 import {
+  IAuthSessionRequest,
   IGoogleLoginRequest,
   IPasswordLoginRequest,
   IRegisterRequest,
@@ -40,6 +41,16 @@ export async function loginByGoogle(data: IGoogleLoginRequest) {
     accessToken: responseData.token,
   });
   return res;
+}
+
+export async function notifyAuthSession(data: IAuthSessionRequest) {
+  let res = await request({
+    url: "/auth/login/session/notify",
+    method: "POST",
+    data,
+  });
+
+  return res.data.data;
 }
 
 export async function resetPassword(data: IResetPasswordRequest) {

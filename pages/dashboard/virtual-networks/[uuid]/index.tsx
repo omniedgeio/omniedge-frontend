@@ -508,7 +508,7 @@ const VirtualNetworkDevicesTable: React.FC<UseQueryResult<IVirtualNetworkRespons
                   {device.virtual_ip}
                 </Code>
               );
-              const OS = () => <Text fontSize="sm">Unknown</Text>;
+              const OS = () => <Text fontSize="sm">{device.os}</Text>;
 
               const ActionMenu = () => (
                 <Menu placement="bottom-end">

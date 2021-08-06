@@ -78,6 +78,7 @@ export interface IVirtualNetworkDeviceResponse {
   uuid: string;
   name: string;
   virtual_ip: string;
+  os: string;
   last_seen: Date;
   online: boolean;
 }

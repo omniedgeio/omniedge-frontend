@@ -66,7 +66,7 @@ const DefaultLayout: React.FC<{}> = (props) => {
             alignItems={["flex-start", "center"]}
             direction={["column", "row"]}
           >
-            <Link href="/">Quickstart</Link>
+            <Link href="/pricing">Pricing</Link>
             <Link href="/">Docs</Link>
             <Link href="/">Blog</Link>
             <Link href="/">About us</Link>

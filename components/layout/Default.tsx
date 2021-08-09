@@ -30,12 +30,14 @@ const DefaultLayout: React.FC<{}> = (props) => {
           borderBottom="1px"
           borderBottomColor="gray.100"
         >
-          <HStack>
-            <Logo height="8" />
-            <Heading fontWeight="semibold" size="md" as="h6">
-              OmniEdge
-            </Heading>
-          </HStack>
+          <Link href="/">
+            <HStack>
+              <Logo height="8" />
+              <Heading fontWeight="semibold" size="md" as="h6">
+                OmniEdge
+              </Heading>
+            </HStack>
+          </Link>
           <IconButton
             aria-label="menu"
             borderRadius="md"
@@ -54,12 +56,14 @@ const DefaultLayout: React.FC<{}> = (props) => {
           borderBottomColor="gray.100"
           display={[isNavBarOpen ? "flex" : "none", "flex"]}
         >
-          <HStack display={["none", "flex"]}>
-            <Logo height="8" />
-            <Heading fontWeight="semibold" size="md" as="h6">
-              OmniEdge
-            </Heading>
-          </HStack>
+          <Link href="/" _hover={{ color: "inherit" }}>
+            <HStack display={["none", "flex"]}>
+              <Logo height="8" />
+              <Heading fontWeight="semibold" size="md" as="h6">
+                OmniEdge
+              </Heading>
+            </HStack>
+          </Link>
           <Stack
             spacing={["2", "5"]}
             mb={["4", "0"]}
@@ -67,7 +71,7 @@ const DefaultLayout: React.FC<{}> = (props) => {
             direction={["column", "row"]}
           >
             <Link href="/pricing">Pricing</Link>
-            <Link href="/">Docs</Link>
+            <Link href="/docs">Docs</Link>
             <Link href="/">Blog</Link>
             <Link href="/">About us</Link>
           </Stack>

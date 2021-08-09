@@ -21,6 +21,7 @@ const Link: FC<NextLinkProps & ChakraLinkProps> = (props) => {
         }}
         _hover={{
           textDecoration: "none",
+          color: "brand.500",
         }}
         {...chakraLink}
       >

@@ -2,14 +2,19 @@ import { ChakraProvider } from "@chakra-ui/react";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { QueryClient, QueryClientProvider } from "react-query";
+import DocLayout from "../components/layout/Doc";
 import theme from "../lib/theme";
+import "../styles/globals.css";
 import { Page } from "../types";
 type AppWithLayoutProps = {
   Component: Page;
 } & AppProps;
 
 function App({ Component, pageProps }: AppWithLayoutProps) {
-  const Layout = Component.layout || (({ children }) => <>{children}</>);
+  let Layout = Component?.isMDXComponent
+    ? DocLayout // Doc page
+    : Component.layout || (({ children }) => <>{children}</>); // Non-doc page
+
   const queryClient = new QueryClient();
 
   return (

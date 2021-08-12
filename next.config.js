@@ -11,12 +11,12 @@ module.exports = withMDX({
         destination: "/dashboard/virtual-networks",
         permanent: true,
       },
-      {
-        source: "/docs",
-        destination: "/docs/admin",
-        permanent: true,
-      },
+      // {
+      //   source: "/docs",
+      //   destination: "/docs/article/admin",
+      //   permanent: true,
+      // },
     ];
   },
-  pageExtensions: ["ts", "tsx", "mdx"],
+  pageExtensions: ["ts", "tsx", "mdx","md"],
 });

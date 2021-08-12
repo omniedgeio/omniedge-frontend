@@ -41,13 +41,3 @@ Click `Eject` when finished
 >Please notice the numder`4`in `/dev/disk4` and `/dev/rdisk4`.
 
 
-https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit
-
-##  Big Data Transferring
-##  OmniEdge with Pi Hole
-##  OmniEdge with Kubernetes
-##  OmniEdge with Docers
-##  OmniEdge with Seafile
-##  OmniEdge with NAS
-##  OmniEdge replace frp and ngrok
-

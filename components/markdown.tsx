@@ -23,7 +23,7 @@ const Markdown: FunctionComponent<IProps> = ({content}) => {
         }
     }
 
-	return <ReactMarkdown components={components} children={content} />
+	return(<> <ReactMarkdown components={components} children={content} /></>)
 }
 
 export default Markdown;

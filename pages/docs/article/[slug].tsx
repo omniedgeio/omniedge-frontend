@@ -1,5 +1,5 @@
 /* eslint-disable react/display-name */
-import { Flex, Heading,VStack } from "@chakra-ui/react";
+import { Flex, Heading,VStack,Divider } from "@chakra-ui/react";
 import Docconent from '../../../components/Docconent';
 import {Docnavs} from '../../../components/Docnav';
 import matter from 'gray-matter';
@@ -18,7 +18,8 @@ const DocLayout: FunctionComponent<IProps> = ({ article,articles }) => {
     <DefaultLayout>
       <Flex mt={5} flexDirection={{ base: "column", md: "row" }}>
         <VStack mb={{ base: 10, md: 0 }} flexShrink={0} spacing={4} w="175px" pr={2} alignItems="start">
-          <Heading fontSize="md">DOCS</Heading>
+          <Heading fontSize="md">DOCS > {article.meta.title}</Heading>
+          <Divider />
           <Docnavs articles={articles} /> 
         </VStack>
             <Docconent article={article} />

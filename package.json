@@ -36,6 +36,7 @@
     "react-markdown": "^6.0.3",
     "react-query": "^3.18.1",
     "react-syntax-highlighter": "^15.4.4",
+    "remark-gfm": "^2.0.0",
     "vivus": "^0.4.6",
     "yup": "^0.32.9",
     "yup-password": "^0.2.1"

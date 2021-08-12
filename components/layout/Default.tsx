@@ -1,5 +1,7 @@
 import {
   Box,
+  Text,
+  Divider,
   Button,
   Container,
   Flex,
@@ -94,10 +96,46 @@ const DefaultLayout: React.FC<{}> = (props) => {
             )}
           </HStack>
         </Flex>
+        <Divider />
       </nav>
       <main>
         <Box px={["4", "0"]}>{props.children}</Box>
       </main>
+      <Divider />
+      <Flex
+          py="4"
+          px={["4", "0"]}
+          direction={["column", "row"]}
+          alignContent="center"
+          justifyContent="space-between"
+          borderBottom={["1px", "0"]}
+          borderBottomColor="gray.100"
+          display={[isNavBarOpen ? "flex" : "none", "flex"]}
+        >
+          <Stack>
+          <HStack display={["none", "flex"]}>
+          <Logo height="8" />
+          <Heading fontWeight="semibold" size="md" as="h6">
+          OmniEdge
+          </Heading>
+          </HStack>
+          <Text fontSize="sm">2021 OmniEdge Inc.</Text>
+          <HStack fontSize="sm">
+          <Link href="/">Privacy</Link> <Text>&</Text><Link href="/">Terms</Link>
+          </HStack>
+          </Stack>
+          <Stack
+            spacing={["2", "5"]}
+            mb={["4", "0"]}
+            alignItems={["flex-start", "center"]}
+            direction={["column", "row"]}
+          >
+            <Link href="/docs">Docs</Link>
+            <Link href="/blog">Blog</Link>
+            <Link href="/about">About</Link>
+          </Stack>
+        </Flex>
+
     </Container>
   );
 };

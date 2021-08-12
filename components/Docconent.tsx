@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
-import { Box, Flex, Heading, Table, Td, Text, Th, Tr, VStack } from "@chakra-ui/react";
+import { Box,Heading, Table, Td, Text, Th, Tr, VStack } from "@chakra-ui/react";
 import { ArticleMeta } from "./interfaces/article";
 import { MDXProvider } from "@mdx-js/react";
 import React, { useEffect, useState } from "react";

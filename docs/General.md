@@ -100,6 +100,3 @@ OS: AWS Linux 2 AMI
 - The OmniEdge Evalution can reach 554 Mbit/s.
 - The new OmniEdge version can reach 3470 Mbit/s. 
 
-
-##  Security
-##  Supported Identity Providers(Google)

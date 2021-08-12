@@ -44,6 +44,7 @@
   "devDependencies": {
     "@types/date-fns": "^2.6.0",
     "@types/react": "17.0.13",
+    "@types/react-syntax-highlighter": "^13.5.2",
     "@types/vivus": "^0.4.3",
     "eslint": "7.29.0",
     "eslint-config-next": "11.0.1",

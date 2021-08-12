@@ -7,7 +7,7 @@ index: 3
 
 # Installation
 
-## 1. Get Started with OmniEdge
+## 1. Get Started
 
 + Sign up your account with your email and password: [Sign up](https://dev.omniedge.io/register)
 + Download OmniEdge
@@ -15,7 +15,7 @@ index: 3
 + Log in and join your own network
 + Test your connection.
 
-## 2. Installing OmniEdge on Windows
+## 2. Installing on Windows
 OmniEdge Windows is compatible with Windows 7,10(arm) & Windows Server 2016,2019. `Last update: Version 0.1.4, April 18, 2021.`
 
 [Download OmniEdge Windows for 7 or later](https://github.com/omniedgeio/omniedge-windows-update/releases/download/v0.1.2/omniedge-setup-0.1.2.exe)
@@ -25,7 +25,7 @@ OmniEdge Windows is compatible with Windows 7,10(arm) & Windows Server 2016,2019
 3. Sign in with your email address
 4. Click "Connect" in the menu bar from the tray icon. After a pop up disappears, a secure VPN connection is initialized.
 
-## 3. Installing OmniEdge on MacOS
+## 3. Installing on MacOS
 OmniEdge MacOS is compatible with intel Macbook, macOS 10 or later Last update: Version 0.1.7, April 3, 2021.
 
 [Download OmniEdge for macOS 10 or later](https://raw.githubusercontent.com/omniedgeio/omniedge-mac/master/Omniedge.dmg)
@@ -35,17 +35,13 @@ OmniEdge MacOS is compatible with intel Macbook, macOS 10 or later Last update: 
 
     2.1 For Intel Mac User: **Install tuntap by clicking tuntap_20150118.pkg**
 
-    2.2. M1 Mac user: 
-    ```
-    Download https://github.com/Tunnelblick/Tunnelblick/tree/master/third_party/tap-notarized.kext and 
-    https://github.com/Tunnelblick/Tunnelblick/tree/master/third_party/tun-notarized.kext
-    then copy to **/Library/Extensions **, restart Mac after allowing the security check. 
-    ```
+    2.2. M1 Mac user: Download `https://github.com/Tunnelblick/Tunnelblick/tree/master/third_party/tap-notarized.kext` and `https://github.com/Tunnelblick/Tunnelblick/tree/master/third_party/tun-notarized.kext`, then copy to **/Library/Extensions**, restart Mac after allowing the security check. 
+
 3. Drop Omniedge to Applications folder
 4. Run OmniEdge
 5. Sign in with your email address
 6. Click the button near 'off' to connect, then a secure VPN connection is initialized.
-## 4. Installing OmniEdge on Android
+## 4. Installing on Android
 
 OmniEdge Android is compatible with Android 6 or later mobile phone or TV. Last update: Version 0.1.3, April 27, 2021.
 
@@ -56,7 +52,7 @@ OmniEdge Android is compatible with Android 6 or later mobile phone or TV. Last 
 3. Click the connect button
 4. Allow to install a VPN configuration
 5. Enjoy the secure VPN connection
-## 5. Installing OmniEdge on Linux
+## 5. Installing on Linux
 OmniEdge Linux Cli is Compatible with linux for AMD64,ArmV7 and Arm64V8, Archlinux, OMV(Debian 9), Synology NAS,Ubuntu 16.04/18.04/20.04, CentOS 7/8, Debian 9/10, Fedora 32 Last update: Version 0.1.0, May 10, 2021.
 
 [Download OmniEdge Linux Cli](https://github.com/omniedgeio/omniedge-linux-cli/releases)
@@ -84,9 +80,9 @@ sudo omniedge join
 ```
 3. Wait a second and a secure VPN will be established
 
-## 6. Installing OmniEdge on iOS
+## 6. Installing on iOS
 Coming Soon
-## 7. Installing OmniEdge on Raspberry Pi
+## 7. Installing on Raspberry Pi
 OmniEdge Raspberry Pi is Compatible with Rapsberry PI 1B, 3B, 3B+ Last update: Version 0.1.0, April 25, 2021.
 
 [OmniEdge Raspberry Pi(https://github.com/omniedgeio/omniedge-linux-cli/releases/download/v0.1.0/omniedge_arm.zip)
@@ -107,7 +103,7 @@ sudo omniedge join
 
 4. Wait a second and a secure VPN will be established
 
-## 8. Installing OmniEdge on Synology NAS
+## 8. Installing on Synology NAS
 OmniEdge Synology is Compatible with Synology with amd64 CPU Last update: Version , April 25, 2021.
 
 [Download OmniEdge Synology](https://github.com/omniedgeio/omniedge-synology/releases/download/v0.1.0/omniedge_0.1.0_amd64.spk)
@@ -123,7 +119,7 @@ sudo omniedge join
 
 4. Wait a second and a secure VPN will be established
 
-## 9. Installing OmniEdge on Router
+## 9. Installing on Router
 Coming Soon
-## 10. Unnstalling OmniEdge
+## 10. Uninstalling OmniEdge
 ## 11. Updating OmniEdge

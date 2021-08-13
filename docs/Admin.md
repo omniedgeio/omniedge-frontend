@@ -1,12 +1,11 @@
 ---
-title: Admin
+title: Dashboard
 description:
-route: Doc / Admin 
+route: Doc / Dashboard 
 index: 0
 ---
 
-
-# Admin
+# Dashboard Admin
 
 You can access the admin dashboard by logining OmniEdge, there are `Virtual Network`, `Devices`, `Security Key` and `Settings` pages you can manage your service.
 ## 1. Virtual Network

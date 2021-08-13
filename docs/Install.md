@@ -4,7 +4,6 @@ description: Install OmniEdge on Windows, macOS, iOS, Linux, Android and more.
 route: Doc / Install
 index: 3
 ---
-
 # Installation
 
 ## 1. Get Started

@@ -1,7 +1,6 @@
 /* eslint-disable react/display-name */
 import { Flex, Heading,VStack,Divider } from "@chakra-ui/react";
-import Docconent from '../../../components/Docconent';
-import {Docnavs} from '../../../components/Docnav';
+import {Docnavs,Docconent} from '../../../components/Document';
 import matter from 'gray-matter';
 import fs from 'fs';
 import DefaultLayout from "../../../components/layout/Default";

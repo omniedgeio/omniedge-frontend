@@ -1,18 +1,37 @@
 import { FunctionComponent } from "react";
-import { Box,Heading, Table, Td, Text, Th, Tr, VStack } from "@chakra-ui/react";
 import { ArticleMeta } from "./interfaces/article";
+import { Box,Heading, Table, Td, Text, Th, Tr, VStack,Link } from "@chakra-ui/react";
 import { MDXProvider } from "@mdx-js/react";
 import React, { useEffect, useState } from "react";
-import { Link} from "@chakra-ui/react"
-import Markdown from "./markdown"
+import ReactMarkdown from 'react-markdown';
+
 interface IProps {
-	article: ArticleMeta;
+	article: ArticleMeta; 
+	articles: ArticleMeta[];
 }
 
+export const Docnav: FunctionComponent<IProps> = ({ article }) => {
+	return (
+        <Link href={`/docs/article/${article.slug}`} color="gray.500" fontWeight="medium">
+        {article.title}
+      </Link>
+	);
+}
+
+export const Docnavs: FunctionComponent<IProps> = ({ articles }) => {
+	return (<>
+    {articles.sort().map((article, i) => (
+      <Link href={`/docs/article/${article.slug}`} color="gray.500" fontWeight="medium">
+      {article.title}
+    </Link>
+  ))}
+  </>
+	);
+}
 
 const getHrefFromText = (text: string) => text.toLowerCase().replace(/[^a-z]+/gi, "-");
 
-const Docconent: FunctionComponent<IProps> = ({ article }) => {
+export const Docconent: FunctionComponent<IProps> = ({ article }) => {
   
   let [data, setContent] = useState<Element[]>([]);
   useEffect(() => {
@@ -46,11 +65,11 @@ const Docconent: FunctionComponent<IProps> = ({ article }) => {
     }}
   >
     <Box maxW="800px" className="markdown" px={{ base: 0, md: 10 }}>
-    <Markdown content={article.content} />
+    <ReactMarkdown children={article.content} />
     </Box>
   </MDXProvider>
   <VStack flexShrink={0} w="250px" display={{ base: "none", lg: "flex" }} alignItems="start" pl={2}>
-    <Text color="gray.500" fontSize="sm">
+    <Text color="gray.500" fontSize="md">
       On This Page
     </Text>
     {data.map((x) => (
@@ -62,5 +81,3 @@ const Docconent: FunctionComponent<IProps> = ({ article }) => {
   </>
 	);
 }
-
-export default Docconent;

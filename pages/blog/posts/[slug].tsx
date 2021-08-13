@@ -17,9 +17,9 @@ const DocLayout: FunctionComponent<IProps> = ({ article,articles }) => {
     <DefaultLayout>
       <Flex mt={5} flexDirection={{ base: "column", md: "row" }}>
         <VStack mb={{ base: 10, md: 0 }} flexShrink={0} spacing={4} w="175px" pr={2} alignItems="start">
-          <Heading fontSize="md">BLOG > {article.meta.title}</Heading>
-          <Divider />
-          <Postnavs articles={articles} /> 
+          {/* <Heading fontSize="md">BLOG > {article.meta.title}</Heading> */}
+          {/* <Divider /> */}
+          {/* <Postnavs articles={articles} />  */}
         </VStack>
             <Postconent article={article} />
       </Flex>

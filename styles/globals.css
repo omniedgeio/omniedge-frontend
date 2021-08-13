@@ -12,6 +12,103 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.article_container {
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  width: 105px;
+}
+
+.selected {
+  background-color: #4859ED;
+}
+
+.selected .iconText {
+  color: white;
+}
+
+.downloadCaption {
+  font-family: "San Francisco", Inter, serif;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 22px;
+  color: #AEAEB2;
+  margin: 24px 0;
+  padding-bottom: 64px;
+  border-bottom: 1px solid #F5F5F5;
+  width: 100%;
+}
+.downloadButton {
+  background-color: #4859ED;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 16px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  max-width: 320px;
+}
+.qrCodeContainer {
+  margin-top: 1em;
+  text-align: center;
+}
+
+.qrCodeButton {
+  padding: 4px 8px;
+  border-radius: 8px;
+  margin-left: 2px;
+}
+
+.qrCodeButton:hover {
+  color: white;
+  background-color: #4859ed;
+}
+
+.qrCode {
+  margin: 8px auto 0;
+}
+
+.description {
+  white-space: pre-wrap;
+  text-align: left;
+  margin: 0.5rem 0;
+}
+
+.description a {
+  color: #4859ed;
+}
+
+.description a:hover {
+  text-decoration: underline;
+}
+
+.instructionGif {
+  width: 100%;
+}
+
+.descriptionLine {
+  margin-top: 4px;
+}
+
+.playerWrapper {
+  position: relative;
+  padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) */
+  margin-top: 20px;
+}
+
+.reactPlayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .markdown a {
     color:#162BE1;
     text-shadow: #6a737d;

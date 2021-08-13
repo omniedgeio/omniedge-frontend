@@ -29,6 +29,7 @@
     "load-script": "^1.0.0",
     "mdx": "^0.3.1",
     "next": "11.0.1",
+    "qrcode.react": "^1.0.1",
     "react": "17.0.2",
     "react-country-flag": "^2.3.1",
     "react-dom": "^17.0.2",
@@ -43,11 +44,16 @@
   },
   "devDependencies": {
     "@types/date-fns": "^2.6.0",
+    "@types/qrcode.react": "^1.0.2",
     "@types/react": "17.0.13",
     "@types/react-syntax-highlighter": "^13.5.2",
     "@types/vivus": "^0.4.3",
     "eslint": "7.29.0",
     "eslint-config-next": "11.0.1",
+    "next-seo": "^4.26.0",
+    "platform-detect": "^3.0.1",
+    "react-code-blocks": "^0.0.9-0",
+    "react-player": "^2.9.0",
     "typescript": "4.3.5"
   }
 }

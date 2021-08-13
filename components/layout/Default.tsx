@@ -19,8 +19,6 @@ import { FiMenu, FiX } from "react-icons/fi";
 import { useUser } from "../../lib/hook/useUser";
 import Logo from "../Logo";
 import Link from "../next/Link";
-import {FaTwitter,FaGithub,FaMedium,FaYoutube } from "react-icons/fa";
-import {MdEmail, MdLocationOn } from "react-icons/md";
 
 const DefaultLayout: React.FC<{}> = (props) => {
   const [isNavBarOpen, setNavBarOpen] = useBoolean(false);
@@ -77,6 +75,7 @@ const DefaultLayout: React.FC<{}> = (props) => {
             direction={["column", "row"]}
           >
             <Link href="/pricing">Pricing</Link>
+            <Link href="/download">Download</Link>
             <Link href="/docs">Docs</Link>
             <Link href="/blog">Blog</Link>
             <Link href="/">About</Link>

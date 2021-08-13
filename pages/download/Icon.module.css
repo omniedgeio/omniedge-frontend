@@ -1,0 +1,19 @@
+.icon {
+    width: 60px;
+    height: 65px;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.selected {
+    background-color: #4859ED;
+    border-radius:10px;
+    
+    margin: auto;
+}
+
+.selected .iconText {
+    color: white;
+    
+}

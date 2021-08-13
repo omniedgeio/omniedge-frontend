@@ -1,5 +1,5 @@
 /* eslint-disable react/display-name */
-import { Flex, Heading,VStack } from "@chakra-ui/react";
+import { Flex,VStack } from "@chakra-ui/react";
 import {Postcard} from '../../components/Document';
 import matter from 'gray-matter';
 import fs from 'fs';

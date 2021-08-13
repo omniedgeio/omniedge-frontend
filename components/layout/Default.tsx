@@ -10,13 +10,17 @@ import {
   IconButton,
   Skeleton,
   Stack,
+  Icon,
   useBoolean,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import React from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { useUser } from "../../lib/hook/useUser";
 import Logo from "../Logo";
 import Link from "../next/Link";
+import {FaTwitter,FaGithub,FaMedium,FaYoutube } from "react-icons/fa";
+import {MdEmail, MdLocationOn } from "react-icons/md";
 
 const DefaultLayout: React.FC<{}> = (props) => {
   const [isNavBarOpen, setNavBarOpen] = useBoolean(false);
@@ -75,7 +79,7 @@ const DefaultLayout: React.FC<{}> = (props) => {
             <Link href="/pricing">Pricing</Link>
             <Link href="/docs">Docs</Link>
             <Link href="/blog">Blog</Link>
-            <Link href="/">About us</Link>
+            <Link href="/">About</Link>
           </Stack>
           <HStack>
             {isLoading && <Skeleton h="8" w="20"></Skeleton>}
@@ -124,6 +128,7 @@ const DefaultLayout: React.FC<{}> = (props) => {
           <Link href="/">Privacy</Link> <Text>&</Text><Link href="/">Terms</Link>
           </HStack>
           </Stack>
+
           <Stack
             spacing={["2", "5"]}
             mb={["4", "0"]}
@@ -134,7 +139,9 @@ const DefaultLayout: React.FC<{}> = (props) => {
             <Link href="/blog">Blog</Link>
             <Link href="/about">About</Link>
           </Stack>
+          
         </Flex>
+        
 
     </Container>
   );

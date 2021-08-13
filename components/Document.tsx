@@ -188,7 +188,7 @@ export const Postcard: FunctionComponent<IProps> = ({ article }) => {
         rounded="lg"
         shadow="md"
         bg={useColorModeValue("white", "gray.800")}
-        maxW="2lg"
+        maxW="3xl"
       >
         <Image
           roundedTop="lg"

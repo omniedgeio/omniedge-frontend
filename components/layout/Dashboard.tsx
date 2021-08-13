@@ -25,7 +25,7 @@ import { useQuery } from "react-query";
 import { listInvitations } from "../../lib/api/invitations";
 import { clearToken } from "../../lib/helpers/token";
 import { useUser } from "../../lib/hook/useUser";
-import Brand from "../Brand";
+import {Brand} from "../Brand";
 import Link from "../next/Link";
 import NoSSR from "../next/NoSSR";
 

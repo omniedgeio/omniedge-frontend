@@ -68,7 +68,9 @@ const PricingPage: Page = () => {
           </VStack>
         </VStack>
       </HStack>
+      <br></br>
     </VStack>
+    
   );
 };
 

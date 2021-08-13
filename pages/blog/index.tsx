@@ -1,11 +1,12 @@
 /* eslint-disable react/display-name */
 import { Flex, Heading,VStack } from "@chakra-ui/react";
-import {Postnavs,Postcard} from '../../components/Document';
+import {Postcard} from '../../components/Document';
 import matter from 'gray-matter';
 import fs from 'fs';
 import DefaultLayout from "../../components/layout/Default";
 import React,{FunctionComponent } from 'react'
 import { ArticleInfo } from '../../components/interfaces/article'
+import {Social} from "../../components/Brand";
 
 interface IProps {
     articles: ArticleInfo[];
@@ -13,14 +14,20 @@ interface IProps {
 
 const BlogLayout: FunctionComponent<IProps> = ({ articles }) => {
   return (
-    <DefaultLayout>
+
+<DefaultLayout>
+<Flex mt={5} flexDirection={{ base: "column", md: "row" }}>
       <Flex mt={5} flexDirection={{ base: "row", md: "column" }}>
-      <Heading fontSize="md">BLOG</Heading>
       {articles.sort().map((article, i) => (
             <Postcard article={article} />
         ))}
       </Flex>
+      <VStack mb={{ base: 10, md: 0 }} flexShrink={0} spacing={4} w="175px" pr={2} alignItems="start">
+          <Social />
+        </VStack>
+      </Flex>
     </DefaultLayout>
+
   );
 };
 export async function getStaticProps() {

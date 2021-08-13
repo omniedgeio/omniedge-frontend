@@ -1,35 +1,34 @@
 /* eslint-disable react/display-name */
 import { Flex, Heading,VStack } from "@chakra-ui/react";
-import {Docnavs,Docconent} from '../../components/Document';
+import {Postnavs,Postcard} from '../../components/Document';
 import matter from 'gray-matter';
 import fs from 'fs';
 import DefaultLayout from "../../components/layout/Default";
 import React,{FunctionComponent } from 'react'
-import { ArticleMeta } from '../../components/interfaces/article'
+import { ArticleInfo } from '../../components/interfaces/article'
 
 interface IProps {
-    articles: ArticleMeta[];
+    articles: ArticleInfo[];
 }
 
-const DocLayout: FunctionComponent<IProps> = ({ articles }) => {
+const BlogLayout: FunctionComponent<IProps> = ({ articles }) => {
   return (
     <DefaultLayout>
-      <Flex mt={5} flexDirection={{ base: "column", md: "row" }}>
-        <VStack mb={{ base: 10, md: 0 }} flexShrink={0} spacing={4} w="175px" pr={2} alignItems="start">
-          <Heading fontSize="md">DOCS</Heading>
-            <Docnavs articles={articles} /> 
-        </VStack>
-            <Docconent key={0} article={articles[0]} />
+      <Flex mt={5} flexDirection={{ base: "row", md: "column" }}>
+      <Heading fontSize="md">BLOG</Heading>
+      {articles.sort().map((article, i) => (
+            <Postcard article={article} />
+        ))}
       </Flex>
     </DefaultLayout>
   );
 };
 export async function getStaticProps() {
-    const files = fs.readdirSync("markdowndocs/Docs");
+    const files = fs.readdirSync("markdowndocs/Posts");
     
     let articles = files.map(file => {
         const data = fs
-            .readFileSync(`markdowndocs/Docs/${file}`)
+            .readFileSync(`markdowndocs/Posts/${file}`)
             .toString();
         let info=matter(data);
         return {
@@ -48,4 +47,4 @@ export async function getStaticProps() {
 
 
 
-export default DocLayout;
+export default BlogLayout;

@@ -6,7 +6,6 @@ interface ArticleMeta {
 	description: string;
 	thumbnail: string;
 	date:Date;
-	content: string;
 	route:String;
 	index: BigInteger;
 }

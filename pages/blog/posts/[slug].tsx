@@ -1,6 +1,6 @@
 /* eslint-disable react/display-name */
 import { Flex, Heading,VStack,Divider } from "@chakra-ui/react";
-import {Docnavs,Docconent} from '../../../components/Document';
+import {Postnavs,Postconent} from '../../../components/Document';
 import matter from 'gray-matter';
 import fs from 'fs';
 import DefaultLayout from "../../../components/layout/Default";
@@ -17,21 +17,21 @@ const DocLayout: FunctionComponent<IProps> = ({ article,articles }) => {
     <DefaultLayout>
       <Flex mt={5} flexDirection={{ base: "column", md: "row" }}>
         <VStack mb={{ base: 10, md: 0 }} flexShrink={0} spacing={4} w="175px" pr={2} alignItems="start">
-          <Heading fontSize="md">DOCS > {article.meta.title}</Heading>
+          <Heading fontSize="md">BLOG > {article.meta.title}</Heading>
           <Divider />
-          <Docnavs articles={articles} /> 
+          <Postnavs articles={articles} /> 
         </VStack>
-            <Docconent article={article} />
+            <Postconent article={article} />
       </Flex>
     </DefaultLayout>
   );
 };
 export async function getStaticProps({ ...ctx }) {
     
-    const files = fs.readdirSync("markdowndocs/Docs");
+    const files = fs.readdirSync("markdowndocs/Posts");
     let articles = files.map(file => {
         const data = fs
-            .readFileSync(`markdowndocs/Docs/${file}`)
+            .readFileSync(`markdowndocs/Posts/${file}`)
             .toString();
         let info=matter(data);
         return {
@@ -44,7 +44,7 @@ export async function getStaticProps({ ...ctx }) {
     const { slug } = ctx.params;
 
     const content = fs
-        .readFileSync(`markdowndocs/Docs/${slug}.md`)
+        .readFileSync(`markdowndocs/Posts/${slug}.md`)
         .toString();
 
     const info = matter(content);
@@ -66,7 +66,7 @@ export async function getStaticProps({ ...ctx }) {
 }
 
 export async function getStaticPaths() {
-    const files = fs.readdirSync("markdowndocs/Docs");
+    const files = fs.readdirSync("markdowndocs/Posts");
     const paths = files.map(file => ({
         params: {
             slug: file.split('.')[0]

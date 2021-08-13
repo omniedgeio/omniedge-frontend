@@ -74,7 +74,7 @@ const DefaultLayout: React.FC<{}> = (props) => {
           >
             <Link href="/pricing">Pricing</Link>
             <Link href="/docs">Docs</Link>
-            <Link href="/">Blog</Link>
+            <Link href="/blog">Blog</Link>
             <Link href="/">About us</Link>
           </Stack>
           <HStack>

@@ -143,6 +143,7 @@ export const Postconent: FunctionComponent<IProps> = ({ article }) => {
 				overflow={'hidden'}
 				>
       <Center>  <Heading>{article.meta.title}</Heading></Center>
+      <br></br>
       <Center>
       <Stack direction={'row'} spacing={1} fontSize={'sm'}>
       <Avatar
@@ -154,7 +155,7 @@ export const Postconent: FunctionComponent<IProps> = ({ article }) => {
         <Text color={'gray.500'}>{article.meta.date}</Text>
       </Stack>
       </Center>
-    
+      <br></br>
     <Box maxW="800px" className="markdown" px={{ base: 0, md: 10 }}>
     <ReactMarkdown children={article.content} />
     </Box>
@@ -203,9 +204,9 @@ export const Postcard: FunctionComponent<IProps> = ({ article }) => {
             <chakra.span
               fontSize="xs"
               textTransform="uppercase"
-              color={useColorModeValue("brand.600", "brand.400")}
+              // color={useColorModeValue("brand.600", "brand.400")}
             >
-              Blog
+              
             </chakra.span>
             <Link
               display="block"

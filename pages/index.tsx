@@ -17,7 +17,7 @@ import {FeaturePage,How,Heros,Users, Whyus} from "../components/Features";
 
 const Home: Page = (props) => {
   return (
-    <VStack spacing={["8", "12"]} alignItems="stretch">
+    <>
       <Box as="header" py={["6", "12", "36"]} position="relative">
         <Stack
           direction={{ base: "column", md: "row" }}
@@ -85,8 +85,8 @@ const Home: Page = (props) => {
       <Users />
       <Whyus />
       <Heros />
-      
-    </VStack>
+      </>
+    
   );
 };
 

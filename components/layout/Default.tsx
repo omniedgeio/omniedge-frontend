@@ -102,7 +102,7 @@ const DefaultLayout: React.FC<{}> = (props) => {
         <Divider />
       </nav>
       <main>
-        <Box px={["4", "0"]}>{props.children}</Box>
+        {props.children}
       </main>
       <Divider />
       <Flex

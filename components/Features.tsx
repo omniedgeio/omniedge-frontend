@@ -1,6 +1,7 @@
 import React from "react";
 import {
   chakra,
+  Link,
   Icon,
   Box,
   BoxProps,
@@ -8,7 +9,6 @@ import {
   Button,
   Code,
   Flex,
-  FormLabel,
   Heading,
   HStack,
   useColorModeValue,
@@ -19,8 +19,11 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { Page } from "../types";
-import { FaAndroid, FaApple, FaLinux, FaWindows } from "react-icons/fa";
-import { FiDatabase, FiMonitor, FiServer } from "react-icons/fi";
+import { FaAndroid, FaApple, FaLinux, FaBuilding,FaWindows,FaConnectdevelop,FaRocket } from "react-icons/fa";
+import { FiDatabase, FiMonitor, FiServer,FiSettings } from "react-icons/fi";
+import { GiAutoRepair,GiPeanut,GiFactory,GiHospital,GiBank,GiCargoCrate,GiMissileLauncher } from "react-icons/gi";
+import { AiOutlineSafety } from "react-icons/ai";
+ 
 import Logo from "../components/Logo";
 
 interface StepIconFrameProps {
@@ -219,20 +222,20 @@ export const How = (props) => {
                 <Text>We currently support various platforms. You can download them here.</Text>
                 <HStack spacing="4" color="gray.500">
                   <HStack>
-                    <FaLinux />
-                    <Text>Linux</Text>
+                  <FaLinux />
+                  <Link href="/download/linuxcli"><Text>Linux</Text></Link>
                   </HStack>
                   <HStack>
                     <FaWindows />
-                    <Text>Windows</Text>
+                    <Link href="/download/windows" w="full"><Text>Windows</Text></Link>
                   </HStack>
                   <HStack>
                     <FaApple />
-                    <Text>Mac</Text>
+                    <Link href="/download/macos" w="full"><Text>Mac</Text></Link>
                   </HStack>
                   <HStack>
                     <FaAndroid />
-                    <Text>Android</Text>
+                    <Link href="/download/android" w="full"><Text>Android</Text></Link>
                   </HStack>
                 </HStack>
               </Step>
@@ -264,11 +267,11 @@ export const Feature = (props) => {
           h={12}
           w={12}
           rounded="md"
-          // bg={useColorModeValue("brand.500")}
+          bg={useColorModeValue("brand.500")}
           color="white"
         >
           <Icon
-            boxSize={6}
+            boxSize={10}
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -298,8 +301,8 @@ export const Feature = (props) => {
 export const FeaturePage: Page = () => {
   return (
     <Flex
-      bg={useColorModeValue("#F9FAFB", "gray.600")}
-      p={30}
+      // bg={useColorModeValue("#F9FAFB", "gray.600")}
+      p={20}
       w="auto"
       justifyContent="center"
       alignItems="center"
@@ -346,82 +349,42 @@ export const FeaturePage: Page = () => {
             >
               <Feature
                 title="Cross Platforms"
-                icon={
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
-                  />
-                }
+                icon={<FaConnectdevelop size="2lg"/>}
               >
+                
                 Users can run the product on different devices, whether the devices are on Windows, Android, iOS, macOS, Linux or routers, or on a variety of different public clouds.
               </Feature>
 
               <Feature
                 title=" Management on one dashboard"
-                icon={
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"
-                  />
-                }
+                icon={<FiSettings size ="2lg" />}
               >
                Users can manage all registered devices on one dashboard, no matter where they are located, with an end-to-end private encrypted network, allowing users to access to their own devices.
               </Feature>
 
               <Feature
                 title="Faster Speed, Low Lantency"
-                icon={
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M13 10V3L4 14h7v7l9-11h-7z"
-                  />
-                }
+                icon={<FaRocket size="2lg" />}
+
               >
              End-to-end direct connection, compared to traditional VPN networks, can improve response by 50%.
               </Feature>
 
               <Feature
                 title="High Security"
-                icon={
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"
-                  />
-                }
+                icon={<AiOutlineSafety size="2lg"/>}
               >
                 P2P MESH networks, where packets interact directly between devices, use enterprise G-Suite and other authentication to achieve dual security confirmation of devices and users.
               </Feature>
               <Feature
                 title="Painless Setup"
-                icon={
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"
-                  />
-                }
+                icon={<GiPeanut size="2lg"/>}
               >
                 Set up OmniEdge just in minutes with our apps on any devices, you can chosse several different method to activate your devices. 
               </Feature>
               <Feature
                 title="Maintenanceless "
-                icon={
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"
-                  />
-                }
+                icon={<GiAutoRepair size="2lg"/>}
               >
                 Forget about the labor intensive of the system management job, with OMNIEDGE you can focus on your own core business. 
               </Feature>
@@ -476,19 +439,13 @@ export function Heros(){
         >
           We’re on a mission to provide a reliable, secure and painless connectivity solutions for anyone who wants to have have access to their devices, anywhere, anytime.
         </chakra.p>
-      
-          <Button
-            as={GridItem}
-            w="30%"
-            variant="solid"
-            colSpan={{ base: "auto", lg: 2 }}
-            size="lg"
-            type="submit"
-            colorScheme="brand"
-            cursor="pointer"
-          >
-            Get Started
-          </Button>
+        <Link href="/register" w="full">
+            <Button 
+              w="30%"
+              colorScheme="brand">
+              Get Started
+            </Button>
+          </Link>
         <Stack
           display="flex"
           direction={{ base: "column", md: "row" }}
@@ -503,6 +460,7 @@ export function Heros(){
           <Featureheros>Cancel anytime</Featureheros>
           
         </Stack>
+        
       </Box>
     </Box>
   );
@@ -511,20 +469,24 @@ const Featureusers = (props) => {
   return (
     <Flex>
       <Flex shrink={0}>
-        <Icon
-          boxSize={5}
-          mt={1}
-          mr={2}
-          color={useColorModeValue("brand.500", "brand.300")}
-          viewBox="0 0 20 20"
-          fill="currentColor"
+        <Flex
+          alignItems="center"
+          justifyContent="center"
+          h={12}
+          w={12}
+          rounded="md"
+          color="brand.500"
         >
-          <path
-            fillRule="evenodd"
-            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-            clipRule="evenodd"
-          ></path>
-        </Icon>
+          <Icon
+            boxSize={10}
+            fill="none"
+            viewBox="0 0 32 32"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            {props.icon}
+          </Icon>
+        </Flex>
       </Flex>
       <Box ml={4}>
         <chakra.dt
@@ -546,7 +508,7 @@ const Featureusers = (props) => {
 export function Users() {
   return (
     <Flex
-      // bg={useColorModeValue("#F9FAFB", "gray.600")}
+      // bg={useColorModeValue("#4859ED", "gray.600")}
       p={20}
       w="auto"
       justifyContent="center"
@@ -602,33 +564,51 @@ export function Users() {
               gridColumnGap={{ md: 8 }}
               gridRowGap={{ md: 10 }}
             >
-              <Featureusers title="Industrial 4.0">
+              <Featureusers 
+              title="Manufacturers"
+              icon={<GiFactory size="2lg"/>}
+              >
                 Industrial 4.0 suppliers, Machine Vendors, Factories can simply the deployment of the M2M connectivity. 
                 OmniEdge is lightweight and compatible with most of industrial gateways.{" "}
               </Featureusers>
-              <Featureusers title="Banks">
+              <Featureusers
+               title="Banks"
+               icon={<GiBank size="2lg"/>}
+               >
                 Secure the legacy apps, services from outside to inside the banks, setup the network between banks
                 without any pain, zero-config system with low maintennace cost.No matter how complexity the old network
                 is, OmniEdge will connect with in a minutes. 
               </Featureusers>
-              <Featureusers title="Hospitals">
+              <Featureusers 
+              title="Hospitals"
+              icon={<GiHospital size="2lg"/>}
+              >
                 {" "}
                 Connect all the computers across different network in different department within a single click installation.
                 Secure exchanging the patients data only in a hospital private network in a peer-to-peer tunnel, protect the 
                 privacy.
               </Featureusers>
-              <Featureusers title="Transportation">
+              <Featureusers 
+              title="Freight industry"
+              icon={<GiCargoCrate size="2lg"/>}
+              >
                 {" "}
                 Connect your AGVs no matter it is a linux-based or windows-based.Privde remote suppor, remote upgrade and data
                 streaming with fast and low Lantency omniedge peer-to-peer work. {" "}
               </Featureusers>
-              <Featureusers title="Enterprise">
+              <Featureusers 
+              title="Enterprise"
+              icon={<FaBuilding size="2lg"/>}
+              >
                 {" "}
                 Simplify the enterprise level VPN setup from weeks to minutes, from complexity config to zero config, from high cost of 
                 maintennace to low cost. Connect differenct branches devices in just a click, exchange big data securely, provate the communication 
                 for travelling employees to access internal resources. 
               </Featureusers>
-              <Featureusers title="Startups, Geeks.">
+              <Featureusers 
+              title="Startups, Geeks."
+              icon={<GiMissileLauncher size="2lg"/>}
+              >
                 {" "}
                 Access your NAS, Raspberry Pi, Cloud intances or your friends' devices by sharing your network with them. Access all the devices data,
                 Play LAN games, monitor your home cameras and more. {" "}

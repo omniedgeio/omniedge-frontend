@@ -78,7 +78,6 @@ const DefaultLayout: React.FC<{}> = (props) => {
             <Link href="/download">Download</Link>
             <Link href="/docs">Docs</Link>
             <Link href="/blog">Blog</Link>
-            <Link href="/">About</Link>
           </Stack>
           <HStack>
             {isLoading && <Skeleton h="8" w="20"></Skeleton>}

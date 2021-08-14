@@ -9,6 +9,7 @@ import {
   Stack,
   Text,
   VStack,
+  Link,
 } from "@chakra-ui/react";
 import React from "react";
 import DefaultLayout from "../components/layout/Default";
@@ -35,10 +36,14 @@ const Home: Page = (props) => {
               {`Omniedge's distrubuted VPN solutions is not only a great and affordable network solution for small team,
               but also for big companies with thousands of devices all around the world.`}
             </Text>
+            <Link href="/register" w="full">
             <Button colorScheme="brand">Get Started</Button>
+            </Link>
           </VStack>
           <VStack pt={["12", "12", "0"]} alignItems="flex-start" pointerEvents="none">
+          <Link href="/register" w="full">
             <Button colorScheme="brand">+ Virtual Network</Button>
+            </Link>
             <Box
               mt="2"
               py="4"
@@ -62,7 +67,9 @@ const Home: Page = (props) => {
               </FormControl>
               <HStack mt="4" justifyContent="flex-end">
                 <Button>Cancel</Button>
+                <Link href="/register" w="full">
                 <Button colorScheme="brand">Create</Button>
+                </Link>
               </HStack>
             </Box>
           </VStack>
@@ -83,7 +90,7 @@ const Home: Page = (props) => {
       <How />
       <FeaturePage />
       <Users />
-      <Whyus />
+      {/* <Whyus /> */}
       <Heros />
       </>
     

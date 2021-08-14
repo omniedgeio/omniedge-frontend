@@ -240,7 +240,7 @@ export const How = (props) => {
                 </HStack>
               </Step>
               <Step step={2} title="Login to omniedge.io">
-                <Text>We support email login and Google login</Text>
+                <Text>We support <Link href="/login">email login, security key login and Google login</Link></Text>
               </Step>
               <Step step={3} title="Create a virtual network">
                 <Text>

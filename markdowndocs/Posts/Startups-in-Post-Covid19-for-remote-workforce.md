@@ -4,7 +4,8 @@ description: The coronavirus pandemic is probable to profoundly change the way n
 thumbnail: assets/posts-images/startups-in-post-covid19-for-remote-workforce-coronavirus.jpg
 avatar: /assets/Yong.jpg
 author: Yong QIAN
-date: March 08, 2021 · 6min read
+date: March 08, 2021
+readtime: 6
 ---
 
 The coronavirus pandemic is probable to profoundly change the way numerous firms work for the predictable future. As governments and industries around the world state, those with signs to self-quarantine and everybody else to run through social distancing, remote work is the new realism. It is rapidly becoming the worldwide new normal for enormous numbers of personnel. Years back, remote working was considered as a customer service position at under lowest salary, however with the trends varying, it is becoming a twenty-four-hour career. Technology is making people proficient in getting a similar job done where on earth they are. Individuals all over the world are trying to become accustomed to this technology. Industries are trying to get into this to carry on with the altering need of their workers and to get used to aptitude from parts of the world.

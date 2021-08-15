@@ -28,10 +28,11 @@ const Home: Page = (props) => {
         >
           <VStack alignItems="flex-start">
             <Heading as="h6" fontWeight="medium" size="sm" color="gray.500">
-              MADE VPN EASY
+            MADE COMMUNICATION EASY AND SAFE
             </Heading>
             <Heading maxW="xl" as="h1" size="xl" lineHeight="1.5em">
-              Connect all devices without concern at any platform, any time and any where.
+            Bring intranet on the internet.
+            With P2P Secure Connection, Any Time, Any Where.
             </Heading>
             <Text maxW="2xl" color="gray.700" py="4">
               {`Omniedge's distrubuted VPN solutions is not only a great and affordable network solution for small team,

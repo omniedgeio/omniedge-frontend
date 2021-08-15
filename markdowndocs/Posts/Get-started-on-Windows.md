@@ -4,7 +4,8 @@ description: If you don't have an account on OmniEdge, please sign up for a new 
 thumbnail: /assets/posts-images/2-6-2.png
 avatar: /assets/Yong.jpg
 author: Yong QIAN
-date: August 08, 2021 · 6min read
+date: August 08, 2021
+readtime: 6
 ---
 
 ## Step 2-1 Install OmniEdge for Windows

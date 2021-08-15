@@ -4,7 +4,8 @@ description: Today, remote work, industrial Internet, banking, and other scenari
 thumbnail: /assets/posts-images/how-omniedge-works-meme.png
 avatar: /assets/Yong.jpg
 author: Yong QIAN
-date: Feb 08, 2021 · 6min read
+date: Feb 08, 2021
+readtime: 6
 ---
 
 # How OmniEdge works

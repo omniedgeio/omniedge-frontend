@@ -32,9 +32,66 @@ OmniEdge MacOS is compatible with intel Macbook, macOS 10 or later Last update: 
 1. Download OmniEdge DMG and open it.
 2. Install Tun/Tap Driver:
 
-    2.1 For Intel Mac User: **Install tuntap by clicking tuntap_20150118.pkg**
+For Intel Mac: 
 
-    2.2. M1 Mac user: Download `https://github.com/Tunnelblick/Tunnelblick/tree/master/third_party/tap-notarized.kext` and `https://github.com/Tunnelblick/Tunnelblick/tree/master/third_party/tun-notarized.kext`, then copy to **/Library/Extensions**, restart Mac after allowing the security check. 
+- run **Install tuntap by clicking tuntap_20150118.pkg**
+
+For M1 Mac user: 
+
+- Download `https://github.com/Tunnelblick/Tunnelblick/tree/master/third_party/tap-notarized.kext`
+- Download `https://github.com/Tunnelblick/Tunnelblick/tree/master/third_party/tun-notarized.kext`
+- Change the name to **tap.kext** and **tap.kext**, 
+- Copy to **/Library/Extensions**
+- add `net.tunnelblick.tap.plist` and `net.tunnelblick.tun.plist` to `/Library/LaunchDaemons/`
+
+```bash
+#net.tunnelblick.tap.plist
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>net.tunnelblick.tap</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/sbin/kextload</string>
+        <string>/Library/Extensions/tap.kext</string>
+    </array>
+    <key>KeepAlive</key>
+    <false/>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>UserName</key>
+    <string>root</string>
+</dict>
+</plist>
+
+```
+```bash
+#net.tunnelblick.tun.plist
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>net.tunnelblick.tun</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/sbin/kextload</string>
+        <string>/Library/Extensions/tun.kext</string>
+    </array>
+    <key>KeepAlive</key>
+    <false/>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>UserName</key>
+    <string>root</string>
+</dict>
+</plist>
+
+```
+
+- restart Mac after allowing the security check. 
 
 3. Drop Omniedge to Applications folder
 4. Run OmniEdge

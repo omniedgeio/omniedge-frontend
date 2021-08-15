@@ -7,6 +7,7 @@ interface ArticleMeta {
 	thumbnail: string;
 	date:Date;
 	route:String;
+	readtime: BigInt;
 	index: BigInteger;
 }
 

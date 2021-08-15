@@ -4,7 +4,8 @@ description: OmniEdge is a project we started from a single tweet, a group of ne
 thumbnail: /assets/posts-images/OmniEdge-Dashboard.png
 avatar: /assets/Yong.jpg
 author: Yong QIAN
-date: July 08, 2021 · 6min read
+date: July 08, 2021
+readtime: 6
 ---
 
 OmniEdge is a project we started from a single tweet, a group of network experts from 9 cites across 5 countries gathering together to build a paradigm shift for next generation peer-to-peer VPN infrastructure. 

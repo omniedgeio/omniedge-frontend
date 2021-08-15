@@ -142,7 +142,7 @@ export const How = (props) => {
 <VStack spacing="4" alignItems="center">
         <Heading as="h2">How Omniedge works?</Heading>
         <Text textAlign="center">
-          We made VPN easier to setup and so you can connect without <br /> concern at any where and anytime.
+          We rebuild the intranet on the internet setup easier and so you can connect your devices in a secure way without <br /> concern at any where and anytime.
         </Text>
         <Stack spacing="8" direction={["column", "row"]} alignItems="flex-start">
           <VStack maxW="md" spacing="4">

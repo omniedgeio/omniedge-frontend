@@ -1,4 +1,4 @@
-import { FunctionComponent } from "react";
+import { Children, FunctionComponent } from "react";
 import { ArticleInfo } from "./interfaces/article";
 import { chakra,Image,Stack,Avatar,Center,Box,Heading, Table, Td, Text, Th, Tr, VStack,Link, useColorModeValue,Flex } from "@chakra-ui/react";
 import { MDXProvider } from "@mdx-js/react";
@@ -97,6 +97,47 @@ export const Postnavs: FunctionComponent<IProps> = ({ articles }) => {
       {article.title}
     </Link>
   ))}
+  </>
+	);
+}
+
+export const Markdowndoc:React.FC = function (props) {
+  
+  let [data, setContent] = useState<Element[]>([]);
+  useEffect(() => {
+    let data = [];
+    const hs = document.querySelectorAll(".markdown h1, .markdown h2");
+    for (let i = 0; i < hs.length; i++) {
+      const h = hs[i];
+      data.push(h);
+    }
+    setContent(data);
+  }, []);
+  
+	return (<>
+  <MDXProvider
+    components={{
+      h1: ({ children }) => (
+        <Heading as="h1" id={getHrefFromText(props.info)}>
+          {children}
+        </Heading>
+      ),
+      h2: ({ children }) => (
+        <Heading as="h2" id={getHrefFromText(props.info)}>
+          {children}
+        </Heading>
+      ),
+      a: Link,
+      table: Table,
+      tr: Tr,
+      th: Th,
+      td: Td,
+    }}
+  >
+    <Box maxW="800px" className="markdown" px={{ base: 0, md: 10 }}>
+    <ReactMarkdown children={props.info} />
+    </Box>
+  </MDXProvider>
   </>
 	);
 }

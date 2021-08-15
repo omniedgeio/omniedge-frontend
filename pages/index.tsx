@@ -14,6 +14,7 @@ import {
 import React from "react";
 import DefaultLayout from "../components/layout/Default";
 import { Page } from "../types";
+import {Customersmap} from "../components/Customersmap"
 import {FeaturePage,How,Heros,Users, Whyus} from "../components/Features";
 
 const Home: Page = (props) => {
@@ -92,6 +93,8 @@ const Home: Page = (props) => {
       <Users />
       {/* <Whyus /> */}
       <Heros />
+      <Customersmap />
+      
       </>
     
   );

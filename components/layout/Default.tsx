@@ -126,7 +126,7 @@ const DefaultLayout: React.FC<{}> = (props) => {
           <Text>| Austin | Adelaide | Beijing | Frankfurt |  Guangzhou | Hangzhou | Kuala Lumpur | Shanghai | Suzhou |</Text>
           </HStack>
           <HStack fontSize="sm">
-          <Link href="/">Privacy</Link> <Text>&</Text><Link href="/">Terms</Link>
+          <Link href="/privacy">Privacy</Link> <Text>&</Text><Link href="/terms">Terms</Link>
           </HStack>
           </Stack>
 

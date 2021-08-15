@@ -62,7 +62,7 @@ export const Social:React.FC = function (props) {
               <a
               className="w-7 mr-4"
               target="_blank"
-              mailto="hi@omniedge.io"
+              href="mailto:hi@omniedge.io"
             >
             <Icon as={MdEmail} h={6} w={6} mr={2} />
             </a>

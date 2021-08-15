@@ -11,7 +11,7 @@ export const Customersmap: React.FC<BoxProps> = (props) => {
             lineHeight="8"
             fontWeight="extrabold"
             letterSpacing="tight"
-            color={useColorModeValue("gray.900")}
+            color="gray.900"
             >
               Our Customers are from worldwide.
             </chakra.h2>
@@ -19,7 +19,7 @@ export const Customersmap: React.FC<BoxProps> = (props) => {
               mt={2}
               lineHeight="2"
               letterSpacing="tight"
-              color={useColorModeValue("gray.900")}
+              color="gray.900"
             >
               We served customers from more than 26 countries & regions.
             </chakra.p>

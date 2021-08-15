@@ -163,7 +163,7 @@ We found OmniEdge totally from Twitter, with a team from 4 countries, in post-pa
           color={useColorModeValue("gray.900", "gray.100")}
           lineHeight="shorter"
         >
-          Founders
+          Founder Team
         </chakra.h1>
     <Flex
       p={20}
@@ -219,6 +219,78 @@ We found OmniEdge totally from Twitter, with a team from 4 countries, in post-pa
           icon3={<FaGithub size="2lg"/>}
         >
           An Li is the former R&D Software Engineer at State Street Investment Bank in US, where he specialized in blockchain and trust data exchanging development. He implemented the backend of financial project to process big data.​​​​
+        </Feature>
+        <Feature
+          title="Tex Tang "
+          position="Full Stack Programmer"
+          linkedin=""
+          icon1=""
+          twitter="https://twitter.com/omniedgeio"
+          icon2={<FaTwitter size="2lg"/>}
+          github="https://github.com/omniedgeio"
+          icon3={<FaGithub size="2lg"/>}
+        >
+          Tex Tang is the core team member of OmniEdge, he contributes OmniEdge Windows Client, Backend API and Front-End.
+        </Feature>
+        <Feature
+          title="Ivy Xue "
+          position="Go Programmer"
+          linkedin=""
+          icon1=""
+          twitter="https://twitter.com/omniedgeio"
+          icon2={<FaTwitter size="2lg"/>}
+          github="https://github.com/omniedgeio"
+          icon3={<FaGithub size="2lg"/>}
+        >
+          Ivy Xue is the core team member of OmniEdge, he contributes OmniEdge Cli Client and Backend API.
+        </Feature>
+        <Feature
+          title="Harri Huang"
+          position="C++ Programmer"
+          linkedin=""
+          icon1=""
+          twitter="https://twitter.com/omniedgeio"
+          icon2={<FaTwitter size="2lg"/>}
+          github="https://github.com/omniedgeio"
+          icon3={<FaGithub size="2lg"/>}
+        >
+          Harri Huang is the core team member of OmniEdge, he contributes OmniEdge Windows Client.
+        </Feature>
+        <Feature
+          title="Randy Dong"
+          position="Android Programmer"
+          linkedin=""
+          icon1=""
+          twitter="https://twitter.com/omniedgeio"
+          icon2={<FaTwitter size="2lg"/>}
+          github="https://github.com/omniedgeio"
+          icon3={<FaGithub size="2lg"/>}
+        >
+          Randy Dong is the core team member of OmniEdge, he contributes OmniEdge Android Client.
+        </Feature>
+        <Feature
+          title="Yi CHEN"
+          position="Android Programmer"
+          linkedin=""
+          icon1=""
+          twitter="https://twitter.com/omniedgeio"
+          icon2={<FaTwitter size="2lg"/>}
+          github="https://github.com/omniedgeio"
+          icon3={<FaGithub size="2lg"/>}
+        >
+          Yi CHEN is the core team member of OmniEdge, he contributes OmniEdge Android Client.
+        </Feature>
+        <Feature
+          title="Samuel Song"
+          position="iOS Programmer"
+          linkedin=""
+          icon1=""
+          twitter="https://twitter.com/omniedgeio"
+          icon2={<FaTwitter size="2lg"/>}
+          github="https://github.com/omniedgeio"
+          icon3={<FaGithub size="2lg"/>}
+        >
+         Samuel Song is the core team member of OmniEdge, he contributes OmniEdge iOS Client.
         </Feature>
       </SimpleGrid>
     </Flex>

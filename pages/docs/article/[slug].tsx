@@ -1,5 +1,5 @@
 /* eslint-disable react/display-name */
-import { Flex, Heading,VStack,Divider } from "@chakra-ui/react";
+import { chakra,Flex, Heading,VStack,Divider,useColorModeValue } from "@chakra-ui/react";
 import {Docnavs,Docconent} from '../../../components/Document';
 import matter from 'gray-matter';
 import fs from 'fs';

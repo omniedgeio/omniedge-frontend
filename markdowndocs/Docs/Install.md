@@ -122,3 +122,7 @@ sudo omniedge join
 Coming Soon
 ## 10. Uninstalling OmniEdge
 ## 11. Updating OmniEdge
+
+-----
+
+If you have more questions, feel free to [contact us](mailto:support@omniedge.io).

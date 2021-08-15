@@ -100,3 +100,6 @@ OS: AWS Linux 2 AMI
 - The OmniEdge Evalution can reach 554 Mbit/s.
 - The new OmniEdge version can reach 3470 Mbit/s. 
 
+-----
+
+If you have more questions, feel free to [contact us](mailto:support@omniedge.io).

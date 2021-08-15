@@ -31,3 +31,7 @@ From the left pane of the resulting window, click Inbound Rules.
 In the right pane, find the rules titled File and Printer Sharing (Echo Request - ICMPv4-In).
 Right-click each rule and choose Enable Rule.
 ```
+
+-----
+
+If you have more questions, feel free to [contact us](mailto:support@omniedge.io).

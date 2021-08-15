@@ -123,6 +123,9 @@ const DefaultLayout: React.FC<{}> = (props) => {
           </HStack>
           <Text fontSize="sm">2021 OmniEdge Inc.</Text>
           <HStack fontSize="sm">
+          <Text>| Austin | Adelaide | Beijing | Frankfurt |  Guangzhou | Hangzhou | Kuala Lumpur | Shanghai | Suzhou |</Text>
+          </HStack>
+          <HStack fontSize="sm">
           <Link href="/">Privacy</Link> <Text>&</Text><Link href="/">Terms</Link>
           </HStack>
           </Stack>

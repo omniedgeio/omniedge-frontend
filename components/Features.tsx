@@ -629,9 +629,9 @@ export function Users() {
 export function Compare() {
   return (<>
 <VStack spacing="4" alignItems="center">
-        <Heading as="h2">No Public IP, Zero Config, Zero Firewall Rules and No Port Forward, </Heading>
+        <Heading as="h2">No Public IP, Zero Config, Zero Firewall Rules and No Port Forward </Heading>
         <Text textAlign="center">
-        OMINEDGE builds an intranet on the internet, every device is connecting in a Peer-to-Peer.
+        Omniedge builds an intranet on the internet, connect your devices in your private network in a P2P VPN.
         </Text>
         <Stack spacing="8" direction={["column", "row"]} alignItems="flex-start">
         <Tabs isFitted variant="soft-rounded">

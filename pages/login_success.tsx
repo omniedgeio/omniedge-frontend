@@ -25,7 +25,7 @@ const LoginSuccessPage: Page = function (props) {
             <VStack spacing="4">
               <Logo h="12"></Logo>
               <Heading fontWeight="semibold" fontSize="xl">
-                OmniEdge
+                OMNIEDGE
               </Heading>
             </VStack>
           </Link>

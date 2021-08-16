@@ -15,7 +15,7 @@ import React from "react";
 import DefaultLayout from "../components/layout/Default";
 import { Page } from "../types";
 import {Customersmap} from "../components/Customersmap"
-import {FeaturePage,How,Heros,Users, Whyus} from "../components/Features";
+import {FeaturePage,How,Heros,Users, Whyus, Compare} from "../components/Features";
 
 const Home: Page = (props) => {
   return (
@@ -89,8 +89,10 @@ const Home: Page = (props) => {
           backgroundPosition="right"
         ></Box>
       </Box>
+      <Compare />
       <How />
       <FeaturePage />
+      
       <Users />
       {/* <Whyus /> */}
       <Heros />

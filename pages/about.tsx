@@ -30,7 +30,6 @@ const Feature = (props) => {
       </Icon> */}
       <chakra.h3
         mb={3}
-        mb={3}
         fontSize="xl"
         lineHeight="shorter"
         fontWeight="bold"
@@ -39,7 +38,6 @@ const Feature = (props) => {
         {props.title}
       </chakra.h3>
       <chakra.h3
-        mb={3}
         mb={3}
         fontSize="xs"
         lineHeight="shorter"

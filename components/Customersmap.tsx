@@ -89,7 +89,7 @@ export const Customersmap: React.FC<BoxProps> = (props) => {
 <path d="M997.475 455.803H993.622L992.89 458H990.553L994.523 447.336H996.559L1000.55 458H998.214L997.475 455.803ZM994.215 454.023H996.881L995.541 450.031L994.215 454.023ZM1006.07 457.194C1005.54 457.829 1004.82 458.146 1003.9 458.146C1003.05 458.146 1002.4 457.902 1001.95 457.414C1001.51 456.926 1001.28 456.21 1001.27 455.268V450.075H1003.39V455.195C1003.39 456.02 1003.76 456.433 1004.51 456.433C1005.23 456.433 1005.72 456.184 1005.99 455.686V450.075H1008.12V458H1006.12L1006.07 457.194ZM1014.01 455.81C1014.01 455.551 1013.88 455.349 1013.62 455.202C1013.36 455.051 1012.95 454.917 1012.39 454.799C1010.5 454.404 1009.56 453.603 1009.56 452.397C1009.56 451.694 1009.85 451.108 1010.43 450.639C1011.02 450.166 1011.78 449.929 1012.72 449.929C1013.73 449.929 1014.53 450.166 1015.13 450.639C1015.74 451.113 1016.04 451.728 1016.04 452.485H1013.92C1013.92 452.182 1013.83 451.933 1013.63 451.738C1013.44 451.538 1013.13 451.438 1012.72 451.438C1012.36 451.438 1012.08 451.518 1011.89 451.679C1011.69 451.84 1011.6 452.045 1011.6 452.294C1011.6 452.529 1011.71 452.719 1011.93 452.866C1012.15 453.007 1012.53 453.132 1013.05 453.239C1013.58 453.342 1014.02 453.459 1014.39 453.591C1015.5 454.001 1016.06 454.711 1016.06 455.722C1016.06 456.445 1015.75 457.031 1015.13 457.48C1014.51 457.924 1013.71 458.146 1012.73 458.146C1012.07 458.146 1011.48 458.029 1010.96 457.795C1010.45 457.556 1010.04 457.231 1009.75 456.821C1009.46 456.406 1009.31 455.959 1009.31 455.48H1011.32C1011.34 455.856 1011.48 456.145 1011.73 456.345C1011.99 456.545 1012.34 456.645 1012.77 456.645C1013.18 456.645 1013.49 456.569 1013.69 456.418C1013.9 456.262 1014.01 456.059 1014.01 455.81ZM1019.97 448.127V450.075H1021.32V451.628H1019.97V455.583C1019.97 455.876 1020.02 456.086 1020.14 456.213C1020.25 456.34 1020.46 456.403 1020.78 456.403C1021.01 456.403 1021.22 456.386 1021.4 456.352V457.956C1020.99 458.083 1020.56 458.146 1020.12 458.146C1018.64 458.146 1017.88 457.397 1017.85 455.898V451.628H1016.69V450.075H1017.85V448.127H1019.97ZM1026.95 452.06C1026.67 452.021 1026.41 452.001 1026.19 452.001C1025.39 452.001 1024.87 452.272 1024.62 452.814V458H1022.5V450.075H1024.5L1024.56 451.02C1024.98 450.292 1025.57 449.929 1026.32 449.929C1026.56 449.929 1026.78 449.96 1026.98 450.024L1026.95 452.06ZM1032.35 458C1032.25 457.81 1032.18 457.573 1032.14 457.29C1031.63 457.861 1030.96 458.146 1030.14 458.146C1029.36 458.146 1028.72 457.922 1028.21 457.473C1027.7 457.023 1027.45 456.457 1027.45 455.773C1027.45 454.934 1027.76 454.289 1028.38 453.84C1029 453.391 1029.9 453.164 1031.08 453.159H1032.05V452.705C1032.05 452.338 1031.96 452.045 1031.77 451.826C1031.58 451.606 1031.29 451.496 1030.88 451.496C1030.52 451.496 1030.24 451.582 1030.04 451.752C1029.84 451.923 1029.74 452.158 1029.74 452.456H1027.62C1027.62 451.997 1027.76 451.572 1028.05 451.181C1028.33 450.791 1028.73 450.485 1029.25 450.266C1029.76 450.041 1030.35 449.929 1030.99 449.929C1031.97 449.929 1032.74 450.175 1033.31 450.668C1033.89 451.157 1034.18 451.845 1034.18 452.734V456.169C1034.18 456.921 1034.29 457.49 1034.49 457.875V458H1032.35ZM1030.6 456.528C1030.91 456.528 1031.2 456.459 1031.47 456.323C1031.73 456.181 1031.93 455.993 1032.05 455.759V454.396H1031.26C1030.2 454.396 1029.64 454.763 1029.57 455.495L1029.56 455.62C1029.56 455.883 1029.65 456.101 1029.84 456.271C1030.03 456.442 1030.28 456.528 1030.6 456.528ZM1038.04 458H1035.91V446.75H1038.04V458ZM1042.02 458H1039.9V450.075H1042.02V458ZM1039.77 448.024C1039.77 447.707 1039.88 447.446 1040.09 447.241C1040.3 447.036 1040.59 446.933 1040.96 446.933C1041.32 446.933 1041.61 447.036 1041.82 447.241C1042.04 447.446 1042.15 447.707 1042.15 448.024C1042.15 448.347 1042.04 448.61 1041.82 448.815C1041.6 449.021 1041.31 449.123 1040.96 449.123C1040.6 449.123 1040.31 449.021 1040.09 448.815C1039.88 448.61 1039.77 448.347 1039.77 448.024ZM1048.36 458C1048.27 457.81 1048.19 457.573 1048.15 457.29C1047.64 457.861 1046.97 458.146 1046.15 458.146C1045.38 458.146 1044.73 457.922 1044.22 457.473C1043.71 457.023 1043.46 456.457 1043.46 455.773C1043.46 454.934 1043.77 454.289 1044.39 453.84C1045.01 453.391 1045.91 453.164 1047.09 453.159H1048.06V452.705C1048.06 452.338 1047.97 452.045 1047.78 451.826C1047.59 451.606 1047.3 451.496 1046.89 451.496C1046.53 451.496 1046.25 451.582 1046.05 451.752C1045.85 451.923 1045.75 452.158 1045.75 452.456H1043.63C1043.63 451.997 1043.77 451.572 1044.06 451.181C1044.34 450.791 1044.74 450.485 1045.26 450.266C1045.78 450.041 1046.36 449.929 1047 449.929C1047.98 449.929 1048.75 450.175 1049.32 450.668C1049.9 451.157 1050.19 451.845 1050.19 452.734V456.169C1050.19 456.921 1050.3 457.49 1050.5 457.875V458H1048.36ZM1046.61 456.528C1046.93 456.528 1047.21 456.459 1047.48 456.323C1047.74 456.181 1047.94 455.993 1048.06 455.759V454.396H1047.27C1046.21 454.396 1045.65 454.763 1045.58 455.495L1045.57 455.62C1045.57 455.883 1045.67 456.101 1045.85 456.271C1046.04 456.442 1046.29 456.528 1046.61 456.528Z" fill="url(#paint29_linear)"/>
 </g>
 <defs>
-<filter id="filter0_ddd" x="957.97" y="240.336" width="88.2319" height="61.7109" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_ddd" x="957.97" y="240.336" width="88.2319" height="61.7109" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dy="1.95556"/>
@@ -108,7 +108,7 @@ export const Customersmap: React.FC<BoxProps> = (props) => {
 <feBlend mode="normal" in2="effect2_dropShadow" result="effect3_dropShadow"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect3_dropShadow" result="shape"/>
 </filter>
-<filter id="filter1_ddd" x="494.372" y="107.042" width="145.808" height="59.3965" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter1_ddd" x="494.372" y="107.042" width="145.808" height="59.3965" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dy="1.95556"/>
@@ -127,7 +127,7 @@ export const Customersmap: React.FC<BoxProps> = (props) => {
 <feBlend mode="normal" in2="effect2_dropShadow" result="effect3_dropShadow"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect3_dropShadow" result="shape"/>
 </filter>
-<filter id="filter2_ddd" x="278.971" y="195.75" width="137.473" height="59.3965" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter2_ddd" x="278.971" y="195.75" width="137.473" height="59.3965" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dy="1.95556"/>
@@ -146,7 +146,7 @@ export const Customersmap: React.FC<BoxProps> = (props) => {
 <feBlend mode="normal" in2="effect2_dropShadow" result="effect3_dropShadow"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect3_dropShadow" result="shape"/>
 </filter>
-<filter id="filter3_ddd" x="891.987" y="199.75" width="85.5146" height="59.3965" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter3_ddd" x="891.987" y="199.75" width="85.5146" height="59.3965" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dy="1.95556"/>
@@ -165,7 +165,7 @@ export const Customersmap: React.FC<BoxProps> = (props) => {
 <feBlend mode="normal" in2="effect2_dropShadow" result="effect3_dropShadow"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect3_dropShadow" result="shape"/>
 </filter>
-<filter id="filter4_ddd" x="791.513" y="120.933" width="91.9893" height="59.2134" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter4_ddd" x="791.513" y="120.933" width="91.9893" height="59.2134" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dy="1.95556"/>
@@ -184,7 +184,7 @@ export const Customersmap: React.FC<BoxProps> = (props) => {
 <feBlend mode="normal" in2="effect2_dropShadow" result="effect3_dropShadow"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect3_dropShadow" result="shape"/>
 </filter>
-<filter id="filter5_ddd" x="921.917" y="218.75" width="129.584" height="59.3965" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter5_ddd" x="921.917" y="218.75" width="129.584" height="59.3965" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dy="1.95556"/>
@@ -203,7 +203,7 @@ export const Customersmap: React.FC<BoxProps> = (props) => {
 <feBlend mode="normal" in2="effect2_dropShadow" result="effect3_dropShadow"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect3_dropShadow" result="shape"/>
 </filter>
-<filter id="filter6_ddd" x="876.892" y="361.933" width="115.712" height="62.187" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter6_ddd" x="876.892" y="361.933" width="115.712" height="62.187" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dy="1.95556"/>
@@ -222,7 +222,7 @@ export const Customersmap: React.FC<BoxProps> = (props) => {
 <feBlend mode="normal" in2="effect2_dropShadow" result="effect3_dropShadow"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect3_dropShadow" result="shape"/>
 </filter>
-<filter id="filter7_ddd" x="865.469" y="379.75" width="107.033" height="62.4507" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter7_ddd" x="865.469" y="379.75" width="107.033" height="62.4507" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dy="1.95556"/>
@@ -241,7 +241,7 @@ export const Customersmap: React.FC<BoxProps> = (props) => {
 <feBlend mode="normal" in2="effect2_dropShadow" result="effect3_dropShadow"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect3_dropShadow" result="shape"/>
 </filter>
-<filter id="filter8_ddd" x="773.825" y="295.75" width="79.6772" height="59.3965" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter8_ddd" x="773.825" y="295.75" width="79.6772" height="59.3965" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dy="1.95556"/>
@@ -260,7 +260,7 @@ export const Customersmap: React.FC<BoxProps> = (props) => {
 <feBlend mode="normal" in2="effect2_dropShadow" result="effect3_dropShadow"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect3_dropShadow" result="shape"/>
 </filter>
-<filter id="filter9_ddd" x="542.854" y="157.75" width="92.3628" height="59.3965" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter9_ddd" x="542.854" y="157.75" width="92.3628" height="59.3965" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dy="1.95556"/>
@@ -279,7 +279,7 @@ export const Customersmap: React.FC<BoxProps> = (props) => {
 <feBlend mode="normal" in2="effect2_dropShadow" result="effect3_dropShadow"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect3_dropShadow" result="shape"/>
 </filter>
-<filter id="filter10_ddd" x="208.777" y="290.933" width="95.7319" height="59.2134" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter10_ddd" x="208.777" y="290.933" width="95.7319" height="59.2134" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dy="1.95556"/>
@@ -298,7 +298,7 @@ export const Customersmap: React.FC<BoxProps> = (props) => {
 <feBlend mode="normal" in2="effect2_dropShadow" result="effect3_dropShadow"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect3_dropShadow" result="shape"/>
 </filter>
-<filter id="filter11_ddd" x="201.829" y="167.75" width="97.6729" height="59.3965" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter11_ddd" x="201.829" y="167.75" width="97.6729" height="59.3965" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dy="1.95556"/>
@@ -317,7 +317,7 @@ export const Customersmap: React.FC<BoxProps> = (props) => {
 <feBlend mode="normal" in2="effect2_dropShadow" result="effect3_dropShadow"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect3_dropShadow" result="shape"/>
 </filter>
-<filter id="filter12_ddd" x="572.897" y="188.189" width="108.081" height="62.0112" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter12_ddd" x="572.897" y="188.189" width="108.081" height="62.0112" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dy="1.95556"/>
@@ -336,7 +336,7 @@ export const Customersmap: React.FC<BoxProps> = (props) => {
 <feBlend mode="normal" in2="effect2_dropShadow" result="effect3_dropShadow"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect3_dropShadow" result="shape"/>
 </filter>
-<filter id="filter13_ddd" x="544.087" y="213.75" width="75.8906" height="62.4507" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter13_ddd" x="544.087" y="213.75" width="75.8906" height="62.4507" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dy="1.95556"/>
@@ -355,7 +355,7 @@ export const Customersmap: React.FC<BoxProps> = (props) => {
 <feBlend mode="normal" in2="effect2_dropShadow" result="effect3_dropShadow"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect3_dropShadow" result="shape"/>
 </filter>
-<filter id="filter14_ddd" x="966.553" y="446.75" width="107.949" height="59.3965" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter14_ddd" x="966.553" y="446.75" width="107.949" height="59.3965" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dy="1.95556"/>
@@ -375,124 +375,124 @@ export const Customersmap: React.FC<BoxProps> = (props) => {
 <feBlend mode="normal" in="SourceGraphic" in2="effect3_dropShadow" result="shape"/>
 </filter>
 <linearGradient id="paint0_linear" x1="969" y1="241" x2="969" y2="251" gradientUnits="userSpaceOnUse">
-<stop stop-color="#4859ED"/>
-<stop offset="1" stop-color="#5971EE" stop-opacity="0.8"/>
+<stop stopColor="#4859ED"/>
+<stop offset="1" stopColor="#5971EE" stopOpacity="0.8"/>
 </linearGradient>
 <linearGradient id="paint1_linear" x1="981" y1="228" x2="1023.92" y2="229.587" gradientUnits="userSpaceOnUse">
-<stop stop-color="#768CFF"/>
-<stop offset="1" stop-color="#1B37C9"/>
+<stop stopColor="#768CFF"/>
+<stop offset="1" stopColor="#1B37C9"/>
 </linearGradient>
 <linearGradient id="paint2_linear" x1="567" y1="126" x2="567" y2="136" gradientUnits="userSpaceOnUse">
-<stop stop-color="#4859ED"/>
-<stop offset="1" stop-color="#5971EE" stop-opacity="0.8"/>
+<stop stopColor="#4859ED"/>
+<stop offset="1" stopColor="#5971EE" stopOpacity="0.8"/>
 </linearGradient>
 <linearGradient id="paint3_linear" x1="517" y1="95.292" x2="618.546" y2="104.231" gradientUnits="userSpaceOnUse">
-<stop stop-color="#768CFF"/>
-<stop offset="1" stop-color="#1B37C9"/>
+<stop stopColor="#768CFF"/>
+<stop offset="1" stopColor="#1B37C9"/>
 </linearGradient>
 <linearGradient id="paint4_linear" x1="302" y1="184" x2="394.529" y2="191.413" gradientUnits="userSpaceOnUse">
-<stop stop-color="#768CFF"/>
-<stop offset="1" stop-color="#1B37C9"/>
+<stop stopColor="#768CFF"/>
+<stop offset="1" stopColor="#1B37C9"/>
 </linearGradient>
 <linearGradient id="paint5_linear" x1="289" y1="197" x2="289" y2="207" gradientUnits="userSpaceOnUse">
-<stop stop-color="#4859ED"/>
-<stop offset="1" stop-color="#5971EE" stop-opacity="0.8"/>
+<stop stopColor="#4859ED"/>
+<stop offset="1" stopColor="#5971EE" stopOpacity="0.8"/>
 </linearGradient>
 <linearGradient id="paint6_linear" x1="905" y1="201" x2="905" y2="211" gradientUnits="userSpaceOnUse">
-<stop stop-color="#4859ED"/>
-<stop offset="1" stop-color="#5971EE" stop-opacity="0.8"/>
+<stop stopColor="#4859ED"/>
+<stop offset="1" stopColor="#5971EE" stopOpacity="0.8"/>
 </linearGradient>
 <linearGradient id="paint7_linear" x1="915" y1="188" x2="954.863" y2="189.369" gradientUnits="userSpaceOnUse">
-<stop stop-color="#768CFF"/>
-<stop offset="1" stop-color="#1B37C9"/>
+<stop stopColor="#768CFF"/>
+<stop offset="1" stopColor="#1B37C9"/>
 </linearGradient>
 <linearGradient id="paint8_linear" x1="803" y1="122" x2="803" y2="132" gradientUnits="userSpaceOnUse">
-<stop stop-color="#4859ED"/>
-<stop offset="1" stop-color="#5971EE" stop-opacity="0.8"/>
+<stop stopColor="#4859ED"/>
+<stop offset="1" stopColor="#5971EE" stopOpacity="0.8"/>
 </linearGradient>
 <linearGradient id="paint9_linear" x1="814" y1="109" x2="860.996" y2="110.903" gradientUnits="userSpaceOnUse">
-<stop stop-color="#768CFF"/>
-<stop offset="1" stop-color="#1B37C9"/>
+<stop stopColor="#768CFF"/>
+<stop offset="1" stopColor="#1B37C9"/>
 </linearGradient>
 <linearGradient id="paint10_linear" x1="940" y1="228" x2="940" y2="238" gradientUnits="userSpaceOnUse">
-<stop stop-color="#4859ED"/>
-<stop offset="1" stop-color="#5971EE" stop-opacity="0.8"/>
+<stop stopColor="#4859ED"/>
+<stop offset="1" stopColor="#5971EE" stopOpacity="0.8"/>
 </linearGradient>
 <linearGradient id="paint11_linear" x1="945" y1="207" x2="1029.49" y2="213.173" gradientUnits="userSpaceOnUse">
-<stop stop-color="#768CFF"/>
-<stop offset="1" stop-color="#1B37C9"/>
+<stop stopColor="#768CFF"/>
+<stop offset="1" stopColor="#1B37C9"/>
 </linearGradient>
 <linearGradient id="paint12_linear" x1="890" y1="363" x2="890" y2="373" gradientUnits="userSpaceOnUse">
-<stop stop-color="#4859ED"/>
-<stop offset="1" stop-color="#5971EE" stop-opacity="0.8"/>
+<stop stopColor="#4859ED"/>
+<stop offset="1" stopColor="#5971EE" stopOpacity="0.8"/>
 </linearGradient>
 <linearGradient id="paint13_linear" x1="900" y1="350" x2="970.35" y2="354.273" gradientUnits="userSpaceOnUse">
-<stop stop-color="#768CFF"/>
-<stop offset="1" stop-color="#1B37C9"/>
+<stop stopColor="#768CFF"/>
+<stop offset="1" stopColor="#1B37C9"/>
 </linearGradient>
 <linearGradient id="paint14_linear" x1="870" y1="381" x2="870" y2="391" gradientUnits="userSpaceOnUse">
-<stop stop-color="#4859ED"/>
-<stop offset="1" stop-color="#5971EE" stop-opacity="0.8"/>
+<stop stopColor="#4859ED"/>
+<stop offset="1" stopColor="#5971EE" stopOpacity="0.8"/>
 </linearGradient>
 <linearGradient id="paint15_linear" x1="888" y1="368" x2="950.244" y2="371.342" gradientUnits="userSpaceOnUse">
-<stop stop-color="#768CFF"/>
-<stop offset="1" stop-color="#1B37C9"/>
+<stop stopColor="#768CFF"/>
+<stop offset="1" stopColor="#1B37C9"/>
 </linearGradient>
 <linearGradient id="paint16_linear" x1="783" y1="297" x2="783" y2="307" gradientUnits="userSpaceOnUse">
-<stop stop-color="#4859ED"/>
-<stop offset="1" stop-color="#5971EE" stop-opacity="0.8"/>
+<stop stopColor="#4859ED"/>
+<stop offset="1" stopColor="#5971EE" stopOpacity="0.8"/>
 </linearGradient>
 <linearGradient id="paint17_linear" x1="796" y1="284" x2="830.762" y2="285.04" gradientUnits="userSpaceOnUse">
-<stop stop-color="#768CFF"/>
-<stop offset="1" stop-color="#1B37C9"/>
+<stop stopColor="#768CFF"/>
+<stop offset="1" stopColor="#1B37C9"/>
 </linearGradient>
 <linearGradient id="paint18_linear" x1="589" y1="177" x2="589" y2="187" gradientUnits="userSpaceOnUse">
-<stop stop-color="#4859ED"/>
-<stop offset="1" stop-color="#5971EE" stop-opacity="0.8"/>
+<stop stopColor="#4859ED"/>
+<stop offset="1" stopColor="#5971EE" stopOpacity="0.8"/>
 </linearGradient>
 <linearGradient id="paint19_linear" x1="565" y1="146" x2="613.014" y2="147.987" gradientUnits="userSpaceOnUse">
-<stop stop-color="#768CFF"/>
-<stop offset="1" stop-color="#1B37C9"/>
+<stop stopColor="#768CFF"/>
+<stop offset="1" stopColor="#1B37C9"/>
 </linearGradient>
 <linearGradient id="paint20_linear" x1="231" y1="279" x2="282.067" y2="281.248" gradientUnits="userSpaceOnUse">
-<stop stop-color="#768CFF"/>
-<stop offset="1" stop-color="#1B37C9"/>
+<stop stopColor="#768CFF"/>
+<stop offset="1" stopColor="#1B37C9"/>
 </linearGradient>
 <linearGradient id="paint21_linear" x1="217" y1="292" x2="217" y2="302" gradientUnits="userSpaceOnUse">
-<stop stop-color="#4859ED"/>
-<stop offset="1" stop-color="#5971EE" stop-opacity="0.8"/>
+<stop stopColor="#4859ED"/>
+<stop offset="1" stopColor="#5971EE" stopOpacity="0.8"/>
 </linearGradient>
 <linearGradient id="paint22_linear" x1="225" y1="156" x2="277.085" y2="158.338" gradientUnits="userSpaceOnUse">
-<stop stop-color="#768CFF"/>
-<stop offset="1" stop-color="#1B37C9"/>
+<stop stopColor="#768CFF"/>
+<stop offset="1" stopColor="#1B37C9"/>
 </linearGradient>
 <linearGradient id="paint23_linear" x1="212" y1="169" x2="212" y2="179" gradientUnits="userSpaceOnUse">
-<stop stop-color="#4859ED"/>
-<stop offset="1" stop-color="#5971EE" stop-opacity="0.8"/>
+<stop stopColor="#4859ED"/>
+<stop offset="1" stopColor="#5971EE" stopOpacity="0.8"/>
 </linearGradient>
 <linearGradient id="paint24_linear" x1="589" y1="189" x2="589" y2="199" gradientUnits="userSpaceOnUse">
-<stop stop-color="#4859ED"/>
-<stop offset="1" stop-color="#5971EE" stop-opacity="0.8"/>
+<stop stopColor="#4859ED"/>
+<stop offset="1" stopColor="#5971EE" stopOpacity="0.8"/>
 </linearGradient>
 <linearGradient id="paint25_linear" x1="596" y1="176" x2="658.378" y2="177.675" gradientUnits="userSpaceOnUse">
-<stop stop-color="#768CFF"/>
-<stop offset="1" stop-color="#1B37C9"/>
+<stop stopColor="#768CFF"/>
+<stop offset="1" stopColor="#1B37C9"/>
 </linearGradient>
 <linearGradient id="paint26_linear" x1="581" y1="230" x2="581" y2="240" gradientUnits="userSpaceOnUse">
-<stop stop-color="#4859ED"/>
-<stop offset="1" stop-color="#5971EE" stop-opacity="0.8"/>
+<stop stopColor="#4859ED"/>
+<stop offset="1" stopColor="#5971EE" stopOpacity="0.8"/>
 </linearGradient>
 <linearGradient id="paint27_linear" x1="566" y1="202" x2="596.678" y2="202.81" gradientUnits="userSpaceOnUse">
-<stop stop-color="#768CFF"/>
-<stop offset="1" stop-color="#1B37C9"/>
+<stop stopColor="#768CFF"/>
+<stop offset="1" stopColor="#1B37C9"/>
 </linearGradient>
 <linearGradient id="paint28_linear" x1="979" y1="448" x2="979" y2="458" gradientUnits="userSpaceOnUse">
-<stop stop-color="#4859ED"/>
-<stop offset="1" stop-color="#5971EE" stop-opacity="0.8"/>
+<stop stopColor="#4859ED"/>
+<stop offset="1" stopColor="#5971EE" stopOpacity="0.8"/>
 </linearGradient>
 <linearGradient id="paint29_linear" x1="990" y1="435" x2="1052.24" y2="438.342" gradientUnits="userSpaceOnUse">
-<stop stop-color="#768CFF"/>
-<stop offset="1" stop-color="#1B37C9"/>
+<stop stopColor="#768CFF"/>
+<stop offset="1" stopColor="#1B37C9"/>
 </linearGradient>
 </defs>
 </svg>

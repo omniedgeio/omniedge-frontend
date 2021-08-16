@@ -1,6 +1,5 @@
 ---
 title: Dashboard
-description:
 route: Doc / Dashboard 
 index: 0
 ---

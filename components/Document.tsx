@@ -20,7 +20,9 @@ export const Docnav: FunctionComponent<IProps> = ({ article }) => {
 
 export const Docnavs: FunctionComponent<IProps> = ({ articles }) => {
 	return (<>
-    {articles.sort().map((article, i) => (
+    {articles.sort((a, b) => {
+            return (a.index-b.index)
+          }).map((article, i) => (
       <Link href={`/docs/article/${article.slug}`} color="gray.500" fontWeight="medium">
       {article.title}
     </Link>
@@ -93,51 +95,23 @@ export const Postnav: FunctionComponent<IProps> = ({ article }) => {
 export const Postnavs: FunctionComponent<IProps> = ({ articles }) => {
 	return (<>
     {articles.sort().map((article, i) => (
-      <Link href={`/blog/posts/${article.slug}`} color="gray.500" fontWeight="medium">
-      {article.title}
+      <Link href={`/blog/posts/${article.meta.slug}`} color="gray.500" fontWeight="medium">
+      {article.meta.title}
     </Link>
   ))}
   </>
 	);
 }
 
-export const Markdowndoc:React.FC = function (props) {
-  
-  let [data, setContent] = useState<Element[]>([]);
-  useEffect(() => {
-    let data = [];
-    const hs = document.querySelectorAll(".markdown h1, .markdown h2");
-    for (let i = 0; i < hs.length; i++) {
-      const h = hs[i];
-      data.push(h);
-    }
-    setContent(data);
-  }, []);
-  
-	return (<>
-  <MDXProvider
-    components={{
-      h1: ({ children }) => (
-        <Heading as="h1" id={getHrefFromText(props.info)}>
-          {children}
-        </Heading>
-      ),
-      h2: ({ children }) => (
-        <Heading as="h2" id={getHrefFromText(props.info)}>
-          {children}
-        </Heading>
-      ),
-      a: Link,
-      table: Table,
-      tr: Tr,
-      th: Th,
-      td: Td,
-    }}
-  >
+interface props {
+  info: string;
+}
+export const Markdowndoc: FunctionComponent<props> = ({info}) => {
+  return(
+    <>
     <Box maxW="800px" className="markdown" px={{ base: 0, md: 10 }}>
-    <ReactMarkdown children={props.info} />
+    <ReactMarkdown children={info} />
     </Box>
-  </MDXProvider>
   </>
 	);
 }

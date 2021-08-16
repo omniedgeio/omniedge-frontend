@@ -5,13 +5,12 @@ import matter from 'gray-matter';
 import fs from 'fs';
 import DefaultLayout from "../../../components/layout/Default";
 import React,{FunctionComponent } from 'react'
-import { ArticleMeta } from '../../../components/interfaces/article'
+import { DocInfo } from '../../../components/interfaces/article'
 
 interface IProps {
-    article: ArticleMeta;
-    articles: ArticleMeta[];
+    article: DocInfo;
+    articles: DocInfo[];
 }
-
 const DocLayout: FunctionComponent<IProps> = ({ article,articles }) => {
   return (
     <DefaultLayout>

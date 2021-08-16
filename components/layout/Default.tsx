@@ -38,7 +38,7 @@ const DefaultLayout: React.FC<{}> = (props) => {
             <HStack>
               <Logo height="8" />
               <Heading fontWeight="semibold" size="md" as="h6">
-                OmniEdge
+                OMNIEDGE
               </Heading>
             </HStack>
           </Link>
@@ -63,8 +63,8 @@ const DefaultLayout: React.FC<{}> = (props) => {
           <Link href="/" _hover={{ color: "inherit" }}>
             <HStack display={["none", "flex"]}>
               <Logo height="8" />
-              <Heading fontWeight="semibold" size="md" as="h6">
-                OmniEdge
+              <Heading fontWeight="semibold" size="md" as="h6" color="brand.500">
+                OMNIEDGE
               </Heading>
             </HStack>
           </Link>
@@ -117,8 +117,8 @@ const DefaultLayout: React.FC<{}> = (props) => {
           <Stack>
           <HStack display={["none", "flex"]}>
           <Logo height="8" />
-          <Heading fontWeight="semibold" size="md" as="h6">
-          OmniEdge
+          <Heading fontWeight="semibold" size="md" as="h6" color="brand.500">
+          OMNIEDGE
           </Heading>
           </HStack>
           <Text fontSize="sm">2021 OmniEdge Inc.</Text>

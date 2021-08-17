@@ -5,17 +5,16 @@ interface ArticleMeta {
 	avatar:string;
 	description: string;
 	thumbnail: string;
-	date:Date;
-	route:String;
+	date: Date;
+	route: String;
 	readtime: BigInt;
-	index: BigInteger;
+	index: number;
 }
 
-interface ArticleInfo {
+interface ArticleInfo extends ArticleMeta {
 	meta: ArticleMeta;
 	content: string;
 }
-
 export type {
 	ArticleMeta,
 	ArticleInfo

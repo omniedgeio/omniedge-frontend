@@ -2,7 +2,7 @@
 title: How OmniEdge works
 description: Today, remote work, industrial Internet, banking, and other scenarios require a simple, secure, and high-speed private network. Our experienced engineers tried many existing solutions to meet these requirements, but none of them could fully meet our needs and those of our customers. So, we decide to make our solution, which is OmniEdge.
 thumbnail: /assets/posts-images/how-omniedge-works-meme.png
-avatar: /assets/Yong.jpg
+avatar: /assets/avatars/Yong.jpg
 author: Yong QIAN
 date: Feb 08, 2021
 readtime: 6

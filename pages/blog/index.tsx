@@ -18,12 +18,10 @@ const BlogLayout: FunctionComponent<IProps> = ({ articles }) => {
 <DefaultLayout>
 <Flex mt={5} flexDirection={{ base: "column", md: "row" }}>
       <Flex mt={5} flexDirection={{ base: "row", md: "column" }}>
-      {articles.sort((a, b) => {
-            return (
-              Date.parse(b.date) - Date.parse(a.date)
-            )
+      {articles.sort((a:any, b:any) => {
+            return (b.date - a.date)
           }).map((article, i) => (
-            <Postcard article={article} />
+            <Postcard key={i} article={article} />
         ))}
       </Flex>
       <VStack mb={{ base: 10, md: 0 }} flexShrink={0} spacing={4} w="175px" pr={2} alignItems="start">

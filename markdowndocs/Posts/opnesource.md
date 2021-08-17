@@ -2,7 +2,7 @@
 title: Open Source Evaluation version and Introduce 1.0 plan
 description: OmniEdge is a project we started from a single tweet, a group of network experts from 9 cites across 5 countries gathering together to build a paradigm shift for next generation peer-to-peer VPN infrastructure. 
 thumbnail: /assets/posts-images/OmniEdge-Dashboard.png
-avatar: /assets/Yong.jpg
+avatar: /assets/avatars/Yong.jpg
 author: Yong QIAN
 date: July 08, 2021
 readtime: 6

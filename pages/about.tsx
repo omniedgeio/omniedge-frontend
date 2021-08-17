@@ -14,7 +14,7 @@ import React from "react";
 import DefaultLayout from "../components/layout/Default";
 import { Page } from "../types";
 
-const Feature = (props) => {
+const Feature = (props:any) => {
   return (
     <Box>
       {/* <Icon
@@ -33,7 +33,7 @@ const Feature = (props) => {
         fontSize="xl"
         lineHeight="shorter"
         fontWeight="bold"
-        color={useColorModeValue("gray.900")}
+        color="gray.900"
       >
         {props.title}
       </chakra.h3>
@@ -42,7 +42,7 @@ const Feature = (props) => {
         fontSize="xs"
         lineHeight="shorter"
         fontWeight="bold"
-        color={useColorModeValue("gray.600")}
+        color="gray.600"
       >
         {props.position}
       </chakra.h3>

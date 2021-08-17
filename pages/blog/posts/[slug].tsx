@@ -5,14 +5,13 @@ import matter from 'gray-matter';
 import fs from 'fs';
 import DefaultLayout from "../../../components/layout/Default";
 import React,{FunctionComponent } from 'react'
-import { ArticleMeta } from '../../../components/interfaces/article'
+import { ArticleInfo } from '../../../components/interfaces/article'
 
 interface IProps {
-    article: ArticleMeta;
-    articles: ArticleMeta[];
+    article: ArticleInfo;
 }
 
-const DocLayout: FunctionComponent<IProps> = ({ article,articles }) => {
+const DocLayout: FunctionComponent<IProps> = ({article }) => {
   return (
     <DefaultLayout>
       <Flex mt={5} flexDirection={{ base: "column", md: "row" }}>

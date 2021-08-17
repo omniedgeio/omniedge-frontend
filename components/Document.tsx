@@ -7,23 +7,26 @@ import ReactMarkdown from 'react-markdown';
 
 interface IProps {
 	article: ArticleInfo; 
-	articles: ArticleInfo[];
+}
+
+interface IPropss {
+	articles: ArticleInfo[]; 
 }
 
 export const Docnav: FunctionComponent<IProps> = ({ article }) => {
 	return (
-        <Link href={`/docs/article/${article.meta.slug}`} color="gray.500" fontWeight="medium">
-        {article.meta.title}
+        <Link href={`/docs/article/${article.slug}`} color="gray.500" fontWeight="medium">
+        {article.title}
       </Link>
 	);
 }
 
-export const Docnavs: FunctionComponent<IProps> = ({ articles }) => {
+export const Docnavs: FunctionComponent<IPropss> = ({ articles }) => {
 	return (<>
     {articles.sort((a, b) => {
             return (a.index-b.index)
           }).map((article, i) => (
-      <Link href={`/docs/article/${article.slug}`} color="gray.500" fontWeight="medium">
+      <Link key={i} href={`/docs/article/${article.slug}`} color="gray.500" fontWeight="medium">
       {article.title}
     </Link>
   ))}
@@ -86,16 +89,16 @@ export const Docconent: FunctionComponent<IProps> = ({ article }) => {
 
 export const Postnav: FunctionComponent<IProps> = ({ article }) => {
 	return (
-        <Link href={`/blog/posts/${article.meta.slug}`} color="gray.500" fontWeight="medium">
-        {article.meta.title}
+        <Link href={`/blog/posts/${article.slug}`} color="gray.500" fontWeight="medium">
+        {article.title}
       </Link>
 	);
 }
 
-export const Postnavs: FunctionComponent<IProps> = ({ articles }) => {
+export const Postnavs: FunctionComponent<IPropss> = ({ articles }) => {
 	return (<>
     {articles.sort().map((article, i) => (
-      <Link href={`/blog/posts/${article.meta.slug}`} color="gray.500" fontWeight="medium">
+      <Link key={i} href={`/blog/posts/${article.meta.slug}`} color="gray.500" fontWeight="medium">
       {article.meta.title}
     </Link>
   ))}

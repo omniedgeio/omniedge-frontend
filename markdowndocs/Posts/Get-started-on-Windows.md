@@ -2,7 +2,7 @@
 title: Getting Started on Windows
 description: If you don't have an account on OmniEdge, please sign up for a new account. Currently every user will be assigned one virtual network automatically. So logging in with a same account means all your devices will be connected to the same network.
 thumbnail: /assets/posts-images/2-6-2.png
-avatar: /assets/Yong.jpg
+avatar: /assets/avatars/Yong.jpg
 author: Yong QIAN
 date: August 08, 2021
 readtime: 6

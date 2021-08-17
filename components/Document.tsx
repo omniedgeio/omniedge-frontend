@@ -1,9 +1,10 @@
-import { Children, FunctionComponent } from "react";
+import { FunctionComponent } from "react";
 import { ArticleInfo } from "./interfaces/article";
 import { chakra,Image,Stack,Avatar,Center,Box,Heading, Table, Td, Text, Th, Tr, VStack,Link, useColorModeValue,Flex } from "@chakra-ui/react";
-import { MDXProvider } from "@mdx-js/react";
 import React, { useEffect, useState } from "react";
 import ReactMarkdown from 'react-markdown';
+
+
 
 interface IProps {
 	article: ArticleInfo; 
@@ -50,29 +51,9 @@ export const Docconent: FunctionComponent<IProps> = ({ article }) => {
   }, []);
   
 	return (<>
-  <MDXProvider
-    components={{
-      h1: ({ children }) => (
-        <Heading as="h1" id={getHrefFromText(article.content)}>
-          {children}
-        </Heading>
-      ),
-      h2: ({ children }) => (
-        <Heading as="h2" id={getHrefFromText(article.content)}>
-          {children}
-        </Heading>
-      ),
-      a: Link,
-      table: Table,
-      tr: Tr,
-      th: Th,
-      td: Td,
-    }}
-  >
     <Box maxW="800px" className="markdown" px={{ base: 0, md: 10 }}>
     <ReactMarkdown children={article.content} />
     </Box>
-  </MDXProvider>
   <VStack flexShrink={0} w="250px" display={{ base: "none", lg: "flex" }} alignItems="start" pl={2}>
     <Text color="gray.500" fontSize="md">
       On This Page
@@ -133,25 +114,6 @@ export const Postconent: FunctionComponent<IProps> = ({ article }) => {
   }, []);
   
 	return (<>
-  <MDXProvider
-    components={{
-      h1: ({ children }) => (
-        <Heading as="h1" id={getHrefFromText(article.content)}>
-          {children}
-        </Heading>
-      ),
-      h2: ({ children }) => (
-        <Heading as="h2" id={getHrefFromText(article.content)}>
-          {children}
-        </Heading>
-      ),
-      a: Link,
-      table: Table,
-      tr: Tr,
-      th: Th,
-      td: Td,
-    }}
-  >
     <Box
 				maxW={'1000px'}
 				w={'full'}
@@ -178,13 +140,12 @@ export const Postconent: FunctionComponent<IProps> = ({ article }) => {
     <ReactMarkdown children={article.content} />
     </Box>
     </Box>
-  </MDXProvider>
   <VStack flexShrink={0} w="250px" display={{ base: "none", lg: "flex" }} alignItems="start" pl={2}>
     <Text color="gray.500" fontSize="md">
       On This Page
     </Text>
     {data.map((x) => (
-      <Link href={"#" + x.id} key={x.id}>
+      <Link href={"#" + x.textContent} key={x.id}>
         {x.textContent}
       </Link>
     ))}

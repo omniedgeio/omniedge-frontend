@@ -4,17 +4,15 @@ import {
   Heading, HStack,
   chakra,
   Box,
-  Image,
   Flex,
   Icon,
   useColorModeValue,
 } from "@chakra-ui/react";
 
 import {FaTwitter,FaGithub,FaMedium,FaYoutube } from "react-icons/fa";
-import {MdEmail, MdLocationOn } from "react-icons/md";
-import { BsFillBriefcaseFill } from "react-icons/bs";
+import {MdEmail } from "react-icons/md";
 
-export const Brand: React.FC = function (props) {
+export const Brand: React.FC = function () {
   return (
     <HStack>
       <Logo h={[6, 8]}></Logo>
@@ -25,7 +23,7 @@ export const Brand: React.FC = function (props) {
   );
 };
 
-export const Social:React.FC = function (props) {
+export const Social:React.FC = function () {
   return (
     <Flex
       p={50}
@@ -62,6 +60,7 @@ export const Social:React.FC = function (props) {
               <a
               className="w-7 mr-4"
               target="_blank"
+              rel="noreferrer"
               href="mailto:hi@omniedge.io"
             >
             <Icon as={MdEmail} h={6} w={6} mr={2} />
@@ -69,6 +68,7 @@ export const Social:React.FC = function (props) {
               <a
               className="w-7 mr-4"
               target="_blank"
+              rel="noreferrer"
               href="https://omniedge.medium.com/"
             >
             <Icon as={FaMedium} h={6} w={6} mr={2} />
@@ -76,6 +76,7 @@ export const Social:React.FC = function (props) {
             <a
               className="w-7 mr-4"
               target="_blank"
+              rel="noreferrer"
               href="https://twitter.com/omniedgeio"
             >
             <Icon as={FaTwitter} h={6} w={6} mr={2} />
@@ -83,6 +84,7 @@ export const Social:React.FC = function (props) {
             <a
               className="w-7 mr-4 text-primary"
               target="_blank"
+              rel="noreferrer"
               href="https://www.youtube.com/channel/UCe6OYOyfWDkSkN7LQ3Rp8_g"
             >
             <Icon as={FaYoutube} h={6} w={6} mr={2} />
@@ -90,6 +92,7 @@ export const Social:React.FC = function (props) {
             <a
               className="w-7 mr-4 text-primary"
               target="_blank"
+              rel="noreferrer"
               href="https://github.com/omniedgeio/omniedge/discussions"
             >
             <Icon as={FaGithub} h={6} w={6} mr={2} />

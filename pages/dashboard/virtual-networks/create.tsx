@@ -14,6 +14,7 @@ import { useRouter } from "next/dist/client/router";
 import * as Yup from "yup";
 import DashboardLayout from "../../../components/layout/Dashboard";
 import { createVirtualNetwork } from "../../../lib/api/virtualNetwork";
+import { showError } from "../../../lib/helpers/toast";
 import { Page } from "../../../types";
 
 const CreateVirtualNetworkPage: Page = function (props) {
@@ -35,7 +36,8 @@ const CreateVirtualNetworkPage: Page = function (props) {
         .then((res) => {
           router.push("/dashboard/virtual-networks");
         })
-        .catch(() => {
+        .catch((err) => {
+          err.data && showError("Error", err.data.message);
           actions.setSubmitting(false);
         });
     },

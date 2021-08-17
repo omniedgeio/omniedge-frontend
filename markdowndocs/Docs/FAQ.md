@@ -13,7 +13,8 @@ A: OmniEdge need adminstartor access to change the network setting.
 **Q: The window didn't show as my expectation when I run it. Check the console got below exception (the shot screen has been attached for your reference)"UNIX error exception: 17"**
 
 A: The omniedge helpertool could be corrupted during the installation, try to remove omniedge and its related files and reinstall again.
-```
+
+```bash
 uninstall Omniedge
 $ find ~/Library -name 'io.omniedge'
 $ remove all founded files
@@ -24,6 +25,7 @@ $ re-install Omniedge
 
 A: It is because the setting of `Windows Firewall`
 Search for Windows Firewall, and click to open it.
+
 ```note
 For help navigating, see Get around in Windows.
 Click Advanced Settings on the left.

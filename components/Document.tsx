@@ -2,9 +2,7 @@ import { FunctionComponent } from "react";
 import { ArticleInfo } from "./interfaces/article";
 import { chakra,Image,Stack,Avatar,Center,Box,Heading, Table, Td, Text, Th, Tr, VStack,Link, useColorModeValue,Flex } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-import ReactMarkdown from 'react-markdown';
-
-
+import Markdown from 'markdown-to-jsx';
 
 interface IProps {
 	article: ArticleInfo; 
@@ -52,7 +50,7 @@ export const Docconent: FunctionComponent<IProps> = ({ article }) => {
   
 	return (<>
     <Box maxW="800px" className="markdown" px={{ base: 0, md: 10 }}>
-    <ReactMarkdown children={article.content} />
+    <Markdown>{article.content}</Markdown>
     </Box>
   <VStack flexShrink={0} w="250px" display={{ base: "none", lg: "flex" }} alignItems="start" pl={2}>
     <Text color="gray.500" fontSize="md">
@@ -91,13 +89,14 @@ interface props {
   info: string;
 }
 export const Markdowndoc: FunctionComponent<props> = ({info}) => {
+  
   return(
     <>
     <Box maxW="800px" className="markdown" px={{ base: 0, md: 10 }}>
-    <ReactMarkdown children={info} />
+    <Markdown>{info}</Markdown>
     </Box>
   </>
-	);
+	); 
 }
 
 export const Postconent: FunctionComponent<IProps> = ({ article }) => {
@@ -137,7 +136,7 @@ export const Postconent: FunctionComponent<IProps> = ({ article }) => {
       </Center>
       <br></br>
     <Box maxW="800px" className="markdown" px={{ base: 0, md: 10 }}>
-    <ReactMarkdown children={article.content} />
+    <Markdown>{article.content}</Markdown>
     </Box>
     </Box>
   <VStack flexShrink={0} w="250px" display={{ base: "none", lg: "flex" }} alignItems="start" pl={2}>
@@ -145,7 +144,7 @@ export const Postconent: FunctionComponent<IProps> = ({ article }) => {
       On This Page
     </Text>
     {data.map((x) => (
-      <Link href={"#" + x.textContent} key={x.id}>
+      <Link href={"#" + x.id} key={x.id}>
         {x.textContent}
       </Link>
     ))}

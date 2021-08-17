@@ -26,13 +26,13 @@ const EntryLayout: React.FC = function ({ children }) {
           <VStack spacing="4">
             <Logo h="12"></Logo>
             <Heading fontWeight="semibold" fontSize="xl">
-              OmniEdge
+              OMNIEDGE
             </Heading>
           </VStack>
         </Link>
         <Text textAlign="center">
-          Connect without concern at <br />
-          any platform, anytime, anywhere.
+        Bring intranet on the internet, <br />
+        with P2P Secure Connection, Any Time, Any Where.
         </Text>
         {isLoading || user ? (
           <Spinner />
@@ -77,7 +77,9 @@ const EntryLayout: React.FC = function ({ children }) {
           </>
         )}
       </VStack>
+      
     </Center>
+    
   );
 };
 

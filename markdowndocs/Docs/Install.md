@@ -97,6 +97,7 @@ For M1 Mac user:
 4. Run OmniEdge
 5. Sign in with your email address
 6. Click the button near 'off' to connect, then a secure VPN connection is initialized.
+
 ## 4. Installing on Android
 
 OmniEdge Android is compatible with Android 6 or later mobile phone or TV. Last update: Version 0.1.3, April 27, 2021.
@@ -108,6 +109,7 @@ OmniEdge Android is compatible with Android 6 or later mobile phone or TV. Last 
 3. Click the connect button
 4. Allow to install a VPN configuration
 5. Enjoy the secure VPN connection
+
 ## 5. Installing on Linux
 OmniEdge Linux Cli is Compatible with linux for AMD64,ArmV7 and Arm64V8, Archlinux, OMV(Debian 9), Synology NAS,Ubuntu 16.04/18.04/20.04, CentOS 7/8, Debian 9/10, Fedora 32 Last update: Version 0.1.0, May 10, 2021.
 
@@ -138,10 +140,11 @@ sudo omniedge join
 
 ## 6. Installing on iOS
 Coming Soon
+
 ## 7. Installing on Raspberry Pi
 OmniEdge Raspberry Pi is Compatible with Rapsberry PI 1B, 3B, 3B+ Last update: Version 0.1.0, April 25, 2021.
 
-[OmniEdge Raspberry Pi(https://github.com/omniedgeio/omniedge-linux-cli/releases/download/v0.1.0/omniedge_arm.zip)
+[OmniEdge Raspberry Pi](https://github.com/omniedgeio/omniedge-linux-cli/releases/download/v0.1.0/omniedge_arm.zip)
 
 1. Sign up your account with your email and password: [Sign up](https://dashboard.omniedge.io/sign-up)
 2. Download and install omnidge cli
@@ -177,6 +180,7 @@ sudo omniedge join
 
 ## 9. Installing on Router
 Coming Soon
+
 ## 10. Uninstalling OmniEdge
 ## 11. Updating OmniEdge
 

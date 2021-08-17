@@ -62,7 +62,7 @@ const RegisterPage: Page = function (props) {
     },
   });
 
-  return (
+  return (<>
     <form onSubmit={handleSubmit} style={{ width: "100%" }}>
       {errorMsg && (
         <Alert my={2} status="error">
@@ -126,6 +126,10 @@ const RegisterPage: Page = function (props) {
         </VStack>
       </VStack>
     </form>
+    <Text fontSize="xs" color="gray.500">
+    {`By clicking the buttons above, you acknowledge that you have read, understood, and agree to OmniEdge's `} <Link href="/terms" color="brand.500">Terms of Service </Link>and <Link href="/privacy" color="brand.500">Privacy Policy.</Link>
+</Text>
+</>
   );
 };
 

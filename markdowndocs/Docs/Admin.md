@@ -7,10 +7,12 @@ index: 0
 # Dashboard Admin
 
 You can access the admin dashboard by logining OmniEdge, there are `Virtual Network`, `Devices`, `Security Key` and `Settings` pages you can manage your service.
+
 ## 1. Virtual Network
 You can create you own Virtual Network for your Team or personal purpose, by simplying click `+ NetWork`, put `name` of virtual network and `IP Range`, we strongly recommend you use the [**Private IPv4 Addresses**](https://en.wikipedia.org/wiki/Reserved_IP_addresses): `10.0.0.0 – 10.255.255.255, 172.16.0.0 – 172.31.255.255 and 192.168.0.0 – 192.168.255.255`.
 
 ![](/assets/docs/OmniEdge-VirtualNetwork.png)
+
 ## 2. Sharing Virtual Networks
 You can invite your friends, teammate or anyone you trust to your own Vritual Network. 
 ![](/assets/docs/OmniEdge-SharingVirtualNetwork.png)

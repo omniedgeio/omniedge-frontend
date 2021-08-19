@@ -4,7 +4,7 @@ description: OmniEdge is a project we started from a single tweet, a group of ne
 thumbnail: /assets/posts-images/OmniEdge-Dashboard.png
 avatar: /assets/avatars/Yong.jpg
 author: Yong QIAN
-date: July 08, 2021
+date: August 08, 2021
 readtime: 6
 ---
 

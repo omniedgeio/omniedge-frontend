@@ -25,7 +25,7 @@ const Home: Page = (props) => {
           justifyContent="space-between"
           alignItems={{ base: "flex-start", md: "center" }}
         >
-          <VStack alignItems="flex-start">
+          <VStack alignItems="flex-start" >
             <Heading as="h6" fontWeight="medium" size="sm" color="gray.500">
             MADE COMMUNICATION EASY AND SAFE
             </Heading>
@@ -37,8 +37,8 @@ const Home: Page = (props) => {
               {`Omniedge's distrubuted VPN solutions is not only a great and affordable network solution for small team,
               but also for big companies with thousands of devices all around the world.`}
             </Text>
-            <Link href="/register" w="full">
-            <Button colorScheme="brand">Get Started</Button>
+            <Link href="/register" w="full" >
+            <Button colorScheme="brand" w="50%">Get Started</Button>
             </Link>
           </VStack>
           <VStack pt={["12", "12", "0"]} alignItems="flex-start" pointerEvents="none" >

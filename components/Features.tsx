@@ -398,7 +398,7 @@ export const FeaturePage: Page = () => {
 }
 
 const Featureheros = (props:any) => (
-  <Flex alignItems="center" bg="white">
+  <Flex alignItems="center" bg="white" textAlign={{ base: "center",md:"center" }} >
     <Icon
       boxSize={4}
       mr={1}
@@ -417,8 +417,8 @@ const Featureheros = (props:any) => (
 );
 export function Heros(){
   return (
-    <Box padding="4" textAlign={{ lg: "center" }}>
-        <chakra.h1
+    <Box padding="4" textAlign={{ base: "center",md:"center" }} >
+        <chakra.h1  
           mb={3}
           fontSize={{ base: "3xl", md: "4xl" }}
           fontWeight={{ base: "bold", md: "extrabold" }}
@@ -435,9 +435,9 @@ export function Heros(){
         >
           We’re on a mission to provide a reliable, secure and painless connectivity solutions for anyone who wants to have have access to their devices, anywhere, anytime.
         </chakra.p>
-        <Link href="/register" w="full">
+        <Link href="/register" w="full" mb={6}>
             <Button 
-              w="30%"
+              w="50%"
               colorScheme="brand">
               Get Started
             </Button>
@@ -446,10 +446,11 @@ export function Heros(){
           display="flex"
           direction={{ base: "column", md: "row" }}
           justifyContent={{ base: "start", md: "center" }}
-          mb={3}
+          mb={6}
           spacing={{ base: 2, md: 8 }}
           fontSize="xs"
           color="gray.600"
+          alignItems={{ base: "center",md:"left" }}
         >
           <Featureheros>No credit card required</Featureheros>
           <Featureheros>Start from free</Featureheros>
@@ -608,10 +609,10 @@ export function Compare() {
         <Text textAlign="center">
         OmniEdge rebuilds the intranet on the internet setup easier, without concern.
         </Text>
-        <Tabs size="lg" isFitted variant="soft-rounded">
+        <Tabs size="lg" isFitted variant="enclosed" >
   <TabList>
-    <Tab _selected={{ color: "white", bg: "brand.500" }}>With OmniEdge</Tab>
-    <Tab _selected={{ color: "white", bg: "brand.500" }}>Without OmniEdge</Tab>
+    <Tab _selected={{ color: "white", bg: "brand.500" }}>OmniEdge</Tab>
+    <Tab _selected={{ color: "white", bg: "brand.500" }}>No OmniEdge</Tab>
   </TabList>
   <TabPanels>
     <TabPanel >

@@ -43,3 +43,7 @@ index: 5
 
 
 ## OmniEdge Vs frp,ngrok
+
+-----
+
+If you have more questions, feel free to [contact us](mailto:support@omniedge.io).

@@ -107,7 +107,7 @@ export const Privacy: Page = () => {
           title: 'OmniEdge Privacy',
         }}
       />
-      <VStack mt={10}>
+      <VStack padding="4" mt={10}>
       <Heading fontWeight="semibold" fontSize="2xl">
       Privacy Policy for OmniEdge
       </Heading>

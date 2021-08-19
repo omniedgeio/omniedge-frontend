@@ -64,11 +64,11 @@ import {
         <Stack
           padding="4"
           direction={["column", "row"]}
-          alignContent="center"
+          alignContent={{ base: "left", md: "center" }}
           justifyContent="space-between"
         >
-          <HStack>
-            <VStack>
+          <HStack >
+            <VStack >
             <Link href="/" _hover={{ color: "inherit" }}>
             <HStack>
               <Logo height="8" />
@@ -110,8 +110,8 @@ import {
               <Link href="/privacy">Privacy Policy</Link>
             </Stack>
             </VStack>
-        <VStack>
-          <Stack>
+        <VStack textAlign={{ base: "left", md: "center" }}>
+          <Stack >
           <ListHeader >Stay up to date</ListHeader>
               <Stack direction={'row'}>
                 <Input

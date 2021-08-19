@@ -16,18 +16,7 @@ import { Page } from "../types";
 
 const Feature = (props:any) => {
   return (
-    <Box>
-      {/* <Icon
-        boxSize={12}
-        color={useColorModeValue("brand.700")}
-        mb={4}
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        aria-hidden="true"
-      >
-        {props.icon}
-      </Icon> */}
+    <Box padding="4"> 
       <chakra.h3
         mb={3}
         fontSize="xl"
@@ -46,6 +35,44 @@ const Feature = (props:any) => {
       >
         {props.position}
       </chakra.h3>
+      <Stack
+          display="flex"
+          direction={"row"}
+          justifyContent={"center" }
+          color="gray.600"
+        >
+      <Link href={props.linkedin}><Icon
+        boxSize={8}
+        fill="none"
+        stroke="currentColor"
+        aria-hidden="true"
+        color="brand.500"
+      >
+        {props.icon1}
+      </Icon>
+      </Link>
+      <Link href={props.twitter}><Icon
+        boxSize={8}
+        fill="none"
+        stroke="currentColor"
+        aria-hidden="true"
+        color="brand.500"
+      >
+        {props.icon2}
+        
+      </Icon>
+        </Link>
+      <Link href={props.github}><Icon
+        boxSize={8}
+        fill="none"
+        stroke="currentColor"
+        aria-hidden="true"
+        color="brand.500"
+      >
+        {props.icon3}
+      </Icon>
+      </Link>
+      </Stack>
       <chakra.p
         lineHeight="tall"
         color={useColorModeValue("gray.600", "gray.400")}
@@ -54,67 +81,6 @@ const Feature = (props:any) => {
         {props.children}
       </chakra.p>
       <br></br>
-      <Stack
-          display="flex"
-          direction={{ base: "column", md: "row" }}
-          justifyContent={{ base: "start", md: "center" }}
-          mb={3}
-          spacing={{ base: 2, md: 8 }}
-          fontSize="lg"
-          color="gray.600"
-        >
-      <Link href={props.linkedin} w="full"><Flex
-          alignItems="center"
-          justifyContent="center"
-          h={12}
-          w={12}
-          rounded="md"
-          color="brand.500"
-        >    <Icon
-        boxSize={10}
-        fill="none"
-        viewBox="0 0 32 32"
-        stroke="currentColor"
-        aria-hidden="true"
-      >
-        {props.icon1}
-      </Icon>
-        </Flex></Link>
-      <Link href={props.twitter} w="full"><Flex
-          alignItems="center"
-          justifyContent="center"
-          h={12}
-          w={12}
-          rounded="md"
-          color="brand.500"
-        >    <Icon
-        boxSize={10}
-        fill="none"
-        viewBox="0 0 32 32"
-        stroke="currentColor"
-        aria-hidden="true"
-      >
-        {props.icon2}
-      </Icon>
-        </Flex></Link>
-      <Link href={props.github} w="full"><Flex
-          alignItems="center"
-          justifyContent="center"
-          h={12}
-          w={12}
-          rounded="md"
-          color="brand.500"
-        >    <Icon
-        boxSize={10}
-        fill="none"
-        viewBox="0 0 32 32"
-        stroke="currentColor"
-        aria-hidden="true"
-      >
-        {props.icon3}
-      </Icon>
-        </Flex></Link>
-      </Stack>
     </Box>
   );
 };
@@ -122,14 +88,12 @@ const Feature = (props:any) => {
 const About: Page = (props) => {
   return (
     <>
-    <VStack mt={10}>
+    <VStack padding="4" mt={10}>
     <Box
-        w={{ base: "full", md: 11 / 12, xl: 8 / 12 }}
         textAlign={{ base: "left", md: "left" }}
         mx="auto"
       >
     <chakra.h1
-          mb={3}
           fontSize={{ base: "3xl", md: "4xl" }}
           fontWeight={{ base: "bold", md: "extrabold" }}
           color={useColorModeValue("gray.900", "gray.100")}
@@ -149,13 +113,9 @@ We found OmniEdge totally from Twitter, with a team from 4 countries, in post-pa
         </chakra.p>
 </Box>
     </VStack>
-    <Box
-        w="auto"
-        textAlign={{ base: "center", md: "center" }}
-        mx="auto"
-      >
+    <Box padding="4"
+    textAlign={{ base: "center", md: "center" }}>
           <chakra.h1
-          mb={3}
           fontSize={{ base: "5xl", md: "4xl" }}
           fontWeight={{ base: "bold", md: "extrabold" }}
           color={useColorModeValue("gray.900", "gray.100")}
@@ -164,7 +124,6 @@ We found OmniEdge totally from Twitter, with a team from 4 countries, in post-pa
           Founder Team
         </chakra.h1>
     <Flex
-      p={20}
       w="auto"
       justifyContent="center"
       alignItems="center"
@@ -172,12 +131,8 @@ We found OmniEdge totally from Twitter, with a team from 4 countries, in post-pa
       
       <SimpleGrid
         columns={{ base: 1, md: 2, lg: 3 }}
-        spacing={20}
-        px={{ base: 4, lg: 16, xl: 24 }}
         py={20}
         mx="auto"
-        bg={useColorModeValue("white", "gray.800")}
-        // shadow="xl"
       >
         <Feature
           title="Yong QIAN"
@@ -295,9 +250,9 @@ We found OmniEdge totally from Twitter, with a team from 4 countries, in post-pa
     </Box>
     <VStack mt={10}>
     <Box
-        w={{ base: "full", md: 11 / 12, xl: 8 / 12 }}
-        textAlign={{ base: "left", md: "left" }}
+        // textAlign={{ base: "center", md: "center" }}
         mx="auto"
+        padding="4"
       >
     <chakra.h1
           mb={3}
@@ -305,6 +260,7 @@ We found OmniEdge totally from Twitter, with a team from 4 countries, in post-pa
           fontWeight={{ base: "bold", md: "extrabold" }}
           color={useColorModeValue("gray.900", "gray.100")}
           lineHeight="shorter"
+          textAlign={"center" }
         >
           Who are OmniEdge Looking For?
         </chakra.h1>

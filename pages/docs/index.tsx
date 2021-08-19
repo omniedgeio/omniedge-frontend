@@ -1,5 +1,5 @@
 /* eslint-disable react/display-name */
-import { Flex, Heading,VStack } from "@chakra-ui/react";
+import { Stack,Flex, Heading,VStack } from "@chakra-ui/react";
 import {Docnavs,Docconent} from '../../components/Document';
 import matter from 'gray-matter';
 import fs from 'fs';
@@ -14,13 +14,39 @@ interface IProps {
 const DocLayout: FunctionComponent<IProps> = ({ articles }) => {
   return (
     <DefaultLayout>
-      <Flex mt={5} flexDirection={{ base: "column", md: "row" }}>
-        <VStack mb={{ base: 10, md: 0 }} flexShrink={0} spacing={4} w="175px" pr={2} alignItems="start">
-          <Heading fontSize="md">DOCS</Heading>
+      <VStack spacing="4" alignItems="left">
+<Stack spacing="8" direction={["column", "row"]} alignItems="flex-start">
+<Flex
+          display={["none", "flex"]}
+          p="4"
+          justifyContent="space-between"
+          borderBottom="1px"
+          borderBottomColor="gray.100"
+        >
+  <VStack maxW="md" spacing="4" alignItems="left">
+  <Heading fontSize="md">DOCS</Heading>
+
             <Docnavs articles={articles} /> 
-        </VStack>
-            <Docconent key={0} article={articles[0]} />
-      </Flex>
+            
+          </VStack>
+          </Flex>
+          <VStack maxW="1000" spacing="4">
+<Docconent key={0} article={articles[0]} />
+  </VStack>
+  <Flex
+          display={["flex", "none"]}
+          p="4"
+          justifyContent="space-between"
+          borderBottom="1px"
+          borderBottomColor="gray.100"
+        >
+  <VStack maxW="md" spacing="4" alignItems="left">
+  <Heading fontSize="md">DOCS</Heading>
+  <Docnavs articles={articles} /> 
+          </VStack>
+          </Flex>
+      </Stack>
+    </VStack>
     </DefaultLayout>
   );
 };

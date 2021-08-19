@@ -13,7 +13,7 @@ Simple enough to use for both users and network administrators.
 Based on the Zero-trust security model. Users can establish a strictly secure network through authentication services such as Okta, G Suite, etc.
 Try using peer-to-peer communication instead of relaying nodes to increase the network speed and reduce risks of single-point failures.
 
-## Main Architecture
+### Main Architecture
 
 For the above design goals, we get inspired by an open-source VPN software: n2n and designed the main architecture of OmniEdge.
 ![](https://omniedge.io/assets/blog-images/how-omniedge-works-main-architecture.png)

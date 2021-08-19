@@ -24,7 +24,7 @@ const BlogLayout: FunctionComponent<IProps> = ({ articles }) => {
             <Postcard key={i} article={article} />
         ))}
   </VStack>
-  <VStack maxW="md" spacing="4">
+  <VStack maxW="md" spacing="4" display={["none", "flex"]}>
           <Social />
           </VStack>
       </Stack>

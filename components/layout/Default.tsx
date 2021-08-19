@@ -104,10 +104,9 @@ const DefaultLayout: React.FC<{}> = (props) => {
       <main>
         {props.children}
       </main>
-      <Divider />
+    
       <Footer />
-        
-
+    
     </Container>
   );
 };

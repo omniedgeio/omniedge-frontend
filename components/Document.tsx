@@ -1,6 +1,6 @@
 import { FunctionComponent } from "react";
 import { ArticleInfo } from "./interfaces/article";
-import { chakra,Image,Stack,Avatar,Center,Box,Heading, Table, Td, Text, Th, Tr, VStack,Link, useColorModeValue,Flex } from "@chakra-ui/react";
+import { chakra,Image,Stack,Avatar,Center,Box,Heading, Text, VStack,Link, useColorModeValue,Flex } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import Markdown from 'markdown-to-jsx';
 
@@ -49,10 +49,20 @@ export const Docconent: FunctionComponent<IProps> = ({ article }) => {
   }, []);
   
 	return (<>
+  <Stack spacing="8" direction={["column", "row"]} alignItems="flex-start">
+  <VStack spacing="4">
     <Box maxW="800px" className="markdown" px={{ base: 0, md: 10 }}>
     <Markdown>{article.content}</Markdown>
     </Box>
-  <VStack flexShrink={0} w="250px" display={{ base: "none", lg: "flex" }} alignItems="start" pl={2}>
+    </VStack>
+    <Flex
+          display={["none", "flex"]}
+          p="4"
+          justifyContent="space-between"
+          borderBottom="1px"
+          borderBottomColor="gray.100"
+        >
+    <VStack maxW="300px" spacing="4" alignItems="left">
     <Text color="gray.500" fontSize="md">
       On This Page
     </Text>
@@ -62,6 +72,8 @@ export const Docconent: FunctionComponent<IProps> = ({ article }) => {
       </Link>
     ))}
   </VStack>
+  </Flex>
+  </Stack>
   </>
 	);
 }
@@ -175,6 +187,7 @@ export const Postcard: FunctionComponent<IProps> = ({ article }) => {
           fit="cover"
           src={article.thumbnail}
           alt={article.description}
+          display={["none", "flex"]}
         />
 
         <Box p={6}>

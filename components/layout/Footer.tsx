@@ -12,9 +12,11 @@ import {
     useColorModeValue,
     Heading,
     HStack,
+    VStack,
+    Flex,
   } from '@chakra-ui/react';
   import { ReactNode } from 'react';
-  import { FaGithub, FaTwitter, FaYoutube,FaMedium,Faemail } from 'react-icons/fa';
+  import { FaGithub, FaTwitter, FaYoutube,FaMedium } from 'react-icons/fa';
   import { BiMailSend } from 'react-icons/bi';
   import Logo from '../Logo';
   
@@ -57,22 +59,29 @@ import {
     );
   };
   
-  export default function LargeWithNewsletter() {
-    return (
-      <Box
-        color={useColorModeValue('gray.700', 'gray.200')}>
-        <Container as={Stack} maxW={'6xl'} py={10}>
-          <SimpleGrid
-            templateColumns={{ sm: '1fr 1fr', md: '2fr 1fr 1fr 2fr' }}
-            spacing={8}>
-            <Stack spacing={6}>
-            <HStack display={["none", "flex"]}>
+  export default function Footer() {
+    return (<>
+        <Flex
+          py="4"
+          px={["4", "0"]}
+          direction={["column", "row"]}
+          alignContent="center"
+          justifyContent="space-between"
+          borderBottom={["1px", "0"]}
+          borderBottomColor="gray.100"
+        >
+          
+          <HStack>
+            <VStack alignContent="center">
+            <Link href="/" _hover={{ color: "inherit" }}>
+            <HStack>
               <Logo height="8" />
               <Heading fontWeight="semibold" size="md" as="h6" color="brand.500">
                 OMNIEDGE
               </Heading>
               </HStack>
-              <Text fontSize={'sm'}>
+              </Link>
+              <Text fontSize={'sm'} align="center">
                 © 2021 OmniEdge Inc. All rights reserved <br />
                 | US | AU | CN | DE | MA |
               </Text>
@@ -90,18 +99,25 @@ import {
                   <FaMedium />
                 </SocialButton>
               </Stack>
-            </Stack>
-            <Stack align={'flex-start'}>
+              </VStack>
+            </HStack>
+            <VStack display={["none", "flex"]}>
+            <Stack align={'flex-start'} >
               <Link href="/about">About us</Link>
               <Link href="/docs">Docs</Link>
               <Link href="/contactus">Contact us</Link>
             </Stack>
+            </VStack>
+            <VStack display={["none", "flex"]}>
             <Stack align={'flex-start'}>
               <Link href="/terms">Terms of Service</Link>
               <Link href="/privacy">Privacy Policy</Link>
             </Stack>
-            <Stack align={'flex-start'}>
-              <ListHeader>Stay up to date</ListHeader>
+            </VStack>
+        <VStack>
+        
+          <Stack alignContent="center">
+          <ListHeader >Stay up to date</ListHeader>
               <Stack direction={'row'}>
                 <Input
                   placeholder={'Your email address'}
@@ -121,9 +137,9 @@ import {
                   icon={<BiMailSend />}
                 />
               </Stack>
-            </Stack>
-          </SimpleGrid>
-        </Container>
-      </Box>
+          </Stack>
+          </VStack>
+        </Flex>
+        </>
     );
   }

@@ -1,4 +1,4 @@
-import { Button, Heading, HStack, Icon, Text, VStack } from "@chakra-ui/react";
+import { Stack,Button, Heading, HStack, Icon, Text, VStack } from "@chakra-ui/react";
 import React from "react";
 import { FiCheck, FiX } from "react-icons/fi";
 import DefaultLayout from "../components/layout/Default";
@@ -22,9 +22,9 @@ const PricingPage: Page = () => {
         Pricing
       </Heading>
       <Text>Start for free, then grow with us</Text>
-
-      <HStack pt={4} spacing={4}>
-        <VStack borderRadius="xl" p={6} border="solid 1px" borderColor="gray.200">
+<VStack spacing="4" alignItems="center">
+<Stack spacing="8" direction={["column", "row"]} alignItems="flex-start">
+<VStack borderRadius="xl" p={6} border="solid 1px" borderColor="gray.200">
           <Text>Free</Text>
           <HStack height="2.5rem" spacing={1} alignItems="center">
             <Text>$</Text>
@@ -47,6 +47,7 @@ const PricingPage: Page = () => {
             <FeatureText active={false}>Specialist Support</FeatureText>
           </VStack>
         </VStack>
+
         <VStack borderRadius="xl" p={6} border="solid 1px" borderColor="gray.200">
           <Text>Enterprise</Text>
           <HStack height="2.5rem" spacing={1} alignItems="center">
@@ -67,8 +68,9 @@ const PricingPage: Page = () => {
             <FeatureText>Specialist Support</FeatureText>
           </VStack>
         </VStack>
-      </HStack>
-      <br></br>
+      </Stack>
+    </VStack>
+    <br></br>
     </VStack>
     
   );

@@ -28,6 +28,7 @@ export const Customersmap: React.FC<BoxProps> = (props) => {
         width="100%"
         fit="cover"
         src="/assets/customersmap.svg"
+        alt="OmniEdge's Cusotmer"
       /> 
       </>
   );

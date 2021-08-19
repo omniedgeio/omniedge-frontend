@@ -619,6 +619,7 @@ export function Compare() {
         width="100%"
         fit="cover"
         src="/assets/OmniEdge-VPN.svg"
+        alt="With OmniEdge "
       />  
     </TabPanel>
     <TabPanel>
@@ -627,6 +628,7 @@ export function Compare() {
         width="100%"
         fit="cover"
         src="/assets/Legacy-VPN.svg"
+        alt="Without OmniEdge "
       />  
       
     </TabPanel>

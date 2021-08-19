@@ -103,7 +103,7 @@ const Home: Page = (props) => {
   expires={150}
   enableDeclineButton
   >
-  We use cookies to ensure you get the best experience on our website <a href="/privacy">Learn more</a>.{" "}
+  We use cookies to ensure you get the best experience on our website <Link href="/privacy">Learn more</Link>.{" "}
 
 </CookieConsent>
 

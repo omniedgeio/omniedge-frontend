@@ -94,7 +94,7 @@ a {
 }
 
 .description a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .instructionGif {

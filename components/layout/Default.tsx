@@ -19,6 +19,7 @@ import { FiMenu, FiX } from "react-icons/fi";
 import { useUser } from "../../lib/hook/useUser";
 import Logo from "../Logo";
 import Link from "../next/Link";
+import Footer from "./Footer";
 
 const DefaultLayout: React.FC<{}> = (props) => {
   const [isNavBarOpen, setNavBarOpen] = useBoolean(false);
@@ -104,44 +105,7 @@ const DefaultLayout: React.FC<{}> = (props) => {
         {props.children}
       </main>
       <Divider />
-      <Flex
-          py="4"
-          px={["4", "0"]}
-          direction={["column", "row"]}
-          alignContent="center"
-          justifyContent="space-between"
-          borderBottom={["1px", "0"]}
-          borderBottomColor="gray.100"
-          display={[isNavBarOpen ? "flex" : "none", "flex"]}
-        >
-          <Stack>
-          <HStack display={["none", "flex"]}>
-          <Logo height="8" />
-          <Heading fontWeight="semibold" size="md" as="h6" color="brand.500">
-          OMNIEDGE
-          </Heading>
-          </HStack>
-          <Text fontSize="sm">2021 OmniEdge Inc.</Text>
-          <HStack fontSize="sm">
-          <Text>| Austin | Adelaide | Beijing | Frankfurt |  Guangzhou | Hangzhou | Kuala Lumpur | Shanghai | Suzhou |</Text>
-          </HStack>
-          <HStack fontSize="sm">
-          <Link href="/privacy">Privacy</Link> <Text>&</Text><Link href="/terms">Terms</Link>
-          </HStack>
-          </Stack>
-
-          <Stack
-            spacing={["2", "5"]}
-            mb={["4", "0"]}
-            alignItems={["flex-start", "center"]}
-            direction={["column", "row"]}
-          >
-            <Link href="/docs">Docs</Link>
-            <Link href="/blog">Blog</Link>
-            <Link href="/about">About</Link>
-          </Stack>
-          
-        </Flex>
+      <Footer />
         
 
     </Container>

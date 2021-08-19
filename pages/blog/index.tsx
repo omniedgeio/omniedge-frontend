@@ -1,5 +1,5 @@
 /* eslint-disable react/display-name */
-import { Flex,VStack } from "@chakra-ui/react";
+import { Stack,VStack } from "@chakra-ui/react";
 import {Postcard} from '../../components/Document';
 import matter from 'gray-matter';
 import fs from 'fs';
@@ -14,20 +14,21 @@ interface IProps {
 
 const BlogLayout: FunctionComponent<IProps> = ({ articles }) => {
   return (
-
 <DefaultLayout>
-<Flex mt={5} flexDirection={{ base: "column", md: "row" }}>
-      <Flex mt={5} flexDirection={{ base: "row", md: "column" }}>
+<VStack spacing="4" alignItems="center">
+<Stack spacing="8" direction={["column", "row"]} alignItems="flex-start">
+<VStack maxW="1000" spacing="4">
       {articles.sort((a:any, b:any) => {
             return (b.date - a.date)
           }).map((article, i) => (
             <Postcard key={i} article={article} />
         ))}
-      </Flex>
-      <VStack mb={{ base: 10, md: 0 }} flexShrink={0} spacing={4} w="175px" pr={2} alignItems="start">
+  </VStack>
+  <VStack maxW="md" spacing="4">
           <Social />
-        </VStack>
-      </Flex>
+          </VStack>
+      </Stack>
+    </VStack>
     </DefaultLayout>
 
   );

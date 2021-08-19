@@ -3479,6 +3479,11 @@ jest-worker@27.0.0-next.5:
     merge-stream "^2.0.0"
     supports-color "^8.0.0"
 
+js-cookie@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/js-cookie/-/js-cookie-2.2.1.tgz#69e106dc5d5806894562902aa5baec3744e9b2b8"
+  integrity sha512-HvdH2LzI/EAZcUwA8+0nKNtWHqS+ZmijLA30RwZA0bo7ToCckjK5MkGhjED9KoRcXO6BaGI3I9UIzSA1FKFPOQ==
+
 js-sha3@0.8.0:
   version "0.8.0"
   resolved "https://registry.npmjs.org/js-sha3/-/js-sha3-0.8.0.tgz"
@@ -4958,6 +4963,14 @@ react-code-blocks@^0.0.9-0:
     react-syntax-highlighter "^12.2.1"
     styled-components "^5.1.1"
     tslib "^2.0.0"
+
+react-cookie-consent@^6.3.0:
+  version "6.3.0"
+  resolved "https://registry.yarnpkg.com/react-cookie-consent/-/react-cookie-consent-6.3.0.tgz#d305c121e883840d7623c03e9f1dd83db8b43f16"
+  integrity sha512-ynDLIJwedf0btR3sHsrRdcng6KWi9lJKLOUxo7BCof0F3DAFPxBRlAgUy4u1UdiPYR0gcjYHGVu5hE+22IWKmg==
+  dependencies:
+    js-cookie "^2.2.1"
+    prop-types "^15.7.2"
 
 react-country-flag@^2.3.1:
   version "2.3.1"

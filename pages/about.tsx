@@ -94,13 +94,16 @@ const About: Page = (props) => {
         mx="auto"
       >
     <chakra.h1
-          fontSize={{ base: "3xl", md: "4xl" }}
+          fontSize={{ base: "5xl", md: "4xl" }}
           fontWeight={{ base: "bold", md: "extrabold" }}
           color={useColorModeValue("gray.900", "gray.100")}
           lineHeight="shorter"
+          textAlign={'center'}
         >
           Simplifying the usage flow of product​.
+          
         </chakra.h1>
+        <br></br>
         <chakra.p
           mb={6}
           fontSize={{ base: "lg", md: "xl" }}
@@ -114,7 +117,9 @@ We found OmniEdge totally from Twitter, with a team from 4 countries, in post-pa
 </Box>
     </VStack>
     <Box padding="4"
+    // bg="brand.200"
     textAlign={{ base: "center", md: "center" }}>
+      
           <chakra.h1
           fontSize={{ base: "5xl", md: "4xl" }}
           fontWeight={{ base: "bold", md: "extrabold" }}

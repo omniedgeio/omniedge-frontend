@@ -16,7 +16,7 @@ import DefaultLayout from "../components/layout/Default";
 import { Page } from "../types";
 import {Customersmap} from "../components/Customersmap"
 import {FeaturePage,How,Heros,Users, Whyus, Compare} from "../components/Features";
-
+import CookieConsent from "react-cookie-consent";
 const Home: Page = (props) => {
   return (<>
       <Box padding="4" as="header" py={["6", "12", "36"]} position="relative">
@@ -94,6 +94,20 @@ const Home: Page = (props) => {
       <Users />
       <Heros />
       <Customersmap />
+      <CookieConsent
+  location="bottom"
+  buttonText="I Agree"
+  cookieName="OmniEdge"
+  style={{ background: "#4859ED" }}
+  buttonStyle={{ color: "#4859ED", fontSize: "13px" }}
+  expires={150}
+  enableDeclineButton
+  >
+  We use cookies to ensure you get the best experience on our website <a href="/privacy">Learn more</a>.{" "}
+
+</CookieConsent>
+
+      
       </>
     
   );

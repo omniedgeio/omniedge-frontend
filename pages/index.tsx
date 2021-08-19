@@ -18,9 +18,8 @@ import {Customersmap} from "../components/Customersmap"
 import {FeaturePage,How,Heros,Users, Whyus, Compare} from "../components/Features";
 
 const Home: Page = (props) => {
-  return (
-    <>
-      <Box as="header" py={["6", "12", "36"]} position="relative">
+  return (<>
+      <Box padding="4" as="header" py={["6", "12", "36"]} position="relative">
         <Stack
           direction={{ base: "column", md: "row" }}
           justifyContent="space-between"
@@ -32,7 +31,7 @@ const Home: Page = (props) => {
             </Heading>
             <Heading maxW="xl" as="h1" size="xl" lineHeight="1.5em">
             Bring intranet on the internet.
-            With P2P Secure Connection, Any Time, Any Where.
+            {/* With P2P Secure Connection, Any Time, Any Where. */}
             </Heading>
             <Text maxW="2xl" color="gray.700" py="4">
               {`Omniedge's distrubuted VPN solutions is not only a great and affordable network solution for small team,
@@ -42,7 +41,7 @@ const Home: Page = (props) => {
             <Button colorScheme="brand">Get Started</Button>
             </Link>
           </VStack>
-          <VStack pt={["12", "12", "0"]} alignItems="flex-start" pointerEvents="none">
+          <VStack pt={["12", "12", "0"]} alignItems="flex-start" pointerEvents="none" >
           <Link href="/register" w="full">
             <Button colorScheme="brand">+ Virtual Network</Button>
             </Link>
@@ -92,12 +91,9 @@ const Home: Page = (props) => {
       <Compare />
       <How />
       <FeaturePage />
-      
       <Users />
-      {/* <Whyus /> */}
       <Heros />
       <Customersmap />
-      
       </>
     
   );

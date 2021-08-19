@@ -6,6 +6,7 @@ import {
   Box,
   Flex,
   Icon,
+  Image,
   useColorModeValue,
 } from "@chakra-ui/react";
 
@@ -25,25 +26,18 @@ export const Brand: React.FC = function () {
 
 export const Social:React.FC = function () {
   return (
-    <Flex
-      p={50}
-      alignItems="center"
-      justifyContent="center"
-    >
       <Box
         shadow="lg"
         rounded="lg"
         overflow="hidden"
       >
-        {/* <Image
-          w="full"
-          h={56}
+        <Image
+          w="270px"
           fit="cover"
           objectPosition="center"
-          // src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
+          src="./background-network.png"
           alt="avatar"
-        /> */}
-
+        />
         <Flex alignItems="center" px={6} py={3} bg="brand.500">
           <chakra.h1 mx={3} color="white" fontWeight="bold" fontSize="lg">
             KEEP IN TOUCH
@@ -93,14 +87,13 @@ export const Social:React.FC = function () {
               className="w-7 mr-4 text-primary"
               target="_blank"
               rel="noreferrer"
-              href="https://github.com/omniedgeio/omniedge/discussions"
+              href="https://github.com/omniedgeio"
             >
             <Icon as={FaGithub} h={6} w={6} mr={2} />
             </a>
           </Flex>
         </Box>
       </Box>
-    </Flex>
   );
 };
 

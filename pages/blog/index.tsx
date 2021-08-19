@@ -15,8 +15,8 @@ interface IProps {
 const BlogLayout: FunctionComponent<IProps> = ({ articles }) => {
   return (
 <DefaultLayout>
-<VStack spacing="4" alignItems="center">
-<Stack spacing="8" direction={["column", "row"]} alignItems="flex-start">
+<VStack padding="4" alignItems="center">
+<Stack direction={["column", "row"]} alignItems="flex-start">
 <VStack maxW="1000" spacing="4">
       {articles.sort((a:any, b:any) => {
             return (b.date - a.date)

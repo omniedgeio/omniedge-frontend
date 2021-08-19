@@ -61,18 +61,14 @@ import {
   
   export default function Footer() {
     return (<>
-        <Flex
-          py="4"
-          px={["4", "0"]}
+        <Stack
+          padding="4"
           direction={["column", "row"]}
           alignContent="center"
           justifyContent="space-between"
-          borderBottom={["1px", "0"]}
-          borderBottomColor="gray.100"
         >
-          
           <HStack>
-            <VStack alignContent="center">
+            <VStack>
             <Link href="/" _hover={{ color: "inherit" }}>
             <HStack>
               <Logo height="8" />
@@ -85,7 +81,7 @@ import {
                 © 2021 OmniEdge Inc. All rights reserved <br />
                 | US | AU | CN | DE | MA |
               </Text>
-              <Stack direction={'row'} spacing={6}>
+              <Stack direction={'row'} spacing={3}>
                 <SocialButton label={'Twitter'} href="https://twitter.com/omniedgeio">
                   <FaTwitter />
                 </SocialButton>
@@ -115,8 +111,7 @@ import {
             </Stack>
             </VStack>
         <VStack>
-        
-          <Stack alignContent="center">
+          <Stack>
           <ListHeader >Stay up to date</ListHeader>
               <Stack direction={'row'}>
                 <Input
@@ -139,7 +134,7 @@ import {
               </Stack>
           </Stack>
           </VStack>
-        </Flex>
+        </Stack>
         </>
     );
   }

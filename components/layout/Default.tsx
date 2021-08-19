@@ -106,7 +106,6 @@ const DefaultLayout: React.FC<{}> = (props) => {
       </main>
     
       <Footer />
-    
     </Container>
   );
 };

@@ -4,7 +4,9 @@ description:
 route: Doc / Cases 
 index: 4
 ---
+
 # Case
+
 # 1. Remote connect windows without exposing public IP with Omniedge
 
 AWS or Azure provides a standard RDP(Windows Remote Desktop Protocol) to remote connect the virtual windows Server. RDP( Windows Remote Desktop Protocol) is a great a tool to remote Windows PC or server over the internet , giving full access to the PCs. When we create a windows virtual server, system will open **3389** port for the purpose, here in AWS, the setting is done by the **Security groups**. However, RDP has some secure problems. 

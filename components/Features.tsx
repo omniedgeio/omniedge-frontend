@@ -1,6 +1,7 @@
 import React from "react";
 import {
   chakra,
+  Image,
   Link,
   Icon,
   Box,
@@ -28,9 +29,7 @@ import { FaAndroid, FaApple, FaLinux, FaBuilding,FaWindows,FaConnectdevelop,FaRo
 import { FiDatabase, FiMonitor, FiServer,FiSettings } from "react-icons/fi";
 import { GiAutoRepair,GiPeanut,GiFactory,GiHospital,GiBank,GiCargoCrate,GiMissileLauncher } from "react-icons/gi";
 import { AiOutlineSafety } from "react-icons/ai";
- 
 import Logo from "../components/Logo";
-import { Withoutomniedge,Withomniedge } from "./Svgs";
 
 interface StepIconFrameProps {
   icon: JSX.Element;
@@ -96,15 +95,8 @@ const StepVirtualNetwork: React.FC<BoxProps> = ({ children, ...props }) => {
 };
 export function Whyus() {
   return (
-    <Box as="section" textAlign="center" py="16"
-    width={[
-      "100%", // base
-      "50%", // 480px upwards
-      "25%", // 768px upwards
-      "15%", // 992px upwards
-    ]}
+    <Box padding="4" as="section" textAlign="center" py="16"
     >
-      
     <Heading mb="8">Why choose us?</Heading>
     <SimpleGrid columns={[1, 3]} spacing={["4", "8", "24"]}>
       <VStack justifyContent="center">
@@ -154,7 +146,7 @@ export function Whyus() {
 
 export function How() {
   return (
-<VStack spacing="4" alignItems="center">
+<VStack padding="4" spacing="4" alignItems="center">
         <Heading as="h2">How Omniedge works?</Heading>
         <Text textAlign="center">
           We rebuild the intranet on the internet setup easier and so you can connect your devices in a secure way without <br /> concern at any where and anytime.
@@ -316,13 +308,8 @@ export const Feature = (props:any) => {
 
 export const FeaturePage: Page = () => {
   return (
-    <Flex
-      p={20}
-      w="auto"
-      justifyContent="center"
-      alignItems="center"
-    >
-      <Box py={12} bg={useColorModeValue("white", "gray.800")} rounded="xl">
+  
+      <Box py={12} rounded="xl">
         
         <Box mx="auto" px={{ base: 4, lg: 8 }}>
           <Box textAlign={{ lg: "center" }}>
@@ -367,7 +354,6 @@ export const FeaturePage: Page = () => {
                 title="Cross Platforms"
                 icon={<FaConnectdevelop size="2lg"/>}
               >
-                
                 Users can run the product on different devices, whether the devices are on Windows, Android, iOS, macOS, Linux or routers, or on a variety of different public clouds.
               </Feature>
 
@@ -408,7 +394,6 @@ export const FeaturePage: Page = () => {
           </Box>
         </Box>
       </Box>
-    </Flex>
   );
 }
 
@@ -432,12 +417,7 @@ const Featureheros = (props:any) => (
 );
 export function Heros(){
   return (
-    <Box px={4} py={32} mx="auto">
-      <Box
-        w={{ base: "full", md: 11 / 12, xl: 8 / 12 }}
-        textAlign={{ base: "left", md: "center" }}
-        mx="auto"
-      >
+    <Box padding="4" textAlign={{ lg: "center" }}>
         <chakra.h1
           mb={3}
           fontSize={{ base: "3xl", md: "4xl" }}
@@ -476,9 +456,7 @@ export function Heros(){
           <Featureheros>Cancel anytime</Featureheros>
           
         </Stack>
-        
-      </Box>
-    </Box>
+        </Box>
   );
 };
 const Featureusers = (props:any) => {
@@ -523,25 +501,14 @@ const Featureusers = (props:any) => {
 
 export function Users() {
   return (
-    <Flex
-      // bg={useColorModeValue("#4859ED", "gray.600")}
-      p={20}
-      w="auto"
-      justifyContent="center"
-      alignItems="center"
-    >
       <Box
-        // shadow="xl"
+        padding="4"
         bg={useColorModeValue("white", "gray.800")}
-        px={8}
-        py={20}
         mx="auto"
       >
         <SimpleGrid
-          alignItems="center"
+          // alignItems="center"
           columns={{ base: 1, lg: 3 }}
-          spacingY={{ base: 10, lg: 32 }}
-          spacingX={{ base: 10, lg: 24 }}
         >
           <Box alignSelf="start">
             <chakra.h2
@@ -556,7 +523,6 @@ export function Users() {
               mb={3}
               fontSize={{ base: "2xl", md: "3xl" }}
               fontWeight="extrabold"
-              textAlign={{ base: "center", sm: "left" }}
               color="black"
               lineHeight="shorter"
               letterSpacing="tight"
@@ -566,7 +532,6 @@ export function Users() {
             <chakra.p
               mb={6}
               fontSize={{ base: "lg", md: "xl" }}
-              textAlign={{ base: "center", sm: "left" }}
               color={useColorModeValue("gray.600", "gray.500")}
             >
               Omniedge creates a hight reliable connective system and make it universally compatible for anyone, any team who need connect their devices anywhere anytime.
@@ -633,29 +598,37 @@ export function Users() {
           </GridItem>
         </SimpleGrid>
       </Box>
-    </Flex>
   );
 }
 
 export function Compare() {
   return (<>
-<VStack spacing="4" alignItems="center">
-        <Heading as="h2">No Public IP, Zero Config, Zero Firewall Rules and No Port Forward </Heading>
+<VStack padding="4" spacing="4" alignItems="center">
+        <Heading as="h2">No Public IP,  No Port Forward, Zero Config, Zero Firewall Rules </Heading>
         <Text textAlign="center">
-        Omniedge builds an intranet on the internet, connect your devices in your private network in a P2P VPN.
+        OmniEdge rebuilds the intranet on the internet setup easier, without concern.
         </Text>
-        
-        <Tabs isFitted variant="soft-rounded">
+        <Tabs size="lg" isFitted variant="soft-rounded">
   <TabList>
     <Tab _selected={{ color: "white", bg: "brand.500" }}>With OmniEdge</Tab>
     <Tab _selected={{ color: "white", bg: "brand.500" }}>Without OmniEdge</Tab>
   </TabList>
   <TabPanels>
-    <TabPanel>
-    <Withomniedge />
+    <TabPanel >
+    <Image
+        width="100%"
+        fit="cover"
+        src="/assets/OmniEdge-VPN.svg"
+      />  
     </TabPanel>
     <TabPanel>
-    <Withoutomniedge />
+    
+    <Image
+        width="100%"
+        fit="cover"
+        src="/assets/Legacy-VPN.svg"
+      />  
+      
     </TabPanel>
   </TabPanels>
 </Tabs>     

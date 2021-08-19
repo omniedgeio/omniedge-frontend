@@ -14,8 +14,7 @@ interface IProps {
 const DocLayout: FunctionComponent<IProps> = ({ article,articles }) => {
   return (
     <DefaultLayout>
-
-<VStack spacing="4" alignItems="left">
+<VStack padding="4" spacing="4" alignItems="left">
 <Stack spacing="8" direction={["column", "row"]} alignItems="flex-start">
 <Flex
           display={["none", "flex"]}

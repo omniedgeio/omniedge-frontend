@@ -167,12 +167,6 @@ export const Postconent: FunctionComponent<IProps> = ({ article }) => {
 
 export const Postcard: FunctionComponent<IProps> = ({ article }) => {
   return (
-    <Flex
-      p={50}
-      w="full"
-      alignItems="center"
-      justifyContent="center"
-    >
       <Box
         mx="auto"
         rounded="lg"
@@ -187,7 +181,6 @@ export const Postcard: FunctionComponent<IProps> = ({ article }) => {
           fit="cover"
           src={article.thumbnail}
           alt={article.description}
-          display={["none", "flex"]}
         />
 
         <Box p={6}>
@@ -229,12 +222,12 @@ export const Postcard: FunctionComponent<IProps> = ({ article }) => {
                   rounded="full"
                   src={article.avatar}
                   alt="Avatar"
+                  width="auto"
                 />
                 <Link
                   mx={2}
                   fontWeight="bold"
                   color={useColorModeValue("gray.700", "gray.200")}
-                  
                 >
                   { article.author }
                 </Link>
@@ -250,6 +243,5 @@ export const Postcard: FunctionComponent<IProps> = ({ article }) => {
           </Box>
         </Box>
       </Box>
-    </Flex>
   );
 };

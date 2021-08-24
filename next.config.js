@@ -18,5 +18,5 @@ module.exports = withMDX({
       // },
     ];
   },
-  pageExtensions: ["ts", "tsx", "mdx","md"],
+  pageExtensions: ["js","ts", "tsx", "mdx","md"],
 });

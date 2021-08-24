@@ -30,17 +30,6 @@ a {
   align-items: center;
 }
 
-.icon {
-  width: 105px;
-}
-
-.selected {
-  background-color: #4859ED;
-}
-
-.selected .iconText {
-  color: white;
-}
 
 .downloadCaption {
   font-family: "San Francisco", Inter, serif;
@@ -62,6 +51,8 @@ a {
   font-size: 16px;
   line-height: 24px;
   max-width: 320px;
+  display: flex;
+  margin:auto;
 }
 .qrCodeContainer {
   margin-top: 1em;
@@ -94,7 +85,7 @@ a {
 }
 
 .description a:hover {
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .instructionGif {

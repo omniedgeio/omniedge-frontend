@@ -1,9 +1,6 @@
 import {
-    Box,
     chakra,
-    Container,
     Link,
-    SimpleGrid,
     Stack,
     Text,
     VisuallyHidden,
@@ -13,7 +10,6 @@ import {
     Heading,
     HStack,
     VStack,
-    Flex,
   } from '@chakra-ui/react';
   import { ReactNode } from 'react';
   import { FaGithub, FaTwitter, FaYoutube,FaMedium } from 'react-icons/fa';

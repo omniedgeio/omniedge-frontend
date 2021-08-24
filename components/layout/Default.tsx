@@ -1,6 +1,4 @@
 import {
-  Box,
-  Text,
   Divider,
   Button,
   Container,
@@ -10,9 +8,7 @@ import {
   IconButton,
   Skeleton,
   Stack,
-  Icon,
   useBoolean,
-  useColorModeValue,
 } from "@chakra-ui/react";
 import React from "react";
 import { FiMenu, FiX } from "react-icons/fi";

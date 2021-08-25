@@ -1,12 +1,10 @@
 import React, { useState } from 'react'
 import { CopyBlock, nord } from 'react-code-blocks'
 import VideoPlayer from '../../components/VideoPlayer'
-import { Heading,chakra,Center,Box,Image,Flex,Icon} from "@chakra-ui/react";
+import {Icon} from "@chakra-ui/react";
 import { FunctionComponent } from "react";
 import {FaQrcode} from 'react-icons/fa'
 import QRCode from 'qrcode.react'
-import Markdown from 'markdown-to-jsx';
-import * as downloadmetainfo from "./download-link.json"; 
 
 export function DownloadButton({ text = 'Download', url = ''}) {
   return (
@@ -22,7 +20,6 @@ export function DownloadButton({ text = 'Download', url = ''}) {
     </button>
   )
 }
-
 export function DownloadCaption({ text = 'Download' }) {
   return (<div className="downloadCaption">{text}</div>)}
 
@@ -69,7 +66,7 @@ interface descinfo {
 }
 
 interface Platforminfo extends lstupdate,descinfo {
-  status:string;
+  [status: string]: any
   displayName:string;
   link:string;
   showQRCode:boolean;
@@ -80,13 +77,9 @@ interface Platforminfo extends lstupdate,descinfo {
   description:descinfo;
 }
 
-export interface DownloadDescriptioninfo extends Platforminfo{
+interface DownloadDescriptioninfo extends Platforminfo{
   active:boolean;
-  desc:Platforminfo;
-}
-
-export type {
-	Platforminfo,
+  desc: Platforminfo;
 }
 
 export const DownloadDescription: React.FC<DownloadDescriptioninfo> = function ({desc,active}) {

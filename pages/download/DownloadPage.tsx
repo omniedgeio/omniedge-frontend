@@ -6,7 +6,7 @@ import {
   Center,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from 'react'
-import {DownloadDescription,DownloadDescriptioninfo} from './Downloadutil'
+import {DownloadDescription} from './Downloadutil'
 import Icon from './Icon'
 import { useRouter } from 'next/router'
 const downloadMetaLink = '/assets/download/download-link.json'
@@ -14,7 +14,6 @@ const platforms = ['macos', 'ios', 'windows', 'android', 'linuxcli', 'linuxgui',
 
 interface realplatform {
   platform:string
-  // selectedPlatform:string;
 }
 
 export const DownloadPage:React.FC<realplatform> = function ({ platform: selectedPlatform }) {
@@ -73,11 +72,8 @@ export const DownloadPage:React.FC<realplatform> = function ({ platform: selecte
   )}
   {data.status === 'LOADING' && <div>Loading...</div>}
   {data.status === 'LOADED' && <div>Loaded</div>  &&
-    platforms.map((platform,i) => (
-      <>
+    platforms.map((platform) => (
       <DownloadDescription desc={data[platform]} active={platform==selectedPlatform}/>
-      </>
-
     ))}
 </div>
 

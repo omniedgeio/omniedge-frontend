@@ -15,12 +15,12 @@ import { Stack,Button, Heading, HStack, Icon, Text, VStack,Table,
   useColorModeValue,
  } from "@chakra-ui/react";
 import { FiCheck, FiX } from "react-icons/fi";
-import { string } from "yup/lib/locale";
 import DefaultLayout from "../components/layout/Default";
 import Link from "../components/next/Link";
 import { Page } from "../types";
 import React from 'react';
 import {Heros} from "../components/Features";
+import Markdown from "markdown-to-jsx";
 
 
 interface FAQText {
@@ -51,7 +51,10 @@ const FAQText: React.FC<FAQText> = ({ title,text }) => {
       <AccordionIcon />
     </AccordionButton>
   <AccordionPanel pb={4}>
-    {text}
+  <Markdown>
+  {text}
+  </Markdown>
+    
   </AccordionPanel>
   </Box>
 </AccordionItem>
@@ -202,11 +205,11 @@ const PricingPage: Page = () => {
       <Accordion allowToggle={false}>
             <FAQText 
             title="How long does it take to set up OmniEdge?"
-            text="OmniEdge can be set up in 5 minutes or less, by installing an OmniEdge Apps for your devices on iOS, Android, Windows, macOS, and Linux platforms."
+            text="OmniEdge can be set up in 5 minutes or less, by installing an OmniEdge Apps for your devices on [iOS](/download/ios), [Android](/download/android), [Windows](/download/windows), [macOS](/download/macos), and [Linux platforms](/download/linuxcli)."
             />
             <FAQText 
             title="Is my privacy secure with OmniEdge?" 
-            text=" We take privacy security very seriously. please read our Privacy Policy for Details. " 
+            text=" We take privacy security very seriously. please read our [privacy Policy](/privacy) for Details. " 
             />
             <FAQText
             title="How do I change my existing subscription plan?"
@@ -218,15 +221,15 @@ const PricingPage: Page = () => {
             />
             <FAQText
             title="What payment methods do you offer?"
-            text="We support payment by credit card through Stripe. Customers with Enterprise plans can request payment by other methods, such as wire or ACH. At this time, we can only receive payment in US Dollars ($)."
+            text="We support payment by credit card through [Stripe](https://stripe.com). Customers with Enterprise plans can request payment by other methods, such as wire or ACH. At this time, we can only receive payment in US Dollars ($)."
             />
             <FAQText
             title="Where can I find your terms of service and privacy policy?"
-            text="View the OmniEdge Terms of Service and Privacy Policy."
+            text="View the OmniEdge [Terms of Service](/terms) and [Privacy Policy](/privacy)."
             />
             <FAQText
             title="How can I learn more about OmniEdge?"
-            text="Learn more about OmniEdge by reading documentation."
+            text="Learn more about OmniEdge by reading [documentation](/docs)."
             />
             {/* <FAQText
             title=""

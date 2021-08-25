@@ -53,3 +53,4 @@ npx next build
 - [ ] Parse sub folders for docs
 - [ ] Download Page
 - [ ] Contact Us Form
+- [X] Features comparation and FAQ for Pricing Page

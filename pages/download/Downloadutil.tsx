@@ -65,7 +65,6 @@ export interface platformtype extends Platforminfo{
 
 
 export const DownloadDescription: React.FC<platformtype> = function ({desc,active}) {
-// export default function DownloadDescription(props) {
   const [showingQRCode, setShowingQRCode] = useState(false)
 
   if (!active) {

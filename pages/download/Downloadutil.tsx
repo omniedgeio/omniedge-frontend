@@ -80,14 +80,16 @@ interface Platforminfo extends lstupdate,descinfo {
   description:descinfo;
 }
 
-export interface platformtype extends Platforminfo{
-  desc:Platforminfo;
+export interface DownloadDescriptioninfo extends Platforminfo{
   active:boolean;
+  desc:Platforminfo;
 }
-// Need to pass in props:
 
-// export const DownloadDescription:React.FC<{ desc?: Platforminfo,active?:boolean }> = ({desc,active}) => {
-export const DownloadDescription: React.FC<platformtype> = function ({desc,active}) {
+export type {
+	Platforminfo,
+}
+
+export const DownloadDescription: React.FC<DownloadDescriptioninfo> = function ({desc,active}) {
   const [showingQRCode, setShowingQRCode] = useState(false)
   if (!active) {
     return null
@@ -138,6 +140,5 @@ export const DownloadDescription: React.FC<platformtype> = function ({desc,activ
       </div>
     )
   }
-
   return null
 }

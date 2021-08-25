@@ -49,8 +49,17 @@ npx next build
 
 ## TODO
 
+- [ ] Theme Design
 - [ ] Paginate for posts
 - [ ] Parse sub folders for docs
-- [ ] Download Page
+- [X] Download Page
 - [ ] Contact Us Form
 - [X] Features comparation and FAQ for Pricing Page
+
+## BUGS
+
+- [ ]Download Page
+```bash
+Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ status: string; }'.
+  No index signature with a parameter of type 'string' was found on type '{ status: string; }'.ts(7053)
+```

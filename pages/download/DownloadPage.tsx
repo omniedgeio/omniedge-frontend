@@ -6,21 +6,23 @@ import {
   Center,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from 'react'
-import {DownloadDescription} from './Downloadutil'
+import {DownloadDescription,DownloadDescriptioninfo} from './Downloadutil'
 import Icon from './Icon'
 import { useRouter } from 'next/router'
-import DefaultLayout from "../../components/layout/Default";
-import {FunctionComponent} from 'react'
 const downloadMetaLink = '/assets/download/download-link.json'
 const platforms = ['macos', 'ios', 'windows', 'android', 'linuxcli', 'linuxgui','rasp', 'synology','router']
 
+interface realplatform {
+  platform:string
+  // selectedPlatform:string;
+}
 
-export const DownloadPage:React.FC = function ({ platform: selectedPlatform }) {
+export const DownloadPage:React.FC<realplatform> = function ({ platform: selectedPlatform }) {
   const router = useRouter()
   const [data, setData] = useState({ status: 'LOADING' })
   
-  function routePlatform(platform:string) {
-    router.push(`/download/${platform ?? ''}`)
+  function routePlatform(text?:string) {
+    router.push(`/download/${text ?? ''}`)
   }
 
   // load data dynamically everytime this page is visited
@@ -85,6 +87,4 @@ export const DownloadPage:React.FC = function ({ platform: selectedPlatform }) {
         </>
   )
 }
-// DownloadPage.layout = DefaultLayout;
-
 export default DownloadPage;

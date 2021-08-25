@@ -16,7 +16,7 @@ export function Download() {
         }}
       />
 
-      <DownloadPage selectedPlatform='android'/>
+      <DownloadPage platform='android'/>
     
     </>
   )

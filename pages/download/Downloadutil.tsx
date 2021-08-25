@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { CopyBlock, nord } from 'react-code-blocks'
 import VideoPlayer from '../../components/VideoPlayer'
-import {Icon} from "@chakra-ui/react";
+import {Image,Icon} from "@chakra-ui/react";
 import { FunctionComponent } from "react";
 import {FaQrcode} from 'react-icons/fa'
 import QRCode from 'qrcode.react'
@@ -66,7 +66,7 @@ interface descinfo {
 }
 
 interface Platforminfo extends lstupdate,descinfo {
-  [status: string]: any
+  [status:string]:any;
   displayName:string;
   link:string;
   showQRCode:boolean;
@@ -77,17 +77,13 @@ interface Platforminfo extends lstupdate,descinfo {
   description:descinfo;
 }
 
-interface DownloadDescriptioninfo extends Platforminfo{
-  active:boolean;
-  desc: Platforminfo;
-}
+export const DownloadDescription: React.FC<{desc:Platforminfo, active?:boolean}> = function ({desc,active}) {
 
-export const DownloadDescription: React.FC<DownloadDescriptioninfo> = function ({desc,active}) {
   const [showingQRCode, setShowingQRCode] = useState(false)
   if (!active) {
     return null
   }
-  if (desc.status=='COMING_SOON') {
+  if (desc.index && desc.status=='COMING_SOON') {
     return(<> <div className="font-bold">{desc.displayName} is coming soon</div></>)
   } else if (desc.status=='LIVE') {
     return (
@@ -124,7 +120,7 @@ export const DownloadDescription: React.FC<DownloadDescriptioninfo> = function (
         )}
         {!desc.description.instructionsVideoLink &&
           desc.description.instructionGifLink && (
-            <img
+            <Image
               className=".instructionGif"
               src={desc.description.instructionGifLink}
               alt=""

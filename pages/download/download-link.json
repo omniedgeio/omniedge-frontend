@@ -1,6 +1,7 @@
 {
   "windows": {
-    "status": "LIVE",
+    "index":1,
+    "status":true,
     "displayName": "Windows",
     "link": "https://github.com/omniedgeio/omniedge-windows-update/releases/download/v0.1.2/omniedge-setup-0.1.2.exe",
     "showQRCode": false,
@@ -24,7 +25,8 @@
     }
   },
   "android": {
-    "status": "LIVE",
+    "index":1 ,
+    "status":true,
     "displayName": "Android",
     "link": "https://github.com/omniedgeio/omniedge-android/releases/download/v0.1.3/OmniEdge-v0.1.3.apk",
     "showQRCode": true,
@@ -49,7 +51,8 @@
     }
   },
   "linuxcli": {
-    "status": "LIVE",
+    "index":1,
+    "status":true,
     "displayName": "Linux-cli",
     "link": "https://github.com/omniedgeio/omniedge-linux-cli/releases",
     "showQRCode": false,
@@ -81,7 +84,8 @@
     }
   },
   "linuxgui": {
-    "status": "COMING_SOON",
+    "index":1,
+    "status":"COMING_SOON",
     "displayName": "Linux GUI",
     "link": "",
     "showQRCode": false,
@@ -108,7 +112,8 @@
     }
   },
   "macos": {
-    "status": "LIVE",
+    "index":1,
+    "status":true,
     "displayName": "macOS",
     "link": "https://raw.githubusercontent.com/omniedgeio/omniedge-mac/master/Omniedge.dmg",
     "showQRCode": false,
@@ -135,7 +140,8 @@
     }
   },
   "ios": {
-      "status": "COMING_SOON",
+      "index":1,
+       "status":"COMING_SOON",
       "displayName": "iOS",
       "link": "https://github.com/omniedgeio/omniedge-linux-cli/releases/download/v0.1.0/omniedge_arm.zip",
       "showQRCode": false,
@@ -162,7 +168,8 @@
       }
   },
   "rasp": {
-    "status": "LIVE",
+    "index":1,
+    "status":true,
     "displayName": "Raspberry",
     "link": "https://github.com/omniedgeio/omniedge-linux-cli/releases/download/v0.1.0/omniedge_arm.zip",
     "showQRCode": false,
@@ -189,7 +196,8 @@
     }
   },
   "synology": {
-    "status": "LIVE",
+    "index":1,
+    "status":true,
     "displayName": "Synology",
     "link": "https://github.com/omniedgeio/omniedge-synology/releases/download/v0.1.0/omniedge_0.1.0_amd64.spk",
     "showQRCode": false,
@@ -215,7 +223,8 @@
     }
   },
   "router": {
-    "status": "COMING_SOON",
+    "index":1,
+    "status":"COMING_SOON",
     "displayName": "Router",
     "link": "",
     "showQRCode": false,
@@ -243,7 +252,8 @@
     }
   },
   "template": {
-    "status": "COMING_SOON",
+    "index":1 ,
+    "status":"COMING_SOON",
     "displayName": "Raspberry PI",
     "link": "",
     "showQRCode": false,

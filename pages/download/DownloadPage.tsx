@@ -72,8 +72,8 @@ export const DownloadPage:React.FC<realplatform> = function ({ platform: selecte
   )}
   {data.status === 'LOADING' && <div>Loading...</div>}
   {data.status === 'LOADED' && <div>Loaded</div>  &&
-    platforms.map((platform) => (
-      <DownloadDescription desc={data[platform]} active={platform==selectedPlatform}/>
+    platforms.map((platform,i) => (
+      <DownloadDescription key={i} desc={data[platform]} active={platform==selectedPlatform}/>
     ))}
 </div>
 

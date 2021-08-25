@@ -20,6 +20,7 @@ import DefaultLayout from "../components/layout/Default";
 import Link from "../components/next/Link";
 import { Page } from "../types";
 import React from 'react';
+import {Heros} from "../components/Features";
 
 
 interface FAQText {
@@ -237,6 +238,7 @@ const PricingPage: Page = () => {
 </VStack>
 </Box>
 
+<Heros />
               </>
     
   );

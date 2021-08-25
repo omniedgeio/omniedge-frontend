@@ -135,8 +135,31 @@
     }
   },
   "ios": {
-    "status": "COMING_SOON",
-    "displayName": "iOS"
+      "status": "COMING_SOON",
+      "displayName": "iOS",
+      "link": "https://github.com/omniedgeio/omniedge-linux-cli/releases/download/v0.1.0/omniedge_arm.zip",
+      "showQRCode": false,
+      "version": "0.1.0",
+      "buttonText": "Download for Raspberry PI",
+      "captionText": "Compatible with Rapsberry PI 1B, 3B, 3B+",
+      "lastUpdate": {
+        "year": 2021,
+        "month": "April",
+        "date": 25
+      },
+      "description": {
+        "title": "Get started on Raspberry Pi",
+        "instructions": [
+          "1. Sign up your account with your email and password: <a href=\"https:\/\/dashboard.omniedge.io\/sign-up\">Sign up</a> ",
+          "2. Download and install omnidge cli",
+          "#CODE curl https://raw.githubusercontent.com/omniedgeio/omniedge-linux-cli/main/omniedge-install-arm.sh | bash",
+          "3. Login and Join omniedge:",
+          "#CODE sudo omniedge login -u user@email.com &&\nsudo omniedge join",
+          "4. Wait a second and a secure VPN will be established"
+        ],
+        "instructionGifLink": "",
+        "instructionsVideoLink": ""
+      }
   },
   "rasp": {
     "status": "LIVE",

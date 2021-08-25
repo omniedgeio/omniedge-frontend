@@ -14,15 +14,11 @@ import {FunctionComponent} from 'react'
 const downloadMetaLink = '/assets/download/download-link.json'
 const platforms = ['macos', 'ios', 'windows', 'android', 'linuxcli', 'linuxgui','rasp', 'synology','router']
 
-interface selected {
-  active:boolean;
-}
 
-export const DownloadPage: FunctionComponent<selected> = ({ active }) => {
+export const DownloadPage:React.FC = function ({ platform: selectedPlatform }) {
   const router = useRouter()
   const [data, setData] = useState({ status: 'LOADING' })
   
-
   function routePlatform(platform:string) {
     router.push(`/download/${platform ?? ''}`)
   }
@@ -76,8 +72,8 @@ export const DownloadPage: FunctionComponent<selected> = ({ active }) => {
   {data.status === 'LOADING' && <div>Loading...</div>}
   {data.status === 'LOADED' && <div>Loaded</div>  &&
     platforms.map((platform,i) => (
-      <><Text>{platform} {data[platform].status}</Text>
-      <DownloadDescription desc={data[platform]} active={active}/>
+      <>
+      <DownloadDescription desc={data[platform]} active={platform==selectedPlatform}/>
       </>
 
     ))}

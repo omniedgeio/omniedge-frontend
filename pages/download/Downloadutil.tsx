@@ -131,3 +131,4 @@ export const DownloadDescription: React.FC<{desc:Platforminfo, active?:boolean}>
   }
   return null
 }
+export default DownloadDescription;

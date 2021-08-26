@@ -303,6 +303,7 @@ pre {
 
 
 .markdown table {
+  padding:10px;
   display: block;
   width: 100%;
   overflow: auto;
@@ -328,8 +329,7 @@ pre {
 }
 .markdown img {
   max-width: 100%;
-  box-sizing: initial;
-  /* background-color: #fff; */
+  margin: auto;
   display: block;
 }
 /*

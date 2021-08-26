@@ -29,29 +29,30 @@ Release Notess for OmniEdge Windows client.
 
 |Version|Release Date|Notes|
 |--|--|--|
-|0.1.1|init|
-|0.1.0|init|
+|0.2.0|August, 26, 2021|Initial release , new backend API , new logo|
+|0.1.4|April, 18, 2021|Fix the user register and login for the first time and the app crashed，Fix menu list blocked after startup|
+|0.1.3|April, 10, 2021|Fix the repeated display of the device|
+|0.1.2|March, 27, 2021|Fix the issue of occasionally crashes|
+|0.1.1|March, 18, 2021|Fix the issue of dashboard link|
+|0.1.0|March, 11, 2021|Initial release|
 
 ## macOS Release Notes
 
 |Version|Release Date|Notes|
 |--|--|--|
-|0.1.1|init|
-|0.1.0|init|
+|0.1.0|Initial release|
 
 ## Linux Cli Release Notes
 
 |Version|Release Date|Notes|
 |--|--|--|
-|0.1.1|init|
-|0.1.0|init|
+|0.1.0|April,08,2021|Initial release|
 
 ## iOS Release Notes
 
 |Version|Release Date|Notes|
 |--|--|--|
-|0.1.1|init|
-|0.1.0|init|
+
 
 ## Android Release Notes
 

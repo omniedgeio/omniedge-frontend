@@ -34,63 +34,62 @@ OmniEdge MacOS is compatible with intel Macbook, macOS 10 or later Last update: 
 
 For Intel Mac: 
 
-- run **Install tuntap by clicking tuntap_20150118.pkg**
+  - run **Install tuntap by clicking tuntap_20150118.pkg**
 
 For M1 Mac user: 
 
-- Download `https://github.com/Tunnelblick/Tunnelblick/tree/master/third_party/tap-notarized.kext`
-- Download `https://github.com/Tunnelblick/Tunnelblick/tree/master/third_party/tun-notarized.kext`
-- Change the name to **tap.kext** and **tap.kext**, 
-- Copy to **/Library/Extensions**
-- add `net.tunnelblick.tap.plist` and `net.tunnelblick.tun.plist` to `/Library/LaunchDaemons/`
+  - Download `https://github.com/Tunnelblick/Tunnelblick/tree/master/third_party/tap-notarized.kext`
+  - Download `https://github.com/Tunnelblick/Tunnelblick/tree/master/third_party/tun-notarized.kext`
+  - Change the name to **tap.kext** and **tap.kext**, 
+  - Copy to **/Library/Extensions**
+  - add `net.tunnelblick.tap.plist` and `net.tunnelblick.tun.plist` to `/Library/LaunchDaemons/`
 
-```bash
-#net.tunnelblick.tap.plist
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-    <key>Label</key>
-    <string>net.tunnelblick.tap</string>
-    <key>ProgramArguments</key>
-    <array>
-        <string>/sbin/kextload</string>
-        <string>/Library/Extensions/tap.kext</string>
-    </array>
-    <key>KeepAlive</key>
-    <false/>
-    <key>RunAtLoad</key>
-    <true/>
-    <key>UserName</key>
-    <string>root</string>
-</dict>
-</plist>
+  ```bash
+    #net.tunnelblick.tap.plist
+    <?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+    <plist version="1.0">
+    <dict>
+        <key>Label</key>
+        <string>net.tunnelblick.tap</string>
+        <key>ProgramArguments</key>
+        <array>
+            <string>/sbin/kextload</string>
+            <string>/Library/Extensions/tap.kext</string>
+        </array>
+        <key>KeepAlive</key>
+        <false/>
+        <key>RunAtLoad</key>
+        <true/>
+        <key>UserName</key>
+        <string>root</string>
+    </dict>
+    </plist>
 
-```
-```bash
-#net.tunnelblick.tun.plist
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-    <key>Label</key>
-    <string>net.tunnelblick.tun</string>
-    <key>ProgramArguments</key>
-    <array>
-        <string>/sbin/kextload</string>
-        <string>/Library/Extensions/tun.kext</string>
-    </array>
-    <key>KeepAlive</key>
-    <false/>
-    <key>RunAtLoad</key>
-    <true/>
-    <key>UserName</key>
-    <string>root</string>
-</dict>
-</plist>
+  ```
 
-```
-
+  ```bash
+    #net.tunnelblick.tun.plist
+    <?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+    <plist version="1.0">
+    <dict>
+        <key>Label</key>
+        <string>net.tunnelblick.tun</string>
+        <key>ProgramArguments</key>
+        <array>
+            <string>/sbin/kextload</string>
+            <string>/Library/Extensions/tun.kext</string>
+        </array>
+        <key>KeepAlive</key>
+        <false/>
+        <key>RunAtLoad</key>
+        <true/>
+        <key>UserName</key>
+        <string>root</string>
+    </dict>
+    </plist>
+  ```
 - restart Mac after allowing the security check. 
 
 3. Drop Omniedge to Applications folder
@@ -111,31 +110,37 @@ OmniEdge Android is compatible with Android 6 or later mobile phone or TV. Last 
 5. Enjoy the secure VPN connection
 
 ## 5. Installing on Linux
+
 OmniEdge Linux Cli is Compatible with linux for AMD64,ArmV7 and Arm64V8, Archlinux, OMV(Debian 9), Synology NAS,Ubuntu 16.04/18.04/20.04, CentOS 7/8, Debian 9/10, Fedora 32 Last update: Version 0.1.0, May 10, 2021.
 
 [Download OmniEdge Linux Cli](https://github.com/omniedgeio/omniedge-linux-cli/releases)
 
 1. Download and install omnidge cli depend on system architecture :
-    1. OmniEdge linux Cli for AMD64
-    ```
+    
+  - OmniEdge linux Cli for AMD64
+
+  ```
     wget https://github.com/omniedgeio/omniedge-linux-cli/releases/download/v0.1.0/omniedge-amd64.zip
-    ```
-    2. OmniEdge linux Cli for Arm64V8
+  ```
 
-    ```
+  - OmniEdge linux Cli for Arm64V8
+
+  ```
     wget https://github.com/omniedgeio/omniedge-linux-cli/releases/download/v0.1.0/omniedge-arm64v8.zip
-    ```
-    3. OmniEdge linux Cli for ArmV7
+  ```
+  - OmniEdge linux Cli for ArmV7
 
-    ```
+  ```
     wget https://github.com/omniedgeio/omniedge-linux-cli/releases/download/v0.1.0/omniedge-armv7.zip
-    ```
+  ```
 
 2. Login and Join omniedge:
+
 ```
 sudo omniedge login -u user@email.com &&
 sudo omniedge join
 ```
+
 3. Wait a second and a secure VPN will be established
 
 ## 6. Installing on iOS

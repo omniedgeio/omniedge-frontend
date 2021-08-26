@@ -178,7 +178,7 @@ We found OmniEdge totally from Twitter, with a team from 4 countries, in post-pa
         >
           An Li is the former R&D Software Engineer at State Street Investment Bank in US, where he specialized in blockchain and trust data exchanging development. He implemented the backend of financial project to process big data.​​​​
         </Feature>
-        <Feature
+        {/* <Feature
           title="Tex Tang "
           position="Full Stack Programmer"
           linkedin=""
@@ -249,7 +249,7 @@ We found OmniEdge totally from Twitter, with a team from 4 countries, in post-pa
           icon3={<FaGithub size="2lg"/>}
         >
          Samuel Song is the core team member of OmniEdge, he contributes OmniEdge iOS Client.
-        </Feature>
+        </Feature> */}
       </SimpleGrid>
     </Flex>
     </Box>

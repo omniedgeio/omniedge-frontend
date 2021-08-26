@@ -63,7 +63,32 @@ With VPNs:
 |OmniEdge|3470 Mbit/s|
 
 
-## OmniEdge Vs frp,ngrok
+## OmniEdge Vs frp/ngrok
+
+ngrok/frp is a reverse proxy tool used for exposing your local service to public, let you access your computer's localhost from a mobile device for example. ngrok is a free/paid service. The free service has limitations of requests per minutes and only one tunnel at a time. frp is an open source version of ngrok. 
+
+### The big difference
+
+- Ngrok/frp is limited to TCP webservice only, and you need set each service before using.
+
+- OmniEdge is not limited to TCP and covers all the TCP and UDP services, you can access your own devices only by one fixed IP. 
+
+Let's have some compare some use cases betweenn ngrok/frp and omniedge.
+
+|Use Cases|ngrok/frp|OmniEdge|
+|--|--|--|
+|**Expose local web service**|`ngrok tcp 3000` then use a public IP like: `https://greatlocalservice.ngrok.io:5565` | `http://100.100.1.1:3000`|
+|**SSH**| 22 is your ssh port and 11111 is the reversed port by ngrok `ngrok tcp 22 && ssh admin@greatlocalservice.ngrok.io -p 11111` | `ssh admin@100.100.1.1` |
+|**RDP**| `ngrok tcp 3389` and use `greatlocalservice.ngrok.io:15678` for RDP address | Just put the omniedge IP `100.100.1.1` into the RDP Client|
+|**FTP**| `ngrok tcp 21 && ftp://greatlocalservice.ngrok.io:8877` | `ftp://100.100.1.1` |
+|**VNC**|`ngrok tcp 5900` and use the `greatlocalservice.ngrok.io:9988` as the VNC address |just put the OmniEdge IP `100.100.1.1` into the VNC client|
+
+### Security
+
+|Accessiable|ngrok/frp|OmniEdge|
+|-|---|--|
+|Accessiable by default|public with free plan|Private automatically|
+|Accessiable Limitation|Manually IP whitelisting settingwith paid plan|Private automatically|
 
 -----
 

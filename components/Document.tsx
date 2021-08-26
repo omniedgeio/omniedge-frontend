@@ -62,13 +62,13 @@ export const Docconent: FunctionComponent<IProps> = ({ article }) => {
           borderBottom="1px"
           borderBottomColor="gray.100"
         >
-    <VStack maxW="300px" spacing="4" alignItems="left">
+    <VStack maxW="200px" spacing="2" alignItems="left">
     <Text color="gray.500" fontSize="md">
       On This Page
-    </Text>
+      </Text>
     {data.map((x) => (
       <Link href={"#" + x.id} key={x.id}>
-        {x.textContent}
+       <Text color="gray.500" fontSize="sm"> {x.textContent}</Text>
       </Link>
     ))}
   </VStack>
@@ -157,8 +157,8 @@ export const Postconent: FunctionComponent<IProps> = ({ article }) => {
     </Text>
     {data.map((x) => (
       <Link href={"#" + x.id} key={x.id}>
-        {x.textContent}
-      </Link>
+      <Text color="gray.500" fontSize="sm"> {x.textContent}</Text>
+     </Link>
     ))}
   </VStack>
   </>

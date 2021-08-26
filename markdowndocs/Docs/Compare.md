@@ -17,6 +17,19 @@ A **virtual private network (VPN)** extends a private network across a public ne
 
 ### 2. Benefits of OmniEdge vs. VPNs
 
+With OmniEdge, you: 
+
+- Don't need any VPN server anymore.
+- Don't need any VPN gateway for your company's different branches. 
+- OmniEdge provide peer-to-peer connection between devices without sever reply, while VPN always reply your connections. 
+
+With OmniEdge: 
+![OmniEdge](/assets/OmniEdge-VPN.svg)
+
+With VPNs: 
+![Normal VPN](/assets/Legacy-VPN.svg)
+
+
 ### 3. Basic Information
 
 |Software|Version|OS:Linux/Windows/MacOS/BSD|Mobile: iOS/Android |TV: Apple TV/Android TV|NAS OS: FreeNAS/Synology|Raspberry PI|

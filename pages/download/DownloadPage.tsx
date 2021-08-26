@@ -4,6 +4,8 @@ import {
   Text,
   VStack,
   Center,
+  Box,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from 'react'
 import {DownloadDescription} from './Downloadutil'
@@ -38,8 +40,8 @@ export const DownloadPage:React.FC<realplatform> = function ({ platform: selecte
   }, [data])
 
   return (<>
-
-    <VStack padding="4" mt={10}>
+<VStack padding="4" alignItems="center">
+<VStack maxW="1000" spacing="4">
       <Heading fontWeight="semibold" fontSize="2xl">
       OmniEdge Downloads
       </Heading>
@@ -78,7 +80,7 @@ export const DownloadPage:React.FC<realplatform> = function ({ platform: selecte
 </div>
 
 </Center>
-
+</VStack>
         </VStack>
         </>
   )

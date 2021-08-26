@@ -4,7 +4,7 @@ description: If you don't have an account on OmniEdge, please sign up for a new 
 thumbnail: /assets/posts-images/2-6-2.png
 avatar: /assets/avatars/Yong.jpg
 author: Yong QIAN
-date: August 08, 2021
+date: July 08, 2021
 readtime: 6
 ---
 

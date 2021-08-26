@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { CopyBlock, nord } from 'react-code-blocks'
 import VideoPlayer from '../../components/VideoPlayer'
-import {Image,Icon} from "@chakra-ui/react";
+import {Image,Icon,Text,Heading,Box,VStack,useColorModeValue} from "@chakra-ui/react";
 import { FunctionComponent } from "react";
 import {FaQrcode} from 'react-icons/fa'
 import QRCode from 'qrcode.react'
+import Markdown from 'markdown-to-jsx';
 
 export function DownloadButton({ text = 'Download', url = ''}) {
   return (
@@ -21,7 +22,7 @@ export function DownloadButton({ text = 'Download', url = ''}) {
   )
 }
 export function DownloadCaption({ text = 'Download' }) {
-  return (<div className="downloadCaption">{text}</div>)}
+  return (<Text className="downloadCaption">{text}</Text>)}
 
 interface IPropss {
 	texts: string[]; 
@@ -83,12 +84,13 @@ export const DownloadDescription: React.FC<{desc:Platforminfo, active?:boolean}>
   if (!active) {
     return null
   }
-  if (desc.index && desc.status=='COMING_SOON') {
+  if (desc.status=='COMING_SOON') {
     return(<> <div className="font-bold">{desc.displayName} is coming soon</div></>)
   } else if (desc.status=='LIVE') {
-    return (
-      <div className="text-center">
-        <DownloadButton text={desc.buttonText ?? 'Download'} url={desc.link ?? ''} />
+    return (<>
+            <VStack spacing="3">
+            <Heading fontWeight="semibold" fontSize="xl">
+            <DownloadButton text={desc.buttonText ?? 'Download'} url={desc.link ?? ''} />
         {desc.showQRCode && (
           <div className="qrCodeContainer">
             or scan
@@ -105,15 +107,17 @@ export const DownloadDescription: React.FC<{desc:Platforminfo, active?:boolean}>
             )}
           </div>
         )}
-        {desc.captionText && (
+      </Heading>
+      <Text align="center">{desc.captionText && (
           <DownloadCaption
             text={
               desc.captionText +
               ` Last update: Version ${desc.version}, ${desc.lastUpdate.month} ${desc.lastUpdate.date}, ${desc.lastUpdate.year}.`
             }
           />
-        )}
-        <p className="font-bold text-xl text-center">{desc.description.title}</p>
+        )}</Text>
+      <Heading fontWeight="semibold" fontSize="2xl"><Text>{desc.description.title}</Text></Heading>
+      <Text>
         <Description texts={desc.description.instructions} />
         {desc.description.instructionsVideoLink && (
           <VideoPlayer url={desc.description.instructionsVideoLink} />
@@ -121,12 +125,15 @@ export const DownloadDescription: React.FC<{desc:Platforminfo, active?:boolean}>
         {!desc.description.instructionsVideoLink &&
           desc.description.instructionGifLink && (
             <Image
-              className=".instructionGif"
+              // className=".instructionGif"
               src={desc.description.instructionGifLink}
               alt=""
             />
           )}
-      </div>
+          </Text>
+          </VStack>
+          
+          </>
     )
   }
   return null

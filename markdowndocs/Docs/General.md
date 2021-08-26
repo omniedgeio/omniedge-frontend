@@ -16,7 +16,7 @@ Try using peer-to-peer communication instead of relaying nodes to increase the n
 ### Main Architecture
 
 For the above design goals, we get inspired by an open-source VPN software: n2n and designed the main architecture of OmniEdge.
-![](https://omniedge.io/assets/blog-images/how-omniedge-works-main-architecture.png)
+![](/assets/posts-images/how-omniedge-works-main-architecture.png)
 
 Our architecture has the following components:
 

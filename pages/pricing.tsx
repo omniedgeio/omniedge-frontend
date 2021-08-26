@@ -128,6 +128,7 @@ const PricingPage: Page = () => {
             <FeatureText>1 virtual network</FeatureText>
             <FeatureText>20 devices</FeatureText>
             <FeatureText>1 user</FeatureText>
+            <FeatureText>Subroute</FeatureText>
             <FeatureText active={false}>Hardware and Iot integration</FeatureText>
             <FeatureText active={false}>Specialist Support</FeatureText>
           </VStack>
@@ -149,6 +150,7 @@ const PricingPage: Page = () => {
             <FeatureText>Unlimited virtual network</FeatureText>
             <FeatureText>Unlimited devices</FeatureText>
             <FeatureText>Unlimited user</FeatureText>
+            <FeatureText>Subroute</FeatureText>
             <FeatureText>Hardware and Iot integration</FeatureText>
             <FeatureText>Specialist Support</FeatureText>
           </VStack>
@@ -163,6 +165,7 @@ const PricingPage: Page = () => {
         shadow="md"
         bg={useColorModeValue("white", "gray.800")}
         maxW="3xl"
+        display="flex"
       >
     <Table variant="simple">
   <TableCaption></TableCaption>
@@ -180,11 +183,15 @@ const PricingPage: Page = () => {
   <FeatureTextnumber title="Devices" free="20" pro="50" team="200" enterprise="Unlimited" />
   <FeatureTextnumber title="Users" free="1" pro="10" team="30" enterprise="Unlimited" />
   <FeatureTextnumber title="Security Keys" free="0" pro="20" team="100" enterprise="Unlimited" />
+  <FeatureDesc>Subroute</FeatureDesc>
             <FeatureDesc>Unlimited data transfer</FeatureDesc>
             <FeatureDesc>Encrypted, peer-to-peer connection</FeatureDesc>
+            <FeatureDesc free={false} pro={false} team={true}>Identity provider integration</FeatureDesc>
             <FeatureDesc free={false} pro={false} team={false}>Hardware and Iot integration</FeatureDesc>
-            <FeatureDesc free={false} pro={true}>Email Support</FeatureDesc>
+            <FeatureDesc free={false} pro={false} team={false}>API</FeatureDesc>
+            <FeatureDesc free={false} pro={false} team={false}>Admin API</FeatureDesc>
             <FeatureDesc free={false} pro={false} team={false} >Special Support</FeatureDesc>
+            <FeatureDesc free={false} pro={true}>Email Support</FeatureDesc>
             </Tbody>
             </Table>
             </Box>
@@ -229,7 +236,7 @@ const PricingPage: Page = () => {
             />
             <FAQText
             title="How can I learn more about OmniEdge?"
-            text="Learn more about OmniEdge by reading [documentation](/docs)."
+            text="Learn more about OmniEdge by reading [documentation](/doc)."
             />
             {/* <FAQText
             title=""

@@ -7,7 +7,9 @@ index: 7
 
 # Release Notes
 
-## 1. Dashboard Release Notes
+----
+
+# 1. Dashboard Release Notes
 
 We release changes and improvements to the Admin console on a continuous basis, with significant changes listed below.
 
@@ -17,46 +19,55 @@ We release changes and improvements to the Admin console on a continuous basis, 
 |August, 25, 2021|Add multi virtual network, shared function, security key and devices list|
 |March, 15, 2021|Add Devices Lists for all activated devices|
 
-## 2. Clients Release Notes
+# 2. Clients Release Notes
 
 Release Notess for supported OmniEdge client platforms.
 
-### Windows Release Notes
+## Windows Release Notes
 
 Release Notess for OmniEdge Windows client.
 
 |Version|Release Date|Notes|
 |--|--|--|
-|0.1.1|August, 25, 2021|Add multi virtual network, shared function, security key and devices list|
-|0.1.0|March, 15, 2021|Add Devices Lists for all activated devices|
+|0.1.1|init|
+|0.1.0|init|
 
-### macOS Release Notes
-
-|Version|Release Date|Notes|
-|--|--|--|
-|0.1.1|August, 25, 2021|Add multi virtual network, shared function, security key and devices list|
-|0.1.0|March, 15, 2021|Add Devices Lists for all activated devices|
-
-### Linux Cli Release Notes
+## macOS Release Notes
 
 |Version|Release Date|Notes|
 |--|--|--|
-|0.1.1|August, 25, 2021|Add multi virtual network, shared function, security key and devices list|
-|0.1.0|March, 15, 2021|Add Devices Lists for all activated devices|
+|0.1.1|init|
+|0.1.0|init|
 
-### iOS Release Notes
-
-|Version|Release Date|Notes|
-|--|--|--|
-|0.1.1|August, 25, 2021|Add multi virtual network, shared function, security key and devices list|
-|0.1.0|March, 15, 2021|Add Devices Lists for all activated devices|
-
-### Android Release Notes
+## Linux Cli Release Notes
 
 |Version|Release Date|Notes|
 |--|--|--|
-|0.1.1|August, 25, 2021|Add multi virtual network, shared function, security key and devices list|
+|0.1.1|init|
+|0.1.0|init|
+
+## iOS Release Notes
+
+|Version|Release Date|Notes|
+|--|--|--|
+|0.1.1|init|
+|0.1.0|init|
+
+## Android Release Notes
+
+|Version|Release Date|Notes|
+|--|--|--|
+|0.2.0|August, 25, 2021|Add multi virtual network, shared function, security key and devices list|
+|0.1.3|April, 27, 2021|Add landscape mode, Android TV support|
+|0.1.2|April, 27, 2021|Remove ununsed resources|
+|0.1.1|April, 19, 2021|Expand page size in amplify request|
+|0.1.0|March, 4, 2021|Upgrade google sign-in, upgrade amplify interfaces|
 |0.1.0|March, 15, 2021|Add Devices Lists for all activated devices|
+|0.0.5|February, 28, 2021|Add Help page, google social account sign-in, improve amplify request performance|
+|0.0.4|January, 24, 2021|Several bugs fixed, improve auth process|
+|0.0.3|January, 21, 2021|Improve login process, add amplify auth|
+|0.0.2|December, 22, 2021|Add google oauth sign-in, several bugs fixed.|
+|0.0.1|December, 13, 2020|Add device list page, network libs, vpn features added|
 
 -----
 

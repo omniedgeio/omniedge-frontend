@@ -8,13 +8,7 @@ body {
 }
 
 a {
-  /* color: inherit;
-  text-decoration: none; */
-  color:#162BE1;
-  text-shadow: #6a737d;
-  font-weight: 600;
-  background-color: #1b1f230d;
-  text-decoration:none;
+  text-decoration: none;
 }
 
 * {
@@ -30,21 +24,20 @@ a {
   align-items: center;
 }
 
-
 .downloadCaption {
   font-family: "San Francisco", Inter, serif;
   font-weight: 500;
   font-size: 17px;
   line-height: 22px;
-  color: #AEAEB2;
+  color: #aeaeb2;
   margin: 24px 0;
   padding-bottom: 64px;
-  border-bottom: 1px solid #F5F5F5;
+  border-bottom: 1px solid #f5f5f5;
   width: 600px;
   white-space: pre-wrap;
 }
 .downloadButton {
-  background-color: #4859ED;
+  background-color: #4859ed;
   color: white;
   padding: 12px 24px;
   border-radius: 16px;
@@ -53,7 +46,7 @@ a {
   line-height: 24px;
   max-width: 320px;
   display: flex;
-  margin:auto;
+  margin: auto;
 }
 .qrCodeContainer {
   margin-top: 1em;
@@ -95,7 +88,7 @@ a {
 
 .descriptionLine {
   margin-top: 40px;
-  width:600px;
+  width: 600px;
   align-items: center;
 }
 
@@ -148,11 +141,11 @@ pre {
   overflow-x: scroll;
 }
 .markdown a {
-    color:#162BE1;
-    text-shadow: #6a737d;
-    font-weight: 600;
-    background-color: #1b1f230d;
-    text-decoration:solid;
+  color: #162be1;
+  text-shadow: #6a737d;
+  font-weight: 600;
+  background-color: #1b1f230d;
+  text-decoration: solid;
 }
 .markdown a:active,
 .markdown a:hover {
@@ -301,9 +294,8 @@ pre {
   line-height: 1.8;
 }
 
-
 .markdown table {
-  padding:10px;
+  padding: 10px;
   display: block;
   width: 100%;
   overflow: auto;
@@ -331,7 +323,6 @@ pre {
   width: auto;
   margin: auto;
   display: block;
-  
 }
 /*
 .markdown a {
@@ -732,4 +723,3 @@ pre {
   margin: auto;
   display: block;
 }
-

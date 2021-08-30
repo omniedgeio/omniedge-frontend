@@ -1,19 +1,8 @@
-import {
-  Divider,
-  Button,
-  Container,
-  Flex,
-  Heading,
-  HStack,
-  IconButton,
-  Skeleton,
-  Stack,
-  useBoolean,
-} from "@chakra-ui/react";
+import { Button, Container, Flex, HStack, IconButton, Skeleton, Stack, useBoolean } from "@chakra-ui/react";
 import React from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { useUser } from "../../lib/hook/useUser";
-import Logo from "../Logo";
+import { Brand } from "../Brand";
 import Link from "../next/Link";
 import Footer from "./Footer";
 
@@ -26,18 +15,14 @@ const DefaultLayout: React.FC<{}> = (props) => {
       <nav>
         <Flex
           display={["flex", "none"]}
+          alignItems="center"
           p="4"
           justifyContent="space-between"
           borderBottom="1px"
           borderBottomColor="gray.100"
         >
           <Link href="/">
-            <HStack>
-              <Logo height="8" />
-              <Heading fontWeight="semibold" size="md" as="h6">
-                OMNIEDGE
-              </Heading>
-            </HStack>
+            <Brand />
           </Link>
           <IconButton
             aria-label="menu"
@@ -51,19 +36,14 @@ const DefaultLayout: React.FC<{}> = (props) => {
           py="4"
           px={["4", "0"]}
           direction={["column", "row"]}
-          alignContent="center"
+          alignItems="center"
           justifyContent="space-between"
           borderBottom={["1px", "0"]}
           borderBottomColor="gray.100"
           display={[isNavBarOpen ? "flex" : "none", "flex"]}
         >
-          <Link href="/" _hover={{ color: "inherit" }}>
-            <HStack display={["none", "flex"]}>
-              <Logo height="8" />
-              <Heading fontWeight="semibold" size="md" as="h6" color="brand.500">
-                OMNIEDGE
-              </Heading>
-            </HStack>
+          <Link display={["none", "block"]} href="/" _hover={{ color: "inherit" }}>
+            <Brand />
           </Link>
           <Stack
             spacing={["2", "5"]}
@@ -95,12 +75,9 @@ const DefaultLayout: React.FC<{}> = (props) => {
             )}
           </HStack>
         </Flex>
-        <Divider />
       </nav>
-      <main>
-        {props.children}
-      </main>
-    
+      <main>{props.children}</main>
+
       <Footer />
     </Container>
   );

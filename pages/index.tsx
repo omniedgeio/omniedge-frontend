@@ -6,44 +6,45 @@ import {
   Heading,
   HStack,
   Input,
+  Link,
   Stack,
   Text,
   VStack,
-  Link,
 } from "@chakra-ui/react";
 import React from "react";
+import { Customersmap } from "../components/Customersmap";
+import { Compare, FeaturePage, Heros, How, Users } from "../components/Features";
 import DefaultLayout from "../components/layout/Default";
 import { Page } from "../types";
-import {Customersmap} from "../components/Customersmap"
-import {FeaturePage,How,Heros,Users, Whyus, Compare} from "../components/Features";
-import CookieConsent from "react-cookie-consent";
+
 const Home: Page = (props) => {
-  return (<>
+  return (
+    <>
       <Box padding="4" as="header" py={["6", "12", "36"]} position="relative">
         <Stack
           direction={{ base: "column", md: "row" }}
           justifyContent="space-between"
-          alignItems={{ base: "flex-start", md: "center" }}
+          alignItems={{ base: "flex-start" }}
         >
-          <VStack alignItems="flex-start" >
+          <VStack alignItems="flex-start">
             <Heading as="h6" fontWeight="medium" size="sm" color="gray.500">
-            MADE COMMUNICATION EASY AND SAFE
+              MADE COMMUNICATION EASY AND SAFE
             </Heading>
             <Heading maxW="xl" as="h1" size="xl" lineHeight="1.5em">
-            Bring intranet on the internet.
-            {/* With P2P Secure Connection, Any Time, Any Where. */}
+              Bring intranet on the internet.
+              {/* With P2P Secure Connection, Any Time, Any Where. */}
             </Heading>
             <Text maxW="2xl" color="gray.700" py="4">
               {`Omniedge's distrubuted VPN solutions is not only a great and affordable network solution for small team,
               but also for big companies with thousands of devices all around the world.`}
             </Text>
-            <Link href="/register" w="full" >
-            <Button colorScheme="brand" w="50%">Get Started</Button>
+            <Link href="/register" w="full">
+              <Button colorScheme="brand">Get Started</Button>
             </Link>
           </VStack>
-          <VStack pt={["12", "12", "0"]} alignItems="flex-start" pointerEvents="none" >
-          <Link href="/register" w="full">
-            <Button colorScheme="brand">+ Virtual Network</Button>
+          <VStack pt={["12", "12", "0"]} alignItems="flex-start" pointerEvents="none">
+            <Link href="/register" w="full">
+              <Button colorScheme="brand">+ Virtual Network</Button>
             </Link>
             <Box
               mt="2"
@@ -69,7 +70,7 @@ const Home: Page = (props) => {
               <HStack mt="4" justifyContent="flex-end">
                 <Button>Cancel</Button>
                 <Link href="/register" w="full">
-                <Button colorScheme="brand">Create</Button>
+                  <Button colorScheme="brand">Create</Button>
                 </Link>
               </HStack>
             </Box>
@@ -94,22 +95,20 @@ const Home: Page = (props) => {
       <Users />
       <Heros />
       <Customersmap />
+      {/**
       <CookieConsent
-  location="bottom"
-  buttonText="I Agree"
-  cookieName="OmniEdge"
-  style={{ background: "#4859ED" }}
-  buttonStyle={{ color: "#4859ED", fontSize: "13px" }}
-  expires={150}
-  enableDeclineButton
-  >
-  We use cookies to ensure you get the best experience on our website <Link href="/privacy">Learn more</Link>.{" "}
-
-</CookieConsent>
-
-      
-      </>
-    
+        location="bottom"
+        buttonText="I Agree"
+        cookieName="OmniEdge"
+        style={{ background: "#4859ED" }}
+        buttonStyle={{ color: "#4859ED", fontSize: "13px" }}
+        expires={150}
+        enableDeclineButton
+      >
+        We use cookies to ensure you get the best experience on our website <Link href="/privacy">Learn more</Link>.{" "}
+      </CookieConsent>
+       */}
+    </>
   );
 };
 

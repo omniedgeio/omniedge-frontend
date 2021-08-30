@@ -73,7 +73,7 @@ ngrok/frp is a reverse proxy tool used for exposing your local service to public
 
 - OmniEdge is not limited to TCP and covers all the TCP and UDP services, you can access your own devices only by one fixed IP. 
 
-Let's have some compare some use cases betweenn ngrok/frp and omniedge.
+Let's compare some use cases between ngrok/frp and omniedge.
 
 |Use Cases|ngrok/frp|OmniEdge|
 |--|--|--|

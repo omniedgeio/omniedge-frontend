@@ -138,7 +138,7 @@ const PricingPage: Page = () => {
           <HStack height="2.5rem" spacing={1} alignItems="center">
             <Text fontWeight="medium">Pay based on your needs</Text>
           </HStack>
-          <Link href="mailto:hi@omniedge.io" w="full">
+          <Link href="/contactus" w="full">
             <Button colorScheme="brand" w="full">
               Contact us
             </Button>

@@ -328,9 +328,10 @@ pre {
   background-color: #f6f8fa;
 }
 .markdown img {
-  max-width: 100%;
+  width: auto;
   margin: auto;
   display: block;
+  
 }
 /*
 .markdown a {

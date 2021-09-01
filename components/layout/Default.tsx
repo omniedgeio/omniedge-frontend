@@ -77,7 +77,6 @@ const DefaultLayout: React.FC<{}> = (props) => {
         </Flex>
       </nav>
       <main>{props.children}</main>
-
       <Footer />
     </Container>
   );

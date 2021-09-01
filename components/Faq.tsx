@@ -1,5 +1,5 @@
 import { Heading, Text, VStack,
-  Box,
+  Box,chakra,
   AccordionItem,
   AccordionButton,
   AccordionIcon,
@@ -19,45 +19,47 @@ interface FAQText {
 const FAQText: React.FC<FAQText> = ({ title,text }) => {
   return (
   <AccordionItem>
-    <Box
-        rounded="lg"
-        // shadow="md"
-        bg={useColorModeValue("white", "gray.800")}
-        width="3xl"
-      >
     <AccordionButton _expanded={{ bg: "brand.500", color: "white" }}>
-      <Box flex="1" textAlign="left">
-        <Text fontWeight="semibold" fontSize="md" >{title}</Text>
-      </Box>
-      <AccordionIcon />
+    <chakra.h1
+          mb={6}
+          fontSize={{ base: "sm", md: "xl" }}
+          fontWeight="bold"
+          lineHeight="none"
+        >
+        {title}
+        <AccordionIcon fontSize="xl" />
+      </chakra.h1>
+      
     </AccordionButton>
-  <AccordionPanel pb={4}>
+  <AccordionPanel width={{base:"auto",md:"xl"}} maxW={{base:"2xl",md:"4xl"}}>
   <Markdown>
   {text}
   </Markdown>
-    
   </AccordionPanel>
-  </Box>
 </AccordionItem>
 );
 };
 
 export const Faq: Page = () => {
   return (<>
-            <Box
-        mx="auto"
+     <Box
         rounded="lg"
-        shadow="md"
         bg={useColorModeValue("white", "gray.800")}
-        maxW="3xl"
+        max="auto"
       >
-            <VStack spacing="4" alignItems="center">
-            <Heading fontWeight="semibold" fontSize="2xl">
+            <VStack spacing="4">
+            <chakra.h1
+          mb={6}
+          fontSize={{ base: "4xl", md: "6xl" }}
+          fontWeight="bold"
+          lineHeight="none"
+          letterSpacing={{ base: "normal", md: "tight" }}
+          color={useColorModeValue("gray.900",'gray.100')}
+        >
         FAQ
-      </Heading>
-      <Text>Frequent Asked Questions</Text>
+      </chakra.h1>
       
-      <Accordion allowToggle={false}>
+      <Accordion pb={4} defaultIndex={[0]} allowToggle={false}>
             <FAQText 
             title="How long does it take to set up OmniEdge?"
             text="OmniEdge can be set up in 5 minutes or less, by installing an OmniEdge Apps for your devices on [iOS](/download/ios), [Android](/download/android), [Windows](/download/windows), [macOS](/download/macos), and [Linux platforms](/download/linuxcli)."
@@ -79,17 +81,13 @@ export const Faq: Page = () => {
             text="We support payment by credit card through [Stripe](https://stripe.com). Customers with Enterprise plans can request payment by other methods, such as wire or ACH. At this time, we can only receive payment in US Dollars ($)."
             />
             <FAQText
-            title="Where can I find your terms of service and privacy policy?"
+            title="Where are the term of service and privacy policy?"
             text="View the OmniEdge [Terms of Service](/terms) and [Privacy Policy](/privacy)."
             />
             <FAQText
             title="How can I learn more about OmniEdge?"
             text="Learn more about OmniEdge by reading [documentation](/doc)."
             />
-            {/* <FAQText
-            title=""
-            text=""
-            /> */}
 
 </Accordion>
 

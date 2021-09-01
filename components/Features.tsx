@@ -380,7 +380,7 @@ const Featureheros = (props: any) => (
     {props.children}
   </Flex>
 );
-export function Heros() {
+export function HerosV1() {
   return (
     <Box padding="4" textAlign={{ base: "center", md: "center" }}>
       <chakra.h1
@@ -418,6 +418,93 @@ export function Heros() {
     </Box>
   );
 }
+
+export function Heros() {
+  return (
+    <Box px={8} py={24} mx="auto">
+      <Box
+        w={{ base: "full", md: 11 / 12, xl: 9 / 12 }}
+        mx="auto"
+        textAlign={{ base: "left", md: "center" }}
+      >
+        <chakra.h1
+          mb={6}
+          fontSize={{ base: "4xl", md: "6xl" }}
+          fontWeight="bold"
+          lineHeight="none"
+          letterSpacing={{ base: "normal", md: "tight" }}
+          color={useColorModeValue("gray.900",'gray.100')}
+        >
+          All your{" "}
+          <Text
+            display={{ base: "block", lg: "inline" }}
+            w="full"
+            bgClip="text"
+            bgGradient="linear(to-r, brand.500,purple.500)"
+            fontWeight="extrabold"
+          >
+            connectivity
+          </Text>{" "}
+          in one single click.
+        </chakra.h1>
+        <chakra.p
+          px={{ base: 0, lg: 24 }}
+          mb={6}
+          fontSize={{ base: "lg", md: "xl" }}
+          color={useColorModeValue("gray.600",'gray.300')}
+        >
+          We’re on a mission to provide a reliable, secure and painless connectivity solutions for anyone who wants to
+        have have access to their devices, anywhere, anytime.
+        </chakra.p>
+        <Stack
+        direction={{base:"column",sm:"row"}}
+          mb={{ base: 4, md: 8 }}
+          spacing={2}
+          justifyContent={{ sm: "left", md: "center" }}
+        >
+          <Link href="/register">
+          <Button
+            as="a"
+            variant="solid"
+            colorScheme="brand"
+            display="inline-flex"
+            alignItems="center"
+            justifyContent="center"
+            w={{ base: "full", sm: "auto" }}
+            mb={{ base: 2, sm: 0 }}
+            size="lg"
+            cursor="pointer"
+          >
+            Get Started
+            <Icon boxSize={4} ml={1} viewBox="0 0 20 20" fill="currentColor">
+              <path
+                fillRule="evenodd"
+                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                clipRule="evenodd"
+              />
+            </Icon>
+          </Button>
+          </Link>
+        </Stack>
+      </Box>
+      <Box
+        w={{ base: "full", md: 10 / 12 }}
+        mx="auto"
+        mt={20}
+        textAlign="center"
+      >
+        <Image
+          w="full"
+          rounded="lg"
+          shadow="2xl"
+          src="/assets/OmniEdge-all@2.png"
+          alt="OmniEdge"
+        />
+      </Box>
+    </Box>
+  );
+};
+
 const Featureusers = (props: any) => {
   return (
     <Flex>

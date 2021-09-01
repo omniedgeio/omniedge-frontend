@@ -6,13 +6,15 @@ import { Stack,Button, Heading, HStack, Icon, Text, VStack,Table,
   Th,
   Td,
   TableCaption,
+  Accordion,
   AccordionItem,
   AccordionButton,
   AccordionIcon,
   AccordionPanel,
   useColorModeValue,
+  chakra,
  } from "@chakra-ui/react";
-import { FiCheck, FiX } from "react-icons/fi";
+import { FiCheck, FiX,FiPlus, FiMinus} from "react-icons/fi";
 import DefaultLayout from "../components/layout/Default";
 import Link from "../components/next/Link";
 import { Page } from "../types";
@@ -37,12 +39,6 @@ interface FeatureTextnumber {
 const FAQText: React.FC<FAQText> = ({ title,text }) => {
   return (
   <AccordionItem>
-    <Box
-        rounded="lg"
-        // shadow="md"
-        bg={useColorModeValue("white", "gray.800")}
-        width="3xl"
-      >
     <AccordionButton _expanded={{ bg: "brand.500", color: "white" }}>
       <Box flex="1" textAlign="left">
         <Text fontWeight="semibold" fontSize="md" >{title}</Text>
@@ -55,7 +51,6 @@ const FAQText: React.FC<FAQText> = ({ title,text }) => {
   </Markdown>
     
   </AccordionPanel>
-  </Box>
 </AccordionItem>
 );
 };
@@ -99,17 +94,32 @@ const FeatureDesc: React.FC<{free?:boolean,pro?:boolean,team?:boolean,enterprise
   );
 };
 
+
 const PricingPage: Page = () => {
   return (<>
     <VStack mt={10}>
-      <Heading fontWeight="semibold" fontSize="2xl">
+    <chakra.h1
+          mb={6}
+          fontSize={{ base: "4xl", md: "6xl" }}
+          fontWeight="bold"
+          lineHeight="none"
+          letterSpacing={{ base: "normal", md: "tight" }}
+          color={useColorModeValue("gray.900",'gray.100')}
+        >
         Pricing
-      </Heading>
+      </chakra.h1>
       <Text>Start for free, then grow with us</Text>
 <VStack spacing="4" alignItems="center">
 <Stack spacing="8" direction={["column", "row"]} alignItems="flex-start">
 <VStack borderRadius="xl" p={6} border="solid 1px" borderColor="gray.200">
-          <Text>Free</Text>
+<chakra.h2
+          mb={6}
+          fontSize={{ base: "2xl", md: "3xl" }}
+          fontWeight="semibold"
+          lineHeight="none"
+          letterSpacing={{ base: "normal", md: "tight" }}
+          color={useColorModeValue("gray.900",'gray.100')}
+        >Free</chakra.h2>
           <HStack height="2.5rem" spacing={1} alignItems="center">
             <Text>$</Text>
             <Text fontSize="2xl" fontWeight="semibold">
@@ -121,7 +131,7 @@ const PricingPage: Page = () => {
               Get Started
             </Button>
           </Link>
-          <VStack pt={2} alignItems="start">
+          <VStack mx="auto" alignItems="start">
             <FeatureText>Unlimited data transfer</FeatureText>
             <FeatureText>Encrypted, peer-to-peer connection</FeatureText>
             <FeatureText>1 virtual network</FeatureText>
@@ -130,11 +140,36 @@ const PricingPage: Page = () => {
             <FeatureText>Subroute</FeatureText>
             <FeatureText active={false}>Hardware and Iot integration</FeatureText>
             <FeatureText active={false}>Specialist Support</FeatureText>
+          {/* <Accordion display={{base:"flex",md:"none"}} allowMultiple>
+  <AccordionItem>
+          <AccordionButton>
+            <Box textAlign="left">
+              Show all features
+            </Box>
+          </AccordionButton>
+        <AccordionPanel pb={4} width="100%">
+        <FeatureText>Unlimited data transfer</FeatureText>
+            <FeatureText>Encrypted, peer-to-peer connection</FeatureText>
+            <FeatureText>1 virtual network</FeatureText>
+            <FeatureText>20 devices</FeatureText>
+            <FeatureText>1 user</FeatureText>
+            <FeatureText>Subroute</FeatureText>
+        </AccordionPanel>
+  </AccordionItem>
+</Accordion> */}
+
           </VStack>
         </VStack>
     
         <VStack borderRadius="xl" p={6} border="solid 1px" borderColor="gray.200">
-          <Text>Enterprise</Text>
+        <chakra.h2
+          mb={6}
+          fontSize={{ base: "2xl", md: "3xl" }}
+          fontWeight="semibold"
+          lineHeight="none"
+          letterSpacing={{ base: "normal", md: "tight" }}
+          color={useColorModeValue("gray.900",'gray.100')}
+        >Enterprise</chakra.h2>
           <HStack height="2.5rem" spacing={1} alignItems="center">
             <Text fontWeight="medium">Pay based on your needs</Text>
           </HStack>
@@ -157,16 +192,16 @@ const PricingPage: Page = () => {
       </Stack>
     </VStack>
     </VStack>
-    <br></br>
+
     <Box
         mx="auto"
         rounded="lg"
         shadow="md"
         bg={useColorModeValue("white", "gray.800")}
         maxW="3xl"
-        display="flex"
+        display={{base:"none",md:"flex"}}
       >
-    <Table variant="simple">
+    <Table variant="simple" >
   <TableCaption></TableCaption>
   <Thead>
     <Tr>
@@ -194,7 +229,6 @@ const PricingPage: Page = () => {
             </Tbody>
             </Table>
             </Box>
-
 <Faq />
 <Heros />
               </>

@@ -7,7 +7,7 @@ function VideoPlayer({ url }) {
       <ReactPlayer
         className="reactPlayer"
         url={url}
-        width="auto"
+        width="100%"
       />
     </div>
   )

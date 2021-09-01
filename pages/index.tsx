@@ -13,7 +13,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { Customersmap } from "../components/Customersmap";
-import { Compare, FeaturePage, Heros, How, Users } from "../components/Features";
+import { Compare, FeaturePage, Heros, HerosV2,How, Users } from "../components/Features";
 import DefaultLayout from "../components/layout/Default";
 import { Page } from "../types";
 

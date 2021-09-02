@@ -497,7 +497,7 @@ export function Heros() {
           w="full"
           rounded="lg"
           shadow="2xl"
-          src="/assets/Omniedge-dashboard-mac-iphone-windows.png"
+          src="/assets/OmniEdge-Appsx1.png"
           alt="OmniEdge"
         />
       </Box>

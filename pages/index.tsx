@@ -31,7 +31,13 @@ const Home: Page = (props) => {
               MADE COMMUNICATION EASY AND SAFE
             </Heading>
             <Heading maxW="xl" as="h1" size="xl" lineHeight="1.5em">
-              Bring intranet on the internet.
+            <Text
+            display={{ base: "block", lg: "inline" }}
+            w="full"
+            bgClip="text"
+            bgGradient="linear(to-r, brand.500,purple.500)"
+            fontWeight="extrabold"
+          >Bring intranet on the internet.</Text>
               {/* With P2P Secure Connection, Any Time, Any Where. */}
             </Heading>
             <Text maxW="2xl" color="gray.700" py="4">

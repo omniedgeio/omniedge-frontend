@@ -32,26 +32,26 @@ With VPNs:
 
 ### 3. Basic Information
 
-|Software|Version|OS:Linux/Windows/MacOS/BSD|Mobile: iOS/Android |TV: Apple TV/Android TV|NAS OS: FreeNAS/Synology|Raspberry PI|
-|---|---|---|---|---|---|---|
-|OpenVPN|2.4.11|Yes/Yes/Yes/Yes|Yes/Yes|No/No|Yes/Yes|Yes|
-|Wireguard|1.0|Yes/Yes/Yes/Yes|Yes/Yes|No/No|Yes/Yes|Yes|
-|OmniEdge|0.1.0|Yes/Yes/Yes/Yes|Yes/Yes|No/Yes|Yes/Yes|Yes|
+|Software|Version|Linux/Windows/MacOS/BSD|iOS/Android|
+|---|---|---|---|
+|OpenVPN|2.4.11|Yes/Yes/Yes/Yes|Yes/Yes|
+|Wireguard|1.0|Yes/Yes/Yes/Yes|Yes/Yes|
+|OmniEdge|0.1.0|Yes/Yes/Yes/Yes|Yes/Yes|
 
 
 ### 4. Networking features
-|Software|Device types: TUN/TAP|Multiple Modes|Auto meshing|NAT Traversal|Multihops|Protocol|
-|--|--|--|--|--|--|--|
-|OpenVPN|Yes/Yes|No|No|(Yes)|(Yes)|UDP/TCP|
-|Wireguard|Yes/No|No|No|No|No|UDP|
-|OmniEdge|No/Yes|No|Yes|Yes|No|UDP|
+|Software|TUN/TAP|Auto meshing|NAT Traversal|Protocol|
+|--|--|--|--|--|--|
+|OpenVPN|Yes/Yes|No|(Yes)|UDP/TCP|
+|Wireguard|Yes/No|No|No|UDP|
+|OmniEdge|No/Yes|Yes|Yes|UDP|
 
 ### 5. Security features
-|Software|Cipers|Cipher selection|Public key Mechanism|Certificates /Shared key|PFS|
-|--|--|--|--|--|--|
-|OpenVPN|AES256(OpenSSL)|Auto|RSA|Yes/No|Yes|
-|Wireguard|ChaCha20|fixed|Curve25519,ECDH|Yes/No|Yes|
-|OmniEdge|Twofish,AES128,ChaCha20|Manual|Curve25519|Yes/Yes/Yes|
+|Software|Cipers|
+|--|--|
+|OpenVPN|AES256(OpenSSL)|
+|Wireguard|ChaCha20|
+|OmniEdge|Twofish,AES128,ChaCha20|
 
 ### 6. Performance
 

@@ -192,6 +192,8 @@ pre {
   margin-bottom: 16px;
 }
 
+
+
 .markdown code,
 .markdown kbd,
 .markdown pre {
@@ -247,27 +249,30 @@ pre {
 .markdown table tr th:first-child,
 .markdown table tr td:first-child {
   padding-left: 0;
+  width: 26%; 
 }
 
 .markdown p {
   line-height: 1.8;
 }
-
 .markdown table {
-  padding: 10px;
-  display: block;
-  width: 100%;
-  overflow: auto;
+  padding-left: 10px;
+  overflow-wrap: anywhere;
+  word-break: break-all;
+  width: 100%; 
+  text-align: center;
+  /* display: block; */
 }
 
 .markdown table th {
   font-weight: 600;
+  font-size:small;
 }
 
 .markdown table td,
 .markdown table th {
-  padding: 6px 13px;
   border: 1px solid #dfe2e5;
+  font-size:small;
 }
 
 .markdown table tr {
@@ -281,7 +286,7 @@ pre {
 .markdown img {
   width: auto;
   margin: auto;
-  display: block;
+  display: flex;
 }
 /*
 .markdown a {

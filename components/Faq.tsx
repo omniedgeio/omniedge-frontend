@@ -62,15 +62,15 @@ export const Faq: Page = () => {
       <Accordion pb={4} defaultIndex={[0]} allowToggle={false}>
             <FAQText 
             title="How long does it take to set up OmniEdge?"
-            text="OmniEdge can be set up in 5 minutes or less, by installing an OmniEdge Apps for your devices on [iOS](/download/ios), [Android](/download/android), [Windows](/download/windows), [macOS](/download/macos), and [Linux platforms](/download/linuxcli)."
+            text="OmniEdge can be set up in 5 minutes or less, by installing OmniEdge Apps for your devices on iOS, Android, Windows, macOS, and Linux platforms."
             />
             <FAQText 
             title="Is my privacy secure with OmniEdge?" 
-            text=" We take privacy security very seriously. please read our [privacy Policy](/privacy) for Details. " 
+            text=" We take privacy security very seriously. please read our [Privacy Policy](/privacy) for Details. " 
             />
             <FAQText
             title="How do I change my existing subscription plan?"
-            text="If you already have a OmniEdge plan, please contact us to change your plan or your billing period, or you can do it by yourself at the dashboard."
+            text="If you already have an OmniEdge plan, please contact us to change your plan or your billing period, or you can do it by yourself at the dashboard."
             />
             <FAQText
             title="When will I be billed?"

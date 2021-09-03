@@ -11,11 +11,11 @@ index: 1
 To solve all the above issues, we designed and developed OmniEdge based upon the following objectives.
 Simple enough to use for both users and network administrators.
 Based on the Zero-trust security model. Users can establish a strictly secure network through authentication services such as Okta, G Suite, etc.
-Try using peer-to-peer communication instead of relaying nodes to increase the network speed and reduce risks of single-point failures.
+Try using peer-to-peer communication instead of relaying nodes to increase the network speed and reduce the risks of single-point failures.
 
 ### Main Architecture
 
-For the above design goals, we get inspired by an open-source VPN software: n2n and designed the main architecture of OmniEdge.
+For the above design goals, we get inspired by an open-source VPN software: n2n, and designed the main architecture of OmniEdge.
 ![](/assets/posts-images/how-omniedge-works-main-architecture.png)
 
 Our architecture has the following components:
@@ -97,7 +97,7 @@ OS: AWS Linux 2 AMI
 
 ### Conclusion
 
-- The OmniEdge Evalution can reach 554 Mbit/s.
+- The OmniEdge Evaluation can reach 554 Mbit/s.
 - The new OmniEdge version can reach 3470 Mbit/s. 
 
 -----

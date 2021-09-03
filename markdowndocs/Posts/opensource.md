@@ -8,33 +8,33 @@ date: August 09, 2021
 readtime: 6
 ---
 
-OmniEdge is a project we started from a single tweet, a group of network experts from 9 cites across 5 countries gathering together to build a paradigm shift for next generation peer-to-peer VPN infrastructure. 
+OmniEdge is a project we started from a single tweet, a group of network experts from 9 cities across 5 countries gathering together to build a paradigm shift for next-generation peer-to-peer VPN infrastructure. 
 The project is [started in Post-Covid19(we thought 2021 is post-Covid19)](/blog/startups-in-post-covid19-for-remote-workforce), and [we released our first Evaluation version on 15, March, 2021](https://twitter.com/brucebot/status/1373865927943450625?s=20). 
 
-Everyone can who knows how to use computer can use our app to create their own private intranet on the internet, connects all of his/her devices with an OS from anywhere without concern. The compatible devices are not only including the IT devices such as
+Everyone can who knows how to use a computer can use our app to create their own private intranet on the internet, connects all of his/her devices with an OS from anywhere without concern. The compatible devices are not only including the IT devices such as
 Laptops, Desktops, Mobile Phones, Cloud instances, Routers, NAS, Raspberry Pi, but also industrial machines including industrial robotics, AGVs, MES system and Motion control system. 
 We are surprised to see the Evaluation products going popular across the world and attracting users from 26 countries and regions. 
 However, we also faced a lot of requirements from our users. 
 ## The OmniEdge Evaluation Version 
 
-The OmniEdge evaluation protocol is developed based on [n2n](https://github.com/ntop/n2n). n2n is a light VPN software which makes it easy to create virtual network bypassing intermediate firewalls which is developed by [ntop](http://ntop.org) leaded by [Luca](https://github.com/lucaderi), and the active developer
-now is [Logan007](https://github.com/ntop/n2n/commits?author=Logan007).The default protocol is great, however, it is difficult for people to use. When OmniEdge starts building the service, we [did a lot test including WireGuard and n2n](/blog/how-omniedge-works).And we found some limitation. We want to make the connectivity
-more simple and secure. What's more, we need an evaluation version to test our idea, to check if our customers like our products. So we decided to develop the evaluation version based on n2n. And we are now open source our clients one by one, the first open sourced client is OmniEdge Evaluation Android Client:[https://github.com/omniedgeio/omniedge-android](https://github.com/omniedgeio/omniedge-android).
+The OmniEdge evaluation protocol is developed based on [n2n](https://github.com/ntop/n2n). n2n is a light VPN software that makes it easy to create a virtual network bypassing intermediate firewalls which are developed by [ntop](http://ntop.org) leaded by [Luca](https://github.com/lucaderi), and the active developer
+now is [Logan007](https://github.com/ntop/n2n/commits?author=Logan007). The default protocol is great, however, it is difficult for people to use. When OmniEdge starts building the service, we did a lot of tests including WireGuard and n2n. And we found some limitations. We want to make the connectivity
+more simple and secure. What's more, we need an evaluation version to test our idea, to check if our customers like our products. So we decided to develop the evaluation version based on n2n. And we are now open-source our clients one by one, the first open-sourced client is OmniEdge Evaluation Android Client:[https://github.com/omniedgeio/omniedge-android](https://github.com/omniedgeio/omniedge-android).
 
 ## The OmniEdge 1.0 Plan
 
-The OmniEdge 1.0 is designed to be a high performance peer-to-peer mesh VPN over UDP, supporting strong encryption, hole punching and zero-config.It is a fully-meshed VPN network in a peer-to-peer connectivity with strong end-to-end encryption based on elliptic curve keys and AES-256. 
+The OmniEdge 1.0 is designed to be a high-performance peer-to-peer mesh VPN over UDP, supporting strong encryption, hole punching, and zero-config. It is a fully-meshed VPN network in peer-to-peer connectivity with strong end-to-end encryption based on elliptic curve keys and AES-256. 
 ![OmniEdge Dashboard](/assets/posts-images/OmniEdge-Dashboard.png)
-OmniEdge 1.0 features the following functionality but will not limited: 
+OmniEdge 1.0 features the following functionality but will not be limited: 
 - Automatic peer-to-peer meshing, no central servers
 - Zero-config and single click to use
 - Login with Google
 - Security Key for embedded devices 
 - Multi virtual network
-- Multi Users
+- Multi-Users
 - Dashboard to manage the virtual network.
 - Auto allocate the closed server
-- The configs are signed with the private key which only hold by the users
+- The configs are signed with the private key which only holds by the users
 - Automatic reconnecting when connections are lost
 - Connecting hundreds of nodes with the VPN
 - High throughput and low additional latency
@@ -44,13 +44,13 @@ OmniEdge 1.0 features the following functionality but will not limited:
 - NAT and firewall traversal using hole punching
 - Automatic port forwarding via UPnP
 - Websocket proxy mode for restrictive environments
-- Support for tunneled VLans (TAP devices)
-- Support for publishing beacons to help nodes find each others
-- Support for statsd monitoring
+- Support for tunneled VLANs (TAP devices)
+- Support for publishing beacons to help nodes find each other
+- Support for status monitoring
 - Low memory footprint
 - Single binary, no dependencies, no kernel module
 
-Thanks to the team, specially our architect [Dr. Dennis Schwerdel](https://omniedge.io/about), we can make it happen. Dr. Dennis is a peer-to-peer network expert, he is also the author of [vpncloud](https://github.com/dswd/vpncloud) which is an open source p2p vpn project. 
+Thanks to the team, especially our architect [Dr. Dennis Schwerdel](https://omniedge.io/about), we can make it happen. Dr. Dennis is a peer-to-peer network expert, he is also the author of [vpncloud](https://github.com/dswd/vpncloud) which is an open-source p2p VPN project. 
 
 ## Performance test between OmniEdge evaluation version and OmniEdge 1.0
 

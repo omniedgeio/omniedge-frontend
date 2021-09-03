@@ -41,8 +41,7 @@ const Home: Page = (props) => {
               {/* With P2P Secure Connection, Any Time, Any Where. */}
             </Heading>
             <Text maxW="2xl" color="gray.700" py="4">
-              {`Omniedge's distrubuted VPN solutions is not only a great and affordable network solution for small team,
-              but also for big companies with thousands of devices all around the world.`}
+              {`Omniedge's distributed VPN solutions are not only a great and affordable network solution for a small team but also for big companies with thousands of devices all around the world.`}
             </Text>
             <Link href="/register" w="full">
               <Button colorScheme="brand">Get Started</Button>

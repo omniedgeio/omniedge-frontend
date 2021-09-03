@@ -149,7 +149,7 @@ export function How() {
       <Heading as="h2">How Omniedge works?</Heading>
       <Text textAlign="center">
         We rebuild the intranet on the internet setup easier and so you can connect your devices in a secure way without{" "}
-        <br /> concern at any where and anytime.
+        <br /> concern at anywhere and anytime.
       </Text>
       <Stack spacing="8" direction={["column", "row"]} alignItems="flex-start">
         <VStack maxW="md" spacing="4">
@@ -322,8 +322,7 @@ export const FeaturePage: Page = () => {
             mx={{ lg: "auto" }}
             color={useColorModeValue("gray.500", "gray.400")}
           >
-            OmniEdge reduces the enterprise connectivity deployment from weeks to minutes, helps customers focusing on
-            their core business, connect and mangage their devices from anywhere, anytime.
+            OmniEdge reduces the enterprise connectivity deployment from weeks to minutes, helps customers focusing on their core business, connects and manages their devices from anywhere, anytime.
           </chakra.p>
         </Box>
 
@@ -342,7 +341,7 @@ export const FeaturePage: Page = () => {
 
             <Feature title=" Management on one dashboard" icon={<FiSettings size="2lg" />}>
               Users can manage all registered devices on one dashboard, no matter where they are located, with an
-              end-to-end private encrypted network, allowing users to access to their own devices.
+              end-to-end private encrypted network, allowing users to access their own devices.
             </Feature>
 
             <Feature title="Faster Speed, Low Lantency" icon={<FaRocket size="2lg" />}>
@@ -354,12 +353,10 @@ export const FeaturePage: Page = () => {
               authentication to achieve dual security confirmation of devices and users.
             </Feature>
             <Feature title="Painless Setup" icon={<GiPeanut size="2lg" />}>
-              Set up OmniEdge just in minutes with our apps on any devices, you can chosse several different method to
-              activate your devices.
+            Set up OmniEdge just in minutes with our apps on any device, you can choose several different methods to activate your devices.
             </Feature>
             <Feature title="Maintenanceless " icon={<GiAutoRepair size="2lg" />}>
-              Forget about the labor intensive of the system management job, with OMNIEDGE you can focus on your own
-              core business.
+            Forget about the labor-intensive system management job, with OMNIEDGE you can focus on your own core business.
             </Feature>
           </Stack>
         </Box>
@@ -393,8 +390,7 @@ export function HerosV1() {
         A secure, zero-config way to connect.
       </chakra.h1>
       <chakra.p mb={6} fontSize={{ base: "lg", md: "xl" }} color="gray.500" lineHeight="base">
-        We’re on a mission to provide a reliable, secure and painless connectivity solutions for anyone who wants to
-        have have access to their devices, anywhere, anytime.
+      We’re on a mission to provide reliable, secure, and painless connectivity solutions for anyone who wants to have access to their devices, anywhere, anytime.
       </chakra.p>
       <Link href="/register" w="full" mb={6}>
         <Button w="50%" colorScheme="brand">
@@ -453,8 +449,7 @@ export function Heros() {
           fontSize={{ base: "lg", md: "xl" }}
           color={useColorModeValue("gray.600",'gray.300')}
         >
-          We’re on a mission to provide a reliable, secure and painless connectivity solutions for anyone who wants to
-        have have access to their devices, anywhere, anytime.
+        We’re on a mission to provide reliable, secure, and painless connectivity solutions for anyone who wants to have access to their devices, anywhere, anytime.
         </chakra.p>
         <Stack
         direction={{base:"column",sm:"row"}}
@@ -549,8 +544,7 @@ export function Users() {
             We build for you.
           </chakra.h2>
           <chakra.p mb={6} fontSize={{ base: "lg", md: "xl" }} color={useColorModeValue("gray.600", "gray.500")}>
-            Omniedge creates a hight reliable connective system and make it universally compatible for anyone, any team
-            who need connect their devices anywhere anytime.
+          Omniedge creates a hight reliable connective system and makes it universally compatible for anyone, any team who needs to connect their devices anywhere anytime.
           </chakra.p>
         </Box>
         <GridItem colSpan={2}>
@@ -562,35 +556,26 @@ export function Users() {
             gridRowGap={{ md: 10 }}
           >
             <Featureusers title="Manufacturers" icon={<GiFactory size="2lg" />}>
-              Industrial 4.0 suppliers, Machine Vendors, Factories can simply the deployment of the M2M connectivity.
-              OmniEdge is lightweight and compatible with most of industrial gateways.{" "}
+            Industrial 4.0 suppliers, Machine Vendors, Factories can simplify the deployment of the M2M connectivity. OmniEdge is lightweight and compatible with most industrial gateways.{" "}
             </Featureusers>
             <Featureusers title="Banks" icon={<GiBank size="2lg" />}>
-              Secure the legacy apps, services from outside to inside the banks, setup the network between banks without
-              any pain, zero-config system with low maintennace cost.No matter how complexity the old network is,
-              OmniEdge will connect with in a minutes.
+            Secure the legacy apps, services from outside to inside the banks, set up the network between banks without any pain, zero-config system with low maintenance cost.No matter how complex the old network is, OmniEdge will connect your devices in a few minutes.
             </Featureusers>
             <Featureusers title="Hospitals" icon={<GiHospital size="2lg" />}>
               {" "}
-              Connect all the computers across different network in different department within a single click
-              installation. Secure exchanging the patients data only in a hospital private network in a peer-to-peer
-              tunnel, protect the privacy.
+              Connect all the computers across the different networks in different departments within a single click installation. Secure exchanging the patient's data only in a hospital private network in a peer-to-peer tunnel, protect the privacy.
             </Featureusers>
             <Featureusers title="Freight industry" icon={<GiCargoCrate size="2lg" />}>
               {" "}
-              Connect your AGVs no matter it is a linux-based or windows-based.Privde remote suppor, remote upgrade and
-              data streaming with fast and low Lantency omniedge peer-to-peer work.{" "}
+              Connect your AGVs no matter it is a Linux-based or windows-based. Provide remote support, remote upgrade, and data streaming with fast and low Latency peer-to-peer work.{" "}
             </Featureusers>
             <Featureusers title="Enterprise" icon={<FaBuilding size="2lg" />}>
               {" "}
-              Simplify the enterprise level VPN setup from weeks to minutes, from complexity config to zero config, from
-              high cost of maintennace to low cost. Connect differenct branches devices in just a click, exchange big
-              data securely, provate the communication for travelling employees to access internal resources.
+              Simplify the enterprise-level VPN setup from weeks to minutes, from complexity config to zero-config, from the high cost of maintenance to low cost. Connect different branches devices in just a click, exchange big data securely, protect the communication for traveling employees to access internal resources.
             </Featureusers>
             <Featureusers title="Startups, Geeks." icon={<GiMissileLauncher size="2lg" />}>
               {" "}
-              Access your NAS, Raspberry Pi, Cloud intances or your friends&apos devices by sharing your network with
-              them. Access all the devices data, Play LAN games, monitor your home cameras and more.{" "}
+              Access your NAS, Raspberry Pi, Cloud instances, or your friends&apos devices by sharing your network with them. Access all the device's data, Play LAN games, monitor your home cameras, and more.{" "}
             </Featureusers>
           </Stack>
         </GridItem>

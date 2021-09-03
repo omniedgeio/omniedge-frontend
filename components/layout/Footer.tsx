@@ -65,8 +65,8 @@ export default function Footer() {
             </Link>
             <Text fontSize="sm">
               © 2021 OmniEdge Inc. All rights reserved<br />
-              Presented from<br />
-              US | AU | CN | DE | MY
+              {/* Presented from<br /> */}
+              {/* US | AU | CN | DE | MY */}
             </Text>
             <Stack direction={"row"} spacing={3}>
               <SocialButton label={"Twitter"} href="https://twitter.com/omniedgeio">
@@ -129,7 +129,7 @@ export default function Footer() {
               © 2021 OmniEdge Inc. All rights reserved.
             </Text>
             <Text fontSize="sm">
-              US | AU | CN | DE | MY
+              {/* US | AU | CN | DE | MY */}
             </Text>
             <Stack direction={"row"} spacing={3}>
               <SocialButton label={"Twitter"} href="https://twitter.com/omniedgeio">

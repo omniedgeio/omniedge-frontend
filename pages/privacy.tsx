@@ -28,21 +28,21 @@ When you register for an Account, we may ask for your contact information, inclu
 
 We use the information we collect in various ways, including to:
 
-- Provide, operate, and maintain our webste
-- Improve, personalize, and expand our webste
-- Understand and analyze how you use our webste
+- Provide, operate, and maintain our website
+- Improve, personalize, and expand our website
+- Understand and analyze how you use our website
 - Develop new products, services, features, and functionality
-- Communicate with you, either directly or through one of our partners, including for customer service, to provide you with updates and other information relating to the webste, and for marketing and promotional purposes
+- Communicate with you, either directly or through one of our partners, including for customer service, to provide you with updates and other information relating to the website, and for marketing and promotional purposes
 - Send you emails
 - Find and prevent fraud
 
 ## Log Files
 
-OmniEdge.io follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this and a part of hosting services' analytics. The information collected by log files include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the site, tracking users' movement on the website, and gathering demographic information.
+OmniEdge.io follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this and are a part of hosting services' analytics. The information collected by log files includes internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the site, tracking users' movement on the website, and gathering demographic information.
 
 ## Cookies and Web Beacons
 
-Like any other website, OmniEdge.io uses 'cookies'. These cookies are used to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and/or other information.
+Like any other website, OmniEdge.io uses 'cookies. These cookies are used to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and/or other information.
 
 For more general information on cookies, please read "What Are Cookies" from Cookie Consent.
 
@@ -56,7 +56,7 @@ Note that OmniEdge.io has no access to or control over these cookies that are us
 
 ## Third Party Privacy Policies
 
-OmniEdge.io's Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt-out of certain options. 
+OmniEdge.io's Privacy Policy does not apply to other advertisers or websites. Thus, we are advising you to consult the respective Privacy Policies of these third-party ad servers for more detailed information. It may include their practices and instructions about how to opt out of certain options. 
 
 You can choose to disable cookies through your individual browser options. To know more detailed information about cookie management with specific web browsers, it can be found at the browsers' respective websites.
 
@@ -66,7 +66,7 @@ Under the CCPA, among other rights, California consumers have the right to:
 
 Request that a business that collects a consumer's personal data disclose the categories and specific pieces of personal data that a business has collected about consumers.
 
-Request that a business delete any personal data about the consumer that a business has collected.
+Request that a business deletes any personal data about the consumer that a business has collected.
 
 Request that a business that sells a consumer's personal data, not sell the consumer's personal data.
 

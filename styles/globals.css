@@ -24,30 +24,6 @@ a {
   align-items: center;
 }
 
-.downloadCaption {
-  font-family: "San Francisco", Inter, serif;
-  font-weight: 500;
-  font-size: 17px;
-  line-height: 22px;
-  color: #aeaeb2;
-  margin: 24px 0;
-  padding-bottom: 64px;
-  border-bottom: 1px solid #f5f5f5;
-  width: 600px;
-  white-space: pre-wrap;
-}
-.downloadButton {
-  background-color: #4859ed;
-  color: white;
-  padding: 12px 24px;
-  border-radius: 16px;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 24px;
-  max-width: 320px;
-  display: flex;
-  margin: auto;
-}
 .qrCodeContainer {
   margin-top: 1em;
   text-align: center;
@@ -79,31 +55,13 @@ a {
 }
 
 .description a:hover {
-  text-decoration: underline;
+  text-decoration:none;
 }
 
 .instructionGif {
+  padding-top: 20px;
   width: 100%;
 }
-
-.descriptionLine {
-  margin-top: 40px;
-  width: 600px;
-  align-items: center;
-}
-
-.playerWrapper {
-  position: relative;
-  padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) */
-  margin-top: 20px;
-}
-
-.reactPlayer {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
 code,
 kbd,
 pre {
@@ -150,6 +108,7 @@ pre {
 .markdown a:active,
 .markdown a:hover {
   outline-width: 0;
+  text-decoration: #011627;
 }
 
 .markdown h1,
@@ -380,7 +339,7 @@ pre {
 }
 
 .markdown a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .markdown strong {

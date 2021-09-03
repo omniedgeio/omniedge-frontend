@@ -178,7 +178,6 @@ const DownloadButton: React.FC<Downloadicon> = function ({variant,selected,onCli
     <div
       className={`${styles.icon} ${isSelected ? styles.selected : ''}`}
       onClick={onClick}
-      
     >
       {getIcon(variant, isSelected)}
       <p className={`${styles.iconText}`}>{getText(variant)}</p>

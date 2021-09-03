@@ -55,7 +55,7 @@
     "showQRCode": false,
     "version": "0.1.0",
     "buttonText": "Download for Linux cli",
-    "captionText": "Compatible with linux for AMD64,ArmV7 and Arm64V8, Archlinux, OMV(Debian 9), Synology NAS,Ubuntu 16.04/18.04/20.04, CentOS 7/8, Debian 9/10, Fedora 32",
+    "captionText": "Compatible with Archlinux,Ubuntu,CentOS, Debian,Fedora",
     "lastUpdate": {
       "year": 2021,
       "month": "May",
@@ -131,7 +131,7 @@
         "6. Click the button near 'off' to connect, then a secure VPN connection is initialized."
       ],
       "instructionGifLink": "/assets/download/macOS-installation.gif",
-      "instructionsVideoLink": "https://www.youtube.com/watch?v=8JAYKIG9vUA"
+      "instructionsVideoLink": ""
     }
   },
   "ios": {
@@ -155,13 +155,16 @@
       "title": "Get started on Raspberry Pi",
       "instructions": [
         "1. Sign up your account with your email and password: <a href=\"https:\/\/dashboard.omniedge.io\/sign-up\">Sign up</a> ",
-        "2. Download and install omnidge cli",
-        "#CODE curl https://raw.githubusercontent.com/omniedgeio/omniedge-linux-cli/main/omniedge-install-arm.sh | bash",
+        "2. Download and install omnidge cli depend on system architecture :",
+        "<a href=\"https:\/\/github.com\/omniedgeio\/omniedge-linux-cli\/releases\/download\/v0.1.0\/omniedge-arm64v8.zip\">OmniEdge linux Cli for Arm64V8</a> ",
+        "#CODE wget https://github.com/omniedgeio/omniedge-linux-cli/releases/download/v0.1.0/omniedge-arm64v8.zip",
+        "<a href=\"https:\/\/github.com\/omniedgeio\/omniedge-linux-cli\/releases\/download\/v0.1.0\/omniedge-armv7.zip\">OmniEdge linux Cli for ArmV7</a> ",
+        "#CODE wget https://github.com/omniedgeio/omniedge-linux-cli/releases/download/v0.1.0/omniedge-armv7.zip",
         "3. Login and Join omniedge:",
         "#CODE sudo omniedge login -u user@email.com &&\nsudo omniedge join",
         "4. Wait a second and a secure VPN will be established"
       ],
-      "instructionGifLink": "",
+      "instructionGifLink": "/assets/download/linux-cli-installation.gif",
       "instructionsVideoLink": ""
     }
   },

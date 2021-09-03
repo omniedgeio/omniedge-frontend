@@ -1,11 +1,11 @@
 import {
-  Heading,
   SimpleGrid,
   Text,
   VStack,
   Center,
-  Box,
+  chakra,
   useColorModeValue,
+  Link,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from 'react'
 import {DownloadDescription} from './Downloadutil'
@@ -41,18 +41,25 @@ export const DownloadPage:React.FC<realplatform> = function ({ platform: selecte
 
   return (<>
 <VStack padding="4" alignItems="center">
-<VStack maxW="1000" spacing="4">
-      <Heading fontWeight="semibold" fontSize="2xl">
-      OmniEdge Downloads
-      </Heading>
+<VStack mt={10}>
+    <chakra.h1
+          mb={6}
+          fontSize={{ base: "4xl", md: "6xl" }}
+          fontWeight="bold"
+          lineHeight="none"
+          letterSpacing={{ base: "normal", md: "tight" }}
+          color={useColorModeValue("gray.900",'gray.100')}
+        >
+      Download
+      </chakra.h1>
       <Text>
       Click on the preferred icon for download. <br></br>
-    OmniEdge evaluation version is still in beta, and has not received an independ security audit, <br></br>
-    should be considered experimental software.The protocol is developed based on <a href="https://github.com/ntop/n2n" target="_blank" rel="noreferrer">n2n</a>.
-    <br></br> OmniEdge evaluation version is now open source on <a href="https://github.com/omniedgeio" target="_blank" rel="noreferrer">github</a>
+    OmniEdge evaluation version is still in beta, and has not received an independent security audit, <br></br>
+    should be considered experimental software. The protocol is developed based on <a href="https://github.com/ntop/n2n" target="_blank" rel="noreferrer">n2n</a>.
+    <br></br> OmniEdge evaluation version is now open source on <a href="https://github.com/omniedgeio" target="_blank" rel="noreferrer">GitHub</a>
       </Text>
       <br></br>
-<SimpleGrid columns={[2, null, 5]} spacing="px">
+<SimpleGrid columns={[3, null, 5]} spacing="10px">
   {platforms.map((platform, index) => (
     <Icon
       key={index}
@@ -64,20 +71,19 @@ export const DownloadPage:React.FC<realplatform> = function ({ platform: selecte
   </SimpleGrid>
   <Center>
   
-<div className="mt-12">
+  <VStack mt={12}>
   {data.status === 'ERROR' && (
-    <div>
+    <Text>
       Could not connect. Please find information manually at
-      <a href={downloadMetaLink}> {downloadMetaLink} </a>
-      or contact support.
-    </div>
+      <Link to={downloadMetaLink}>{downloadMetaLink}</Link>
+      or contact support.</Text>
   )}
   {data.status === 'LOADING' && <div>Loading...</div>}
   {data.status === 'LOADED' && <div>Loaded</div>  &&
     platforms.map((platform,i) => (
       <DownloadDescription key={i} desc={data[platform]} active={platform==selectedPlatform}/>
     ))}
-</div>
+</VStack>
 
 </Center>
 </VStack>

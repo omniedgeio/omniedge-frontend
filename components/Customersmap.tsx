@@ -12,7 +12,7 @@ export const Customersmap: React.FC<BoxProps> = (props) => {
             letterSpacing="tight"
             color="gray.900"
             >
-              Our Customers are from worldwide.
+              Customers like our service.
             </chakra.h2>
             <chakra.p
               mt={2}

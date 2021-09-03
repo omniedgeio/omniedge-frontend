@@ -11,9 +11,9 @@ index: 5
 
 ### 1. What is the difference between OmniEdge and VPNs?
 
-A **virtual private network (VPN)** extends a private network across a public network and enables users to send and receive data across shared or public networks as if their computing devices were directly connected to the private network. There is always a VPN server that provide such services. The Users connect to the server and are replayed by the sever. 
+A **virtual private network (VPN)** extends a private network across a public network and enables users to send and receive data across shared or public networks as if their computing devices were directly connected to the private network. There is always a VPN server that provides such services. The Users connect to the server and are replayed by the server. 
 
-**OmniEdge** doesn't need any central Sever, which creates a peer-to-peer tunnel between two nodes, builds a virtual network for all the devices which connect to each others. 
+**OmniEdge** doesn't need any central Sever, which creates a peer-to-peer tunnel between two nodes, builds a virtual network for all the devices which connect to each other. 
 
 ### 2. Benefits of OmniEdge vs. VPNs
 
@@ -21,7 +21,7 @@ With OmniEdge, you:
 
 - Don't need any VPN server anymore.
 - Don't need any VPN gateway for your company's different branches. 
-- OmniEdge provide peer-to-peer connection between devices without sever reply, while VPN always reply your connections. 
+- OmniEdge provide a peer-to-peer connection between devices without severe reply, while VPN always reply your connections. 
 
 With OmniEdge: 
 ![OmniEdge](/assets/OmniEdge-VPN.svg)
@@ -65,11 +65,11 @@ With VPNs:
 
 ## OmniEdge Vs frp/ngrok
 
-ngrok/frp is a reverse proxy tool used for exposing your local service to public, let you access your computer's localhost from a mobile device for example. ngrok is a free/paid service. The free service has limitations of requests per minutes and only one tunnel at a time. frp is an open source version of ngrok. 
+ngrok/frp is a reverse proxy tool used for exposing your local service to the public, let you access your computer's localhost from a mobile device for example. ngrok is a free/paid service. The free service has limitations of requests per minute and only one tunnel at a time. frp is an open-source version of ngrok. 
 
 ### The big difference
 
-- Ngrok/frp is limited to TCP webservice only, and you need set each service before using.
+- Ngrok/frp is limited to TCP webservice only, and you need to set each service before using it.
 
 - OmniEdge is not limited to TCP and covers all the TCP and UDP services, you can access your own devices only by one fixed IP. 
 
@@ -88,7 +88,7 @@ Let's compare some use cases between ngrok/frp and omniedge.
 |Accessiable|ngrok/frp|OmniEdge|
 |-|---|--|
 |Accessiable by default|public with free plan|Private automatically|
-|Accessiable Limitation|Manually IP whitelisting settingwith paid plan|Private automatically|
+|Accessiable Limitation|Manually IP whitelisting setting with paid plan|Private automatically|
 
 -----
 

@@ -13,6 +13,7 @@ import { FaLinkedin,FaGithub,FaTwitter} from "react-icons/fa";
 import React from "react";
 import DefaultLayout from "../components/layout/Default";
 import { Page } from "../types";
+import Markdown from "markdown-to-jsx";
 
 const Feature = (props:any) => {
   return (
@@ -109,10 +110,8 @@ const About: Page = (props) => {
           fontSize={{ base: "lg", md: "xl" }}
           color="gray.500"
           lineHeight="base"
-        >
-          While people talk about #nocode↘︎, we prefer to offer #noconf↘︎ service to our customers. 
-They deserved to have more time with families.​ 
-We found OmniEdge totally from Twitter, with a team from 4 countries, in post-pandemic era, we embrace remote work to create painless, maintenance-less, secure and affordable products.
+        ><Markdown>
+          While people talk about #nocode, we prefer to offer #noconf service to our customers. They deserved to have more time with their families.​ We found OmniEdge totally from Twitter, with a team from 6 countries, in the post-pandemic era, we embrace remote work to create painless, maintenance-less, secure, and affordable products.</Markdown>
         </chakra.p>
 </Box>
     </VStack>
@@ -141,7 +140,7 @@ We found OmniEdge totally from Twitter, with a team from 4 countries, in post-pa
       >
         <Feature
           title="Yong QIAN"
-          position="Founder & CEO"
+          position="Founder & CPO"
           linkedin="http://linkedin.com/in/yongqian/"
           icon1={<FaLinkedin size="2lg"/>}
           twitter="https://twitter.com/brucebot"
@@ -149,12 +148,12 @@ We found OmniEdge totally from Twitter, with a team from 4 countries, in post-pa
           github="https://github.com/omniedgeio"
           icon3={<FaGithub size="2lg"/>}
         >
-         Yong QIAN is a serial entrepreneur. He used to build an IIoT startup for automation, serving cusomers from Germany, South Africa and China, and work as a robotics expert for Frimo GmBH to lead the Asia team for around 8 years remotely. He is industrial robotics Cloud platform expert.​
+         Yong QIAN is a serial entrepreneur. He used to build an IIoT startup for automation, serving customers from Germany, South Africa, and China, and work as a robotics expert for Frimo GmBH to lead the Asia team for around 8 years remotely. He is an industrial robotics Cloud platform expert.​
         </Feature>
 
         <Feature
           title="Dr. Dennis Schwerdel"
-          position="Archtect & Protocol"
+          position="Co-CTO (Archtect & Protocol)"
           github="https://github.com/dswd/vpncloud"
           icon3={<FaGithub size="2lg"/>}
           linkedin=""
@@ -163,12 +162,12 @@ We found OmniEdge totally from Twitter, with a team from 4 countries, in post-pa
           icon2={<FaTwitter size="2lg"/>}
           
         >
-          Dr. Dennis Schwerdel is a peer-to-peer network expert. He has more than 10 years research and enterprise security architect experiece. He is also an AWS Solution Architect Professional. He is the author of opensource p2p project VPNcloud.
+          Dr. Dennis Schwerdel is a peer-to-peer network expert. He has more than 10 years of research and enterprise security architect experience. He is also an AWS Solution Architect Professional. He is the author of the open-source p2p project VPNcloud.
         </Feature>
 
         <Feature
           title="An Li "
-          position="Co-Founder & CTO"
+          position="Co-CTO (Apps & Backend)"
           linkedin="https://www.linkedin.com/in/kidylee/"
           icon1={<FaLinkedin size="2lg"/>}
           twitter="https://twitter.com/omniedgeio"
@@ -176,7 +175,7 @@ We found OmniEdge totally from Twitter, with a team from 4 countries, in post-pa
           github="https://github.com/omniedgeio"
           icon3={<FaGithub size="2lg"/>}
         >
-          An Li is the former R&D Software Engineer at State Street Investment Bank in US, where he specialized in blockchain and trust data exchanging development. He implemented the backend of financial project to process big data.​​​​
+          An Li is the former R&D Software Engineer at State Street Investment Bank in the US, where he specialized in blockchain and trust data exchanging development. He implemented the backend of financial projects to process big data.​​​​
         </Feature>
         {/* <Feature
           title="Tex Tang "
@@ -274,8 +273,9 @@ We found OmniEdge totally from Twitter, with a team from 4 countries, in post-pa
           fontSize={{ base: "lg", md: "xl" }}
           color="gray.500"
           lineHeight="base"
-        >
-          We are looking for talent people who are trying to help others to have a great work life balance by creating great products while enjoying their own work life balance. We are currently not hiring, but are happy to hear from talents. Send us email <Link mailto="hi@omniedge.io">hi@omniedge.io</Link> if you are interested in us.​
+        ><Markdown>
+          We are looking for talented people who are trying to help others to have a great work-life balance by creating great products while enjoying their own work-life balance. We are currently not hiring, but are happy to hear from talents. Send us an email [hi@omniedge.io](mailto:hi@omniedge.io) if you are interested in us.​
+          </Markdown>
         </chakra.p>
 </Box>
     </VStack>

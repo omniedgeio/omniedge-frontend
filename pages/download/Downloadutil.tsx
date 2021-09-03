@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { CopyBlock, nord } from 'react-code-blocks'
 import VideoPlayer from '../../components/VideoPlayer'
-import {Image,Icon,Text,Heading,Box,VStack,useColorModeValue} from "@chakra-ui/react";
+import {Image,chakra,Link,Icon,Button,Text,Heading,Box,VStack,useColorModeValue} from "@chakra-ui/react";
 import { FunctionComponent } from "react";
 import {FaQrcode} from 'react-icons/fa'
 import QRCode from 'qrcode.react'
@@ -9,20 +9,20 @@ import Markdown from 'markdown-to-jsx';
 
 export function DownloadButton({ text = 'Download', url = ''}) {
   return (
-    <button className="downloadButton">
-      <a
-        target="_blank"
-        rel="noreferrer"
-        href={url}
-        className=""
-      >
+    <Link
+    mb={6} 
+    target="_blank"
+    rel="noreferrer"
+    href={url}
+    >
+    <Button w="full" colorScheme="brand">
         {text}
-      </a>
-    </button>
+        </Button>
+      </Link>
   )
 }
 export function DownloadCaption({ text = 'Download' }) {
-  return (<Text className="downloadCaption">{text}</Text>)}
+  return (<Text color="#aeaeb2">{text}</Text>)}
 
 interface IPropss {
 	texts: string[]; 
@@ -44,7 +44,6 @@ export const Description: FunctionComponent<IPropss> = ({ texts }) => {
         } else {
           return (
             <p
-              className=".descriptionLine"
               dangerouslySetInnerHTML={{ __html: text.trim() }}
               key={index}
             />
@@ -88,8 +87,14 @@ export const DownloadDescription: React.FC<{desc:Platforminfo, active?:boolean}>
     return(<> <div className="font-bold">{desc.displayName} is coming soon</div></>)
   } else if (desc.status=='LIVE') {
     return (<>
-            <VStack spacing="3">
-            <Heading fontWeight="semibold" fontSize="xl">
+               <VStack mt={3}>
+    <chakra.h1
+          mb={6}
+          fontSize={{ base: "2xl", md: "4xl" }}
+          fontWeight="bold"
+          lineHeight="none"
+          letterSpacing={{ base: "normal", md: "tight" }}
+        >
             <DownloadButton text={desc.buttonText ?? 'Download'} url={desc.link ?? ''} />
         {desc.showQRCode && (
           <div className="qrCodeContainer">
@@ -107,8 +112,9 @@ export const DownloadDescription: React.FC<{desc:Platforminfo, active?:boolean}>
             )}
           </div>
         )}
-      </Heading>
-      <Text align="center">{desc.captionText && (
+      </chakra.h1>
+      <Text>
+        {desc.captionText && (
           <DownloadCaption
             text={
               desc.captionText +
@@ -116,23 +122,28 @@ export const DownloadDescription: React.FC<{desc:Platforminfo, active?:boolean}>
             }
           />
         )}</Text>
-      <Heading fontWeight="semibold" fontSize="2xl"><Text>{desc.description.title}</Text></Heading>
-      <Text>
+        <chakra.h3
+          mb={6}
+          fontSize={{ base: "xl", md: "2xl" }}
+          fontWeight="bold"
+          lineHeight="none"
+          letterSpacing={{ base: "normal", md: "tight" }}
+        >{desc.description.title}
+        </chakra.h3>
+        <Text>
         <Description texts={desc.description.instructions} />
         {desc.description.instructionsVideoLink && (
-          <VideoPlayer url={desc.description.instructionsVideoLink} />
+          <VideoPlayer link={desc.description.instructionsVideoLink} />
         )}
         {!desc.description.instructionsVideoLink &&
           desc.description.instructionGifLink && (
             <Image
-              // className=".instructionGif"
               src={desc.description.instructionGifLink}
               alt=""
             />
           )}
           </Text>
           </VStack>
-          
           </>
     )
   }

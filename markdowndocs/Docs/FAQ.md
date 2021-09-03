@@ -10,25 +10,25 @@ index: 6
 
 # General 
 
-## What is Omniedge ? 
+## What is OmniEdge ? 
 
-OmniEdge makes communication easy and safe, brings the intranet on the internet by distrubted VPN solutions, helps connecting users who wants connect their devices anywhere, anytime. OmniEdge's solution is not only a great and affordable network solution for small team, but also for big companies with thousands of devices all around the world.
+OmniEdge makes communication easy and safe, brings the intranet on the internet by distributed VPN solutions, helps to connect users who wants to connect their devices anywhere, anytime. OmniEdge's solution is not only a great and affordable network solution for a small team,  but also for big companies with thousands of devices all around the world.
 
 ## How long does it take to set up OmniEdge?
 
 OmniEdge can be set up in 5 minutes or less, by installing an OmniEdge Apps for your devices on [iOS](/download/ios), [Android](/download/android), [Windows](/download/windows), [macOS](/download/macos) for Intel Mac and **Apple M1 Mac**, and [Linux platforms](/download/linuxcli).
 
-## How much technical knowledge do I need to have to use Omniedge ? 
+## How much technical knowledge do I need to have to use OmniEdge ? 
 
-Using OmniEdge does not require technical expertise in networking. If you know how to install software on Windows, macOS, iOS, android and linux, you can use it by simplily download OmniEdge Apps and follow the [instructions](/download) to install and use OmniEdge.
+Using OmniEdge does not require technical expertise in networking. If you know how to install software on Windows, macOS, iOS, android, and Linux, you can use it by simply download OmniEdge Apps and follow the [instructions](/download) to install and use OmniEdge.
 
 ## Is my privacy secure with OmniEdge?" 
 
-We take privacy security very seriously. please read our [privacy Policy](/privacy) for Details.
+We take privacy security very seriously. please read our [Privacy Policy](/privacy) for Details.
 
 ## How do I change my existing subscription plan?"
 
-If you already have a OmniEdge plan, please contact us to change your plan or your billing period, or you can do it by yourself at the dashboard.
+If you already have an OmniEdge plan, please contact us to change your plan or your billing period, or you can do it by yourself at the dashboard.
 
 
 ## When will I be billed?"
@@ -52,19 +52,19 @@ Learn more about OmniEdge by reading [documentation](/doc).
 # Technical
 
 
-## Why does OmniEdge ask administrator access ?
+## Why does OmniEdge ask for administrator access?
 
-OmniEdge need adminstartor access to change the network setting. 
+OmniEdge needs administrator access to change the network setting. 
 
 ## The window didn't show as my expectation when I run it. Check the console got below exception (the shot screen has been attached for your reference)"UNIX error exception: 17"
 
-The omniedge helpertool could be corrupted during the installation, try to remove omniedge and its related files and reinstall again.
+The OmniEdge helper tool could be corrupted during the installation, try to remove OmniEdge and its related files and reinstall again.
 
 ```bash
-uninstall Omniedge
-$ find ~/Library -name 'io.omniedge'
+uninstall OmniEdge
+$ find ~/Library -name 'io.OmniEdge'
 $ remove all founded files
-$ re-install Omniedge
+$ re-install OmniEdge
 ```
 
 ## Why can't ping my windows PC?
@@ -82,4 +82,4 @@ Right-click each rule and choose Enable Rule.
 
 -----
 
-If you have more questions, feel free to [contact us](mailto:support@omniedge.io).
+If you have more questions, feel free to [contact us](mailto:support@OmniEdge.io).

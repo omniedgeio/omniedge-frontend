@@ -11,7 +11,7 @@ index: 3
 + Sign up your account with your email and password: [Sign up](https://dev.omniedge.io/register)
 + Download OmniEdge
     OmniEdge offers clients from Windows, MacOS, Linux cli, Linux GUI, iOS, android, Synology and router. Download the client with the link: [Download OmniEdge Client](https://omniedge.io/download)
-+ Log in and join your own network
++ Login and join your own network
 + Test your connection.
 
 ## 2. Installing on Windows
@@ -22,7 +22,7 @@ OmniEdge Windows is compatible with Windows 7,10(arm) & Windows Server 2016,2019
 1. Download and run the Windows installer
 2. Click on "Log in…" from the Omniedge icon now in your system tray
 3. Sign in with your email address
-4. Click "Connect" in the menu bar from the tray icon. After a pop up disappears, a secure VPN connection is initialized.
+4. Click "Connect" in the menu bar from the tray icon. After a pop-up disappears, a secure VPN connection is initialized.
 
 ## 3. Installing on MacOS
 OmniEdge MacOS is compatible with intel Macbook, macOS 10 or later Last update: Version 0.1.7, April 3, 2021.
@@ -106,7 +106,7 @@ OmniEdge Android is compatible with Android 6 or later mobile phone or TV. Last 
 1. Download OmniEdge APK and install it
 2. Run OmniEdge and Sign in with your email address
 3. Click the connect button
-4. Allow to install a VPN configuration
+4. Allow installing a VPN configuration
 5. Enjoy the secure VPN connection
 
 ## 5. Installing on Linux
@@ -147,7 +147,7 @@ sudo omniedge join
 Coming Soon
 
 ## 7. Installing on Raspberry Pi
-OmniEdge Raspberry Pi is Compatible with Rapsberry PI 1B, 3B, 3B+ Last update: Version 0.1.0, April 25, 2021.
+OmniEdge Raspberry Pi is Compatible with Raspberry PI 1B, 3B, 3B+ Last update: Version 0.1.0, April 25, 2021.
 
 [OmniEdge Raspberry Pi](https://github.com/omniedgeio/omniedge-linux-cli/releases/download/v0.1.0/omniedge_arm.zip)
 

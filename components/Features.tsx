@@ -563,7 +563,7 @@ export function Users() {
             </Featureusers>
             <Featureusers title="Hospitals" icon={<GiHospital size="2lg" />}>
               {" "}
-              Connect all the computers across the different networks in different departments within a single click installation. Secure exchanging the patient's data only in a hospital private network in a peer-to-peer tunnel, protect the privacy.
+              Connect all the computers across the different networks in different departments within a single click installation. Secure exchanging the patient&apos;s data only in a hospital private network in a peer-to-peer tunnel, protect the privacy.
             </Featureusers>
             <Featureusers title="Freight industry" icon={<GiCargoCrate size="2lg" />}>
               {" "}
@@ -575,7 +575,7 @@ export function Users() {
             </Featureusers>
             <Featureusers title="Startups, Geeks." icon={<GiMissileLauncher size="2lg" />}>
               {" "}
-              Access your NAS, Raspberry Pi, Cloud instances, or your friends&apos devices by sharing your network with them. Access all the device's data, Play LAN games, monitor your home cameras, and more.{" "}
+              Access your NAS, Raspberry Pi, Cloud instances, or your friends&apos devices by sharing your network with them. Access all the device&apos;s data, Play LAN games, monitor your home cameras, and more.{" "}
             </Featureusers>
           </Stack>
         </GridItem>

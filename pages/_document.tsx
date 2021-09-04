@@ -1,10 +1,16 @@
 import Document, { Head, Html, Main, NextScript } from "next/document";
+import {Seo} from "../components/Seo";
 
 class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
         <Head>
+        <Seo 
+          title="OmniEdge"
+          description="Bring intranet on the internet"
+          image=""
+          />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
           <link
@@ -18,6 +24,7 @@ class MyDocument extends Document {
           <link rel="manifest" href="/favicon/site.webmanifest" />
           <link rel="shortcut icon" href="/favicon/favicon.ico" />
           <script src="https://apis.google.com/js/platform.js" async defer></script>
+
         </Head>
         <body>
           <Main />

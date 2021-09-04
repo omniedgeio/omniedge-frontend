@@ -7,6 +7,7 @@ import { Stack,Button, Heading, HStack, Icon, Text, VStack,Table,
   Td,
   TableCaption,
   Accordion,
+  Tooltip,
   AccordionItem,
   AccordionButton,
   AccordionIcon,
@@ -14,7 +15,8 @@ import { Stack,Button, Heading, HStack, Icon, Text, VStack,Table,
   useColorModeValue,
   chakra,
  } from "@chakra-ui/react";
-import { FiCheck, FiX,FiPlus, FiMinus} from "react-icons/fi";
+import { FiCheck, FiX} from "react-icons/fi";
+import { InfoOutlineIcon } from '@chakra-ui/icons'
 import DefaultLayout from "../components/layout/Default";
 import Link from "../components/next/Link";
 import { Page } from "../types";
@@ -36,6 +38,15 @@ interface FeatureTextnumber {
   enterprise:string;
 }
 
+interface Tips {
+  text:string;
+}
+const Tips: React.FC<Tips> = ({ text }) => {
+  return (
+<Tooltip hasArrow label={text} placement="auto-start"><InfoOutlineIcon /></Tooltip>
+  );
+}
+
 const FAQText: React.FC<FAQText> = ({ title,text }) => {
   return (
   <AccordionItem>
@@ -54,7 +65,7 @@ const FAQText: React.FC<FAQText> = ({ title,text }) => {
 </AccordionItem>
 );
 };
-const FeatureText: React.FC<{ active?: boolean }> = (props) => {
+const FeatureText: React.FC<{ active?: boolean,tooltip?:string }> = (props) => {
   let active = props.active || props.active === undefined;
   return (
     <HStack>
@@ -132,32 +143,17 @@ const PricingPage: Page = () => {
             </Button>
           </Link>
           <VStack mx="auto" alignItems="start">
-            <FeatureText>Unlimited data transfer</FeatureText>
-            <FeatureText>Encrypted, peer-to-peer connection</FeatureText>
-            <FeatureText>1 virtual network</FeatureText>
-            <FeatureText>20 devices</FeatureText>
+          <FeatureText>Unlimited data transfer <Tips text="Data transfer refers to the secure exchange of data between your devices in your own virtual network with omniedge installed. " /></FeatureText>
+            <FeatureText>Encrypted, peer-to-peer connection <Tips text="Traffic over OmniEdge is end-to-end encrypted by Twofish/AES128/ChaCha20 cipers' P2P MESH network. " /></FeatureText>
+            <FeatureText>1 virtual network <Tips text="Virtual network is an virtual intranet for all your devices and users " /></FeatureText>
+            <FeatureText>20 devices <Tips text="A device is any desktop,laptop, phone or cloud instance with OmniEdge installed and activated in your own virtual network."/></FeatureText>
             <FeatureText>1 user</FeatureText>
-            <FeatureText>Subroute</FeatureText>
+            <FeatureText >Security Keys<Tips text="Security Keys allow you connect your linux based devices with only command line. " /></FeatureText>
+            <FeatureText>Login by Google</FeatureText>
+            <FeatureText>Subroute <Tips text="Sub router allows you connect your devices which is not with Omniedge installed." /></FeatureText>
+            <FeatureText active={false}>Okta integration <Tips text="Integrate Okta as your SSO provide to use OmniEdge. " /></FeatureText>
             <FeatureText active={false}>Hardware and Iot integration</FeatureText>
             <FeatureText active={false}>Specialist Support</FeatureText>
-          {/* <Accordion display={{base:"flex",md:"none"}} allowMultiple>
-  <AccordionItem>
-          <AccordionButton>
-            <Box textAlign="left">
-              Show all features
-            </Box>
-          </AccordionButton>
-        <AccordionPanel pb={4} width="100%">
-        <FeatureText>Unlimited data transfer</FeatureText>
-            <FeatureText>Encrypted, peer-to-peer connection</FeatureText>
-            <FeatureText>1 virtual network</FeatureText>
-            <FeatureText>20 devices</FeatureText>
-            <FeatureText>1 user</FeatureText>
-            <FeatureText>Subroute</FeatureText>
-        </AccordionPanel>
-  </AccordionItem>
-</Accordion> */}
-
           </VStack>
         </VStack>
     
@@ -179,13 +175,16 @@ const PricingPage: Page = () => {
             </Button>
           </Link>
           <VStack pt={2} alignItems="start">
-            <FeatureText>Unlimited data transfer</FeatureText>
-            <FeatureText>Encrypted, peer-to-peer connection</FeatureText>
-            <FeatureText>Unlimited virtual network</FeatureText>
-            <FeatureText>Unlimited devices</FeatureText>
-            <FeatureText>Unlimited user</FeatureText>
-            <FeatureText>Subroute</FeatureText>
-            <FeatureText>Hardware and Iot integration</FeatureText>
+            <FeatureText>Unlimited data transfer <Tips text="Data transfer refers to the secure exchange of data between your devices in your own virtual network with omniedge installed. " /></FeatureText>
+            <FeatureText>Encrypted, peer-to-peer connection <Tips text="Traffic over OmniEdge is end-to-end encrypted by Twofish/AES128/ChaCha20 cipers' P2P MESH network. " /></FeatureText>
+            <FeatureText>Unlimited virtual network<Tips text="Virtual network is an virtual intranet for all your devices and users " /></FeatureText>
+            <FeatureText>Unlimited devices<Tips text="A device is any desktop,laptop, phone or cloud instance with OmniEdge installed and activated in your own virtual network."/></FeatureText>
+            <FeatureText>Unlimited user </FeatureText>
+            <FeatureText>Unlimited Security Keys<Tips text="Security Keys allow you connect your linux based devices with only command line. " /></FeatureText>
+            <FeatureText>Unlimited admin users <Tips text="Admin users have access to the admin dashboard for overview virutal network, devices and network setting." /></FeatureText>
+            <FeatureText>Okta integration <Tips text="Integrate Okta as your SSO provide to use OmniEdge. " /></FeatureText>
+            <FeatureText>Subroute <Tips text="Sub router allows you connect your devices which is not with Omniedge installed." /></FeatureText>
+            <FeatureText>Hardware and Iot integration </FeatureText>
             <FeatureText>Specialist Support</FeatureText>
           </VStack>
         </VStack>

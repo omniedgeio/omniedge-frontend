@@ -6,6 +6,8 @@ import DocLayout from "../components/layout/Doc";
 import theme from "../lib/theme";
 import "../styles/globals.css";
 import { Page } from "../types";
+import {Seo} from "../components/Seo";
+
 type AppWithLayoutProps = {
   Component: Page;
 } & AppProps;
@@ -20,16 +22,14 @@ function App({ Component, pageProps }: AppWithLayoutProps) {
   return (
     <QueryClientProvider client={queryClient}>
       <ChakraProvider theme={theme}>
-        <Head>
-          <title>OmniEdge</title>
-          <meta name="description" content="Connect without concern" />
+        {/* <Head>
           <meta charSet="utf-8" />
           <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
           <meta content="width=device-width, initial-scale=1" name="viewport" />
           <meta name="msapplication-TileColor" content="#ffffff" />
           <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
           <meta name="theme-color" content="#ffffff" />
-        </Head>
+        </Head> */}
         <Layout>
           <Component {...pageProps}></Component>
         </Layout>

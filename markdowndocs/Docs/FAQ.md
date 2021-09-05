@@ -1,8 +1,9 @@
 ---
 title: FAQ
-description: 
+description: Frequest asked questions about omniedge. what is OmniEdge? How long does it take to set up OmniEdge? etc
 route: Doc / FAQ
 index: 6
+thumbnail: /assets/OmniEdgeall0.5.png
 ---
 # FAQ
 

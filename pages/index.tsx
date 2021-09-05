@@ -16,10 +16,14 @@ import { Customersmap } from "../components/Customersmap";
 import { Compare, FeaturePage, Heros,How, Users } from "../components/Features";
 import DefaultLayout from "../components/layout/Default";
 import { Page } from "../types";
+import {Seo} from "../components/Seo";
+
 
 const Home: Page = (props) => {
   return (
     <>
+    <Seo title="OmniEdge" description="No Public IP, No Port Forward 
+Zero Config, Zero Firewall Rules,OmniEdge rebuilds the intranet on the internet setup easier, without concern." image="/assets/OmniEdgeall0.5.png" />
       <Box padding="4" as="header" py={["6", "12", "36"]} position="relative">
         <Stack
           direction={{ base: "column", md: "row" }}

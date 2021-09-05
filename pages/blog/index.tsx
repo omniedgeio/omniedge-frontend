@@ -7,13 +7,14 @@ import DefaultLayout from "../../components/layout/Default";
 import React,{FunctionComponent } from 'react'
 import { ArticleInfo } from '../../components/interfaces/article'
 import {Social} from "../../components/Brand";
-
+import {Seo} from '../../components/Seo';
 interface IProps {
     articles: ArticleInfo[];
 }
 
 const BlogLayout: FunctionComponent<IProps> = ({ articles }) => {
-  return (
+  return (<>
+<Seo title="OmniEdge Blog" description="" image="/assets/OmniEdgeall0.5.png" />
 <DefaultLayout>
 <VStack padding="4" alignItems="center">
 <Stack direction={["column", "row"]} alignItems="flex-start">
@@ -30,6 +31,7 @@ const BlogLayout: FunctionComponent<IProps> = ({ articles }) => {
       </Stack>
     </VStack>
     </DefaultLayout>
+    </>
 
   );
 };

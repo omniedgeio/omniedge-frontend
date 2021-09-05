@@ -6,7 +6,6 @@ import { FunctionComponent } from "react";
 import {FaQrcode} from 'react-icons/fa'
 import QRCode from 'qrcode.react'
 import Markdown from 'markdown-to-jsx';
-
 export function DownloadButton({ text = 'Download', url = ''}) {
   return (
     <Link

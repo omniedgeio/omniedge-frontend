@@ -1,7 +1,7 @@
 ---
 title: Startups in Post-Covid19 for remote workforce
 description: The coronavirus pandemic is probable to profoundly change the way numerous firms work for the predictable future. As governments and industries around the world state, those with signs to self-quarantine and everybody else to run through social distancing, remote work is the new realism. It is rapidly becoming the worldwide new normal for enormous numbers of personnel. 
-thumbnail: assets/posts-images/startups-in-post-covid19-for-remote-workforce-coronavirus.jpg
+thumbnail: /assets/posts-images/startups-in-post-covid19-for-remote-workforce-coronavirus.jpg
 avatar: /assets/avatars/Yong.jpg
 author: Yong QIAN
 date: March 08, 2021

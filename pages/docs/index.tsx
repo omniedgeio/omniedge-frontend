@@ -6,13 +6,15 @@ import fs from 'fs';
 import DefaultLayout from "../../components/layout/Default";
 import React,{FunctionComponent } from 'react'
 import { ArticleInfo } from '../../components/interfaces/article'
-
+import {Seo} from "../../components/Seo";
 interface IProps {
     articles: ArticleInfo[];
 }
 
 const DocLayout: FunctionComponent<IProps> = ({ articles }) => {
-  return (
+  return (<>
+    <Seo title="Learn how to use omniedge with documentations" description="Learn how to use admin dashboard to create virtual networks,share virtual networks, active devices, use sub routers and create security keys. Learn how to install
+    Omniedge clients, know how omniedge works, and more" image="/assets/OmniEdgeall0.5.png" />
     <DefaultLayout>
       <VStack padding="4" spacing="4" alignItems="left">
 <Stack spacing="8" direction={["column", "row"]} alignItems="flex-start">
@@ -48,6 +50,7 @@ const DocLayout: FunctionComponent<IProps> = ({ articles }) => {
       </Stack>
     </VStack>
     </DefaultLayout>
+    </>
   );
 };
 export async function getStaticProps() {

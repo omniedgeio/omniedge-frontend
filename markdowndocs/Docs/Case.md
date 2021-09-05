@@ -1,7 +1,8 @@
 ---
 title: Cases
-description: 
 route: Doc / Cases 
+description: Use cases with OmniEdge, Remote connect windows without exposing public IP with Omniedge,OmniEdge with Nvidia JETSON Project
+thumbnail: /assets/docs/case-aws-windows-2.png
 index: 4
 ---
 

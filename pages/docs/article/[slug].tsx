@@ -6,13 +6,14 @@ import fs from 'fs';
 import DefaultLayout from "../../../components/layout/Default";
 import React,{FunctionComponent } from 'react'
 import { ArticleInfo } from '../../../components/interfaces/article'
-
+import {Seo} from '../../../components/Seo';
 interface IProps {
     article: ArticleInfo;
     articles: ArticleInfo[];
 }
 const DocLayout: FunctionComponent<IProps> = ({ article,articles }) => {
-  return (
+  return (<>
+  <Seo title={article.meta.title} description={article.meta.description} image={article.meta.thumbnail} />
     <DefaultLayout>
 <VStack padding="4" spacing="4" alignItems="left">
 <Stack spacing="8" direction={["column", "row"]} alignItems="flex-start">
@@ -46,6 +47,7 @@ const DocLayout: FunctionComponent<IProps> = ({ article,articles }) => {
       </Stack>
     </VStack>
     </DefaultLayout>
+    </>
   );
 };
 export async function getStaticProps({ ...ctx }) {

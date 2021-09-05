@@ -1,8 +1,9 @@
 ---
 title: Release Notes
-description: Release Notes of Dashboard and clients
+description: Release Notes of OmniEdge Dashboard and clients
 route: Doc / Release
 index: 7
+thumbnail: /assets/OmniEdgeall0.5.png
 ---
 
 # Release Notes

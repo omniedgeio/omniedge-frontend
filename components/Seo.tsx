@@ -14,13 +14,13 @@ interface Seoinfo {
     image:string;
 }
 
-export const Seo: React.FC<Seoinfo> = ({ title, description, image,children }) => {
+export const Seo: React.FC<Seoinfo> = ({ title, description, image }) => {
     return (
     <Head>
       {/* DEFAULT */}
 
       {title != undefined && (
-        <title key="title">{title} | OmniEdge | Bring intranet on the internet</title>
+        <title key="title">OmniEdge | Bring intranet on the internet |{title} </title>
       )}
       {description != undefined && (
         <meta name="description" key="description" content={description} />
@@ -59,11 +59,11 @@ export const Seo: React.FC<Seoinfo> = ({ title, description, image,children }) =
         key="twitter:card"
         content="summary_large_image"
       />
-      <meta name="twitter:site" key="twitter:site" content="@tannerlinsley" />
+      <meta name="twitter:site" key="twitter:site" content="@omniedgeio" />
       <meta
         name="twitter:creator"
         key="twitter:creator"
-        content="@tannerlinsley"
+        content="@omniedgeio"
       />
       {title != undefined && (
         <meta name="twitter:title" key="twitter:title" content={title} />
@@ -82,8 +82,6 @@ export const Seo: React.FC<Seoinfo> = ({ title, description, image,children }) =
           content={`https://omniedge.io${image}`}
         />
       )}
-
-      {children}
     </Head>
   );
       };

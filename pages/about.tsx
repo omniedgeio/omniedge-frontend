@@ -14,6 +14,7 @@ import React from "react";
 import DefaultLayout from "../components/layout/Default";
 import { Page } from "../types";
 import Markdown from "markdown-to-jsx";
+import {Seo} from "../components/Seo";
 
 const Feature = (props:any) => {
   return (
@@ -89,6 +90,8 @@ const Feature = (props:any) => {
 const About: Page = (props) => {
   return (
     <>
+          <Seo title="Simplifying the usage flow of product​." description="No Public IP, No Port Forward 
+Zero Config, Zero Firewall Rules,OmniEdge rebuilds the intranet on the internet setup easier, without concern." image="/assets/OmniEdgeall0.5.png" />
     <VStack padding="4" mt={10}>
     <Box
         textAlign={{ base: "left", md: "left" }}

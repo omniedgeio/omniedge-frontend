@@ -24,7 +24,7 @@ import React from 'react';
 import {Heros} from "../components/Features";
 import {Faq} from "../components/Faq";
 import Markdown from "markdown-to-jsx";
-
+import {Seo} from "../components/Seo";
 
 interface FAQText {
   title:string;
@@ -108,6 +108,8 @@ const FeatureDesc: React.FC<{free?:boolean,pro?:boolean,team?:boolean,enterprise
 
 const PricingPage: Page = () => {
   return (<>
+      <Seo title="Start for free, then grow with us" description="No Public IP, No Port Forward 
+Zero Config, Zero Firewall Rules,OmniEdge rebuilds the intranet on the internet setup easier, without concern." image="/assets/OmniEdgeall0.5.png" />
     <VStack mt={10}>
     <chakra.h1
           mb={6}

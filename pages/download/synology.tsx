@@ -1,20 +1,14 @@
-import { NextSeo } from 'next-seo'
 import React from 'react'
 import DownloadPage from './DownloadPage'
 import DefaultLayout from "../../components/layout/Default";
-
+import { Seo } from '../../components/Seo';
 export function Download() {
   return (
     <>
-      <NextSeo
-        openGraph={{
-          type: 'website',
-          url: 'https://omniedge.io/download/synology',
-          title: 'OmniEdge Synology - Download',
-          description:
-            'OmniEdge Synology - download OmnieEdge now!',
-        }}
-      />
+      <Seo 
+      title="OmniEdge for Synology NAS - Download" 
+      description=" Click on the preferred icon for download. OmniEdge evaluation version is still in beta, and has not received an independent security audit, should be considered experimental software." 
+      image="/assets/OmniEdgeall0.5.png" />
       <DownloadPage platform='synology'/>
     </>
   )

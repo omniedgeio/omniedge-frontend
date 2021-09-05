@@ -1,8 +1,9 @@
 ---
 title: General
-description: 
+description: To solve all the above issues, we designed and developed OmniEdge based upon the following objectives.Simple enough to use for both users and network administrators.Based on the Zero-trust security model. Users can establish a strictly secure network through authentication services such as Okta, G Suite, etc.
 route: Doc / General
 index: 1
+thumbnail: /assets/OmniEdgeall0.5.png
 ---
 # General
 

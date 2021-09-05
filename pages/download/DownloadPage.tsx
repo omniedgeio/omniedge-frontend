@@ -7,10 +7,10 @@ import {
   useColorModeValue,
   Link,
 } from "@chakra-ui/react";
-import React, { useEffect, useState } from 'react'
-import {DownloadDescription} from './Downloadutil'
-import Icon from './Icon'
-import { useRouter } from 'next/router'
+import React, { useEffect, useState } from 'react';
+import {DownloadDescription} from './Downloadutil';
+import Icon from './Icon';
+import { useRouter } from 'next/router';
 const downloadMetaLink = '/assets/download/download-link.json'
 const platforms = ['macos', 'ios', 'windows', 'android', 'linuxcli', 'linuxgui','rasp', 'synology','router']
 

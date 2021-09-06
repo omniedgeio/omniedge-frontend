@@ -685,7 +685,7 @@ export function Featureslist() {
             fontSize="xl"
             mx={{ lg: "auto" }}
           >
-            Get insights to dig down into what's powering your growth the most.
+            Get insights to dig down into what&apos;s powering your growth the most.
           </chakra.p>
         </Box>
         <SimpleGrid
@@ -737,7 +737,7 @@ export function Featureslist() {
             title="Multi-Users"
             icon={<FiUsers size="2lg" />}
           >
-            Organize your users to bring secure connection to enterprise's access and resources. 
+            Organize your users to bring secure connection to enterprise&apos;s access and resources. 
           </Featurelist>
           <Featurelist
             color="brand"
@@ -752,7 +752,7 @@ export function Featureslist() {
             title="Peer-to-Peer Encryption"
             icon={<MdEnhancedEncryption size="2lg" />}
           >
-            Traffic over OmniEdge is end-to-end encrypted by Twofish/AES128/ChaCha20 cipers' P2P MESH network. 
+            Traffic over OmniEdge is end-to-end encrypted by Twofish/AES128/ChaCha20 cipers&apos; P2P MESH network. 
           </Featurelist>
 
           <Featurelist

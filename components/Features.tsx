@@ -24,10 +24,12 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import React from "react";
-import { AiOutlineSafety } from "react-icons/ai";
-import { FaAndroid, FaApple, FaBuilding, FaConnectdevelop, FaLinux, FaRocket, FaWindows } from "react-icons/fa";
-import { FiDatabase, FiMonitor, FiServer, FiSettings } from "react-icons/fi";
-import { GiAutoRepair, GiBank, GiCargoCrate, GiFactory, GiHospital, GiMissileLauncher, GiPeanut } from "react-icons/gi";
+import { AiFillMobile, AiFillRobot, AiOutlineControl, AiOutlineSafety, AiTwotoneApi } from "react-icons/ai";
+import { BiCheckShield, BiTransfer } from "react-icons/bi";
+import { FaAndroid, FaApple, FaBuilding, FaConnectdevelop, FaLinux, FaRocket, FaToriiGate, FaWindows } from "react-icons/fa";
+import { FiEdit, FiMoreVertical, FiServer, FiX,FiDatabase, FiMonitor, FiSettings, FiGlobe, FiAward, FiUsers, FiKey, FiDownloadCloud, FiCloud } from "react-icons/fi";
+import { GiAutoRepair, GiBank, GiCargoCrate, GiClick, GiFactory, GiFigurehead, GiHospital, GiMissileLauncher, GiPeanut } from "react-icons/gi";
+import { MdEnhancedEncryption, MdFilterBAndW, MdRouter } from "react-icons/md";
 import Logo from "../components/Logo";
 import { Page } from "../types";
 
@@ -294,6 +296,45 @@ export const Feature = (props: any) => {
         </chakra.dd>
       </Box>
     </Flex>
+  );
+};
+
+const Featurelist = (props:any) => {
+  return (
+    <Box>
+      <Flex
+        alignItems="center"
+        justifyContent="center"
+        w={16}
+        h={16}
+        mb={4}
+        rounded="full"
+        color={useColorModeValue(`${props.color}.600`, `${props.color}.100`)}
+        bg={useColorModeValue(`${props.color}.100`, `${props.color}.600`)}
+      >
+        <Icon
+          boxSize={10}
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          aria-hidden="true"
+        >
+          {props.icon}
+        </Icon>
+        </Flex>
+      <chakra.h3
+        mb={2}
+        fontWeight="semibold"
+        lineHeight="shorter"
+      >
+        {props.title}
+      </chakra.h3>
+      <chakra.p
+        fontSize="sm"
+        color={useColorModeValue("gray.500", "gray.400")}
+      >
+        {props.children}
+      </chakra.p>
+    </Box>
   );
 };
 
@@ -612,5 +653,141 @@ export function Compare() {
         </Tabs>
       </VStack>
     </>
+  );
+}
+
+
+export function Featureslist() {
+  return (
+    <Flex
+      w="auto"
+      justifyContent="center"
+      alignItems="center"
+    >
+      <Box
+        px={4}
+        py={20}
+        mx="auto"
+      >
+        <Box textAlign={{ lg: "center" }}>
+          <chakra.p
+            mt={2}
+            fontSize={{ base: "3xl", sm: "4xl" }}
+            lineHeight="8"
+            fontWeight="extrabold"
+            letterSpacing="tight"
+          >
+            Features
+          </chakra.p>
+          <chakra.p
+            mt={4}
+            maxW="2xl"
+            fontSize="xl"
+            mx={{ lg: "auto" }}
+          >
+            Get insights to dig down into what's powering your growth the most.
+          </chakra.p>
+        </Box>
+        <SimpleGrid
+          columns={{ base: 1, sm: 2, md: 3, lg: 4 }}
+          spacingX={{ base: 16, lg: 24 }}
+          spacingY={20}
+          mt={6}
+        >
+          <Featurelist
+            color="red"
+            title="Virtual Network"
+            icon={<FiGlobe size="2lg" />}
+          >
+            Virtual network is like a virtual office which connect all remote devices are connected in an intranet for your team and trusted users only..
+          </Featurelist>
+
+          <Featurelist
+            color="pink"
+            title="Remote Device Control"
+            icon={<AiOutlineControl size="2lg" />}
+          >
+            Control a remote computer like located in front of you, by Remote Desktop Protocl, VNC or SSH.
+          </Featurelist>
+
+          <Featurelist
+            color="yellow"
+            title="Cross-Platform"
+            icon={<FaConnectdevelop size="2lg" />}
+          >
+            Connect multiple platforms, Windows,macOS, iOS, Android, Linux and more.
+          </Featurelist>
+
+          <Featurelist
+            color="green"
+            title="Sub Router"
+            icon={<MdRouter size="2lg" />}
+          >
+            Sub router allows you connect your devices which is not with Omniedge installed.
+          </Featurelist>
+          <Featurelist
+            color="purple"
+            title="Big Data Transferring"
+            icon={<BiTransfer size="2lg" />}
+          >
+            Bigdata transfering function is very helpful for enterpirses who have to excahnge their data between differenct branches in differenct countries. 
+          </Featurelist>
+          <Featurelist
+            color="blue"
+            title="Multi-Users"
+            icon={<FiUsers size="2lg" />}
+          >
+            Organize your users to bring secure connection to enterprise's access and resources. 
+          </Featurelist>
+          <Featurelist
+            color="brand"
+            title="Security Key"
+            icon={<FiKey size="2lg" />}
+          >
+            Security Keys allow you connect your linux based devices with only command line.
+          </Featurelist>
+
+          <Featurelist
+            color="purple"
+            title="Peer-to-Peer Encryption"
+            icon={<MdEnhancedEncryption size="2lg" />}
+          >
+            Traffic over OmniEdge is end-to-end encrypted by Twofish/AES128/ChaCha20 cipers' P2P MESH network. 
+          </Featurelist>
+
+          <Featurelist
+            color="pink"
+            title="IoT & Hardware Integration "
+            icon={<AiFillRobot size="2lg" />}
+          >
+            Integrate OmniEdge into your own IoT project or hardware.
+          </Featurelist>
+
+          <Featurelist
+            color="red"
+            title="Zero Config"
+            icon={<GiClick size="2lg" />}
+          >
+            No Public IP, No Port Forward,Zero Config, Zero Firewall Rules. All your connectivity in one single click.
+          </Featurelist>
+
+          <Featurelist
+            color="green"
+            title="Okta integration"
+            icon={<BiCheckShield size="2lg" />}
+          >
+            Integrate Okta as your SSO provider to use OmniEdge.
+          </Featurelist>
+
+          <Featurelist
+            color="blue"
+            title="Admin API"
+            icon={<AiTwotoneApi size="2lg" />}
+          >
+            Admin API for admin users to have access to the admin dashboard for overview virutal network, devices and network setting.
+          </Featurelist>
+        </SimpleGrid>
+      </Box>
+    </Flex>
   );
 }

@@ -22,12 +22,23 @@ function App({ Component, pageProps }: AppWithLayoutProps) {
   return (
     <QueryClientProvider client={queryClient}>
       <ChakraProvider theme={theme}>
+        <Head>
           <meta charSet="utf-8" />
           <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
           <meta content="width=device-width, initial-scale=1" name="viewport" />
           <meta name="msapplication-TileColor" content="#ffffff" />
           <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
           <meta name="theme-color" content="#ffffff" />
+          <meta
+                  httpEquiv="Content-Security-Policy"
+                  content="
+                    connect-src 'self';
+                    img-src 'self';
+                    manifest-src 'self';
+                    script-src-elem 'self';
+                    style-src-elem 'self';
+"></meta>
+</Head>
         <Layout>
           <Component {...pageProps}></Component>
         </Layout>

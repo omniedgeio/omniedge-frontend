@@ -22,7 +22,7 @@ With OmniEdge, you:
 
 - Don't need any VPN server anymore.
 - Don't need any VPN gateway for your company's different branches. 
-- OmniEdge provide a peer-to-peer connection between devices without severe reply, while VPN always reply your connections. 
+- OmniEdge provide a peer-to-peer connection between devices without server relay, while VPN always reley on your connections. 
 
 With OmniEdge: 
 ![OmniEdge](/assets/OmniEdge-VPN.svg)

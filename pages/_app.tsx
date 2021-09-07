@@ -29,7 +29,7 @@ function App({ Component, pageProps }: AppWithLayoutProps) {
           <meta name="msapplication-TileColor" content="#ffffff" />
           <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
           <meta name="theme-color" content="#ffffff" />
-          <meta
+          {/* <meta
                   httpEquiv="Content-Security-Policy"
                   content="
                     connect-src 'self';
@@ -37,7 +37,7 @@ function App({ Component, pageProps }: AppWithLayoutProps) {
                     manifest-src 'self';
                     script-src-elem 'self';
                     style-src-elem 'self';
-"></meta>
+"></meta> */}
 </Head>
         <Layout>
           <Component {...pageProps}></Component>

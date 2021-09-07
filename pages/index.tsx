@@ -1,4 +1,5 @@
 import {
+  Flex,
   Box,
   Button,
   FormControl,
@@ -10,6 +11,9 @@ import {
   Stack,
   Text,
   VStack,
+  useColorModeValue,
+  Icon,
+  chakra,
 } from "@chakra-ui/react";
 import React from "react";
 import { Customersmap } from "../components/Customersmap";

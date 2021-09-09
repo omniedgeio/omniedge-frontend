@@ -2,7 +2,7 @@
   "windows": {
     "status": "LIVE",
     "displayName": "Windows",
-    "link": "https://github.com/omniedgeio/omniedge-windows-update/releases/download/v0.1.2/omniedge-setup-0.1.2.exe",
+    "link": "https://github.com/omniedgeio/omniedge-windows-update/releases/download/v0.1.4/omniedge-setup-0.1.4.exe",
     "showQRCode": false,
     "version": "0.1.4",
     "buttonText": "Download for Windows 7 or Later",

@@ -59,7 +59,7 @@ export const DownloadPage:React.FC<realplatform> = function ({ platform: selecte
     <br></br> OmniEdge evaluation version is now open source on <a href="https://github.com/omniedgeio" target="_blank" rel="noreferrer">GitHub</a>
       </Text>
       <br></br>
-<SimpleGrid columns={[3, null, 5]} spacing="10px">
+<SimpleGrid columns={[3, null, 9]} spacing="10px">
   {platforms.map((platform, index) => (
     <Icon
       key={index}

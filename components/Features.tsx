@@ -3,6 +3,7 @@ import {
   BoxProps,
   Button,
   chakra,
+  Center,
   Code,
   Flex,
   GridItem,
@@ -24,11 +25,11 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import React from "react";
-import { AiFillMobile, AiFillRobot, AiOutlineControl, AiOutlineSafety, AiTwotoneApi } from "react-icons/ai";
+import { AiFillMobile, AiFillRobot, AiFillRocket, AiOutlineControl, AiOutlineSafety, AiTwotoneApi } from "react-icons/ai";
 import { BiCheckShield, BiTransfer } from "react-icons/bi";
 import { FaAndroid, FaApple, FaBuilding, FaConnectdevelop, FaLinux, FaRocket, FaToriiGate, FaWindows } from "react-icons/fa";
-import { FiEdit, FiMoreVertical, FiServer, FiX,FiDatabase, FiMonitor, FiSettings, FiGlobe, FiAward, FiUsers, FiKey, FiDownloadCloud, FiCloud } from "react-icons/fi";
-import { GiAutoRepair, GiBank, GiCargoCrate, GiClick, GiFactory, GiFigurehead, GiHospital, GiMissileLauncher, GiPeanut } from "react-icons/gi";
+import { FiEdit, FiMoreVertical, FiServer, FiX,FiDatabase, FiMonitor, FiSettings, FiGlobe, FiAward, FiUsers, FiKey, FiDownloadCloud, FiCloud, FiShield, FiShoppingCart } from "react-icons/fi";
+import { GiAutoRepair, GiBank, GiCargoCrate, GiClick, GiFactory, GiFigurehead, GiHospital, GiMissileLauncher, GiPeanut, GiTreeGrowth } from "react-icons/gi";
 import { MdEnhancedEncryption, MdFilterBAndW, MdRouter } from "react-icons/md";
 import Logo from "../components/Logo";
 import { Page } from "../types";
@@ -572,7 +573,7 @@ export function Users() {
       >
         <Box alignSelf="start">
           <chakra.h2 color="brand.500" fontWeight="semibold" textTransform="uppercase" letterSpacing="wide">
-            Who is happy with OmniEdge
+          OmniEdge in the enterprise
           </chakra.h2>
           <chakra.h2
             mb={3}
@@ -585,7 +586,7 @@ export function Users() {
             We build for you.
           </chakra.h2>
           <chakra.p mb={6} fontSize={{ base: "lg", md: "xl" }} color={useColorModeValue("gray.600", "gray.500")}>
-          Omniedge creates a hight reliable connective system and makes it universally compatible for anyone, any team who needs to connect their devices anywhere anytime.
+          High security, High, speed, High performance, for everyone, everywhere.
           </chakra.p>
         </Box>
         <GridItem colSpan={2}>
@@ -597,26 +598,32 @@ export function Users() {
             gridRowGap={{ md: 10 }}
           >
             <Featureusers title="Manufacturers" icon={<GiFactory size="2lg" />}>
-            Industrial 4.0 suppliers, Machine Vendors, Factories can simplify the deployment of the M2M connectivity. OmniEdge is lightweight and compatible with most industrial gateways.{" "}
+            Industry 4.0 suppliers, Machine vendors,  Simplification of  M2M connectivity. OmniEdge is lightweight and compatible with most industrial gateways.{" "}
             </Featureusers>
             <Featureusers title="Banks" icon={<GiBank size="2lg" />}>
-            Secure the legacy apps, services from outside to inside the banks, set up the network between banks without any pain, zero-config system with low maintenance cost.No matter how complex the old network is, OmniEdge will connect your devices in a few minutes.
+            Security for existing apps, 
+Remote employee access to internal networks  Pain free network set up connecting local branches with a single click.
+No matter how complex the old network is, OmniEdge will connect your devices in a few minutes.
             </Featureusers>
             <Featureusers title="Hospitals" icon={<GiHospital size="2lg" />}>
               {" "}
-              Connect all the computers across the different networks in different departments within a single click installation. Secure exchanging the patient&apos;s data only in a hospital private network in a peer-to-peer tunnel, protect the privacy.
+              Pain free network set up connecting sites, departments and equipment with a single click.
+Secure patient data exchange across both the hospital private network and remote connections using a peer-to-peer tunnel 
             </Featureusers>
             <Featureusers title="Freight industry" icon={<GiCargoCrate size="2lg" />}>
               {" "}
-              Connect your AGVs no matter it is a Linux-based or windows-based. Provide remote support, remote upgrade, and data streaming with fast and low Latency peer-to-peer work.{" "}
+              Connect AGVs and AMR’s from multiple suppliers including Linux-or windows-based OS 
+Remote support capabilities Remote software upgrades 
+Data streaming with fast and low latency peer-to-peer work.{" "}
             </Featureusers>
             <Featureusers title="Enterprise" icon={<FaBuilding size="2lg" />}>
               {" "}
-              Simplify the enterprise-level VPN setup from weeks to minutes, from complexity config to zero-config, from the high cost of maintenance to low cost. Connect different branches devices in just a click, exchange big data securely, protect the communication for traveling employees to access internal resources.
+              Reduce the enterprise-level VPN setup from weeks to minutes, Minimize setup time, resources, costs and maintenance
+Connect different sites and  devices with just a click.
             </Featureusers>
             <Featureusers title="Startups, Geeks." icon={<GiMissileLauncher size="2lg" />}>
               {" "}
-              Access your NAS, Raspberry Pi, Cloud instances, or your friends&apos devices by sharing your network with them. Access all the device&apos;s data, Play LAN games, monitor your home cameras, and more.{" "}
+              Access your NAS, Raspberry Pi, Cloud instances, Securely share your network with friends&apos;s devices. Access all the device&apos;s data remotely, Play LAN games, monitor your home cameras, and more.{" "}
             </Featureusers>
           </Stack>
         </GridItem>
@@ -676,8 +683,9 @@ export function Featureslist() {
             lineHeight="8"
             fontWeight="extrabold"
             letterSpacing="tight"
+            textTransform="uppercase" 
           >
-            Features
+            OmniEdge delivers
           </chakra.p>
           <chakra.p
             mt={4}
@@ -685,7 +693,7 @@ export function Featureslist() {
             fontSize="xl"
             mx={{ lg: "auto" }}
           >
-            Get insights to dig down into what&apos;s powering your growth the most.
+            Solutions for your requirements.
           </chakra.p>
         </Box>
         <SimpleGrid
@@ -699,7 +707,7 @@ export function Featureslist() {
             title="Virtual Network"
             icon={<FiGlobe size="2lg" />}
           >
-            Virtual network is like a virtual office which connect all remote devices are connected in an intranet for your team and trusted users only..
+            Virtual network becomes a virtual office connecting all remote devices by intranet for your team and trusted users only.
           </Featurelist>
 
           <Featurelist
@@ -707,7 +715,7 @@ export function Featureslist() {
             title="Remote Device Control"
             icon={<AiOutlineControl size="2lg" />}
           >
-            Control a remote computer like located in front of you, by Remote Desktop Protocl, VNC or SSH.
+            Control a remote computer as if it’s located in front of you, by Remote Desktop Protocol, VNC or SSH.
           </Featurelist>
 
           <Featurelist
@@ -730,7 +738,7 @@ export function Featureslist() {
             title="Big Data Transferring"
             icon={<BiTransfer size="2lg" />}
           >
-            Bigdata transfering function is very helpful for enterpirses who have to excahnge their data between differenct branches in differenct countries. 
+            Big-data transfer functionality allows international enterprises to exchange data between different sites across their global footprint.
           </Featurelist>
           <Featurelist
             color="blue"
@@ -744,7 +752,7 @@ export function Featureslist() {
             title="Security Key"
             icon={<FiKey size="2lg" />}
           >
-            Security Keys allow you connect your linux based devices with only command line.
+            Security Keys allow you connect your linux based devices with only a command line, turning your own devices into an industrial router. 
           </Featurelist>
 
           <Featurelist
@@ -789,5 +797,98 @@ export function Featureslist() {
         </SimpleGrid>
       </Box>
     </Flex>
+  );
+}
+
+
+
+export function HighFeatures() {
+  const Feature = (props:any) => {
+    return (
+      <Box>
+        <Center>
+          <Flex alignItems="center" justifyContent="center" h={20} w={20} rounded="md" bg="brand.500" color="white">
+          <Icon boxSize={16} fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            {props.icon}
+          </Icon>
+        </Flex>
+        </Center>
+        <chakra.h1
+          mb={3}
+          fontSize="2xl"
+          lineHeight="shorter"
+          fontWeight="bold"
+          py={5} 
+          textAlign="center"
+        >
+          {props.title}
+        </chakra.h1>
+        <chakra.p
+          lineHeight="tall"
+          color={useColorModeValue("gray.600", "gray.400")}
+        >
+          {props.children}
+        </chakra.p>
+      </Box>
+    );
+  };
+
+  return (
+    <Box rounded="xl">
+      <Box mx="auto" px={{ base: 4, lg: 8 }}>
+        <Box py={0} textAlign={{ lg: "center" }}>
+          <chakra.h2 color="brand.600" 
+          textTransform="uppercase" 
+          mt={2}
+          fontSize={{ base: "4xl", sm: "3xl" }}
+          lineHeight="8"
+          fontWeight="extrabold"
+          letterSpacing="tight"
+          >
+          The power of Omniedge
+          </chakra.h2>
+          </Box>
+          
+    <Flex
+      px={{ base: 2, lg: 0 }}
+      py={20}
+      w="auto"
+      justifyContent="center"
+      alignItems="center"
+    >
+      <SimpleGrid
+        columns={{ base: 1, md: 2, lg: 3 }}
+        spacing={20}
+        px={{ base: 0, lg: 16, xl: 24 }}
+        py={2}
+        mx="auto"
+      >
+        <Feature
+          title="High Security"
+          icon={<AiOutlineSafety size="2lg"/>}
+        >
+          P2P MESH networks, encrypted end-to-end by Two-fish, AES128 or ChaCha20 Ciphers, customized authentication and 2FA to achieve dual security confirmation of devices and users with GDPR in mind.
+        </Feature>
+
+        <Feature
+          title="High Speed"
+          icon={<FaRocket size="2lg" />}
+        >
+          End-to-end direct connection, latency improved by up to 50%* compared to traditional VPN networks.
+Zero-config setup allows one click deployment. 
+
+        </Feature>
+        
+
+        <Feature
+          title="High Performance"
+          icon={<GiTreeGrowth size="2lg" />}
+        >
+          Cross platform compatibility connecting the widest range of OS and IoT devices. Management of all users and equipment on one dashboard. Minimize setup time, resources, costs and maintenance, helping you focus on your business. 
+        </Feature>
+      </SimpleGrid>
+    </Flex>
+    </Box>
+    </Box>
   );
 }

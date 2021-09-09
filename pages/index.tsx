@@ -17,7 +17,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { Customersmap } from "../components/Customersmap";
-import { Compare, FeaturePage, Heros,How, Users,Featureslist } from "../components/Features";
+import { Compare, FeaturePage, Heros,How, Users,Featureslist,HighFeatures } from "../components/Features";
 import DefaultLayout from "../components/layout/Default";
 import { Page } from "../types";
 import {Seo} from "../components/Seo";
@@ -102,6 +102,7 @@ Zero Config, Zero Firewall Rules,OmniEdge rebuilds the intranet on the internet 
           backgroundPosition="right"
         ></Box>
       </Box>
+      <HighFeatures />
       <Compare />
       <How />
       <FeaturePage />

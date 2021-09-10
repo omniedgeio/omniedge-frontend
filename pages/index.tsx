@@ -26,8 +26,7 @@ import {Seo} from "../components/Seo";
 const Home: Page = (props) => {
   return (
     <>
-    <Seo title="OmniEdge" description="No Public IP, No Port Forward 
-Zero Config, Zero Firewall Rules,OmniEdge rebuilds the intranet on the internet setup easier, without concern." image="/assets/OmniEdgeall0.5.png" />
+    <Seo title="The Power of OmniEdge,High Seurity, High Speed, and High Performance." description="OmniEdge reduces the enterprise connectivity deployment from weeks to minutes, helps customers focusing on their core business, connects and manages their devices from anywhere, anytime." image="/assets/OmniEdgeall0.5.png" />
       <Box padding="4" as="header" py={["6", "12", "36"]} position="relative">
         <Stack
           direction={{ base: "column", md: "row" }}

@@ -64,7 +64,7 @@ export const DownloadPage:React.FC<realplatform> = function ({ platform: selecte
     <Icon
       key={index}
       variant={platform}
-      selected={platform}
+      selected={selectedPlatform}
       onClick={() => routePlatform(platform)}
     />
   ))}

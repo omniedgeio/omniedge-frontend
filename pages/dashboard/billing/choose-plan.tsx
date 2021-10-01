@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import ConfirmModal from "../../../components/ConfirmModal";
 import Link from "../../../components/next/Link";
-import { EnterprisePlan, FreePlan, ProPlan, TeamsPlan } from "../../../components/plans";
+import { EnterprisePlan, FreePlan, ProPlan, TeamsPlan } from "../../../components/Plans";
 import { createCheckoutSession } from "../../../lib/api/billing";
 import { showError } from "../../../lib/helpers/toast";
 import { useUser } from "../../../lib/hook/useUser";

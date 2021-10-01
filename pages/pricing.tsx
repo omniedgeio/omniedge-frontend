@@ -30,7 +30,7 @@ import { Faq } from "../components/Faq";
 import { Heros } from "../components/Features";
 import DefaultLayout from "../components/layout/Default";
 import Link from "../components/next/Link";
-import { EnterprisePlan, FreePlan, ProPlan, TeamsPlan } from "../components/plans";
+import { EnterprisePlan, FreePlan, ProPlan, TeamsPlan } from "../components/Plans";
 import { Seo } from "../components/Seo";
 import { Page } from "../types";
 

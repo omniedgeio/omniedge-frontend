@@ -14,17 +14,15 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { format } from "date-fns";
-import { useRouter } from "next/router";
 import { MdCheckCircle } from "react-icons/md";
 import DashboardLayout from "../../../components/layout/Dashboard";
 import Link from "../../../components/next/Link";
-import { PlanProps, PLANS } from "../../../components/plans";
+import { PlanProps, PLANS } from "../../../components/Plans";
 import { useUser } from "../../../lib/hook/useUser";
 import { Page } from "../../../types";
 
 const BillingPage: Page = (props) => {
-  const { user, refetch, isLoading } = useUser("/login");
-  const router = useRouter();
+  const { user, isLoading } = useUser("/login");
 
   const plan: PlanProps = user?.subscription ? PLANS[user?.subscription.title as string] : null;
 

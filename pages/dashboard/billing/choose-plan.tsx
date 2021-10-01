@@ -39,8 +39,12 @@ const ChoosePlanPage: Page = (props) => {
       <Button
         isLoading={isLoading}
         onClick={() => {
-          setPlanChosen(plan);
-          confirmModal.onOpen();
+          if (user?.subscription.title === "free") {
+            checkout(plan);
+          } else {
+            setPlanChosen(plan);
+            confirmModal.onOpen();
+          }
         }}
         isFullWidth
         mt={4}

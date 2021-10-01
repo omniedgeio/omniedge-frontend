@@ -1,4 +1,5 @@
 import { extendTheme } from "@chakra-ui/react";
+import { StepsStyleConfig as Steps } from "chakra-ui-steps";
 
 const theme = extendTheme({
   colors: {
@@ -20,6 +21,7 @@ const theme = extendTheme({
     heading: "'Poppins', sans-serif",
   },
   components: {
+    Steps,
     Input: {
       variants: {
         outline: {

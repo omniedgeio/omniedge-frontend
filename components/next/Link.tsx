@@ -8,6 +8,7 @@ const Link: FC<NextLinkProps & ChakraLinkProps> = (props) => {
   return (
     <NextLink
       href={href}
+      as={href}
       replace={replace}
       scroll={scroll}
       shallow={shallow}

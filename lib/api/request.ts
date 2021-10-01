@@ -97,3 +97,7 @@ export enum InvitationStatusEnum {
 export interface IUpdateInvitationRequest {
   status: InvitationStatusEnum;
 }
+
+export interface ICreateCheckoutSessionRequest {
+  plan: string;
+}

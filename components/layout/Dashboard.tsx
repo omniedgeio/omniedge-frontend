@@ -20,12 +20,12 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { useRouter } from "next/dist/client/router";
-import { FiChevronDown, FiGlobe, FiKey, FiMenu, FiServer, FiSettings, FiX } from "react-icons/fi";
+import { FiChevronDown, FiCreditCard, FiGlobe, FiKey, FiMenu, FiServer, FiSettings, FiX } from "react-icons/fi";
 import { useQuery } from "react-query";
 import { listInvitations } from "../../lib/api/invitations";
 import { clearToken } from "../../lib/helpers/token";
 import { useUser } from "../../lib/hook/useUser";
-import {Brand} from "../Brand";
+import { Brand } from "../Brand";
 import Link from "../next/Link";
 import NoSSR from "../next/NoSSR";
 
@@ -38,6 +38,7 @@ const SideBar: React.FC<StackProps & { onClose: () => void; isOpen: boolean }> =
     { name: "Virtual Networks", href: "/virtual-networks", icon: FiGlobe },
     { name: "Devices", href: "/devices", icon: FiServer },
     { name: "Security Keys", href: "/security-keys", icon: FiKey },
+    { name: "Billing", href: "/billing", icon: FiCreditCard },
     { name: "Settings", href: "/settings", icon: FiSettings, active: !!invitations?.length },
   ];
 

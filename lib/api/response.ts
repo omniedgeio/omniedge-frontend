@@ -17,12 +17,24 @@ export interface IIdentityResponse {
   metadata?: any;
 }
 
+export interface ISubscriptionItemResponse {
+  price_id: string;
+}
+
+export interface ISubscriptionResponse {
+  start_at: Date;
+  end_at: Date;
+  cancel_at: Date;
+  title: string | undefined;
+}
+
 export interface IProfileResponse {
   uuid: string;
   name: string;
   email: string;
   picture: string;
   identities: IIdentityResponse[];
+  subscription: ISubscriptionResponse;
 }
 
 export interface IDeviceResponse {

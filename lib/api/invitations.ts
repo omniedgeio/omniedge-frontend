@@ -10,6 +10,7 @@ export async function listInvitations(): Promise<IInvitationResponse[] | undefin
 
   return res.data.data;
 }
+
 export async function updateInvitation(uuid: string, data: IUpdateInvitationRequest) {
   let res = await request({
     url: "/invitations/" + uuid,

@@ -18,6 +18,8 @@ import { MdCheckCircle } from "react-icons/md";
 import DashboardLayout from "../../../components/layout/Dashboard";
 import Link from "../../../components/next/Link";
 import { PlanProps, PLANS } from "../../../components/Plans";
+import { createPortalSession } from "../../../lib/api/billing";
+import { showError } from "../../../lib/helpers/toast";
 import { useUser } from "../../../lib/hook/useUser";
 import { Page } from "../../../types";
 
@@ -40,10 +42,12 @@ const BillingPage: Page = (props) => {
             <Badge colorScheme="green">{user?.subscription.title === "free" ? "Free" : "Paid"}</Badge>
           </HStack>
           <Text mt={2}>
-            Billing Monthly •{" "}
-            {format(new Date(user?.subscription.start_at as Date), "MMM dd") +
-              " to " +
-              format(new Date(user?.subscription.end_at as Date), "MMM dd")}
+            Billing Monthly
+            {user?.subscription.title !== "free" &&
+              `• 
+              ${format(new Date(user?.subscription.start_at as Date), "MMM dd")} to
+              ${format(new Date(user?.subscription.end_at as Date), "MMM dd")}
+            `}
           </Text>
           {user?.subscription.cancel_at && (
             <Alert status="warning" my={2} borderRadius="md" alignItems="flex-start" p={4}>
@@ -52,11 +56,31 @@ const BillingPage: Page = (props) => {
               {format(new Date(user?.subscription.cancel_at as Date), "MMM dd")}
             </Alert>
           )}
-          <Link href="/dashboard/billing/choose-plan">
-            <Button colorScheme="brand" mt={3}>
-              {user?.subscription.title === "free" ? "Upgrade Plan" : "Change Plan"}
-            </Button>
-          </Link>
+          <HStack mt={3}>
+            <Link href="/dashboard/billing/choose-plan">
+              <Button colorScheme="brand">
+                {user?.subscription.title === "free" ? "Upgrade Plan" : "Change Plan"}
+              </Button>
+            </Link>
+            {user?.subscription.title !== "free" && (
+              <Button
+                onClick={() => {
+                  createPortalSession()
+                    .then((data) => {
+                      if (data.url) {
+                        window.location.href = data.url;
+                      }
+                    })
+                    .catch((err) => {
+                      showError("Error", "Cannot open billing portal");
+                    });
+                }}
+                colorScheme="teal"
+              >
+                Manage
+              </Button>
+            )}
+          </HStack>
           <Box mt={4}>
             <Text fontWeight="medium">Features</Text>
             <List>

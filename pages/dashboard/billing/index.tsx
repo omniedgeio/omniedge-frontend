@@ -39,7 +39,7 @@ const BillingPage: Page = (props) => {
         <Box w="full" maxW="500px" p={6} border="1px" borderColor="gray.200" borderRadius="xl">
           <HStack>
             <Heading size="md">{plan.title} Plan</Heading>
-            <Badge colorScheme="green">Paid</Badge>
+            <Badge colorScheme="green">{user?.subscription.title === "free" ? "Free" : "Paid"}</Badge>
           </HStack>
           <Text mt={2}>
             Billing Monthly •{" "}

@@ -40,7 +40,19 @@ export const Description: FunctionComponent<IPropss> = ({ texts }) => {
               key={index}
             />
           )
-        } else {
+        }
+        if (text.startsWith('#')) {
+          return (
+            <chakra.h3
+          mb={2}
+          fontSize={{ base: "lg", md: "lg" }}
+          // fontWeight="bold"
+          lineHeight="none"
+          letterSpacing={{ base: "normal", md: "normal" }}
+        >{text.replace('#', '').trim()}</chakra.h3>
+          )
+        }
+         else {
           return (
             <p
               dangerouslySetInnerHTML={{ __html: text.trim() }}

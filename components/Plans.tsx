@@ -49,16 +49,12 @@ export const PLANS = {
         tips: "Virtual network is an virtual intranet for all your devices and users.",
       },
       {
-        label: "Up to 50 devices",
+        label: "Up to 25 devices",
         tips: "A device is any desktop,laptop, phone or cloud instance with OmniEdge installed and activated in your own virtual network.",
       },
       {
-        label: "Up to 10 users",
+        label: "Up to 5 users",
         tips: "Virtual network only can have devices from maximum of 5 users.",
-      },
-      {
-        label: "20 Security Keys",
-        tips: "Security Keys allow you connect your linux based devices with only command line.",
       },
     ],
   },
@@ -76,20 +72,16 @@ export const PLANS = {
         tips: "Traffic over OmniEdge is end-to-end encrypted by Twofish/AES128/ChaCha20 cipers' P2P MESH network.",
       },
       {
-        label: "Up to 20 virtual networks",
+        label: "Up to 10 virtual networks",
         tips: "Virtual network is an virtual intranet for all your devices and users.",
       },
       {
-        label: "Up to 200 devices",
+        label: "Up to 25 devices",
         tips: "A device is any desktop,laptop, phone or cloud instance with OmniEdge installed and activated in your own virtual network.",
       },
       {
-        label: "Up to 30 users",
+        label: "Up to 10 users",
         tips: "Virtual network only can have devices from maximum of 5 users.",
-      },
-      {
-        label: "100 Security Keys",
-        tips: "Security Keys allow you connect your linux based devices with only command line.",
       },
     ],
   },

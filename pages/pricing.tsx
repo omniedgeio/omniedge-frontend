@@ -154,14 +154,14 @@ Zero Config, Zero Firewall Rules,OmniEdge rebuilds the intranet on the internet 
           <FreePlan>
             <ChoosePlanButton plan="free" />
           </FreePlan>
-          <Box bgColor="brand.500" borderRadius="xl" color="white" px={4}>
             <ProPlan>
-              <ChoosePlanButton plan="pro" colorScheme="cyan" color="white" />
+              <ChoosePlanButton plan="pro" />
             </ProPlan>
-          </Box>
+          <Box bgColor="brand.500" borderRadius="xl" color="white" px={4}>
           <TeamsPlan>
-            <ChoosePlanButton plan="teams" />
+            <ChoosePlanButton plan="teams"  colorScheme="cyan" color="white"/>
           </TeamsPlan>
+          </Box>
           <EnterprisePlan>
             <Link href="mailto:hi@omniedge.io">
               <Button isFullWidth variant="outline" mt={4} colorScheme="teal">
@@ -192,10 +192,10 @@ Zero Config, Zero Firewall Rules,OmniEdge rebuilds the intranet on the internet 
             </Tr>
           </Thead>
           <Tbody>
-            <FeatureTextnumber title="Virtual Network" free="1" pro="5" team="20" enterprise="Unlimited" />
-            <FeatureTextnumber title="Devices" free="20" pro="50" team="200" enterprise="Unlimited" />
-            <FeatureTextnumber title="Users" free="1" pro="10" team="30" enterprise="Unlimited" />
-            <FeatureTextnumber title="Security Keys" free="0" pro="20" team="100" enterprise="Unlimited" />
+            <FeatureTextnumber title="Virtual Network" free="1" pro="5" team="10" enterprise="Unlimited" />
+            <FeatureTextnumber title="Devices" free="20" pro="25" team="25" enterprise="Unlimited" />
+            <FeatureTextnumber title="Users" free="1" pro="5" team="10" enterprise="Unlimited" />
+            <FeatureDesc>Security Keys</FeatureDesc>
             <FeatureDesc>Subroute</FeatureDesc>
             <FeatureDesc>Unlimited data transfer</FeatureDesc>
             <FeatureDesc>Encrypted, peer-to-peer connection</FeatureDesc>

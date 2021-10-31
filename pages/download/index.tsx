@@ -21,7 +21,7 @@ const Download: Page = (props) => {
     } else if (platform?.macos) {
       setClientPlatform('macos')
     }
-  }, [platform])
+  }, [])
 
   return (
     <>

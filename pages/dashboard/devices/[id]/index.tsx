@@ -88,9 +88,7 @@ const DeviceSubnetsPage: Page = function (props) {
     isLoading,
     isError,
     refetch,
-  } = useQuery(["device", router.query.uuid], () =>
-    router.query.uuid ? retrieveDevice(router.query.uuid as string) : null
-  );
+  } = useQuery(["device", router.query.id], () => (router.query.id ? retrieveDevice(router.query.id as string) : null));
 
   return isLoading || isError ? (
     <Spinner />
@@ -102,9 +100,9 @@ const DeviceSubnetsPage: Page = function (props) {
         </Heading>
         <Text fontSize="sm">
           <Text fontWeight="medium" as="span">
-            OS
+            Platform
           </Text>{" "}
-          : {device?.os}
+          : {device?.platform}
         </Text>
       </VStack>
       <VStack alignItems="flex-start" w="full">
@@ -128,14 +126,14 @@ const DeviceSubnetsPage: Page = function (props) {
           ))}
         </SimpleGrid>
       </VStack>
-      {device?.subnets?.map((subnet, index) => (
+      {/* {device?.subnets?.map((subnet, index) => (
         <VStack w="full" alignItems="flex-start" key={subnet.ip}>
           <Heading color="gray.500" textTransform="uppercase" fontSize="xs">
             Subnet {index + 1}
           </Heading>
           <DeviceSubnetTable uuid={device.uuid} subnet={subnet}></DeviceSubnetTable>
         </VStack>
-      ))}
+      ))} */}
     </VStack>
   );
 };

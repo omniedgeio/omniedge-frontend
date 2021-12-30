@@ -48,10 +48,9 @@ export interface IChangePasswordRequest {
   confirm_password: string;
 }
 
-export interface IRegisterDeviceRequest {
-  name: string;
-  hardware_uuid: string;
-  os: string;
+export interface IListDevicesRequest extends IPaginationRequest {
+  name?: string;
+  platform?: string;
 }
 
 export interface IUpdateDeviceRequest {

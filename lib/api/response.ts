@@ -1,5 +1,4 @@
-import { Country, InvitationStatus, UserRole } from "./enum";
-import { SecurityKeyTypeEnum } from "./request";
+import { Country, InvitationStatus, SecurityKeyType, UserRole } from "./enum";
 
 export enum ErrorCode {
   // Auth
@@ -142,6 +141,22 @@ export interface IInvitationResponse {
   invited_by: Pick<IUserResponse, "id" | "name" | "email">;
 }
 
+/* -------------------------------------------------------------------------- */
+/*                                Security Key                                */
+/* -------------------------------------------------------------------------- */
+
+export interface ISecurityKeyResponse {
+  id: string;
+  name: string;
+  type: SecurityKeyType;
+  expires_at: Date;
+  created_at: Date;
+}
+
+export type ICreateSecurityKeyResponse = ISecurityKeyResponse & {
+  key: string;
+};
+
 export interface IDeviceSubnetRouteResponse {
   uuid: string;
   ip: string;
@@ -156,12 +171,4 @@ export interface ISubnetRouteDeviceResponse {
   ip: string;
   mac_addr: string;
   manufacturer: string;
-}
-
-export interface ISecurityKeyResponse {
-  uuid: string;
-  key: string;
-  key_type: SecurityKeyTypeEnum;
-  expired_at: Date;
-  created_at: Date;
 }

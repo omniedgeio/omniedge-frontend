@@ -1,3 +1,5 @@
+import { SecurityKeyType } from "./enum";
+
 export interface IRegisterRequest {
   name: string;
   email: string;
@@ -94,7 +96,8 @@ export enum SecurityKeyTypeEnum {
 }
 
 export interface ICreateSecurityKeyRequest {
-  type: SecurityKeyTypeEnum;
+  name: string;
+  type: SecurityKeyType;
 }
 
 export interface ICreateInvitationRequest {

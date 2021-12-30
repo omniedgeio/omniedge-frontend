@@ -67,6 +67,19 @@ export interface IUpdateDeviceSubnetRouteDeviceRequest {
   name: string;
 }
 
+export interface IPaginationRequest {
+  page?: number; // default: 1
+  per_page?: number; // default: 10
+}
+
+/* -------------------------------------------------------------------------- */
+/*                               Virtual Network                              */
+/* -------------------------------------------------------------------------- */
+
+export interface IListVirtualNetworkRequest extends IPaginationRequest {
+  name?: string;
+}
+
 export interface ICreateVirtualNetworkRequest {
   name: string;
   ip_range: string;

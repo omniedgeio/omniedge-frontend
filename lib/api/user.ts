@@ -9,7 +9,7 @@ import { IProfileResponse } from "./response";
 
 export async function retrieveUser(): Promise<IProfileResponse | undefined> {
   let res = await request<IProfileResponse>({
-    url: "/user/profile",
+    url: "/profile",
     method: "GET",
   });
 

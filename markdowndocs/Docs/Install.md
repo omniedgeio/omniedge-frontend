@@ -26,11 +26,11 @@ OmniEdge Windows is compatible with Windows 7,10(arm) & Windows Server 2016,2019
 4. Click "Connect" in the menu bar from the tray icon. After a pop-up disappears, a secure VPN connection is initialized.
 
 ## 3. Installing on MacOS
-OmniEdge MacOS is compatible with intel Macbook, macOS 10 or later Last update: Version 0.1.7, April 3, 2021.
+OmniEdge `MacOS Cli` is compatible with intel Macbook, macOS 10 or later Last update: Version 0.2.0, December, 6, 2021.
 
-[Download OmniEdge for macOS 10 or later](https://raw.githubusercontent.com/omniedgeio/omniedge-mac/master/Omniedge.dmg)
+[Download OmniEdge Cli for macOS 10 or later]()
 
-1. Download OmniEdge DMG and open it.
+1. Download OmniEdge Cli and copy to `/usr/local/bin`, and exectue command `sudo chmod +x /usr/local/bin/omniedge`
 2. Install Tun/Tap Driver:
 
 For Intel Mac: 
@@ -93,14 +93,30 @@ For M1 Mac user:
   ```
 - restart Mac after allowing the security check. 
 
-3. Drop Omniedge to Applications folder
-4. Run OmniEdge
-5. Sign in with your email address
-6. Click the button near 'off' to connect, then a secure VPN connection is initialized.
+3. Use OmniEdge CLi in the terminal, 
+## Login
+
+Login By Password: `sudo omniedge login -u xxx@xxx.com`
+Login By Secret-Key: `sudo omniedge login -s xxxxxx`
+
+add ` -f /yourfolder/auth.json` to specify the auth file
+
+You can generate secret-key on [omniedge dashboard](https://dev.omniedge.io/dashboard).
+
+## Join
+
+you can just call omniedge join, it will automatically prompt the available network for you to choose. And you can also add one parameter -n to specify the network id manually. And then, enjoy the omniedge network.
+
+```
+omniedge join 
+// or
+omniedge join -n "virtual-network-id" 
+```
+6. A secure VPN connection is initialized after you press the `Enter`.
 
 ## 4. Installing on Android
 
-OmniEdge Android is compatible with Android 6 or later mobile phone or TV. Last update: Version 0.1.3, April 27, 2021.
+OmniEdge Android is compatible with Android 6 or later mobile phone or TV. Last update: Version 0.2.0, Sepember 9, 2021.
 
 [Download for Android 6 or later](https://github.com/omniedgeio/omniedge-android/releases/download/v0.1.3/OmniEdge-v0.1.3.apk)
 
@@ -117,74 +133,32 @@ OmniEdge Linux Cli is Compatible with linux for AMD64,ArmV7 and Arm64V8, Archlin
 [Download OmniEdge Linux Cli](https://github.com/omniedgeio/omniedge-linux-cli/releases)
 
 1. Download and install omnidge cli depend on system architecture :
+
+2. `curl -s install-omniedge.sh | bash`
     
-  - OmniEdge linux Cli for AMD64
+3. Use OmniEdge CLi in the terminal, 
+## Login
 
-  ```
-    wget https://github.com/omniedgeio/omniedge-linux-cli/releases/download/v0.1.0/omniedge-amd64.zip
-  ```
+Login By Password: `sudo omniedge login -u xxx@xxx.com`
+Login By Secret-Key: `sudo omniedge login -s xxxxxx`
 
-  - OmniEdge linux Cli for Arm64V8
+add ` -f /yourfolder/auth.json` to specify the auth file
 
-  ```
-    wget https://github.com/omniedgeio/omniedge-linux-cli/releases/download/v0.1.0/omniedge-arm64v8.zip
-  ```
-  - OmniEdge linux Cli for ArmV7
+You can generate secret-key on [omniedge dashboard](https://dev.omniedge.io/dashboard).
 
-  ```
-    wget https://github.com/omniedgeio/omniedge-linux-cli/releases/download/v0.1.0/omniedge-armv7.zip
-  ```
+## Join
 
-2. Login and Join omniedge:
+you can just call omniedge join, it will automatically prompt the available network for you to choose. And you can also add one parameter -n to specify the network id manually. And then, enjoy the omniedge network.
 
 ```
-sudo omniedge login -u user@email.com &&
-sudo omniedge join
+omniedge join 
+// or
+omniedge join -n "virtual-network-id" 
 ```
+4. A secure VPN connection is initialized after you press the `Enter`.
 
-3. Wait a second and a secure VPN will be established
 
 ## 6. Installing on iOS
-Coming Soon
-
-## 7. Installing on Raspberry Pi
-OmniEdge Raspberry Pi is Compatible with Raspberry PI 1B, 3B, 3B+ Last update: Version 0.1.0, April 25, 2021.
-
-[OmniEdge Raspberry Pi](https://github.com/omniedgeio/omniedge-linux-cli/releases/download/v0.1.0/omniedge_arm.zip)
-
-1. Sign up your account with your email and password: [Sign up](https://dashboard.omniedge.io/sign-up)
-2. Download and install omnidge cli
-
-```
-curl https://raw.githubusercontent.com/omniedgeio/omniedge-linux-cli/main/omniedge-install-arm.sh | bash
-```
-
-3. Login and Join omniedge:
-
-```
-sudo omniedge login -u user@email.com &&
-sudo omniedge join
-```
-
-4. Wait a second and a secure VPN will be established
-
-## 8. Installing on Synology NAS
-OmniEdge Synology is Compatible with Synology with amd64 CPU Last update: Version , April 25, 2021.
-
-[Download OmniEdge Synology](https://github.com/omniedgeio/omniedge-synology/releases/download/v0.1.0/omniedge_0.1.0_amd64.spk)
-
-1. Sign up your account with your email and password: Sign up
-2. Download and install omniedge for synology, then open terminal
-3. Login and Join omniedge:
-
-```
-sudo omniedge login -u user@email.com &&
-sudo omniedge join
-```
-
-4. Wait a second and a secure VPN will be established
-
-## 9. Installing on Router
 Coming Soon
 
 ## 10. Uninstalling OmniEdge

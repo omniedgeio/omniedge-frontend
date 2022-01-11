@@ -3,7 +3,7 @@ import { ICreateCheckoutSessionRequest } from "./request";
 
 export async function createCheckoutSession(data: ICreateCheckoutSessionRequest) {
   let res = await request({
-    url: "/payment/create-checkout-session",
+    url: "/payment/checkout-session",
     method: "POST",
     data,
   });
@@ -13,7 +13,7 @@ export async function createCheckoutSession(data: ICreateCheckoutSessionRequest)
 
 export async function createPortalSession() {
   let res = await request({
-    url: "/payment/create-portal-session",
+    url: "/payment/portal-session",
     method: "POST",
   });
 

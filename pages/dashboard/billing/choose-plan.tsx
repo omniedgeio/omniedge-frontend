@@ -31,7 +31,7 @@ const ChoosePlanPage: Page = (props) => {
   const [planChosen, setPlanChosen] = useState<string | undefined>("");
 
   const ChoosePlanButton: React.FC<{ plan: string } & ButtonProps> = ({ plan, ...props }) =>
-    user?.subscription.title === plan ? (
+    user?.subscription.slug === plan ? (
       <Button isLoading={isLoading} isDisabled isFullWidth colorScheme="gray" mt={4} {...props}>
         Current Plan
       </Button>
@@ -39,7 +39,7 @@ const ChoosePlanPage: Page = (props) => {
       <Button
         isLoading={isLoading}
         onClick={() => {
-          if (user?.subscription.title === "free") {
+          if (user?.subscription.slug === "free") {
             checkout(plan);
           } else {
             setPlanChosen(plan);
@@ -51,7 +51,7 @@ const ChoosePlanPage: Page = (props) => {
         colorScheme="brand"
         {...props}
       >
-        {user?.subscription.title === "free" ? "Upgrade" : plan === "free" ? "Revert Plan" : "Change Plan"}
+        {user?.subscription.slug === "free" ? "Upgrade" : plan === "free" ? "Revert Plan" : "Change Plan"}
       </Button>
     );
 

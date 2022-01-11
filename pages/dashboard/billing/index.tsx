@@ -26,7 +26,8 @@ import { Page } from "../../../types";
 const BillingPage: Page = (props) => {
   const { user, isLoading } = useUser("/login");
 
-  const plan: PlanProps = user?.subscription ? PLANS[user?.subscription.title as string] : null;
+  console.log(user);
+  const plan: PlanProps = user?.subscription ? PLANS[user?.subscription.slug as string] : null;
 
   return (
     <VStack alignItems="flex-start" spacing="4">

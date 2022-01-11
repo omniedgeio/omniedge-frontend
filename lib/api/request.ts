@@ -1,3 +1,5 @@
+import { SecurityKeyType } from "./enum";
+
 export interface IRegisterRequest {
   name: string;
   email: string;
@@ -48,10 +50,9 @@ export interface IChangePasswordRequest {
   confirm_password: string;
 }
 
-export interface IRegisterDeviceRequest {
-  name: string;
-  hardware_uuid: string;
-  os: string;
+export interface IListDevicesRequest extends IPaginationRequest {
+  name?: string;
+  platform?: string;
 }
 
 export interface IUpdateDeviceRequest {
@@ -65,6 +66,19 @@ export interface IUpdateDeviceSubnetRouteRequest {
 export interface IUpdateDeviceSubnetRouteDeviceRequest {
   uuid: string;
   name: string;
+}
+
+export interface IPaginationRequest {
+  page?: number; // default: 1
+  per_page?: number; // default: 10
+}
+
+/* -------------------------------------------------------------------------- */
+/*                               Virtual Network                              */
+/* -------------------------------------------------------------------------- */
+
+export interface IListVirtualNetworkRequest extends IPaginationRequest {
+  name?: string;
 }
 
 export interface ICreateVirtualNetworkRequest {
@@ -82,7 +96,8 @@ export enum SecurityKeyTypeEnum {
 }
 
 export interface ICreateSecurityKeyRequest {
-  type: SecurityKeyTypeEnum;
+  name: string;
+  type: SecurityKeyType;
 }
 
 export interface ICreateInvitationRequest {

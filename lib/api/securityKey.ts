@@ -1,9 +1,11 @@
 import request from "./client";
 import { ICreateSecurityKeyRequest } from "./request";
-import { ISecurityKeyResponse } from "./response";
+import { ICreateSecurityKeyResponse, IPaginatedResponse, ISecurityKeyResponse } from "./response";
 
-export async function createSecurityKey(data: ICreateSecurityKeyRequest): Promise<ISecurityKeyResponse | undefined> {
-  let res = await request<ISecurityKeyResponse>({
+export async function createSecurityKey(
+  data: ICreateSecurityKeyRequest
+): Promise<ICreateSecurityKeyResponse | undefined> {
+  let res = await request<ICreateSecurityKeyResponse>({
     url: "/security-keys",
     method: "POST",
     data,
@@ -12,8 +14,8 @@ export async function createSecurityKey(data: ICreateSecurityKeyRequest): Promis
   return res.data.data;
 }
 
-export async function listSecurityKeys(): Promise<ISecurityKeyResponse[] | undefined> {
-  let res = await request<ISecurityKeyResponse[]>({
+export async function listSecurityKeys(): Promise<IPaginatedResponse<ISecurityKeyResponse> | undefined> {
+  let res = await request<IPaginatedResponse<ISecurityKeyResponse>>({
     url: "/security-keys",
     method: "GET",
   });
@@ -21,9 +23,9 @@ export async function listSecurityKeys(): Promise<ISecurityKeyResponse[] | undef
   return res.data.data;
 }
 
-export async function revokeSecurityKey(uuid: string): Promise<any> {
+export async function revokeSecurityKey(securityKeyId: string): Promise<any> {
   let res = await request<any>({
-    url: "/security-keys/" + uuid,
+    url: "/security-keys/" + securityKeyId,
     method: "DELETE",
   });
 

@@ -9,7 +9,7 @@ import { IProfileResponse } from "./response";
 
 export async function retrieveUser(): Promise<IProfileResponse | undefined> {
   let res = await request<IProfileResponse>({
-    url: "/user/profile",
+    url: "/profile",
     method: "GET",
   });
 
@@ -18,8 +18,8 @@ export async function retrieveUser(): Promise<IProfileResponse | undefined> {
 
 export async function updateProfile(data: IUpdateProfileRequest) {
   let res = await request({
-    url: "/user/profile",
-    method: "POST",
+    url: "/profile",
+    method: "PUT",
     data,
   });
 
@@ -28,8 +28,8 @@ export async function updateProfile(data: IUpdateProfileRequest) {
 
 export function changePassword(data: IChangePasswordRequest) {
   return request({
-    url: "/user/auth/change-password",
-    method: "POST",
+    url: "/profile/change-password",
+    method: "PUT",
     data,
   });
 }

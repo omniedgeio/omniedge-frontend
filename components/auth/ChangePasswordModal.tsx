@@ -15,7 +15,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import YupPassword from "yup-password";
 import { changePassword } from "../../lib/api/user";
-import { showError } from "../../lib/helpers/toast";
+import { showError, showSuccess } from "../../lib/helpers/toast";
 YupPassword(Yup);
 
 interface IChangePasswordModalProps {
@@ -30,11 +30,11 @@ const ChangePasswordModal: React.FC<IChangePasswordModalProps> = function ({ isO
     validationSchema: Yup.object().shape({
       old_password: Yup.string().required("Required"),
       password: Yup.string()
-        .required("Required")
-        .minLowercase(1, "At least one lowercase character")
-        .minUppercase(1, "At least one uppercase character")
-        .minNumbers(1, "At least one number")
-        .minSymbols(1, "At least one symbol")
+        // .required("Required")
+        // .minLowercase(1, "At least one lowercase character")
+        // .minUppercase(1, "At least one uppercase character")
+        // .minNumbers(1, "At least one number")
+        // .minSymbols(1, "At least one symbol")
         .min(8, "At least 8 characters")
         .max(20, "At most 20 characters"),
       confirm_password: Yup.string()
@@ -46,11 +46,11 @@ const ChangePasswordModal: React.FC<IChangePasswordModalProps> = function ({ isO
         .then((res) => {
           actions.setSubmitting(false);
           actions.resetForm();
+          showSuccess("Success", "Password changed successfully");
           onClose();
           onSuccess && onSuccess();
         })
         .catch((err) => {
-          console.log(err);
           if (err.data) {
             showError("Change Password failed", err.data.message);
           }

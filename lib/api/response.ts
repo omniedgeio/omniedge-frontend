@@ -54,6 +54,7 @@ export interface ISubscriptionResponse {
   start_at: Date;
   end_at: Date;
   cancel_at: Date;
+  slug: string;
   title: string | undefined;
 }
 

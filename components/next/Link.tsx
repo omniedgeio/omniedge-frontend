@@ -2,26 +2,36 @@ import { Link as ChakraLink, LinkProps as ChakraLinkProps } from "@chakra-ui/rea
 import NextLink, { LinkProps as NextLinkProps } from "next/link";
 import React, { FC } from "react";
 
-interface IProps extends NextLinkProps {
-  chackraLink?: ChakraLinkProps;
-}
+const Link: FC<NextLinkProps & ChakraLinkProps> = (props) => {
+  const { children, href, replace, scroll, shallow, passHref, prefetch, locale, ...chakraLink } = props;
 
-const Link: FC<IProps> = (props) => {
-  const { chackraLink, children } = props;
-  const nextLinkProps = {
-    ...props,
-    chackraLink: undefined,
-    children: undefined,
-  };
   return (
-    <NextLink {...nextLinkProps} passHref>
-      <ChakraLink {...chackraLink}>{children}</ChakraLink>
+    <NextLink
+      href={href}
+      as={href}
+      replace={replace}
+      scroll={scroll}
+      shallow={shallow}
+      prefetch={prefetch}
+      locale={locale}
+      passHref
+    >
+      <ChakraLink
+        _focus={{
+          outline: 0,
+        }}
+        _hover={{
+          textDecoration: "none",
+          color: "brand.500",
+        }}
+        {...chakraLink}
+      >
+        {children}
+      </ChakraLink>
     </NextLink>
   );
 };
 
-Link.defaultProps = {
-  chackraLink: {},
-};
+Link.defaultProps = {};
 
 export default Link;

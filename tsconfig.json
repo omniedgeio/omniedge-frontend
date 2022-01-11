@@ -1,15 +1,12 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+    "suppressImplicitAnyIndexErrors":true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "module": "esnext",
@@ -18,15 +15,9 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "preserve",
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "types": ["gapi", "gapi.auth2"]
   },
-  "include": [
-    "next-env.d.ts",
-    "*/**/*.ts",
-    "*/**/*.tsx",
-    "components/**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["next-env.d.ts", "index.d.ts", "*/**/*.ts", "*/**/*.tsx", "components/VideoPlayer.js"],
+  "exclude": ["node_modules"]
 }

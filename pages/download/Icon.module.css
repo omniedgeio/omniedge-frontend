@@ -1,0 +1,20 @@
+.icon {
+    border-radius:12px;
+    width: 82px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    flex-wrap: wrap;
+}
+
+.selected {
+    background-color: #4859ED;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.selected .iconText {
+    color: white;
+}

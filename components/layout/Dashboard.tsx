@@ -39,7 +39,7 @@ const SideBar: React.FC<StackProps & { onClose: () => void; isOpen: boolean }> =
     { name: "Devices", href: "/devices", icon: FiServer },
     { name: "Security Keys", href: "/security-keys", icon: FiKey },
     { name: "Billing", href: "/billing", icon: FiCreditCard },
-    { name: "Settings", href: "/settings", icon: FiSettings, active: !!invitations?.length },
+    { name: "Settings", href: "/settings", icon: FiSettings, active: !!invitations?.data?.length },
   ];
 
   return (

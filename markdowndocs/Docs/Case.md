@@ -83,18 +83,41 @@ Click `Eject` on the `popup window` when finished
 
 **Step 3**. Insert your Micro-SD card into your Jetson Board, plug the power supply, HDMI to a Monitor, and a USB-Keyboard, power on the board. Finish the system setting, and enter into the ubuntu-desktop. 
 
-**Step 4**. Open a Terminal, download [OmniEdge Linux Cli for Arm64V8](hhttps://github.com/omniedgeio/omniedge-linux-cli/releases/download/v0.1.0/omniedge-arm64v8.zip), or by command line: 
+**Step 4**. Download and install omnidge cli by running the following command:
+
+``` bash
+curl https://omniedge.io/install/omniedge-install.sh | bash
+```
+
+**Step 5**. Login OmniEdge and Join Virtual Network
+
++ Login By Password:
+
+``` bash
+omniedge login -u yourname@youremail.com -f your_auth_file_path
+```
++ Login By Secret-Key, You can generate secret-key on omniedge web
 
 ```bash
-wget https://github.com/omniedgeio/omniedge-linux-cli/releases/download/v0.1.0/omniedge-arm64v8.zip
+omniedge login -s yoursecuritykey -f your_auth_file_path
 ```
-**Step 5**. Login and Join omniedge by:
+
++ Join Your Network,you can just call omniedge join, it will automatically prompt the available network for you to choose. And you can also add one parameter -n to specify the network id manually. And then, enjoy the omniedge network.
 
 ```bash
-sudo omniedge login -u user@email.com &&
-sudo omniedge join
+sudo omniedge join -f your_auth_file_path
 ```
-Wait a second and a secure VPN will be established
+and select your virtual network or
+
+``` bash
+sudo omniedge join -n 'virtual-network-id'
+```
+with a speicified virtual network.
+
++ Wait a second and a secure VPN will be established
+
+![omniedge cli](/assets/download/OmniEdge-CLI-0.2.0.gif)
+
 
 **Step 6**. Now your laptop and your Jetson have joined in the same virtual network, you can use `ssh` to connect. 
 

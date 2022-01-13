@@ -7,7 +7,7 @@ import {VStack,Heading} from "@chakra-ui/react";
 
 const info = `
 
-PLEASE READ THESE TERMS OF SERVICE CAREFULLY. AMONG OTHER THINGS, THEY PROVIDE KEY INFORMATION ON customer LEGAL RIGHTS AND OBLIGATIONS, FUTURE CHANGES TO THE TERMS, AUTOMATIC RENEWALS, AND LIMITATIONS OF LIABILITY. 
+PLEASE READ THESE TERMS OF SERVICE CAREFULLY. AMONG OTHER THINGS, THEY PROVIDE KEY INFORMATION ON CUSTOMERS LEGAL RIGHTS AND OBLIGATIONS, FUTURE CHANGES TO THE TERMS, AUTOMATIC RENEWALS, AND LIMITATIONS OF LIABILITY. 
 These OMNIEDGE Terms of Service (together with the Order Form, this “Agreement”) govern the Customer’s access to and Use of the OMNIEDGE Solution. This Agreement forms a binding legal agreement between OMNIEDGE Inc. (”OMNIEDGE“，OMNIEDGE”, “us”, “we”, “our”) and Customer. The term “Customer” refers to the person or the organization that the Customer represents in agreeing to this Agreement. If the Customer’s account is being setUp by someone who is not formally affiliated with an organization, the Customer is the individual creating the account. The “Parties” refer to OMNIEDGE and Customer and “Party” refers to each of OMNIEDGE and Customer. The "Service" refers to the solution OMNIEDGE provided in any form.
 BY USING THE OMNIEDGE SOLUTION, THE CUSTOMER ACKNOWLEDGES THAT THE CUSTOMER HAS READ, ACCEPTS, AND AGREES TO BE BOUND BY AND COMPLY WITH THE TERMS AND CONDITIONS SET OUT IN THIS AGREEMENT, AS AMENDED FROM TIME TO TIME. IF THE CUSTOMER DOES NOT ACCEPT AND AGREE TO BE BOUND BY THIS AGREEMENT, THE CUSTOMER WILL IMMEDIATELY CEASE ANY FURTHER USE OF THE OMNIEDGE SOLUTION.
 This Agreement is entered into the earlier of (the “Effective Date”): (a) the date Customer first uses any part of the OMNIEDGE Solution; and (b) the date Customer agrees to be bound by this Agreement.
@@ -80,7 +80,8 @@ B. that Customer does not have the lawful right to create, collect, transmit, st
 9). Perform any vulnerability, penetration, or similar testing of the OMNIEDGE Solution.
 
 10). Use of OMNIEDGE Solution in a datacenter. 
-5.8. Some product features advertised on our website (such as but not limited to Smart Mode) and certain protocols may beUnavailable in the customer's countries. For complete details about the availability of individual features please ask our support. By purchasing OMNIEDGE membership customers agree that some features/protocols / devices supported may be limited without prior notice. Such change of available services is not a valid reason for a full nor partial refund.
+
+5.8. Some product features advertised on our website (such as but not limited ) and certain protocols may be Unavailable in the customer's countries. For complete details about the availability of individual features please ask our support. By purchasing OMNIEDGE membership customers agree that some features / protocols / devices supported may be limited without prior notice. Such change of available services is not a valid reason for a full nor partial refund.
 
 ## 6. Privacy
 

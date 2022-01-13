@@ -36,7 +36,7 @@ const Ma = () => {
             </chakra.span>
             <chakra.p color={useColorModeValue("gray.600", "gray.200")} fontSize="sm">
               <Markdown>
-                {`This site is under developing. If you need the service from OmniEdge, go and visit
+                {`We are going to release version 0.2.0 on January, 15, 2022. This site is under developing. If you need the service from OmniEdge, go and visit
                 [OmniEdge.io](https://omniedge.io/download) to download the version 0.1.x. `}
               </Markdown>
             </chakra.p>

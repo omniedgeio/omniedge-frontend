@@ -75,7 +75,7 @@ export default function Footer() {
               <SocialButton label={"YouTube"} href="https://www.youtube.com/channel/UCe6OYOyfWDkSkN7LQ3Rp8_g">
                 <FaYoutube />
               </SocialButton>
-              <SocialButton label={"Github"} href="https://github.com/omniedgeio/omniedge/discussions">
+              <SocialButton label={"Github"} href="https://github.com/omniedgeio">
                 <FaGithub />
               </SocialButton>
               <SocialButton label={"Medium"} href="https://omniedge.medium.com/">
@@ -95,9 +95,10 @@ export default function Footer() {
           <Stack align={"flex-start"}>
             <Link href="/terms">Terms of Service</Link>
             <Link href="/privacy">Privacy Policy</Link>
+            <Link href="/docs/article/Opensource">Open Source</Link>
           </Stack>
         </VStack>
-        <VStack >
+         <VStack >
           {/* <Stack textAlign="center">
             <ListHeader>Stay up to date</ListHeader>
             <Stack direction={"row"}>
@@ -120,7 +121,7 @@ export default function Footer() {
               />
             </Stack>
           </Stack> */}
-        </VStack>
+        </VStack> 
         <VStack display={["flex", "none"]} >
             <Link href="/" _hover={{ color: "inherit" }}>
               <Brand />
@@ -138,7 +139,7 @@ export default function Footer() {
               <SocialButton label={"YouTube"} href="https://www.youtube.com/channel/UCe6OYOyfWDkSkN7LQ3Rp8_g">
                 <FaYoutube />
               </SocialButton>
-              <SocialButton label={"Github"} href="https://github.com/omniedgeio/omniedge/discussions">
+              <SocialButton label={"Github"} href="https://github.com/omniedgeio">
                 <FaGithub />
               </SocialButton>
               <SocialButton label={"Medium"} href="https://omniedge.medium.com/">

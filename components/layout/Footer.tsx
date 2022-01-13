@@ -98,7 +98,7 @@ export default function Footer() {
           </Stack>
         </VStack>
         <VStack >
-          <Stack textAlign="center">
+          {/* <Stack textAlign="center">
             <ListHeader>Stay up to date</ListHeader>
             <Stack direction={"row"}>
               <Input
@@ -119,7 +119,7 @@ export default function Footer() {
                 icon={<BiMailSend />}
               />
             </Stack>
-          </Stack>
+          </Stack> */}
         </VStack>
         <VStack display={["flex", "none"]} >
             <Link href="/" _hover={{ color: "inherit" }}>

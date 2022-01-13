@@ -53,36 +53,32 @@
     "displayName": "Linux-cli",
     "link": "https://github.com/omniedgeio/omniedge-linux-cli/releases",
     "showQRCode": false,
-    "version": "0.1.0",
+    "version": "0.2.0",
     "buttonText": "Download for CLI",
     "captionText": "Compatible with Archlinux,Ubuntu,CentOS, Debian,Fedora,Raspberry",
     "lastUpdate": {
-      "year": 2021,
-      "month": "Sep",
-      "date": 13
+      "year": 2022,
+      "month": "January",
+      "date": 5
     },
     "description": {
       "title": "Get started on CLI",
       "instructions": [
-        "1. Sign up your account with your email and password: <a href=\"https:\/\/dashboard.omniedge.io\/sign-up\">Sign up</a> ",
-        "2. Download and install omnidge cli depend on system architecture :",
-        "# Ubuntu 16.04",
-        "# Ubuntu 18.04",
-        "# Ubuntu 20.04",
-        "# PPC64le",
-        "# Arm v7: Raspberry Pi ",
-        "# Arm64 v8", 
+        "1. Sign up your account: <a href=\"https:\/\/omniedge.io\/register\">Sign up</a> ",
+        "2. Download and install omnidge cli by running the following command:",
+        "#CODE curl https://omniedge.io/install/omniedge-install.sh | bash",
         "3. Login By Password:",
         "#CODE omniedge login -u yourname@youremail.com",
         "4. Login By Secret-Key, You can generate secret-key on omniedge web",
         "#CODE omniedge login -s yoursecuritykey",
         "5. Join Your Network,you can just call omniedge join, it will automatically prompt the available network for you to choose. And you can also add one parameter -n to specify the network id manually. And then, enjoy the omniedge network.",
         "#CODE omniedge join",
-        "or",
+        "and select your virtual network or",
         "#CODE omniedge join -n 'virtual-network-id' ",
+        "with a speicified virtual network.",        
         "4. Wait a second and a secure VPN will be established"
       ],
-      "instructionGifLink": "/assets/download/linux-cli-installation-0.2.gif",
+      "instructionGifLink": "/assets/download/OmniEdge-CLI-0.2.0.gif",
       "instructionsVideoLink": ""
     }
   },
@@ -116,27 +112,34 @@
   "macos": {
     "status": "LIVE",
     "displayName": "macOS",
-    "link": "https://raw.githubusercontent.com/omniedgeio/omniedge-mac/master/Omniedge.dmg",
+    "link": "https://github.com/omniedgeio/omniedge-linux-cli/releases",
     "showQRCode": false,
-    "version": "0.1.7",
-    "buttonText": "Download for macOS 10 or later",
+    "version": "0.2.0",
+    "buttonText": "Download CLi for MacOS 10 or later",
     "captionText": "Compatible with intel Macbook, macOS 10 or later",
     "lastUpdate": {
-      "year": 2021,
-      "month": "April",
-      "date": 3
+      "year": 2022,
+      "month": "January",
+      "date": 5
     },
     "description": {
-      "title": "Get started on macOS",
+      "title": "Get started on macOS with Cli",
       "instructions": [
-        "1. Download OmniEdge DMG and open it.",
-        "2. Install tuntap by clicking tuntap_20150118.pkg",
-        "3. Drop Omniedge to Applications folder",
-        "4. Run OmniEdge ",
-        "5. Sign in with your email address ",
-        "6. Click the button near 'off' to connect, then a secure VPN connection is initialized."
+        "1. Sign up your account: <a href=\"https:\/\/omniedge.io\/register\">Sign up</a> ",
+        "2. Download and install omnidge cli by running the following command:",
+        "#CODE curl https://omniedge.io/install/omniedge-install.sh | bash",
+        "3. Login By Password:",
+        "#CODE omniedge login -u yourname@youremail.com",
+        "4. Login By Secret-Key, You can generate secret-key on omniedge web",
+        "#CODE omniedge login -s yoursecuritykey",
+        "5. Join Your Network,you can just call omniedge join, it will automatically prompt the available network for you to choose. And you can also add one parameter -n to specify the network id manually. And then, enjoy the omniedge network.",
+        "#CODE omniedge join",
+        "and select your virtual network or",
+        "#CODE omniedge join -n 'virtual-network-id' ",
+        "with a speicified virtual network.",        
+        "4. Wait a second and a secure VPN will be established"
       ],
-      "instructionGifLink": "/assets/download/macOS-installation.gif",
+      "instructionGifLink": "/assets/download/OmniEdge-CLI-0.2.0.gif",
       "instructionsVideoLink": ""
     }
   },

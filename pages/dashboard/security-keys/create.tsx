@@ -4,7 +4,9 @@ import {
   Code,
   FormControl,
   FormErrorMessage,
+  FormLabel,
   Heading,
+  Input,
   Modal,
   ModalBody,
   ModalContent,
@@ -25,12 +27,13 @@ import { useState } from "react";
 import { FiClipboard } from "react-icons/fi";
 import * as Yup from "yup";
 import DashboardLayout from "../../../components/layout/Dashboard";
-import { ISecurityKeyResponse } from "../../../lib/api/response";
+import { SecurityKeyType } from "../../../lib/api/enum";
+import { ICreateSecurityKeyResponse } from "../../../lib/api/response";
 import { createSecurityKey } from "../../../lib/api/securityKey";
 import { Page } from "../../../types";
 
 const CreateSecurityKeyForm: React.FC = function (props) {
-  const [securityKey, setSecurityKey] = useState<ISecurityKeyResponse | undefined>();
+  const [securityKey, setSecurityKey] = useState<ICreateSecurityKeyResponse | undefined>();
   const { hasCopied, onCopy } = useClipboard(securityKey?.key || "");
   const { isOpen, onClose, onOpen } = useDisclosure();
   const router = useRouter();
@@ -38,13 +41,16 @@ const CreateSecurityKeyForm: React.FC = function (props) {
   const { handleChange, handleBlur, handleSubmit, values, touched, errors } = useFormik({
     initialValues: {
       type: "1",
+      name: "",
     },
     validationSchema: Yup.object().shape({
+      name: Yup.string().required("Required"),
       type: Yup.string().required("Required").oneOf(["1", "2"]),
     }),
     onSubmit: (values, actions) => {
       createSecurityKey({
-        type: parseInt(values.type),
+        type: parseInt(values.type) as SecurityKeyType,
+        name: values.name,
       })
         .then((res) => {
           setSecurityKey(res);
@@ -86,7 +92,7 @@ const CreateSecurityKeyForm: React.FC = function (props) {
                 <Text fontWeight="medium">
                   Expiration Date :{" "}
                   <Text pr={1} as="span">
-                    <Code>{format(new Date(securityKey?.expired_at || Date.now()), "dd/MM/yyy hh:mm:ss b")}</Code>
+                    <Code>{format(new Date(securityKey?.expires_at || Date.now()), "dd/MM/yyy hh:mm:ss b")}</Code>
                   </Text>
                 </Text>
               </Box>
@@ -124,6 +130,19 @@ const CreateSecurityKeyForm: React.FC = function (props) {
               </VStack>
             </RadioGroup>
             <FormErrorMessage>{errors.type}</FormErrorMessage>
+          </FormControl>
+
+          <FormControl isInvalid={!!(touched.name && errors.name)} isRequired>
+            <FormLabel>Name</FormLabel>
+            <Input
+              type="text"
+              name="name"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.name}
+              placeholder="Name for indication"
+            ></Input>
+            <FormErrorMessage>{errors.name}</FormErrorMessage>
           </FormControl>
           <Button type="submit" colorScheme="brand">
             Create

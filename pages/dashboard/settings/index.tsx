@@ -37,7 +37,6 @@ import { useEffect, useState } from "react";
 import { FiCheck, FiLock, FiMoreVertical, FiX } from "react-icons/fi";
 import { useQuery } from "react-query";
 import * as Yup from "yup";
-import ActivatePasswordModal from "../../../components/auth/ActivatePasswordModal";
 import ChangePasswordModal from "../../../components/auth/ChangePasswordModal";
 import GoogleLogin from "../../../components/auth/GoogleLogin";
 import ConfirmModal from "../../../components/ConfirmModal";
@@ -130,7 +129,7 @@ const Invitations: React.FC = function (props) {
         isOpen={confirmModal.isOpen}
         title="Remove Virtual Network"
         onConfirm={() => {
-          updateInvitation(invitationToReject?.uuid as string, { status: InvitationStatusEnum.Rejected }).then(() => {
+          updateInvitation(invitationToReject?.id as string, { status: InvitationStatusEnum.Rejected }).then(() => {
             refetch();
             confirmModal.onClose();
           });
@@ -165,12 +164,12 @@ const Invitations: React.FC = function (props) {
               </Td>
             </Tr>
           ) : (
-            data?.map((invitation) => {
+            data?.data?.map((invitation) => {
               const VirtualNetworkName = () => <Text>{invitation.virtual_network}</Text>;
               const InvitedBy = () => <Text fontSize={["sm", "md"]}>{invitation.invited_by}</Text>;
               const InvitedAt = (props: TextProps) => (
                 <Text fontSize={["sm", "md"]} color={["gray.600", "black"]} {...props}>
-                  {formatDistanceToNow(new Date(invitation.invited_at))}
+                  {formatDistanceToNow(new Date(invitation.created_at))}
                 </Text>
               );
 
@@ -186,7 +185,7 @@ const Invitations: React.FC = function (props) {
                   <MenuList py="1.5">
                     <MenuItem
                       onClick={() => {
-                        updateInvitation(invitation.uuid as string, {
+                        updateInvitation(invitation.id as string, {
                           status: InvitationStatusEnum.Accepted,
                         }).then(() => {
                           refetch();
@@ -211,7 +210,7 @@ const Invitations: React.FC = function (props) {
               );
 
               return (
-                <Tr key={invitation.uuid}>
+                <Tr key={invitation.id}>
                   <Td px="0">
                     {!isPhone ? (
                       <VirtualNetworkName />
@@ -261,30 +260,30 @@ const ChangePassword: React.FC = function (props) {
         isOpen={changePasswordModal.isOpen}
         onClose={changePasswordModal.onClose}
       />
-      <ActivatePasswordModal
+      {/* <ActivatePasswordModal
         onSuccess={refetch}
         isOpen={activatePasswordModal.isOpen}
         onClose={activatePasswordModal.onClose}
-      />
+      /> */}
       <VStack spacing={2} alignItems="flex-start">
         <Heading fontWeight="medium" size="md">
           Password
         </Heading>
-        {isPasswordEnabled ? (
-          <>
-            <Text>Changing your password regularly reduces your risk of exposure and avoids a number of dangers.</Text>
-            <Button leftIcon={<FiLock />} onClick={changePasswordModal.onOpen}>
-              Change Password
-            </Button>
-          </>
-        ) : (
+        {/* {isPasswordEnabled ? ( */}
+        <>
+          <Text>Changing your password regularly reduces your risk of exposure and avoids a number of dangers.</Text>
+          <Button leftIcon={<FiLock />} onClick={changePasswordModal.onOpen}>
+            Change Password
+          </Button>
+        </>
+        {/* ) : (
           <>
             <Text>Activate Password login if you need a more traditional way to login.</Text>
             <Button leftIcon={<FiLock />} onClick={activatePasswordModal.onOpen}>
               Activate Password Login
             </Button>
           </>
-        )}
+        )} */}
       </VStack>
     </>
   );
@@ -356,7 +355,7 @@ const SettingsPage: Page = function (props) {
           <TabPanel px={0}>
             <VStack spacing="8" maxW="lg" alignItems="flex-start">
               <ChangePassword />
-              <LinkWithGoogle />
+              {/* <LinkWithGoogle /> */}
             </VStack>
           </TabPanel>
         </TabPanels>

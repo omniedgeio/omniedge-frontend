@@ -26,7 +26,8 @@ import { Page } from "../../../types";
 const BillingPage: Page = (props) => {
   const { user, isLoading } = useUser("/login");
 
-  const plan: PlanProps = user?.subscription ? PLANS[user?.subscription.title as string] : null;
+  console.log(user);
+  const plan: PlanProps = user?.subscription ? PLANS[user?.subscription.slug as string] : null;
 
   return (
     <VStack alignItems="flex-start" spacing="4">
@@ -39,11 +40,11 @@ const BillingPage: Page = (props) => {
         <Box w="full" maxW="500px" p={6} border="1px" borderColor="gray.200" borderRadius="xl">
           <HStack>
             <Heading size="md">{plan.title} Plan</Heading>
-            <Badge colorScheme="green">{user?.subscription.title === "free" ? "Free" : "Paid"}</Badge>
+            <Badge colorScheme="green">{user?.subscription.slug === "free" ? "Free" : "Paid"}</Badge>
           </HStack>
           <Text mt={2}>
             Billing Monthly
-            {user?.subscription.title !== "free" &&
+            {user?.subscription.slug !== "free" &&
               `• 
               ${format(new Date(user?.subscription.start_at as Date), "MMM dd")} to
               ${format(new Date(user?.subscription.end_at as Date), "MMM dd")}
@@ -58,11 +59,9 @@ const BillingPage: Page = (props) => {
           )}
           <HStack mt={3}>
             <Link href="/dashboard/billing/choose-plan">
-              <Button colorScheme="brand">
-                {user?.subscription.title === "free" ? "Upgrade Plan" : "Change Plan"}
-              </Button>
+              <Button colorScheme="brand">{user?.subscription.slug === "free" ? "Upgrade Plan" : "Change Plan"}</Button>
             </Link>
-            {user?.subscription.title !== "free" && (
+            {user?.subscription.slug !== "free" && (
               <Button
                 onClick={() => {
                   createPortalSession()

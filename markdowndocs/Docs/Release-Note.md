@@ -24,7 +24,7 @@ We release changes and improvements to the Admin console on a continuous basis, 
 
 Release Notes for supported OmniEdge client platforms.
 
-## Windows Release Notes
+## 2.1 Windows Release Notes
 
 Release Notes for OmniEdge Windows client.
 
@@ -37,19 +37,22 @@ Release Notes for OmniEdge Windows client.
 |0.1.1|March 18, 2021|Fix the issue of dashboard link|
 |0.1.0|March 11, 2021|Initial release|
 
-## macOS Release Notes
+## 2.2 macOS CLI Release Notes
 
 |Version|Release Date|Notes|
 |--|--|--|
-|0.1.0|Initial release|
+|v0.2.3(2021083022-dev) |August,30, 2021|Optimize workflow|
+|v0.2.2 (2021080322-dev) |August,3, 2021|Fix incorrect device mac block the OmniEdge start|
+|v0.2.1 (2021080222-dev) |Auguszt,2, 2021|Initial release , new backend API|
+|v0.1.0|Apr 8, 2021|Initial release|
 
-## Linux Cli Release Notes
+## 2.3 Linux Cli Release Notes
 
 |Version|Release Date|Notes|
 |---|---|---|
 |v0.2.3(2021083022-dev) |August,30, 2021|Optimize workflow|
 |v0.2.2 (2021080322-dev) |August,3, 2021|Fix incorrect device mac block the OmniEdge start|
-|v0.2.1 (2021080222-dev) |August,2, 2021|Initial release , new backend API|
+|v0.2.1 (2021080222-dev) |Auguszt,2, 2021|Initial release , new backend API|
 |v0.1.0|Apr 8, 2021|Initial release|
 
 ## iOS Release Notes

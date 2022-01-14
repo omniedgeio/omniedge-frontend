@@ -1,8 +1,8 @@
 import request from "./client";
 import { IUpdateInvitationRequest } from "./request";
-import { IInvitationResponse } from "./response";
+import { IInvitationResponse, IPaginatedResponse } from "./response";
 
-export async function listInvitations(): Promise<IInvitationResponse[] | undefined> {
+export async function listInvitations(): Promise<IPaginatedResponse<IInvitationResponse> | undefined> {
   let res = await request({
     url: "/invitations",
     method: "GET",

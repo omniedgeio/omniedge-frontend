@@ -150,56 +150,67 @@
   "rasp": {
     "status": "LIVE",
     "displayName": "Raspberry",
-    "link": "https://github.com/omniedgeio/omniedge-linux-cli/releases/download/v0.1.0/omniedge_arm.zip",
+    "link": "https://github.com/omniedgeio/app-release/releases",
     "showQRCode": false,
-    "version": "0.1.0",
+    "version": "0.2.1",
     "buttonText": "Download for Raspberry PI",
     "captionText": "Compatible with Rapsberry PI 1B, 3B, 3B+",
     "lastUpdate": {
-      "year": 2021,
-      "month": "April",
-      "date": 25
+      "year": 2022,
+      "month": "January",
+      "date": 15
     },
     "description": {
       "title": "Get started on Raspberry Pi",
       "instructions": [
-        "1. Sign up your account with your email and password: <a href=\"https:\/\/dashboard.omniedge.io\/sign-up\">Sign up</a> ",
-        "2. Download and install omnidge cli depend on system architecture :",
-        "<a href=\"https:\/\/github.com\/omniedgeio\/omniedge-linux-cli\/releases\/download\/v0.1.0\/omniedge-arm64v8.zip\">OmniEdge linux Cli for Arm64V8</a> ",
-        "#CODE wget https://github.com/omniedgeio/omniedge-linux-cli/releases/download/v0.1.0/omniedge-arm64v8.zip",
-        "<a href=\"https:\/\/github.com\/omniedgeio\/omniedge-linux-cli\/releases\/download\/v0.1.0\/omniedge-armv7.zip\">OmniEdge linux Cli for ArmV7</a> ",
-        "#CODE wget https://github.com/omniedgeio/omniedge-linux-cli/releases/download/v0.1.0/omniedge-armv7.zip",
-        "3. Login and Join omniedge:",
-        "#CODE sudo omniedge login -u user@email.com &&\nsudo omniedge join",
+        "1. Sign up your account: <a href=\"https:\/\/omniedge.io\/register\">Sign up</a> ",
+        "2. Download and install omnidge cli by running the following command:",
+        "#CODE curl https://omniedge.io/install/omniedge-install.sh | bash",
+        "3. Login By Password:",
+        "#CODE omniedge login -u yourname@youremail.com",
+        "4. Login By Secret-Key, You can generate secret-key on omniedge web",
+        "#CODE omniedge login -s yoursecuritykey",
+        "5. Join Your Network,you can just call omniedge join, it will automatically prompt the available network for you to choose. And you can also add one parameter -n to specify the network id manually. And then, enjoy the omniedge network.",
+        "#CODE omniedge join",
+        "and select your virtual network or",
+        "#CODE omniedge join -n 'virtual-network-id' ",
+        "with a speicified virtual network.",        
         "4. Wait a second and a secure VPN will be established"
       ],
-      "instructionGifLink": "/assets/download/linux-cli-installation.gif",
+      "instructionGifLink": "/assets/download/OmniEdge-CLI-0.2.0.gif",
       "instructionsVideoLink": ""
     }
   },
   "synology": {
     "status": "LIVE",
     "displayName": "Synology",
-    "link": "https://github.com/omniedgeio/omniedge-synology/releases/download/v0.1.0/omniedge_0.1.0_amd64.spk",
+    "link": "https://github.com/omniedgeio/omniedge-synology/releases",
     "showQRCode": false,
     "version": "",
     "buttonText": "Download for Synology",
-    "captionText": "Compatible with Synology with amd64 CPU",
+    "captionText": "Compatible with Synology with armv7,arm64v8 CPU",
     "lastUpdate": {
-      "year": 2021,
-      "month": "April",
-      "date": 25
+      "year": 2022,
+      "month": "January",
+      "date": 15
     },
     "description": {
       "title": "Get started on Synology",
       "instructions": [
-        "1. Sign up your account with your email and password: <a href=\"https:\/\/dashboard.omniedge.io\/sign-up\">Sign up</a> ",
-        "2. Download and install omniedge for synology, then open terminal",
-        "3. Login and Join omniedge:",
-        "#CODE sudo omniedge login -u user@email.com &&\nsudo omniedge join",
+        "1. Sign up your account: <a href=\"https:\/\/omniedge.io\/register\">Sign up</a> ",
+        "2. Download and install omnidge for Synology",
+        "3. Login By Password:",
+        "#CODE omniedge login -u yourname@youremail.com",
+        "4. Login By Secret-Key, You can generate secret-key on omniedge web",
+        "#CODE omniedge login -s yoursecuritykey",
+        "5. Join Your Network,you can just call omniedge join, it will automatically prompt the available network for you to choose. And you can also add one parameter -n to specify the network id manually. And then, enjoy the omniedge network.",
+        "#CODE omniedge join",
+        "and select your virtual network or",
+        "#CODE omniedge join -n 'virtual-network-id' ",
+        "with a speicified virtual network.",        
         "4. Wait a second and a secure VPN will be established"
       ],
-      "instructionGifLink": "",
+      "instructionGifLink": "/assets/download/OmniEdge-CLI-0.2.0.gif",
       "instructionsVideoLink": ""
     }
   },

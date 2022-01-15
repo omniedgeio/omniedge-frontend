@@ -54,13 +54,13 @@ Release Notes for OmniEdge Windows client.
 |0.2.0 |August,2, 2021|Initial release , new backend API,Optimize workflow,Fix incorrect device mac block the OmniEdge start|
 |0.1.0|Apr 8, 2021|Initial release|
 
-## iOS Release Notes
+## 2.4 iOS Release Notes
 
 |Version|Release Date|Notes|
 |--|--|--|
 
 
-## Android Release Notes
+## 2.5 Android Release Notes
 
 |Version|Release Date|Notes|
 |--|--|--|
@@ -76,6 +76,13 @@ Release Notes for OmniEdge Windows client.
 |0.0.3|January, 21, 2021|Improve login process, add amplify auth|
 |0.0.2|December, 22, 2021|Add google oauth sign-in, several bugs fixed.|
 |0.0.1|December, 13, 2020|Add device list page, network libs, vpn features added|
+
+## 2.6 Synology Release Notes
+
+|Version|Release Date|Notes|
+|---|---|---|
+|0.2.1|January, 15, 2022|Integrated with new backend|
+|0.1.0|Apr 8, 2021|Initial release|
 
 -----
 

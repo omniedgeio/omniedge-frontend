@@ -12,10 +12,12 @@ thumbnail: /assets/OmniEdgeall0.5.png
 + Sign up your account: [Sign up](https://omniedge.io/register)
 + Download OmniEdge with the link: [Download OmniEdge](https://omniedge.io/download)
 
-## 2. Installing on Windows
-OmniEdge Windows is compatible with Windows 7,10(arm) & Windows Server 2016,2019. `Last update: Version 0.1.4, April 18, 2021.`
 
-[Download OmniEdge Windows for 7 or later](https://github.com/omniedgeio/omniedge-windows-update/releases/download/v0.1.2/omniedge-setup-0.1.2.exe)
+## 2. Installing on Windows
+
+OmniEdge Windows is compatible with Windows 7,10(arm) & Windows Server 2016,2019. `Last update: Version 0.2.1, January 15,2022.`
+
+[Download OmniEdge Windows for 7 or later](https://github.com/omniedgeio/app-release/releases/download/v0.2.1/omniedge-setup-0.2.1.exe)
 
 + Download and run the Windows installer
 
@@ -27,7 +29,7 @@ OmniEdge Windows is compatible with Windows 7,10(arm) & Windows Server 2016,2019
 
 ## 3. Installing on MacOS
 
-OmniEdge MacOS Cli is compatible with intel Macbook, macOS 10 or later Last update: Version 0.2.0, January 5, 2022.
+OmniEdge MacOS Cli is compatible with intel Macbook, macOS 10 or later Last update: Version 0.2.1, January 15, 2022.
 
 *To use OmniEdge on MacOS, please instal Tun/Tap Driver first*
 
@@ -133,9 +135,9 @@ with a speicified virtual network.
 
 ## 4. Installing on Android
 
-OmniEdge Android is compatible with Android 6 or later mobile phone or TV. Last update: Version 0.1.3, April 27, 2021.
+OmniEdge Android is compatible with Android 6 or later mobile phone or TV. Last update: Version 0.2.1, January 15,2022.
 
-[Download for Android 6 or later](https://github.com/omniedgeio/omniedge-android/releases/download/v0.1.3/OmniEdge-v0.1.3.apk)
+[Download for Android 6 or later](https://github.com/omniedgeio/app-release/releases/download/v0.2.1/omniedge-release-v0.2.1.apk)
 
 + Download OmniEdge APK and install it
 + Run OmniEdge and Sign in with your email address
@@ -145,7 +147,7 @@ OmniEdge Android is compatible with Android 6 or later mobile phone or TV. Last 
 
 ## 5. Installing on Linux
 
-OmniEdge Linux Cli is Compatible with linux for AMD64,Apple M1, Intel X86, ArmV7 and Arm64V8, Last update: Version 0.2.0, January 5, 2022.
+OmniEdge Linux Cli is Compatible with linux for AMD64,Apple M1, Intel X86, ArmV7 and Arm64V8, Last update: Version 0.2.1, January 15, 2022.
 
 + Sign up your account: [Sign up](https://omniedge.io/register)
 
@@ -181,9 +183,44 @@ with a speicified virtual network.
 + Wait a second and a secure VPN will be established
 ![omniedge cli ](/assets/download/OmniEdge-CLI-0.2.0.gif)
 
+## 6. Installing on Synology
 
-## 6. Installing on iOS
-Coming Soon
+OmniEdge Synology is Compatible with ArmV7 and Arm64V8, Last update: Version 0.2.1, January 15, 2022.
+
++ Sign up your account: [Sign up](https://omniedge.io/register)
+
++ Download and install omniedge synology from: [https://github.com/omniedgeio/omniedge-synology/releases](https://github.com/omniedgeio/omniedge-synology/releases)
+
++ Login By Password:
+
+``` bash
+omniedge login -u yourname@youremail.com -f your_auth_file_path
+```
++ Login By Secret-Key, You can generate secret-key on omniedge web
+
+```bash
+omniedge login -s yoursecuritykey -f your_auth_file_path
+```
+
++ Join Your Network,you can just call omniedge join, it will automatically prompt the available network for you to choose. And you can also add one parameter -n to specify the network id manually. And then, enjoy the omniedge network.
+
+```bash
+sudo omniedge join -f your_auth_file_path
+```
+and select your virtual network or
+
+``` bash
+sudo omniedge join -n 'virtual-network-id'
+```
+with a speicified virtual network.
+
++ Wait a second and a secure VPN will be established
+![omniedge cli ](/assets/download/OmniEdge-CLI-0.2.0.gif)
+
+
+## 7. Installing on iOS
+
+OmniEdge iOS is still under development and tested in testflight, we will open for public test soon.
 
 
 -----

@@ -17,6 +17,7 @@ We release changes and improvements to the Admin console on a continuous basis, 
 
 |Release Date|Notes|
 |--|--|
+|January 15,2022|Integrated with new backend|
 |August 25, 2021|Add a multi virtual network, shared function, security key, and devices list|
 |March 15, 2021|Add Devices Lists for all activated devices|
 
@@ -30,7 +31,7 @@ Release Notes for OmniEdge Windows client.
 
 |Version|Release Date|Notes|
 |--|--|--|
-|0.2.0|August, 26, 2021|Initial release , new backend API , new logo|
+|0.2.1|January, 15, 2022|Initial release , new backend API , new logo|
 |0.1.4|April 18, 2021|Fix the user register and login for the first time and the app crashed，Fix menu list blocked after startup|
 |0.1.3|April 10, 2021|Fix the repeated display of the device|
 |0.1.2|March 27, 2021|Fix the issue of occasionally crashes|
@@ -41,30 +42,29 @@ Release Notes for OmniEdge Windows client.
 
 |Version|Release Date|Notes|
 |--|--|--|
-|v0.2.3(2021083022-dev) |August,30, 2021|Optimize workflow|
-|v0.2.2 (2021080322-dev) |August,3, 2021|Fix incorrect device mac block the OmniEdge start|
-|v0.2.1 (2021080222-dev) |Auguszt,2, 2021|Initial release , new backend API|
-|v0.1.0|Apr 8, 2021|Initial release|
+|0.2.1|January, 15, 2022|Integrated with new backend|
+|0.2.0 |August,2, 2021|Initial release , new backend API,Optimize workflow,Fix incorrect device mac block the OmniEdge start|
+|0.1.0|Apr 8, 2021|Initial release|
 
 ## 2.3 Linux Cli Release Notes
 
 |Version|Release Date|Notes|
 |---|---|---|
-|v0.2.3(2021083022-dev) |August,30, 2021|Optimize workflow|
-|v0.2.2 (2021080322-dev) |August,3, 2021|Fix incorrect device mac block the OmniEdge start|
-|v0.2.1 (2021080222-dev) |Auguszt,2, 2021|Initial release , new backend API|
-|v0.1.0|Apr 8, 2021|Initial release|
+|0.2.1|January, 15, 2022|Integrated with new backend|
+|0.2.0 |August,2, 2021|Initial release , new backend API,Optimize workflow,Fix incorrect device mac block the OmniEdge start|
+|0.1.0|Apr 8, 2021|Initial release|
 
-## iOS Release Notes
-
-|Version|Release Date|Notes|
-|--|--|--|
-
-
-## Android Release Notes
+## 2.4 iOS Release Notes
 
 |Version|Release Date|Notes|
 |--|--|--|
+
+
+## 2.5 Android Release Notes
+
+|Version|Release Date|Notes|
+|--|--|--|
+|0.2.1|January, 15, 2022|Integrated with new backend|
 |0.2.0|August, 25, 2021|Add multi virtual network, shared function, security key and devices list|
 |0.1.3|April, 27, 2021|Add landscape mode, Android TV support|
 |0.1.2|April, 27, 2021|Remove ununsed resources|
@@ -76,6 +76,13 @@ Release Notes for OmniEdge Windows client.
 |0.0.3|January, 21, 2021|Improve login process, add amplify auth|
 |0.0.2|December, 22, 2021|Add google oauth sign-in, several bugs fixed.|
 |0.0.1|December, 13, 2020|Add device list page, network libs, vpn features added|
+
+## 2.6 Synology Release Notes
+
+|Version|Release Date|Notes|
+|---|---|---|
+|0.2.1|January, 15, 2022|Integrated with new backend|
+|0.1.0|Apr 8, 2021|Initial release|
 
 -----
 

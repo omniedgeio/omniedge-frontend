@@ -1,30 +1,22 @@
-import {
-  SimpleGrid,
-  Text,
-  VStack,
-  Center,
-  chakra,
-  useColorModeValue,
-  Link,
-} from "@chakra-ui/react";
-import React, { useEffect, useState } from 'react';
-import {DownloadDescription} from './Downloadutil';
-import Icon from './Icon';
-import { useRouter } from 'next/router';
-const downloadMetaLink = '/assets/download/download-link.json'
-const platforms = ['macos', 'ios', 'windows', 'android', 'linuxcli']
+import { Center, chakra, Link, SimpleGrid, Text, useColorModeValue, VStack } from "@chakra-ui/react";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
+import { DownloadDescription } from "./Downloadutil";
+import Icon from "./Icon";
+const downloadMetaLink = "/assets/download/download-link.json";
+const platforms = ["macos", "ios", "windows", "android", "linuxcli","synology","rasp"];
 // const platforms = ['macos', 'ios', 'windows', 'android', 'linuxcli', 'linuxgui','rasp', 'synology','router']
 
 interface realplatform {
-  platform:string
+  platform: string;
 }
 
-export const DownloadPage:React.FC<realplatform> = function ({ platform: selectedPlatform }) {
-  const router = useRouter()
-  const [data, setData] = useState({ status: 'LOADING' })
-  
-  function routePlatform(text?:string) {
-    router.push(`/download/${text ?? ''}`)
+export const DownloadPage: React.FC<realplatform> = function ({ platform: selectedPlatform }) {
+  const router = useRouter();
+  const [data, setData] = useState({ status: "LOADING" });
+
+  function routePlatform(text?: string) {
+    router.push(`/download/${text ?? ""}`);
   }
 
   // load data dynamically everytime this page is visited
@@ -32,61 +24,61 @@ export const DownloadPage:React.FC<realplatform> = function ({ platform: selecte
     fetch(downloadMetaLink)
       .then((response) => response.json())
       .then((meta) => {
-        setData({ status: 'LOADED', ...meta })
+        setData({ status: "LOADED", ...meta });
       })
       .catch((error) => {
-        console.error(error)
-        setData({ status: 'ERROR' })
-      })
-  }, [data])
+        console.error(error);
+        setData({ status: "ERROR" });
+      });
+  }, [data]);
 
-  return (<>
-<VStack padding="4" alignItems="center">
-<VStack mt={10}>
-    <chakra.h1
-          mb={6}
-          fontSize={{ base: "4xl", md: "6xl" }}
-          fontWeight="bold"
-          lineHeight="none"
-          letterSpacing={{ base: "normal", md: "tight" }}
-          color={useColorModeValue("gray.900",'gray.100')}
-        >
-      Download
-      </chakra.h1>
-      <Text>
-      Click on the preferred icon for download. 
-      </Text>
-      <br></br>
-<SimpleGrid columns={[3, null, 5]} spacing="10px">
-  {platforms.map((platform, index) => (
-    <Icon
-      key={index}
-      variant={platform}
-      selected={selectedPlatform}
-      onClick={() => routePlatform(platform)}
-    />
-  ))}
-  </SimpleGrid>
-  <Center>
-  
-  <VStack mt={12}>
-  {data.status === 'ERROR' && (
-    <Text>
-      Could not connect. Please find information manually at
-      <Link to={downloadMetaLink}>{downloadMetaLink}</Link>
-      or contact support.</Text>
-  )}
-  {data.status === 'LOADING' && <div>Loading...</div>}
-  {data.status === 'LOADED' && <div>Loaded</div>  &&
-    platforms.map((platform,i) => (
-      <DownloadDescription key={i} desc={data[platform]} active={platform==selectedPlatform}/>
-    ))}
-</VStack>
-
-</Center>
-</VStack>
+  return (
+    <>
+      <VStack padding="4" alignItems="center">
+        <VStack mt={10}>
+          <chakra.h1
+            mb={6}
+            fontSize={{ base: "4xl", md: "6xl" }}
+            fontWeight="bold"
+            lineHeight="none"
+            letterSpacing={{ base: "normal", md: "tight" }}
+            color={useColorModeValue("gray.900", "gray.100")}
+          >
+            Download
+          </chakra.h1>
+          <Text textAlign="center">
+            Click on the preferred icon for download. 
+          </Text>
+          <br></br>
+          <SimpleGrid columns={[4, null, 4]} spacing="16px">
+            {platforms.map((platform, index) => (
+              <Icon
+                key={index}
+                variant={platform}
+                selected={selectedPlatform}
+                onClick={() => routePlatform(platform)}
+              />
+            ))}
+          </SimpleGrid>
+          <Center>
+            <VStack mt={12}>
+              {data.status === "ERROR" && (
+                <Text>
+                  Could not connect. Please find information manually at
+                  <Link to={downloadMetaLink}>{downloadMetaLink}</Link>
+                  or contact support.
+                </Text>
+              )}
+              {data.status === "LOADING" && <div>Loading...</div>}
+              {data.status === "LOADED" && <div>Loaded</div> &&
+                platforms.map((platform, i) => (
+                  <DownloadDescription key={i} desc={data[platform]} active={platform == selectedPlatform} />
+                ))}
+            </VStack>
+          </Center>
         </VStack>
-        </>
-  )
-}
+      </VStack>
+    </>
+  );
+};
 export default DownloadPage;

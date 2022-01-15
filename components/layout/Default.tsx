@@ -53,7 +53,6 @@ const DefaultLayout: React.FC<{}> = (props) => {
 
   return (
     <Container maxW="container.xl" px={["0", "4"]}>
-      <Ma />
       <nav>
         <Flex
           display={["flex", "none"]}

@@ -109,7 +109,7 @@ const Home: Page = (props) => {
       <Users />
       <Heros />
       <Customersmap />
-      {/**
+      
       <CookieConsent
         location="bottom"
         buttonText="I Agree"
@@ -121,7 +121,7 @@ const Home: Page = (props) => {
       >
         We use cookies to ensure you get the best experience on our website <Link href="/privacy">Learn more</Link>.{" "}
       </CookieConsent>
-       */}
+    
     </>
   );
 };

@@ -13,6 +13,7 @@ OmniEdge is built on the protocol based on [n2n](https://github.com/omniedgeio/n
 + [OmniEdge App Release](https://github.com/omniedgeio/app-release)
 + [n2n-Mobile](https://github.com/omniedgeio/n2n-Mobile)
 + [n2n-macOS](https://github.com/omniedgeio/n2n-macOS)
++ [n2n-windows](https://github.com/omniedgeio/n2n-windows)
 + [n2n-linux-cli](https://github.com/omniedgeio/n2n-linux-Cli)
 + [n2n](https://github.com/omniedgeio/n2n)
 

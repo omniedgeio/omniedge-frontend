@@ -45,7 +45,7 @@
         "4. Allow to install a VPN configuration",
         "5. Enjoy the secure VPN connection"
       ],
-      "instructionGifLink": ""
+      "instructionGifLink": "/assets/download/android-installation.gif"
     }
   },
   "linuxcli": {

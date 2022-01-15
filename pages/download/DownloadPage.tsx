@@ -47,16 +47,7 @@ export const DownloadPage: React.FC<realplatform> = function ({ platform: select
             Download
           </chakra.h1>
           <Text textAlign="center">
-            Click on the preferred icon for download. <br></br>
-            OmniEdge evaluation version is still in beta, and has not received an independent security audit, <br></br>
-            should be considered experimental software. The protocol is developed based on{" "}
-            <a href="https://github.com/ntop/n2n" target="_blank" rel="noreferrer">
-              n2n
-            </a>
-            .<br></br> OmniEdge evaluation version is now open source on{" "}
-            <a href="https://github.com/omniedgeio" target="_blank" rel="noreferrer">
-              GitHub
-            </a>
+            Click on the preferred icon for download. 
           </Text>
           <br></br>
           <SimpleGrid columns={[3, null, 5]} spacing="16px">

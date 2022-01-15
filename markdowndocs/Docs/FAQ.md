@@ -46,7 +46,7 @@ View the OmniEdge [Terms of Service](/terms) and [Privacy Policy](/privacy).
 
 ## How can I learn more about OmniEdge?
 
-Learn more about OmniEdge by reading [documentation](/doc).
+Learn more about OmniEdge by reading [documentation](/docs).
 
 ----
 

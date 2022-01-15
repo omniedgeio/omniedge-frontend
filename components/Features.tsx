@@ -2,8 +2,8 @@ import {
   Box,
   BoxProps,
   Button,
-  chakra,
   Center,
+  chakra,
   Code,
   Flex,
   GridItem,
@@ -25,12 +25,22 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import React from "react";
-import { AiFillMobile, AiFillRobot, AiFillRocket, AiOutlineControl, AiOutlineSafety, AiTwotoneApi } from "react-icons/ai";
+import { AiFillRobot, AiOutlineControl, AiOutlineSafety, AiTwotoneApi } from "react-icons/ai";
 import { BiCheckShield, BiTransfer } from "react-icons/bi";
-import { FaAndroid, FaApple, FaBuilding, FaConnectdevelop, FaLinux, FaRocket, FaToriiGate, FaWindows } from "react-icons/fa";
-import { FiEdit, FiMoreVertical, FiServer, FiX,FiDatabase, FiMonitor, FiSettings, FiGlobe, FiAward, FiUsers, FiKey, FiDownloadCloud, FiCloud, FiShield, FiShoppingCart } from "react-icons/fi";
-import { GiAutoRepair, GiBank, GiCargoCrate, GiClick, GiFactory, GiFigurehead, GiHospital, GiMissileLauncher, GiPeanut, GiTreeGrowth } from "react-icons/gi";
-import { MdEnhancedEncryption, MdFilterBAndW, MdRouter } from "react-icons/md";
+import { FaAndroid, FaApple, FaBuilding, FaConnectdevelop, FaLinux, FaRocket, FaWindows } from "react-icons/fa";
+import { FiDatabase, FiGlobe, FiKey, FiMonitor, FiServer, FiSettings, FiUsers } from "react-icons/fi";
+import {
+  GiAutoRepair,
+  GiBank,
+  GiCargoCrate,
+  GiClick,
+  GiFactory,
+  GiHospital,
+  GiMissileLauncher,
+  GiPeanut,
+  GiTreeGrowth,
+} from "react-icons/gi";
+import { MdEnhancedEncryption, MdRouter } from "react-icons/md";
 import Logo from "../components/Logo";
 import { Page } from "../types";
 
@@ -282,7 +292,7 @@ export const Feature = (props: any) => {
   return (
     <Flex>
       <Flex shrink={0}>
-        <Flex alignItems="center" justifyContent="center" h={12} w={12} rounded="md" bg="brand.500" color="white">
+        <Flex alignItems="center" justifyContent="center" h={12} w={12} rounded="md" color="brand.500">
           <Icon boxSize={10} fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             {props.icon}
           </Icon>
@@ -300,7 +310,7 @@ export const Feature = (props: any) => {
   );
 };
 
-const Featurelist = (props:any) => {
+const Featurelist = (props: any) => {
   return (
     <Box>
       <Flex
@@ -313,26 +323,14 @@ const Featurelist = (props:any) => {
         color={useColorModeValue(`${props.color}.600`, `${props.color}.100`)}
         bg={useColorModeValue(`${props.color}.100`, `${props.color}.600`)}
       >
-        <Icon
-          boxSize={10}
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          aria-hidden="true"
-        >
+        <Icon boxSize={10} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
           {props.icon}
         </Icon>
-        </Flex>
-      <chakra.h3
-        mb={2}
-        fontWeight="semibold"
-        lineHeight="shorter"
-      >
+      </Flex>
+      <chakra.h3 mb={2} fontWeight="semibold" lineHeight="shorter">
         {props.title}
       </chakra.h3>
-      <chakra.p
-        fontSize="sm"
-        color={useColorModeValue("gray.500", "gray.400")}
-      >
+      <chakra.p fontSize="sm" color={useColorModeValue("gray.500", "gray.400")}>
         {props.children}
       </chakra.p>
     </Box>
@@ -364,7 +362,8 @@ export const FeaturePage: Page = () => {
             mx={{ lg: "auto" }}
             color={useColorModeValue("gray.500", "gray.400")}
           >
-            OmniEdge reduces the enterprise connectivity deployment from weeks to minutes, helps customers focusing on their core business, connects and manages their devices from anywhere, anytime.
+            OmniEdge reduces the enterprise connectivity deployment from weeks to minutes, helps customers focusing on
+            their core business, connects and manages their devices from anywhere, anytime.
           </chakra.p>
         </Box>
 
@@ -395,10 +394,12 @@ export const FeaturePage: Page = () => {
               authentication to achieve dual security confirmation of devices and users.
             </Feature>
             <Feature title="Painless Setup" icon={<GiPeanut size="2lg" />}>
-            Set up OmniEdge just in minutes with our apps on any device, you can choose several different methods to activate your devices.
+              Set up OmniEdge just in minutes with our apps on any device, you can choose several different methods to
+              activate your devices.
             </Feature>
             <Feature title="Maintenanceless " icon={<GiAutoRepair size="2lg" />}>
-            Forget about the labor-intensive system management job, with OMNIEDGE you can focus on your own core business.
+              Forget about the labor-intensive system management job, with OMNIEDGE you can focus on your own core
+              business.
             </Feature>
           </Stack>
         </Box>
@@ -432,7 +433,8 @@ export function HerosV1() {
         A secure, zero-config way to connect.
       </chakra.h1>
       <chakra.p mb={6} fontSize={{ base: "lg", md: "xl" }} color="gray.500" lineHeight="base">
-      We’re on a mission to provide reliable, secure, and painless connectivity solutions for anyone who wants to have access to their devices, anywhere, anytime.
+        We’re on a mission to provide reliable, secure, and painless connectivity solutions for anyone who wants to have
+        access to their devices, anywhere, anytime.
       </chakra.p>
       <Link href="/register" w="full" mb={6}>
         <Button w="50%" colorScheme="brand">
@@ -460,18 +462,14 @@ export function HerosV1() {
 export function Heros() {
   return (
     <Box px={8} py={24} mx="auto">
-      <Box
-        w={{ base: "full", md: 11 / 12, xl: 9 / 12 }}
-        mx="auto"
-        textAlign={{ base: "left", md: "center" }}
-      >
+      <Box w={{ base: "full", md: 11 / 12, xl: 9 / 12 }} mx="auto" textAlign={{ base: "left", md: "center" }}>
         <chakra.h1
           mb={6}
           fontSize={{ base: "4xl", md: "6xl" }}
           fontWeight="bold"
           lineHeight="none"
           letterSpacing={{ base: "normal", md: "tight" }}
-          color={useColorModeValue("gray.900",'gray.100')}
+          color={useColorModeValue("gray.900", "gray.100")}
         >
           All your{" "}
           <Text
@@ -489,58 +487,48 @@ export function Heros() {
           px={{ base: 0, lg: 24 }}
           mb={6}
           fontSize={{ base: "lg", md: "xl" }}
-          color={useColorModeValue("gray.600",'gray.300')}
+          color={useColorModeValue("gray.600", "gray.300")}
         >
-        We’re on a mission to provide reliable, secure, and painless connectivity solutions for anyone who wants to have access to their devices, anywhere, anytime.
+          We’re on a mission to provide reliable, secure, and painless connectivity solutions for anyone who wants to
+          have access to their devices, anywhere, anytime.
         </chakra.p>
         <Stack
-        direction={{base:"column",sm:"row"}}
+          direction={{ base: "column", sm: "row" }}
           mb={{ base: 4, md: 8 }}
           spacing={2}
           justifyContent={{ sm: "left", md: "center" }}
         >
           <Link href="/register">
-          <Button
-            as="a"
-            variant="solid"
-            colorScheme="brand"
-            display="inline-flex"
-            alignItems="center"
-            justifyContent="center"
-            w={{ base: "full", sm: "auto" }}
-            mb={{ base: 2, sm: 0 }}
-            size="lg"
-            cursor="pointer"
-          >
-            Get Started
-            <Icon boxSize={4} ml={1} viewBox="0 0 20 20" fill="currentColor">
-              <path
-                fillRule="evenodd"
-                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                clipRule="evenodd"
-              />
-            </Icon>
-          </Button>
+            <Button
+              as="a"
+              variant="solid"
+              colorScheme="brand"
+              display="inline-flex"
+              alignItems="center"
+              justifyContent="center"
+              w={{ base: "full", sm: "auto" }}
+              mb={{ base: 2, sm: 0 }}
+              size="lg"
+              cursor="pointer"
+            >
+              Get Started
+              <Icon boxSize={4} ml={1} viewBox="0 0 20 20" fill="currentColor">
+                <path
+                  fillRule="evenodd"
+                  d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                  clipRule="evenodd"
+                />
+              </Icon>
+            </Button>
           </Link>
         </Stack>
       </Box>
-      <Box
-        w={{ base: "full", md: 10 / 12 }}
-        mx="auto"
-        mt={20}
-        textAlign="center"
-      >
-        <Image
-          w="full"
-          rounded="lg"
-          shadow="2xl"
-          src="/assets/OmniEdgeall.png"
-          alt="OmniEdge"
-        />
+      <Box w={{ base: "full", md: 10 / 12 }} mx="auto" mt={20} textAlign="center">
+        <Image w="full" rounded="lg" shadow="2xl" src="/assets/OmniEdgeall.png" alt="OmniEdge" />
       </Box>
     </Box>
   );
-};
+}
 
 const Featureusers = (props: any) => {
   return (
@@ -573,7 +561,7 @@ export function Users() {
       >
         <Box alignSelf="start">
           <chakra.h2 color="brand.500" fontWeight="semibold" textTransform="uppercase" letterSpacing="wide">
-          OmniEdge in the enterprise
+            OmniEdge in the enterprise
           </chakra.h2>
           <chakra.h2
             mb={3}
@@ -586,7 +574,7 @@ export function Users() {
             We build for you.
           </chakra.h2>
           <chakra.p mb={6} fontSize={{ base: "lg", md: "xl" }} color={useColorModeValue("gray.600", "gray.500")}>
-          High security, High, speed, High performance, for everyone, everywhere.
+            High security, High, speed, High performance, for everyone, everywhere.
           </chakra.p>
         </Box>
         <GridItem colSpan={2}>
@@ -598,32 +586,33 @@ export function Users() {
             gridRowGap={{ md: 10 }}
           >
             <Featureusers title="Manufacturers" icon={<GiFactory size="2lg" />}>
-            Industry 4.0 suppliers, Machine vendors,  Simplification of  M2M connectivity. OmniEdge is lightweight and compatible with most industrial gateways.{" "}
+              Industry 4.0 suppliers, Machine vendors, Simplification of M2M connectivity. OmniEdge is lightweight and
+              compatible with most industrial gateways.{" "}
             </Featureusers>
             <Featureusers title="Banks" icon={<GiBank size="2lg" />}>
-            Security for existing apps, 
-Remote employee access to internal networks  Pain free network set up connecting local branches with a single click.
-No matter how complex the old network is, OmniEdge will connect your devices in a few minutes.
+              Security for existing apps, Remote employee access to internal networks Pain free network set up
+              connecting local branches with a single click. No matter how complex the old network is, OmniEdge will
+              connect your devices in a few minutes.
             </Featureusers>
             <Featureusers title="Hospitals" icon={<GiHospital size="2lg" />}>
               {" "}
-              Pain free network set up connecting sites, departments and equipment with a single click.
-Secure patient data exchange across both the hospital private network and remote connections using a peer-to-peer tunnel 
+              Pain free network set up connecting sites, departments and equipment with a single click. Secure patient
+              data exchange across both the hospital private network and remote connections using a peer-to-peer tunnel
             </Featureusers>
             <Featureusers title="Freight industry" icon={<GiCargoCrate size="2lg" />}>
               {" "}
-              Connect AGVs and AMR’s from multiple suppliers including Linux-or windows-based OS 
-Remote support capabilities Remote software upgrades 
-Data streaming with fast and low latency peer-to-peer work.{" "}
+              Connect AGVs and AMR’s from multiple suppliers including Linux-or windows-based OS Remote support
+              capabilities Remote software upgrades Data streaming with fast and low latency peer-to-peer work.{" "}
             </Featureusers>
             <Featureusers title="Enterprise" icon={<FaBuilding size="2lg" />}>
               {" "}
-              Reduce the enterprise-level VPN setup from weeks to minutes, Minimize setup time, resources, costs and maintenance
-Connect different sites and  devices with just a click.
+              Reduce the enterprise-level VPN setup from weeks to minutes, Minimize setup time, resources, costs and
+              maintenance Connect different sites and devices with just a click.
             </Featureusers>
             <Featureusers title="Startups, Geeks." icon={<GiMissileLauncher size="2lg" />}>
               {" "}
-              Access your NAS, Raspberry Pi, Cloud instances, Securely share your network with friends&apos;s devices. Access all the device&apos;s data remotely, Play LAN games, monitor your home cameras, and more.{" "}
+              Access your NAS, Raspberry Pi, Cloud instances, Securely share your network with friends&apos;s devices.
+              Access all the device&apos;s data remotely, Play LAN games, monitor your home cameras, and more.{" "}
             </Featureusers>
           </Stack>
         </GridItem>
@@ -663,19 +652,10 @@ export function Compare() {
   );
 }
 
-
 export function Featureslist() {
   return (
-    <Flex
-      w="auto"
-      justifyContent="center"
-      alignItems="center"
-    >
-      <Box
-        px={4}
-        py={20}
-        mx="auto"
-      >
+    <Flex w="auto" justifyContent="center" alignItems="center">
+      <Box px={4} py={20} mx="auto">
         <Box textAlign={{ lg: "center" }}>
           <chakra.p
             mt={2}
@@ -683,116 +663,62 @@ export function Featureslist() {
             lineHeight="8"
             fontWeight="extrabold"
             letterSpacing="tight"
-            textTransform="uppercase" 
+            textTransform="uppercase"
           >
             OmniEdge delivers
           </chakra.p>
-          <chakra.p
-            mt={4}
-            maxW="2xl"
-            fontSize="xl"
-            mx={{ lg: "auto" }}
-          >
+          <chakra.p mt={4} maxW="2xl" fontSize="xl" mx={{ lg: "auto" }}>
             Solutions for your requirements.
           </chakra.p>
         </Box>
-        <SimpleGrid
-          columns={{ base: 1, sm: 2, md: 3, lg: 4 }}
-          spacingX={{ base: 16, lg: 24 }}
-          spacingY={20}
-          mt={6}
-        >
-          <Featurelist
-            color="red"
-            title="Virtual Network"
-            icon={<FiGlobe size="2lg" />}
-          >
-            Virtual network becomes a virtual office connecting all remote devices by intranet for your team and trusted users only.
+        <SimpleGrid columns={{ base: 1, sm: 2, md: 3, lg: 4 }} spacingX={{ base: 16, lg: 24 }} spacingY={20} mt={6}>
+          <Featurelist color="red" title="Virtual Network" icon={<FiGlobe size="2lg" />}>
+            Virtual network becomes a virtual office connecting all remote devices by intranet for your team and trusted
+            users only.
           </Featurelist>
 
-          <Featurelist
-            color="pink"
-            title="Remote Device Control"
-            icon={<AiOutlineControl size="2lg" />}
-          >
+          <Featurelist color="pink" title="Remote Device Control" icon={<AiOutlineControl size="2lg" />}>
             Control a remote computer as if it’s located in front of you, by Remote Desktop Protocol, VNC or SSH.
           </Featurelist>
 
-          <Featurelist
-            color="yellow"
-            title="Cross-Platform"
-            icon={<FaConnectdevelop size="2lg" />}
-          >
+          <Featurelist color="yellow" title="Cross-Platform" icon={<FaConnectdevelop size="2lg" />}>
             Connect multiple platforms, Windows,macOS, iOS, Android, Linux and more.
           </Featurelist>
 
-          <Featurelist
-            color="green"
-            title="Sub Router"
-            icon={<MdRouter size="2lg" />}
-          >
+          <Featurelist color="green" title="Sub Router" icon={<MdRouter size="2lg" />}>
             Sub router allows you connect your devices which is not with Omniedge installed.
           </Featurelist>
-          <Featurelist
-            color="purple"
-            title="Big Data Transferring"
-            icon={<BiTransfer size="2lg" />}
-          >
-            Big-data transfer functionality allows international enterprises to exchange data between different sites across their global footprint.
+          <Featurelist color="purple" title="Big Data Transferring" icon={<BiTransfer size="2lg" />}>
+            Big-data transfer functionality allows international enterprises to exchange data between different sites
+            across their global footprint.
           </Featurelist>
-          <Featurelist
-            color="blue"
-            title="Multi-Users"
-            icon={<FiUsers size="2lg" />}
-          >
-            Organize your users to bring secure connection to enterprise&apos;s access and resources. 
+          <Featurelist color="blue" title="Multi-Users" icon={<FiUsers size="2lg" />}>
+            Organize your users to bring secure connection to enterprise&apos;s access and resources.
           </Featurelist>
-          <Featurelist
-            color="brand"
-            title="Security Key"
-            icon={<FiKey size="2lg" />}
-          >
-            Security Keys allow you connect your linux based devices with only a command line, turning your own devices into an industrial router. 
+          <Featurelist color="brand" title="Security Key" icon={<FiKey size="2lg" />}>
+            Security Keys allow you connect your linux based devices with only a command line, turning your own devices
+            into an industrial router.
           </Featurelist>
 
-          <Featurelist
-            color="purple"
-            title="Peer-to-Peer Encryption"
-            icon={<MdEnhancedEncryption size="2lg" />}
-          >
-            Traffic over OmniEdge is end-to-end encrypted by Twofish/AES128/ChaCha20 cipers&apos; P2P MESH network. 
+          <Featurelist color="purple" title="Peer-to-Peer Encryption" icon={<MdEnhancedEncryption size="2lg" />}>
+            Traffic over OmniEdge is end-to-end encrypted by Twofish/AES128/ChaCha20 cipers&apos; P2P MESH network.
           </Featurelist>
 
-          <Featurelist
-            color="pink"
-            title="IoT & Hardware Integration "
-            icon={<AiFillRobot size="2lg" />}
-          >
+          <Featurelist color="pink" title="IoT & Hardware Integration " icon={<AiFillRobot size="2lg" />}>
             Integrate OmniEdge into your own IoT project or hardware.
           </Featurelist>
 
-          <Featurelist
-            color="red"
-            title="Zero Config"
-            icon={<GiClick size="2lg" />}
-          >
+          <Featurelist color="red" title="Zero Config" icon={<GiClick size="2lg" />}>
             No Public IP, No Port Forward,Zero Config, Zero Firewall Rules. All your connectivity in one single click.
           </Featurelist>
 
-          <Featurelist
-            color="green"
-            title="Okta integration"
-            icon={<BiCheckShield size="2lg" />}
-          >
+          <Featurelist color="green" title="Okta integration" icon={<BiCheckShield size="2lg" />}>
             Integrate Okta as your SSO provider to use OmniEdge.
           </Featurelist>
 
-          <Featurelist
-            color="blue"
-            title="Admin API"
-            icon={<AiTwotoneApi size="2lg" />}
-          >
-            Admin API for admin users to have access to the admin dashboard for overview virutal network, devices and network setting.
+          <Featurelist color="blue" title="Admin API" icon={<AiTwotoneApi size="2lg" />}>
+            Admin API for admin users to have access to the admin dashboard for overview virutal network, devices and
+            network setting.
           </Featurelist>
         </SimpleGrid>
       </Box>
@@ -800,33 +726,21 @@ export function Featureslist() {
   );
 }
 
-
-
 export function HighFeatures() {
-  const Feature = (props:any) => {
+  const Feature = (props: any) => {
     return (
       <Box>
         <Center>
-          <Flex alignItems="center" justifyContent="center" h={20} w={20} rounded="md" bg="brand.500" color="white">
-          <Icon boxSize={16} fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            {props.icon}
-          </Icon>
-        </Flex>
+          <Flex alignItems="center" justifyContent="center" h={20} w={20} rounded="md" color="brand.500">
+            <Icon boxSize={16} fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              {props.icon}
+            </Icon>
+          </Flex>
         </Center>
-        <chakra.h1
-          mb={3}
-          fontSize="2xl"
-          lineHeight="shorter"
-          fontWeight="bold"
-          py={5} 
-          textAlign="center"
-        >
+        <chakra.h1 mb={3} fontSize="2xl" lineHeight="shorter" fontWeight="bold" py={5} textAlign="center">
           {props.title}
         </chakra.h1>
-        <chakra.p
-          lineHeight="tall"
-          color={useColorModeValue("gray.600", "gray.400")}
-        >
+        <chakra.p lineHeight="tall" color={useColorModeValue("gray.600", "gray.400")}>
           {props.children}
         </chakra.p>
       </Box>
@@ -837,58 +751,45 @@ export function HighFeatures() {
     <Box rounded="xl">
       <Box mx="auto" px={{ base: 4, lg: 8 }}>
         <Box py={0} textAlign={{ lg: "center" }}>
-          <chakra.h2 color="brand.600" 
-          textTransform="uppercase" 
-          mt={2}
-          fontSize={{ base: "4xl", sm: "3xl" }}
-          lineHeight="8"
-          fontWeight="extrabold"
-          letterSpacing="tight"
+          <chakra.h2
+            color="brand.600"
+            textTransform="uppercase"
+            mt={2}
+            fontSize={{ base: "4xl", sm: "3xl" }}
+            lineHeight="8"
+            fontWeight="extrabold"
+            letterSpacing="tight"
           >
-          The power of Omniedge
+            The power of Omniedge
           </chakra.h2>
-          </Box>
-          
-    <Flex
-      px={{ base: 2, lg: 0 }}
-      py={20}
-      w="auto"
-      justifyContent="center"
-      alignItems="center"
-    >
-      <SimpleGrid
-        columns={{ base: 1, md: 2, lg: 3 }}
-        spacing={20}
-        px={{ base: 0, lg: 16, xl: 24 }}
-        py={2}
-        mx="auto"
-      >
-        <Feature
-          title="High Security"
-          icon={<AiOutlineSafety size="2lg"/>}
-        >
-          P2P MESH networks, encrypted end-to-end by Two-fish, AES128 or ChaCha20 Ciphers, customized authentication and 2FA to achieve dual security confirmation of devices and users with GDPR in mind.
-        </Feature>
+        </Box>
 
-        <Feature
-          title="High Speed"
-          icon={<FaRocket size="2lg" />}
-        >
-          End-to-end direct connection, latency improved by up to 50%* compared to traditional VPN networks.
-Zero-config setup allows one click deployment. 
+        <Flex px={{ base: 2, lg: 0 }} py={20} w="auto" justifyContent="center" alignItems="center">
+          <SimpleGrid
+            columns={{ base: 1, md: 2, lg: 3 }}
+            spacing={20}
+            px={{ base: 0, lg: 16, xl: 24 }}
+            py={2}
+            mx="auto"
+          >
+            <Feature title="High Security" icon={<AiOutlineSafety size="2lg" />}>
+              P2P MESH networks, encrypted end-to-end by Two-fish, AES128 or ChaCha20 Ciphers, customized authentication
+              and 2FA to achieve dual security confirmation of devices and users with GDPR in mind.
+            </Feature>
 
-        </Feature>
-        
+            <Feature title="High Speed" icon={<FaRocket size="2lg" />}>
+              End-to-end direct connection, latency improved by up to 50%* compared to traditional VPN networks.
+              Zero-config setup allows one click deployment.
+            </Feature>
 
-        <Feature
-          title="High Performance"
-          icon={<GiTreeGrowth size="2lg" />}
-        >
-          Cross platform compatibility connecting the widest range of OS and IoT devices. Management of all users and equipment on one dashboard. Minimize setup time, resources, costs and maintenance, helping you focus on your business. 
-        </Feature>
-      </SimpleGrid>
-    </Flex>
-    </Box>
+            <Feature title="High Performance" icon={<GiTreeGrowth size="2lg" />}>
+              Cross platform compatibility connecting the widest range of OS and IoT devices. Management of all users
+              and equipment on one dashboard. Minimize setup time, resources, costs and maintenance, helping you focus
+              on your business.
+            </Feature>
+          </SimpleGrid>
+        </Flex>
+      </Box>
     </Box>
   );
 }

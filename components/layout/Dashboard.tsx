@@ -28,6 +28,7 @@ import { useUser } from "../../lib/hook/useUser";
 import { Brand } from "../Brand";
 import Link from "../next/Link";
 import NoSSR from "../next/NoSSR";
+import { Seo } from "../Seo";
 
 const SideBar: React.FC<StackProps & { onClose: () => void; isOpen: boolean }> = function (props) {
   const router = useRouter();
@@ -43,44 +44,47 @@ const SideBar: React.FC<StackProps & { onClose: () => void; isOpen: boolean }> =
   ];
 
   return (
-    <VStack
-      {...stackProps}
-      p="4"
-      w="52"
-      bg="white"
-      zIndex="999"
-      shadow="sm"
-      minH="calc(100vh - 64px)"
-      borderRight={{ base: "solid 1px", md: "0" }}
-      borderRightColor="gray.100"
-      spacing="4"
-      alignItems="flex-start"
-    >
-      {LINKS.map(({ name, href, icon, active }) => (
-        <Link
-          key={name}
-          _hover={{
-            textDecoration: "none",
-            color: "brand.700",
-          }}
-          onClick={onClose}
-          color={router.pathname.includes(href) ? "brand.500" : "gray.800"}
-          fontSize="md"
-          w="full"
-          href={`/dashboard` + href}
-        >
-          <HStack spacing="2" w="full">
-            <Icon fontSize="xl" as={icon}></Icon>
-            <Text fontSize="md" fontWeight="medium" position="relative">
-              {name}
-              {active && (
-                <Box w="2" h="2" borderRadius="100%" position="absolute" bg="green.500" top="1" left="100%"></Box>
-              )}
-            </Text>
-          </HStack>
-        </Link>
-      ))}
-    </VStack>
+    <>
+      <Seo title={"Dashboard"} description="Omniedge Dashboard" />
+      <VStack
+        {...stackProps}
+        p="4"
+        w="52"
+        bg="white"
+        zIndex="999"
+        shadow="sm"
+        minH="calc(100vh - 64px)"
+        borderRight={{ base: "solid 1px", md: "0" }}
+        borderRightColor="gray.100"
+        spacing="4"
+        alignItems="flex-start"
+      >
+        {LINKS.map(({ name, href, icon, active }) => (
+          <Link
+            key={name}
+            _hover={{
+              textDecoration: "none",
+              color: "brand.700",
+            }}
+            onClick={onClose}
+            color={router.pathname.includes(href) ? "brand.500" : "gray.800"}
+            fontSize="md"
+            w="full"
+            href={`/dashboard` + href}
+          >
+            <HStack spacing="2" w="full">
+              <Icon fontSize="xl" as={icon}></Icon>
+              <Text fontSize="md" fontWeight="medium" position="relative">
+                {name}
+                {active && (
+                  <Box w="2" h="2" borderRadius="100%" position="absolute" bg="green.500" top="1" left="100%"></Box>
+                )}
+              </Text>
+            </HStack>
+          </Link>
+        ))}
+      </VStack>
+    </>
   );
 };
 

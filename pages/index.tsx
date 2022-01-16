@@ -1,5 +1,4 @@
 import {
-  Flex,
   Box,
   Button,
   FormControl,
@@ -11,22 +10,22 @@ import {
   Stack,
   Text,
   VStack,
-  useColorModeValue,
-  Icon,
-  chakra,
 } from "@chakra-ui/react";
 import React from "react";
 import { Customersmap } from "../components/Customersmap";
-import { Compare, FeaturePage, Heros,How, Users,Featureslist,HighFeatures } from "../components/Features";
+import { Compare, FeaturePage, Featureslist, Heros, HighFeatures, How, Users } from "../components/Features";
 import DefaultLayout from "../components/layout/Default";
+import { Seo } from "../components/Seo";
 import { Page } from "../types";
-import {Seo} from "../components/Seo";
-
 
 const Home: Page = (props) => {
   return (
     <>
-    <Seo title="The Power of OmniEdge,High Seurity, High Speed, and High Performance." description="OmniEdge reduces the enterprise connectivity deployment from weeks to minutes, helps customers focusing on their core business, connects and manages their devices from anywhere, anytime." image="/assets/OmniEdgeall0.5.png" />
+      <Seo
+        title="The Power of OmniEdge,High Seurity, High Speed, and High Performance."
+        description="OmniEdge reduces the enterprise connectivity deployment from weeks to minutes, helps customers focusing on their core business, connects and manages their devices from anywhere, anytime."
+        image="/assets/OmniEdgeall0.5.png"
+      />
       <Box padding="4" as="header" py={["6", "12", "36"]} position="relative">
         <Stack
           direction={{ base: "column", md: "row" }}
@@ -38,13 +37,15 @@ const Home: Page = (props) => {
               MADE COMMUNICATION EASY AND SAFE
             </Heading>
             <Heading maxW="xl" as="h1" size="xl" lineHeight="1.5em">
-            <Text
-            display={{ base: "block", lg: "inline" }}
-            w="full"
-            bgClip="text"
-            bgGradient="linear(to-r, brand.500,purple.500)"
-            fontWeight="extrabold"
-          >Bring intranet on the internet.</Text>
+              <Text
+                display={{ base: "block", lg: "inline" }}
+                w="full"
+                bgClip="text"
+                bgGradient="linear(to-r, brand.500,purple.500)"
+                fontWeight="extrabold"
+              >
+                Bring intranet on the internet.
+              </Text>
               {/* With P2P Secure Connection, Any Time, Any Where. */}
             </Heading>
             <Text maxW="2xl" color="gray.700" py="4">
@@ -54,7 +55,7 @@ const Home: Page = (props) => {
               <Button colorScheme="brand">Get Started</Button>
             </Link>
           </VStack>
-          <VStack pt={["12", "12", "0"]} alignItems="flex-start" pointerEvents="none">
+          <VStack pt={["12", "12", "0"]} alignItems="flex-start">
             <Link href="/register" w="full">
               <Button colorScheme="brand">+ Virtual Network</Button>
             </Link>
@@ -81,7 +82,7 @@ const Home: Page = (props) => {
               </FormControl>
               <HStack mt="4" justifyContent="flex-end">
                 <Button>Cancel</Button>
-                <Link href="/register" w="full">
+                <Link href="/login" w="full">
                   <Button colorScheme="brand">Create</Button>
                 </Link>
               </HStack>

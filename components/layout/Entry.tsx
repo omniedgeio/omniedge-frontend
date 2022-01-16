@@ -6,6 +6,7 @@ import { useUser } from "../../lib/hook/useUser";
 import GoogleLogin from "../auth/GoogleLogin";
 import Logo from "../Logo";
 import Link from "../next/Link";
+import { Seo } from "../Seo";
 
 const EntryLayout: React.FC = function ({ children }) {
   const router = useRouter();
@@ -21,6 +22,7 @@ const EntryLayout: React.FC = function ({ children }) {
 
   return (
     <Center mt="4" py="4">
+      <Seo title={"Login"} description="Omniedge Dashboard" />
       <VStack w={["full", "80"]} px={[8, 0]} spacing="4">
         <Link href="/">
           <VStack spacing="4">
@@ -31,8 +33,8 @@ const EntryLayout: React.FC = function ({ children }) {
           </VStack>
         </Link>
         <Text textAlign="center">
-        Bring intranet on the internet, <br />
-        with P2P Secure Connection, Any Time, Any Where.
+          Bring intranet on the internet, <br />
+          with P2P Secure Connection, Any Time, Any Where.
         </Text>
         {isLoading || user ? (
           <Spinner />
@@ -77,9 +79,7 @@ const EntryLayout: React.FC = function ({ children }) {
           </>
         )}
       </VStack>
-      
     </Center>
-    
   );
 };
 

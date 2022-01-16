@@ -95,6 +95,7 @@ const UpdateUserProfileForm: React.FC = function (props) {
         <FormControl isInvalid={!!(touched.email && errors.email)} isRequired>
           <FormLabel>Email</FormLabel>
           <Input
+            disabled
             type="email"
             name="email"
             onChange={handleChange}

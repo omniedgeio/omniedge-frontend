@@ -117,7 +117,13 @@ const DefaultLayout: React.FC<{}> = (props) => {
           </HStack>
         </Flex>
       </nav>
-      <main>{props.children}</main>
+      <main
+        style={{
+          minHeight: "calc(100vh - 72px - 166px)",
+        }}
+      >
+        {props.children}
+      </main>
       <Footer />
     </Container>
   );

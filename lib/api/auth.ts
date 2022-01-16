@@ -17,6 +17,14 @@ export function register(data: IRegisterRequest) {
   });
 }
 
+export function activateAccount(token: string) {
+  return request({
+    url: "/auth/register/activate",
+    method: "GET",
+    params: { token },
+  });
+}
+
 export async function loginByPassword(data: IPasswordLoginRequest) {
   let res = await request({
     url: "/auth/login/password",

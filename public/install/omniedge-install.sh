@@ -6,6 +6,7 @@ set -e
 STORAGE_URL=https://github.com/omniedgeio/app-release/releases/download
 PKG_NAME="omniedge"
 VERSION="v0.2.1"
+
 BIN_DIR="/usr/local/bin"
 
 setup_env() {

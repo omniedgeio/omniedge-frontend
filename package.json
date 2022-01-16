@@ -49,7 +49,7 @@
     "remark-gfm": "^2.0.0",
     "vivus": "^0.4.6",
     "yup": "^0.32.9",
-    "yup-password": "^0.2.1"
+    "yup-password": "^0.2.1",
   },
   "devDependencies": {
     "@types/date-fns": "^2.6.0",

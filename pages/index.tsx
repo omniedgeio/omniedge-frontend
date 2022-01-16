@@ -111,7 +111,7 @@ const Home: Page = (props) => {
       <Heros />
       <Customersmap />
       
-      <CookieConsent
+      {/* <CookieConsent
         location="bottom"
         buttonText="I Agree"
         cookieName="OmniEdge"
@@ -121,7 +121,7 @@ const Home: Page = (props) => {
         enableDeclineButton
       >
         We use cookies to ensure you get the best experience on our website <Link href="/privacy">Learn more</Link>.{" "}
-      </CookieConsent>
+      </CookieConsent> */}
     
     </>
   );

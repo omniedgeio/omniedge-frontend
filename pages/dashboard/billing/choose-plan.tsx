@@ -88,7 +88,7 @@ const ChoosePlanPage: Page = (props) => {
             <ChoosePlanButton plan="teams" />
           </TeamsPlan>
           <EnterprisePlan>
-            <Link href="mailto:hi@omniedge.io">
+            <Link href="/contactus">
               <Button isFullWidth variant="outline" mt={4} colorScheme="teal">
                 Contact us
               </Button>

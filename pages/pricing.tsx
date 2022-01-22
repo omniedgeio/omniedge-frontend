@@ -163,7 +163,7 @@ Zero Config, Zero Firewall Rules,OmniEdge rebuilds the intranet on the internet 
           </TeamsPlan>
           </Box>
           <EnterprisePlan>
-            <Link href="mailto:hi@omniedge.io">
+            <Link href="/contactus">
               <Button isFullWidth variant="outline" mt={4} colorScheme="teal">
                 Contact us
               </Button>

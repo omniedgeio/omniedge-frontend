@@ -1,4 +1,4 @@
-import { setToken } from "../helpers/token";
+import {setToken} from "../helpers/token";
 import request from "./client";
 import {
   IAuthSessionRequest,
@@ -21,7 +21,15 @@ export function activateAccount(token: string) {
   return request({
     url: "/auth/register/activate",
     method: "GET",
-    params: { token },
+    params: {token},
+  });
+}
+
+export function resendVerifyEmail(email: string) {
+  return request({
+    url: "/auth/register/resend",
+    method: "POST",
+    params: {email: email},
   });
 }
 

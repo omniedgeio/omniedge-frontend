@@ -31,6 +31,7 @@ Release Notes for OmniEdge Windows client.
 
 |Version|Release Date|Notes|
 |--|--|--|
+|0.2.2|January, 16, 2022|fix the virtual network display bug|
 |0.2.1|January, 15, 2022|Initial release , new backend API , new logo|
 |0.1.4|April 18, 2021|Fix the user register and login for the first time and the app crashed，Fix menu list blocked after startup|
 |0.1.3|April 10, 2021|Fix the repeated display of the device|

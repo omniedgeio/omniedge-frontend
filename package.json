@@ -53,6 +53,7 @@
   },
   "devDependencies": {
     "@types/date-fns": "^2.6.0",
+    "@types/gtag.js": "^0.0.8",
     "@types/qrcode.react": "^1.0.2",
     "@types/react": "17.0.13",
     "@types/react-router-dom": "^5.1.8",

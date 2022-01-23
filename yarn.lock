@@ -1179,6 +1179,11 @@
   resolved "https://registry.npmjs.org/@types/gapi/-/gapi-0.0.40.tgz"
   integrity sha512-HzV7JIp5vgCZYPLzTg+LJCEVbTbZ/wNSCatNYThNvDTtiNXU+ccrUfFLUF2akHsil+KCpf2yp9OUhLUflsOuBw==
 
+"@types/gtag.js@^0.0.8":
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@types/gtag.js/-/gtag.js-0.0.8.tgz#43035ab23a06b3bd0b23968c5c4ef000c597ad8a"
+  integrity sha512-xKDygydxruSUNkVbZWjiEbMijz9+xZCLb2yiTiQT88pm5EhIAUhaCo05IZF1HcQc90u4W7cp+7OZNpcJxpyL5g==
+
 "@types/hast@^2.0.0":
   version "2.3.2"
   resolved "https://registry.npmjs.org/@types/hast/-/hast-2.3.2.tgz"
@@ -5082,10 +5087,10 @@ react-code-blocks@^0.0.9-0:
     styled-components "^5.1.1"
     tslib "^2.0.0"
 
-react-cookie-consent@^6.3.0:
-  version "6.3.0"
-  resolved "https://registry.npmjs.org/react-cookie-consent/-/react-cookie-consent-6.3.0.tgz"
-  integrity sha512-ynDLIJwedf0btR3sHsrRdcng6KWi9lJKLOUxo7BCof0F3DAFPxBRlAgUy4u1UdiPYR0gcjYHGVu5hE+22IWKmg==
+react-cookie-consent@^7.2.1:
+  version "7.2.1"
+  resolved "https://registry.yarnpkg.com/react-cookie-consent/-/react-cookie-consent-7.2.1.tgz#1ceb8dbd4d411fb88048f7b550ae0598299a6d7b"
+  integrity sha512-+mP3o9ip6PJyGvz10nTYeS1rVl/psxb8op9TB36KQQeMTLREH4ARRoUqhajzYYERa48rMwTOkpLGsOZUlY9nBg==
   dependencies:
     js-cookie "^2.2.1"
     prop-types "^15.7.2"

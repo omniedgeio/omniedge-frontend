@@ -14,6 +14,8 @@ import { BiMailSend } from "react-icons/bi";
 import { FaGithub, FaMedium, FaTwitter, FaYoutube } from "react-icons/fa";
 import { Brand } from "../Brand";
 import Link from "../next/Link";
+import CookieConsent from "react-cookie-consent";
+
 
 const SocialButton = ({ children, label, href }: { children: ReactNode; label: string; href: string }) => {
   return (
@@ -148,6 +150,7 @@ export default function Footer() {
             </Stack>
           </VStack>
       </Stack>
+      <CookieConsent>OmniEdge uses cookies to enhance the user experience.</CookieConsent>
     </>
   );
 }

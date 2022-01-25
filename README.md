@@ -53,5 +53,5 @@ npx next build
 - [ ] Paginate for posts
 - [ ] Parse sub folders for docs
 - [X] Download Page
-- [ ] Contact Us Form
+- [X] Contact Us Form
 - [X] Features comparation and FAQ for Pricing Page

@@ -51,9 +51,15 @@ const Home: Page = (props) => {
             <Text maxW="2xl" color="gray.700" py="4">
               {`Omniedge's distributed VPN solutions are not only a great and affordable network solution for a small team but also for big companies with thousands of devices all around the world.`}
             </Text>
+            <HStack>
             <Link href="/register" w="full">
-              <Button colorScheme="brand">Get Started</Button>
+              <Button colorScheme="brand">Get Started Free </Button>
             </Link>
+            <Link href="/contactus" w="full">
+              <Button colorScheme="cyan">Contact Sales Expert </Button>
+            </Link>
+            
+            </HStack>
           </VStack>
           <VStack pt={["12", "12", "0"]} alignItems="flex-start">
             <Link href="/register" w="full">

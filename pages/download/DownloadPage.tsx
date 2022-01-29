@@ -5,7 +5,7 @@ import { DownloadDescription } from "./Downloadutil";
 import DefaultLayout from "../../components/layout/Default";
 import Icon from "./Icon";
 const downloadMetaLink = "/assets/download/download-link.json";
-const platforms = ["macos", "ios", "windows", "android", "linuxcli","synology","rasp"];
+const platforms = ["macos", "ios", "windows", "android", "linuxcli","synology","rasp","embedded","nvidia"];
 // const platforms = ['macos', 'ios', 'windows', 'android', 'linuxcli', 'linuxgui','rasp', 'synology','router']
 
 interface realplatform {
@@ -53,7 +53,7 @@ export const DownloadPage: React.FC<realplatform> = function ({ platform: select
             Click on the preferred icon for download. 
           </Text>
           <br></br>
-          <SimpleGrid columns={[4, null, 4]} spacing="16px">
+          <SimpleGrid columns={[5, null, 5]} spacing="16px">
             {platforms.map((platform, index) => (
               <Icon
                 key={index}

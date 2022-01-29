@@ -1,8 +1,6 @@
 import { NextSeo } from 'next-seo'
 import React from 'react'
 import DownloadPage from './DownloadPage'
-import DefaultLayout from "../../components/layout/Default";
-
 export function Download() {
   return (
     <>
@@ -21,7 +19,6 @@ export function Download() {
     </>
   )
 }
-Download.layout = DefaultLayout;
 
 export default Download;
 

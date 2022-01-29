@@ -1,7 +1,8 @@
-import { Center, chakra, Link, SimpleGrid, Text, useColorModeValue, VStack } from "@chakra-ui/react";
+import { Center, chakra, Link, SimpleGrid, Text, useColorModeValue, VStack,Stack } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { DownloadDescription } from "./Downloadutil";
+import DefaultLayout from "../../components/layout/Default";
 import Icon from "./Icon";
 const downloadMetaLink = "/assets/download/download-link.json";
 const platforms = ["macos", "ios", "windows", "android", "linuxcli","synology","rasp"];
@@ -34,7 +35,9 @@ export const DownloadPage: React.FC<realplatform> = function ({ platform: select
 
   return (
     <>
-      <VStack padding="4" alignItems="center">
+    <DefaultLayout>
+      <VStack padding="4" spacing="4" alignItems="center">
+<Stack spacing="8" direction={["column", "row"]} alignItems="flex-start">
         <VStack mt={10}>
           <chakra.h1
             mb={6}
@@ -61,7 +64,7 @@ export const DownloadPage: React.FC<realplatform> = function ({ platform: select
             ))}
           </SimpleGrid>
           <Center>
-            <VStack mt={12}>
+            <VStack maxW="1000" spacing="4">
               {data.status === "ERROR" && (
                 <Text>
                   Could not connect. Please find information manually at
@@ -77,7 +80,9 @@ export const DownloadPage: React.FC<realplatform> = function ({ platform: select
             </VStack>
           </Center>
         </VStack>
+        </Stack>
       </VStack>
+      </DefaultLayout>
     </>
   );
 };

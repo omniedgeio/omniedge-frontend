@@ -1,6 +1,5 @@
 import React from 'react'
 import DownloadPage from './DownloadPage'
-import DefaultLayout from "../../components/layout/Default";
 import {Seo} from '../../components/Seo';
 
 export function Download() {
@@ -15,6 +14,5 @@ export function Download() {
   )
 }
 
-Download.layout = DefaultLayout;
 
 export default Download;

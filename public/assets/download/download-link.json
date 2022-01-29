@@ -77,7 +77,7 @@
         "#CODE omniedge join -n 'virtual-network-id' ",
         "with a speicified virtual network.",        
         "6. Wait a second and a secure VPN will be established",
-        "7. Follow instruction <a href=\"https:\/\/omniedge.io\/docs\/article\/Install#run-omniedge-as-a-service\"><strong> Run OmniEde as a service </strong></a> to autostart OmniEdge"
+        "7. Follow instruction <a href=\"https:\/\/omniedge.io\/docs\/article\/Install#51-run-omniedge-as-a-service\"><strong> Run OmniEde as a service </strong></a> to autostart OmniEdge"
       ],
       "instructionGifLink": "/assets/download/OmniEdge-CLI-0.2.0.gif",
       "instructionsVideoLink": ""
@@ -177,7 +177,7 @@
         "#CODE omniedge join -n 'virtual-network-id' ",
         "with a speicified virtual network.",        
         "6. Wait a second and a secure VPN will be established",
-        "7. Follow instruction <a href=\"https:\/\/omniedge.io\/docs\/article\/Install#run-omniedge-as-a-service\"><strong> Run OmniEde as a service </strong></a> to autostart OmniEdge"
+        "7. Follow instruction <a href=\"https:\/\/omniedge.io\/docs\/article\/Install#51-run-omniedge-as-a-service\"><strong> Run OmniEde as a service </strong></a> to autostart OmniEdge"
       ],
       "instructionGifLink": "/assets/download/OmniEdge-CLI-0.2.0.gif",
       "instructionsVideoLink": ""

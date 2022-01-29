@@ -55,14 +55,16 @@ export const Description: FunctionComponent<IPropss> = ({ texts }) => {
          else {
           return (
             <p
-              dangerouslySetInnerHTML={{ __html: text.trim() }}
+              dangerouslySetInnerHTML={{ __html: text.trim()}}
               key={index}
-            />
+            /> 
+            
           )
         }
       })}
   </>)
 }
+
 interface lstupdate {
   year:number;
   month:string;

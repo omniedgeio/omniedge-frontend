@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import platform from 'platform-detect';
 import DownloadPage from './DownloadPage';
-import DefaultLayout from "../../components/layout/Default";
 import { Page } from "../../types";
 import { Seo } from '../../components/Seo';
 
@@ -33,7 +32,5 @@ const Download: Page = (props) => {
     </>
   )
 }
-
-Download.layout = DefaultLayout;
 
 export default Download;

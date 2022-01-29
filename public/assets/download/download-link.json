@@ -216,6 +216,76 @@
       "instructionsVideoLink": ""
     }
   },
+  "embedded": {
+    "status": "LIVE",
+    "displayName": "Embedded",
+    "link": "https://github.com/omniedgeio/app-release/releases",
+    "showQRCode": false,
+    "version": "0.2.1",
+    "buttonText": "Download for Embedded",
+    "captionText": "Compatible with ARM/ARM64 Embedded System",
+    "lastUpdate": {
+      "year": 2022,
+      "month": "January",
+      "date": 15
+    },
+    "description": {
+      "title": "Get started on Embedded System",
+      "instructions": [
+        "1. Sign up your account: <a href=\"https:\/\/omniedge.io\/register\"><strong>Sign up</strong></a> ",
+        "2. Download and install omnidge cli by running the following command:",
+        "#CODE curl https://omniedge.io/install/omniedge-install.sh | bash",
+        "3. Login By Password:",
+        "#CODE omniedge login -u yourname@youremail.com",
+        "4. Login By Secret-Key, You can generate secret-key on <a href=\"https:\/\/omniedge.io\/dashboard\"><strong>omniedge dashboard</strong></a>",
+        "#CODE omniedge login -s yoursecuritykey",
+        "5. Join Your Network,you can just call omniedge join, it will automatically prompt the available network for you to choose. And you can also add one parameter <code>-n</code> to specify the network id manually. And then, enjoy the omniedge network.",
+        "#CODE omniedge join",
+        "and select your virtual network or",
+        "#CODE omniedge join -n 'virtual-network-id' ",
+        "with a speicified virtual network.",        
+        "6. Wait a second and a secure VPN will be established",
+        "7. Follow instruction <a href=\"https:\/\/omniedge.io\/docs\/article\/Install#51-run-omniedge-as-a-service\"><strong> Run OmniEde as a service </strong></a> to autostart OmniEdge"
+      ],
+      "instructionGifLink": "/assets/download/OmniEdge-CLI-0.2.0.gif",
+      "instructionsVideoLink": ""
+    }
+  },
+   "nvidia": {
+    "status": "LIVE",
+    "displayName": "Nvidia",
+    "link": "https://github.com/omniedgeio/app-release/releases",
+    "showQRCode": false,
+    "version": "0.2.1",
+    "buttonText": "Download for Nvidia JETSON",
+    "captionText": "Compatible with Nvidia JETSON",
+    "lastUpdate": {
+      "year": 2022,
+      "month": "January",
+      "date": 15
+    },
+    "description": {
+      "title": "Get started on Nvidia JETSON",
+      "instructions": [
+        "1. Sign up your account: <a href=\"https:\/\/omniedge.io\/register\"><strong>Sign up</strong></a> ",
+        "2. Download and install omnidge cli by running the following command:",
+        "#CODE curl https://omniedge.io/install/omniedge-install.sh | bash",
+        "3. Login By Password:",
+        "#CODE omniedge login -u yourname@youremail.com",
+        "4. Login By Secret-Key, You can generate secret-key on <a href=\"https:\/\/omniedge.io\/dashboard\"><strong>omniedge dashboard</strong></a>",
+        "#CODE omniedge login -s yoursecuritykey",
+        "5. Join Your Network,you can just call omniedge join, it will automatically prompt the available network for you to choose. And you can also add one parameter <code>-n</code> to specify the network id manually. And then, enjoy the omniedge network.",
+        "#CODE omniedge join",
+        "and select your virtual network or",
+        "#CODE omniedge join -n 'virtual-network-id' ",
+        "with a speicified virtual network.",        
+        "6. Wait a second and a secure VPN will be established",
+        "7. Follow instruction <a href=\"https:\/\/omniedge.io\/docs\/article\/Install#51-run-omniedge-as-a-service\"><strong> Run OmniEde as a service </strong></a> to autostart OmniEdge"
+      ],
+      "instructionGifLink": "/assets/download/OmniEdge-CLI-0.2.0.gif",
+      "instructionsVideoLink": ""
+    }
+  },
   "router": {
     "status": "COMING_SOON",
     "displayName": "Router",

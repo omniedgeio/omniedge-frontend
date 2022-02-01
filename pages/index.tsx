@@ -10,6 +10,8 @@ import {
   Stack,
   Text,
   VStack,
+  chakra,
+  useColorModeValue
 } from "@chakra-ui/react";
 import React from "react";
 import { Customersmap } from "../components/Customersmap";
@@ -34,22 +36,41 @@ const Home: Page = (props) => {
         >
           <VStack alignItems="flex-start">
             <Heading as="h6" fontWeight="medium" size="sm" color="gray.500">
-              MADE COMMUNICATION EASY AND SAFE
+              {/* MADE COMMUNICATION EASY AND SAFE */}
+              Bring intranet on the internet.
             </Heading>
-            <Heading maxW="xl" as="h1" size="xl" lineHeight="1.5em">
-              <Text
-                display={{ base: "block", lg: "inline" }}
-                w="full"
-                bgClip="text"
-                bgGradient="linear(to-r, brand.500,purple.500)"
-                fontWeight="extrabold"
-              >
-                Bring intranet on the internet.
-              </Text>
-              {/* With P2P Secure Connection, Any Time, Any Where. */}
+            <Heading maxW="full" as="h1" size="xl" lineHeight="1.5em">
+ <chakra.h1
+          mb={6}
+          fontSize={{ base: "4xl", md: "6xl" }}
+          fontWeight="bold"
+          lineHeight="none"
+          letterSpacing={{ base: "normal", md: "tight" }}
+          color={useColorModeValue("gray.900", "gray.100")}
+        >
+          {" "}
+          <Text
+            display={{ base: "block", lg: "inline" }}
+            w="full"
+            bgClip="text"
+            bgGradient="linear(to-r, brand.500,purple.500)"
+            fontWeight="extrabold"
+          >
+            Unlimited Computers
+          </Text>{" "}
+          </chakra.h1>
+          <Text>
+          In Private Network With <Text
+            display={{ base: "block", lg: "inline" }}
+            w="full"
+            bgClip="text"
+            bgGradient="linear(to-r, purple.500,brand.500)"
+            fontWeight="extrabold"
+          >Zero</Text> Config.
+        </Text>
             </Heading>
             <Text maxW="2xl" color="gray.700" py="4">
-              {`Omniedge's distributed VPN solutions are not only a great and affordable network solution for a small team but also for big companies with thousands of devices all around the world.`}
+              {`Omniedge's Peer-to-Peer Layer 2 VPN solutions are not only a great and affordable network solution for a small team but also for big companies with thousands of computers all around the world.`}
             </Text>
             <HStack>
             <Link href="/register" w="full">

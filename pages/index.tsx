@@ -66,7 +66,7 @@ const Home: Page = (props) => {
             bgClip="text"
             bgGradient="linear(to-r, purple.500,brand.500)"
             fontWeight="extrabold"
-          >Zero</Text> Config.
+          >Zero</Text> Router.
         </Text>
             </Heading>
             <Text maxW="2xl" color="gray.700" py="4">

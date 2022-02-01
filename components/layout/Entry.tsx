@@ -33,7 +33,7 @@ const EntryLayout: React.FC = function ({ children }) {
           </VStack>
         </Link>
         <Text textAlign="center">
-          Bring intranet on the internet, <br />
+          Unlimited Computers In Your Private Network With Zero Config, <br />
           with P2P Secure Connection, Any Time, Any Where.
         </Text>
         {isLoading || user ? (

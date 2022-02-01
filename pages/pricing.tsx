@@ -134,8 +134,7 @@ const PricingPage: Page = () => {
     <>
       <Seo
         title="Start for free, then grow with us"
-        description="No Public IP, No Port Forward 
-Zero Config, Zero Firewall Rules,OmniEdge rebuilds the intranet on the internet setup easier, without concern."
+        description="Unlimited Computers In Your Private Network With Zero Config."
         image="/assets/OmniEdgeall0.5.png"
       />
       <VStack mt={10}>

@@ -19,7 +19,7 @@ export const Seo: React.FC<Seoinfo> = ({ title, description, image }) => {
     <Head>
       {/* DEFAULT */}
 
-      {title != undefined && <title key="title">OmniEdge | Bring intranet on the internet {title} </title>}
+      {title != undefined && <title key="title">OmniEdge | Unlimited Computers In Your Private Network With Zero Config {title} </title>}
       {description != undefined && <meta name="description" key="description" content={description} />}
       <link rel="icon" type="image/x-icon" href={favicon} />
       <link rel="apple-touch-icon" href={favicon} />

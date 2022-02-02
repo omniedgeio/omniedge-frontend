@@ -1,6 +1,5 @@
 import platform from 'platform-detect';
 import { Page } from "../../types";
-import { Seo } from '../../components/Seo';
 import { Center, chakra,SimpleGrid,Box,useColorModeValue,VStack } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
@@ -31,20 +30,13 @@ export const Download_feature: Page = (props) => {
   }, [])
 
   return (
-    <>
-          <Seo 
-      title="OmniEdge - Download" 
-      description=" Click on the preferred icon for download. " 
-      image="/assets/OmniEdgeall0.5.png" />
       <DownloadPage platform={clientPlatform} />
-    </>
   )
 }
 
 
 const DownloadPage: React.FC<realplatform> = function ({ platform: selectedPlatform }) {
   const router = useRouter();
-
   function routePlatform(text?: string) {
     router.push(`/download/${text ?? ""}`);
   }
@@ -57,8 +49,7 @@ const DownloadPage: React.FC<realplatform> = function ({ platform: selectedPlatf
           </chakra.p>
           </Center>
         <VStack mt={5}>
-          <SimpleGrid columns={[3, null, 9]}  maxChildWidth='800px'
-           spacing="16px">
+          <SimpleGrid columns={[3, null, 9]} spacing="16px">
             {platforms.map((platform, index) => (
               <Icon
                 key={index}

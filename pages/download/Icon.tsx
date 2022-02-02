@@ -131,7 +131,7 @@ const nvidiaIcon =(isSelected:boolean) => (
 function getText(variant:string) {
   switch (variant) {
     case 'linuxcli':
-      return 'CLI'
+      return 'Linux'
     case 'linuxgui':
       return 'GUI'
     case 'macos':
@@ -149,7 +149,7 @@ function getText(variant:string) {
     case 'router':
       return 'Router'
     case 'embedded':
-      return 'Embedded'
+      return 'ARM'
     case 'nvidia':
       return 'Nvidia'  
     default:

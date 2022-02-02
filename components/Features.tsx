@@ -27,7 +27,7 @@ import {
 import React from "react";
 import { AiFillRobot, AiOutlineControl, AiOutlineSafety, AiTwotoneApi } from "react-icons/ai";
 import { BiCheckShield, BiTransfer } from "react-icons/bi";
-import { FaAndroid, FaApple, FaBuilding, FaConnectdevelop, FaLinux, FaRocket, FaWindows } from "react-icons/fa";
+import { FaAndroid, FaApple, FaBuilding, FaConnectdevelop, FaLinux, FaRocket, FaWindows,FaMobile } from "react-icons/fa";
 import { FiDatabase, FiGlobe, FiKey, FiMonitor, FiServer, FiSettings, FiUsers } from "react-icons/fi";
 import {
   GiAutoRepair,
@@ -242,12 +242,6 @@ export function How() {
               <Text>We currently support various platforms. You can download them here.</Text>
               <HStack spacing="4" color="gray.500">
                 <HStack>
-                  <FaLinux />
-                  <Link href="/download/linuxcli">
-                    <Text>Linux</Text>
-                  </Link>
-                </HStack>
-                <HStack>
                   <FaWindows />
                   <Link href="/download/windows" w="full">
                     <Text>Windows</Text>
@@ -260,9 +254,15 @@ export function How() {
                   </Link>
                 </HStack>
                 <HStack>
-                  <FaAndroid />
-                  <Link href="/download/android" w="full">
-                    <Text>Android</Text>
+                  <FaLinux />
+                  <Link href="/download/linuxcli">
+                    <Text>Linux</Text>
+                  </Link>
+                </HStack>
+                <HStack>
+                  <FaMobile />
+                  <Link href="/download" w="full">
+                    <Text>Mobile</Text>
                   </Link>
                 </HStack>
               </HStack>

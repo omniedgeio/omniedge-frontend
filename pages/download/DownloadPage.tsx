@@ -53,7 +53,7 @@ export const DownloadPage: React.FC<realplatform> = function ({ platform: select
             Click on the preferred icon for download. 
           </Text>
           <br></br>
-          <SimpleGrid columns={[5, null, 5]} spacing="16px">
+          <SimpleGrid columns={[3, null, 5]} spacing="16px">
             {platforms.map((platform, index) => (
               <Icon
                 key={index}

@@ -25,7 +25,7 @@ const Home: Page = (props) => {
   return (
     <>
       <Seo
-        title="The Power of OmniEdge,High Seurity, High Speed, and High Performance."
+        title="Unlimited Computers In Private Network With Zero Router.The Power of OmniEdge,High Seurity, High Speed, and High Performance."
         description="OmniEdge reduces the enterprise connectivity deployment from weeks to minutes, helps customers focusing on their core business, connects and manages their devices from anywhere, anytime."
         image="/assets/OmniEdgeall0.5.png"
       />

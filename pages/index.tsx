@@ -16,6 +16,7 @@ import {
 import React from "react";
 import { Customersmap } from "../components/Customersmap";
 import { Compare, FeaturePage, Featureslist, Heros, HighFeatures, How, Users } from "../components/Features";
+import {Download_feature} from "./download/download_feature";
 import DefaultLayout from "../components/layout/Default";
 import { Seo } from "../components/Seo";
 import { Page } from "../types";
@@ -129,9 +130,12 @@ const Home: Page = (props) => {
           backgroundPosition="right"
         ></Box>
       </Box>
+      <Download_feature />
+      <br></br>
       <HighFeatures />
       <Compare />
       <How />
+      
       <FeaturePage />
       <Featureslist />
       <Users />

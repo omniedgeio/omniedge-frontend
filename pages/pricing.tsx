@@ -33,6 +33,7 @@ import Link from "../components/next/Link";
 import { EnterprisePlan, FreePlan, ProPlan, TeamsPlan } from "../components/Plans";
 import { Seo } from "../components/Seo";
 import { Page } from "../types";
+import {Download_feature} from "./download/download_feature";
 
 interface FAQText {
   title: string;

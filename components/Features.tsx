@@ -43,6 +43,7 @@ import {
 import { MdEnhancedEncryption, MdRouter } from "react-icons/md";
 import Logo from "../components/Logo";
 import { Page } from "../types";
+import {Download_feature} from "../pages/download/download_feature";
 
 interface StepIconFrameProps {
   icon: JSX.Element;
@@ -523,6 +524,7 @@ export function Heros() {
           </Link>
         </Stack>
       </Box>
+      <Download_feature />
       <Box w={{ base: "full", md: 10 / 12 }} mx="auto" mt={20} textAlign="center">
         <Image w="full" rounded="lg" shadow="2xl" src="/assets/OmniEdgeall.png" alt="OmniEdge" />
       </Box>

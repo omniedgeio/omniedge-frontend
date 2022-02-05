@@ -525,9 +525,6 @@ export function Heros() {
         </Stack>
       </Box>
       <Download_feature />
-      <Box w={{ base: "full", md: 10 / 12 }} mx="auto" mt={20} textAlign="center">
-        <Image w="full" rounded="lg" shadow="2xl" src="/assets/OmniEdgeall.png" alt="OmniEdge" />
-      </Box>
     </Box>
   );
 }
@@ -627,10 +624,18 @@ export function Compare() {
   return (
     <>
       <VStack padding="4" spacing="4" alignItems="center">
-        <Heading as="h2" textAlign="center" lineHeight="1.5">
-          No Public IP, No Port Forward <br /> Zero Config, Zero Firewall Rules{" "}
-        </Heading>
-        <Text textAlign="center">OmniEdge rebuilds the intranet on the internet setup easier, without concern.</Text>
+        <chakra.h2
+            color="brand.600"
+            textTransform="uppercase"
+            mt={2}
+            fontSize={{ base: "4xl", sm: "3xl" }}
+            lineHeight="8"
+            fontWeight="extrabold"
+            letterSpacing="tight"
+          >
+          What is the difference of OmniEdge {" "}
+        </chakra.h2>
+        <Text textAlign="center">No Public IP, No Port Forward, Zero Config, Zero Firewall Rules{" "}</Text>
         <Tabs colorScheme="brand" variant="unstyled">
           <TabList justifyContent="center">
             <Tab as={Button} colorScheme="brand" mr={1}>
@@ -656,7 +661,7 @@ export function Compare() {
 
 export function Featureslist() {
   return (
-    <Flex w="auto" justifyContent="center" alignItems="center">
+    <Flex w="auto" justifyContent="center" alignItems="center" >
       <Box px={4} py={20} mx="auto">
         <Box textAlign={{ lg: "center" }}>
           <chakra.p

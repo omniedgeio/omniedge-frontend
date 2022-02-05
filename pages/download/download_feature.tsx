@@ -1,6 +1,6 @@
 import platform from 'platform-detect';
 import { Page } from "../../types";
-import { Center, chakra,SimpleGrid,Box,useColorModeValue,VStack } from "@chakra-ui/react";
+import { Image,Center, chakra,SimpleGrid,Box,useColorModeValue,VStack } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import Icon from "./Icon";
@@ -42,7 +42,8 @@ const DownloadPage: React.FC<realplatform> = function ({ platform: selectedPlatf
   }
 
   return (
-    <Box py={8} rounded="xl" backgroundColor={"gray.100"}>
+    <>
+    <Box py={8} rounded="xl" backgroundColor={"gray.100"} >
       <Center>
         <chakra.p fontSize="xl" color={useColorModeValue("gray.700", "gray.500")}>
           Available for:
@@ -60,8 +61,10 @@ const DownloadPage: React.FC<realplatform> = function ({ platform: selectedPlatf
             ))}
           </SimpleGrid>
         </VStack>
-        <br></br>
+        
         </Box>
+        <Image w="full" rounded="lg"src="/assets/OmniEdgeall.png" alt="OmniEdge" />
+        </>
         
   );
 };

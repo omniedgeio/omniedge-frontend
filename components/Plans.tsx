@@ -61,6 +61,7 @@ export const PLANS = {
   },
   teams: {
     title: "Teams",
+    oldprice: "$20",
     price: 10,
     freetrial: "14 Days Free Trial",
     description: "For team that wants to have safe virtual network connection.",
@@ -123,13 +124,14 @@ export type PlanFeaturesProps = {
 export type PlanProps = React.PropsWithChildren<{
   title: string;
   price: string | number;
+  oldprice?: string | number;
   description: string;
   freetrial?:string ;
   focus?: boolean | undefined;
   features: PlanFeaturesProps[];
 }>;
 
-export const Plan: React.FC<PlanProps> = ({ focus, title, freetrial, price, description, features, children }) => {
+export const Plan: React.FC<PlanProps> = ({ focus, title, freetrial, oldprice,price, description, features, children }) => {
   return (
     <VStack alignItems="left" key={title} px={2} py={6}>
       <Text fontSize="lg">{title}</Text>
@@ -137,6 +139,7 @@ export const Plan: React.FC<PlanProps> = ({ focus, title, freetrial, price, desc
         <Heading my={4}>{price}</Heading>
       ) : (<>
         <HStack my={4}>
+          <Heading><Text color='orange.500' as='del'>{oldprice}</Text></Heading>
           <Heading>${price}</Heading>
           <Text>/ per Month</Text>
         </HStack>

@@ -11,7 +11,8 @@ import {
   Text,
   VStack,
   chakra,
-  useColorModeValue
+  useColorModeValue,
+  Image
 } from "@chakra-ui/react";
 import React from "react";
 import { Customersmap } from "../components/Customersmap";
@@ -20,6 +21,7 @@ import {Download_feature} from "./download/download_feature";
 import DefaultLayout from "../components/layout/Default";
 import { Seo } from "../components/Seo";
 import { Page } from "../types";
+import {Plans} from "./pricing";
 
 const Home: Page = (props) => {
   return (
@@ -139,20 +141,8 @@ const Home: Page = (props) => {
       <FeaturePage />
       <Featureslist />
       <Users />
-      <Heros />
+    
       <Customersmap />
-      
-      {/* <CookieConsent
-        location="bottom"
-        buttonText="I Agree"
-        cookieName="OmniEdge"
-        style={{ background: "#4859ED" }}
-        buttonStyle={{ color: "#4859ED", fontSize: "13px" }}
-        expires={150}
-        enableDeclineButton
-      >
-        We use cookies to ensure you get the best experience on our website <Link href="/privacy">Learn more</Link>.{" "}
-      </CookieConsent> */}
     
     </>
   );

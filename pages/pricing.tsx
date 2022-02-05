@@ -120,7 +120,51 @@ const FeatureDesc: React.FC<{ free?: boolean; pro?: boolean; team?: boolean; ent
     </Tr>
   );
 };
-
+export function Plans() {
+  const ChoosePlanButton: React.FC<{ plan: string } & ButtonProps> = ({ plan, ...props }) => (
+    <Link href="/dashboard/billing">
+      <Button isFullWidth colorScheme="gray" mt={4} {...props}>
+        Get Started
+      </Button>
+    </Link>
+  );
+  return (
+      <VStack mt={10} rounded="xl" backgroundColor={"gray.50"}>
+        <chakra.h1
+          mb={6}
+          fontSize={{ base: "4xl", md: "6xl" }}
+          fontWeight="bold"
+          lineHeight="none"
+          letterSpacing={{ base: "normal", md: "tight" }}
+          color={useColorModeValue("brand.900", "brand.100")}
+        >
+          Pricing
+        </chakra.h1>
+        <Text>Start for free, then grow with us</Text>
+        <SimpleGrid py={8} columns={{ base: 1, sm: 2, lg: 4 }} spacing={4}>
+          <FreePlan>
+            <ChoosePlanButton plan="free" />
+          </FreePlan>
+            <ProPlan>
+              <ChoosePlanButton plan="pro" />
+            </ProPlan>
+          <Box bgColor="brand.500" borderRadius="xl" color="white" px={4}>
+          <TeamsPlan>
+            <ChoosePlanButton plan="teams"  colorScheme="cyan" color="white"/>
+          </TeamsPlan>
+          </Box>
+          <EnterprisePlan>
+            <Link href="/contactus">
+              <Button isFullWidth variant="outline" mt={4} colorScheme="teal">
+                Contact us
+              </Button>
+            </Link>
+          </EnterprisePlan>
+        </SimpleGrid>
+      </VStack>
+      
+);
+}
 const PricingPage: Page = () => {
   const ChoosePlanButton: React.FC<{ plan: string } & ButtonProps> = ({ plan, ...props }) => (
     <Link href="/dashboard/billing">

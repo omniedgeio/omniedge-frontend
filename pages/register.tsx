@@ -55,7 +55,11 @@ const RegisterPage: Page = function (props) {
         })
         .catch((err) => {
           if (err.data) {
-            setErrorMsg(err.data.message);
+            if(err.data.errors && err.data.errors.email){
+              setErrorMsg("Email already exists");
+            }else{
+              setErrorMsg(err.data.message);
+            }
           }
           actions.setSubmitting(false);
         });

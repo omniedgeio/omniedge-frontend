@@ -8,8 +8,6 @@ date: February 10, 2022
 readtime: 6
 ---
 
-# Display and control your Android device with Omniedge from anywhere on MacOS, Windows and Linux
-
 [Scrcpy, pronounced "screen copy"](https://github.com/Genymobile/scrcpy), is an application provides display and control of Android devices connected via USB (or over TCP/IP). It does not require any root access. It works on GNU/Linux, Windows and macOS. 
 
 With [OmniEdge](https://omniedge.io/download), Scrcpy can have a wonderful feature, remote display and control of android devices over OmniEdge's peer-to-peer network from anywhere. 
@@ -172,6 +170,7 @@ OmniEdge Android is compatible with Android 6 or later mobile phone or TV. Last 
 ## 4 Display and control Android with OmniEdge
 
 Run scrcpy in the termial: 
+
 ```bash
 $scrcpy --tcpip=100.100.100.2:5555
 ```

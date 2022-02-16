@@ -143,9 +143,9 @@ export const Plan: React.FC<PlanProps> = ({ focus, title, freetrial, oldprice,pr
           <Heading>${price}</Heading>
           <Text>/ per Month</Text>
         </HStack>
-        <HStack my={4}>
+        {/* <HStack my={4}>
         <Badge variant='solid' colorScheme='orange'>{freetrial}</Badge>
-        </HStack>
+        </HStack> */}
         </>
       )}
       <Text minH="3em">{description}</Text>

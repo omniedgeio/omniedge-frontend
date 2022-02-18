@@ -20,11 +20,19 @@ const VirtualNetworkPage: Page = function (props) {
         <Heading size="md" fontWeight="semibold">
           Virtual Networks
         </Heading>
-        <Link href="/dashboard/virtual-networks/create">
-          <Button size="sm" _hover={{ textDecoration: "none" }}>
+        {user?.subscription.slug !== "free" ? (
+    <Link href="/dashboard/virtual-networks/create">
+        <Button size="sm" _hover={{ textDecoration: "none" }}>
             + Network
           </Button>
         </Link>
+      ) : (
+        <Link href="/dashboard/billing/choose-plan" >
+        <Button size="sm" _hover={{ textDecoration: "none" }}>
+            + Network
+          </Button>
+        </Link>
+      )}
       </HStack>
       {user?.subscription.slug !== "free" ? "Upgrade Plan" :
       <Alert
@@ -34,7 +42,7 @@ const VirtualNetworkPage: Page = function (props) {
        textAlign='center'
        >
     <AlertIcon />
-        Need more than one Virtual Network ? ➡
+        Need more than one Virtual Network ? 
           <Link href="/dashboard/billing/choose-plan" color="brand.700">
               Upgrade Plan
             </Link>

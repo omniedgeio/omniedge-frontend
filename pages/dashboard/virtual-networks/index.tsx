@@ -22,7 +22,7 @@ const VirtualNetworkPage: Page = function (props) {
     <VStack w="full" alignItems="flex-start" spacing="4">
       <HStack w="full" justifyContent="space-between">
         <Heading size="md" fontWeight="semibold">
-          Virtual Networks  {user?.subscription.slug}
+          Virtual Networks
         </Heading>
         {(user?.subscription.slug === "free" && Number(virtualNetworks?.data.length) ==0)||(user?.subscription.slug === "pro" && Number(virtualNetworks?.data.length) <5) || (user?.subscription.slug === "teams" && Number(virtualNetworks?.data.length) <10)? (
      <Link href="/dashboard/virtual-networks/create">

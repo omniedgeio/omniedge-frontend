@@ -20,19 +20,11 @@ const VirtualNetworkPage: Page = function (props) {
         <Heading size="md" fontWeight="semibold">
           Virtual Networks
         </Heading>
-        {user?.subscription.slug !== "free" ? (
     <Link href="/dashboard/virtual-networks/create">
         <Button size="sm" _hover={{ textDecoration: "none" }}>
             + Network
           </Button>
         </Link>
-      ) : (
-        <Link href="/dashboard/billing/choose-plan" >
-        <Button size="sm" _hover={{ textDecoration: "none" }}>
-            + Network
-          </Button>
-        </Link>
-      )}
       </HStack>
       {user?.subscription.slug !== "free" ? "Upgrade Plan" :
       <Alert

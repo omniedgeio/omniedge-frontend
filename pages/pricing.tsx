@@ -241,7 +241,7 @@ const PricingPage: Page = () => {
             <FeatureDesc>Security Keys</FeatureDesc>
             <FeatureDesc>Subroute</FeatureDesc>
             <FeatureDesc free={false} pro={true} team={true}>
-              Customize Auth Server
+              Customize Supernode
             </FeatureDesc>
             <FeatureDesc>Unlimited data transfer</FeatureDesc>
             <FeatureDesc>Encrypted, peer-to-peer connection</FeatureDesc>

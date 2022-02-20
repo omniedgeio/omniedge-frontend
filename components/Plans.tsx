@@ -58,8 +58,8 @@ export const PLANS = {
         tips: "Virtual network only can have devices from maximum of 5 users.",
       },
       {
-        label: "Customize Auth Server",
-        tips: "You can use your own Auth Server for your virtual network.",
+        label: "Customize Supernode",
+        tips: "You can use your own Supernode for your virtual network.",
       },
     ],
   },
@@ -91,8 +91,8 @@ export const PLANS = {
         tips: "Virtual network only can have devices from maximum of 5 users.",
       },
       {
-        label: "Customize Auth Server",
-        tips: "You can use your own Auth Server for your virtual network.",
+        label: "Customize Supernode",
+        tips: "You can use your own Supernode for your virtual network.",
       },
     ],
   },
@@ -121,8 +121,8 @@ export const PLANS = {
         tips: "Sub route allows you connect your devices which is not with Omniedge installed.",
       },
       {
-        label: "Customize Auth Server",
-        tips: "You can use your own Auth Server for your virtual network.",
+        label: "Customize Supernode",
+        tips: "You can use your own Supernode for your virtual network.",
       },
     ],
   },

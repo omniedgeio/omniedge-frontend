@@ -102,13 +102,13 @@ const VirtualNetworkForm: React.FC<VirtualNetworkFormProps> = ({ defaultValues, 
           </FormHelperText>
         </FormControl>
 
-        <Button onClick={() => setUseCustomSupernode(!useCustomSupernode)}>Customize Auth Server</Button>
+        <Button onClick={() => setUseCustomSupernode(!useCustomSupernode)}>Customize Supernode</Button>
 
         {useCustomSupernode && (
           <Stack w="full">
             <Alert status="warning">
               <AlertIcon />
-              Please make sure your custom auth server is reachable.
+              Please make sure your custom Supernode is reachable.
             </Alert>
             <FormControl isInvalid={!!(getIn(touched, "server.host") && getIn(errors, "server.host"))} isRequired>
               <FormLabel>Host</FormLabel>

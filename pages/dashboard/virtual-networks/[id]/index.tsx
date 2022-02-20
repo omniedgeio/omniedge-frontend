@@ -102,7 +102,7 @@ const VirtualNetworkDetailPage: Page = function (props) {
                     queryClient.invalidateQueries(["virtual-network", id]);
                     showSuccess(
                       "Success",
-                      "Please reload omniedge client in order for customized supernode to take effect."
+                      "Please reload omniedge client in order for customized auth server to take effect."
                     );
                   })
                   .catch((err) => {

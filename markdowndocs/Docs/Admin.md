@@ -41,7 +41,7 @@ Security Key is used to register devices, there are two kinds of Security OmniEd
 
 You can setup your own Auth Server server to increase security and speed for your Virtual Network. 
 
-![](/assets/docs/OmniEdge-CustomizeSupernode.png)
+![](/assets/docs/OmniEdge-CustomizeAuthServer.png)
 
 
 

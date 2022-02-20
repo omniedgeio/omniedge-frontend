@@ -1,4 +1,4 @@
-import { Country, InvitationStatus, SecurityKeyType, UserRole } from "./enum";
+import { Country, InvitationStatus, SecurityKeyType, ServerType, UserRole } from "./enum";
 
 export enum ErrorCode {
   // Auth
@@ -72,6 +72,7 @@ export interface IServerResponse {
   name: string;
   host: string;
   country: Country;
+  type: ServerType;
 }
 
 /* -------------------------------------------------------------------------- */

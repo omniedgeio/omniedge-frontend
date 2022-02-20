@@ -6,11 +6,11 @@ import {
   IconButton,
   Menu,
   MenuButton,
-  MenuDivider,
   MenuItem,
   MenuList,
   Skeleton,
   Table,
+  TableCaption,
   Tbody,
   Td,
   Text,
@@ -23,22 +23,20 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import { FiEdit, FiMoreVertical, FiServer, FiX } from "react-icons/fi";
+import { FiMoreVertical, FiServer, FiX } from "react-icons/fi";
 import { useQuery } from "react-query";
 import { UserRole } from "../../lib/api/enum";
 import { IVirtualNetworkResponse } from "../../lib/api/response";
 import { deleteVirtualNetwork, listVirtualNetworks } from "../../lib/api/virtualNetwork";
 import { showError, showSuccess } from "../../lib/helpers/toast";
+import { useUser } from "../../lib/hook/useUser";
 import ConfirmModal from "../ConfirmModal";
 import Link from "../next/Link";
-import RenameModal from "./RenameModal";
 
 export default function VirtualNetworkListTable() {
   const isPhone = useBreakpointValue({ base: true, sm: false });
   const variant = useBreakpointValue({ base: "ghost", sm: "solid" });
-  const [vnToRename, setVnToRename] = useState<IVirtualNetworkResponse>();
   const [vnToRemove, setVnToRemove] = useState<IVirtualNetworkResponse>();
-  const renameModal = useDisclosure();
   const confirmModal = useDisclosure();
 
   const {
@@ -48,19 +46,10 @@ export default function VirtualNetworkListTable() {
     refetch,
   } = useQuery("virtual-networks", () => listVirtualNetworks({}));
 
+  const { user } = useUser();
+
   return (
     <>
-      <RenameModal
-        virtualNetwork={vnToRename}
-        onClose={() => {
-          renameModal.onClose();
-        }}
-        onSuccess={() => {
-          refetch();
-          renameModal.onClose();
-        }}
-        isOpen={renameModal.isOpen}
-      />
       <ConfirmModal
         isOpen={confirmModal.isOpen}
         title="Remove Virtual Network"
@@ -129,16 +118,6 @@ export default function VirtualNetworkListTable() {
                       </MenuItem>
                     </Link>
                     <MenuItem
-                      onClick={() => {
-                        setVnToRename(vn);
-                        renameModal.onOpen();
-                      }}
-                      icon={<FiEdit />}
-                    >
-                      Rename
-                    </MenuItem>
-                    <MenuDivider my="1" />
-                    <MenuItem
                       color="red.500"
                       icon={<FiX />}
                       onClick={() => {
@@ -187,6 +166,14 @@ export default function VirtualNetworkListTable() {
             })
           )}
         </Tbody>
+        {user?.subscription.slug == "free" && (
+          <TableCaption>
+            <Link href="/dashboard/billing/choose-plan" color="brand.700">
+              Upgrade Plan
+            </Link>{" "}
+            to manage more than one virtual network
+          </TableCaption>
+        )}
       </Table>
     </>
   );

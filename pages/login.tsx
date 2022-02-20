@@ -21,7 +21,6 @@ import Link from "../components/next/Link";
 import { loginByPassword } from "../lib/api/auth";
 import { Page } from "../types";
 
-
 const LoginPage: Page = function (props) {
   const router = useRouter();
   const [errorMsg, setErrorMsg] = useState("");
@@ -43,9 +42,9 @@ const LoginPage: Page = function (props) {
       })
         .then(() => {
           if (auth_session_uuid) {
-            router.push("/login_success");
+            router.replace("/login_success");
           } else {
-            router.push("/dashboard");
+            router.replace("/dashboard");
           }
         })
         .catch((err) => {
@@ -57,55 +56,63 @@ const LoginPage: Page = function (props) {
     },
   });
 
-  return (<>
-    <form onSubmit={handleSubmit} style={{ width: "100%" }}>
-      {errorMsg && (
-        <Alert my={2} status="error">
-          <AlertIcon />
-          <AlertDescription>{errorMsg}</AlertDescription>
-        </Alert>
-      )}
-      <VStack w="full" spacing="4">
-        <FormControl id="email" isInvalid={!!(touched.email && errors.email)} isRequired>
-          <FormLabel>Email</FormLabel>
-          <Input
-            type="email"
-            name="email"
-            onChange={handleChange}
-            onBlur={handleBlur}
-            value={values.email}
-            placeholder="mail@host"
-          ></Input>
-          <FormErrorMessage>{errors.email}</FormErrorMessage>
-        </FormControl>
-        <FormControl id="password" isInvalid={!!(touched.password && errors.password)} isRequired>
-          <FormLabel>Password</FormLabel>
-          <PasswordInput name="password" onChange={handleChange} onBlur={handleBlur} value={values.password} />
-          <FormErrorMessage>{errors.password}</FormErrorMessage>
-          <HStack mt="1" w="full" justifyContent="flex-end">
-            <Link fontSize="xs" color="gray.500" href="/forgot-password">
-              Forgot Password
-            </Link>
-          </HStack>
-        </FormControl>
-        <VStack w="full">
-          <Button isLoading={isSubmitting} type="submit" colorScheme="brand" isFullWidth>
-            Login
-          </Button>
-          <HStack w="full">
-            <Text fontSize="xs" color="gray.500">
-              {`Still don't have an account? `}
-              <Link href="/register" color="brand.500">
-                Register here
+  return (
+    <>
+      <form onSubmit={handleSubmit} style={{ width: "100%" }}>
+        {errorMsg && (
+          <Alert my={2} status="error">
+            <AlertIcon />
+            <AlertDescription>{errorMsg}</AlertDescription>
+          </Alert>
+        )}
+        <VStack w="full" spacing="4">
+          <FormControl id="email" isInvalid={!!(touched.email && errors.email)} isRequired>
+            <FormLabel>Email</FormLabel>
+            <Input
+              type="email"
+              name="email"
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={values.email}
+              placeholder="mail@host"
+            ></Input>
+            <FormErrorMessage>{errors.email}</FormErrorMessage>
+          </FormControl>
+          <FormControl id="password" isInvalid={!!(touched.password && errors.password)} isRequired>
+            <FormLabel>Password</FormLabel>
+            <PasswordInput name="password" onChange={handleChange} onBlur={handleBlur} value={values.password} />
+            <FormErrorMessage>{errors.password}</FormErrorMessage>
+            <HStack mt="1" w="full" justifyContent="flex-end">
+              <Link fontSize="xs" color="gray.500" href="/forgot-password">
+                Forgot Password
               </Link>
-            </Text>
-          </HStack>
+            </HStack>
+          </FormControl>
+          <VStack w="full">
+            <Button isLoading={isSubmitting} type="submit" colorScheme="brand" isFullWidth>
+              Login
+            </Button>
+            <HStack w="full">
+              <Text fontSize="xs" color="gray.500">
+                {`Still don't have an account? `}
+                <Link href="/register" color="brand.500">
+                  Register here
+                </Link>
+              </Text>
+            </HStack>
+          </VStack>
         </VStack>
-      </VStack>
-    </form>
-    <Text fontSize="xs" color="gray.500">
-              {`By clicking the buttons above, you acknowledge that you have read, understood, and agree to OmniEdge's `} <Link href="/terms" color="brand.500">Terms of Service </Link>and <Link href="/privacy" color="brand.500">Privacy Policy.</Link>
-    </Text>
+      </form>
+      <Text fontSize="xs" color="gray.500">
+        {`By clicking the buttons above, you acknowledge that you have read, understood, and agree to OmniEdge's `}{" "}
+        <Link href="/terms" color="brand.500">
+          Terms of Service{" "}
+        </Link>
+        and{" "}
+        <Link href="/privacy" color="brand.500">
+          Privacy Policy.
+        </Link>
+      </Text>
     </>
   );
 };

@@ -45,7 +45,7 @@ const VirtualNetworkDevicesTable: React.FC<IVirtualNetworkDevicesTableProps> = f
     <>
       <ConfirmModal
         isOpen={confirmModal.isOpen}
-        title="Remove Virtual Network"
+        title="Remove Device from Virtual Network"
         onConfirm={() => {
           removeDeviceFromVirtualNetwork(virtualNetworkId, deviceToRemove?.id as string).then(() => {
             refetch();

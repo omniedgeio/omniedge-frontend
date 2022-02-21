@@ -8,6 +8,7 @@ import {
   FormLabel,
   Input,
   Stack,
+  Text,
   VStack,
 } from "@chakra-ui/react";
 import { FormikHelpers, getIn, useFormik } from "formik";
@@ -31,7 +32,7 @@ const VirtualNetworkForm: React.FC<VirtualNetworkFormProps> = ({ defaultValues, 
   }, [isCustomSupernode]);
 
   const isUpdate = useMemo(() => !!defaultValues, [defaultValues]);
-  const { user, isLoading } = useUser("/login");
+  const { user, isLoading, isFreePlan } = useUser("/login");
 
   const { handleChange, handleBlur, handleSubmit, values, touched, errors, isSubmitting } =
     useFormik<IVirtualNetworkRequest>({
@@ -103,20 +104,21 @@ const VirtualNetworkForm: React.FC<VirtualNetworkFormProps> = ({ defaultValues, 
             {isUpdate ? `Currently we don't support change of ip range.` : `IP Range can't be changed after creation.`}
           </FormHelperText>
         </FormControl>
-        <FormLabel>{user?.subscription.slug === "free" ? "Customize Supernode" : ""}</FormLabel>
-        <Button 
-        isLoading={isLoading} 
-        onClick={() => {
-          if (user?.subscription.slug!=="free") {
-            setUseCustomSupernode(!useCustomSupernode);
-          }else {
-            location.href='/dashboard/billing/choose-plan';
-          }
-        }
-        }
-        >
-          {user?.subscription.slug === "free" ? "Upgrade plan" : "Customize Supernode"}
+        <FormLabel>Customize Supernode</FormLabel>
+        {isFreePlan ? (
+          <Text fontSize="sm" color="gray.500">
+            Only available for paid users (Pro and Team plan)
+          </Text>
+        ) : (
+          <Button
+            isLoading={isLoading}
+            onClick={() => {
+              setUseCustomSupernode(!useCustomSupernode);
+            }}
+          >
+            {!useCustomSupernode ? "Use customized supernode" : "Use default supernode"}
           </Button>
+        )}
 
         {useCustomSupernode && (
           <Stack w="full">

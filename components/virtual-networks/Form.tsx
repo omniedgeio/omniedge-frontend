@@ -16,6 +16,7 @@ import isValidHostname from "is-valid-hostname";
 import { useEffect, useMemo, useState } from "react";
 import * as Yup from "yup";
 import { IVirtualNetworkRequest } from "../../lib/api/request";
+import { useUser } from "../../lib/hook/useUser";
 
 interface VirtualNetworkFormProps {
   defaultValues?: IVirtualNetworkRequest;
@@ -30,6 +31,7 @@ const VirtualNetworkForm: React.FC<VirtualNetworkFormProps> = ({ defaultValues, 
   }, [isCustomSupernode]);
 
   const isUpdate = useMemo(() => !!defaultValues, [defaultValues]);
+  const { user, isLoading } = useUser("/login");
 
   const { handleChange, handleBlur, handleSubmit, values, touched, errors, isSubmitting } =
     useFormik<IVirtualNetworkRequest>({
@@ -101,8 +103,20 @@ const VirtualNetworkForm: React.FC<VirtualNetworkFormProps> = ({ defaultValues, 
             {isUpdate ? `Currently we don't support change of ip range.` : `IP Range can't be changed after creation.`}
           </FormHelperText>
         </FormControl>
-
-        <Button onClick={() => setUseCustomSupernode(!useCustomSupernode)}>Customize Supernode</Button>
+        <FormLabel>{user?.subscription.slug === "free" ? "Customize Supernode" : ""}</FormLabel>
+        <Button 
+        isLoading={isLoading} 
+        onClick={() => {
+          if (user?.subscription.slug!=="free") {
+            setUseCustomSupernode(!useCustomSupernode);
+          }else {
+            location.href='/dashboard/billing/choose-plan';
+          }
+        }
+        }
+        >
+          {user?.subscription.slug === "free" ? "Upgrade plan" : "Customize Supernode"}
+          </Button>
 
         {useCustomSupernode && (
           <Stack w="full">

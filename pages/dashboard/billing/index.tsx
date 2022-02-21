@@ -101,7 +101,7 @@ const BillingPage: Page = (props) => {
                   <>
                     <Text>{startCase(key)}</Text>
                     <Text>
-                      <Text fontFamily="mono" d="inline">
+                      <Text fontFamily="mono" d="inline" color={value.usage > value.limit ? "red.500" : ""}>
                         {value.usage}
                       </Text>{" "}
                       out of{" "}

@@ -1,4 +1,4 @@
-import { Country, InvitationStatus, SecurityKeyType, ServerType, UserRole } from "./enum";
+import { Country, InvitationStatus, SecurityKeyType, ServerType, UsageKey, UserRole } from "./enum";
 
 export enum ErrorCode {
   // Auth
@@ -65,6 +65,14 @@ export interface IProfileResponse {
   picture: string;
   identities: IIdentityResponse[];
   subscription: ISubscriptionResponse;
+  usage_limits: UsageLimits;
+}
+
+type UsageLimits = Record<UsageKey, IUsageLimitResponse>;
+
+export interface IUsageLimitResponse {
+  limit: number;
+  usage: number;
 }
 
 export interface IServerResponse {

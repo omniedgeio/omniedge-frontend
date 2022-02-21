@@ -24,6 +24,16 @@ export enum InvitationStatus {
   Rejected = 3,
 }
 
+export enum UsageKey {
+  VirtualNetworks = "virtual-networks",
+  Devices = "devices",
+}
+
+export enum ServerType {
+  Default = 0,
+  SelfHosted = 1,
+}
+
 export enum Country {
   UnitedStates = "US",
   Afghanistan = "AF",

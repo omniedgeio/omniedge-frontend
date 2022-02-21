@@ -13,6 +13,10 @@ thumbnail: /assets/OmniEdgeall0.5.png
 
 + **virtual-network-id:** you can get your virutal network id by running `omniedge join` by selecting the virtual network.
 
++ **customize supernode:** you run, host and maintenance your supernode on your own server.
+
+# Client Installation
+
 ## 1. Get Started
 
 + Sign up your account: [Sign up](https://omniedge.io/register)
@@ -288,6 +292,42 @@ with a speicified virtual network.
 
 OmniEdge iOS is still under development and tested in testflight, we will open for public test soon.
 
+
+# Customize Supernode Installation
+
+OmniEdge offers customize supernode, You can setup your own Supernode server to increase security and speed for your Virtual Network.
+
+## 1. Setup up customize supernode with Docker
+
+### 1.1 Clone the repo
+
+``` bash
+git clone https://github.com/omniedgeio/docker-customize-supernode.git
+```
+
+### 1.2 Build Supernode
+
+```
+cd docker-customize-supernode
+docker build -t docker-customize-supernode .
+```
+
+### 1.3 Run Supernode
+
+```
+docker run -d -p 5565:5565/udp docker-customize-supernode
+```
+
+### 1.4 Setting in the Omniedge Dashboard
+
+Login in your OmniEdge account, and fill your server IP and port in the dashboard.
+
+![](/assets/docs/OmniEdge-CustomizeAuthServer.png)
+
+![](/assets/docs/Setup-Customize-Supernode-1080p.gif)
+
+
+------
 
 
 -----

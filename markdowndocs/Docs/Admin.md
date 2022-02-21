@@ -17,7 +17,7 @@ You can create your own Virtual Network for your Team or personal purpose, by si
 
 ## 2. Sharing Virtual Networks
 You can invite your friends, teammate, or anyone you trust to your own Virtual Network. 
-![](/assets/docs/OmniEdge-SharingVirtualNetwork.png)
+![](/assets/docs/OmniEdge-SharingVirtualNetwork-2.png)
 
 ## 3. Devices 
 A Devices have to be registered before join the virtual network, and it will be listed as soon as registered successfully. You can change the device's name as you want.
@@ -36,6 +36,13 @@ Security Key is used to register devices, there are two kinds of Security OmniEd
 
 ![](/assets/docs/OmniEdge-CreateSecurityKey.png)
 ![](/assets/docs/OmniEdge-SecurityKey.png)
+
+## 6. Customize Supernode
+
+You can setup your own Supernode server to increase security and speed for your Virtual Network, read the doc [Customize supernode installation](/docs/article/Install#customize-supernode-installation) to setup your own supernode. 
+
+![](/assets/docs/OmniEdge-CustomizeAuthServer.png)
+
 
 
 -----

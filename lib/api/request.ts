@@ -81,13 +81,20 @@ export interface IListVirtualNetworkRequest extends IPaginationRequest {
   name?: string;
 }
 
-export interface ICreateVirtualNetworkRequest {
+export interface IVirtualNetworkRequest {
   name: string;
-  ip_range: string;
+  ip_range?: string;
+  server?: ICustomServerRequest;
+}
+
+export interface ICustomServerRequest {
+  host: string;
+  port: number;
 }
 
 export interface IUpdateVirtualNetworkRequest {
   name: string;
+  server?: ICustomServerRequest;
 }
 
 export enum SecurityKeyTypeEnum {

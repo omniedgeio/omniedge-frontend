@@ -22,13 +22,15 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import { FiMoreVertical, FiServer, FiX } from "react-icons/fi";
+import { FiEdit, FiMoreVertical, FiServer, FiX } from "react-icons/fi";
 import { useQuery } from "react-query";
 import { listDevices, removeDevice } from "../../lib/api/device";
 import { IListDevicesRequest } from "../../lib/api/request";
 import { IDeviceResponse } from "../../lib/api/response";
+import { showSuccess } from "../../lib/helpers/toast";
 import ConfirmModal from "../ConfirmModal";
 import Link from "../next/Link";
+import RenameModal from "./RenameModal";
 
 interface IDevicesTableProps {
   params?: IListDevicesRequest;
@@ -41,8 +43,19 @@ const DevicesTable: React.FC = function (props) {
   const confirmModal = useDisclosure();
   const [deviceToRemove, setDeviceToRemove] = useState<IDeviceResponse>();
 
+  const renameModal = useDisclosure();
+  const [deviceToRename, setDeviceToRename] = useState<IDeviceResponse>();
   return (
     <>
+      <RenameModal
+        isOpen={renameModal.isOpen}
+        device={deviceToRename}
+        onSuccess={() => {
+          renameModal.onClose();
+          showSuccess("Success", "Device renamed successfully");
+        }}
+        onClose={renameModal.onClose}
+      ></RenameModal>
       <ConfirmModal
         isOpen={confirmModal.isOpen}
         title="Remove Virtual Network"
@@ -120,6 +133,15 @@ const DevicesTable: React.FC = function (props) {
                     <Link href={"/dashboard/devices/" + device.id}>
                       <MenuItem icon={<FiServer />}>View Device</MenuItem>
                     </Link>
+                    <MenuItem
+                      onClick={() => {
+                        setDeviceToRename(device);
+                        renameModal.onOpen();
+                      }}
+                      icon={<FiEdit />}
+                    >
+                      Rename
+                    </MenuItem>
                     <MenuDivider />
                     <MenuItem
                       color="red.500"

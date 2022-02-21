@@ -1,5 +1,5 @@
 import request from "./client";
-import { IListDevicesRequest, IUpdateDeviceSubnetRouteRequest } from "./request";
+import { IListDevicesRequest, IUpdateDeviceRequest, IUpdateDeviceSubnetRouteRequest } from "./request";
 import { IDeviceResponse, IPaginatedResponse } from "./response";
 
 export async function listDevices(
@@ -38,6 +38,16 @@ export async function retrieveDevice(id: string): Promise<IDeviceResponse | unde
   if (res.data.data) {
     res.data.data.created_at = new Date(res.data.data.created_at);
   }
+
+  return res.data.data;
+}
+
+export async function updateDevice(id: string, data: IUpdateDeviceRequest) {
+  let res = await request({
+    url: "/devices/" + id,
+    method: "PUT",
+    data,
+  });
 
   return res.data.data;
 }

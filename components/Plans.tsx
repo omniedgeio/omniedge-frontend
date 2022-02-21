@@ -57,6 +57,10 @@ export const PLANS = {
         label: "Up to 5 users",
         tips: "Virtual network only can have devices from maximum of 5 users.",
       },
+      {
+        label: "Customize Supernode",
+        tips: "You can use your own Supernode for your virtual network.",
+      },
     ],
   },
   teams: {
@@ -86,6 +90,10 @@ export const PLANS = {
         label: "Up to 10 users",
         tips: "Virtual network only can have devices from maximum of 5 users.",
       },
+      {
+        label: "Customize Supernode",
+        tips: "You can use your own Supernode for your virtual network.",
+      },
     ],
   },
   enterprise: {
@@ -111,6 +119,10 @@ export const PLANS = {
       {
         label: "Subnet Route Discovery",
         tips: "Sub route allows you connect your devices which is not with Omniedge installed.",
+      },
+      {
+        label: "Customize Supernode",
+        tips: "You can use your own Supernode for your virtual network.",
       },
     ],
   },

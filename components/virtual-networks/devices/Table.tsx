@@ -4,6 +4,7 @@ import {
   IconButton,
   Menu,
   MenuButton,
+  MenuDivider,
   MenuItem,
   MenuList,
   Skeleton,
@@ -20,11 +21,13 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import { FiMoreVertical, FiX } from "react-icons/fi";
+import { FiEdit, FiMoreVertical, FiX } from "react-icons/fi";
 import { useQuery } from "react-query";
 import { IVirtualNetworkDeviceResponse } from "../../../lib/api/response";
 import { listDevicesOfVirtualNetwork, removeDeviceFromVirtualNetwork } from "../../../lib/api/virtualNetwork";
+import { showSuccess } from "../../../lib/helpers/toast";
 import ConfirmModal from "../../ConfirmModal";
+import RenameModal from "../../devices/RenameModal";
 import Link from "../../next/Link";
 
 interface IVirtualNetworkDevicesTableProps {
@@ -32,7 +35,7 @@ interface IVirtualNetworkDevicesTableProps {
 }
 
 const VirtualNetworkDevicesTable: React.FC<IVirtualNetworkDevicesTableProps> = function ({ virtualNetworkId }) {
-  const { data, isLoading, isError, refetch } = useQuery(["virtual-networks/devices", virtualNetworkId], () =>
+  const { data, isLoading, isError, refetch } = useQuery(["virtual-networks", "devices", virtualNetworkId], () =>
     listDevicesOfVirtualNetwork(virtualNetworkId)
   );
 
@@ -41,11 +44,23 @@ const VirtualNetworkDevicesTable: React.FC<IVirtualNetworkDevicesTableProps> = f
 
   const confirmModal = useDisclosure();
   const [deviceToRemove, setDeviceToRemove] = useState<IVirtualNetworkDeviceResponse>();
+
+  const renameModal = useDisclosure();
+  const [deviceToRename, setDeviceToRename] = useState<IVirtualNetworkDeviceResponse>();
   return (
     <>
+      <RenameModal
+        isOpen={renameModal.isOpen}
+        device={deviceToRename}
+        onSuccess={() => {
+          renameModal.onClose();
+          showSuccess("Success", "Device renamed successfully");
+        }}
+        onClose={renameModal.onClose}
+      ></RenameModal>
       <ConfirmModal
         isOpen={confirmModal.isOpen}
-        title="Remove Virtual Network"
+        title="Remove Device from Virtual Network"
         onConfirm={() => {
           removeDeviceFromVirtualNetwork(virtualNetworkId, deviceToRemove?.id as string).then(() => {
             refetch();
@@ -107,6 +122,16 @@ const VirtualNetworkDevicesTable: React.FC<IVirtualNetworkDevicesTableProps> = f
                     icon={<FiMoreVertical />}
                   ></MenuButton>
                   <MenuList py="1.5">
+                    <MenuItem
+                      onClick={() => {
+                        setDeviceToRename(device);
+                        renameModal.onOpen();
+                      }}
+                      icon={<FiEdit />}
+                    >
+                      Rename
+                    </MenuItem>
+                    <MenuDivider></MenuDivider>
                     <MenuItem
                       color="red.500"
                       onClick={() => {

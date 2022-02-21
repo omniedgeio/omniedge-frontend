@@ -9,11 +9,13 @@ import {
   List,
   ListIcon,
   ListItem,
+  SimpleGrid,
   Spinner,
   Text,
   VStack,
 } from "@chakra-ui/react";
 import { format } from "date-fns";
+import { startCase } from "lodash";
 import { MdCheckCircle } from "react-icons/md";
 import DashboardLayout from "../../../components/layout/Dashboard";
 import Link from "../../../components/next/Link";
@@ -90,6 +92,26 @@ const BillingPage: Page = (props) => {
                 </ListItem>
               ))}
             </List>
+          </Box>
+          <Box mt={4}>
+            <Text fontWeight="medium">Current Usage</Text>
+            <SimpleGrid columns={2}>
+              {user?.usage_limits &&
+                Object.entries(user?.usage_limits).map(([key, value]) => (
+                  <>
+                    <Text>{startCase(key)}</Text>
+                    <Text>
+                      <Text fontFamily="mono" d="inline" color={value.usage > value.limit ? "red.500" : ""}>
+                        {value.usage}
+                      </Text>{" "}
+                      out of{" "}
+                      <Text fontFamily="mono" d="inline">
+                        {value.limit}
+                      </Text>
+                    </Text>
+                  </>
+                ))}
+            </SimpleGrid>
           </Box>
         </Box>
       )}

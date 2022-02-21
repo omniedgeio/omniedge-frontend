@@ -1,9 +1,9 @@
 import request from "./client";
 import {
   ICreateInvitationRequest,
-  ICreateVirtualNetworkRequest,
   IListVirtualNetworkRequest,
   IUpdateVirtualNetworkRequest,
+  IVirtualNetworkRequest,
 } from "./request";
 import {
   IInvitationResponse,
@@ -34,9 +34,7 @@ export async function retrieveVirtualNetwork(id: string): Promise<IVirtualNetwor
   return res.data.data;
 }
 
-export async function createVirtualNetwork(
-  data: ICreateVirtualNetworkRequest
-): Promise<IVirtualNetworkResponse | undefined> {
+export async function createVirtualNetwork(data: IVirtualNetworkRequest): Promise<IVirtualNetworkResponse | undefined> {
   let res = await request({
     url: "/virtual-networks",
     method: "POST",

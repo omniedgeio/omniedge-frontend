@@ -26,6 +26,7 @@ export function useUser(redirect: string | null = "/login") {
 
   return {
     user,
+    isFreePlan: user?.subscription.slug === "free",
     refetch,
     isLoading,
     isError,

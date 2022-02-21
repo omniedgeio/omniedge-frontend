@@ -240,6 +240,9 @@ const PricingPage: Page = () => {
             <FeatureTextnumber title="Users" free="1" pro="5" team="10" enterprise="Unlimited" />
             <FeatureDesc>Security Keys</FeatureDesc>
             <FeatureDesc>Subroute</FeatureDesc>
+            <FeatureDesc free={false} pro={true} team={true}>
+              Customize Supernode
+            </FeatureDesc>
             <FeatureDesc>Unlimited data transfer</FeatureDesc>
             <FeatureDesc>Encrypted, peer-to-peer connection</FeatureDesc>
             <FeatureDesc free={false} pro={false} team={true}>

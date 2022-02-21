@@ -10,6 +10,7 @@ import {
   Stack,
   Text,
   VStack,
+  Link,
 } from "@chakra-ui/react";
 import { FormikHelpers, getIn, useFormik } from "formik";
 import isCidr from "is-cidr";
@@ -107,8 +108,11 @@ const VirtualNetworkForm: React.FC<VirtualNetworkFormProps> = ({ defaultValues, 
         <FormLabel>Customize Supernode</FormLabel>
         {isFreePlan ? (
           <Text fontSize="sm" color="gray.500">
-            Only available for paid users (Pro and Team plan)
+            Only available for Pro and Team plan, <Link href="/dashboard/billing/choose-plan" color="brand.700">
+           Upgrade Plan
+         </Link>
           </Text>
+         
         ) : (
           <Button
             isLoading={isLoading}

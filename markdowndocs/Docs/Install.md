@@ -324,6 +324,9 @@ Login in your OmniEdge account, and fill your server IP and port in the dashboar
 
 ![](/assets/docs/OmniEdge-CustomizeAuthServer.png)
 
+![](/assets/docs/Setup-Customize-Supernode-1080p.gif)
+
+
 ------
 
 

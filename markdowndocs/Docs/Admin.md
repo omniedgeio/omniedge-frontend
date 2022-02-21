@@ -39,7 +39,7 @@ Security Key is used to register devices, there are two kinds of Security OmniEd
 
 ## 6. Customize Supernode
 
-You can setup your own Supernode server to increase security and speed for your Virtual Network. 
+You can setup your own Supernode server to increase security and speed for your Virtual Network, read the doc [Customize supernode installation](/docs/article/Install#customize-supernode-installation) to setup your own supernode. 
 
 ![](/assets/docs/OmniEdge-CustomizeAuthServer.png)
 

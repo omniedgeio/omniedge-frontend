@@ -42,7 +42,7 @@ import GoogleLogin from "../../../components/auth/GoogleLogin";
 import ConfirmModal from "../../../components/ConfirmModal";
 import DashboardLayout from "../../../components/layout/Dashboard";
 import { listInvitations, updateInvitation } from "../../../lib/api/invitations";
-import { InvitationStatusEnum } from "../../../lib/api/request";
+import { InvitationStatus } from "../../../lib/api/request";
 import { IInvitationResponse } from "../../../lib/api/response";
 import { activateGoogleLogin, updateProfile } from "../../../lib/api/user";
 import { showError, showSuccess } from "../../../lib/helpers/toast";
@@ -130,14 +130,19 @@ const Invitations: React.FC = function (props) {
         isOpen={confirmModal.isOpen}
         title="Remove Virtual Network"
         onConfirm={() => {
-          updateInvitation(invitationToReject?.id as string, { status: InvitationStatusEnum.Rejected }).then(() => {
-            refetch();
-            confirmModal.onClose();
-          });
+          updateInvitation(invitationToReject?.id as string, { status: InvitationStatus.Rejected })
+            .then(() => {
+              refetch();
+              confirmModal.onClose();
+              showSuccess("Success", "Invitation rejected");
+            })
+            .catch((err) => {
+              showError("Error", err.data.message);
+            });
         }}
         onCancel={confirmModal.onClose}
       >
-        Are you sure you want to reject invitation from <Code>{invitationToReject?.virtual_network}</Code>?
+        Are you sure you want to reject invitation from <Code>{invitationToReject?.virtual_network.name}</Code>?
       </ConfirmModal>
       <Table w="full" maxW="container.sm">
         <Thead>
@@ -166,8 +171,8 @@ const Invitations: React.FC = function (props) {
             </Tr>
           ) : (
             data?.data?.map((invitation) => {
-              const VirtualNetworkName = () => <Text>{invitation.virtual_network}</Text>;
-              const InvitedBy = () => <Text fontSize={["sm", "md"]}>{invitation.invited_by}</Text>;
+              const VirtualNetworkName = () => <Text>{invitation.virtual_network.name}</Text>;
+              const InvitedBy = () => <Text fontSize={["sm", "md"]}>{invitation.invited_by.name}</Text>;
               const InvitedAt = (props: TextProps) => (
                 <Text fontSize={["sm", "md"]} color={["gray.600", "black"]} {...props}>
                   {formatDistanceToNow(new Date(invitation.created_at))}
@@ -187,10 +192,15 @@ const Invitations: React.FC = function (props) {
                     <MenuItem
                       onClick={() => {
                         updateInvitation(invitation.id as string, {
-                          status: InvitationStatusEnum.Accepted,
-                        }).then(() => {
-                          refetch();
-                        });
+                          status: InvitationStatus.Accepted,
+                        })
+                          .then(() => {
+                            refetch();
+                            showSuccess("Success", "Invitation accepted");
+                          })
+                          .catch((err) => {
+                            showError("Error", err.data.message);
+                          });
                       }}
                       icon={<FiCheck />}
                     >

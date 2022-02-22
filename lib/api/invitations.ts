@@ -14,7 +14,7 @@ export async function listInvitations(): Promise<IPaginatedResponse<IInvitationR
 export async function updateInvitation(uuid: string, data: IUpdateInvitationRequest) {
   let res = await request({
     url: "/invitations/" + uuid,
-    method: "POST",
+    method: "PUT",
     data,
   });
 

@@ -7,10 +7,10 @@ import {
   FormHelperText,
   FormLabel,
   Input,
+  Link,
   Stack,
   Text,
   VStack,
-  Link,
 } from "@chakra-ui/react";
 import { FormikHelpers, getIn, useFormik } from "formik";
 import isCidr from "is-cidr";
@@ -28,14 +28,15 @@ interface VirtualNetworkFormProps {
 
 const VirtualNetworkForm: React.FC<VirtualNetworkFormProps> = ({ defaultValues, onSubmit, isCustomSupernode }) => {
   const [useCustomSupernode, setUseCustomSupernode] = useState(!!isCustomSupernode);
+  console.log(useCustomSupernode);
   useEffect(() => {
     setUseCustomSupernode(!!isCustomSupernode);
   }, [isCustomSupernode]);
 
   const isUpdate = useMemo(() => !!defaultValues, [defaultValues]);
-  const { user, isLoading, isFreePlan } = useUser("/login");
+  const { isLoading, isFreePlan } = useUser("/login");
 
-  const { handleChange, handleBlur, handleSubmit, values, touched, errors, isSubmitting } =
+  const { handleChange, handleBlur, handleSubmit, setValues, values, touched, errors, isSubmitting } =
     useFormik<IVirtualNetworkRequest>({
       enableReinitialize: true,
       initialValues: defaultValues || {
@@ -61,16 +62,18 @@ const VirtualNetworkForm: React.FC<VirtualNetworkFormProps> = ({ defaultValues, 
           }),
       }),
       onSubmit: (values, actions) => {
-        if (!useCustomSupernode) {
-          actions.setValues({
-            ...values,
-            server: undefined,
-          });
-        }
-
         onSubmit && onSubmit(values, actions);
       },
     });
+
+  useEffect(() => {
+    if (!useCustomSupernode) {
+      setValues({
+        ...values,
+        server: undefined,
+      });
+    }
+  }, [useCustomSupernode]);
 
   return (
     <form style={{ width: "100%" }} onSubmit={handleSubmit}>
@@ -108,11 +111,11 @@ const VirtualNetworkForm: React.FC<VirtualNetworkFormProps> = ({ defaultValues, 
         <FormLabel>Customize Supernode</FormLabel>
         {isFreePlan ? (
           <Text fontSize="sm" color="gray.500">
-            Only available for Pro and Team plan, <Link href="/dashboard/billing/choose-plan" color="brand.700">
-           Upgrade Plan
-         </Link>
+            Only available for Pro and Team plan,{" "}
+            <Link href="/dashboard/billing/choose-plan" color="brand.700">
+              Upgrade Plan
+            </Link>
           </Text>
-         
         ) : (
           <Button
             isLoading={isLoading}
@@ -120,7 +123,7 @@ const VirtualNetworkForm: React.FC<VirtualNetworkFormProps> = ({ defaultValues, 
               setUseCustomSupernode(!useCustomSupernode);
             }}
           >
-            {!useCustomSupernode ? "Use customized supernode" : "Use default supernode"}
+            {useCustomSupernode ? "Use default supernode" : "Use customized supernode"}
           </Button>
         )}
 

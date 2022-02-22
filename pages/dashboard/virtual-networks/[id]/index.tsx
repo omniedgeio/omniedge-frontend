@@ -1,5 +1,4 @@
 import {
-  Button,
   Heading,
   HStack,
   SkeletonText,
@@ -9,7 +8,6 @@ import {
   TabPanel,
   TabPanels,
   Tabs,
-  useDisclosure,
   VStack,
 } from "@chakra-ui/react";
 import { useRouter } from "next/dist/client/router";
@@ -17,11 +15,15 @@ import { useQuery, useQueryClient } from "react-query";
 import DashboardLayout from "../../../../components/layout/Dashboard";
 import VirtualNetworkDevicesTable from "../../../../components/virtual-networks/devices/Table";
 import VirtualNetworkForm from "../../../../components/virtual-networks/Form";
-import CreateInvitationModal from "../../../../components/virtual-networks/invitations/CreateModal";
+import InvitationForm from "../../../../components/virtual-networks/invitations/Form";
 import VirtualNetworkInvitationsTable from "../../../../components/virtual-networks/invitations/Table";
 import VirtualNetworkUsersTable from "../../../../components/virtual-networks/users/Table";
 import { ServerType } from "../../../../lib/api/enum";
-import { retrieveVirtualNetwork, updateVirtualNetwork } from "../../../../lib/api/virtualNetwork";
+import {
+  createInvitationForVirtualNetwork,
+  retrieveVirtualNetwork,
+  updateVirtualNetwork,
+} from "../../../../lib/api/virtualNetwork";
 import { showError, showSuccess } from "../../../../lib/helpers/toast";
 import { Page } from "../../../../types";
 
@@ -31,7 +33,6 @@ const VirtualNetworkDetailPage: Page = function (props) {
 
   const result = useQuery(["virtual-network", id], () => (id ? retrieveVirtualNetwork(id as string) : null));
   const queryClient = useQueryClient();
-  const createInvitationModal = useDisclosure();
 
   return (
     <VStack alignItems="flex-start" spacing="4">
@@ -57,20 +58,29 @@ const VirtualNetworkDetailPage: Page = function (props) {
                     <Heading fontSize="md" fontWeight="semibold">
                       Invitation
                     </Heading>
-                    <Button onClick={createInvitationModal.onOpen} size="sm">
-                      Invite
-                    </Button>
                   </HStack>
+                  <InvitationForm
+                    onSubmit={(values, actions) => {
+                      createInvitationForVirtualNetwork(id as string, { email: values.email })
+                        .then(() => {
+                          showSuccess("Invited successfully");
+                          queryClient.invalidateQueries(["virtual-network/invitations", id]);
+                          actions.resetForm();
+                        })
+                        .catch((err) => {
+                          if (
+                            err?.data?.message === "Invitation already pending" ||
+                            err?.data?.message === "User already in virtual network"
+                          ) {
+                            actions.resetForm();
+                          }
+                          showError("Invite failed", err?.data?.message);
+                        })
+                        .finally(() => actions.setSubmitting(false));
+                    }}
+                  ></InvitationForm>
                   <VirtualNetworkInvitationsTable virtualNetworkId={id as string} />
                 </VStack>
-                <CreateInvitationModal
-                  virtualNetworkId={id as string}
-                  isOpen={createInvitationModal.isOpen}
-                  onClose={() => {
-                    createInvitationModal.onClose();
-                    queryClient.invalidateQueries(["virtual-network/invitations", id]);
-                  }}
-                />
               </>
             ) : (
               <Spinner />

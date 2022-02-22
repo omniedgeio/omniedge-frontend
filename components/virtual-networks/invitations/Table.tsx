@@ -8,6 +8,7 @@ import {
   MenuList,
   Skeleton,
   Table,
+  Tag,
   Tbody,
   Td,
   Text,
@@ -23,6 +24,7 @@ import { formatDistanceToNow } from "date-fns";
 import { useState } from "react";
 import { FiMoreVertical, FiX } from "react-icons/fi";
 import { useQuery } from "react-query";
+import { InvitationStatus } from "../../../lib/api/enum";
 import { IInvitationResponse } from "../../../lib/api/response";
 import { listInvitationsOfVirtualNetwork, removeInvitationFromVirtualNetwork } from "../../../lib/api/virtualNetwork";
 import ConfirmModal from "../../ConfirmModal";
@@ -30,6 +32,12 @@ import ConfirmModal from "../../ConfirmModal";
 interface IVirtualNetworkInvitationsTableProps {
   virtualNetworkId: string;
 }
+
+const invitationTagColors = {
+  [InvitationStatus.Pending]: "gray",
+  [InvitationStatus.Accepted]: "green",
+  [InvitationStatus.Rejected]: "red",
+};
 
 const VirtualNetworkInvitationsTable: React.FC<IVirtualNetworkInvitationsTableProps> = function ({ virtualNetworkId }) {
   const isPhone = useBreakpointValue({ base: true, sm: false });
@@ -62,7 +70,9 @@ const VirtualNetworkInvitationsTable: React.FC<IVirtualNetworkInvitationsTablePr
           <Tr>
             <Th pl="0">{isPhone ? "Email" : "Email"}</Th>
             <Th display={["none", "table-cell"]}>Invited at</Th>
-            <Th display={["none", "table-cell"]}>Action</Th>
+            <Th maxW="20px" display={["none", "table-cell"]}>
+              Action
+            </Th>
           </Tr>
         </Thead>
         <Tbody>
@@ -80,7 +90,17 @@ const VirtualNetworkInvitationsTable: React.FC<IVirtualNetworkInvitationsTablePr
             </Tr>
           ) : (
             data?.data?.map((invitation) => {
-              const Email = () => <Text>{invitation.invited.email}</Text>;
+              const Status = () => (
+                <Tag ml="2" colorScheme={invitationTagColors[invitation.status]}>
+                  {InvitationStatus[invitation.status]}
+                </Tag>
+              );
+              const Email = () => (
+                <Text display="inline-flex" alignItems="center">
+                  {invitation.invited.email}
+                  <Status />
+                </Text>
+              );
               const InvitedAt = (props: TextProps) => (
                 <Text fontSize={["sm", "md"]} color={["gray.600", "black"]} {...props}>
                   {formatDistanceToNow(invitation.created_at)}

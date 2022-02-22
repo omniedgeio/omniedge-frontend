@@ -118,7 +118,7 @@ const DashboardLayout: React.FC = function ({ children }) {
             <Skeleton isLoaded={!!user}>
               {user && (
                 <Menu placement="bottom-end">
-                  <MenuButton variant="link" color="black" _hover={{ textDecor: "none" }}>
+                  <MenuButton color="black" _hover={{ textDecor: "none" }}>
                     <HStack>
                       <Avatar size="sm" name={user.name} src={user.picture} />
                       <Text display={["none", "inline"]}>{user.name}</Text>

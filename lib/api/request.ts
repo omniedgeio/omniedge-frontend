@@ -108,16 +108,17 @@ export interface ICreateSecurityKeyRequest {
 }
 
 export interface ICreateInvitationRequest {
-  emails: string[];
+  email: string;
 }
 
-export enum InvitationStatusEnum {
-  Accepted = 1,
-  Rejected = 2,
+export enum InvitationStatus {
+  Pending = 1,
+  Accepted = 2,
+  Rejected = 3,
 }
 
 export interface IUpdateInvitationRequest {
-  status: InvitationStatusEnum;
+  status: InvitationStatus;
 }
 
 export interface ICreateCheckoutSessionRequest {

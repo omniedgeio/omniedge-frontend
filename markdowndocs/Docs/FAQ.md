@@ -11,9 +11,17 @@ thumbnail: /assets/OmniEdgeall0.5.png
 
 # General 
 
+## What is LAN ? 
+
+LAN is a network contained within a room, every computers are connected by Ethernet cables. It’s safe and fast.  
+
 ## What is OmniEdge ? 
 
 OmniEdge makes communication easy and safe, brings the intranet on the internet by distributed VPN solutions, helps to connect users who wants to connect their devices anywhere, anytime. OmniEdge's solution is not only a great and affordable network solution for a small team,  but also for big companies with thousands of devices all around the world.
+
+## What is OmniEdge private network ? 
+
+Private network is created by OmniEdge like a LAN but computers are located in different places.
 
 ## How long does it take to set up OmniEdge?
 

@@ -51,7 +51,7 @@ download_binary() {
     OS=$(uname)
     BIN_URL=""
     if [ $OS == 'Darwin' ]; then
-        BIN_URL=${STORAGE_URL}/${VERSION}/${PKG_NAME}-macos.zip
+        BIN_URL=${STORAGE_URL}/${VERSION}/${PKG_NAME}-macos-latest.zip
     else
         BIN_URL=${STORAGE_URL}/${VERSION}/${PKG_NAME}-${SUFFIX}.zip
     fi

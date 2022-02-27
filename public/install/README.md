@@ -4,7 +4,7 @@
 
 **Important! You have to create an account to use linux cli.**
 
-## How to use omniedge linux Cli 0.2.0
+## How to use omniedge linux Cli 0.2.2
 
 1. Sign up your account: [Sign up](https://omniedge.io/register)
 2. Download and install omnidge cli by running the following command:

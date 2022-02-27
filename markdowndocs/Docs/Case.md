@@ -164,7 +164,7 @@ brew install android-platform-tools
 
 ### 3.3 Install OmniEdge for MacOS
 
-OmniEdge MacOS Cli is compatible with intel Macbook, macOS 10 or later Last update: Version 0.2.1, January 15, 2022.
+OmniEdge MacOS Cli is compatible with intel Macbook, macOS 10 or later Last update: Version 0.2.2, January 15, 2022.
 
 *To use OmniEdge on MacOS, please instal Tun/Tap Driver first*
 
@@ -343,7 +343,7 @@ Install and run it after downloading.
 
 ### 4.3 Install OmniEdge for MacOS
 
-OmniEdge MacOS Cli is compatible with intel Macbook, macOS 10 or later Last update: Version 0.2.1, January 15, 2022.
+OmniEdge MacOS Cli is compatible with intel Macbook, macOS 10 or later Last update: Version 0.2.2, February 27, 2022.
 
 *To use OmniEdge on MacOS, please instal Tun/Tap Driver first*
 

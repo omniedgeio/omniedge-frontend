@@ -548,7 +548,7 @@ You can invite your friend to your virtual network, and remote support and contr
 ![](/assets/docs/case-Omniedge-Invite.png)
 
 
-# 6. Talk to your family and share photos in a LAN even not in the same room
+# 6. Talk to your family and share photos in a LAN on the internet
 
 ![](/assets/docs/case-lanmessenger-omniedge.jpeg)
 

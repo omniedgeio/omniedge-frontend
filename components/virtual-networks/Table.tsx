@@ -166,14 +166,6 @@ export default function VirtualNetworkListTable() {
             })
           )}
         </Tbody>
-        {user?.subscription.slug == "free" && (
-          <TableCaption>
-            <Link href="/dashboard/billing/choose-plan" color="brand.700">
-              Upgrade Plan
-            </Link>{" "}
-            to manage more than one virtual network
-          </TableCaption>
-        )}
       </Table>
     </>
   );

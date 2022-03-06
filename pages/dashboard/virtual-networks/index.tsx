@@ -20,9 +20,10 @@ const VirtualNetworkPage: Page = function (props) {
         <Heading size="md" fontWeight="semibold">
           Virtual Networks
         </Heading>
+        
         {(user?.subscription.slug === "free" && Number(virtualNetworks?.data.length) == 0) ||
-        (user?.subscription.slug === "pro" && Number(virtualNetworks?.data.length) < 5) ||
-        (user?.subscription.slug === "teams" && Number(virtualNetworks?.data.length) < 10) ? (
+        (user?.subscription.slug === "pro" && Number(virtualNetworks?.data.length) < Number(user?.usage_limits.virtual_networks.limit)) ||
+        (user?.subscription.slug === "teams" && Number(virtualNetworks?.data.length) < Number(user?.usage_limits.virtual_networks.limit)) ? (
           <Link href="/dashboard/virtual-networks/create">
             <Button size="sm" _hover={{ textDecoration: "none" }}>
               + Network
@@ -37,6 +38,14 @@ const VirtualNetworkPage: Page = function (props) {
         )}
       </HStack>
       <VirtualNetworksTable />
+      {Number(virtualNetworks?.data.length) < Number(user?.usage_limits.virtual_networks.limit)?(
+      <span>You can create another <Link href="/dashboard/virtual-networks/create" color="brand.700" fontSize="lg">{Number(user?.usage_limits.virtual_networks.limit)-Number(virtualNetworks?.data.length)} </Link>{" "} Virtual Networks.</span>
+      ) : (
+      <span> <Link href="/dashboard/billing/choose-plan" color="brand.700">
+      Upgrade Plan
+    </Link>{" "}
+    to have more virtual networks</span>
+      )}
     </VStack>
   );
 };

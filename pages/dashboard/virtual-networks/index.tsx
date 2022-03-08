@@ -6,25 +6,32 @@ import VirtualNetworksTable from "../../../components/virtual-networks/Table";
 import { UsageKey } from "../../../lib/api/enum";
 import { useUser } from "../../../lib/hook/useUser";
 import { Page } from "../../../types";
+import { listVirtualNetworks } from "../../../lib/api/virtualNetwork";
+import { useQuery } from "react-query";
 
 const VirtualNetworkPage: Page = () => {
   const { user, isLoading } = useUser("/login");
-
+  const { data: virtualNetworks } = useQuery("virtual-networks", () => listVirtualNetworks({}));
   const remainingVirtualNetworks = useMemo(() => {
     if (user && user.usage_limits && user.usage_limits["virtual-networks"]) {
       return user.usage_limits?.[UsageKey.VirtualNetworks].limit - user.usage_limits[UsageKey.VirtualNetworks].usage;
     }
-    return 0;
+    else 
+    {
+      return 0
+    };
   }, [user]);
 
   return (
     <VStack w="full" alignItems="flex-start" spacing="4">
       <HStack w="full" justifyContent="space-between">
         <Heading size="md" fontWeight="semibold">
-          Virtual Networks
+          Virtual Networks {remainingVirtualNetworks}
         </Heading>
         <Link
-          href={remainingVirtualNetworks <= 0 ? "/dashboard/billing/choose-plan" : "/dashboard/virtual-networks/create"}
+          href={((user?.subscription.slug === "free" && Number(virtualNetworks?.data.length) == 0) ||
+          (user?.subscription.slug === "pro" && Number(virtualNetworks?.data.length) < 5) ||
+          (user?.subscription.slug === "teams" && Number(virtualNetworks?.data.length) < 10)) ? "/dashboard/virtual-networks/create" : "/dashboard/billing/choose-plan"}
         >
           <Button isLoading={isLoading} size="sm" _hover={{ textDecoration: "none" }}>
             + Network
@@ -32,7 +39,7 @@ const VirtualNetworkPage: Page = () => {
         </Link>
       </HStack>
       <VirtualNetworksTable />
-      {remainingVirtualNetworks > 0 ? (
+      {/* {remainingVirtualNetworks > 0 ? (
         <span>
           You can create another{" "}
           <Link href="/dashboard/virtual-networks/create" color="brand.700" fontSize="lg">
@@ -48,7 +55,7 @@ const VirtualNetworkPage: Page = () => {
           </Link>{" "}
           to have more virtual networks
         </span>
-      )}
+      )} */}
     </VStack>
   );
 };

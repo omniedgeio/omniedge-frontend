@@ -91,6 +91,7 @@ export default function Footer() {
             <Link href="/about">About us</Link>
             <Link href="/docs">Docs</Link>
             <Link href="/contactus">Contact us</Link>
+            <Link href="https://forms.gle/a1h3pYb7H4jvZPQU9"> User Research </Link>
           </Stack>
         </VStack>
         <VStack color="gray.600" display={["none", "flex"]}>

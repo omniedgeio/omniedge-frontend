@@ -33,11 +33,7 @@ const LoginPage: Page = function (props) {
     validationSchema: Yup.object().shape({
       email: Yup.string().required("Required").email(),
       password: Yup.string()
-        .required("Required")
-        .matches(
-          /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
-          "Must contain at least 8 characters, one lowercase letter, one uppercase letter, one number and one special character"
-        ),
+        .required("Required"),
     }),
     onSubmit: (values, actions) => {
       let auth_session_uuid = router.query["auth_session_uuid"]?.toString();

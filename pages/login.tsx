@@ -75,7 +75,7 @@ const LoginPage: Page = function (props) {
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.email}
-              placeholder="mail@host"
+              placeholder="Enter your Email"
             ></Input>
             <FormErrorMessage>{errors.email}</FormErrorMessage>
           </FormControl>

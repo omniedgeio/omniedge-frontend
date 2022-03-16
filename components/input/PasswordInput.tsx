@@ -9,7 +9,7 @@ const PasswordInput: React.FC<FieldInputProps<string> | InputProps> = function P
 
   return (
     <InputGroup size="md">
-      <Input pr="2.75rem" type={show ? "text" : "password"} placeholder="Enter password" {...props} />
+      <Input pr="2.75rem" type={show ? "text" : "password"} placeholder="Enter your password" {...props} />
       <InputRightElement width="2.75rem">
         <Button color="gray.500" variant="ghost" px="1" h="1.75rem" size="sm" onClick={handleClick}>
           {show ? <BiHide /> : <BiShow />}

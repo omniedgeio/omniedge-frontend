@@ -1,0 +1,3 @@
+[submodule "public/install/download/app-release"]
+	path = public/install/download/app-release
+	url = https://github.com/omniedgeio/app-release.git

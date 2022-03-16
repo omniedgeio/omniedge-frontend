@@ -16,17 +16,14 @@ const VirtualNetworkPage: Page = () => {
     if (user && user.usage_limits && user.usage_limits["virtual-networks"]) {
       return user.usage_limits?.[UsageKey.VirtualNetworks].limit - user.usage_limits[UsageKey.VirtualNetworks].usage;
     }
-    else 
-    {
-      return 0
-    };
+      return 0;
   }, [user]);
 
   return (
     <VStack w="full" alignItems="flex-start" spacing="4">
       <HStack w="full" justifyContent="space-between">
         <Heading size="md" fontWeight="semibold">
-          Virtual Networks {remainingVirtualNetworks}
+          Virtual Networks
         </Heading>
         <Link
           href={((user?.subscription.slug === "free" && Number(virtualNetworks?.data.length) == 0) ||
@@ -39,23 +36,6 @@ const VirtualNetworkPage: Page = () => {
         </Link>
       </HStack>
       <VirtualNetworksTable />
-      {/* {remainingVirtualNetworks > 0 ? (
-        <span>
-          You can create another{" "}
-          <Link href="/dashboard/virtual-networks/create" color="brand.700" fontSize="lg">
-            {remainingVirtualNetworks}
-          </Link>{" "}
-          Virtual Networks.
-        </span>
-      ) : (
-        <span>
-          {" "}
-          <Link href="/dashboard/billing/choose-plan" color="brand.700">
-            Upgrade Plan
-          </Link>{" "}
-          to have more virtual networks
-        </span>
-      )} */}
     </VStack>
   );
 };

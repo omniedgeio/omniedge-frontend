@@ -166,6 +166,25 @@ export default function VirtualNetworkListTable() {
             })
           )}
         </Tbody>
+        {((user?.subscription.slug === "free" && Number(virtualNetworks?.data.length) == 1) ||
+          (user?.subscription.slug === "pro" && Number(virtualNetworks?.data.length) == 5) ||
+          (user?.subscription.slug === "teams" && Number(virtualNetworks?.data.length)==10)) ? (
+          <TableCaption>
+            <Link href="/dashboard/billing/choose-plan" color="brand.700">
+              Upgrade Plan
+            </Link>{" "}
+            to manage more than one virtual network
+          </TableCaption>
+        ):(
+            <TableCaption>
+            You can {" "}
+          <Link href="/dashboard/virtual-networks/create" color="brand.700" fontSize="lg">
+          create
+          </Link>{" "}
+          more Virtual Networks.
+          </TableCaption>
+        )
+      }
       </Table>
     </>
   );

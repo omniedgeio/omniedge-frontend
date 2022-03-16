@@ -2,7 +2,7 @@
   "windows": {
     "status": "LIVE",
     "displayName": "Windows",
-    "link": "https://github.com/omniedgeio/app-release/releases/download/v0.2.2/omniedge-setup-0.2.2.exe",
+    "link": "/install/download/0.2.2/omniedge-setup-0.2.2.exe",
     "showQRCode": false,
     "version": "0.2.2",
     "buttonText": "Download for Windows 7 or Later",
@@ -26,7 +26,7 @@
   "android": {
     "status": "LIVE",
     "displayName": "Android",
-    "link": "https://github.com/omniedgeio/app-release/releases/download/v0.2.1/omniedge-release-v0.2.1.apk",
+    "link": "/install/download/0.2.1/omniedge-release-v0.2.1.apk",
     "showQRCode": true,
     "version": "0.2.1",
     "buttonText": "Download for Android 6 or Later",
@@ -113,7 +113,7 @@
   "macos": {
     "status": "LIVE",
     "displayName": "macOS",
-    "link": "https://github.com/omniedgeio/app-release/releases/tag/v0.2.2",
+    "link": "/install/download/0.2.2/omniedgecli-macos-latest.zip",
     "showQRCode": false,
     "version": "0.2.2",
     "buttonText": "Download CLi for MacOS 10 or later",

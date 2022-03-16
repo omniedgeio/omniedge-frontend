@@ -26,7 +26,6 @@ export enum InvitationStatus {
 
 export enum UsageKey {
   VirtualNetworks = "virtual-networks",
-  VN=VirtualNetworks,
   Devices = "devices",
 }
 

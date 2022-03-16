@@ -92,7 +92,7 @@ export default function EmailVerificationPage() {
                       onChange={handleChange}
                       onBlur={handleBlur}
                       value={values.email}
-                      placeholder="mail@host"
+                      placeholder="Enter your Email"
                     />
                     <FormErrorMessage>{errors.email}</FormErrorMessage>
                   </FormControl>

@@ -30,6 +30,38 @@ export const PLANS = {
       
     ],
   },
+  startpro: {
+    title: "Starter Pro",
+    price: 3,
+    focus: true,
+    description: "For people who need more virtual networks and devices.",
+    features: [
+      {
+        label: "Unlimited data transfer",
+        tips: "Data transfer refers to the secure exchange of data between your devices in your own virtual network with omniedge installed.",
+      },
+      {
+        label: "Encrypted, peer-to-peer connection",
+        tips: "Traffic over OmniEdge is end-to-end encrypted by Twofish/AES128/ChaCha20 cipers' P2P MESH network.",
+      },
+      {
+        label: "Up to 2 virtual network",
+        tips: "Virtual network is an virtual intranet for all your devices and users.",
+      },
+      {
+        label: "Up to 100 devices",
+        tips: "A device is any desktop,laptop, phone or cloud instance with OmniEdge installed and activated in your own virtual network.",
+      },
+      {
+        label: "Single user",
+        tips: "Virtual network only can have devices from same user.",
+      },
+      {
+        label: "Customize Supernode",
+        tips: "You can use your own Supernode for your virtual network.",
+      },
+    ],
+  },
   pro: {
     title: "Professional",
     price: 5,
@@ -98,7 +130,7 @@ export const PLANS = {
   },
   enterprise: {
     title: "Enterprise",
-    price: "Pay as you go",
+    price: "Let's talk",
     description: "For enterprise or SMEs.",
     features: [
       {
@@ -151,7 +183,6 @@ export const Plan: React.FC<PlanProps> = ({ focus, title, freetrial, oldprice,pr
         <Heading my={4}>{price}</Heading>
       ) : (<>
         <HStack my={4}>
-          <Heading><Text color='orange.500' as='del'>{oldprice}</Text></Heading>
           <Heading>${price}</Heading>
           <Text>/ per Month</Text>
         </HStack>
@@ -178,6 +209,10 @@ export const Plan: React.FC<PlanProps> = ({ focus, title, freetrial, oldprice,pr
 
 export const FreePlan: React.FC = ({ children }) => {
   return <Plan {...PLANS["free"]}>{children}</Plan>;
+};
+
+export const StartProPlan: React.FC = ({ children }) => {
+  return <Plan {...PLANS["startpro"]}>{children}</Plan>;
 };
 
 export const ProPlan: React.FC = ({ children }) => {

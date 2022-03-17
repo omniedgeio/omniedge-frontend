@@ -30,7 +30,7 @@ import { Faq } from "../components/Faq";
 import { Heros } from "../components/Features";
 import DefaultLayout from "../components/layout/Default";
 import Link from "../components/next/Link";
-import { EnterprisePlan, FreePlan, ProPlan, TeamsPlan } from "../components/Plans";
+import { EnterprisePlan, FreePlan, StartProPlan, ProPlan, TeamsPlan } from "../components/Plans";
 import { Seo } from "../components/Seo";
 import { Page } from "../types";
 
@@ -41,6 +41,7 @@ interface FAQText {
 interface FeatureTextnumber {
   title: string;
   free: string;
+  startpro:string;
   pro: string;
   team: string;
   enterprise: string;
@@ -85,11 +86,12 @@ const FeatureText: React.FC<{ active?: boolean; tooltip?: string }> = (props) =>
   );
 };
 
-const FeatureTextnumber: React.FC<FeatureTextnumber> = ({ title, free, pro, team, enterprise }) => {
+const FeatureTextnumber: React.FC<FeatureTextnumber> = ({ title, free, startpro, pro, team, enterprise }) => {
   return (
     <Tr>
       <Td>{title}</Td>
       <Td align="center">{free}</Td>
+      <Td align="center">{startpro}</Td>
       <Td align="center">{pro}</Td>
       <Td align="center">{team}</Td>
       <Td align="center">{enterprise}</Td>
@@ -97,8 +99,9 @@ const FeatureTextnumber: React.FC<FeatureTextnumber> = ({ title, free, pro, team
   );
 };
 
-const FeatureDesc: React.FC<{ free?: boolean; pro?: boolean; team?: boolean; enterprise?: boolean }> = (props) => {
+const FeatureDesc: React.FC<{ free?: boolean; startpro?:boolean; pro?: boolean; team?: boolean; enterprise?: boolean }> = (props) => {
   let free = props.free || props.free === undefined;
+  let startpro = props.startpro || props.startpro === undefined;
   let pro = props.pro || props.pro === undefined;
   let team = props.team || props.team === undefined;
   let enterprise = props.enterprise || props.enterprise === undefined;
@@ -107,6 +110,9 @@ const FeatureDesc: React.FC<{ free?: boolean; pro?: boolean; team?: boolean; ent
       <Td>{props.children}</Td>
       <Td>
         <Icon color={free ? "brand.500" : "gray.500"} as={free ? FiCheck : FiX}></Icon>
+      </Td>
+      <Td>
+        <Icon color={startpro ? "brand.500" : "gray.500"} as={startpro ? FiCheck : FiX}></Icon>
       </Td>
       <Td>
         <Icon color={pro ? "brand.500" : "gray.500"} as={pro ? FiCheck : FiX}></Icon>
@@ -141,10 +147,13 @@ export function Plans() {
           Pricing
         </chakra.h1>
         <Text>Start for free, then grow with us</Text>
-        <SimpleGrid py={8} columns={{ base: 1, sm: 2, lg: 4 }} spacing={4}>
+        <SimpleGrid py={10} columns={{ base: 1, sm: 2, lg: 4 }} spacing={4}>
           <FreePlan>
             <ChoosePlanButton plan="free" />
           </FreePlan>
+          <StartProPlan>
+            <ChoosePlanButton plan="startpro" />
+          </StartProPlan>
             <ProPlan>
               <ChoosePlanButton plan="pro" />
             </ProPlan>
@@ -193,10 +202,13 @@ const PricingPage: Page = () => {
           Pricing
         </chakra.h1>
         <Text>Start for free, then grow with us</Text>
-        <SimpleGrid py={8} columns={{ base: 1, sm: 2, lg: 4 }} spacing={4}>
+        <SimpleGrid py={8} columns={{ base: 1, sm: 2, lg: 5 }} spacing={5}>
           <FreePlan>
             <ChoosePlanButton plan="free" />
           </FreePlan>
+          <StartProPlan>
+            <ChoosePlanButton plan="startpro" />
+          </StartProPlan>
             <ProPlan>
               <ChoosePlanButton plan="pro" />
             </ProPlan>
@@ -228,16 +240,17 @@ const PricingPage: Page = () => {
           <Thead>
             <Tr>
               <Th>Features</Th>
-              <Th>Starter</Th>
+              <Th>Free</Th>
+              <Th>Start Pro</Th>
               <Th>Professional</Th>
               <Th>Team</Th>
               <Th>Enterprise</Th>
             </Tr>
           </Thead>
           <Tbody>
-            <FeatureTextnumber title="Virtual Network" free="1" pro="5" team="10" enterprise="Unlimited" />
-            <FeatureTextnumber title="Devices" free="20" pro="25" team="25" enterprise="Unlimited" />
-            <FeatureTextnumber title="Users" free="1" pro="5" team="10" enterprise="Unlimited" />
+            <FeatureTextnumber title="Virtual Network" free="1" startpro="2" pro="5" team="10" enterprise="Unlimited" />
+            <FeatureTextnumber title="Devices" free="20" startpro="100" pro="25" team="25" enterprise="Unlimited" />
+            <FeatureTextnumber title="Users" free="1" startpro="1" pro="5" team="10" enterprise="Unlimited" />
             <FeatureDesc>Security Keys</FeatureDesc>
             <FeatureDesc>Subroute</FeatureDesc>
             <FeatureDesc free={false} pro={true} team={true}>
@@ -245,22 +258,22 @@ const PricingPage: Page = () => {
             </FeatureDesc>
             <FeatureDesc>Unlimited data transfer</FeatureDesc>
             <FeatureDesc>Encrypted, peer-to-peer connection</FeatureDesc>
-            <FeatureDesc free={false} pro={false} team={true}>
+            <FeatureDesc free={false} startpro={false} pro={false} team={false}>
               Identity provider integration
             </FeatureDesc>
-            <FeatureDesc free={false} pro={false} team={false}>
+            <FeatureDesc free={false}  startpro={false} pro={false} team={false}>
               Hardware and Iot integration
             </FeatureDesc>
-            <FeatureDesc free={false} pro={false} team={false}>
+            <FeatureDesc free={false} startpro={false} pro={false} team={false}>
               API
             </FeatureDesc>
-            <FeatureDesc free={false} pro={false} team={false}>
+            <FeatureDesc free={false} startpro={false} pro={false} team={false}>
               Admin API
             </FeatureDesc>
-            <FeatureDesc free={false} pro={false} team={false}>
+            <FeatureDesc free={false} startpro={false} pro={false} team={false}>
               Special Support
             </FeatureDesc>
-            <FeatureDesc free={false} pro={true}>
+            <FeatureDesc free={false} startpro={true} pro={true}>
               Email Support
             </FeatureDesc>
           </Tbody>

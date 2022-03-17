@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import ConfirmModal from "../../../components/ConfirmModal";
 import Link from "../../../components/next/Link";
-import { EnterprisePlan, FreePlan, ProPlan, TeamsPlan } from "../../../components/Plans";
+import { EnterprisePlan, FreePlan, StartProPlan,ProPlan, TeamsPlan } from "../../../components/Plans";
 import { createCheckoutSession } from "../../../lib/api/billing";
 import { showError } from "../../../lib/helpers/toast";
 import { useUser } from "../../../lib/hook/useUser";
@@ -75,10 +75,13 @@ const ChoosePlanPage: Page = (props) => {
             Back to Billing
           </Button>
         </Link>
-        <SimpleGrid mt={8} columns={{ base: 1, sm: 2, lg: 4 }} spacing={4}>
+        <SimpleGrid mt={10} columns={{ base: 1, sm: 2, lg: 5 }} spacing={5}>
           <FreePlan>
             <ChoosePlanButton plan="free" />
           </FreePlan>
+          <StartProPlan>
+            <ChoosePlanButton plan="free" />
+          </StartProPlan>
           <Box bgColor="brand.500" borderRadius="xl" color="white" px={4}>
             <ProPlan>
               <ChoosePlanButton plan="pro" colorScheme="cyan" color="white" />

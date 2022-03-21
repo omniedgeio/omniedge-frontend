@@ -26,15 +26,15 @@
   "android": {
     "status": "LIVE",
     "displayName": "Android",
-    "link": "/install/download/0.2.1/omniedge-release-v0.2.1.apk",
+    "link": "/install/download/0.2.2/omniedge-release-v0.2.2.apk",
     "showQRCode": true,
-    "version": "0.2.1",
+    "version": "0.2.2",
     "buttonText": "Download for Android 6 or Later",
     "captionText": "Compatible with Android 6 or later mobile phone or TV.",
     "lastUpdate": {
       "year": 2022,
-      "month": "January",
-      "date": 15
+      "month": "March",
+      "date": 21
     },
     "description": {
       "title": "Get started on Android Phone & TV",

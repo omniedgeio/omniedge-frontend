@@ -155,7 +155,11 @@ export const PLANS = {
         label: "Hardware and Iot integration",
       },
       {
-        label: "API",
+        label: "Sharing Virtual Network",
+        tips: "Invite people who you trust to join your private network",
+      },
+      {
+        label: "API, IoT, Hardware Integration and more",
       },
       {
         label: "White label",

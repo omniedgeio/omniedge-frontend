@@ -240,12 +240,16 @@ const PricingPage: Page = () => {
             <FeatureTextnumber title="Users" free="1" pro="5" team="10" enterprise="Unlimited" />
             <FeatureDesc>Security Keys</FeatureDesc>
             <FeatureDesc>Subroute</FeatureDesc>
-            <FeatureDesc free={false} pro={true} team={true}>
-              Customize Supernode
-            </FeatureDesc>
             <FeatureDesc>Unlimited data transfer</FeatureDesc>
             <FeatureDesc>Encrypted, peer-to-peer connection</FeatureDesc>
-            <FeatureDesc free={false} pro={false} team={true}>
+            <FeatureDesc>Desktop, Cli & Mobile Apps</FeatureDesc>
+             <FeatureDesc free={false} pro={true} team={true}>
+               Sharing Virtual Network
+             </FeatureDesc>
+             <FeatureDesc free={false} pro={true} team={true}>
+               Customize Supernode
+             </FeatureDesc>
+            <FeatureDesc free={false} pro={false} team={false}>
               Identity provider integration
             </FeatureDesc>
             <FeatureDesc free={false} pro={false} team={false}>
@@ -257,6 +261,9 @@ const PricingPage: Page = () => {
             <FeatureDesc free={false} pro={false} team={false}>
               Admin API
             </FeatureDesc>
+            <FeatureDesc free={false} pro={false} team={false}>
+               White label
+             </FeatureDesc>
             <FeatureDesc free={false} pro={false} team={false}>
               Special Support
             </FeatureDesc>

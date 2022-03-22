@@ -58,6 +58,10 @@ export const PLANS = {
         tips: "Virtual network only can have devices from maximum of 5 users.",
       },
       {
+        label: "Sharing Virtual Network",
+        tips: "Invite people who you trust to join your private network",
+      },
+      {
         label: "Customize Supernode",
         tips: "You can use your own Supernode for your virtual network.",
       },
@@ -91,6 +95,10 @@ export const PLANS = {
         tips: "Virtual network only can have devices from maximum of 5 users.",
       },
       {
+        label: "Sharing Virtual Network",
+        tips: "Invite people who you trust to join your private network",
+      },
+      {
         label: "Customize Supernode",
         tips: "You can use your own Supernode for your virtual network.",
       },
@@ -102,14 +110,6 @@ export const PLANS = {
     description: "For enterprise or SMEs.",
     features: [
       {
-        label: "Unlimited data transfer",
-        tips: "Data transfer refers to the secure exchange of data between your devices in your own virtual network with omniedge installed.",
-      },
-      {
-        label: "Encrypted, peer-to-peer connection",
-        tips: "Traffic over OmniEdge is end-to-end encrypted by Twofish/AES128/ChaCha20 cipers' P2P MESH network.",
-      },
-      {
         label: "Unlimited virtual networks, devices and users.",
       },
       {
@@ -117,12 +117,14 @@ export const PLANS = {
         tips: "Security Keys allow you connect your linux based devices with only command line.",
       },
       {
-        label: "Subnet Route Discovery",
-        tips: "Sub route allows you connect your devices which is not with Omniedge installed.",
+        label: "dentity provider integration",
       },
       {
-        label: "Customize Supernode",
-        tips: "You can use your own Supernode for your virtual network.",
+        label: "Sharing Virtual Network",
+        tips: "Invite people who you trust to join your private network",
+      },
+      {
+        label: "API, IoT, Hardware Integration and more",
       },
     ],
   },

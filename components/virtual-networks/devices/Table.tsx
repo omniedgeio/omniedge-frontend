@@ -73,6 +73,7 @@ const VirtualNetworkDevicesTable: React.FC<IVirtualNetworkDevicesTableProps> = f
       </ConfirmModal>
       <Table w="full">
         <TableCaption>
+        <span>{data?.data?.length} devices in total. </span><br/>
           <Link href="/download" color="brand.500">
             Download
           </Link>{" "}

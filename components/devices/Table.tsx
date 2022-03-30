@@ -71,6 +71,7 @@ const DevicesTable: React.FC = function (props) {
       </ConfirmModal>
       <Table w="full">
         <TableCaption>
+        <span>{data?.data?.length} devices in total. </span><br/>
           <Link href="/download" color="brand.500">
             Download
           </Link>{" "}
@@ -78,7 +79,7 @@ const DevicesTable: React.FC = function (props) {
         </TableCaption>
         <Thead>
           <Tr>
-            <Th pl="0">Name</Th>
+            <Th pl="0">Name </Th>
             <Th display={{ base: "none", lg: "table-cell" }}>OS</Th>
             <Th display={["none", "table-cell"]}>Network</Th>
             <Th display={["none", "table-cell"]}>Action</Th>

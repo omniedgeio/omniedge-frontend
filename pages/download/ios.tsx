@@ -10,6 +10,8 @@ export function Download() {
       image="/assets/OmniEdgeall0.5.png" />
       
       <DownloadPage platform='ios'/>
+      
+      
     
     </>
   )

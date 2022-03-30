@@ -97,7 +97,37 @@ export const DownloadDescription: React.FC<{desc:Platforminfo, active?:boolean}>
     return null
   }
   if (desc.status=='COMING_SOON') {
-    return(<> <div className="font-bold">{desc.displayName} is coming soon</div></>)
+    if (desc.displayName=='iOS') {
+      return(<>
+                  <VStack mt={3}>
+    <chakra.h1
+          mb={6}
+          fontSize={{ base: "2xl", md: "4xl" }}
+          fontWeight="bold"
+          lineHeight="none"
+          letterSpacing={{ base: "normal", md: "tight" }}
+        >
+            <DownloadButton text='Get OmniEdge iOS TestFlight Invite' url="https://forms.gle/QNP2VPbRtxKyPWNC7" />
+      </chakra.h1>
+      <Text>
+      Thanks for your interest in OmniEdge iOS. <br></br>
+OmniEdge iOS version is compatible with iOS 15.0 and later version.
+        </Text>
+        <chakra.h3
+          mb={6}
+          fontSize={{ base: "xl", md: "2xl" }}
+          fontWeight="bold"
+          lineHeight="none"
+          letterSpacing={{ base: "normal", md: "tight" }}
+        >
+        </chakra.h3>
+      
+          </VStack>
+      </>)
+    }
+    else {
+      return(<> <div className="font-bold">{desc.displayName} is coming soon</div></>)
+    }
   } else if (desc.status=='LIVE') {
     return (<>
                <VStack mt={3}>

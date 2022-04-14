@@ -140,7 +140,7 @@ const Home: Page = (props) => {
       
       <FeaturePage />
       <Featureslist />
-      <Users />
+      {/* <Users /> */}
     
       <Customersmap />
     

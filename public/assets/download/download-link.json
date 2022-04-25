@@ -151,15 +151,15 @@
   "rasp": {
     "status": "LIVE",
     "displayName": "Raspberry",
-    "link": "https://github.com/omniedgeio/app-release/releases/tag/v0.2.2",
+    "link": "https://github.com/omniedgeio/app-release/releases/tag/v0.2.3",
     "showQRCode": false,
-    "version": "0.2.2",
+    "version": "0.2.3",
     "buttonText": "Download for Raspberry PI",
     "captionText": "Compatible with Rapsberry PI 1B, 3B, 3B+",
     "lastUpdate": {
       "year": 2022,
-      "month": "February",
-      "date": 27
+      "month": "April",
+      "date": 25
     },
     "description": {
       "title": "Get started on Raspberry Pi",
@@ -221,7 +221,7 @@
     "displayName": "Embedded",
     "link": "https://github.com/omniedgeio/app-release/releases/tag/v0.2.3",
     "showQRCode": false,
-    "version": "0.2.2",
+    "version": "0.2.3",
     "buttonText": "Download for Embedded",
     "captionText": "Compatible with ARM/ARM64 Embedded System",
     "lastUpdate": {

@@ -16,7 +16,7 @@ A **virtual private network (VPN)** extends a private network across a public ne
 
 **OmniEdge** doesn't need any central Sever, which creates a peer-to-peer tunnel between two nodes, builds a virtual network for all the devices which connect to each other. 
 
-### 2. Benefits of OmniEdge vs. VPNs
+### 2. Benefits of OmniEdge vs. VPNs,dVPNs, Blockchain VPNs
 
 With OmniEdge, you: 
 
@@ -24,11 +24,7 @@ With OmniEdge, you:
 - Don't need any VPN gateway for your company's different branches. 
 - OmniEdge provide a peer-to-peer connection between devices without server relay, while VPN always reley on your connections. 
 
-With OmniEdge: 
-![OmniEdge](/assets/OmniEdge-VPN.svg)
-
-With VPNs: 
-![Normal VPN](/assets/Legacy-VPN.svg)
+![OmniEdge](/assets/OmniEdgeComparison.gif)
 
 
 ### 3. Basic Information

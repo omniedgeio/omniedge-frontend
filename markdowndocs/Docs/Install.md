@@ -38,7 +38,7 @@ OmniEdge Windows is compatible with Windows 7,10(arm) & Windows Server 2016,2019
 
 ## 3. Installing on MacOS
 
-OmniEdge MacOS Cli is compatible with intel Macbook, macOS 10 or later Last update: Version 0.2.2, February 27, 2022.
+OmniEdge MacOS Cli is compatible with intel Macbook, macOS 10 or later Last update: Version 0.2.3, April,25, 2022.
 
 *To use OmniEdge on MacOS, please instal Tun/Tap Driver first*
 
@@ -158,7 +158,7 @@ OmniEdge Android is compatible with Android 6 or later mobile phone or TV. Last 
 
 ## 5. Installing on Linux
 
-OmniEdge Linux Cli is Compatible with linux for AMD64,Apple M1, Intel X86, ArmV7 and Arm64V8, Last update: Version 0.2.2, February 27, 2022.
+OmniEdge Linux Cli is Compatible with linux for AMD64,Apple M1, Intel X86, ArmV7 and Arm64V8, Last update: Version 0.2.3, April 25, 2022.
 
 + Sign up your account: [Sign up](https://omniedge.io/register)
 

@@ -5,7 +5,7 @@ set -e
 
 STORAGE_URL=https://github.com/omniedgeio/app-release/releases/download
 PKG_NAME="omniedgecli"
-VERSION="v0.2.2"
+VERSION="v0.2.3"
 
 BIN_DIR="/usr/local/bin"
 

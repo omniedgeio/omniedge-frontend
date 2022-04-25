@@ -254,7 +254,7 @@ systemctl enable omniedge.service
 
 ## 6. Installing on Synology
 
-OmniEdge Synology is Compatible with ArmV7 and Arm64V8, Last update: Version 0.2.2, February 27, 2022.
+OmniEdge Synology is Compatible with ArmV7 and Arm64V8, Last update: Version 0.2.3, April 25, 2022.
 
 + Sign up your account: [Sign up](https://omniedge.io/register)
 

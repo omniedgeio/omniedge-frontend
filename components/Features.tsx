@@ -636,7 +636,8 @@ export function Compare() {
           What is the difference of OmniEdge {" "}
         </chakra.h2>
         <Text textAlign="center">No Public IP, No Port Forward, Zero Config, Zero Firewall Rules{" "}</Text>
-        <Tabs colorScheme="brand" variant="unstyled">
+        <Image width="60%" src="/assets/OmniEdgeComparison.gif" alt="OmniEdge " />
+        {/* <Tabs colorScheme="brand" variant="unstyled">
           <TabList justifyContent="center">
             <Tab as={Button} colorScheme="brand" mr={1}>
               OmniEdge
@@ -653,7 +654,7 @@ export function Compare() {
               <Image width="100%" fit="cover" src="/assets/Legacy-VPN.svg" alt="Without OmniEdge " />
             </TabPanel>
           </TabPanels>
-        </Tabs>
+        </Tabs> */}
       </VStack>
     </>
   );

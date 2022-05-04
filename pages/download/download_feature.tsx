@@ -6,6 +6,8 @@ import React, { useEffect, useState } from "react";
 import Icon from "./Icon";
 const platforms = ["macos", "ios", "windows", "android", "linuxcli","synology","rasp","embedded","nvidia"];
 // const platforms = ['macos', 'ios', 'windows', 'android', 'linuxcli', 'linuxgui','rasp', 'synology','router']
+import {useTranslation} from "react-i18next";
+import {availableLanguages} from "../../i18n/i18n";
 
 interface realplatform {
   platform: string;
@@ -14,7 +16,7 @@ interface realplatform {
 export const Download_feature: Page = (props) => {
 
   const [clientPlatform, setClientPlatform] = useState('')
-
+  
   useEffect(() => {
     if (platform?.ios) {
       setClientPlatform('ios')
@@ -40,13 +42,13 @@ const DownloadPage: React.FC<realplatform> = function ({ platform: selectedPlatf
   function routePlatform(text?: string) {
     router.push(`/download/${text ?? ""}`);
   }
-
+  const {t, i18n} = useTranslation('download')
   return (
     <>
     <Box py={8} rounded="xl" backgroundColor={"gray.100"} >
       <Center>
         <chakra.p fontSize="xl" color={useColorModeValue("gray.700", "gray.500")}>
-          Available for:
+        {t('available')}
           </chakra.p>
           </Center>
         <VStack mt={5}>

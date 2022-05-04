@@ -20,6 +20,8 @@ import { useUser } from "../../lib/hook/useUser";
 import { Brand } from "../Brand";
 import Link from "../next/Link";
 import Footer from "./Footer";
+import {useTranslation} from "react-i18next";
+import {availableLanguages} from "../../i18n/i18n";
 
 const Ma = () => {
   return (
@@ -50,7 +52,7 @@ const Ma = () => {
 const DefaultLayout: React.FC<{}> = (props) => {
   const [isNavBarOpen, setNavBarOpen] = useBoolean(false);
   const { user, isLoading, isError } = useUser(null);
-
+  const {t, i18n} = useTranslation("header")
   return (
     <Container maxW="container.xl" px={["0", "4"]}>
       <nav>
@@ -92,25 +94,31 @@ const DefaultLayout: React.FC<{}> = (props) => {
             alignItems={["flex-start", "center"]}
             direction={["column", "row"]}
           >
-            <Link href="/pricing">Pricing</Link>
-            <Link href="/download">Download</Link>
-            <Link href="/docs">Docs</Link>
-            <Link href="/blog">Blog</Link>
+            <Link href="/pricing">{t('pricing')}</Link>
+            <Link href="/download">{t('download')}</Link>
+            <Link href="/docs">{t('docs')}</Link>
+            <Link href="/blog">{t('blog')}</Link>
           </Stack>
           <HStack>
             {isLoading && <Skeleton h="8" w="20"></Skeleton>}
             {!isLoading && user && (
               <Link href="/dashboard/virtual-networks">
-                <Button colorScheme="brand">Dashboard</Button>
+                <Button colorScheme="brand">{t('dashboard')}</Button>
               </Link>
+              
             )}
             {!isLoading && !user && (
               <>
+                <select defaultValue={i18n.language} onChange={(e) => i18n.changeLanguage(e.target.value)}>
+          {availableLanguages.map((language) => (
+            <option key={language}>{language}</option>
+          ))}
+        </select>
                 <Link href="/register">
-                  <Button colorScheme="brand">Get Started</Button>
+                  <Button colorScheme="brand">{t('getstarted')}</Button>
                 </Link>
                 <Link href="/login">
-                  <Button>Login</Button>
+                  <Button>{t('login')}</Button>
                 </Link>
               </>
             )}

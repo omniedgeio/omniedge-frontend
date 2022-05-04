@@ -44,6 +44,8 @@ import { MdEnhancedEncryption, MdRouter } from "react-icons/md";
 import Logo from "../components/Logo";
 import { Page } from "../types";
 import {Download_feature} from "../pages/download/download_feature";
+import {useTranslation} from "react-i18next";
+import {availableLanguages} from "../i18n/i18n";
 
 interface StepIconFrameProps {
   icon: JSX.Element;
@@ -158,17 +160,17 @@ export function Whyus() {
 }
 
 export function How() {
+  const {t, i18n} = useTranslation('features')
   return (
     <VStack padding="4" spacing="4" alignItems="center">
-      <Heading as="h2">How Omniedge works?</Heading>
+      <Heading as="h2">{t('how')}</Heading>
       <Text textAlign="center">
-        We rebuild the intranet on the internet setup easier and so you can connect your devices in a secure way without{" "}
-        <br /> concern at anywhere and anytime.
+      {t('how-desc')} <br />{t('how-desc-1')}
       </Text>
       <Stack spacing="8" direction={["column", "row"]} alignItems="flex-start">
         <VStack maxW="md" spacing="4">
           <Heading fontWeight="semibold" size="md">
-            What we do for you?
+          {t('what')}
           </Heading>
           <VStack
             p="4"
@@ -179,22 +181,22 @@ export function How() {
             alignItems="stretch"
             spacing="6"
           >
-            <Step step={1} title="Connect to omniedge service">
+            <Step step={1} title={t('connect')}>
               <HStack w="full" alignItems="center">
                 <StepIconFrame icon={<FiMonitor />} />
                 <Box w="full" textAlign="center">
-                  <Text>Exchange Peer Information</Text>
+                  <Text>{t('exchange')}</Text>
                   <Skeleton mx="2" h="0.5" startColor="brand.500" endColor="teal.500"></Skeleton>
                   <Text>&nbsp;</Text>
                 </Box>
                 <Logo h="12" />
               </HStack>
             </Step>
-            <Step step={2} title="Join a virtual network">
+            <Step step={2} title={t('join')}>
               <HStack alignItems="center">
                 <StepIconFrame icon={<FiMonitor />} />
                 <Box w={["36", "48"]} textAlign="center">
-                  <Text>Assigning IP</Text>
+                  <Text>{t('assigning')}</Text>
                   <Skeleton mx="2" my="1" h="0.5" startColor="brand.500" endColor="teal.500"></Skeleton>
                   <Code backgroundColor="white">100.100.1.111</Code>
                 </Box>
@@ -210,12 +212,12 @@ export function How() {
                 </StepVirtualNetwork>
               </HStack>
             </Step>
-            <Step step={3} title="Initialize Connection">
+            <Step step={3} title={t('init')}>
               <StepVirtualNetwork w="full">
                 <HStack>
                   <StepIconFrame icon={<FiMonitor />} />
                   <Box w="full" textAlign="center">
-                    <Text>Exchange Peer Information</Text>
+                    <Text>{t('exchange')}</Text>
                     <Skeleton mx="2" h="0.5" startColor="brand.500" endColor="teal.500"></Skeleton>
                     <Text>&nbsp;</Text>
                   </Box>
@@ -228,7 +230,7 @@ export function How() {
 
         <VStack maxW="md" spacing="4">
           <Heading fontWeight="semibold" size="md">
-            Try it now
+          {t('try')}
           </Heading>
           <VStack
             p="4"
@@ -239,8 +241,8 @@ export function How() {
             alignItems="stretch"
             spacing="6"
           >
-            <Step step={1} title="Download Omniedge">
-              <Text>We currently support various platforms. You can download them here.</Text>
+            <Step step={1} title={t('download')}>
+              <Text>{t('download-desc')}</Text>
               <HStack spacing="4" color="gray.500">
                 <HStack>
                   <FaWindows />
@@ -268,19 +270,18 @@ export function How() {
                 </HStack>
               </HStack>
             </Step>
-            <Step step={2} title="Login to omniedge.io">
+            <Step step={2} title={t('login')}>
               <Text>
-                We support <Link href="/login">email login, security key login and Google login</Link>
+              {t('login-desc-1')} <Link href="/login">{t('login-desc-2')}</Link>
               </Text>
             </Step>
-            <Step step={3} title="Create a virtual network">
+            <Step step={3} title={t('create')}>
               <Text>
-                We already created a default virtual network for you. However, you can create your own virtual network
-                in just a minute.
+              {t('create-desc')}
               </Text>
             </Step>
-            <Step step={4} title="Connect in one click">
-              <Text>Click connect button on our client application</Text>
+            <Step step={4} title={t('connectin')}>
+              <Text>{t('connectin-desc')}</Text>
             </Step>
           </VStack>
         </VStack>
@@ -339,12 +340,14 @@ const Featurelist = (props: any) => {
 };
 
 export const FeaturePage: Page = () => {
+  const {t, i18n} = useTranslation('features')
   return (
     <Box py={12} rounded="xl">
       <Box mx="auto" px={{ base: 4, lg: 8 }}>
         <Box textAlign={{ lg: "center" }}>
           <chakra.h2 color="brand.600" fontWeight="semibold" textTransform="uppercase" letterSpacing="wide">
-            OMNIEDGE
+          {t('FeaturePage-title')}
+        
           </chakra.h2>
           <chakra.p
             mt={2}
@@ -354,7 +357,8 @@ export const FeaturePage: Page = () => {
             letterSpacing="tight"
             color="gray.900"
           >
-            Makes secure connectivity from weeks to minutes
+            {t('FeaturePage-subtitle')}
+            
           </chakra.p>
           <chakra.p
             mt={4}
@@ -363,8 +367,7 @@ export const FeaturePage: Page = () => {
             mx={{ lg: "auto" }}
             color={useColorModeValue("gray.500", "gray.400")}
           >
-            OmniEdge reduces the enterprise connectivity deployment from weeks to minutes, helps customers focusing on
-            their core business, connects and manages their devices from anywhere, anytime.
+            {t('FeaturePage-desc')}
           </chakra.p>
         </Box>
 
@@ -376,31 +379,24 @@ export const FeaturePage: Page = () => {
             gridColumnGap={{ md: 8 }}
             gridRowGap={{ md: 10 }}
           >
-            <Feature title="Cross Platforms" icon={<FaConnectdevelop size="2lg" />}>
-              Users can run the product on different devices, whether the devices are on Windows, Android, iOS, macOS,
-              Linux or routers, or on a variety of different public clouds.
+            <Feature title={t('crossplatform')} icon={<FaConnectdevelop size="2lg" />}>
+              {t('crossplatform-desc')}
             </Feature>
-
-            <Feature title=" Management on one dashboard" icon={<FiSettings size="2lg" />}>
-              Users can manage all registered devices on one dashboard, no matter where they are located, with an
-              end-to-end private encrypted network, allowing users to access their own devices.
+            <Feature title={t('dashboard')} icon={<FiSettings size="2lg" />}>
+            {t('dashboard-desc')}
             </Feature>
-
-            <Feature title="Faster Speed, Low Lantency" icon={<FaRocket size="2lg" />}>
-              End-to-end direct connection, compared to traditional VPN networks, can improve response by 50%.
+            <Feature title={t('speed')}icon={<FaRocket size="2lg" />}>
+            {t('speed-desc')}
             </Feature>
-
-            <Feature title="High Security" icon={<AiOutlineSafety size="2lg" />}>
-              P2P MESH networks, where packets interact directly between devices, use enterprise G-Suite and other
-              authentication to achieve dual security confirmation of devices and users.
+            <Feature title={t('security')} icon={<AiOutlineSafety size="2lg" />}>
+            {t('security-desc')}
+              
             </Feature>
-            <Feature title="Painless Setup" icon={<GiPeanut size="2lg" />}>
-              Set up OmniEdge just in minutes with our apps on any device, you can choose several different methods to
-              activate your devices.
+            <Feature title={t('setup')} icon={<GiPeanut size="2lg" />}>
+            {t('setup-desc')}
             </Feature>
-            <Feature title="Maintenanceless " icon={<GiAutoRepair size="2lg" />}>
-              Forget about the labor-intensive system management job, with OMNIEDGE you can focus on your own core
-              business.
+            <Feature title={t('maintenanceless')} icon={<GiAutoRepair size="2lg" />}>
+            {t('maintenanceless-desc')} 
             </Feature>
           </Stack>
         </Box>
@@ -461,6 +457,7 @@ export function HerosV1() {
 }
 
 export function Heros() {
+  const {t, i18n} = useTranslation('features')
   return (
     <Box px={8} py={24} mx="auto">
       <Box w={{ base: "full", md: 11 / 12, xl: 9 / 12 }} mx="auto" textAlign={{ base: "left", md: "center" }}>
@@ -472,7 +469,7 @@ export function Heros() {
           letterSpacing={{ base: "normal", md: "tight" }}
           color={useColorModeValue("gray.900", "gray.100")}
         >
-          All your{" "}
+          {t('herotitle-1')}{" "}
           <Text
             display={{ base: "block", lg: "inline" }}
             w="full"
@@ -480,9 +477,10 @@ export function Heros() {
             bgGradient="linear(to-r, brand.500,purple.500)"
             fontWeight="extrabold"
           >
-            connectivity
+            {t('herotitle-2')}
+            
           </Text>{" "}
-          in one single click.
+          {t('herotitle-3')}
         </chakra.h1>
         <chakra.p
           px={{ base: 0, lg: 24 }}
@@ -490,8 +488,7 @@ export function Heros() {
           fontSize={{ base: "lg", md: "xl" }}
           color={useColorModeValue("gray.600", "gray.300")}
         >
-          We’re on a mission to provide reliable, secure, and painless connectivity solutions for anyone who wants to
-          have access to their devices, anywhere, anytime.
+          {t('herosubtitle')}
         </chakra.p>
         <Stack
           direction={{ base: "column", sm: "row" }}
@@ -512,7 +509,7 @@ export function Heros() {
               size="lg"
               cursor="pointer"
             >
-              Get Started
+              {t('getstarted')}
               <Icon boxSize={4} ml={1} viewBox="0 0 20 20" fill="currentColor">
                 <path
                   fillRule="evenodd"
@@ -621,6 +618,7 @@ export function Users() {
 }
 
 export function Compare() {
+  const {t, i18n} = useTranslation('features')
   return (
     <>
       <VStack padding="4" spacing="4" alignItems="center">
@@ -633,34 +631,17 @@ export function Compare() {
             fontWeight="extrabold"
             letterSpacing="tight"
           >
-          What is the difference of OmniEdge {" "}
+          {t('comparetitle')} {" "}
         </chakra.h2>
-        <Text textAlign="center">No Public IP, No Port Forward, Zero Config, Zero Firewall Rules{" "}</Text>
+        <Text textAlign="center">{t('comparedesc')}{" "}</Text>
         <Image width="60%" src="/assets/OmniEdgeComparison.gif" alt="OmniEdge " />
-        {/* <Tabs colorScheme="brand" variant="unstyled">
-          <TabList justifyContent="center">
-            <Tab as={Button} colorScheme="brand" mr={1}>
-              OmniEdge
-            </Tab>
-            <Tab as={Button} ml={1}>
-              Without OmniEdge
-            </Tab>
-          </TabList>
-          <TabPanels>
-            <TabPanel>
-              <Image width="100%" fit="cover" src="/assets/OmniEdge-VPN.svg" alt="With OmniEdge " />
-            </TabPanel>
-            <TabPanel>
-              <Image width="100%" fit="cover" src="/assets/Legacy-VPN.svg" alt="Without OmniEdge " />
-            </TabPanel>
-          </TabPanels>
-        </Tabs> */}
       </VStack>
     </>
   );
 }
 
 export function Featureslist() {
+  const {t, i18n} = useTranslation('features')
   return (
     <Flex w="auto" justifyContent="center" alignItems="center" >
       <Box px={4} py={20} mx="auto">
@@ -673,60 +654,52 @@ export function Featureslist() {
             letterSpacing="tight"
             textTransform="uppercase"
           >
-            OmniEdge delivers
+            {t('featureslisttitle')}
+            
           </chakra.p>
           <chakra.p mt={4} maxW="2xl" fontSize="xl" mx={{ lg: "auto" }}>
-            Solutions for your requirements.
+          {t('featureslistsubtitle')}
           </chakra.p>
         </Box>
         <SimpleGrid columns={{ base: 1, sm: 2, md: 3, lg: 4 }} spacingX={{ base: 16, lg: 24 }} spacingY={20} mt={6}>
-          <Featurelist color="red" title="Virtual Network" icon={<FiGlobe size="2lg" />}>
-            Virtual network becomes a virtual office connecting all remote devices by intranet for your team and trusted
-            users only.
+          <Featurelist color="red" title={t('flvn')} icon={<FiGlobe size="2lg" />}>
+          {t('flvn-desc')}
           </Featurelist>
 
-          <Featurelist color="pink" title="Remote Device Control" icon={<AiOutlineControl size="2lg" />}>
-            Control a remote computer as if it’s located in front of you, by Remote Desktop Protocol, VNC or SSH.
+          <Featurelist color="pink" title={t('flrm')} icon={<AiOutlineControl size="2lg" />}>
+          {t('flrm-desc')}
           </Featurelist>
 
-          <Featurelist color="yellow" title="Cross-Platform" icon={<FaConnectdevelop size="2lg" />}>
-            Connect multiple platforms, Windows,macOS, iOS, Android, Linux and more.
+          <Featurelist color="yellow" title={t('flcr')} icon={<FaConnectdevelop size="2lg" />}>
+          {t('flcr-desc')}
+          </Featurelist>
+          <Featurelist color="green" title={t('flsb')}icon={<MdRouter size="2lg" />}>
+            {t('flsb-desc')}
+          </Featurelist>
+          <Featurelist color="purple" title={t('flbd')}icon={<BiTransfer size="2lg" />}>
+          {t('flbd-desc')}
+          </Featurelist>
+          <Featurelist color="blue" title={t('flmu')} icon={<FiUsers size="2lg" />}>
+          {t('flmu-desc')}
+          </Featurelist>
+          <Featurelist color="brand" title={t('flsk')} icon={<FiKey size="2lg" />}>
+          {t('flsk-desc')}
+          </Featurelist>
+          <Featurelist color="purple" title={t('flp2p')} icon={<MdEnhancedEncryption size="2lg" />}>
+          {t('flp2p-desc')}
+          </Featurelist>
+          <Featurelist color="pink" title={t('fliot')} icon={<AiFillRobot size="2lg" />}>
+          {t('fliot-desc')}
+          </Featurelist>
+          <Featurelist color="red" title={t('flzc')}icon={<GiClick size="2lg" />}>
+          {t('flzc-desc')}
           </Featurelist>
 
-          <Featurelist color="green" title="Sub Router" icon={<MdRouter size="2lg" />}>
-            Sub router allows you connect your devices which is not with Omniedge installed.
+          <Featurelist color="green" title={t('flokta')} icon={<BiCheckShield size="2lg" />}>
+          {t('flokta-desc')}
           </Featurelist>
-          <Featurelist color="purple" title="Big Data Transferring" icon={<BiTransfer size="2lg" />}>
-            Big-data transfer functionality allows international enterprises to exchange data between different sites
-            across their global footprint.
-          </Featurelist>
-          <Featurelist color="blue" title="Multi-Users" icon={<FiUsers size="2lg" />}>
-            Organize your users to bring secure connection to enterprise&apos;s access and resources.
-          </Featurelist>
-          <Featurelist color="brand" title="Security Key" icon={<FiKey size="2lg" />}>
-            Security Keys allow you connect your linux based devices with only a command line, turning your own devices
-            into an industrial router.
-          </Featurelist>
-
-          <Featurelist color="purple" title="Peer-to-Peer Encryption" icon={<MdEnhancedEncryption size="2lg" />}>
-            Traffic over OmniEdge is end-to-end encrypted by Twofish/AES128/ChaCha20 cipers&apos; P2P MESH network.
-          </Featurelist>
-
-          <Featurelist color="pink" title="IoT & Hardware Integration " icon={<AiFillRobot size="2lg" />}>
-            Integrate OmniEdge into your own IoT project or hardware.
-          </Featurelist>
-
-          <Featurelist color="red" title="Zero Config" icon={<GiClick size="2lg" />}>
-            No Public IP, No Port Forward,Zero Config, Zero Firewall Rules. All your connectivity in one single click.
-          </Featurelist>
-
-          <Featurelist color="green" title="Okta integration" icon={<BiCheckShield size="2lg" />}>
-            Integrate Okta as your SSO provider to use OmniEdge.
-          </Featurelist>
-
-          <Featurelist color="blue" title="Admin API" icon={<AiTwotoneApi size="2lg" />}>
-            Admin API for admin users to have access to the admin dashboard for overview virutal network, devices and
-            network setting.
+          <Featurelist color="blue" title={t('flapi')}icon={<AiTwotoneApi size="2lg" />}>
+          {t('flapi-desc')}
           </Featurelist>
         </SimpleGrid>
       </Box>
@@ -754,7 +727,7 @@ export function HighFeatures() {
       </Box>
     );
   };
-
+  const {t, i18n} = useTranslation('features')
   return (
     <Box rounded="xl">
       <Box mx="auto" px={{ base: 4, lg: 8 }}>
@@ -768,7 +741,7 @@ export function HighFeatures() {
             fontWeight="extrabold"
             letterSpacing="tight"
           >
-            The power of Omniedge
+            {t('thepowerofomniedge')}
           </chakra.h2>
         </Box>
 
@@ -780,20 +753,16 @@ export function HighFeatures() {
             py={2}
             mx="auto"
           >
-            <Feature title="High Security" icon={<AiOutlineSafety size="2lg" />}>
-              P2P MESH networks, encrypted end-to-end by Two-fish, AES128 or ChaCha20 Ciphers, customized authentication
-              and 2FA to achieve dual security confirmation of devices and users with GDPR in mind.
+            <Feature title={t('highsecurity')} icon={<AiOutlineSafety size="2lg" />}>
+            {t('highsecurity-desc')}
+            </Feature>
+            <Feature title={t('highspeed')} icon={<FaRocket size="2lg" />}>
+            {t('highspeed-desc')}
+            
             </Feature>
 
-            <Feature title="High Speed" icon={<FaRocket size="2lg" />}>
-              End-to-end direct connection, latency improved by up to 50%* compared to traditional VPN networks.
-              Zero-config setup allows one click deployment.
-            </Feature>
-
-            <Feature title="High Performance" icon={<GiTreeGrowth size="2lg" />}>
-              Cross platform compatibility connecting the widest range of OS and IoT devices. Management of all users
-              and equipment on one dashboard. Minimize setup time, resources, costs and maintenance, helping you focus
-              on your business.
+            <Feature title={t('highperformance')}icon={<GiTreeGrowth size="2lg" />}>
+            {t('highperformance-desc')}
             </Feature>
           </SimpleGrid>
         </Flex>

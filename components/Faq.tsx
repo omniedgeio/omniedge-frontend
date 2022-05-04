@@ -12,6 +12,7 @@ import {
 import Markdown from "markdown-to-jsx";
 import React from "react";
 import { Page } from "../types";
+import {useTranslation} from "react-i18next";
 
 interface FAQText {
   title: string;
@@ -35,6 +36,7 @@ const FAQText: React.FC<FAQText> = ({ title, text }) => {
 };
 
 export const Faq: Page = () => {
+  const {t, i18n} = useTranslation('faq')
   return (
     <>
       <Box rounded="lg" bg={useColorModeValue("white", "gray.800")}>
@@ -47,37 +49,37 @@ export const Faq: Page = () => {
             letterSpacing={{ base: "normal", md: "tight" }}
             color={useColorModeValue("gray.900", "gray.100")}
           >
-            FAQ
-          </chakra.h1>
+{t('title')} 
+         </chakra.h1>
 
           <Accordion pb={4} defaultIndex={[0]} allowToggle={false}>
             <FAQText
-              title="How long does it take to set up OmniEdge?"
-              text="OmniEdge can be set up in 5 minutes or less, by installing OmniEdge Apps for your devices on iOS, Android, Windows, macOS, and Linux platforms."
+              title={t('faq-1-q')} 
+              text={t('faq-1-a')}
             />
             <FAQText
-              title="Is my privacy secure with OmniEdge?"
-              text=" We take privacy security very seriously. please read our [Privacy Policy](/privacy) for Details. "
+              title={t('faq-2-q')} 
+              text={t('faq-2-a')}
             />
             <FAQText
-              title="How do I change my existing subscription plan?"
-              text="If you already have an OmniEdge plan, please contact us to change your plan or your billing period, or you can do it by yourself at the dashboard."
+              title={t('faq-3-q')}
+              text={t('faq-3-a')}
             />
             <FAQText
-              title="When will I be billed?"
-              text="Our plans are generally prepaid, so you pay for them in advance. Annual Enterprise plans can be invoiced with net 30 payment terms upon request."
+              title={t('faq-4-q')} 
+              text={t('faq-4-a')}
             />
             <FAQText
-              title="What payment methods do you offer?"
-              text="We support payment by credit card through [Stripe](https://stripe.com). Customers with Enterprise plans can request payment by other methods, such as wire or ACH. At this time, we can only receive payment in US Dollars ($)."
+              title={t('faq-5-q')} 
+              text={t('faq-5-a')}
             />
             <FAQText
-              title="Where are the term of service and privacy policy?"
-              text="View the OmniEdge [Terms of Service](/terms) and [Privacy Policy](/privacy)."
+              title={t('faq-6-q')} 
+              text={t('faq-6-a')}
             />
             <FAQText
-              title="How can I learn more about OmniEdge?"
-              text="Learn more about OmniEdge by reading [documentation](/doc)."
+              title={t('faq-7-q')}
+              text={t('faq-7-a')}
             />
           </Accordion>
         </VStack>

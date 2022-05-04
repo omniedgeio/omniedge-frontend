@@ -22,13 +22,16 @@ import DefaultLayout from "../components/layout/Default";
 import { Seo } from "../components/Seo";
 import { Page } from "../types";
 import {Plans} from "./pricing";
+import {useTranslation} from "react-i18next";
+import {availableLanguages} from "../i18n/i18n";
 
 const Home: Page = (props) => {
+  const {t, i18n} = useTranslation('index')
   return (
     <>
       <Seo
-        title="Unlimited Computers In Private Network With Zero Router.The Power of OmniEdge,High Seurity, High Speed, and High Performance."
-        description="OmniEdge reduces the enterprise connectivity deployment from weeks to minutes, helps customers focusing on their core business, connects and manages their devices from anywhere, anytime."
+        title={t('title')}
+        description={t('description')}
         image="/assets/OmniEdgeall0.5.png"
       />
       <Box padding="4" as="header" py={["6", "12", "36"]} position="relative">
@@ -40,7 +43,7 @@ const Home: Page = (props) => {
           <VStack alignItems="flex-start">
             <Heading as="h6" fontWeight="medium" size="sm" color="gray.500">
               {/* MADE COMMUNICATION EASY AND SAFE */}
-              Bring intranet on the internet.
+              {t('slogan')}
             </Heading>
             <Heading maxW="full" as="h1" size="xl" lineHeight="1.5em">
  <chakra.h1
@@ -59,35 +62,35 @@ const Home: Page = (props) => {
             bgGradient="linear(to-r, brand.500,purple.500)"
             fontWeight="extrabold"
           >
-            Unlimited Computers
+            {t('unlimitedcomputers')}
           </Text>{" "}
           </chakra.h1>
           <Text>
-          In Private Network With <Text
+          {t('slogan-desc-1')} <Text
             display={{ base: "block", lg: "inline" }}
             w="full"
             bgClip="text"
             bgGradient="linear(to-r, purple.500,brand.500)"
             fontWeight="extrabold"
-          >Zero</Text> Router.
+          >{t('slogan-desc-2')}</Text> {t('slogan-desc-3')}.
         </Text>
             </Heading>
             <Text maxW="2xl" color="gray.700" py="4">
-              {`Omniedge's Peer-to-Peer Layer 2 VPN solutions are not only a great and affordable network solution for a small team but also for big companies with thousands of computers all around the world.`}
+              {t('slogan-description')}
             </Text>
             <HStack>
             <Link href="/register" w="full">
-              <Button colorScheme="brand">Get Started Free </Button>
+              <Button colorScheme="brand">{t('getstartedfree')} </Button>
             </Link>
             <Link href="/contactus" w="full">
-              <Button colorScheme="cyan">Contact Sales Expert </Button>
+              <Button colorScheme="cyan">{t('contactsalesexpert')}</Button>
             </Link>
             
             </HStack>
           </VStack>
           <VStack pt={["12", "12", "0"]} alignItems="flex-start">
             <Link href="/register" w="full">
-              <Button colorScheme="brand">+ Virtual Network</Button>
+              <Button colorScheme="brand">{t('addvirutalnetwork')}</Button>
             </Link>
             <Box
               mt="2"
@@ -103,17 +106,17 @@ const Home: Page = (props) => {
               backgroundColor="white"
             >
               <FormControl>
-                <FormLabel>Name</FormLabel>
+                <FormLabel>{t('name')}</FormLabel>
                 <Input type="text" defaultValue="My Omni Network" />
               </FormControl>
               <FormControl mt="4">
-                <FormLabel>Subnet</FormLabel>
+                <FormLabel>{t('subnet')}</FormLabel>
                 <Input type="text" defaultValue="100.100.0.0/24" fontFamily="'Roboto mono'" />
               </FormControl>
               <HStack mt="4" justifyContent="flex-end">
-                <Button>Cancel</Button>
+                <Button>{t('cancel')}</Button>
                 <Link href="/login" w="full">
-                  <Button colorScheme="brand">Create</Button>
+                  <Button colorScheme="brand">{t('create')}</Button>
                 </Link>
               </HStack>
             </Box>

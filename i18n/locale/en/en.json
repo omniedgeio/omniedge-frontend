@@ -1,0 +1,83 @@
+{
+    "header": {
+      "pricing": "Pricing",
+      "download": "Download",
+      "docs": "Docs",
+      "blog": "Blog",
+      "dashboard": "Dashboard",
+      "getstarted": "Get Started",
+      "login": "Login"
+    },
+    "index": {
+      "title": "Unlimited Computers In Private Network With Zero Router.The Power of OmniEdge,High Seurity, High Speed, and High Performance.",
+      "description": "OmniEdge reduces the enterprise connectivity deployment from weeks to minutes, helps customers focusing on their core business, connects and manages their devices from anywhere, anytime.",
+      "slogan": "Bring intranet on the internet.",
+      "unlimitedcomputers": "Unlimited Computers",
+      "slogan-desc-1": "In Private Network With",
+      "slogan-desc-2": "Zero",
+      "slogan-desc-3": "Router",
+      "slogan-description": "Omniedge's Peer-to-Peer Layer 2 VPN solutions are not only a great and affordable network solution for a small team but also for big companies with thousands of computers all around the world.",
+      "getstartedfree": "Get Started Free",
+      "contactsalesexpert": "Contact Sales Expert",
+      "addvirutalnetwork": "+ Virutal Network",
+      "name": "Name",
+      "subnet": "Subnet",
+      "cancel" : "Cancel",
+      "create": "Create"
+    },
+    "download": {
+      "available": "Available for:"
+    },
+    "features": {
+      "thepowerofomniedge": "The power of Omniedge",
+      "highsecurity": "High Security",
+      "highsecurity-desc": "P2P MESH networks, encrypted end-to-end by Two-fish, AES128 or ChaCha20 Ciphers, customized authentication and 2FA to achieve dual security confirmation of devices and users with GDPR in mind.",
+      "highspeed": "High Speed",
+      "highspeed-desc": "End-to-end direct connection, latency improved by up to 50%* compared to traditional VPN networks. Zero-config setup allows one click deployment.",
+      "highperformance": "High Performance",
+      "highperformance-desc": "Cross platform compatibility connecting the widest range of OS and IoT devices. Management of all users and equipment on one dashboard. Minimize setup time, resources, costs and maintenance, helping you focus on your business." ,
+      "how": "How Omniedge works?" ,
+      "how-desc": "We rebuild the intranet on the internet setup easier and so you can connect your devices in a secure way without",
+      "how-desc-1": "concern at anywhere and anytime. ",
+      "what": "What we do for you?",
+      "connect": "Connect to omniedge service",
+      "join": "Join a virtual network",
+      "exchange": "Exchange Peer Information",
+      "assigning": "Assigning IP",
+      "init": "Initialize Connection",
+      "try": "Try it now",
+      "download": "Download Omniedge",
+      "download-desc": "We currently support various platforms. You can download them here.",
+      "login":"Login to omniedge.io",
+      "login-desc-1": "We support",
+      "login-desc-2": "email login, security key login and Google login",
+      "create":"Create a virtual network",
+      "create-desc": "We already created a default virtual network for you. However, you can create your own virtual network in just a minute.",
+      "connectin":"Connect in one click",
+      "connectin-desc": "Click connect button on our client application",
+      "comparetitle": "What is the difference of OmniEdge",
+      "comparedesc": "No Public IP, No Port Forward, Zero Config, Zero Firewall Rules",
+      "FeaturePage-title": "OMNIEDGE",
+      "FeaturePage-subtitle": "Makes secure connectivity from weeks to minutes",
+      "FeaturePage-desc": "OmniEdge reduces the enterprise connectivity deployment from weeks to minutes, helps customers focusing on their core business, connects and manages their devices from anywhere, anytime.",
+      "crossplatform": "Cross Platforms",
+      "crossplatform-desc": "Users can run the product on different devices, whether the devices are on Windows, Android, iOS, macOS, Linux or routers, or on a variety of different public clouds.",
+      "dashboard": " Management on one dashboard",
+      "dashboard-desc": "Users can manage all registered devices on one dashboard, no matter where they are located, with an end-to-end private encrypted network, allowing users to access their own devices.",
+      "speed":"Faster Speed, Low Lantency",
+      "speed-desc":"End-to-end direct connection, compared to traditional VPN networks, can improve response by 50%.",
+      "security":"High Security",
+      "security-desc": "P2P MESH networks, where packets interact directly between devices, use enterprise G-Suite and other authentication to achieve dual security confirmation of devices and users.",
+      "setup": "Painless Setup",
+      "setup-desc": "Set up OmniEdge just in minutes with our apps on any device, you can choose several different methods to activate your devices.",
+      "maintenanceless": "Maintenanceless",
+      "maintenanceless-desc": "Forget about the labor-intensive system management job, with OMNIEDGE you can focus on your own core business."
+
+
+
+
+              
+    }
+    
+
+  }

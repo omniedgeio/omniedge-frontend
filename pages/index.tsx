@@ -72,7 +72,9 @@ const Home: Page = (props) => {
             bgClip="text"
             bgGradient="linear(to-r, purple.500,brand.500)"
             fontWeight="extrabold"
-          >{t('slogan-desc-2')}</Text> {t('slogan-desc-3')}.
+          >{t('slogan-desc-2')}
+          
+          </Text> {t('slogan-desc-3')}
         </Text>
             </Heading>
             <Text maxW="2xl" color="gray.700" py="4">

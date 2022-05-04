@@ -37,7 +37,9 @@
       "create": "Create"
     },
     "download": {
-      "available": "Available for:"
+      "available": "Available for:",
+      "title": "Download",
+      "subtitle": "Click on the preferred icon for download."
     },
     "features": {
       "thepowerofomniedge": "The power of Omniedge",
@@ -108,10 +110,66 @@
       "flokta":"Okta integration",
       "flokta-desc":"Integrate Okta as your SSO provider to use OmniEdge.",
       "flapi":"Admin API" ,
-      "flapi-desc": "Admin API for admin users to have access to the admin dashboard for overview virutal network, devices and network setting."
+      "flapi-desc": "Admin API for admin users to have access to the admin dashboard for overview virutal network, devices and network setting.",
+      "herotitle-1": "All your",
+    "herotitle-2": "connectivity",
+    "herotitle-3": "in one single click.",
+    "herosubtitle": "We’re on a mission to provide reliable, secure, and painless connectivity solutions for anyone who wants to have access to their devices, anywhere, anytime.",
+    "getstarted": "Get Started"
     },
     "customersmap": {
       "customersmaptitle":"Customers like our service.",
       "customersmapsubtitle": "We served customers from more than 26 countries & regions."
+    },
+    "pricing": {
+      "getstarted": "Get Started",
+      "title": "Pricing",
+      "subtitle": "Start for free, then grow with us",
+      "contact": "Contact us",
+      "features": "Features",
+      "starter": "Starter",
+      "professional": "Professional",
+      "team": "Team",
+      "enterprise": "Enterprise",
+      "virtualnetwork": "Virtual Network",
+      "devices": "Devices",
+      "users": "Users",
+      "unlimited": "Unlimited",
+      "securitykey": " Security Keys",
+      "subroute": " Subroute",
+      "unlimiteddata": " Unlimited data transfer",
+      "p2p": "Encrypted peer-to-peer connection",
+      "platform": " Desktop, Cli & Mobile Apps",
+      "sharing": " Sharing Virtual Network",
+      "customizesupernode": "Customize Supernode",
+      "sso": " Identity provider integration",
+      "iot": "  Hardware and Iot integration",
+      "api": " API",
+      "adminapi": " Admin API",
+      "whitelable": " White label",
+      "specialsupport": " Special Support",
+      "emailsupport": "Email Support"
+    },
+    "plan": {
+      "monthly": "/ per Month",
+      "starter": "Starter"
+    },
+    "faq": {
+      "title": "FAQ",
+      "faq-1-q": "How long does it take to set up OmniEdge?",
+      "faq-1-a": "OmniEdge can be set up in 5 minutes or less, by installing OmniEdge Apps for your devices on iOS, Android, Windows, macOS, and Linux platforms.",
+      "faq-2-q": "Is my privacy secure with OmniEdge?",
+      "faq-2-a": " We take privacy security very seriously. please read our [Privacy Policy](/privacy) for Details. ",
+      "faq-3-q":  "How do I change my existing subscription plan?",
+      "faq-3-a": "If you already have an OmniEdge plan, please contact us to change your plan or your billing period, or you can do it by yourself at the dashboard.",
+      "faq-4-q": "When will I be billed?",
+      "faq-4-a": "Our plans are generally prepaid, so you pay for them in advance. Annual Enterprise plans can be invoiced with net 30 payment terms upon request.",
+      "faq-5-q": "What payment methods do you offer?",
+      "faq-5-a": "We support payment by credit card through [Stripe](https://stripe.com). Customers with Enterprise plans can request payment by other methods, such as wire or ACH. At this time, we can only receive payment in US Dollars ($).",
+      "faq-6-q": "Where are the term of service and privacy policy?",
+      "faq-6-a": "View the OmniEdge [Terms of Service](/terms) and [Privacy Policy](/privacy).",
+      "faq-7-q":  "How can I learn more about OmniEdge?",
+      "faq-7-a": "Learn more about OmniEdge by reading [documentation](/doc)."
     }
+
   }

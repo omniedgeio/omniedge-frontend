@@ -457,6 +457,7 @@ export function HerosV1() {
 }
 
 export function Heros() {
+  const {t, i18n} = useTranslation('features')
   return (
     <Box px={8} py={24} mx="auto">
       <Box w={{ base: "full", md: 11 / 12, xl: 9 / 12 }} mx="auto" textAlign={{ base: "left", md: "center" }}>
@@ -468,7 +469,7 @@ export function Heros() {
           letterSpacing={{ base: "normal", md: "tight" }}
           color={useColorModeValue("gray.900", "gray.100")}
         >
-          All your{" "}
+          {t('herotitle-1')}{" "}
           <Text
             display={{ base: "block", lg: "inline" }}
             w="full"
@@ -476,9 +477,10 @@ export function Heros() {
             bgGradient="linear(to-r, brand.500,purple.500)"
             fontWeight="extrabold"
           >
-            connectivity
+            {t('herotitle-2')}
+            
           </Text>{" "}
-          in one single click.
+          {t('herotitle-3')}
         </chakra.h1>
         <chakra.p
           px={{ base: 0, lg: 24 }}
@@ -486,8 +488,7 @@ export function Heros() {
           fontSize={{ base: "lg", md: "xl" }}
           color={useColorModeValue("gray.600", "gray.300")}
         >
-          We’re on a mission to provide reliable, secure, and painless connectivity solutions for anyone who wants to
-          have access to their devices, anywhere, anytime.
+          {t('herosubtitle')}
         </chakra.p>
         <Stack
           direction={{ base: "column", sm: "row" }}
@@ -508,7 +509,7 @@ export function Heros() {
               size="lg"
               cursor="pointer"
             >
-              Get Started
+              {t('getstarted')}
               <Icon boxSize={4} ml={1} viewBox="0 0 20 20" fill="currentColor">
                 <path
                   fillRule="evenodd"

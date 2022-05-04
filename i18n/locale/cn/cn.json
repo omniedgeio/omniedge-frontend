@@ -22,11 +22,11 @@
   "index": {
     "title": "Unlimited Computers In Private Network With Zero Router.The Power of OmniEdge,High Seurity, High Speed, and High Performance.",
     "description": "OmniEdge 将企业连接部署从几周缩短到几分钟，帮助客户专注于他们的核心业务，随时随地连接和管理他们的设备。",
-    "slogan": "基于安全打造的因特网上的私有局域网.",
-    "unlimitedcomputers": "无需路由器，在私有网络",
-    "slogan-desc-1": "内连接",
-    "slogan-desc-2": "数量不限的",
-    "slogan-desc-3": "各类电脑，云，手机等设备",
+    "slogan": "公网上的私有网络",
+    "unlimitedcomputers": "为安全互联而生",
+    "slogan-desc-1": "无需",
+    "slogan-desc-2": "<del>公网 IP，端口转发，反向代理</del>",
+    "slogan-desc-3": "等.",
     "slogan-description": "OmniEdge 的端到端企业 VPN 解决方案，不仅适用于初创业团队、个人，也适用于需要弹性扩张，在世界各地拥有成千上万台电脑的大公司。",
     "getstartedfree": "开始免费使用",
     "contactsalesexpert": "联系销售专家",
@@ -37,7 +37,9 @@
     "create": "创建"
   },
   "download": {
-    "available": "适用平台:"
+    "available": "适用平台:",
+    "title": " 下载 ",
+    "subtitle": " 点击以下对应图标下载相应版本的 OmniEdge 客户端"
   },
 
   "features": {
@@ -109,11 +111,64 @@
     "flokta": "Okta 集成",
     "flokta-desc": "支持企业级的 SSO 登录集成，比如将 OKTA 集成到 OmniEdge",
     "flapi":"管理 API" ,
-    "flapi-desc": "管理 API 是专门为管理员开发，用来管理 Dashboard 等设置虚拟网络，设备，网络和安全码等设置的工具。"
+    "flapi-desc": "管理 API 是专门为管理员开发，用来管理 Dashboard 等设置虚拟网络，设备，网络和安全码等设置的工具。",
+    "herotitle-1": "所有的",
+    "herotitle-2": "连接",
+    "herotitle-3": "只需要一条命令",
+    "herosubtitle": "我们的使命是为那些希望随时随地访问其设备的人提供可靠、安全和无痛的连接解决方案。",
+    "getstarted": "马上开始"
   },
   "customersmap": {
     "customersmaptitle":" 用户喜欢我们的服务",
     "customersmapsubtitle": " 我们的用户来自世界上 26 个国家和地区"
-
+  },
+  "pricing": {
+    "getstarted": "马上使用",
+    "title": "价格",
+    "subtitle": " 从免费计划开始使用，和我们一起成长",
+    "contact": "联系我们",
+    "features": "功能特性",
+    "starter": "入门版",
+    "professional": "专业版",
+    "team": "团队版",
+    "enterprise": "企业版",
+    "virtualnetwork": "虚拟私有网络数目",
+    "devices": "设备数目",
+    "users": "用户数目",
+    "unlimited": "无限",
+    "securitykey": "安全码",
+    "subroute": "子路由",
+    "unlimiteddata": "无限数据传输",
+    "p2p": "端到端加密连接",
+    "platform": "桌面客户端，命令行及手机客户端",
+    "sharing": "共享私有虚拟网络",
+    "customizesupernode": "私有化 Supernode 服务器",
+    "sso": " 用户认证系统集成",
+    "iot": "硬件和物联网集成",
+    "api": "API",
+    "adminapi": "管理员 API",
+    "whitelable": "贴牌",
+    "specialsupport": "特殊支持",
+    "emailsupport": "邮件支持"
+  },
+  "plan": {
+    "monthly": "每月"
+  },
+  "faq": {
+    "title": "FAQ",
+    "faq-1-q": " 设置 OmniEdge 需要多少时间 ?",
+    "faq-1-a": " 设置 OmniEdge 只需要安装 OmniEdge 在不同平台的客户端，一般只需要 5 分钟，甚至更短。",
+    "faq-2-q": " 我的隐私在 OmniEdge 私有网络内安全吗？",
+    "faq-2-a": " 我们非常在意思用户的隐私，详细信息，请阅读我们的[隐私政策](/privacy)。 ",
+    "faq-3-q":  "如何更换我的订阅计划 ?",
+    "faq-3-a": " 如果您已经订阅了 OmniEdge，请联系我们或者在您的账单管理页面内更改。",
+    "faq-4-q": " 什么时间我需要付钱 ?",
+    "faq-4-a": " OmniEdge 的订阅是预付模式，所以需要您先付款再使用。",
+    "faq-5-q": " 支持什么付款方式?",
+    "faq-5-a": " 我们支持各类信用卡付款，只要 [Stripe](https://stripe.com) 支持的我们都支持. 企业用户也可以联系我们使用其他方式付款，比如电汇或者 ACH，请以美元付款。",
+    "faq-6-q": " 在哪里可以查看服务协议和隐私条款?",
+    "faq-6-a": " 查看 OmniEdge [服务协议](/terms) 和 [隐私条款](/privacy).",
+    "faq-7-q": " 如何了解更多关于 OmniEdge 的信息?",
+    "faq-7-a": " 你可以访问我们的[文档](/doc)，了解更多。"
   }
 }

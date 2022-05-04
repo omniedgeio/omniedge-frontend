@@ -640,6 +640,7 @@ export function Compare() {
 }
 
 export function Featureslist() {
+  const {t, i18n} = useTranslation('features')
   return (
     <Flex w="auto" justifyContent="center" alignItems="center" >
       <Box px={4} py={20} mx="auto">
@@ -652,60 +653,52 @@ export function Featureslist() {
             letterSpacing="tight"
             textTransform="uppercase"
           >
-            OmniEdge delivers
+            {t('featureslisttitle')}
+            
           </chakra.p>
           <chakra.p mt={4} maxW="2xl" fontSize="xl" mx={{ lg: "auto" }}>
-            Solutions for your requirements.
+          {t('featureslistsubtitle')}
           </chakra.p>
         </Box>
         <SimpleGrid columns={{ base: 1, sm: 2, md: 3, lg: 4 }} spacingX={{ base: 16, lg: 24 }} spacingY={20} mt={6}>
-          <Featurelist color="red" title="Virtual Network" icon={<FiGlobe size="2lg" />}>
-            Virtual network becomes a virtual office connecting all remote devices by intranet for your team and trusted
-            users only.
+          <Featurelist color="red" title={t('flvn')} icon={<FiGlobe size="2lg" />}>
+          {t('flvn-desc')}
           </Featurelist>
 
-          <Featurelist color="pink" title="Remote Device Control" icon={<AiOutlineControl size="2lg" />}>
-            Control a remote computer as if it’s located in front of you, by Remote Desktop Protocol, VNC or SSH.
+          <Featurelist color="pink" title={t('flrm')} icon={<AiOutlineControl size="2lg" />}>
+          {t('flrm-desc')}
           </Featurelist>
 
-          <Featurelist color="yellow" title="Cross-Platform" icon={<FaConnectdevelop size="2lg" />}>
-            Connect multiple platforms, Windows,macOS, iOS, Android, Linux and more.
+          <Featurelist color="yellow" title={t('flcr')} icon={<FaConnectdevelop size="2lg" />}>
+          {t('flcr-desc')}
+          </Featurelist>
+          <Featurelist color="green" title={t('flsb')}icon={<MdRouter size="2lg" />}>
+            {t('flsb-desc')}
+          </Featurelist>
+          <Featurelist color="purple" title={t('flbd')}icon={<BiTransfer size="2lg" />}>
+          {t('flbd-desc')}
+          </Featurelist>
+          <Featurelist color="blue" title={t('flmu')} icon={<FiUsers size="2lg" />}>
+          {t('flmu-desc')}
+          </Featurelist>
+          <Featurelist color="brand" title={t('flsk')} icon={<FiKey size="2lg" />}>
+          {t('flsk-desc')}
+          </Featurelist>
+          <Featurelist color="purple" title={t('flp2p')} icon={<MdEnhancedEncryption size="2lg" />}>
+          {t('flp2p-desc')}
+          </Featurelist>
+          <Featurelist color="pink" title={t('fliot')} icon={<AiFillRobot size="2lg" />}>
+          {t('fliot-desc')}
+          </Featurelist>
+          <Featurelist color="red" title={t('flzc')}icon={<GiClick size="2lg" />}>
+          {t('flzc-desc')}
           </Featurelist>
 
-          <Featurelist color="green" title="Sub Router" icon={<MdRouter size="2lg" />}>
-            Sub router allows you connect your devices which is not with Omniedge installed.
+          <Featurelist color="green" title={t('flokta')} icon={<BiCheckShield size="2lg" />}>
+          {t('flokta-desc')}
           </Featurelist>
-          <Featurelist color="purple" title="Big Data Transferring" icon={<BiTransfer size="2lg" />}>
-            Big-data transfer functionality allows international enterprises to exchange data between different sites
-            across their global footprint.
-          </Featurelist>
-          <Featurelist color="blue" title="Multi-Users" icon={<FiUsers size="2lg" />}>
-            Organize your users to bring secure connection to enterprise&apos;s access and resources.
-          </Featurelist>
-          <Featurelist color="brand" title="Security Key" icon={<FiKey size="2lg" />}>
-            Security Keys allow you connect your linux based devices with only a command line, turning your own devices
-            into an industrial router.
-          </Featurelist>
-
-          <Featurelist color="purple" title="Peer-to-Peer Encryption" icon={<MdEnhancedEncryption size="2lg" />}>
-            Traffic over OmniEdge is end-to-end encrypted by Twofish/AES128/ChaCha20 cipers&apos; P2P MESH network.
-          </Featurelist>
-
-          <Featurelist color="pink" title="IoT & Hardware Integration " icon={<AiFillRobot size="2lg" />}>
-            Integrate OmniEdge into your own IoT project or hardware.
-          </Featurelist>
-
-          <Featurelist color="red" title="Zero Config" icon={<GiClick size="2lg" />}>
-            No Public IP, No Port Forward,Zero Config, Zero Firewall Rules. All your connectivity in one single click.
-          </Featurelist>
-
-          <Featurelist color="green" title="Okta integration" icon={<BiCheckShield size="2lg" />}>
-            Integrate Okta as your SSO provider to use OmniEdge.
-          </Featurelist>
-
-          <Featurelist color="blue" title="Admin API" icon={<AiTwotoneApi size="2lg" />}>
-            Admin API for admin users to have access to the admin dashboard for overview virutal network, devices and
-            network setting.
+          <Featurelist color="blue" title={t('flapi')}icon={<AiTwotoneApi size="2lg" />}>
+          {t('flapi-desc')}
           </Featurelist>
         </SimpleGrid>
       </Box>

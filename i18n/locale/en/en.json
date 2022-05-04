@@ -8,6 +8,17 @@
       "getstarted": "Get Started",
       "login": "Login"
     },
+    "footer": {
+      "copyright": "© 2022 OmniEdge Inc. All rights reserved",
+      "about": "About us",
+      "docs": "Docs",
+      "contact": "Contact us",    
+      "survey": "User Research",      
+      "tos": "Terms of Service",
+      "privacy": "Privacy Policy",
+      "opensource": "Open Source",
+      "cookie": "OmniEdge uses cookies to enhance the user experience."
+    },
     "index": {
       "title": "Unlimited Computers In Private Network With Zero Router.The Power of OmniEdge,High Seurity, High Speed, and High Performance.",
       "description": "OmniEdge reduces the enterprise connectivity deployment from weeks to minutes, helps customers focusing on their core business, connects and manages their devices from anywhere, anytime.",
@@ -71,13 +82,36 @@
       "setup": "Painless Setup",
       "setup-desc": "Set up OmniEdge just in minutes with our apps on any device, you can choose several different methods to activate your devices.",
       "maintenanceless": "Maintenanceless",
-      "maintenanceless-desc": "Forget about the labor-intensive system management job, with OMNIEDGE you can focus on your own core business."
-
-
-
-
-              
+      "maintenanceless-desc": "Forget about the labor-intensive system management job, with OMNIEDGE you can focus on your own core business.",
+      "featureslisttitle": "OmniEdge delivers",
+      "featureslistsubtitle": "Solutions for your requirements.",
+      "flvn":"Virtual Network",
+      "flvn-desc":"Virtual network becomes a virtual office connecting all remote devices by intranet for your team and trusted users only.",
+      "flrm":"Remote Device Control",
+      "flrm-desc": "Control a remote computer as if it’s located in front of you, by Remote Desktop Protocol, VNC or SSH.",
+      "flcr":"Cross-Platform",
+      "flcr-desc":"Connect multiple platforms, Windows,macOS, iOS, Android, Linux and more.",
+      "flsb":"Sub Router",
+      "flsb-dsec":"Sub router allows you connect your devices which is not with Omniedge installed." ,
+      "flbd":"Big Data Transferring" ,
+      "flbd-desc":"Big-data transfer functionality allows international enterprises to exchange data between different sites across their global footprint.",
+      "flmu":"Multi-Users",
+      "flmu-desc":"Organize your users to bring secure connection to enterprise&apos;s access and resources.",
+      "flsk":"Security Key",
+      "flsk-desc": "Security Keys allow you connect your linux based devices with only a command line, turning your own devices into an industrial router.",
+      "flp2p":"Peer-to-Peer Encryption",
+      "flp2p-desc": "Traffic over OmniEdge is end-to-end encrypted by Twofish/AES128/ChaCha20 cipers&apos; P2P MESH network.",
+      "fliot":"IoT & Hardware Integration ",
+      "fliot-desc":"Integrate OmniEdge into your own IoT project or hardware.",
+      "flzc":"Zero Config",
+      "flzc-desc": "No Public IP, No Port Forward,Zero Config, Zero Firewall Rules. All your connectivity in one single click.",
+      "flokta":"Okta integration",
+      "flokta-desc":"Integrate Okta as your SSO provider to use OmniEdge.",
+      "flapi":"Admin API" ,
+      "flapi-desc": "Admin API for admin users to have access to the admin dashboard for overview virutal network, devices and network setting."
+    },
+    "customersmap": {
+      "customersmaptitle":"Customers like our service.",
+      "customersmapsubtitle": "We served customers from more than 26 countries & regions."
     }
-    
-
   }

@@ -8,20 +8,9 @@
     "getstarted": "开始使用",
     "login": "登录"
   },
-  "footer": {
-    "copyright": "© 2022 OmniEdge Inc. 版权所有",
-    "about": "关于我们",
-    "docs": "文档",
-    "contact": "联系我们",    
-    "survey": "用户调查",      
-    "tos": "服务条款",
-    "privacy": "用户隐私",
-    "opensource": "开源",
-    "cookie": "OmniEdge 使用 Cookie 来提供用户体验服务。"
-  },
   "index": {
     "title": "Unlimited Computers In Private Network With Zero Router.The Power of OmniEdge,High Seurity, High Speed, and High Performance.",
-    "description": "OmniEdge 将企业连接部署从几周缩短到几分钟，帮助客户专注于他们的核心业务，随时随地连接和管理他们的设备。",
+    "description": "OmniEdge reduces the enterprise connectivity deployment from weeks to minutes, helps customers focusing on their core business, connects and manages their devices from anywhere, anytime.",
     "slogan": "基于安全打造的因特网上的私有局域网.",
     "unlimitedcomputers": "无需路由器，在私有网络",
     "slogan-desc-1": "内连接",
@@ -71,7 +60,7 @@
     "comparedesc": "无需公网IP，无需端口转发，零配置，零防火墙规则，及端到端加密通讯",
     "FeaturePage-title": "OMNIEDGE",
     "FeaturePage-subtitle": "将安全连接部署的时间从几周降到几分钟",
-    "FeaturePage-desc": "OmniEdge 将企业连接部署从几周缩短到几分钟，帮助客户专注于他们的核心业务，随时随地连接和管理他们的设备。",
+    "FeaturePage-desc": "OmniEdge reduces the enterprise connectivity deployment from weeks to minutes, helps customers focusing on their core business, connects and manages their devices from anywhere, anytime.",
     "crossplatform": "跨平台",
     "crossplatform-desc": " 用户可以在不同的设备上使用 OmniEdge，不论这个设备运行的是 Windows 系统，Android 系统，iOS 系统，macOS 系统，Linux 系统, NAS 系统，路由由器系统或者各类云服务器系统。",
     "dashboard": "统一的管理后台",
@@ -83,37 +72,6 @@
     "setup": "无痛配置",
     "setup-desc": "在不同的设备上配置 OmniEdge 只需要几分钟，你可以使用用户密码以及安全码等相关方式激活设备。",
     "maintenanceless": "免维护",
-    "maintenanceless-desc": " 放弃需要大量人力劳动的企业网络系统，使用 OmniEdge 您将可以专注于自己擅长的业务。",
-    "featureslisttitle": "OmniEdge 发布",
-    "featureslistsubtitle": " 满足您需求的解决方案",
-    "flvn":"私有虚拟网络",
-    "flvn-desc":"私有虚拟网络为您和团队和信任的其他成员，提供一个虚拟的办公室，大家好像坐在同一个房间里面交换设备之间的数据。",
-    "flrm":"远程设备控制",
-    "flrm-desc": "使用 OmniEdge ，配合VNC，RDP或者SSH，连接到远端的不同设备，好像这些设备在您的面前。",
-    "flcr":"跨平台",
-    "flcr-desc":"连接到不同的操作系统平台，包括 Windows,macOS, iOS, Android, Linux，NAS等更多.",
-    "flsb":"子路由功能",
-    "flsb-desc": "子路由功能允许您连接到那些无法安装 OmniEdge 的设备，比如很多 IoT 设备",
-    "flbd": "大数据传输",
-    "flbd-desc":" 大数据传输功能可以帮助跨国企业在各个分公司之前快速同步大文件，特别是 CAD 等相关敏感的数据。",
-    "flmu": "多用户",
-    "flmu-desc":" 管理您企业内的多个用户，连接到不同的设备和资源。",
-    "flsk": "安全码",
-    "flsk-desc": " 安全码允许您在没有 GUI 的设备上使用 OmniEdge 。",
-    "flp2p":"端到端加密",
-    "flp2p-desc": " 设备之间的通讯使用端到端的方式，用 Twofish/AES128/ChaCha20 等加密算法进行加密",
-    "fliot": "物联网，工业物联网和硬件集成",
-    "fliot-desc":"将 OmniEdge 集成到您的物联网，工业物联网，或者路由器等硬件项目。",
-    "flzc": "零配置",
-    "flzc-desc": "使用OmniEdge 连接您的设备，无需公网 IP，无需端口转发，零配置，零防火墙规则。",
-    "flokta": "Okta 集成",
-    "flokta-desc": "支持企业级的 SSO 登录集成，比如将 OKTA 集成到 OmniEdge",
-    "flapi":"管理 API" ,
-    "flapi-desc": "管理 API 是专门为管理员开发，用来管理 Dashboard 等设置虚拟网络，设备，网络和安全码等设置的工具。"
-  },
-  "customersmap": {
-    "customersmaptitle":" 用户喜欢我们的服务",
-    "customersmapsubtitle": " 我们的用户来自世界上 26 个国家和地区"
-
-  }
+    "maintenanceless-desc": " 放弃需要大量人力劳动的企业网络系统，使用 OmniEdge 您将可以专注于自己擅长的业务。"
+}
 }

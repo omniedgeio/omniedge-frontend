@@ -17,6 +17,7 @@ i18n.use(initReactI18next)
   .use(LanguageDetector)
   .init({
     resources,
+    lng: 'English', // default language
     // defaultNS: "common",
     fallbackLng: "en",
   });

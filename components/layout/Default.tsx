@@ -100,6 +100,11 @@ const DefaultLayout: React.FC<{}> = (props) => {
             <Link href="/blog">{t('blog')}</Link>
           </Stack>
           <HStack>
+          <select defaultValue={i18n.language} onChange={(e) => i18n.changeLanguage(e.target.value)}>
+          {availableLanguages.map((language) => (
+            <option key={language}>{language}</option>
+          ))}
+        </select>
             {isLoading && <Skeleton h="8" w="20"></Skeleton>}
             {!isLoading && user && (
               <Link href="/dashboard/virtual-networks">
@@ -109,11 +114,6 @@ const DefaultLayout: React.FC<{}> = (props) => {
             )}
             {!isLoading && !user && (
               <>
-                <select defaultValue={i18n.language} onChange={(e) => i18n.changeLanguage(e.target.value)}>
-          {availableLanguages.map((language) => (
-            <option key={language}>{language}</option>
-          ))}
-        </select>
                 <Link href="/register">
                   <Button colorScheme="brand">{t('getstarted')}</Button>
                 </Link>

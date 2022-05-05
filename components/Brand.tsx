@@ -12,6 +12,7 @@ import {
 
 import {FaTwitter,FaGithub,FaMedium,FaYoutube } from "react-icons/fa";
 import {MdEmail } from "react-icons/md";
+import {useTranslation} from "react-i18next";
 
 export const Brand: React.FC = function () {
   return (
@@ -25,6 +26,7 @@ export const Brand: React.FC = function () {
 };
 
 export const Social:React.FC = function () {
+  const {t, i18n} = useTranslation('index')
   return (
       <Box
         shadow="lg"
@@ -40,12 +42,12 @@ export const Social:React.FC = function () {
         />
         <Flex alignItems="center" px={6} py={3} bg="brand.500">
           <chakra.h1 mx={3} color="white" fontWeight="bold" fontSize="lg">
-            KEEP IN TOUCH
+            {t('keepintouch')}
           </chakra.h1>
         </Flex>
 
         <Box py={4} px={6}>
-        FOLLOW OMNIEDGE
+        {t('followomniedge')}
           <Flex
             alignItems="center"
             mt={4}

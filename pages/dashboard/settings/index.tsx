@@ -48,6 +48,7 @@ import { activateGoogleLogin, updateProfile } from "../../../lib/api/user";
 import { showError, showSuccess } from "../../../lib/helpers/toast";
 import { useUser } from "../../../lib/hook/useUser";
 import { Page } from "../../../types";
+import {useTranslation} from "react-i18next";
 
 const UpdateUserProfileForm: React.FC = function (props) {
   const { user, refetch, isLoading } = useUser("/login");
@@ -76,12 +77,12 @@ const UpdateUserProfileForm: React.FC = function (props) {
   if (isLoading) {
     return <Spinner />;
   }
-
+  const {t, i18n} = useTranslation('dashboard')
   return (
     <form onSubmit={handleSubmit}>
       <VStack maxW="sm" w="full" alignItems="flex-start" spacing={4}>
         <FormControl isInvalid={!!(touched.name && errors.name)} isRequired>
-          <FormLabel>Name</FormLabel>
+          <FormLabel>{t('setting.name')}</FormLabel>
           <Input
             type="text"
             name="name"
@@ -93,7 +94,7 @@ const UpdateUserProfileForm: React.FC = function (props) {
           <FormErrorMessage>{errors.name}</FormErrorMessage>
         </FormControl>
         <FormControl isInvalid={!!(touched.email && errors.email)} isRequired>
-          <FormLabel>Email</FormLabel>
+          <FormLabel>{t('setting.email')}</FormLabel>
           <Input
             disabled
             type="email"
@@ -101,12 +102,12 @@ const UpdateUserProfileForm: React.FC = function (props) {
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.email}
-            placeholder="Enter your Email"
+            placeholder={t('setting.inputemail')}
           ></Input>
           <FormErrorMessage>{errors.email}</FormErrorMessage>
         </FormControl>
         <Button type="submit" isLoading={isSubmitting} colorScheme="brand">
-          Update
+        {t('setting.update')}
         </Button>
       </VStack>
     </form>
@@ -120,15 +121,15 @@ const Invitations: React.FC = function (props) {
 
   const confirmModal = useDisclosure();
   const [invitationToReject, setInvitationToReject] = useState<IInvitationResponse>();
-
+  const {t, i18n} = useTranslation('dashboard')
   return (
     <>
       <Heading mt={4} fontWeight="medium" size="md">
-        Invitations
+        {t('setting.invitations')}
       </Heading>
       <ConfirmModal
         isOpen={confirmModal.isOpen}
-        title="Remove Virtual Network"
+        title={t('setting.removevn')}
         onConfirm={() => {
           updateInvitation(invitationToReject?.id as string, { status: InvitationStatus.Rejected })
             .then(() => {
@@ -142,15 +143,15 @@ const Invitations: React.FC = function (props) {
         }}
         onCancel={confirmModal.onClose}
       >
-        Are you sure you want to reject invitation from <Code>{invitationToReject?.virtual_network.name}</Code>?
+        {t('setting.removeconfirm')}<Code>{invitationToReject?.virtual_network.name}</Code>?
       </ConfirmModal>
       <Table w="full" maxW="container.sm">
         <Thead>
           <Tr>
-            <Th pl="0">{isPhone ? "Invitation" : "Virtual Network"}</Th>
-            <Th display={["none", "table-cell"]}>Invited at</Th>
-            <Th display={["none", "table-cell"]}>Invited by</Th>
-            <Th display={["none", "table-cell"]}>Action</Th>
+            <Th pl="0">{isPhone ? t('setting.invitation') : t('setting.virtualnetwork')}</Th>
+            <Th display={["none", "table-cell"]}>{t('setting.invitedat')}</Th>
+            <Th display={["none", "table-cell"]}>{t('setting.invitedby')}</Th>
+            <Th display={["none", "table-cell"]}>{t('setting.action')}</Th>
           </Tr>
         </Thead>
         <Tbody>
@@ -204,7 +205,7 @@ const Invitations: React.FC = function (props) {
                       }}
                       icon={<FiCheck />}
                     >
-                      Accept
+                      {t('setting.accept')}
                     </MenuItem>
                     <MenuItem
                       color="red.500"
@@ -214,7 +215,7 @@ const Invitations: React.FC = function (props) {
                       }}
                       icon={<FiX />}
                     >
-                      Reject
+                      {t('setting.reject')}
                     </MenuItem>
                   </MenuList>
                 </Menu>
@@ -263,7 +264,7 @@ const ChangePassword: React.FC = function (props) {
   const changePasswordModal = useDisclosure();
   const activatePasswordModal = useDisclosure();
   const isPasswordEnabled = !!user?.identities.find(({ provider }) => provider == "password")?.enabled;
-
+  const {t, i18n} = useTranslation('dashboard')
   return (
     <>
       <ChangePasswordModal
@@ -278,13 +279,13 @@ const ChangePassword: React.FC = function (props) {
       /> */}
       <VStack spacing={2} alignItems="flex-start">
         <Heading fontWeight="medium" size="md">
-          Password
+          {t('setting.password')}
         </Heading>
         {/* {isPasswordEnabled ? ( */}
         <>
-          <Text>Changing your password regularly reduces your risk of exposure and avoids a number of dangers.</Text>
+          <Text>{t('setting.changepassword-desc')}</Text>
           <Button leftIcon={<FiLock />} onClick={changePasswordModal.onOpen}>
-            Change Password
+          {t('setting.changepassword')}
           </Button>
         </>
         {/* ) : (
@@ -305,22 +306,23 @@ const LinkWithGoogle: React.FC = function (props) {
   const showErr = () =>
     showError("Link with Google", "Unexpected error when linked with your google accounts. Please try again later.");
   const provider = user?.identities.find(({ provider }) => provider == "google");
+  const {t, i18n} = useTranslation('dashboard')
   return (
     <VStack spacing={2} alignItems="flex-start">
       <Heading fontWeight="medium" size="md">
-        Link with Google
+        {t('setting.linkgoogle')}
       </Heading>
       {provider?.enabled ? (
         <Text>
-          Your account has already been{" "}
+          {t('setting.linkgoogle-desc-1')}{" "}
           <Text as="span" display="inline" color="green.500">
-            successfully linked
+          {t('setting.linkgoogle-desc-2')}
           </Text>{" "}
-          with google account. <Code>{provider?.metadata?.email}</Code>
+          {t('setting.linkgoogle-desc-3')} <Code>{provider?.metadata?.email}</Code>
         </Text>
       ) : (
         <>
-          <Text>Using Google Account to login is more secure and convenient. Link it now</Text>
+          <Text>{t('setting.linkgoogle-desc')}</Text>
           <GoogleLogin
             onSuccess={(e) => {
               activateGoogleLogin({
@@ -328,7 +330,7 @@ const LinkWithGoogle: React.FC = function (props) {
               })
                 .then(() => {
                   showSuccess(
-                    "Link with Google",
+                    t('setting.linkgoogle'),
                     `Successfully link with your google account : ${e.getBasicProfile().getEmail()}`
                   );
                   refetch();
@@ -348,15 +350,16 @@ const LinkWithGoogle: React.FC = function (props) {
 };
 
 const SettingsPage: Page = function (props) {
+  const {t, i18n} = useTranslation('dashboard')
   return (
     <>
       <Heading fontWeight="semibold" size="md">
-        Settings
+        {t('setting.title')}
       </Heading>
       <Tabs variant="enclosed" colorScheme="brand" mt="2">
         <TabList>
-          <Tab>Profile</Tab>
-          <Tab>Security</Tab>
+          <Tab>{t('setting.profile')}</Tab>
+          <Tab>{t('setting.security')}</Tab>
         </TabList>
         <TabPanels>
           <TabPanel px={0}>

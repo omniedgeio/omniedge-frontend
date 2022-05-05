@@ -28,6 +28,7 @@ import { IVirtualNetworkUserResponse } from "../../../lib/api/response";
 import { listUsersOfVirtualNetwork, removeUserFromVirtualNetwork } from "../../../lib/api/virtualNetwork";
 import { useUser } from "../../../lib/hook/useUser";
 import ConfirmModal from "../../ConfirmModal";
+import {useTranslation} from "react-i18next";
 
 interface IVirtualNetworkUsersTableProps {
   virtualNetworkId: string;
@@ -46,12 +47,12 @@ const VirtualNetworkUsersTable: React.FC<IVirtualNetworkUsersTableProps> = funct
   const [userToRemove, setUserToRemove] = useState<IVirtualNetworkUserResponse>();
   const { user } = useUser("/login");
   const isAdmin = !!(data?.data.find(({ id }) => user?.id == id)?.role == UserRole.Admin);
-
+  const {t, i18n} = useTranslation('dashboard')
   return (
     <>
       <ConfirmModal
         isOpen={confirmModal.isOpen}
-        title="Remove Virtual Network"
+        title={t('users.title')}
         onConfirm={() => {
           removeUserFromVirtualNetwork(virtualNetworkId as string, userToRemove?.id as string).then(() => {
             if (userToRemove?.id == user?.id) {
@@ -64,14 +65,15 @@ const VirtualNetworkUsersTable: React.FC<IVirtualNetworkUsersTableProps> = funct
         }}
         onCancel={confirmModal.onClose}
       >
-        Are you sure you want to remove user <Code>{userToRemove?.name}</Code> from this virtual network?
+        {t('users.removeconfirm')}
+         <Code>{userToRemove?.name}</Code> 
       </ConfirmModal>
       <Table w="full" maxW="container.sm">
         <Thead>
           <Tr>
             <Th pl="0">{isPhone ? "User" : "Name"}</Th>
-            <Th display={["none", "table-cell"]}>Email</Th>
-            {isAdmin && data?.data && data?.data?.length > 1 && <Th display={["none", "table-cell"]}>Action</Th>}
+            <Th display={["none", "table-cell"]}>{t('users.email')}</Th>
+            {isAdmin && data?.data && data?.data?.length > 1 && <Th display={["none", "table-cell"]}>{t('users.action')}</Th>}
           </Tr>
         </Thead>
         <Tbody>

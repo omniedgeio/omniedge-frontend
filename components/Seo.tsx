@@ -1,6 +1,8 @@
 import Head from "next/head";
 import React from "react";
 import { useLocation } from "react-router-dom";
+import {useTranslation} from "react-i18next";
+
 const usePathname = () => {
   const location = useLocation();
   return location.pathname;
@@ -15,11 +17,12 @@ interface Seoinfo {
 }
 
 export const Seo: React.FC<Seoinfo> = ({ title, description, image }) => {
+  const {t, i18n} = useTranslation('index')
   return (
     <Head>
       {/* DEFAULT */}
 
-      {title != undefined && <title key="title">OmniEdge | Unlimited Computers In Your Private Network With Zero Config {title} </title>}
+      {title != undefined && <title key="title">{t('seotitle')} {title} </title>}
       {description != undefined && <meta name="description" key="description" content={description} />}
       <link rel="icon" type="image/x-icon" href={favicon} />
       <link rel="apple-touch-icon" href={favicon} />

@@ -16,6 +16,7 @@ import * as Yup from "yup";
 import YupPassword from "yup-password";
 import { changePassword } from "../../lib/api/user";
 import { showError, showSuccess } from "../../lib/helpers/toast";
+import {useTranslation} from "react-i18next";
 YupPassword(Yup);
 
 interface IChangePasswordModalProps {
@@ -25,6 +26,7 @@ interface IChangePasswordModalProps {
 }
 
 const ChangePasswordModal: React.FC<IChangePasswordModalProps> = function ({ isOpen, onClose, onSuccess }) {
+  
   const { values, errors, touched, handleChange, handleSubmit, isSubmitting, handleBlur } = useFormik({
     initialValues: { old_password: "", password: "", confirm_password: "" },
     validationSchema: Yup.object().shape({
@@ -58,18 +60,18 @@ const ChangePasswordModal: React.FC<IChangePasswordModalProps> = function ({ isO
         });
     },
   });
-
+  const {t, i18n} = useTranslation('auth')
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay></ModalOverlay>
       <ModalContent>
         <form onSubmit={handleSubmit}>
-          <ModalHeader>Change Password</ModalHeader>
+          <ModalHeader>{t('changepassword')}</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
             <VStack>
               <FormControl isInvalid={!!(touched.old_password && errors.old_password)}>
-                <FormLabel>Old password</FormLabel>
+                <FormLabel>{t('oldpassword')}</FormLabel>
                 <Input
                   name="old_password"
                   value={values.old_password}
@@ -82,7 +84,7 @@ const ChangePasswordModal: React.FC<IChangePasswordModalProps> = function ({ isO
                 <FormErrorMessage>{errors.old_password}</FormErrorMessage>
               </FormControl>
               <FormControl isInvalid={!!(touched.password && errors.password)}>
-                <FormLabel>New password</FormLabel>
+                <FormLabel>{t('newpassword')}</FormLabel>
                 <Input
                   name="password"
                   value={values.password}
@@ -90,12 +92,12 @@ const ChangePasswordModal: React.FC<IChangePasswordModalProps> = function ({ isO
                   onChange={handleChange}
                   autoComplete=""
                   type="password"
-                  placeholder="secret passphrase"
+                  placeholder={t('newpassword')}
                 ></Input>
                 <FormErrorMessage>{errors.password}</FormErrorMessage>
               </FormControl>
               <FormControl isInvalid={!!(touched.confirm_password && errors.confirm_password)}>
-                <FormLabel>Confirm Password</FormLabel>
+                <FormLabel>{t('confirmassword')}</FormLabel>
                 <Input
                   name="confirm_password"
                   value={values.confirm_password}
@@ -103,7 +105,7 @@ const ChangePasswordModal: React.FC<IChangePasswordModalProps> = function ({ isO
                   onChange={handleChange}
                   autoComplete=""
                   type="password"
-                  placeholder="password confirmation"
+                  placeholder={t('confirmassword')}
                 ></Input>
                 <FormErrorMessage>{errors.confirm_password}</FormErrorMessage>
               </FormControl>
@@ -111,10 +113,10 @@ const ChangePasswordModal: React.FC<IChangePasswordModalProps> = function ({ isO
           </ModalBody>
           <ModalFooter>
             <Button mr={3} onClick={onClose}>
-              Cancel
+            {t('cancel')}
             </Button>
             <Button type="submit" colorScheme="brand" isLoading={isSubmitting}>
-              Change
+            {t('change')}
             </Button>
           </ModalFooter>
         </form>

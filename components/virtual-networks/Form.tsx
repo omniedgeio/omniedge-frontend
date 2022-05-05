@@ -19,6 +19,7 @@ import { useEffect, useMemo, useState } from "react";
 import * as Yup from "yup";
 import { IVirtualNetworkRequest } from "../../lib/api/request";
 import { useUser } from "../../lib/hook/useUser";
+import {useTranslation} from "react-i18next";
 
 interface VirtualNetworkFormProps {
   defaultValues?: IVirtualNetworkRequest;
@@ -74,12 +75,12 @@ const VirtualNetworkForm: React.FC<VirtualNetworkFormProps> = ({ defaultValues, 
       });
     }
   }, [useCustomSupernode]);
-
+  const {t, i18n} = useTranslation('dashboard')
   return (
     <form style={{ width: "100%" }} onSubmit={handleSubmit}>
       <VStack alignItems="flex-start" spacing="4" w="full" maxW="sm">
         <FormControl isInvalid={!!(touched.name && errors.name)} isRequired>
-          <FormLabel>Name</FormLabel>
+          <FormLabel>{t('virtualnetwork.name')}</FormLabel>
           <Input
             type="text"
             name="name"
@@ -92,7 +93,7 @@ const VirtualNetworkForm: React.FC<VirtualNetworkFormProps> = ({ defaultValues, 
           <FormErrorMessage>{errors.name}</FormErrorMessage>
         </FormControl>
         <FormControl isInvalid={!!(touched.ip_range && errors.ip_range)} isRequired>
-          <FormLabel>IP Range</FormLabel>
+          <FormLabel>{t('virtualnetwork.iprange')}</FormLabel>
           <Input
             type="text"
             name="ip_range"
@@ -108,12 +109,12 @@ const VirtualNetworkForm: React.FC<VirtualNetworkFormProps> = ({ defaultValues, 
             {isUpdate ? `Currently we don't support change of ip range.` : `IP Range can't be changed after creation.`}
           </FormHelperText>
         </FormControl>
-        <FormLabel>Customize Supernode</FormLabel>
+        <FormLabel>{t('virtualnetwork.customizesupernode')}</FormLabel>
         {isFreePlan ? (
           <Text fontSize="sm" color="gray.500">
-            Only available for Pro and Team plan,{" "}
+            {t('virtualnetwork.customizesupernodefor')} {" "}
             <Link href="/dashboard/billing/choose-plan" color="brand.700">
-              Upgrade Plan
+            {t('virtualnetwork.upgradeplan')}
             </Link>
           </Text>
         ) : (
@@ -123,7 +124,7 @@ const VirtualNetworkForm: React.FC<VirtualNetworkFormProps> = ({ defaultValues, 
               setUseCustomSupernode(!useCustomSupernode);
             }}
           >
-            {useCustomSupernode ? "Use default supernode" : "Use customized supernode"}
+            {useCustomSupernode ? t('virtualnetwork.usedefaultsupernode'): t('virtualnetwork.usecustomizesupernode')}
           </Button>
         )}
 
@@ -131,10 +132,10 @@ const VirtualNetworkForm: React.FC<VirtualNetworkFormProps> = ({ defaultValues, 
           <Stack w="full">
             <Alert status="warning">
               <AlertIcon />
-              Please make sure your custom Supernode is reachable.
+              {t('virtualnetwork.customizesupernodeinfo')}
             </Alert>
             <FormControl isInvalid={!!(getIn(touched, "server.host") && getIn(errors, "server.host"))} isRequired>
-              <FormLabel>Host</FormLabel>
+              <FormLabel>{t('virtualnetwork.customizesupernodehost')}</FormLabel>
               <Input
                 type="text"
                 name="server.host"
@@ -149,7 +150,7 @@ const VirtualNetworkForm: React.FC<VirtualNetworkFormProps> = ({ defaultValues, 
             </FormControl>
 
             <FormControl isInvalid={!!(getIn(touched, "server.port") && getIn(errors, "server.port"))} isRequired>
-              <FormLabel>Port</FormLabel>
+              <FormLabel>{t('virtualnetwork.customizesupernodeport')}</FormLabel>
               <Input
                 type="text"
                 name="server.port"
@@ -168,7 +169,7 @@ const VirtualNetworkForm: React.FC<VirtualNetworkFormProps> = ({ defaultValues, 
         )}
 
         <Button isLoading={isSubmitting} type="submit" colorScheme="brand">
-          {defaultValues ? "Update" : "Create"}
+          {defaultValues ? t('virtualnetwork.update') : t('virtualnetwork.create')}
         </Button>
       </VStack>
     </form>

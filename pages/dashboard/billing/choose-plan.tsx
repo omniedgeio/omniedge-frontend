@@ -9,8 +9,10 @@ import { createCheckoutSession } from "../../../lib/api/billing";
 import { showError } from "../../../lib/helpers/toast";
 import { useUser } from "../../../lib/hook/useUser";
 import { Page } from "../../../types";
+import {useTranslation} from "react-i18next";
 
 const ChoosePlanPage: Page = (props) => {
+  const {t, i18n} = useTranslation('dashboard')
   const { user, refetch, isLoading } = useUser("/login");
   const router = useRouter();
 
@@ -33,7 +35,7 @@ const ChoosePlanPage: Page = (props) => {
   const ChoosePlanButton: React.FC<{ plan: string } & ButtonProps> = ({ plan, ...props }) =>
     user?.subscription.slug === plan ? (
       <Button isLoading={isLoading} isDisabled isFullWidth colorScheme="gray" mt={4} {...props}>
-        Current Plan
+        {t('billing.currentplan')}
       </Button>
     ) : (
       <Button
@@ -51,14 +53,14 @@ const ChoosePlanPage: Page = (props) => {
         colorScheme="brand"
         {...props}
       >
-        {user?.subscription.slug === "free" ? "Upgrade" : plan === "free" ? "Revert Plan" : "Change Plan"}
+        {user?.subscription.slug === "free" ? "Upgrade" : plan === "free" ? t('revert') : t('change') }
       </Button>
     );
 
   return (
     <>
       <ConfirmModal
-        title="Warning"
+        title={t('warning')}
         onCancel={confirmModal.onClose}
         onConfirm={() => {
           checkout(planChosen as string);
@@ -66,13 +68,13 @@ const ChoosePlanPage: Page = (props) => {
         isOpen={confirmModal.isOpen}
       >
         {planChosen === "free"
-          ? "Your plan will be cancelled at the end of billing period."
-          : "Change plan may cost additional charge at next billing."}
+          ? t('cancelnotify')
+          : t('changenotify')}
       </ConfirmModal>
       <Container maxW="container.xl" p={4}>
         <Link href="/dashboard/billing">
           <Button leftIcon={<ChevronLeftIcon />} variant="link" _hover={{ textDecor: "none" }}>
-            Back to Billing
+          {t('billing.backtobilling')}
           </Button>
         </Link>
         <SimpleGrid mt={8} columns={{ base: 1, sm: 2, lg: 4 }} spacing={4}>
@@ -90,7 +92,7 @@ const ChoosePlanPage: Page = (props) => {
           <EnterprisePlan>
             <Link href="/contactus">
               <Button isFullWidth variant="outline" mt={4} colorScheme="teal">
-                Contact us
+              {t('billing.contact')}
               </Button>
             </Link>
           </EnterprisePlan>

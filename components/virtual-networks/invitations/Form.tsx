@@ -2,6 +2,7 @@ import { Button, FormControl, FormErrorMessage, HStack, Input } from "@chakra-ui
 import { FormikHelpers, useFormik } from "formik";
 import { FaUserPlus } from "react-icons/fa";
 import * as Yup from "yup";
+import {useTranslation} from "react-i18next";
 
 export interface InvitationFormProps {
   onSubmit: (values: any, actions: FormikHelpers<any>) => void;
@@ -19,7 +20,7 @@ const InvitationForm: React.FC<InvitationFormProps> = ({ onSubmit }) => {
       onSubmit && onSubmit(values, actions);
     },
   });
-
+  const {t, i18n} = useTranslation('dashboard')
   return (
     <form onSubmit={handleSubmit}>
       <HStack>
@@ -31,12 +32,12 @@ const InvitationForm: React.FC<InvitationFormProps> = ({ onSubmit }) => {
             onChange={handleChange}
             onBlur={handleBlur}
             disabled={isSubmitting}
-            placeholder="email"
+            placeholder={t('invitations.email')}
           ></Input>
           <FormErrorMessage>{errors.email}</FormErrorMessage>
         </FormControl>
         <Button isLoading={isSubmitting} leftIcon={<FaUserPlus />}>
-          Invite
+          {t('invitations.invite')}
         </Button>
       </HStack>
     </form>

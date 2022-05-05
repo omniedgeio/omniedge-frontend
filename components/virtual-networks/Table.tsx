@@ -32,6 +32,7 @@ import { showError, showSuccess } from "../../lib/helpers/toast";
 import { useUser } from "../../lib/hook/useUser";
 import ConfirmModal from "../ConfirmModal";
 import Link from "../next/Link";
+import {useTranslation} from "react-i18next";
 
 export default function VirtualNetworkListTable() {
   const isPhone = useBreakpointValue({ base: true, sm: false });
@@ -47,12 +48,12 @@ export default function VirtualNetworkListTable() {
   } = useQuery("virtual-networks", () => listVirtualNetworks({}));
 
   const { user } = useUser();
-
+  const {t, i18n} = useTranslation('dashboard')
   return (
     <>
       <ConfirmModal
         isOpen={confirmModal.isOpen}
-        title="Remove Virtual Network"
+        title={t('virtualnetwork.remove')}
         onConfirm={() => {
           deleteVirtualNetwork(vnToRemove?.id as string)
             .then(() => {
@@ -66,14 +67,14 @@ export default function VirtualNetworkListTable() {
         }}
         onCancel={confirmModal.onClose}
       >
-        Are you sure you want to remove virtual network <Code>{vnToRemove?.name}</Code> ?
+        {t('virtualnetwork.removevn')}<Code>{vnToRemove?.name}</Code> ?
       </ConfirmModal>
       <Table w="full">
         <Thead>
           <Tr>
-            <Th pl="0">{isPhone ? "Virtual Network" : "Name"}</Th>
-            <Th display={["none", "table-cell"]}>IP Range</Th>
-            <Th display={["none", "table-cell"]}>Action</Th>
+            <Th pl="0">{isPhone ? t('virtualnetwork.title') : t('virtualnetwork.name')}</Th>
+            <Th display={["none", "table-cell"]}>{t('virtualnetwork.iprange')}</Th>
+            <Th display={["none", "table-cell"]}>{t('virtualnetwork.action')}</Th>
           </Tr>
         </Thead>
         <Tbody>
@@ -114,7 +115,7 @@ export default function VirtualNetworkListTable() {
                   <MenuList py="1.5">
                     <Link href={`/dashboard/virtual-networks/${vn.id}`}>
                       <MenuItem display={["flex", "none"]} icon={<FiServer />}>
-                        View Devices
+                      {t('virtualnetwork.view')}
                       </MenuItem>
                     </Link>
                     <MenuItem
@@ -125,7 +126,7 @@ export default function VirtualNetworkListTable() {
                         confirmModal.onOpen();
                       }}
                     >
-                      Remove
+                      {t('virtualnetwork.removebutton')}
                     </MenuItem>
                   </MenuList>
                 </Menu>
@@ -155,7 +156,7 @@ export default function VirtualNetworkListTable() {
                     <HStack>
                       <Link href={`/dashboard/virtual-networks/${vn.id}`}>
                         <Button size="sm" colorScheme="brand">
-                          View Devices
+                        {t('virtualnetwork.view')}
                         </Button>
                       </Link>
                       {vn.role === UserRole.Admin && <ActionMenu />}
@@ -171,17 +172,17 @@ export default function VirtualNetworkListTable() {
           (user?.subscription.slug === "teams" && Number(virtualNetworks?.data.length)==10)) ? (
           <TableCaption>
             <Link href="/dashboard/billing/choose-plan" color="brand.700">
-              Upgrade Plan
+            {t('virtualnetwork.upgradeplan')}
             </Link>{" "}
-            to manage more than one virtual network
+            {t('virtualnetwork.upgradeplaninfo')}
           </TableCaption>
         ):(
             <TableCaption>
-            You can {" "}
+            {t('virtualnetwork.upgradeplaninfo-1')} {" "}
           <Link href="/dashboard/virtual-networks/create" color="brand.700" fontSize="lg">
-          create
+          {t('virtualnetwork.create')}
           </Link>{" "}
-          more Virtual Networks.
+          {t('virtualnetwork.upgradeplaninfo-2')}
           </TableCaption>
         )
       }

@@ -15,8 +15,10 @@ interface IConfirmModalProps {
   onConfirm: () => void;
   onCancel: () => void;
 }
+import {useTranslation} from "react-i18next";
 
 const ConfirmModal: React.FC<IConfirmModalProps> = function ({ isOpen, title, onConfirm, onCancel, children }) {
+  const {t, i18n} = useTranslation('index')
   return (
     <Modal isOpen={isOpen} onClose={onCancel}>
       <ModalOverlay />
@@ -25,9 +27,9 @@ const ConfirmModal: React.FC<IConfirmModalProps> = function ({ isOpen, title, on
         <ModalCloseButton />
         <ModalBody>{children}</ModalBody>
         <ModalFooter>
-          <Button onClick={onCancel}>Cancel</Button>
+          <Button onClick={onCancel}>{t('cancel')}</Button>
           <Button ml={3} colorScheme="red" onClick={onConfirm}>
-            Confirm
+            {t('confirm')}
           </Button>
         </ModalFooter>
       </ModalContent>

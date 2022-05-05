@@ -62,6 +62,8 @@ const EntryLayout: React.FC = function ({ children }) {
               variant="outline"
               isFullWidth
             ></GoogleLogin>
+            </>
+            )}
             <Divider
               textAlign="center"
               py="2"
@@ -75,8 +77,8 @@ const EntryLayout: React.FC = function ({ children }) {
               }}
             ></Divider>
             {children}
-          </>
-        )}
+          
+        
       </VStack>
     </Center>
   );

@@ -1,6 +1,7 @@
 import { Box, Heading, HStack, Icon, Text, Tooltip, VStack,Badge } from "@chakra-ui/react";
 import { FiCheck } from "react-icons/fi";
-
+import {useTranslation} from "react-i18next";
+// const {t, i18n} = useTranslation('plan')
 export const PLANS = {
   free: {
     title: "Starter",
@@ -184,6 +185,7 @@ export type PlanProps = React.PropsWithChildren<{
 }>;
 
 export const Plan: React.FC<PlanProps> = ({ focus, title, freetrial, oldprice,price, description, features, children }) => {
+  const {t, i18n} = useTranslation('plan')
   return (
     <VStack alignItems="left" key={title} px={2} py={6}>
       <Text fontSize="lg">{title}</Text>
@@ -192,7 +194,7 @@ export const Plan: React.FC<PlanProps> = ({ focus, title, freetrial, oldprice,pr
       ) : (<>
         <HStack my={4}>
           <Heading>${price}</Heading>
-          <Text>/ per Month</Text>
+          <Text>{t('monthly')}</Text>
         </HStack>
         {/* <HStack my={4}>
         <Badge variant='solid' colorScheme='orange'>{freetrial}</Badge>

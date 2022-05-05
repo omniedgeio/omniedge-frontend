@@ -31,6 +31,7 @@ import { showSuccess } from "../../lib/helpers/toast";
 import ConfirmModal from "../ConfirmModal";
 import Link from "../next/Link";
 import RenameModal from "./RenameModal";
+import {useTranslation} from "react-i18next";
 
 interface IDevicesTableProps {
   params?: IListDevicesRequest;
@@ -45,6 +46,7 @@ const DevicesTable: React.FC = function (props) {
 
   const renameModal = useDisclosure();
   const [deviceToRename, setDeviceToRename] = useState<IDeviceResponse>();
+  const {t, i18n} = useTranslation('dashboard')
   return (
     <>
       <RenameModal
@@ -58,7 +60,7 @@ const DevicesTable: React.FC = function (props) {
       ></RenameModal>
       <ConfirmModal
         isOpen={confirmModal.isOpen}
-        title="Remove Virtual Network"
+        title={t('virtualnetwork.remove')}
         onConfirm={() => {
           removeDevice(deviceToRemove?.id as string).then(() => {
             refetch();
@@ -66,23 +68,24 @@ const DevicesTable: React.FC = function (props) {
           });
         }}
         onCancel={confirmModal.onClose}
-      >
-        Are you sure you want to remove device <Code>{deviceToRemove?.name}</Code> ?
+      >{t('device.removeconfirm')}
+         <Code>{deviceToRemove?.name}</Code> ?
       </ConfirmModal>
       <Table w="full">
         <TableCaption>
-        <span>{data?.data?.length} devices in total. </span><br/>
+        <span>{t('device.total')} {data?.data?.length}  </span><br/>
           <Link href="/download" color="brand.500">
-            Download
+            {t('device.download')}
           </Link>{" "}
-          apps now to enjoy our service
+          {t('device.download-desc')}
+          
         </TableCaption>
         <Thead>
           <Tr>
-            <Th pl="0">Name </Th>
-            <Th display={{ base: "none", lg: "table-cell" }}>OS</Th>
-            <Th display={["none", "table-cell"]}>Network</Th>
-            <Th display={["none", "table-cell"]}>Action</Th>
+            <Th pl="0">{t('device.name')} </Th>
+            <Th display={{ base: "none", lg: "table-cell" }}>{t('device.os')}</Th>
+            <Th display={["none", "table-cell"]}>{t('device.network')}</Th>
+            <Th display={["none", "table-cell"]}>{t('device.action')}</Th>
           </Tr>
         </Thead>
         <Tbody>
@@ -132,7 +135,7 @@ const DevicesTable: React.FC = function (props) {
                   ></MenuButton>
                   <MenuList>
                     <Link href={"/dashboard/devices/" + device.id}>
-                      <MenuItem icon={<FiServer />}>View Device</MenuItem>
+                      <MenuItem icon={<FiServer />}>{t('device.view')}</MenuItem>
                     </Link>
                     <MenuItem
                       onClick={() => {
@@ -141,7 +144,7 @@ const DevicesTable: React.FC = function (props) {
                       }}
                       icon={<FiEdit />}
                     >
-                      Rename
+                      {t('device.rename')}
                     </MenuItem>
                     <MenuDivider />
                     <MenuItem
@@ -152,7 +155,7 @@ const DevicesTable: React.FC = function (props) {
                         confirmModal.onOpen();
                       }}
                     >
-                      Remove
+                      {t('device.remove')}
                     </MenuItem>
                   </MenuList>
                 </Menu>

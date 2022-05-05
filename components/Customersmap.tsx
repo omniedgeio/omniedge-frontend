@@ -1,7 +1,9 @@
 import { Image,Box,chakra,BoxProps, Divider} from "@chakra-ui/react";
 import React from "react";
+import {useTranslation} from "react-i18next";
 
 export const Customersmap: React.FC<BoxProps> = (props) => {
+  const {t, i18n} = useTranslation('customersmap')
   return (<>
     <Box padding="4" textAlign={{ lg: "center" }}>
             <chakra.h2
@@ -12,7 +14,8 @@ export const Customersmap: React.FC<BoxProps> = (props) => {
             letterSpacing="tight"
             color="gray.900"
             >
-              Customers like our service.
+              {t('customersmaptitle')}
+              
             </chakra.h2>
             <chakra.p
               mt={2}
@@ -20,7 +23,8 @@ export const Customersmap: React.FC<BoxProps> = (props) => {
               letterSpacing="tight"
               color="gray.900"
             >
-              We served customers from more than 26 countries & regions.
+              {t('customersmapsubtitle')}
+              
             </chakra.p>
             </Box>
             <br></br>

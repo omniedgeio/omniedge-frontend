@@ -16,6 +16,7 @@ import * as Yup from "yup";
 import YupPassword from "yup-password";
 import { activatePasswordLogin } from "../../lib/api/user";
 import { showError } from "../../lib/helpers/toast";
+import {useTranslation} from "react-i18next";
 YupPassword(Yup);
 
 interface IChangePasswordModalProps {
@@ -25,6 +26,7 @@ interface IChangePasswordModalProps {
 }
 
 const ActivatePasswordModal: React.FC<IChangePasswordModalProps> = function ({ isOpen, onClose, onSuccess }) {
+  const {t, i18n} = useTranslation('auth')
   const { values, errors, touched, handleChange, handleSubmit, isSubmitting, handleBlur } = useFormik({
     initialValues: { password: "", confirm_password: "" },
     validationSchema: Yup.object().shape({
@@ -56,18 +58,18 @@ const ActivatePasswordModal: React.FC<IChangePasswordModalProps> = function ({ i
         });
     },
   });
-
+  
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay></ModalOverlay>
       <ModalContent>
         <form onSubmit={handleSubmit}>
-          <ModalHeader>Change Password</ModalHeader>
+          <ModalHeader>{t('changepassword')}</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
             <VStack>
               <FormControl isInvalid={!!(touched.password && errors.password)}>
-                <FormLabel>New password</FormLabel>
+                <FormLabel>{t('newpassword')}</FormLabel>
                 <Input
                   name="password"
                   value={values.password}
@@ -75,12 +77,12 @@ const ActivatePasswordModal: React.FC<IChangePasswordModalProps> = function ({ i
                   onChange={handleChange}
                   autoComplete=""
                   type="password"
-                  placeholder="secret passphrase"
+                  placeholder={t('newpassword')}
                 ></Input>
                 <FormErrorMessage>{errors.password}</FormErrorMessage>
               </FormControl>
               <FormControl isInvalid={!!(touched.confirm_password && errors.confirm_password)}>
-                <FormLabel>Confirm Password</FormLabel>
+                <FormLabel>{t('confirmpassword')}</FormLabel>
                 <Input
                   name="confirm_password"
                   value={values.confirm_password}
@@ -88,7 +90,7 @@ const ActivatePasswordModal: React.FC<IChangePasswordModalProps> = function ({ i
                   onChange={handleChange}
                   autoComplete=""
                   type="password"
-                  placeholder="password confirmation"
+                  placeholder={t('confirmpassword')}
                 ></Input>
                 <FormErrorMessage>{errors.confirm_password}</FormErrorMessage>
               </FormControl>
@@ -96,10 +98,10 @@ const ActivatePasswordModal: React.FC<IChangePasswordModalProps> = function ({ i
           </ModalBody>
           <ModalFooter>
             <Button mr={3} onClick={onClose}>
-              Cancel
+              {t('cancel')}
             </Button>
             <Button type="submit" colorScheme="brand" isLoading={isSubmitting}>
-              Activate
+              {t('activate')}
             </Button>
           </ModalFooter>
         </form>

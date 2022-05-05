@@ -29,6 +29,7 @@ import { showSuccess } from "../../../lib/helpers/toast";
 import ConfirmModal from "../../ConfirmModal";
 import RenameModal from "../../devices/RenameModal";
 import Link from "../../next/Link";
+import {useTranslation} from "react-i18next";
 
 interface IVirtualNetworkDevicesTableProps {
   virtualNetworkId: string;
@@ -47,6 +48,7 @@ const VirtualNetworkDevicesTable: React.FC<IVirtualNetworkDevicesTableProps> = f
 
   const renameModal = useDisclosure();
   const [deviceToRename, setDeviceToRename] = useState<IVirtualNetworkDeviceResponse>();
+  const {t, i18n} = useTranslation('dashboard')
   return (
     <>
       <RenameModal
@@ -60,7 +62,7 @@ const VirtualNetworkDevicesTable: React.FC<IVirtualNetworkDevicesTableProps> = f
       ></RenameModal>
       <ConfirmModal
         isOpen={confirmModal.isOpen}
-        title="Remove Device from Virtual Network"
+        title={t('virtualnetwork.removetitle')}
         onConfirm={() => {
           removeDeviceFromVirtualNetwork(virtualNetworkId, deviceToRemove?.id as string).then(() => {
             refetch();
@@ -68,23 +70,22 @@ const VirtualNetworkDevicesTable: React.FC<IVirtualNetworkDevicesTableProps> = f
           });
         }}
         onCancel={confirmModal.onClose}
-      >
-        Are you sure you want to remove device <Code>{deviceToRemove?.name}</Code> from this virtual network?
+      >{t('virtualnetwork.removeconfirm')} <Code>{deviceToRemove?.name}</Code> 
       </ConfirmModal>
       <Table w="full">
         <TableCaption>
-        <span>{data?.data?.length} devices in total. </span><br/>
+        <span>{t('virtualnetwork.total')}:{data?.data?.length} </span><br/>
           <Link href="/download" color="brand.500">
-            Download
+          {t('virtualnetwork.download')}
           </Link>{" "}
-          apps now to enjoy our service
+          {t('virtualnetwork.download-desc')}
         </TableCaption>
         <Thead>
           <Tr>
             <Th pl="0">{isPhone ? "Device" : "Name"}</Th>
-            <Th display={["none", "table-cell"]}>IP</Th>
-            <Th display={{ base: "none", md: "table-cell" }}>OS</Th>
-            <Th display={["none", "table-cell"]}>Action</Th>
+            <Th display={["none", "table-cell"]}>{t('virtualnetwork.ip')}</Th>
+            <Th display={{ base: "none", md: "table-cell" }}>{t('virtualnetwork.os')}</Th>
+            <Th display={["none", "table-cell"]}>{t('virtualnetwork.action')}</Th>
           </Tr>
         </Thead>
         <Tbody>
@@ -130,7 +131,7 @@ const VirtualNetworkDevicesTable: React.FC<IVirtualNetworkDevicesTableProps> = f
                       }}
                       icon={<FiEdit />}
                     >
-                      Rename
+                      {t('virtualnetwork.rename')}
                     </MenuItem>
                     <MenuDivider></MenuDivider>
                     <MenuItem
@@ -141,7 +142,7 @@ const VirtualNetworkDevicesTable: React.FC<IVirtualNetworkDevicesTableProps> = f
                       }}
                       icon={<FiX />}
                     >
-                      Remove
+                      {t('virtualnetwork.removebutton')}
                     </MenuItem>
                   </MenuList>
                 </Menu>

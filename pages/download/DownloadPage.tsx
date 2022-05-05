@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import DefaultLayout from "../../components/layout/Default";
 import { DownloadDescription } from "./Downloadutil";
 import Icon from "./Icon";
+import {useTranslation} from "react-i18next";
 const downloadMetaLink = "/assets/download/download-link.json";
 const platforms = ["macos", "ios", "windows", "android", "linuxcli", "synology", "rasp", "embedded", "nvidia"];
 // const platforms = ['macos', 'ios', 'windows', 'android', 'linuxcli', 'linuxgui','rasp', 'synology','router']
@@ -15,6 +16,7 @@ interface realplatform {
 export const DownloadPage: React.FC<realplatform> = function ({ platform: selectedPlatform }) {
   const router = useRouter();
   const [data, setData] = useState({ status: "LOADING" });
+  const {t, i18n} = useTranslation('download')
 
   function routePlatform(text?: string) {
     router.push(`/download/${text ?? ""}`);
@@ -47,9 +49,9 @@ export const DownloadPage: React.FC<realplatform> = function ({ platform: select
                 letterSpacing={{ base: "normal", md: "tight" }}
                 color={useColorModeValue("gray.900", "gray.100")}
               >
-                Download
+                {t('title')}
               </chakra.h1>
-              <Text textAlign="center">Click on the preferred icon for download.</Text>
+              <Text textAlign="center">{t('subtitle')}</Text>
               <br></br>
               <SimpleGrid columns={[3, null, 5]} spacing="16px">
                 {platforms.map((platform, index) => (

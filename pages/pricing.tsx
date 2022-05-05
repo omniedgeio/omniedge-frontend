@@ -33,6 +33,7 @@ import Link from "../components/next/Link";
 import { EnterprisePlan, FreePlan, StartProPlan, ProPlan, TeamsPlan } from "../components/Plans";
 import { Seo } from "../components/Seo";
 import { Page } from "../types";
+import {useTranslation} from "react-i18next";
 
 interface FAQText {
   title: string;
@@ -127,13 +128,16 @@ const FeatureDesc: React.FC<{ free?: boolean; startpro?:boolean; pro?: boolean; 
   );
 };
 export function Plans() {
+  const {t, i18n} = useTranslation('pricing')
+
   const ChoosePlanButton: React.FC<{ plan: string } & ButtonProps> = ({ plan, ...props }) => (
     <Link href="/dashboard/billing">
       <Button isFullWidth colorScheme="gray" mt={4} {...props}>
-        Get Started
+        {t('getstarted')}
       </Button>
     </Link>
   );
+  
   return (
       <VStack mt={10} rounded="xl" backgroundColor={"gray.50"}>
         <chakra.h1
@@ -144,10 +148,11 @@ export function Plans() {
           letterSpacing={{ base: "normal", md: "tight" }}
           color={useColorModeValue("brand.900", "brand.100")}
         >
-          Pricing
+          {t('title')}
+          
         </chakra.h1>
-        <Text>Start for free, then grow with us</Text>
-        <SimpleGrid py={10} columns={{ base: 1, sm: 2, lg: 4 }} spacing={4}>
+        <Text>{t('subtitle')}</Text>
+        <SimpleGrid py={8} columns={{ base: 1, sm: 2, lg: 4 }} spacing={4}>
           <FreePlan>
             <ChoosePlanButton plan="free" />
           </FreePlan>
@@ -165,7 +170,7 @@ export function Plans() {
           <EnterprisePlan>
             <Link href="/contactus">
               <Button isFullWidth variant="outline" mt={4} colorScheme="teal">
-                Contact us
+                {t('contact')}
               </Button>
             </Link>
           </EnterprisePlan>
@@ -175,15 +180,17 @@ export function Plans() {
 );
 }
 const PricingPage: Page = () => {
+  
   const ChoosePlanButton: React.FC<{ plan: string } & ButtonProps> = ({ plan, ...props }) => (
     <Link href="/dashboard/billing">
       <Button isFullWidth colorScheme="gray" mt={4} {...props}>
-        Get Started
+      {t('getstarted')}
       </Button>
     </Link>
   );
-
+  const {t, i18n} = useTranslation('pricing');
   return (
+    
     <>
       <Seo
         title="Start for free, then grow with us"
@@ -199,10 +206,10 @@ const PricingPage: Page = () => {
           letterSpacing={{ base: "normal", md: "tight" }}
           color={useColorModeValue("gray.900", "gray.100")}
         >
-          Pricing
+          {t('title')}
         </chakra.h1>
-        <Text>Start for free, then grow with us</Text>
-        <SimpleGrid py={8} columns={{ base: 1, sm: 2, lg: 5 }} spacing={5}>
+        <Text>{t('subtitle')}</Text>
+        <SimpleGrid py={8} columns={{ base: 1, sm: 2, lg: 4 }} spacing={4}>
           <FreePlan>
             <ChoosePlanButton plan="free" />
           </FreePlan>
@@ -220,7 +227,7 @@ const PricingPage: Page = () => {
           <EnterprisePlan>
             <Link href="/contactus">
               <Button isFullWidth variant="outline" mt={4} colorScheme="teal">
-                Contact us
+              {t('contact')}
               </Button>
             </Link>
           </EnterprisePlan>
@@ -239,49 +246,49 @@ const PricingPage: Page = () => {
           <TableCaption></TableCaption>
           <Thead>
             <Tr>
-              <Th>Features</Th>
-              <Th>Free</Th>
-              <Th>Start Pro</Th>
-              <Th>Professional</Th>
-              <Th>Team</Th>
-              <Th>Enterprise</Th>
+              <Th>{t('features')}</Th>
+              <Th>{t('starter')}</Th>
+              <Th>{t('professional')}</Th>
+              <Th>{t('team')}</Th>
+              <Th>{t('enterprise')}</Th>
             </Tr>
           </Thead>
           <Tbody>
-            <FeatureTextnumber title="Virtual Network" free="1" startpro="2" pro="5" team="10" enterprise="Unlimited" />
-            <FeatureTextnumber title="Devices" free="20" startpro="100" pro="25" team="25" enterprise="Unlimited" />
-            <FeatureTextnumber title="Users" free="1" startpro="1" pro="5" team="10" enterprise="Unlimited" />
-            <FeatureDesc>Security Keys</FeatureDesc>
-            <FeatureDesc>Subroute</FeatureDesc>
-            <FeatureDesc>Unlimited data transfer</FeatureDesc>
-            <FeatureDesc>Encrypted, peer-to-peer connection</FeatureDesc>
-            <FeatureDesc>Desktop, Cli & Mobile Apps</FeatureDesc>
-            <FeatureDesc free={false} startpro={true} pro={true} team={true}>
-              Sharing Virtual Network
+            <FeatureTextnumber title={t('virtualnetwork')} free="1" pro="5" team="10" enterprise={t('unlimited')} />
+            <FeatureTextnumber title={t('devices')} free="20" pro="25" team="25" enterprise={t('unlimited')} />
+            <FeatureTextnumber title={t('users')} free="1" pro="5" team="10" enterprise={t('unlimited')} />
+            <FeatureDesc>{t('securitykey')}</FeatureDesc>
+            <FeatureDesc>{t('subroute')}</FeatureDesc>
+            <FeatureDesc>{t('unlimiteddata')}</FeatureDesc>
+            <FeatureDesc>{t('p2p')}</FeatureDesc>
+            <FeatureDesc>{t('platform')}</FeatureDesc>
+             <FeatureDesc free={false} pro={true} team={true}>
+               {t('sharing')}
+             </FeatureDesc>
+             <FeatureDesc free={false} pro={true} team={true}>
+               {t('customizesupernode')}
+             </FeatureDesc>
+            <FeatureDesc free={false} pro={false} team={false}>
+              {t('sso')}
             </FeatureDesc>
-            <FeatureDesc free={false} startpro={true}  pro={true} team={true}>
-              Customize Supernode
+            <FeatureDesc free={false} pro={false} team={false}>
+              {t('iot')}
             </FeatureDesc>
-            <FeatureDesc free={false} startpro={false} pro={false} team={false}>
-              Identity provider integration
+            <FeatureDesc free={false} pro={false} team={false}>
+              {t('api')}
             </FeatureDesc>
-            <FeatureDesc free={false}  startpro={false} pro={false} team={false}>
-              Hardware and Iot integration
+            <FeatureDesc free={false} pro={false} team={false}>
+              {t('adminapi')}
             </FeatureDesc>
-            <FeatureDesc free={false} startpro={false} pro={false} team={false}>
-              API
+            <FeatureDesc free={false} pro={false} team={false}>
+               {t('whitelable')}
+             </FeatureDesc>
+            <FeatureDesc free={false} pro={false} team={false}>
+              {t('specialsupport')}
             </FeatureDesc>
-            <FeatureDesc free={false} startpro={false} pro={false} team={false}>
-              Admin API
-            </FeatureDesc>
-            <FeatureDesc free={false} startpro={false} pro={false} team={false}>
-              White label
-            </FeatureDesc>
-            <FeatureDesc free={false} startpro={false} pro={false} team={false}>
-              Special Support
-            </FeatureDesc>
-            <FeatureDesc free={false} startpro={true} pro={true}>
-              Email Support
+            <FeatureDesc free={false} pro={true}>
+              {t('emailsupport')}
+
             </FeatureDesc>
           </Tbody>
         </Table>

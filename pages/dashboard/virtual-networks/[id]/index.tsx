@@ -26,6 +26,7 @@ import {
 } from "../../../../lib/api/virtualNetwork";
 import { showError, showSuccess } from "../../../../lib/helpers/toast";
 import { Page } from "../../../../types";
+import {useTranslation} from "react-i18next";
 
 const VirtualNetworkDetailPage: Page = function (props) {
   const router = useRouter();
@@ -33,7 +34,7 @@ const VirtualNetworkDetailPage: Page = function (props) {
 
   const result = useQuery(["virtual-network", id], () => (id ? retrieveVirtualNetwork(id as string) : null));
   const queryClient = useQueryClient();
-
+  const {t, i18n} = useTranslation('dashboard')
   return (
     <VStack alignItems="flex-start" spacing="4">
       <Heading size="md" fontWeight="semibold">
@@ -41,9 +42,9 @@ const VirtualNetworkDetailPage: Page = function (props) {
       </Heading>
       <Tabs variant="enclosed" colorScheme="brand" w="full">
         <TabList>
-          <Tab>Devices</Tab>
-          <Tab>Users</Tab>
-          <Tab>Settings</Tab>
+          <Tab>{t('device.title')}</Tab>
+          <Tab>{t('users.user')}</Tab>
+          <Tab>{t('setting.title')}</Tab>
         </TabList>
         <TabPanels>
           <TabPanel px={0}>
@@ -56,14 +57,14 @@ const VirtualNetworkDetailPage: Page = function (props) {
                 <VStack w="full" maxW="container.sm" alignItems="flex-start" mt={[4, 8]}>
                   <HStack w="full" alignItems="center" justifyContent="space-between">
                     <Heading fontSize="md" fontWeight="semibold">
-                      Invitation
+                      {t('virtualnetwork.invitation')}
                     </Heading>
                   </HStack>
                   <InvitationForm
                     onSubmit={(values, actions) => {
                       createInvitationForVirtualNetwork(id as string, { email: values.email })
                         .then(() => {
-                          showSuccess("Invited successfully");
+                          showSuccess(t('virtualnetwork.invitationsuccessful'));
                           queryClient.invalidateQueries(["virtual-network/invitations", id]);
                           actions.resetForm();
                         })
@@ -111,8 +112,8 @@ const VirtualNetworkDetailPage: Page = function (props) {
                     actions.setSubmitting(false);
                     queryClient.invalidateQueries(["virtual-network", id]);
                     showSuccess(
-                      "Success",
-                      "Please reload omniedge client in order for customized Supernode to take effect."
+                      t('virtualnetwork.success'),
+                      t('virtualnetwork.supernodesuccess')
                     );
                   })
                   .catch((err) => {

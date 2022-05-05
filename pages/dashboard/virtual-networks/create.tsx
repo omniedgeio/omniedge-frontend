@@ -5,14 +5,15 @@ import VirtualNetworkForm from "../../../components/virtual-networks/Form";
 import { createVirtualNetwork } from "../../../lib/api/virtualNetwork";
 import { showError } from "../../../lib/helpers/toast";
 import { Page } from "../../../types";
+import {useTranslation} from "react-i18next";
 
 const CreateVirtualNetworkPage: Page = function (props) {
   const router = useRouter();
-
+  const {t, i18n} = useTranslation('dashboard')
   return (
     <VStack alignItems="flex-start">
       <Heading fontWeight="semibold" size="md">
-        Create Virtual Network
+        {t('virtualnetwork.createvn')}
       </Heading>
       <VirtualNetworkForm
         onSubmit={(values, actions) => {

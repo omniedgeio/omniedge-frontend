@@ -29,18 +29,20 @@ import { Brand } from "../Brand";
 import Link from "../next/Link";
 import NoSSR from "../next/NoSSR";
 import { Seo } from "../Seo";
+import {useTranslation} from "react-i18next";
+import {availableLanguages} from "../../i18n/i18n";
 
 const SideBar: React.FC<StackProps & { onClose: () => void; isOpen: boolean }> = function (props) {
   const router = useRouter();
   const { onClose, isOpen, ...stackProps } = props;
   const { data: invitations } = useQuery(["invitations", isOpen], listInvitations, {});
-
+  const {t, i18n} = useTranslation('dashboard')
   const LINKS = [
-    { name: "Virtual Networks", href: "/virtual-networks", icon: FiGlobe },
-    { name: "Devices", href: "/devices", icon: FiServer },
-    { name: "Security Keys", href: "/security-keys", icon: FiKey },
-    { name: "Billing", href: "/billing", icon: FiCreditCard },
-    { name: "Settings", href: "/settings", icon: FiSettings, active: !!invitations?.data?.length },
+    { name: t('virtualnetwork.title'), href: "/virtual-networks", icon: FiGlobe },
+    { name: t('device.title'), href: "/devices", icon: FiServer },
+    { name: t('securitykey.title'), href: "/security-keys", icon: FiKey },
+    { name: t('billing.title'), href: "/billing", icon: FiCreditCard },
+    { name: t('setting.title'), href: "/settings", icon: FiSettings, active: !!invitations?.data?.length },
   ];
 
   return (
@@ -91,7 +93,7 @@ const SideBar: React.FC<StackProps & { onClose: () => void; isOpen: boolean }> =
 const DashboardLayout: React.FC = function ({ children }) {
   const { isOpen, onToggle, onClose } = useDisclosure();
   const { user, isLoading, isError } = useUser();
-
+  const {t, i18n} = useTranslation('dashboard')
   return (
     <Container maxW="container.xl" px={0}>
       <HStack
@@ -113,7 +115,13 @@ const DashboardLayout: React.FC = function ({ children }) {
             <Brand />
           </Link>
         </HStack>
+        
         <HStack spacing="4">
+        <select defaultValue={i18n.language} onChange={(e) => i18n.changeLanguage(e.target.value)}>
+          {availableLanguages.map((language) => (
+            <option key={language}>{language}</option>
+          ))}
+        </select>
           <NoSSR>
             <Skeleton isLoaded={!!user}>
               {user && (
@@ -128,7 +136,7 @@ const DashboardLayout: React.FC = function ({ children }) {
                   <MenuList zIndex={100}>
                     <VStack alignItems="flex-start" px={3} spacing={0}>
                       <Text color="gray.400" fontSize="xs">
-                        You logged in as:
+                        {t('logged')}
                       </Text>
                       <Text fontWeight="semibold" fontSize="sm">
                         {user.email}
@@ -136,10 +144,10 @@ const DashboardLayout: React.FC = function ({ children }) {
                     </VStack>
                     <Divider mt={2}></Divider>
                     <Link href="/dashboard/settings">
-                      <MenuItem>Settings</MenuItem>
+                      <MenuItem>{t('settings')}</MenuItem>
                     </Link>
                     <Link target="_blank" href="mailto:support@omniedge.io">
-                      <MenuItem>Support</MenuItem>
+                      <MenuItem>{t('support')}</MenuItem>
                     </Link>
                     <MenuItem
                       onClick={() => {
@@ -148,7 +156,7 @@ const DashboardLayout: React.FC = function ({ children }) {
                       }}
                       color="red.500"
                     >
-                      Logout
+                      {t('logout')}
                     </MenuItem>
                   </MenuList>
                 </Menu>

@@ -15,7 +15,7 @@ import { FaGithub, FaMedium, FaTwitter, FaYoutube } from "react-icons/fa";
 import { Brand } from "../Brand";
 import Link from "../next/Link";
 import CookieConsent from "react-cookie-consent";
-
+import {useTranslation} from "react-i18next";
 
 const SocialButton = ({ children, label, href }: { children: ReactNode; label: string; href: string }) => {
   return (
@@ -50,6 +50,7 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
 };
 
 export default function Footer() {
+  const {t, i18n} = useTranslation('footer')
   return (
     <>
       <Stack
@@ -66,7 +67,7 @@ export default function Footer() {
               <Brand />
             </Link>
             <Text fontSize="sm">
-              © 2021 OmniEdge Inc. All rights reserved<br />
+              {t('copyright')}<br />
               {/* Presented from<br /> */}
               {/* US | AU | CN | DE | MY */}
             </Text>
@@ -88,17 +89,17 @@ export default function Footer() {
         </HStack>
         <VStack color="gray.600" display={["none", "flex"]}>
           <Stack align={"flex-start"}>
-            <Link href="/about">About us</Link>
-            <Link href="/docs">Docs</Link>
-            <Link href="/contactus">Contact us</Link>
-            <Link href="https://forms.gle/a1h3pYb7H4jvZPQU9"> User Research </Link>
+            <Link href="/about">{t('about')}</Link>
+            <Link href="/docs">{t('docs')}</Link>
+            <Link href="/contactus">{t('contact')}</Link>
+            <Link href="https://forms.gle/a1h3pYb7H4jvZPQU9"> {t('survey')}</Link>
           </Stack>
         </VStack>
         <VStack color="gray.600" display={["none", "flex"]}>
           <Stack align={"flex-start"}>
-            <Link href="/terms">Terms of Service</Link>
-            <Link href="/privacy">Privacy Policy</Link>
-            <Link href="/docs/article/Opensource">Open Source</Link>
+            <Link href="/terms">{t('tos')}</Link>
+            <Link href="/privacy">{t('privacy')}</Link>
+            <Link href="/docs/article/Opensource">{t('opensource')}</Link>
           </Stack>
         </VStack>
          <VStack >
@@ -130,7 +131,7 @@ export default function Footer() {
               <Brand />
             </Link>
             <Text fontSize="sm">
-              © 2021 OmniEdge Inc. All rights reserved.
+            {t('copyright')}
             </Text>
             <Text fontSize="sm">
               {/* US | AU | CN | DE | MY */}
@@ -151,7 +152,7 @@ export default function Footer() {
             </Stack>
           </VStack>
       </Stack>
-      <CookieConsent>OmniEdge uses cookies to enhance the user experience.</CookieConsent>
+      <CookieConsent>{t('cookie')}<br /></CookieConsent>
     </>
   );
 }

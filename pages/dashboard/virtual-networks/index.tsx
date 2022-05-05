@@ -8,6 +8,7 @@ import { useUser } from "../../../lib/hook/useUser";
 import { Page } from "../../../types";
 import { listVirtualNetworks } from "../../../lib/api/virtualNetwork";
 import { useQuery } from "react-query";
+import {useTranslation} from "react-i18next";
 
 const VirtualNetworkPage: Page = () => {
   const { user, isLoading } = useUser("/login");
@@ -18,12 +19,12 @@ const VirtualNetworkPage: Page = () => {
     }
       return 0;
   }, [user]);
-
+  const {t, i18n} = useTranslation('dashboard')
   return (
     <VStack w="full" alignItems="flex-start" spacing="4">
       <HStack w="full" justifyContent="space-between">
         <Heading size="md" fontWeight="semibold">
-          Virtual Networks
+          {t('virtualnetwork.title')}
         </Heading>
         <Link
           href={((user?.subscription.slug === "free" && Number(virtualNetworks?.data.length) == 0) ||
@@ -31,7 +32,7 @@ const VirtualNetworkPage: Page = () => {
           (user?.subscription.slug === "teams" && Number(virtualNetworks?.data.length) < 10)) ? "/dashboard/virtual-networks/create" : "/dashboard/billing/choose-plan"}
         >
           <Button isLoading={isLoading} size="sm" _hover={{ textDecoration: "none" }}>
-            + Network
+          {t('virtualnetwork.createvnplus')}
           </Button>
         </Link>
       </HStack>

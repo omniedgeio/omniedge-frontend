@@ -7,7 +7,7 @@ import GoogleLogin from "../auth/GoogleLogin";
 import Logo from "../Logo";
 import Link from "../next/Link";
 import { Seo } from "../Seo";
-
+import {useTranslation} from "react-i18next";
 const EntryLayout: React.FC = function ({ children }) {
   const router = useRouter();
   const { isLoading, user } = useUser(null);
@@ -19,7 +19,7 @@ const EntryLayout: React.FC = function ({ children }) {
     }
     router.push("/dashboard/virtual-networks");
   }
-
+  const {t, i18n} = useTranslation('index')
   return (
     <Center mt="4" py="4">
       <Seo title={"Login"} description="Omniedge Dashboard" />
@@ -33,8 +33,7 @@ const EntryLayout: React.FC = function ({ children }) {
           </VStack>
         </Link>
         <Text textAlign="center">
-          Unlimited Computers In Your Private Network With Zero Config, <br />
-          with P2P Secure Connection, Any Time, Any Where.
+          {t('slogan')}
         </Text>
         {isLoading || user ? (
           <Spinner />

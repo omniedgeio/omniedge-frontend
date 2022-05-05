@@ -16,7 +16,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { IVirtualNetworkResponse } from "../../lib/api/response";
 import { updateVirtualNetwork } from "../../lib/api/virtualNetwork";
-
+import {useTranslation} from "react-i18next";
 interface IRenameModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -44,17 +44,17 @@ const RenameModal: React.FC<IRenameModalProps> = ({ onClose, onSuccess, onError,
         });
     },
   });
-
+  const {t, i18n} = useTranslation('dashboard')
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
       <ModalContent>
         <form onSubmit={handleSubmit}>
-          <ModalHeader>Rename Virtual Network</ModalHeader>
+          <ModalHeader>{t('virtualnetwork.renametitle')}</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
             <FormControl isInvalid={!!(touched.name && errors.name)} isRequired>
-              <FormLabel>Name</FormLabel>
+              <FormLabel>{t('virtualnetwork.name')}</FormLabel>
               <Input
                 type="text"
                 name="name"
@@ -68,10 +68,10 @@ const RenameModal: React.FC<IRenameModalProps> = ({ onClose, onSuccess, onError,
           </ModalBody>
           <ModalFooter>
             <Button mr={3} onClick={onClose}>
-              Close
+            {t('virtualnetwork.close')}
             </Button>
             <Button type="submit" colorScheme="brand">
-              Submit
+            {t('virtualnetwork.submit')}
             </Button>
           </ModalFooter>
         </form>

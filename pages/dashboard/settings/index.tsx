@@ -52,7 +52,7 @@ import {useTranslation} from "react-i18next";
 
 const UpdateUserProfileForm: React.FC = function (props) {
   const { user, refetch, isLoading } = useUser("/login");
-
+  const {t, i18n} = useTranslation('dashboard')
   const { handleChange, handleBlur, handleSubmit, values, setValues, touched, errors, isSubmitting } = useFormik({
     initialValues: {
       name: "",
@@ -77,7 +77,6 @@ const UpdateUserProfileForm: React.FC = function (props) {
   if (isLoading) {
     return <Spinner />;
   }
-  const {t, i18n} = useTranslation('dashboard')
   return (
     <form onSubmit={handleSubmit}>
       <VStack maxW="sm" w="full" alignItems="flex-start" spacing={4}>

@@ -18,8 +18,7 @@ i18n.use(initReactI18next)
   .init({
     lng: 'English', // default language
     resources,
-    // defaultNS: "common",
-    fallbackLng: "en",
+    fallbackLng: "English",
   });
 
 // export default i18n;

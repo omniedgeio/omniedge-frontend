@@ -13,9 +13,12 @@ import {useEffect, useState} from "react";
 import DefaultLayout from "../components/layout/Default";
 import {activateAccount,  resendVerifyEmail} from "../lib/api/auth";
 import {useFormik} from "formik";
+import {useTranslation} from "react-i18next";
+
 import * as Yup from "yup";
 
 export default function EmailVerificationPage() {
+  const {t, i18n} = useTranslation('auth')
   const router = useRouter();
   const [isLoading, setLoading] = useState(true);
   const [error, setError] = useState<any>(null);
@@ -64,10 +67,10 @@ export default function EmailVerificationPage() {
         {!isLoading && isVerified && (
           <>
             <Heading fontSize="1.5rem" pt={[32]} textAlign="center">
-              Your email has verified successfully.
+              {t('email_verify_success')}
             </Heading>
             <Heading fontSize="1.25rem" fontWeight="normal" mt={4} textAlign="center">
-              Thank you for joining us.
+            {t('email_verify')}
             </Heading>
           </>
         )}
@@ -77,7 +80,7 @@ export default function EmailVerificationPage() {
               {error?.message}
             </Heading>
             <Heading fontSize="1.25rem" fontWeight="normal" mt={4} textAlign="center">
-              Thank you for joining us.
+              {t('email_verify')}
             </Heading>
 
             <VStack w="30%" spacing="4">
@@ -92,12 +95,12 @@ export default function EmailVerificationPage() {
                       onChange={handleChange}
                       onBlur={handleBlur}
                       value={values.email}
-                      placeholder="Enter your Email"
+                      placeholder={t('enteremail')}
                     />
                     <FormErrorMessage>{errors.email}</FormErrorMessage>
                   </FormControl>
                   <Button type="submit" isLoading={isSubmitting} colorScheme="brand">
-                    ReSend Verification Email
+                    {t('resendverifyemail')}
                   </Button>
                 </VStack>
               </form>

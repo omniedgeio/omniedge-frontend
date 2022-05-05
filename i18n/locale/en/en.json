@@ -156,11 +156,7 @@
       "emailsupport": "Email Support"
     },
     "plan": {
-      "monthly": "/ per Month",
-      "free": {
-        "title":"Starter"
-      },
-      "starter": "Starter"
+      "monthly": "/ per Month"
     },
     "faq": {
       "title": "FAQ",
@@ -187,7 +183,36 @@
       "cancel": "Cancel",
       "activate": "Activate",
       "change": "Change",
-      "loginwithgoogle": "Continue with google"
+      "loginwithgoogle": "Continue with google",
+      "required":"Required",
+      "email":"Email",
+      "enteremail": "Enter your Email",
+      "password":"Password",
+      "forgotpassword": "Forgot Password",
+      "login":"Login",
+      "register": "Register here",
+      "registerinfo":"Still don't have an account?",
+      "tos":"Terms of Service",
+      "tosinfo":"By clicking the buttons above, you acknowledge that you have read, understood, and agree to OmniEdge's",
+      "and": "and",
+      "privacy":"Privacy Policy",
+      "name":"Name",
+      "logininfo": "Already have an account?",
+      "minilowercase": "At least one lowercase character",
+      "minuppercase":"At least one uppercase character",
+      "minnumbers":"At least one number",
+      "minsymbols":"At least one symbol",
+      "min":"At least 8 characters",
+      "max": "At most 20 characters",
+      "passwordmatch": "Passwords must match",
+      "emailexsit":"Email already exists",
+      "displayname":"Display name",
+      "enterpasswordagain": "Enter password again",
+      "enterpassword": "Enter your password",
+      "email_verify": "Thank you for joining us.",
+      "resendverifyemail": "ReSend Verification Email",
+      "email_verify_success": "Your email has verified successfully."
+
     },
     "dashboard": {
       "logged": "You logged in as:",

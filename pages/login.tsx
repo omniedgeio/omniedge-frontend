@@ -20,8 +20,10 @@ import EntryLayout from "../components/layout/Entry";
 import Link from "../components/next/Link";
 import { loginByPassword } from "../lib/api/auth";
 import { Page } from "../types";
+import {useTranslation} from "react-i18next";
 
 const LoginPage: Page = function (props) {
+  const {t, i18n} = useTranslation('auth')
   const router = useRouter();
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -31,9 +33,9 @@ const LoginPage: Page = function (props) {
       password: "",
     },
     validationSchema: Yup.object().shape({
-      email: Yup.string().required("Required").email(),
+      email: Yup.string().required(t('required')).email(),
       password: Yup.string()
-        .required("Required"),
+        .required(t('required')),
     }),
     onSubmit: (values, actions) => {
       let auth_session_uuid = router.query["auth_session_uuid"]?.toString();
@@ -68,36 +70,36 @@ const LoginPage: Page = function (props) {
         )}
         <VStack w="full" spacing="4">
           <FormControl id="email" isInvalid={!!(touched.email && errors.email)} isRequired>
-            <FormLabel>Email</FormLabel>
+            <FormLabel>{t('email')}</FormLabel>
             <Input
               type="email"
               name="email"
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.email}
-              placeholder="Enter your Email"
+              placeholder={t('enteremail')}
             ></Input>
             <FormErrorMessage>{errors.email}</FormErrorMessage>
           </FormControl>
           <FormControl id="password" isInvalid={!!(touched.password && errors.password)} isRequired>
-            <FormLabel>Password</FormLabel>
+            <FormLabel>{t('password')}</FormLabel>
             <PasswordInput name="password" onChange={handleChange} onBlur={handleBlur} value={values.password} />
             <FormErrorMessage>{errors.password}</FormErrorMessage>
             <HStack mt="1" w="full" justifyContent="flex-end">
               <Link fontSize="xs" color="gray.500" href="/forgot-password">
-                Forgot Password
+              {t('forgotpassword')}
               </Link>
             </HStack>
           </FormControl>
           <VStack w="full">
             <Button isLoading={isSubmitting} type="submit" colorScheme="brand" isFullWidth>
-              Login
+            {t('login')}
             </Button>
             <HStack w="full">
               <Text fontSize="xs" color="gray.500">
-                {`Still don't have an account? `}
+                {t('registerinfo')}
                 <Link href="/register" color="brand.500">
-                  Register here
+                {t('register')}
                 </Link>
               </Text>
             </HStack>
@@ -105,13 +107,13 @@ const LoginPage: Page = function (props) {
         </VStack>
       </form>
       <Text fontSize="xs" color="gray.500">
-        {`By clicking the buttons above, you acknowledge that you have read, understood, and agree to OmniEdge's `}{" "}
+        {t('tosinfo')}{" "}
         <Link href="/terms" color="brand.500">
-          Terms of Service{" "}
+        {t('tos')}{" "}
         </Link>
-        and{" "}
+        {t('and')}{" "}
         <Link href="/privacy" color="brand.500">
-          Privacy Policy.
+        {t('privacy')}
         </Link>
       </Text>
     </>

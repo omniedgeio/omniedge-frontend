@@ -28,6 +28,7 @@ import { InvitationStatus } from "../../../lib/api/enum";
 import { IInvitationResponse } from "../../../lib/api/response";
 import { listInvitationsOfVirtualNetwork, removeInvitationFromVirtualNetwork } from "../../../lib/api/virtualNetwork";
 import ConfirmModal from "../../ConfirmModal";
+import {useTranslation} from "react-i18next";
 
 interface IVirtualNetworkInvitationsTableProps {
   virtualNetworkId: string;
@@ -49,12 +50,12 @@ const VirtualNetworkInvitationsTable: React.FC<IVirtualNetworkInvitationsTablePr
 
   const confirmModal = useDisclosure();
   const [invitationToRemove, setInvitationToRemove] = useState<IInvitationResponse>();
-
+  const {t, i18n} = useTranslation('dashboard')
   return (
     <>
       <ConfirmModal
         isOpen={confirmModal.isOpen}
-        title="Remove Virtual Network"
+        title={t('invitation.title')}
         onConfirm={() => {
           removeInvitationFromVirtualNetwork(virtualNetworkId as string, invitationToRemove?.id as string).then(() => {
             refetch();
@@ -63,15 +64,15 @@ const VirtualNetworkInvitationsTable: React.FC<IVirtualNetworkInvitationsTablePr
         }}
         onCancel={confirmModal.onClose}
       >
-        Are you sure you want to revoke invitation to <Code>{invitationToRemove?.invited.name}</Code>?
+        {t('invitation.removeconfirm')} <Code>{invitationToRemove?.invited.name}</Code>?
       </ConfirmModal>
       <Table w="full" maxW="container.sm">
         <Thead>
           <Tr>
             <Th pl="0">{isPhone ? "Email" : "Email"}</Th>
-            <Th display={["none", "table-cell"]}>Invited at</Th>
+            <Th display={["none", "table-cell"]}>{t('invitations.invited')}</Th>
             <Th maxW="20px" display={["none", "table-cell"]}>
-              Action
+            {t('invitations.action')}
             </Th>
           </Tr>
         </Thead>
@@ -125,7 +126,7 @@ const VirtualNetworkInvitationsTable: React.FC<IVirtualNetworkInvitationsTablePr
                       }}
                       icon={<FiX />}
                     >
-                      Remove
+                      {t('invitations.remove')}
                     </MenuItem>
                   </MenuList>
                 </Menu>

@@ -16,6 +16,7 @@ export const availableLanguages = Object.keys(resources)
 i18n.use(initReactI18next)
   .use(LanguageDetector)
   .init({
+    lng: 'English', // default language
     resources,
     lng: 'English', // default language
     // defaultNS: "common",

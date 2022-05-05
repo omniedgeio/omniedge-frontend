@@ -24,6 +24,7 @@ import { retrieveDevice, updateDeviceSubnet } from "../../../../lib/api/device";
 import { IDeviceSubnetRouteResponse, ISubnetRouteDeviceResponse } from "../../../../lib/api/response";
 import { showSuccess } from "../../../../lib/helpers/toast";
 import { Page } from "../../../../types";
+import {useTranslation} from "react-i18next";
 
 const DeviceSubnetTable: React.FC<{ subnet: IDeviceSubnetRouteResponse; uuid: string }> = function ({ subnet, uuid }) {
   const updateSubnet = (subnetDeviceUUID: string, name: string) => {
@@ -41,20 +42,20 @@ const DeviceSubnetTable: React.FC<{ subnet: IDeviceSubnetRouteResponse; uuid: st
         .catch(() => (device.name = originalName));
     }
   };
-
+  const {t, i18n} = useTranslation('dashboard')
   return (
     <VStack w="full" alignItems="flex-start" spacing={2}>
       <Box>
         <Text fontSize="sm">
-          IP Address : <Code background="white">{subnet.ip}</Code>
+        {t('device.ip')} <Code background="white">{subnet.ip}</Code>
         </Text>
       </Box>
       <Table w="full">
         <Thead>
           <Tr>
-            <Th px={0}>Name</Th>
-            <Th>IP</Th>
-            <Th display={["none", "table-cell"]}>Manufacturer</Th>
+            <Th px={0}>{t('device.name')}</Th>
+            <Th>{t('device.ip')}</Th>
+            <Th display={["none", "table-cell"]}>{t('device.manufacturer')}</Th>
           </Tr>
         </Thead>
         <Tbody>
@@ -75,7 +76,7 @@ const DeviceSubnetTable: React.FC<{ subnet: IDeviceSubnetRouteResponse; uuid: st
         </Tbody>
       </Table>
       <Text fontWeight="semibold" fontSize="xs" color="gray.500">
-        Click to rename
+      {t('device.clicktorename')}
       </Text>
     </VStack>
   );
@@ -89,7 +90,7 @@ const DeviceSubnetsPage: Page = function (props) {
     isError,
     refetch,
   } = useQuery(["device", router.query.id], () => (router.query.id ? retrieveDevice(router.query.id as string) : null));
-
+  const {t, i18n} = useTranslation('dashboard')
   return isLoading || isError ? (
     <Spinner />
   ) : (
@@ -100,21 +101,21 @@ const DeviceSubnetsPage: Page = function (props) {
         </Heading>
         <Text fontSize="sm">
           <Text fontWeight="medium" as="span">
-            Platform
+          {t('device.platform')}
           </Text>{" "}
           : {device?.platform}
         </Text>
       </VStack>
       <VStack alignItems="flex-start" w="full">
         <Heading color="gray.500" textTransform="uppercase" fontSize="xs">
-          Virtual Networks
+        {t('device.virtualnetwork')}
         </Heading>
         {!device?.virtual_networks?.length && (
           <Text>
             <Link href="/download" color="brand.500">
-              Download
+            {t('device.download')}
             </Link>{" "}
-            apps now to enjoy our service
+            {t('device.download-desc')}
           </Text>
         )}
         <SimpleGrid columns={2} spacing={4} alignItems="center">

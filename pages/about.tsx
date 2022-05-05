@@ -15,6 +15,7 @@ import DefaultLayout from "../components/layout/Default";
 import { Page } from "../types";
 import Markdown from "markdown-to-jsx";
 import {Seo} from "../components/Seo";
+import {useTranslation} from "react-i18next";
 
 const Feature = (props:any) => {
   return (

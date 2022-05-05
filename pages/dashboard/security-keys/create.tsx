@@ -31,6 +31,7 @@ import { SecurityKeyType } from "../../../lib/api/enum";
 import { ICreateSecurityKeyResponse } from "../../../lib/api/response";
 import { createSecurityKey } from "../../../lib/api/securityKey";
 import { Page } from "../../../types";
+import {useTranslation} from "react-i18next";
 
 const CreateSecurityKeyForm: React.FC = function (props) {
   const [securityKey, setSecurityKey] = useState<ICreateSecurityKeyResponse | undefined>();
@@ -61,17 +62,17 @@ const CreateSecurityKeyForm: React.FC = function (props) {
         });
     },
   });
-
+  const {t, i18n} = useTranslation('dashboard')
   return (
     <>
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>New Security Key</ModalHeader>
+          <ModalHeader>{t('securitykey.new')}</ModalHeader>
           <ModalBody>
             <VStack spacing={2} alignItems="flex-start">
               <Text>
-                Security key created successfully. Please copy to somewhere as the key would be only display once.
+              {t('securitykey.new-desc')}
               </Text>
               <Text
                 w="full"
@@ -90,7 +91,7 @@ const CreateSecurityKeyForm: React.FC = function (props) {
               </Button>
               <Box pt={2}>
                 <Text fontWeight="medium">
-                  Expiration Date :{" "}
+                {t('securitykey.expirationdate')}{" "}
                   <Text pr={1} as="span">
                     <Code>{format(new Date(securityKey?.expires_at || Date.now()), "dd/MM/yyy hh:mm:ss b")}</Code>
                   </Text>
@@ -105,7 +106,7 @@ const CreateSecurityKeyForm: React.FC = function (props) {
                 router.push("/dashboard/security-keys");
               }}
             >
-              Close
+              {t('securitykey.close')}
             </Button>
           </ModalFooter>
         </ModalContent>
@@ -117,15 +118,15 @@ const CreateSecurityKeyForm: React.FC = function (props) {
               <VStack alignItems="flex-start">
                 <Radio value="1" colorScheme="brand" onChange={handleChange}>
                   <Heading as="h6" size="sm" fontWeight="medium">
-                    Permanent
+                  {t('securitykey.permanent')}
                   </Heading>
-                  <Text>A security key with a year expiration. You can use it across multiple devices.</Text>
+                  <Text>{t('securitykey.permanent-desc')}</Text>
                 </Radio>
                 <Radio value="2" colorScheme="brand" onChange={handleChange}>
                   <Heading as="h6" size="sm" fontWeight="medium">
-                    One Time
+                  {t('securitykey.once')}
                   </Heading>
-                  <Text>A security key with few minutes expiration. It will be automatically revoked once used.</Text>
+                  <Text>{t('securitykey.once-desc')}</Text>
                 </Radio>
               </VStack>
             </RadioGroup>
@@ -133,19 +134,19 @@ const CreateSecurityKeyForm: React.FC = function (props) {
           </FormControl>
 
           <FormControl isInvalid={!!(touched.name && errors.name)} isRequired>
-            <FormLabel>Name</FormLabel>
+            <FormLabel>{t('securitykey.name')}</FormLabel>
             <Input
               type="text"
               name="name"
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.name}
-              placeholder="Name for indication"
+              placeholder={t('securitykey.name')}
             ></Input>
             <FormErrorMessage>{errors.name}</FormErrorMessage>
           </FormControl>
           <Button type="submit" colorScheme="brand">
-            Create
+          {t('securitykey.create')}
           </Button>
         </VStack>
       </form>
@@ -154,10 +155,11 @@ const CreateSecurityKeyForm: React.FC = function (props) {
 };
 
 const CreateSecurityKeyPage: Page = function (prop) {
+  const {t, i18n} = useTranslation('dashboard')
   return (
     <VStack spacing="4" alignItems="flex-start">
       <Heading fontWeight="semibold" size="md">
-        Create Security Key
+        {t('securitykey.createkey')}
       </Heading>
       <CreateSecurityKeyForm />
     </VStack>

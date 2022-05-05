@@ -4,7 +4,7 @@ import { HStack, Text } from "@chakra-ui/layout";
 import { ButtonProps } from "@chakra-ui/react";
 import { createRef, useEffect, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
-
+import {useTranslation} from "react-i18next";
 interface IGoogleLoginProps {
   onSuccess: (e: gapi.auth2.GoogleUser) => void;
   onFailure: (err: any) => void;
@@ -37,7 +37,7 @@ const GoogleLogin: React.FC<IGoogleLoginProps & ButtonProps> = function ({ onSuc
       });
     }
   });
-
+  const {t, i18n} = useTranslation('auth')
   return (
     <Button
       {...props}
@@ -47,7 +47,7 @@ const GoogleLogin: React.FC<IGoogleLoginProps & ButtonProps> = function ({ onSuc
     >
       <HStack>
         <Icon as={FcGoogle}></Icon>
-        <Text>Continue with google</Text>
+        <Text>{t('loginwithgoogle')}</Text>
       </HStack>
     </Button>
   );

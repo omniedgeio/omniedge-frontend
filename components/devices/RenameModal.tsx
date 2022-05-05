@@ -17,7 +17,7 @@ import { useQueryClient } from "react-query";
 import * as Yup from "yup";
 import { updateDevice } from "../../lib/api/device";
 import { IDeviceResponse } from "../../lib/api/response";
-
+import {useTranslation} from "react-i18next";
 interface IRenameModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -49,17 +49,17 @@ const RenameModal: React.FC<IRenameModalProps> = ({ onClose, onSuccess, onError,
         });
     },
   });
-
+  const {t, i18n} = useTranslation('dashboard')
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
       <ModalContent>
         <form onSubmit={handleSubmit}>
-          <ModalHeader>Rename Device</ModalHeader>
+          <ModalHeader>{t('device.rename')}</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
             <FormControl isInvalid={!!(touched.name && errors.name)} isRequired>
-              <FormLabel>Name</FormLabel>
+              <FormLabel>{t('device.name')}</FormLabel>
               <Input
                 type="text"
                 name="name"
@@ -73,10 +73,10 @@ const RenameModal: React.FC<IRenameModalProps> = ({ onClose, onSuccess, onError,
           </ModalBody>
           <ModalFooter>
             <Button mr={3} onClick={onClose}>
-              Close
+            {t('device.close')}
             </Button>
             <Button type="submit" colorScheme="brand">
-              Submit
+            {t('device.submit')}
             </Button>
           </ModalFooter>
         </form>

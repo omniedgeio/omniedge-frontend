@@ -21,14 +21,14 @@ import { useQuery } from "react-query";
 import { ISecurityKeyResponse } from "../../lib/api/response";
 import { listSecurityKeys, revokeSecurityKey } from "../../lib/api/securityKey";
 import ConfirmModal from "../ConfirmModal";
-
+import {useTranslation} from "react-i18next";
 const SecurityKeysTable: React.FC = function (props) {
   const isPhone = useBreakpointValue({ base: true, sm: false });
   const { data, isLoading, isError, refetch } = useQuery("security-keys", () => listSecurityKeys());
 
   const confirmModal = useDisclosure();
   const [securityKey, setSecurityKey] = useState<ISecurityKeyResponse>();
-
+  const {t, i18n} = useTranslation('dashboard')
   return (
     <>
       <ConfirmModal
@@ -39,17 +39,17 @@ const SecurityKeysTable: React.FC = function (props) {
             refetch().then(() => confirmModal.onClose());
           });
         }}
-        title="Revoke security key"
+        title={t('securitykey.revoketitle')}
       >
-        Are you sure you want to revoke selected security key?
+        {t('securitykey.removeconfirm')}
       </ConfirmModal>
       <Table>
         <Thead>
           <Tr>
-            <Th px="0">Security Key</Th>
-            <Th display={["none", "table-cell"]}>Expired In</Th>
-            <Th display={{ base: "none", lg: "table-cell" }}>Created At</Th>
-            <Th display={["none", "table-cell"]}>Action</Th>
+            <Th px="0">{t('securitykey.title')}</Th>
+            <Th display={["none", "table-cell"]}>{t('securitykey.expiredin')}</Th>
+            <Th display={{ base: "none", lg: "table-cell" }}>{t('securitykey.created')}</Th>
+            <Th display={["none", "table-cell"]}>{t('securitykey.action')}</Th>
           </Tr>
         </Thead>
         <Tbody>
@@ -89,7 +89,7 @@ const SecurityKeysTable: React.FC = function (props) {
                   }}
                   {...props}
                 >
-                  Revoke
+                  {t('securitykey.revoke')}
                 </Button>
               );
 
@@ -101,7 +101,7 @@ const SecurityKeysTable: React.FC = function (props) {
                         <VStack alignItems="flex-start">
                           <SecurityKey />
                           <Text fontSize="sm">
-                            Expired in: <ExpiredIn as="span" />
+                          {t('expiredin')}<ExpiredIn as="span" />
                           </Text>
                         </VStack>
                         <RevokeButton />

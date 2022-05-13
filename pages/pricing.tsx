@@ -42,7 +42,7 @@ interface FAQText {
 interface FeatureTextnumber {
   title: string;
   free: string;
-  startpro:string;
+  // startpro:string;
   pro: string;
   team: string;
   enterprise: string;
@@ -87,12 +87,11 @@ const FeatureText: React.FC<{ active?: boolean; tooltip?: string }> = (props) =>
   );
 };
 
-const FeatureTextnumber: React.FC<FeatureTextnumber> = ({ title, free, startpro, pro, team, enterprise }) => {
+const FeatureTextnumber: React.FC<FeatureTextnumber> = ({ title, free, pro, team, enterprise }) => {
   return (
     <Tr>
       <Td>{title}</Td>
       <Td align="center">{free}</Td>
-      <Td align="center">{startpro}</Td>
       <Td align="center">{pro}</Td>
       <Td align="center">{team}</Td>
       <Td align="center">{enterprise}</Td>
@@ -100,9 +99,9 @@ const FeatureTextnumber: React.FC<FeatureTextnumber> = ({ title, free, startpro,
   );
 };
 
-const FeatureDesc: React.FC<{ free?: boolean; startpro?:boolean; pro?: boolean; team?: boolean; enterprise?: boolean }> = (props) => {
+const FeatureDesc: React.FC<{ free?: boolean; pro?: boolean; team?: boolean; enterprise?: boolean }> = (props) => {
   let free = props.free || props.free === undefined;
-  let startpro = props.startpro || props.startpro === undefined;
+  // let startpro = props.startpro || props.startpro === undefined;
   let pro = props.pro || props.pro === undefined;
   let team = props.team || props.team === undefined;
   let enterprise = props.enterprise || props.enterprise === undefined;
@@ -112,9 +111,9 @@ const FeatureDesc: React.FC<{ free?: boolean; startpro?:boolean; pro?: boolean; 
       <Td>
         <Icon color={free ? "brand.500" : "gray.500"} as={free ? FiCheck : FiX}></Icon>
       </Td>
-      <Td>
+      {/* <Td>
         <Icon color={startpro ? "brand.500" : "gray.500"} as={startpro ? FiCheck : FiX}></Icon>
-      </Td>
+      </Td> */}
       <Td>
         <Icon color={pro ? "brand.500" : "gray.500"} as={pro ? FiCheck : FiX}></Icon>
       </Td>
@@ -156,9 +155,9 @@ export function Plans() {
           <FreePlan>
             <ChoosePlanButton plan="free" />
           </FreePlan>
-          <StartProPlan>
+          {/* <StartProPlan>
             <ChoosePlanButton plan="startpro" />
-          </StartProPlan>
+          </StartProPlan> */}
             <ProPlan>
               <ChoosePlanButton plan="pro" />
             </ProPlan>
@@ -213,9 +212,9 @@ const PricingPage: Page = () => {
           <FreePlan>
             <ChoosePlanButton plan="free" />
           </FreePlan>
-          <StartProPlan>
+          {/* <StartProPlan>
             <ChoosePlanButton plan="startpro" />
-          </StartProPlan>
+          </StartProPlan> */}
             <ProPlan>
               <ChoosePlanButton plan="pro" />
             </ProPlan>

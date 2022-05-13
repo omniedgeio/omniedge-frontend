@@ -53,7 +53,7 @@ const ChoosePlanPage: Page = (props) => {
         colorScheme="brand"
         {...props}
       >
-        {user?.subscription.slug === "free" ? "Upgrade" : plan === "free" ? t('revert') : t('change') }
+        {user?.subscription.slug === "free" ? "Upgrade" : plan === "free" ? t('billing.revert') : t('billing.change') }
       </Button>
     );
 
@@ -81,9 +81,9 @@ const ChoosePlanPage: Page = (props) => {
           <FreePlan>
             <ChoosePlanButton plan="free" />
           </FreePlan>
-          <StartProPlan>
+          {/* <StartProPlan>
             <ChoosePlanButton plan="free" />
-          </StartProPlan>
+          </StartProPlan> */}
           <Box bgColor="brand.500" borderRadius="xl" color="white" px={4}>
             <ProPlan>
               <ChoosePlanButton plan="pro" colorScheme="cyan" color="white" />

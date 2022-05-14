@@ -89,7 +89,7 @@ Let's compare some use cases between ngrok/frp and omniedge.
 
 ## ZeroTier vs. OmniEdge
 
-When more and more enterprise services are migratig to cloud-based services, and people are more likly work from home, which drives the use of VPNs. The security concerns, which means every device should be end-to-end encrypted and authenciated. People want to connect their private resources, devices, from anywhere in a highly security method, and this is what OmniEdge and ZeroTier want to help and come in.
+When more and more enterprise services are migratig to cloud-based services, and people are more likely work from home, which drives the use of VPNs. The security concerns, which means every device should be end-to-end encrypted and authenciated. People want to connect their private resources, devices, from anywhere in a highly security method, and this is what OmniEdge and ZeroTier want to help and come in.
 
 
 **ZeroTier** is a smart Ethernet switch for planet Earth. It’s a distributed network hypervisor built atop a cryptographically secure global peer to peer network. It provides advanced network virtualization and management capabilities on par with an enterprise SDN switch, but across both local and wide area networks and connecting almost any kind of app or device.[ZeroTier Doc]. In other world, the developer themsevles call ZeroTier "Virtual Distributed Network (VDN) " instead of VPN. It has two virtualization layers: 

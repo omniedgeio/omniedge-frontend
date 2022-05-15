@@ -7,19 +7,20 @@ import { EnterprisePlan, FreePlan, ProPlan, TeamsPlan } from "../components/pric
 import { Seo } from "../components/Seo";
 import { Page } from "../types";
 
+const PricingTab = (props: TabProps) => (
+  <Tab
+    {...props}
+    border="solid 1px"
+    borderColor="gray.200"
+    borderRadius={4}
+    w={{ sm: "10rem" }}
+    _selected={{ color: "white", bg: "brand.500", borderColor: "brand.500" }}
+  />
+);
+
 const PricingPage: Page = () => {
   const { t } = useTranslation("pricing");
 
-  const PricingTab = (props: TabProps) => (
-    <Tab
-      {...props}
-      border="solid 1px"
-      borderColor="gray.200"
-      borderRadius={4}
-      w={{ sm: "10rem" }}
-      _selected={{ color: "white", bg: "brand.500", borderColor: "brand.500" }}
-    />
-  );
   return (
     <>
       <Seo

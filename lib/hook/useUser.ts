@@ -11,11 +11,15 @@ export function useUser(redirect: string | null = "/login") {
     isError,
     error,
     refetch,
-  } = useQuery<IProfileResponse | undefined, AxiosResponse>("user", retrieveUser, {
-    retry: 0,
-    refetchOnMount: !!redirect,
-    refetchOnWindowFocus: !!redirect,
-  });
+  } = useQuery<IProfileResponse | undefined, AxiosResponse>(
+    "user",
+    retrieveUser,
+    {
+      retry: 0,
+      refetchOnMount: !!redirect,
+      refetchOnWindowFocus: !!redirect,
+    }
+  );
   const router = useRouter();
 
   if (isError) {

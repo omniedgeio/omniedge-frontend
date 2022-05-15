@@ -1,4 +1,11 @@
-import { Country, InvitationStatus, SecurityKeyType, ServerType, UsageKey, UserRole } from "./enum";
+import {
+  Country,
+  InvitationStatus,
+  SecurityKeyType,
+  ServerType,
+  UsageKey,
+  UserRole,
+} from "./enum";
 
 export enum ErrorCode {
   // Auth
@@ -107,7 +114,10 @@ export interface IVirtualNetworkDeviceResponse extends IDeviceResponse {
   virtual_ip: string;
 }
 
-export type IVirtualNetworkInvitationResponse = Omit<IInvitationResponse, "virtual_network">;
+export type IVirtualNetworkInvitationResponse = Omit<
+  IInvitationResponse,
+  "virtual_network"
+>;
 
 /* -------------------------------------------------------------------------- */
 /*                                   Device                                   */
@@ -123,7 +133,8 @@ export interface IDeviceResponse {
   //subnets?: IDeviceSubnetRouteResponse[];
 }
 
-export interface IDeviceVirtualNetworkResponse extends Pick<IVirtualNetworkResponse, "id" | "name"> {
+export interface IDeviceVirtualNetworkResponse
+  extends Pick<IVirtualNetworkResponse, "id" | "name"> {
   virtual_ip: string;
 }
 

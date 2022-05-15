@@ -1,18 +1,18 @@
 import { ChevronLeftIcon } from "@chakra-ui/icons";
-import { Box, Button, ButtonProps, Container, SimpleGrid, useDisclosure } from "@chakra-ui/react";
+import { Button, ButtonProps, Container, SimpleGrid, useDisclosure } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import ConfirmModal from "../../../components/ConfirmModal";
 import Link from "../../../components/next/Link";
-import { EnterprisePlan, FreePlan,ProPlan, TeamsPlan } from "../../../components/pricing/Plans";
+import { EnterprisePlan, FreePlan, ProPlan, TeamsPlan } from "../../../components/pricing/Plans";
 import { createCheckoutSession } from "../../../lib/api/billing";
 import { showError } from "../../../lib/helpers/toast";
 import { useUser } from "../../../lib/hook/useUser";
 import { Page } from "../../../types";
-import {useTranslation} from "react-i18next";
 
 const ChoosePlanPage: Page = (props) => {
-  const {t, i18n} = useTranslation('dashboard')
+  const { t } = useTranslation("dashboard");
   const { user, refetch, isLoading } = useUser("/login");
   const router = useRouter();
 
@@ -35,7 +35,7 @@ const ChoosePlanPage: Page = (props) => {
   const ChoosePlanButton: React.FC<{ plan: string } & ButtonProps> = ({ plan, ...props }) =>
     user?.subscription.slug === plan ? (
       <Button isLoading={isLoading} isDisabled isFullWidth colorScheme="gray" mt={4} {...props}>
-        {t('billing.currentplan')}
+        {t("billing.currentplan")}
       </Button>
     ) : (
       <Button
@@ -53,52 +53,44 @@ const ChoosePlanPage: Page = (props) => {
         colorScheme="brand"
         {...props}
       >
-        {user?.subscription.slug === "free" ? "Upgrade" : plan === "free" ? t('billing.revert') : t('billing.change') }
+        {user?.subscription.slug === "free" ? "Upgrade" : plan === "free" ? t("billing.revert") : t("billing.change")}
       </Button>
     );
 
   return (
     <>
       <ConfirmModal
-        title={t('warning')}
+        title={t("warning")}
         onCancel={confirmModal.onClose}
         onConfirm={() => {
           checkout(planChosen as string);
         }}
         isOpen={confirmModal.isOpen}
       >
-        {planChosen === "free"
-          ? t('cancelnotify')
-          : t('changenotify')}
+        {planChosen === "free" ? t("cancelnotify") : t("changenotify")}
       </ConfirmModal>
       <Container maxW="container.xl" p={4}>
         <Link href="/dashboard/billing">
           <Button leftIcon={<ChevronLeftIcon />} variant="link" _hover={{ textDecor: "none" }}>
-          {t('billing.backtobilling')}
+            {t("billing.backtobilling")}
           </Button>
         </Link>
-        <SimpleGrid mt={10} columns={{ base: 1, sm: 2, lg: 5 }} spacing={5}>
-          <FreePlan>
-            <ChoosePlanButton plan="free" />
-          </FreePlan>
+        <SimpleGrid columns={{ base: 1, sm: 2, xl: 4 }} mt={10} spacing={4}>
+          <FreePlan actionButton={<ChoosePlanButton plan="free" />}></FreePlan>
           {/* <StartProPlan>
             <ChoosePlanButton plan="free" />
           </StartProPlan> */}
-          <Box bgColor="brand.500" borderRadius="xl" color="white" px={4}>
-            <ProPlan>
-              <ChoosePlanButton plan="pro" colorScheme="cyan" color="white" />
-            </ProPlan>
-          </Box>
-          <TeamsPlan>
-            <ChoosePlanButton plan="teams" />
-          </TeamsPlan>
-          <EnterprisePlan>
-            <Link href="/contactus">
-              <Button isFullWidth variant="outline" mt={4} colorScheme="teal">
-              {t('billing.contact')}
-              </Button>
-            </Link>
-          </EnterprisePlan>
+          <ProPlan actionButton={<ChoosePlanButton plan="pro" colorScheme="cyan" color="white" />}></ProPlan>
+          <TeamsPlan actionButton={<ChoosePlanButton plan="teams" />}></TeamsPlan>
+          <EnterprisePlan
+            actionButton={
+              <Link href="/contactus">
+                <Button isFullWidth variant="outline" mt={4} colorScheme="teal">
+                  {t("billing.contact")}
+                </Button>
+              </Link>
+            }
+          ></EnterprisePlan>
         </SimpleGrid>
       </Container>
     </>

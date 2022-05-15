@@ -35,20 +35,20 @@ const PricingPage: Page = () => {
       </VStack>
       <Tabs variant="unstyled" mx="auto">
         <TabList justifyContent="center" columnGap={4}>
-          <PricingTab>{t('personal')}</PricingTab>
-          <PricingTab>{t('business')}</PricingTab>
+          <PricingTab>{t("personal")}</PricingTab>
+          <PricingTab>{t("business")}</PricingTab>
         </TabList>
         <TabPanels>
           <TabPanel>
             <Stack justifyContent="center" direction={{ base: "column", sm: "row" }}>
-              <FreePlan />
-              <ProPlan />
+              <FreePlan maxW={80} />
+              <ProPlan maxW={80} />
             </Stack>
           </TabPanel>
           <TabPanel>
             <Stack justifyContent="center" direction={{ base: "column", sm: "row" }}>
-              <TeamsPlan />
-              <EnterprisePlan />
+              <TeamsPlan maxW={80} />
+              <EnterprisePlan maxW={80} />
             </Stack>
           </TabPanel>
         </TabPanels>

@@ -4,10 +4,10 @@ import { useTranslation } from "react-i18next";
 import { FiCheck } from "react-icons/fi";
 import Link from "../next/Link";
 
-const PlanContainer = ({ children }: StackProps) => {
+const PlanContainer = ({ children, ...props }: StackProps) => {
   return (
     <VStack
-      w={80}
+      {...props}
       alignItems="left"
       p={6}
       borderRadius={16}
@@ -20,11 +20,13 @@ const PlanContainer = ({ children }: StackProps) => {
   );
 };
 
-interface PlanFeaturesProps {
-  features: {
-    label: string;
-    hint: string;
-  }[];
+export interface PlanFeatures {
+  label: string;
+  hint: string;
+}
+
+export interface PlanFeaturesProps {
+  features: PlanFeatures[];
 }
 
 const PlanTitle = ({ title }: { title: string }) => {
@@ -55,13 +57,19 @@ const PlanPrice = ({ price }: { price: string }) => {
   return (
     <>
       {typeof price != "string" ? (
-        <Text fontSize="3xl" fontWeight="bold"> $ {price}{" "}
-           <Text display="inline" verticalAlign="middle" fontSize="lg" fontWeight="normal">
-        / {t('permonth')}
-      </Text>
+        <Text fontSize="3xl" fontWeight="bold">
+          {" "}
+          $ {price}{" "}
+          <Text display="inline" verticalAlign="middle" fontSize="lg" fontWeight="normal">
+            / {t("permonth")}
+          </Text>
         </Text>
-      ) : (<>
-      <Text fontSize="3xl" fontWeight="bold"> {price}{" "}</Text>
+      ) : (
+        <>
+          <Text fontSize="3xl" fontWeight="bold">
+            {" "}
+            {price}{" "}
+          </Text>
         </>
       )}
     </>
@@ -79,11 +87,15 @@ const PlanActionButton: React.FC<{ plan: string } & ButtonProps> = ({ plan, ...p
   );
 };
 
-export const FreePlan = () => {
+interface PlanProps extends StackProps {
+  actionButton?: React.ReactElement;
+}
+
+export const FreePlan: React.FC<PlanProps> = ({ actionButton, ...props }) => {
   const { t } = useTranslation("pricing", { keyPrefix: "plans.free" });
 
   return (
-    <PlanContainer>
+    <PlanContainer {...props}>
       <PlanTitle title={t("title")} />
       <Text fontSize="3xl" fontWeight="bold">
         {t("price")}
@@ -91,58 +103,62 @@ export const FreePlan = () => {
       <PlanDescription description={t("description")} />
       <PlanFeatures features={t("features", { returnObjects: true })} />
       <Spacer />
-      <PlanActionButton plan="free" />
+      {actionButton ? actionButton : <PlanActionButton plan="free" />}
     </PlanContainer>
   );
 };
 
-export const ProPlan = () => {
+export const ProPlan: React.FC<PlanProps> = ({ actionButton, ...props }) => {
   const { t } = useTranslation("pricing", { keyPrefix: "plans.pro" });
 
   return (
-    <PlanContainer>
+    <PlanContainer {...props}>
       <PlanTitle title={t("title")} />
       <PlanPrice price={t("price")} />
       <PlanDescription description={t("description")} />
       <PlanFeatures features={t("features", { returnObjects: true })} />
       <Spacer />
-      <PlanActionButton plan="pro" />
+      {actionButton ? actionButton : <PlanActionButton plan="pro" />}
     </PlanContainer>
   );
 };
 
-export const TeamsPlan = () => {
+export const TeamsPlan: React.FC<PlanProps> = ({ actionButton, ...props }) => {
   const { t } = useTranslation("pricing", { keyPrefix: "plans.teams" });
 
   return (
-    <PlanContainer>
+    <PlanContainer {...props}>
       <PlanTitle title={t("title")} />
       <PlanPrice price={t("price")} />
       <PlanDescription description={t("description")} />
       <PlanFeatures features={t("features", { returnObjects: true })} />
       <Spacer />
-      <PlanActionButton plan="teams" />
+      {actionButton ? actionButton : <PlanActionButton plan="teams" />}
     </PlanContainer>
   );
 };
 
-export const EnterprisePlan = () => {
+export const EnterprisePlan: React.FC<PlanProps> = ({ actionButton, ...props }) => {
   const { t } = useTranslation("pricing", { keyPrefix: "plans.enterprise" });
   const { t: t2 } = useTranslation("pricing");
 
   return (
-    <PlanContainer>
+    <PlanContainer {...props}>
       <PlanTitle title={t("title")} />
       <PlanPrice price={t("price")} />
       <PlanDescription description={t("description")} />
       <PlanFeatures features={t("features", { returnObjects: true })} />
       <Spacer />
 
-      <Link href="/contactus">
-        <Button isFullWidth variant="outline" mt={4} colorScheme="teal">
-          {t2("contact")}
-        </Button>
-      </Link>
+      {actionButton ? (
+        actionButton
+      ) : (
+        <Link href="/contactus">
+          <Button isFullWidth variant="outline" mt={4} colorScheme="teal">
+            {t2("contact")}
+          </Button>
+        </Link>
+      )}
     </PlanContainer>
   );
 };

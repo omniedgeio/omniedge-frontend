@@ -8,6 +8,7 @@ import {
   HStack,
   Icon,
   Table,
+  TableContainer,
   Tbody,
   Td,
   Text,
@@ -114,56 +115,60 @@ const FeatureDesc: React.FC<{ free?: boolean; pro?: boolean; team?: boolean; ent
 };
 
 export default function ComparisonTable() {
-  const { t, i18n } = useTranslation("pricing");
+  const { t } = useTranslation("pricing");
 
   return (
-    <Table variant="simple">
-      <Thead>
-        <Tr>
-          <Th>{t("features")}</Th>
-          <Th>{t("starter")}</Th>
-          <Th>{t("professional")}</Th>
-          <Th>{t("team")}</Th>
-          <Th>{t("enterprise")}</Th>
-        </Tr>
-      </Thead>
-      <Tbody>
-        <FeatureTextnumber title={t("virtualnetwork")} free="1" pro="5" team="10" enterprise={t("unlimited")} />
-        <FeatureTextnumber title={t("devices")} free="20" pro="25" team="25" enterprise={t("unlimited")} />
-        <FeatureTextnumber title={t("users")} free="1" pro="5" team="10" enterprise={t("unlimited")} />
-        <FeatureDesc>{t("securitykey")}</FeatureDesc>
-        <FeatureDesc>{t("subroute")}</FeatureDesc>
-        <FeatureDesc>{t("unlimiteddata")}</FeatureDesc>
-        <FeatureDesc>{t("p2p")}</FeatureDesc>
-        <FeatureDesc>{t("platform")}</FeatureDesc>
-        <FeatureDesc free={false} pro={true} team={true}>
-          {t("sharing")}
-        </FeatureDesc>
-        <FeatureDesc free={false} pro={true} team={true}>
-          {t("customizesupernode")}
-        </FeatureDesc>
-        <FeatureDesc free={false} pro={false} team={false}>
-          {t("sso")}
-        </FeatureDesc>
-        <FeatureDesc free={false} pro={false} team={false}>
-          {t("iot")}
-        </FeatureDesc>
-        <FeatureDesc free={false} pro={false} team={false}>
-          {t("api")}
-        </FeatureDesc>
-        <FeatureDesc free={false} pro={false} team={false}>
-          {t("adminapi")}
-        </FeatureDesc>
-        <FeatureDesc free={false} pro={false} team={false}>
-          {t("whitelable")}
-        </FeatureDesc>
-        <FeatureDesc free={false} pro={false} team={false}>
-          {t("specialsupport")}
-        </FeatureDesc>
-        <FeatureDesc free={false} pro={true}>
-          {t("emailsupport")}
-        </FeatureDesc>
-      </Tbody>
-    </Table>
+    <Box px={4} maxW={800} mt={4} mx="auto" border="solid 1px" borderColor="gray.200" borderRadius={6}>
+      <TableContainer>
+        <Table variant="simple" overflowX="auto">
+          <Thead>
+            <Tr>
+              <Th>{t("features")}</Th>
+              <Th>{t("starter")}</Th>
+              <Th>{t("professional")}</Th>
+              <Th>{t("team")}</Th>
+              <Th>{t("enterprise")}</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
+            <FeatureTextnumber title={t("virtualnetwork")} free="1" pro="5" team="10" enterprise={t("unlimited")} />
+            <FeatureTextnumber title={t("devices")} free="20" pro="25" team="25" enterprise={t("unlimited")} />
+            <FeatureTextnumber title={t("users")} free="1" pro="5" team="10" enterprise={t("unlimited")} />
+            <FeatureDesc>{t("securitykey")}</FeatureDesc>
+            <FeatureDesc>{t("subroute")}</FeatureDesc>
+            <FeatureDesc>{t("unlimiteddata")}</FeatureDesc>
+            <FeatureDesc>{t("p2p")}</FeatureDesc>
+            <FeatureDesc>{t("platform")}</FeatureDesc>
+            <FeatureDesc free={false} pro={true} team={true}>
+              {t("sharing")}
+            </FeatureDesc>
+            <FeatureDesc free={false} pro={true} team={true}>
+              {t("customizesupernode")}
+            </FeatureDesc>
+            <FeatureDesc free={false} pro={false} team={false}>
+              {t("sso")}
+            </FeatureDesc>
+            <FeatureDesc free={false} pro={false} team={false}>
+              {t("iot")}
+            </FeatureDesc>
+            <FeatureDesc free={false} pro={false} team={false}>
+              {t("api")}
+            </FeatureDesc>
+            <FeatureDesc free={false} pro={false} team={false}>
+              {t("adminapi")}
+            </FeatureDesc>
+            <FeatureDesc free={false} pro={false} team={false}>
+              {t("whitelable")}
+            </FeatureDesc>
+            <FeatureDesc free={false} pro={false} team={false}>
+              {t("specialsupport")}
+            </FeatureDesc>
+            <FeatureDesc free={false} pro={true}>
+              {t("emailsupport")}
+            </FeatureDesc>
+          </Tbody>
+        </Table>
+      </TableContainer>
+    </Box>
   );
 }

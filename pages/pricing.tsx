@@ -1,4 +1,4 @@
-import { Box, Stack, Tab, TabList, TabPanel, TabPanels, TabProps, Tabs, Text, VStack } from "@chakra-ui/react";
+import { Stack, Tab, TabList, TabPanel, TabPanels, TabProps, Tabs, Text, VStack } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import DefaultLayout from "../components/layout/Default";
 import ComparisonTable from "../components/pricing/ComparisonTable";
@@ -53,10 +53,7 @@ const PricingPage: Page = () => {
           </TabPanel>
         </TabPanels>
       </Tabs>
-      <Box maxW={800} mt={4} mx="auto" border="solid 1px" borderColor="gray.200" borderRadius={6}>
-        <ComparisonTable />
-      </Box>
-
+      <ComparisonTable />
       <Faq />
     </>
   );

@@ -115,7 +115,7 @@ const FeatureDesc: React.FC<{ free?: boolean; pro?: boolean; team?: boolean; ent
 };
 
 export default function ComparisonTable() {
-  const { t, i18n } = useTranslation("pricing");
+  const { t } = useTranslation("pricing");
 
   return (
     <Box px={4} maxW={800} mt={4} mx="auto" border="solid 1px" borderColor="gray.200" borderRadius={6}>

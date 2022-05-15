@@ -30,11 +30,8 @@ const BillingPage: Page = (props) => {
   const { user, isLoading } = useUser("/login");
 
   const { t } = useTranslation("dashboard");
-  const { t: tFeatures } = useTranslation("pricing", { keyPrefix: "plans." + user?.subscription.slug });
-
-  if (isLoading) {
-    return <Spinner />;
-  }
+  const { t: tFeatures } = useTranslation("pricing");
+  const features = tFeatures(`plans.${user?.subscription.slug}.features`, { returnObjects: true });
 
   return (
     <VStack alignItems="flex-start" spacing="4">
@@ -93,12 +90,13 @@ const BillingPage: Page = (props) => {
           <Box mt={4}>
             <Text fontWeight="medium">{t("billing.features")}</Text>
             <List>
-              {(tFeatures("features", { returnObjects: true }) as PlanFeatures[])?.map(({ label }) => (
-                <ListItem key={label}>
-                  <ListIcon verticalAlign="middle" as={MdCheckCircle} color="green.500" />
-                  {label}
-                </ListItem>
-              ))}
+              {Array.isArray(features) &&
+                (features as PlanFeatures[])?.map(({ label }) => (
+                  <ListItem key={label}>
+                    <ListIcon verticalAlign="middle" as={MdCheckCircle} color="green.500" />
+                    {label}
+                  </ListItem>
+                ))}
             </List>
           </Box>
           <Box mt={4}>
@@ -108,7 +106,7 @@ const BillingPage: Page = (props) => {
                 Object.entries(user?.usage_limits).map(([key, value]) => (
                   <>
                     <Text>{startCase(key)}</Text>
-                    <Text>
+                    <Box>
                       <Text fontFamily="mono" d="inline" color={value.usage > value.limit ? "red.500" : ""}>
                         {value.usage}
                       </Text>{" "}
@@ -116,7 +114,7 @@ const BillingPage: Page = (props) => {
                       <Text fontFamily="mono" d="inline">
                         {value.limit}
                       </Text>
-                    </Text>
+                    </Box>
                   </>
                 ))}
             </SimpleGrid>

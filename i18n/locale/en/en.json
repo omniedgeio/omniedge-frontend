@@ -153,6 +153,9 @@
     "whitelable": " White label",
     "specialsupport": " Special Support",
     "emailsupport": "Email Support",
+    "permonth": "Per Month",
+    "personal": "Personal",
+    "business": "Business",
     "plans": {
       "free": {
         "title": "Starter",

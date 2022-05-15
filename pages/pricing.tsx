@@ -35,8 +35,8 @@ const PricingPage: Page = () => {
       </VStack>
       <Tabs variant="unstyled" mx="auto">
         <TabList justifyContent="center" columnGap={4}>
-          <PricingTab>Personal</PricingTab>
-          <PricingTab>Business</PricingTab>
+          <PricingTab>{t('personal')}</PricingTab>
+          <PricingTab>{t('business')}</PricingTab>
         </TabList>
         <TabPanels>
           <TabPanel>

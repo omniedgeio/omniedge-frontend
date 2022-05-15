@@ -153,27 +153,209 @@
     "adminapi": "管理员 API",
     "whitelable": "贴牌",
     "specialsupport": "特殊支持",
-    "emailsupport": "邮件支持"
-  },
-  "plan": {
-    "monthly": "每月"
-  },
-  "faq": {
-    "title": "FAQ",
-    "faq-1-q": " 设置 OmniEdge 需要多少时间 ?",
-    "faq-1-a": " 设置 OmniEdge 只需要安装 OmniEdge 在不同平台的客户端，一般只需要 5 分钟，甚至更短。",
-    "faq-2-q": " 我的隐私在 OmniEdge 私有网络内安全吗？",
-    "faq-2-a": " 我们非常在意思用户的隐私，详细信息，请阅读我们的[隐私政策](/privacy)。 ",
-    "faq-3-q":  "如何更换我的订阅计划 ?",
-    "faq-3-a": " 如果您已经订阅了 OmniEdge，请联系我们或者在您的账单管理页面内更改。",
-    "faq-4-q": " 什么时间我需要付钱 ?",
-    "faq-4-a": " OmniEdge 的订阅是预付模式，所以需要您先付款再使用。",
-    "faq-5-q": " 支持什么付款方式?",
-    "faq-5-a": " 我们支持各类信用卡付款，只要 [Stripe](https://stripe.com) 支持的我们都支持. 企业用户也可以联系我们使用其他方式付款，比如电汇或者 ACH，请以美元付款。",
-    "faq-6-q": " 在哪里可以查看服务协议和隐私条款?",
-    "faq-6-a": " 查看 OmniEdge [服务协议](/terms) 和 [隐私条款](/privacy).",
-    "faq-7-q": " 如何了解更多关于 OmniEdge 的信息?",
-    "faq-7-a": " 你可以访问我们的[文档](/doc)，了解更多。"
+    "emailsupport": "邮件支持",
+    "permonth": "每月",
+    "personal": "个人用户",
+    "business": "企业用户",
+    "plans": {
+      "free": {
+        "title": "体验版",
+        "price": "免费",
+        "description": "专为想要体验 OmniEdge 或者少量需求的用户使用",
+        "features": [
+          {
+            "label":" 无限数据传输 ",
+            "tips": " 数据传输是指在您自己的虚拟网络中安装了omniedge的设备之间的安全数据交换。"
+          },
+          {
+            "label":" 加密的端到端连接 ",
+            "tips": " 通过OmniEdge的流量是由Twofish/AES128/ChaCha20 cipers的加密算法在 P2P MESH 网络进行端到端加密。"
+          },
+          {
+            "label":" 最多一个私有网络 ",
+            "tips": " 私有网络是为你的所有设备和用户提供的一个私有内部网，和物理局域网类似。。"
+          },
+          {
+            "label": " 最多可以连接20个设备 ",
+            "tips": "设备是指在您自己的虚拟网络中安装并激活了OmniEdge的任何台式机、笔记本电脑、电话或云实例。"
+          },
+          {
+            "label": " 单用户 ",
+            "tips": " 虚拟网络只能有来自同一用户的设备。"
+          }
+        ]
+      },
+      "startpro": {
+        "title": "个人版",
+        "price": 3,
+        "focus": true,
+        "description": "专为有多私有网络和多设备连接需求的专业用户",
+        "features": [
+          {
+            "label": "无限数据传输",
+            "tips": "数据传输是指在您自己的虚拟网络中安装了omniedge的设备之间的安全数据交换。."
+          },
+          {
+            "label": "加密的端到端连接",
+            "tips": "通过OmniEdge的流量是由Twofish/AES128/ChaCha20 cipers的P2P MESH网络进行端到端加密。"
+          },
+          {
+            "label": "最多 2 个私有网络",
+            "tips": "私有网络是为你的所有设备和用户提供的一个私有内部网，和物理局域网类似。。"
+          },
+          {
+            "label": " 最多 100 个设备",
+            "tips": "设备是指在您自己的虚拟网络中安装并激活了OmniEdge的任何台式机、笔记本电脑、电话或云实例。"
+          },
+          {
+            "label": "单用户",
+            "tips": "虚拟网络只能有来自同一用户的设备。"
+          },
+          {
+            "label": "共享私有网络",
+            "tips": "邀请你信任的人加入你的私有网络"
+          },
+          {
+            "label": "私有服务器",
+            "tips": "您可以使用您自己的私有服务器，为您的私有网络做认证"
+          }
+        ]
+      },
+      "pro": {
+        "title": "专业版",
+        "price": 5,
+        "focus": true,
+        "freetrial": "14 Days Free Trial",
+        "description": "对于需要多个私有网络和非常多设备连接需求的专业用户及小团队",
+        "features": [
+          {
+            "label": "无限数据传输",
+            "tips": "数据传输是指在您自己的虚拟网络中安装了omniedge的设备之间的安全数据交换。."
+          },
+          {
+            "label": "加密的端到端连接",
+            "tips": "通过OmniEdge的流量是由Twofish/AES128/ChaCha20 cipers的P2P MESH网络进行端到端加密。"
+          },
+          {
+            "label": "最多 5 个私有网络",
+            "tips": "私有网络是为你的所有设备和用户提供的一个私有内部网，和物理局域网类似。。"
+          },
+          {
+            "label": "最多 25 个设备",
+            "tips": "设备是指在您自己的虚拟网络中安装并激活了OmniEdge的任何台式机、笔记本电脑、电话或云实例。"
+          },
+          {
+            "label": " 最多 5 个用户",
+            "tips": "虚拟网络最多只能有5个用户的设备加入。"
+          },
+          {
+            "label": "共享私有网络",
+            "tips": "邀请你信任的人加入你的私有网络"
+          },
+          {
+            "label": "私有服务器",
+            "tips": "您可以使用您自己的私有服务器，为您的私有网络做认证"
+          }
+        ]
+      },
+      "teams": {
+        "title": "团队版",
+        "oldprice": "$20",
+        "price": 10,
+        "freetrial": "14 Days Free Trial",
+        "description": " 专为有多个部门，一个部门一个私有网络的团队用户使用",
+        "features": [
+          {
+            "label": "无限数据传输",
+            "tips": "数据传输是指在您自己的虚拟网络中安装了omniedge的设备之间的安全数据交换。."
+          },
+          {
+            "label": "加密的端到端连接",
+            "tips": "通过OmniEdge的流量是由Twofish/AES128/ChaCha20 cipers的P2P MESH网络进行端到端加密。"
+          },
+          {
+            "label": "最多 10 个私有网络",
+            "tips": "私有网络是为你的所有设备和用户提供的一个私有内部网，和物理局域网类似。。"
+          },
+          {
+            "label": "最多 25 个设备",
+            "tips": "设备是指在您自己的虚拟网络中安装并激活了OmniEdge的任何台式机、笔记本电脑、电话或云实例。"
+          },
+          {
+            "label": "最多 10 个用户",
+            "tips": "虚拟网络最多只能有5个用户的设备加入。"
+          },
+          {
+            "label": "共享私有网络",
+            "tips": "邀请你信任的人加入你的私有网络"
+          },
+          {
+            "label": "私有服务器",
+            "tips": "您可以使用您自己的私有服务器，为您的私有网络做认证"
+          }
+        ]
+      },
+      "enterprise": {
+        "title": "企业版",
+        "price": "联系我们",
+        "description": "专为企业定制",
+        "features": [
+          {
+            "label": "无限的私有网络，连接设备和用户"
+          },
+          {
+            "label": "集成第三方认证系统服务"
+          },
+          {
+            "label": "硬件及物联网集成"
+          },
+          {
+            "label": "共享私有网络",
+            "tips": "邀请你信任的人加入你的私有网络"
+          },
+          {
+            "label": "API,物联网，硬件集成及更多支持"
+          },
+          {
+            "label": " 贴牌 "
+          }
+        ]
+      }
+    },
+    "faq": {
+      "title": "FAQ",
+      "subtitle": "需要帮助吗？我们提供",
+      "questions": [
+        {
+          "question": "设置 OmniEdge 需要多少时间 ?",
+          "answer": " 设置 OmniEdge 只需要安装 OmniEdge 在不同平台的客户端，一般只需要 5 分钟，甚至更短。"
+        },
+        {
+          "question": " 我的隐私在 OmniEdge 私有网络内安全吗？",
+          "answer": " 我们非常在意思用户的隐私，详细信息，请阅读我们的[隐私政策](/privacy)。 "
+        },
+        {
+          "question": "如何更换我的订阅计划 ?",
+          "answer": " 如果您已经订阅了 OmniEdge，请联系我们或者在您的账单管理页面内更改。"
+        },
+        {
+          "question": " 什么时间我需要付钱 ?",
+          "answer": " OmniEdge 的订阅是预付模式，所以需要您先付款再使用。"
+        },
+        {
+          "question": " 支持什么付款方式?",
+          "answer": " 我们支持各类信用卡付款，只要 [Stripe](https://stripe.com) 支持的我们都支持. 企业用户也可以联系我们使用其他方式付款，比如电汇或者 ACH，请以美元付款。"
+        },
+        {
+          "question": " 在哪里可以查看服务协议和隐私条款?",
+          "answer": " 查看 OmniEdge [服务协议](/terms) 和 [隐私条款](/privacy)."
+        },
+        {
+          "question": " 如何了解更多关于 OmniEdge 的信息?",
+          "answer": " 你可以访问我们的[文档](/doc)，了解更多。"
+        }
+      ]
+    }
   },
   "auth":{
     "changepassword": "更改密码",

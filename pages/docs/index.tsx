@@ -54,8 +54,8 @@ const DocLayout: FunctionComponent<IProps> = ({ articles }) => {
   );
 };
 export async function getStaticProps() {
+  
     const files = fs.readdirSync("markdowndocs/Docs");
-    
     let articles = files.map(file => {
         const data = fs
             .readFileSync(`markdowndocs/Docs/${file}`)

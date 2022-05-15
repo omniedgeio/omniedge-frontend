@@ -51,13 +51,20 @@ const PlanDescription = ({ description }: { description: string }) => {
 };
 
 const PlanPrice = ({ price }: { price: string }) => {
+  const { t, i18n } = useTranslation("pricing");
   return (
-    <Text fontSize="3xl" fontWeight="bold">
-      ${price}{" "}
-      <Text display="inline" verticalAlign="middle" fontSize="lg" fontWeight="normal">
-        / per month
+    <>
+      {typeof price != "string" ? (
+        <Text fontSize="3xl" fontWeight="bold"> $ {price}{" "}
+           <Text display="inline" verticalAlign="middle" fontSize="lg" fontWeight="normal">
+        / {t('permonth')}
       </Text>
-    </Text>
+        </Text>
+      ) : (<>
+      <Text fontSize="3xl" fontWeight="bold"> {price}{" "}</Text>
+        </>
+      )}
+    </>
   );
 };
 

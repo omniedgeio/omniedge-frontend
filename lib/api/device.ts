@@ -1,5 +1,9 @@
 import request from "./client";
-import { IListDevicesRequest, IUpdateDeviceRequest, IUpdateDeviceSubnetRouteRequest } from "./request";
+import {
+  IListDevicesRequest,
+  IUpdateDeviceRequest,
+  IUpdateDeviceSubnetRouteRequest,
+} from "./request";
 import { IDeviceResponse, IPaginatedResponse } from "./response";
 
 export async function listDevices(
@@ -29,7 +33,9 @@ export async function removeDevice(id: string) {
   return res.data.data;
 }
 
-export async function retrieveDevice(id: string): Promise<IDeviceResponse | undefined> {
+export async function retrieveDevice(
+  id: string
+): Promise<IDeviceResponse | undefined> {
   let res = await request<IDeviceResponse>({
     url: "/devices/" + id,
     method: "GET",
@@ -52,7 +58,11 @@ export async function updateDevice(id: string, data: IUpdateDeviceRequest) {
   return res.data.data;
 }
 
-export async function updateDeviceSubnet(deviceId: string, subnetId: string, data: IUpdateDeviceSubnetRouteRequest) {
+export async function updateDeviceSubnet(
+  deviceId: string,
+  subnetId: string,
+  data: IUpdateDeviceSubnetRouteRequest
+) {
   let res = await request({
     url: "/devices/" + deviceId + "/subnets/" + subnetId,
     method: "POST",

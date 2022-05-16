@@ -1,5 +1,10 @@
 import { createStandaloneToast } from "@chakra-ui/react";
-import axios, { AxiosError, AxiosPromise, AxiosRequestConfig, AxiosResponse } from "axios";
+import axios, {
+  AxiosError,
+  AxiosPromise,
+  AxiosRequestConfig,
+  AxiosResponse,
+} from "axios";
 import { clearToken, getToken } from "../helpers/token";
 import { IResponse } from "./response";
 
@@ -11,13 +16,18 @@ const client = axios.create({
 
 function forceLogout() {
   clearToken();
-  if (["login", "register"].every((e) => !window.location.pathname.includes(e))) {
+  if (
+    ["login", "register"].every((e) => !window.location.pathname.includes(e))
+  ) {
     window.location.replace("/login");
   }
 }
 
 client.interceptors.request.use((config: AxiosRequestConfig) => {
-  if (!config.url?.match(/^\/auth\/*/) || config.url == "/auth/login/session/notify") {
+  if (
+    !config.url?.match(/^\/auth\/*/) ||
+    config.url == "/auth/login/session/notify"
+  ) {
     const token = getToken();
     if (token.accessToken) {
       config.headers["Authorization"] = "Bearer " + token.accessToken;
@@ -61,6 +71,8 @@ client.interceptors.response.use(
   }
 );
 
-export default function request<T = any, E = any>(config: AxiosRequestConfig): AxiosPromise<IResponse<T, E>> {
+export default function request<T = any, E = any>(
+  config: AxiosRequestConfig
+): AxiosPromise<IResponse<T, E>> {
   return client(config);
 }

@@ -1,6 +1,10 @@
 import request from "./client";
 import { ICreateSecurityKeyRequest } from "./request";
-import { ICreateSecurityKeyResponse, IPaginatedResponse, ISecurityKeyResponse } from "./response";
+import {
+  ICreateSecurityKeyResponse,
+  IPaginatedResponse,
+  ISecurityKeyResponse,
+} from "./response";
 
 export async function createSecurityKey(
   data: ICreateSecurityKeyRequest
@@ -14,7 +18,9 @@ export async function createSecurityKey(
   return res.data.data;
 }
 
-export async function listSecurityKeys(): Promise<IPaginatedResponse<ISecurityKeyResponse> | undefined> {
+export async function listSecurityKeys(): Promise<
+  IPaginatedResponse<ISecurityKeyResponse> | undefined
+> {
   let res = await request<IPaginatedResponse<ISecurityKeyResponse>>({
     url: "/security-keys",
     method: "GET",

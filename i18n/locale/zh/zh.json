@@ -90,7 +90,7 @@
     "setup-desc": "在不同的設備上配置 OmniEdge 隻需要幾分鍾，你可以使用用戶密碼以及安全碼等相關方式激活設備。",
     "maintenanceless": "免維護",
     "maintenanceless-desc": " 放棄需要大量人力勞動的企業網路係統，使用 OmniEdge 您將可以專註於自己擅長的業務。",
-    "featureslisttitle": "OmniEdge PO",
+    "featureslisttitle": "OmniEdge 功能",
     "featureslistsubtitle": " 滿足您需求的解決方案",
     "flvn":"私有虛擬網路",
     "flvn-desc":"私有虛擬網路為您和團隊和信任的其他成員，提供一個虛擬的事務室，大家好像坐在同一個房間裏麵交換設備之間的數據。",
@@ -153,27 +153,209 @@
     "adminapi": "管理員 API",
     "whitelable": "貼牌",
     "specialsupport": "特殊支援",
-    "emailsupport": "郵件支援"
-  },
-  "plan": {
-    "monthly": "每月"
-  },
-  "faq": {
-    "title": "FAQ",
-    "faq-1-q": " 設定 OmniEdge 需要多少時間 ?",
-    "faq-1-a": " 設定 OmniEdge 隻需要安裝 OmniEdge 在不同平臺的客戶端，一般隻需要 5 分鍾，甚至更短。",
-    "faq-2-q": " 我的隱私在 OmniEdge 私有網路內安全嗎？",
-    "faq-2-a": " 我們非常在意思用戶的隱私，詳細信息，請閱讀我們的[隱私政策](/privacy)。 ",
-    "faq-3-q":  "如何更換我的訂閱計劃 ?",
-    "faq-3-a": " 如果您已經訂閱了 OmniEdge，請聯係我們或者在您的賬單管理頁麵內更改。",
-    "faq-4-q": " 什麼時間我需要付錢 ?",
-    "faq-4-a": " OmniEdge 的訂閱是預付模式，所以需要您先付款再使用。",
-    "faq-5-q": " 支援什麼付款方式?",
-    "faq-5-a": " 我們支援各類信用卡付款，隻要 [Stripe](https://stripe.com) 支援的我們都支援. 企業用戶也可以聯係我們使用其他方式付款，比如電匯或者 ACH，請以美元付款。",
-    "faq-6-q": " 在哪裏可以檢視服務協議和隱私條款?",
-    "faq-6-a": " 檢視 OmniEdge [服務協議](/terms) 和 [隱私條款](/privacy).",
-    "faq-7-q": " 如何了解更多關於 OmniEdge 的信息?",
-    "faq-7-a": " 你可以訪問我們的[文檔](/doc)，了解更多。"
+    "emailsupport": "郵件支援",
+    "permonth": "每月每人",
+    "personal": "個人用戶",
+    "business": "企業用戶",
+    "plans": {
+      "free": {
+        "title": "體驗版",
+        "price": "免費",
+        "description": "專為想要體驗 OmniEdge 或者少量需求的用戶使用",
+        "features": [
+          {
+            "label":" 無限數據傳輸 ",
+            "tips": " 數據傳輸是指在您自己的虛擬網路中安裝了omniedge的設備之間的安全數據交換。"
+          },
+          {
+            "label":" 加密的端到端連接 ",
+            "tips": " 通過OmniEdge的流量是由Twofish/AES128/ChaCha20 cipers的加密算法在 P2P MESH 網路進行端到端加密。"
+          },
+          {
+            "label":" 最多 1 個私有網路 ",
+            "tips": " 私有網路是為你的所有設備和用戶提供的一個私有內部網，和物理局域網類似。。"
+          },
+          {
+            "label": " 最多可以連接20個設備 ",
+            "tips": "設備是指在您自己的虛擬網路中安裝並激活了OmniEdge的任何臺式機、筆記型電腦、電話或雲實例。"
+          },
+          {
+            "label": " 單用戶 ",
+            "tips": " 虛擬網路隻能有來自同一用戶的設備。"
+          }
+        ]
+      },
+      "startpro": {
+        "title": "個人版",
+        "price": 3,
+        "focus": true,
+        "description": "專為有多私有網路和多設備連接需求的專業用戶",
+        "features": [
+          {
+            "label": "無限數據傳輸",
+            "tips": "數據傳輸是指在您自己的虛擬網路中安裝了omniedge的設備之間的安全數據交換。."
+          },
+          {
+            "label": "加密的端到端連接",
+            "tips": "通過OmniEdge的流量是由Twofish/AES128/ChaCha20 cipers的P2P MESH網路進行端到端加密。"
+          },
+          {
+            "label": "最多 2 個私有網路",
+            "tips": "私有網路是為你的所有設備和用戶提供的一個私有內部網，和物理局域網類似。。"
+          },
+          {
+            "label": " 最多 100 個設備",
+            "tips": "設備是指在您自己的虛擬網路中安裝並激活了OmniEdge的任何臺式機、筆記型電腦、電話或雲實例。"
+          },
+          {
+            "label": "單用戶",
+            "tips": "虛擬網路隻能有來自同一用戶的設備。"
+          },
+          {
+            "label": "共享私有網路",
+            "tips": "邀請你信任的人加入你的私有網路"
+          },
+          {
+            "label": "私有服務器",
+            "tips": "您可以使用您自己的私有服務器，為您的私有網路做認證"
+          }
+        ]
+      },
+      "pro": {
+        "title": "專業版",
+        "price": 5,
+        "focus": true,
+        "freetrial": "14 Days Free Trial",
+        "description": "對於需要多個私有網路和非常多設備連接需求的專業用戶及小團隊",
+        "features": [
+          {
+            "label": "無限數據傳輸",
+            "tips": "數據傳輸是指在您自己的虛擬網路中安裝了omniedge的設備之間的安全數據交換。."
+          },
+          {
+            "label": "加密的端到端連接",
+            "tips": "通過OmniEdge的流量是由Twofish/AES128/ChaCha20 cipers的P2P MESH網路進行端到端加密。"
+          },
+          {
+            "label": "最多 5 個私有網路",
+            "tips": "私有網路是為你的所有設備和用戶提供的一個私有內部網，和物理局域網類似。。"
+          },
+          {
+            "label": "最多 25 個設備",
+            "tips": "設備是指在您自己的虛擬網路中安裝並激活了OmniEdge的任何臺式機、筆記型電腦、電話或雲實例。"
+          },
+          {
+            "label": " 最多 5 個用戶",
+            "tips": "虛擬網路最多隻能有5個用戶的設備加入。"
+          },
+          {
+            "label": "共享私有網路",
+            "tips": "邀請你信任的人加入你的私有網路"
+          },
+          {
+            "label": "私有服務器",
+            "tips": "您可以使用您自己的私有服務器，為您的私有網路做認證"
+          }
+        ]
+      },
+      "teams": {
+        "title": "團隊版",
+        "oldprice": "$20",
+        "price": 10,
+        "freetrial": "14 Days Free Trial",
+        "description": " 專為有多個部門，一個部門一個私有網路的團隊用戶使用",
+        "features": [
+          {
+            "label": "無限數據傳輸",
+            "tips": "數據傳輸是指在您自己的虛擬網路中安裝了omniedge的設備之間的安全數據交換。."
+          },
+          {
+            "label": "加密的端到端連接",
+            "tips": "通過OmniEdge的流量是由Twofish/AES128/ChaCha20 cipers的P2P MESH網路進行端到端加密。"
+          },
+          {
+            "label": "最多 10 個私有網路",
+            "tips": "私有網路是為你的所有設備和用戶提供的一個私有內部網，和物理局域網類似。。"
+          },
+          {
+            "label": "最多 25 個設備",
+            "tips": "設備是指在您自己的虛擬網路中安裝並激活了OmniEdge的任何臺式機、筆記型電腦、電話或雲實例。"
+          },
+          {
+            "label": "最多 10 個用戶",
+            "tips": "虛擬網路最多隻能有5個用戶的設備加入。"
+          },
+          {
+            "label": "共享私有網路",
+            "tips": "邀請你信任的人加入你的私有網路"
+          },
+          {
+            "label": "私有服務器",
+            "tips": "您可以使用您自己的私有服務器，為您的私有網路做認證"
+          }
+        ]
+      },
+      "enterprise": {
+        "title": "企業版",
+        "price": "聯係我們",
+        "description": "專為企業定製",
+        "features": [
+          {
+            "label": "無限的私有網路，連接設備和用戶"
+          },
+          {
+            "label": "集成第三方認證係統服務"
+          },
+          {
+            "label": "硬體及物聯網集成"
+          },
+          {
+            "label": "共享私有網路",
+            "tips": "邀請你信任的人加入你的私有網路"
+          },
+          {
+            "label": "API,物聯網，硬體集成及更多支援"
+          },
+          {
+            "label": " 貼牌 "
+          }
+        ]
+      }
+    },
+    "faq": {
+      "title": "FAQ",
+      "subtitle": "需要幫助嗎？我們提供",
+      "questions": [
+        {
+          "question": "設定 OmniEdge 需要多少時間 ?",
+          "answer": " 設定 OmniEdge 隻需要安裝 OmniEdge 在不同平臺的客戶端，一般隻需要 5 分鍾，甚至更短。"
+        },
+        {
+          "question": " 我的隱私在 OmniEdge 私有網路內安全嗎？",
+          "answer": " 我們非常在意思用戶的隱私，詳細信息，請閱讀我們的[隱私政策](/privacy)。 "
+        },
+        {
+          "question": "如何更換我的訂閱計劃 ?",
+          "answer": " 如果您已經訂閱了 OmniEdge，請聯係我們或者在您的賬單管理頁麵內更改。"
+        },
+        {
+          "question": " 什麼時間我需要付錢 ?",
+          "answer": " OmniEdge 的訂閱是預付模式，所以需要您先付款再使用。"
+        },
+        {
+          "question": " 支援什麼付款方式?",
+          "answer": " 我們支援各類信用卡付款，隻要 [Stripe](https://stripe.com) 支援的我們都支援. 企業用戶也可以聯係我們使用其他方式付款，比如電匯或者 ACH，請以美元付款。"
+        },
+        {
+          "question": " 在哪裏可以檢視服務協議和隱私條款?",
+          "answer": " 檢視 OmniEdge [服務協議](/terms) 和 [隱私條款](/privacy)."
+        },
+        {
+          "question": " 如何了解更多關於 OmniEdge 的信息?",
+          "answer": " 你可以訪問我們的[文檔](/doc)，了解更多。"
+        }
+      ]
+    }
   },
   "auth":{
     "changepassword": "更改密碼",

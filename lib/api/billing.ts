@@ -1,7 +1,9 @@
 import request from "./client";
 import { ICreateCheckoutSessionRequest } from "./request";
 
-export async function createCheckoutSession(data: ICreateCheckoutSessionRequest) {
+export async function createCheckoutSession(
+  data: ICreateCheckoutSessionRequest
+) {
   let res = await request({
     url: "/payment/checkout-session",
     method: "POST",

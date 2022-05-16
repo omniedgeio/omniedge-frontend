@@ -1,6 +1,9 @@
 import { createStandaloneToast } from "@chakra-ui/react";
 
-export function showError(title = "Error", message = "Unexpected error: Please try again later") {
+export function showError(
+  title = "Error",
+  message = "Unexpected error: Please try again later"
+) {
   const toast = createStandaloneToast({});
 
   toast({

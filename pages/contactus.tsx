@@ -2,7 +2,7 @@ import { Heading, Text, VStack } from "@chakra-ui/react";
 import React from "react";
 import DefaultLayout from "../components/layout/Default";
 import { Page } from "../types";
-import {Faq} from "../components/Faq";
+import Faq from "../components/pricing/Faq";
 
 const Contactus: Page = () => {
   return (

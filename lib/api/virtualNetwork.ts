@@ -25,7 +25,9 @@ export async function listVirtualNetworks(
   return res.data.data;
 }
 
-export async function retrieveVirtualNetwork(id: string): Promise<IVirtualNetworkResponse | undefined> {
+export async function retrieveVirtualNetwork(
+  id: string
+): Promise<IVirtualNetworkResponse | undefined> {
   let res = await request<IVirtualNetworkResponse>({
     url: "/virtual-networks/" + id,
     method: "GET",
@@ -34,7 +36,9 @@ export async function retrieveVirtualNetwork(id: string): Promise<IVirtualNetwor
   return res.data.data;
 }
 
-export async function createVirtualNetwork(data: IVirtualNetworkRequest): Promise<IVirtualNetworkResponse | undefined> {
+export async function createVirtualNetwork(
+  data: IVirtualNetworkRequest
+): Promise<IVirtualNetworkResponse | undefined> {
   let res = await request({
     url: "/virtual-networks",
     method: "POST",
@@ -44,7 +48,10 @@ export async function createVirtualNetwork(data: IVirtualNetworkRequest): Promis
   return res.data.data;
 }
 
-export async function updateVirtualNetwork(id: string, data: IUpdateVirtualNetworkRequest) {
+export async function updateVirtualNetwork(
+  id: string,
+  data: IUpdateVirtualNetworkRequest
+) {
   let res = await request({
     url: "/virtual-networks/" + id,
     method: "PUT",
@@ -84,7 +91,10 @@ export async function listUsersOfVirtualNetwork(
   return res.data.data;
 }
 
-export async function removeUserFromVirtualNetwork(virtualNetworkId: string, userId: string) {
+export async function removeUserFromVirtualNetwork(
+  virtualNetworkId: string,
+  userId: string
+) {
   let res = await request({
     url: "/virtual-networks/" + virtualNetworkId + "/users/" + userId,
     method: "DELETE",
@@ -115,7 +125,10 @@ export async function listDevicesOfVirtualNetwork(
   return res.data.data;
 }
 
-export async function removeDeviceFromVirtualNetwork(virtualNetworkId: string, deviceId: string) {
+export async function removeDeviceFromVirtualNetwork(
+  virtualNetworkId: string,
+  deviceId: string
+) {
   let res = await request({
     url: "/virtual-networks/" + virtualNetworkId + "/devices/" + deviceId,
     method: "DELETE",
@@ -128,7 +141,10 @@ export async function removeDeviceFromVirtualNetwork(virtualNetworkId: string, d
 /*                        Virtual Network > Invitations                       */
 /* -------------------------------------------------------------------------- */
 
-export async function createInvitationForVirtualNetwork(virtualNetworkId: string, data: ICreateInvitationRequest) {
+export async function createInvitationForVirtualNetwork(
+  virtualNetworkId: string,
+  data: ICreateInvitationRequest
+) {
   let res = await request({
     url: "/virtual-networks/" + virtualNetworkId + "/invitations",
     method: "POST",
@@ -155,9 +171,13 @@ export async function listInvitationsOfVirtualNetwork(
   return res.data.data;
 }
 
-export async function removeInvitationFromVirtualNetwork(virtualNetworkId: string, invitationId: string) {
+export async function removeInvitationFromVirtualNetwork(
+  virtualNetworkId: string,
+  invitationId: string
+) {
   let res = await request({
-    url: "/virtual-networks/" + virtualNetworkId + "/invitations/" + invitationId,
+    url:
+      "/virtual-networks/" + virtualNetworkId + "/invitations/" + invitationId,
     method: "DELETE",
   });
 

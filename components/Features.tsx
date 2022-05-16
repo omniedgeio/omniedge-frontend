@@ -521,7 +521,7 @@ export function Heros() {
           </Link>
         </Stack>
       </Box>
-      <Download_feature />
+      
     </Box>
   );
 }

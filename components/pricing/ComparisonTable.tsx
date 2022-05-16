@@ -96,19 +96,19 @@ const FeatureDesc: React.FC<{ free?: boolean; pro?: boolean; team?: boolean; ent
     <Tr>
       <Td>{props.children}</Td>
       <Td>
-        <Icon color={free ? "brand.500" : "gray.500"} as={free ? FiCheck : FiX}></Icon>
+        <Icon color={free ? "brand.700" : "gray.300"}  as={free ? FiCheck : FiX}></Icon>
       </Td>
       {/* <Td>
-		  <Icon color={startpro ? "brand.500" : "gray.500"} as={startpro ? FiCheck : FiX}></Icon>
+		  <Icon color={startpro ? "brand.700" : "gray.300"} as={startpro ? FiCheck : FiX}></Icon>
 		</Td> */}
       <Td>
-        <Icon color={pro ? "brand.500" : "gray.500"} as={pro ? FiCheck : FiX}></Icon>
+        <Icon color={pro ? "brand.700" : "gray.300"}  as={pro ? FiCheck : FiX}></Icon>
       </Td>
       <Td>
-        <Icon color={team ? "brand.500" : "gray.500"} as={team ? FiCheck : FiX}></Icon>
+        <Icon color={team ? "brand.700" : "gray.300"}  as={team ? FiCheck : FiX}></Icon>
       </Td>
       <Td>
-        <Icon color={enterprise ? "brand.500" : "gray.500"} as={enterprise ? FiCheck : FiX}></Icon>
+        <Icon color={enterprise ? "brand.700" : "gray.300"}  as={enterprise ? FiCheck : FiX}></Icon>
       </Td>
     </Tr>
   );
@@ -118,7 +118,7 @@ export default function ComparisonTable() {
   const { t } = useTranslation("pricing");
 
   return (
-    <Box px={4} maxW={800} mt={4} mx="auto" border="solid 1px" borderColor="gray.200" borderRadius={6}>
+    <Box px={4} maxW={800} mt={4} mx="auto" border="solid 1px" borderColor="gray.300" borderRadius={4}>
       <TableContainer>
         <Table variant="simple" overflowX="auto">
           <Thead>

@@ -90,7 +90,7 @@
     "setup-desc": "在不同的設備上配置 OmniEdge 隻需要幾分鍾，你可以使用用戶密碼以及安全碼等相關方式激活設備。",
     "maintenanceless": "免維護",
     "maintenanceless-desc": " 放棄需要大量人力勞動的企業網路係統，使用 OmniEdge 您將可以專註於自己擅長的業務。",
-    "featureslisttitle": "OmniEdge PO",
+    "featureslisttitle": "OmniEdge 功能",
     "featureslistsubtitle": " 滿足您需求的解決方案",
     "flvn":"私有虛擬網路",
     "flvn-desc":"私有虛擬網路為您和團隊和信任的其他成員，提供一個虛擬的事務室，大家好像坐在同一個房間裏麵交換設備之間的數據。",
@@ -154,7 +154,7 @@
     "whitelable": "貼牌",
     "specialsupport": "特殊支援",
     "emailsupport": "郵件支援",
-    "permonth": "每月",
+    "permonth": "每月每人",
     "personal": "個人用戶",
     "business": "企業用戶",
     "plans": {
@@ -172,7 +172,7 @@
             "tips": " 通過OmniEdge的流量是由Twofish/AES128/ChaCha20 cipers的加密算法在 P2P MESH 網路進行端到端加密。"
           },
           {
-            "label":" 最多一個私有網路 ",
+            "label":" 最多 1 個私有網路 ",
             "tips": " 私有網路是為你的所有設備和用戶提供的一個私有內部網，和物理局域網類似。。"
           },
           {

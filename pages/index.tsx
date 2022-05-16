@@ -21,7 +21,6 @@ import {Download_feature} from "./download/download_feature";
 import DefaultLayout from "../components/layout/Default";
 import { Seo } from "../components/Seo";
 import { Page } from "../types";
-import {Plans} from "./pricing";
 import {useTranslation} from "react-i18next";
 import {availableLanguages} from "../i18n/i18n";
 

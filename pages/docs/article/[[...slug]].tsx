@@ -1,13 +1,13 @@
 /* eslint-disable react/display-name */
 import {Stack, Flex, Heading, VStack} from "@chakra-ui/react";
-import {Docnavs, Docconent} from '../../components/Document';
+import {Docnavs, Docconent} from '../../../components/Document';
 import matter from 'gray-matter';
 import fs from 'fs';
-import DefaultLayout from "../../components/layout/Default";
+import DefaultLayout from "../../../components/layout/Default";
 import React, {FunctionComponent} from 'react'
-import {ArticleInfo} from '../../components/interfaces/article'
-import {Seo} from "../../components/Seo";
-import {getManifestConfig, PageMapItem, pageMapItemToMap} from "../../lib/helpers/docs";
+import {ArticleInfo} from '../../../components/interfaces/article'
+import {Seo} from '../../../components/Seo';
+import {getManifestConfig, PageMapItem, pageMapItemToMap} from "../../../lib/helpers/docs";
 
 interface IProps {
   rootPage: PageMapItem
@@ -57,11 +57,9 @@ export async function getStaticProps({...ctx}) {
   const rootPage = getManifestConfig(manifest)
   const map: Map<string, PageMapItem> = new Map<string, PageMapItem>()
   pageMapItemToMap(rootPage, map)
-  if (!rootPage || rootPage.children?.length == 0) {
-    return
-  }
-  // @ts-ignore
-  const currentPage = rootPage.children[0]
+  const {slug} = ctx.params;
+  const realSlug = "/" + slug.join("/")
+  const currentPage = map.get(realSlug);
   if (!currentPage) {
     return
   }
@@ -73,6 +71,7 @@ export async function getStaticProps({...ctx}) {
   const article = {
     meta: {
       ...info.data,
+      ...slug
     },
     content: info.content
   }
@@ -84,5 +83,35 @@ export async function getStaticProps({...ctx}) {
     }
   }
 }
+
+export async function getStaticPaths() {
+  const manifest = fs.readFileSync("markdowndocs/Docs/manifest.json").toString()
+  const rootPage = getManifestConfig(manifest)
+  const map: Map<string, PageMapItem> = new Map<string, PageMapItem>()
+  pageMapItemToMap(rootPage, map)
+  const paths: any[] = []
+
+  map.forEach((value: PageMapItem, key: string) => {
+      if (key.startsWith("/")) {
+        paths.push({
+          params: {
+            slug: key.substr(1).split("/")
+          }
+        })
+      } else if (key != "") {
+        paths.push({
+          params: {
+            slug: key.split("/")
+          }
+        })
+      }
+    }
+  );
+  return {
+    paths: paths,
+    fallback: false,
+  }
+}
+
 
 export default DocLayout;

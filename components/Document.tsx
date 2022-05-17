@@ -60,7 +60,7 @@ const SidebarInner: FunctionComponent<NavProps> = ({root}) => {
       <div>
         <List spacing={3}>
           <ListItem key={root.name}>
-            <Link key={root.name} href={`/docs/article/${root.route}`} fontSize="md">
+            <Link key={root.name} href={`/docs/article${root.route}`} fontSize="md">
               {root.name}
             </Link>
           </ListItem>

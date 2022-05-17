@@ -69,7 +69,7 @@ const SidebarInner: FunctionComponent<NavProps> = ({root}) => {
               root.children.map((item, idx) => (
                   (!item.children ? (
                     <ListItem key={item.name}>
-                      <Link key={item.name} href={`/docs/article/${item.route}`} color="gray.500">
+                      <Link key={item.name} href={`/docs/article${item.route}`} color="gray.500">
                         {item.name}
                       </Link>
                     </ListItem>

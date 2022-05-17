@@ -1,7 +1,7 @@
 ---
-title: Install
-description: Install OmniEdge on Windows, macOS, iOS, Linux, Android and more.
-route: Doc / Install
+title: Installing OmniEdge on Synology
+description: OmniEdge Synology is Compatible with ArmV7 and Arm64V8, connect to private network.
+route: Doc / Install / Synology
 index: 3
 thumbnail: /assets/OmniEdgeall0.5.png
 ---

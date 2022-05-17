@@ -1,6 +1,6 @@
 ---
 title: Install
-description: Install OmniEdge on Windows, macOS, iOS, Linux, Android and more.
+description: Install OmniEdge on Windows, macOS, iOS, Linux, Android and more, connect to private network.
 route: Doc / Install
 index: 3
 thumbnail: /assets/OmniEdgeall0.5.png

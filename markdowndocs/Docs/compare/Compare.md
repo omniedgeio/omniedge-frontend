@@ -2,7 +2,7 @@
 title: Compare
 route: Doc / Compare
 index: 5
-description: OmniEdge doesn't need any central Sever, which creates a peer-to-peer tunnel between two nodes, builds a virtual network for all the devices which connect to each other. 
+description: What is the difference of OmniEdge 
 thumbnail: /assets/OmniEdge-VPN.svg
 ---
 

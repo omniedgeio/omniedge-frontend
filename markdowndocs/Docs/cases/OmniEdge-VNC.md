@@ -1,8 +1,8 @@
 ---
-title: Cases
-route: Doc / Cases 
-description: Use cases with OmniEdge, Remote connect windows without exposing public IP with Omniedge,OmniEdge with Nvidia JETSON Project
-thumbnail: /assets/docs/case-aws-windows-2.png
+title: Display and control macOS, Linux and Windows with Omniedge 
+route: Doc / Cases / VNC
+description: Use cases with OmniEdge, Remote connect windows VNC
+thumbnail: /assets/docs/case-omniedge-vnc.png
 index: 4
 ---
 
@@ -83,3 +83,6 @@ You can invite your friend to your virtual network, and remote support and contr
 
 ![](/assets/docs/case-Omniedge-Invite.png)
 
+-----
+
+If you have more questions, feel free to [contact us](mailto:support@omniedge.io).

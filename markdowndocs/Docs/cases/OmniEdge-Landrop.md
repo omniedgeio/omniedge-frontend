@@ -1,8 +1,8 @@
 ---
-title: Cases
-route: Doc / Cases 
-description: Use cases with OmniEdge, Remote connect windows without exposing public IP with Omniedge,OmniEdge with Nvidia JETSON Project
-thumbnail: /assets/docs/case-aws-windows-2.png
+title: Air Drop Any Files between MacOS, Windows, Routers, Linux and Android with Omniedge from anywhere
+route: Doc / Cases / LanDrop
+description: Use cases with OmniEdge, Drop any files in your private network without devices limitation
+thumbnail: /assets/docs/Case-OmniEdge-LanDrop.jpg
 index: 4
 ---
 
@@ -171,3 +171,7 @@ Open LANDrop on Android and macOS, you will see your Android Phone from your mac
 ![](/assets/docs/Case-OmniEdge-LanDrop.jpg)
 
 Enjoy !!
+
+-----
+
+If you have more questions, feel free to [contact us](mailto:support@omniedge.io).

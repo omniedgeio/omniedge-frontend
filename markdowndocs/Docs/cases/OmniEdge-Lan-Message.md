@@ -1,8 +1,8 @@
 ---
-title: Cases
-route: Doc / Cases 
-description: Use cases with OmniEdge, Remote connect windows without exposing public IP with Omniedge,OmniEdge with Nvidia JETSON Project
-thumbnail: /assets/docs/case-aws-windows-2.png
+title: Talk to your family and share photos in a LAN on the internet
+route: Doc / Cases / Lan Messenger
+description: Use cases with OmniEdge, private messenger in your private network
+thumbnail: /assets/docs/case-lanmessenger-omniedge.jpeg
 index: 4
 ---
 

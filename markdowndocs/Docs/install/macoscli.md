@@ -1,13 +1,13 @@
 ---
-title: Install
-description: Install OmniEdge on Windows, macOS, iOS, Linux, Android and more.
-route: Doc / Install
+title: Install Omniedge on MacOS
+description: OmniEdge MacOS Cli is compatible with intel Macbook, macOS 10 or later, connect to private network.
+route: Doc / Install / MacOS Cli
 index: 3
 thumbnail: /assets/OmniEdgeall0.5.png
 ---
 # Installing on MacOS
 
-OmniEdge MacOS Cli is compatible with intel Macbook, macOS 10 or later Last update: Version 0.2.3, April,25, 2022.
+OmniEdge MacOS Cli is compatible with intel Macbook, macOS 10 or later. Last update: Version 0.2.3, April,25, 2022.
 
 *To use OmniEdge on MacOS, please instal Tun/Tap Driver first*
 

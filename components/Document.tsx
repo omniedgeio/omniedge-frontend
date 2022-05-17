@@ -17,6 +17,7 @@ import Markdown from "markdown-to-jsx";
 import {FunctionComponent, useEffect, useState} from "react";
 import { PageMapItem } from "../lib/helpers/docs";
 import {ArticleInfo} from "./interfaces/article";
+import { Seo } from "./Seo";
 
 interface IProps {
   article: ArticleInfo;
@@ -42,7 +43,7 @@ interface NavProps {
 export const Docnavs: FunctionComponent<NavProps> = ({root}) => {
   return (
     <>
-      <Heading fontSize="md">{root.name}</Heading>
+      <Heading fontSize="md"> {root.name}</Heading>
       <List spacing={3} style={{paddingLeft: "5px"}}>
         {root.children ? (
           root.children.map((item, idx) => (
@@ -59,11 +60,11 @@ const SidebarInner: FunctionComponent<NavProps> = ({root}) => {
       <div>
         <List spacing={3}>
           <ListItem key={root.name}>
-            <Link key={root.name} href={`/docs/article/${root.route}`} color="gray.500">
+            <Link key={root.name} href={`/docs/article/${root.route}`} fontSize="md">
               {root.name}
             </Link>
           </ListItem>
-          <List style={{paddingLeft: "10px"}}>
+          <List style={{paddingLeft: "15px"}} fontSize="sm">
             {root.children ? (
               root.children.map((item, idx) => (
                   (!item.children ? (
@@ -100,9 +101,13 @@ export const Docconent: FunctionComponent<IProps> = ({article}) => {
 
   return (
     <>
+    <Seo title={article.meta.title} description={article.meta.description} />
       <Stack spacing="8" direction={["column", "row"]} alignItems="flex-start">
         <VStack spacing="4">
           <Box maxW="800px" className="markdown" px={{base: 0, md: 10}}>
+          <Heading fontSize="sm" color="gray.500">{article.meta.route}</Heading>    
+          <hr></hr>
+          <br></br>
             <Markdown>{article.content}</Markdown>
           </Box>
         </VStack>
@@ -114,12 +119,12 @@ export const Docconent: FunctionComponent<IProps> = ({article}) => {
           borderBottomColor="gray.100"
         >
           <VStack maxW="200px" spacing="2" alignItems="left">
-            <Text color="gray.500" fontSize="md">
+            <Text color="gray.500" fontSize="sm">
               On This Page
             </Text>
             {data.map((x) => (
-              <Link href={"#" + x.id} key={x.id}>
-                <Text color="gray.500" fontSize="sm">
+              <Link style={{paddingLeft: "10px"}} href={"#" + x.id} key={x.id}>
+                <Text color="gray.500" fontSize="xs">
                   {" "}
                   {x.textContent}
                 </Text>

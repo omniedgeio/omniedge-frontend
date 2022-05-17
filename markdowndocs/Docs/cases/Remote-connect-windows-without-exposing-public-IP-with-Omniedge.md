@@ -1,8 +1,8 @@
 ---
-title: Cases
+title: Remote connect windows without exposing public IP with Omniedge
 route: Doc / Cases 
-description: Use cases with OmniEdge, Remote connect windows without exposing public IP with Omniedge,OmniEdge with Nvidia JETSON Project
-thumbnail: /assets/docs/case-aws-windows-2.png
+description: Use cases with OmniEdge, Remote connect windows without exposing public IP, and connect them to your private network
+thumbnail: /assets/docs/case-aws-windows-1.png
 index: 4
 ---
 
@@ -46,4 +46,6 @@ We recommend [TightVNC](https://www.tightvnc.com), especially you have requireme
 
 Enjoy!! 
 
---------
+-----
+
+If you have more questions, feel free to [contact us](mailto:support@omniedge.io).

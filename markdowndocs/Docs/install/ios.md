@@ -1,7 +1,7 @@
 ---
-title: Install
-description: Install OmniEdge on Windows, macOS, iOS, Linux, Android and more.
-route: Doc / Install
+title: Installing on iOS
+description: Install OmniEdge on iOS, connect to private network.
+route: Doc / Install / iOS
 index: 3
 thumbnail: /assets/OmniEdgeall0.5.png
 ---

@@ -1,7 +1,7 @@
 ---
-title: Install
-description: Install OmniEdge on Windows, macOS, iOS, Linux, Android and more.
-route: Doc / Install
+title: Install OmniEdge Linux Cli
+description: OmniEdge Linux Cli is Compatible with linux for AMD64,Apple M1, Intel X86, ArmV7 and Arm64V8, connect to private network.
+route: Doc / Install / Linux Cli
 index: 3
 thumbnail: /assets/OmniEdgeall0.5.png
 ---

@@ -1,7 +1,7 @@
 ---
-title: Install
-description: Install OmniEdge on Windows, macOS, iOS, Linux, Android and more.
-route: Doc / Install
+title: Customize Supernode Installation
+description: OmniEdge offers customize supernode, You can setup your own Supernode server to increase security and speed for your Private Network.
+route: Docs / Install / Customize Supernode
 index: 3
 thumbnail: /assets/OmniEdgeall0.5.png
 ---

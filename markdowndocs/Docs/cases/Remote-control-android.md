@@ -1,8 +1,8 @@
 ---
-title: Cases
+title: Display and control your Android device with Omniedge from anywhere on MacOS, Windows and Linux
 route: Doc / Cases 
-description: Use cases with OmniEdge, Remote connect windows without exposing public IP with Omniedge,OmniEdge with Nvidia JETSON Project
-thumbnail: /assets/docs/case-aws-windows-2.png
+description: Connect all android devices in your private network, and control remotely
+thumbnail: /assets/docs/Scrply-OmniEdge.jpg
 index: 4
 ---
 

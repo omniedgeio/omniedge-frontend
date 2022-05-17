@@ -1,7 +1,7 @@
 ---
-title: Install
-description: Install OmniEdge on Windows, macOS, iOS, Linux, Android and more.
-route: Doc / Install
+title: Install Omniedge on Android
+description: OmniEdge Android is compatible with Android 6 or later mobile phone or TV, connect to private network.
+route: Docs / Install / Android
 index: 3
 thumbnail: /assets/OmniEdgeall0.5.png
 ---

@@ -5,17 +5,12 @@
   "children": [
     {
       "name": "Dashboard",
-      "route": "Admin",
+      "route": "admin",
       "path": "Docs/Admin.md"
     },
     {
-      "name": "Architecture",
-      "route": "Architecture",
-      "path": "Docs/Architecture&Performance.md"
-    },
-    {
       "name": "Install",
-      "route": "Install",
+      "route": "install",
       "path": "Docs/install/Install.md",
       "children": [
         {
@@ -121,9 +116,14 @@
       ]
     },
     {
-      "name": "Others",
-      "route": "Others",
-      "path": "Docs/Others.md"
+      "name": "Architecture",
+      "route": "architecture",
+      "path": "Docs/Architecture.md"
+    },
+    {
+      "name": "Performance",
+      "route": "performance",
+      "path": "Docs/Performance.md"
     },
     {
       "name": "Release Notes",
@@ -134,6 +134,11 @@
       "name": "Open Source",
       "route": "Opensource",
       "path": "Docs/Opensource.md"
+    },
+    {
+      "name": "Others",
+      "route": "Others",
+      "path": "Docs/Others.md"
     }
   ]
 }

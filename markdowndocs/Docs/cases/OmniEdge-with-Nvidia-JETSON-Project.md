@@ -1,7 +1,7 @@
 ---
-title: Cases
-route: Doc / Cases 
-description: Use cases with OmniEdge, Remote connect windows without exposing public IP with Omniedge,OmniEdge with Nvidia JETSON Project
+title: OmniEdge with Nvidia JETSON Project
+route: Doc / Cases / Nvidia Jetson
+description: Connect your AI robot into your own private network
 thumbnail: /assets/docs/case-aws-windows-2.png
 index: 4
 ---
@@ -83,3 +83,6 @@ with a speicified virtual network.
 ## Step 6 
 Now your laptop and your Jetson have joined in the same virtual network, you can use `ssh` to connect. 
 
+-----
+
+If you have more questions, feel free to [contact us](mailto:support@omniedge.io).

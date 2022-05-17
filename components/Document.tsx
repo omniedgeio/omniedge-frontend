@@ -7,14 +7,16 @@ import {
   Heading,
   Image,
   Link,
+  List, ListItem,
   Stack,
   Text,
   useColorModeValue,
   VStack,
 } from "@chakra-ui/react";
 import Markdown from "markdown-to-jsx";
-import { FunctionComponent, useEffect, useState } from "react";
-import { ArticleInfo } from "./interfaces/article";
+import {FunctionComponent, useEffect, useState} from "react";
+import { PageMapItem } from "../lib/helpers/docs";
+import {ArticleInfo} from "./interfaces/article";
 
 interface IProps {
   article: ArticleInfo;
@@ -24,7 +26,7 @@ interface IPropss {
   articles: ArticleInfo[];
 }
 
-export const Docnav: FunctionComponent<IProps> = ({ article }) => {
+export const Docnav: FunctionComponent<IProps> = ({article}) => {
   return (
     <Link href={`/docs/article/${article.slug}`} color="gray.500" fontWeight="medium">
       {article.title}
@@ -32,25 +34,59 @@ export const Docnav: FunctionComponent<IProps> = ({ article }) => {
   );
 };
 
-export const Docnavs: FunctionComponent<IPropss> = ({ articles }) => {
+interface NavProps {
+  root: PageMapItem
+}
+
+
+export const Docnavs: FunctionComponent<NavProps> = ({root}) => {
   return (
     <>
-      {articles
-        .sort((a, b) => {
-          return a.index - b.index;
-        })
-        .map((article, i) => (
-          <Link key={i} href={`/docs/article/${article.slug}`} color="gray.500" fontWeight="medium">
-            {article.title}
-          </Link>
-        ))}
+      <Heading fontSize="md">{root.name}</Heading>
+      <List spacing={3} style={{paddingLeft: "5px"}}>
+        {root.children ? (
+          root.children.map((item, idx) => (
+            (<SidebarInner key={item.name} root={item}/>)
+          ))) : (<></>)}
+      </List>
     </>
   );
 };
 
+const SidebarInner: FunctionComponent<NavProps> = ({root}) => {
+  return (
+    <>
+      <div>
+        <List spacing={3}>
+          <ListItem key={root.name}>
+            <Link key={root.name} href={`/docs/article/${root.route}`} color="gray.500">
+              {root.name}
+            </Link>
+          </ListItem>
+          <List style={{paddingLeft: "10px"}}>
+            {root.children ? (
+              root.children.map((item, idx) => (
+                  (!item.children ? (
+                    <ListItem key={item.name}>
+                      <Link key={item.name} href={`/docs/article/${item.route}`} color="gray.500">
+                        {item.name}
+                      </Link>
+                    </ListItem>
+                  ) : (<SidebarInner root={item}></SidebarInner>))
+                )
+              )) : (
+              <></>)}
+          </List>
+        </List>
+      </div>
+    </>
+  );
+};
+
+
 const getHrefFromText = (text: string) => text.toLowerCase().replace(/[^a-z]+/gi, "-");
 
-export const Docconent: FunctionComponent<IProps> = ({ article }) => {
+export const Docconent: FunctionComponent<IProps> = ({article}) => {
   let [data, setContent] = useState<Element[]>([]);
   useEffect(() => {
     let data = [];
@@ -66,7 +102,7 @@ export const Docconent: FunctionComponent<IProps> = ({ article }) => {
     <>
       <Stack spacing="8" direction={["column", "row"]} alignItems="flex-start">
         <VStack spacing="4">
-          <Box maxW="800px" className="markdown" px={{ base: 0, md: 10 }}>
+          <Box maxW="800px" className="markdown" px={{base: 0, md: 10}}>
             <Markdown>{article.content}</Markdown>
           </Box>
         </VStack>
@@ -96,7 +132,7 @@ export const Docconent: FunctionComponent<IProps> = ({ article }) => {
   );
 };
 
-export const Postnav: FunctionComponent<IProps> = ({ article }) => {
+export const Postnav: FunctionComponent<IProps> = ({article}) => {
   return (
     <Link href={`/blog/posts/${article.slug}`} color="gray.500" fontWeight="medium">
       {article.title}
@@ -104,7 +140,7 @@ export const Postnav: FunctionComponent<IProps> = ({ article }) => {
   );
 };
 
-export const Postnavs: FunctionComponent<IPropss> = ({ articles }) => {
+export const Postnavs: FunctionComponent<IPropss> = ({articles}) => {
   return (
     <>
       {articles.sort().map((article, i) => (
@@ -119,17 +155,18 @@ export const Postnavs: FunctionComponent<IPropss> = ({ articles }) => {
 interface props {
   info: string;
 }
-export const Markdowndoc: FunctionComponent<props> = ({ info }) => {
+
+export const Markdowndoc: FunctionComponent<props> = ({info}) => {
   return (
     <>
-      <Box maxW="800px" className="markdown" px={{ base: 0, md: 10 }}>
+      <Box maxW="800px" className="markdown" px={{base: 0, md: 10}}>
         <Markdown>{info}</Markdown>
       </Box>
     </>
   );
 };
 
-export const Postconent: FunctionComponent<IProps> = ({ article }) => {
+export const Postconent: FunctionComponent<IProps> = ({article}) => {
   let [data, setContent] = useState<Element[]>([]);
   useEffect(() => {
     let data = [];
@@ -158,17 +195,17 @@ export const Postconent: FunctionComponent<IProps> = ({ article }) => {
         <br></br>
         <Center>
           <Stack direction={"row"} spacing={1} fontSize={"sm"}>
-            <Avatar size="xs" src={article.meta.avatar} name={article.meta.author} />
+            <Avatar size="xs" src={article.meta.avatar} name={article.meta.author}/>
             <Text fontWeight={600}>{article.meta.author}</Text>
             <Text color={"gray.500"}>{article.meta.date}</Text>
           </Stack>
         </Center>
         <br></br>
-        <Box maxW="800px" className="markdown" px={{ base: 0, md: 10 }}>
+        <Box maxW="800px" className="markdown" px={{base: 0, md: 10}}>
           <Markdown>{article.content}</Markdown>
         </Box>
       </Box>
-      <VStack flexShrink={0} w="250px" display={{ base: "none", lg: "flex" }} alignItems="start" pl={2}>
+      <VStack flexShrink={0} w="250px" display={{base: "none", lg: "flex"}} alignItems="start" pl={2}>
         <Text color="gray.500" fontSize="md">
           On This Page
         </Text>
@@ -185,10 +222,10 @@ export const Postconent: FunctionComponent<IProps> = ({ article }) => {
   );
 };
 
-export const Postcard: FunctionComponent<IProps> = ({ article }) => {
+export const Postcard: FunctionComponent<IProps> = ({article}) => {
   return (
     <Box mx="auto" rounded="lg" shadow="md" bg={useColorModeValue("white", "gray.800")} maxW="3xl">
-      <Image roundedTop="lg" w="full" h={64} fit="cover" src={article.thumbnail} alt={article.description} />
+      <Image roundedTop="lg" w="full" h={64} fit="cover" src={article.thumbnail} alt={article.description}/>
 
       <Box p={6}>
         <Box>
@@ -203,7 +240,7 @@ export const Postcard: FunctionComponent<IProps> = ({ article }) => {
             fontWeight="bold"
             fontSize="2xl"
             mt={2}
-            _hover={{ color: "gray.600", textDecor: "underline" }}
+            _hover={{color: "gray.600", textDecor: "underline"}}
             href={`/blog/posts/${article.slug}`}
           >
             {article.title}
@@ -216,7 +253,7 @@ export const Postcard: FunctionComponent<IProps> = ({ article }) => {
         <Box mt={4}>
           <Flex alignItems="center">
             <Flex alignItems="center">
-              <Image h={10} fit="cover" rounded="full" src={article.avatar} alt="Avatar" width="auto" />
+              <Image h={10} fit="cover" rounded="full" src={article.avatar} alt="Avatar" width="auto"/>
               <Link mx={2} fontWeight="bold" color={useColorModeValue("gray.700", "gray.200")}>
                 {article.author}
               </Link>

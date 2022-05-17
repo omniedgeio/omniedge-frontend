@@ -1,0 +1,54 @@
+{
+  "name": "Docs",
+  "route": "",
+  "path": "",
+  "children": [
+    {
+      "name": "Dashboard",
+      "route": "Admin",
+      "path": "Docs/Admin.md"
+    },
+    {
+      "name": "Architecture&Performance",
+      "route": "Architecture&Performance",
+      "path": "Docs/Architecture&Performance.md"
+    },
+    {
+      "name": "Install",
+      "route": "Install",
+      "path": "Docs/Install.md"
+    },
+    {
+      "name": "Cases",
+      "route": "Cases",
+      "path": "Docs/Case.md",
+      "children": [
+        {
+          "name": "admin",
+          "route": "route",
+          "path": "Docs/Admin.md"
+        }
+      ]
+    },
+    {
+      "name": "Compare",
+      "route": "Compare",
+      "path": "Docs/Compare.md"
+    },
+    {
+      "name": "Others",
+      "route": "Others",
+      "path": "Docs/Others.md"
+    },
+    {
+      "name": "Release Notes",
+      "route": "Release-Notes",
+      "path": "Docs/Release-Note.md"
+    },
+    {
+      "name": "Open Source",
+      "route": "Opensource",
+      "path": "Docs/Opensource.md"
+    }
+  ]
+}

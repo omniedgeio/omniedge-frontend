@@ -9,31 +9,116 @@
       "path": "Docs/Admin.md"
     },
     {
-      "name": "Architecture&Performance",
-      "route": "Architecture&Performance",
+      "name": "Architecture",
+      "route": "Architecture",
       "path": "Docs/Architecture&Performance.md"
     },
     {
       "name": "Install",
       "route": "Install",
-      "path": "Docs/Install.md"
-    },
-    {
-      "name": "Cases",
-      "route": "Cases",
-      "path": "Docs/Case.md",
+      "path": "Docs/install/Install.md",
       "children": [
         {
-          "name": "admin",
-          "route": "route",
-          "path": "Docs/Admin.md"
+          "name": "windows",
+          "route": "windows",
+          "path": "Docs/install/windows.md"
+        },
+        {
+          "name": "android",
+          "route": "android",
+          "path": "Docs/install/android.md"
+        },
+        {
+          "name": "linux cli",
+          "route": "cli",
+          "path": "Docs/install/linux-cli.md"
+        },
+        {
+          "name": "macOS cli",
+          "route": "macoscli",
+          "path": "Docs/install/macoscli.md"
+        },        
+        {
+          "name": "synology",
+          "route": "synology",
+          "path": "Docs/install/synology.md"
+        },
+        {
+          "name": "ios",
+          "route": "ios",
+          "path": "Docs/install/ios.md"
+        },
+        {
+          "name": "customize supernode",
+          "route": "customize-supernode",
+          "path": "Docs/install/customize-supernode.md"
+        } 
+      ]
+    },
+    {
+      "name": "cases",
+      "route": "cases",
+      "path": "Docs/cases/Case.md",
+      "children": [
+        {
+          "name": "RDP",
+          "route": "rdp",
+          "path": "Docs/cases/Remote-connect-windows-without-exposing-public-IP-with-Omniedge.md"
+        },
+        {
+          "name": "VNC",
+          "route": "vnc",
+          "path": "Docs/cases/OmniEdge-VNC.md"
+        },
+        {
+          "name": "Nvidia Jeston",
+          "route": "jeston",
+          "path": "Docs/cases/OmniEdge-with-Nvidia-JETSON-Project.md"
+        },
+        {
+          "name": "Android Control",
+          "route": "android-remote",
+          "path": "Docs/cases/Remote-control-android.md"
+        },
+        {
+          "name": "Lan Messenger",
+          "route": "lan-messenger",
+          "path": "Docs/cases/OmniEdge-Lan-Message.md"
+        },
+        {
+          "name": "LAN Drop",
+          "route": "landrop",
+          "path": "Docs/cases/OmniEdge-Landrop.md"
         }
+
       ]
     },
     {
       "name": "Compare",
-      "route": "Compare",
-      "path": "Docs/Compare.md"
+      "route": "compare",
+      "path": "Docs/compare/Compare.md",
+      "children": [
+        {
+          "name": "VPN Vs. OmniEdge",
+          "route": "vpn-vs-omniedge",
+          "path": "Docs/compare/VPN-vs-OmniEdge.md"
+        },
+        {
+          "name": "frp/ngrok Vs. OmniEdge",
+          "route": "frp-ngrok-vs-omniedge",
+          "path": "Docs/compare/frp-ngrok-vs-OmniEdge.md"
+        },
+        {
+          "name": "ZeroTier Vs. OmniEdge",
+          "route": "zerotier-vs-omniedge",
+          "path": "Docs/compare/zerotier-OmniEdge.md"
+        },
+        {
+          "name": "n2n Vs. OmniEdge",
+          "route": "n2n-vs-omniedge",
+          "path": "Docs/compare/n2n-OmniEdge.md"
+        }
+      ]
     },
     {
       "name": "Others",

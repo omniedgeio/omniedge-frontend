@@ -1,7 +1,7 @@
 ---
 title: Install OmniEdge on Windows
 description: Install OmniEdge on Windows 7, 10, 11,connect to private network.
-route: Docs/Install/windows
+route: Docs / Install / windows
 index: 3
 thumbnail: /assets/OmniEdgeall0.5.png
 ---

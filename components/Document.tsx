@@ -12,6 +12,11 @@ import {
   Text,
   useColorModeValue,
   VStack,
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon,  
 } from "@chakra-ui/react";
 import Markdown from "markdown-to-jsx";
 import {FunctionComponent, useEffect, useState} from "react";
@@ -57,14 +62,24 @@ export const Docnavs: FunctionComponent<NavProps> = ({root}) => {
 const SidebarInner: FunctionComponent<NavProps> = ({root}) => {
   return (
     <>
-      <div>
-        <List spacing={3}>
-          <ListItem key={root.name}>
+    <Accordion allowMultiple>
+  <AccordionItem>
+    {({ isExpanded }) => (
+      <>
+      { root.children ? (
+        <>
+        <List style={{paddingLeft: "15px"}}>
+          <AccordionButton>  
+            {isExpanded ? (
+              <Text fontSize="2xl">-</Text>
+            ) : (
+              <Text fontSize="2xl">+</Text>
+            )}
             <Link key={root.name} href={`/docs/article${root.route}`} fontSize="md">
               {root.name}
             </Link>
-          </ListItem>
-          <List style={{paddingLeft: "15px"}} fontSize="sm">
+          </AccordionButton>
+                  <AccordionPanel pb={4}>
             {root.children ? (
               root.children.map((item, idx) => (
                   (!item.children ? (
@@ -77,9 +92,22 @@ const SidebarInner: FunctionComponent<NavProps> = ({root}) => {
                 )
               )) : (
               <></>)}
-          </List>
+        </AccordionPanel>
         </List>
-      </div>
+        </>
+      ):(
+        <List style={{paddingLeft: "15px"}} fontSize="sm">
+      <Link key={root.name} href={`/docs/article${root.route}`} fontSize="md">
+      {root.name}
+    </Link>
+    </List>
+    )
+            }
+        
+      </>
+    )}
+  </AccordionItem>
+</Accordion>
     </>
   );
 };

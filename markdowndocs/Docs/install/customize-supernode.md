@@ -3,7 +3,7 @@ title: Customize Supernode Installation
 description: OmniEdge offers customize supernode, You can setup your own Supernode server to increase security and speed for your Private Network.
 route: Docs / Install / Customize Supernode
 index: 3
-thumbnail: /assets/OmniEdgeall0.5.png
+thumbnail: /assets/docs/OmniEdge-CustomizeAuthServer.png
 ---
 
 # Customize Supernode Installation
@@ -37,7 +37,6 @@ Login in your OmniEdge account, and fill your server IP and port in the dashboar
 
 ![](/assets/docs/OmniEdge-CustomizeAuthServer.png)
 
-![](/assets/docs/Setup-Customize-Supernode-1080p.gif)
 
 
 -----

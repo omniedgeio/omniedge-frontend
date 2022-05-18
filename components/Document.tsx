@@ -60,7 +60,7 @@ const SidebarInner: FunctionComponent<NavProps> = ({root}) => {
       <div>
         <List spacing={3}>
           <ListItem key={root.name}>
-            <Link key={root.name} href={`/docs/article/${root.route}`} fontSize="md">
+            <Link key={root.name} href={`/docs/article${root.route}`} fontSize="md">
               {root.name}
             </Link>
           </ListItem>
@@ -69,7 +69,7 @@ const SidebarInner: FunctionComponent<NavProps> = ({root}) => {
               root.children.map((item, idx) => (
                   (!item.children ? (
                     <ListItem key={item.name}>
-                      <Link key={item.name} href={`/docs/article/${item.route}`} color="gray.500">
+                      <Link key={item.name} href={`/docs/article${item.route}`} color="gray.500">
                         {item.name}
                       </Link>
                     </ListItem>

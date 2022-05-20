@@ -56,6 +56,11 @@
       "path": "Docs/cases/Case.md",
       "children": [
         {
+          "name": "Hybrid Cloud",
+          "route": "hybrid-cloud",
+          "path": "Docs/cases/hybrid-cloud.md"
+        },
+        {
           "name": "RDP",
           "route": "rdp",
           "path": "Docs/cases/Remote-connect-windows-without-exposing-public-IP-with-Omniedge.md"

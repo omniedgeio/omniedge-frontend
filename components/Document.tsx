@@ -101,7 +101,7 @@ export const Docconent: FunctionComponent<IProps> = ({article}) => {
 
   return (
     <>
-    <Seo title={article.meta.title} description={article.meta.description} />
+    <Seo title={article.meta.title} description={article.meta.description} image={article.meta.thumbnail}/>
       <Stack spacing="8" direction={["column", "row"]} alignItems="flex-start">
         <VStack spacing="4">
           <Box maxW="800px" className="markdown" px={{base: 0, md: 10}}>

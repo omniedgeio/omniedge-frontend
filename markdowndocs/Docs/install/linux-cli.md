@@ -12,7 +12,7 @@ OmniEdge Linux Cli is Compatible with linux for AMD64,Apple M1, Intel X86, ArmV7
 
 + Sign up your account: [Sign up](https://omniedge.io/register)
 
-+ Download and install mniEdge cli by running the following command:
++ Download and install OmniEdge cli by running the following command:
 
 ``` bash
 curl https://omniedge.io/install/omniedge-install.sh | bash

@@ -1,9 +1,9 @@
-This is OmniEdge Fronent, including Homepage, Pricing, Download, Documentation, Blog, and Dashboard unit.
+This is OmniEdge Frontend, including Homepage, Pricing, Download, Documentation, Blog, and Dashboard unit.
 
 ## Documentation
 The docs are located in `markdowndocs/doc ` with specified markdown format, the system will parse them automatically.
 
-Tempate docs:
+Template docs:
 
 ```markdown
 ---
@@ -20,7 +20,7 @@ Doc content
 
 The blog posts are located in `markdowndocs/posts ` with specified markdown format.
 
-Tempate posts:
+Template posts:
 
 ```markdown
 ---
@@ -51,7 +51,7 @@ npx next build
 
 - [ ] Theme Design
 - [ ] Paginate for posts
-- [ ] Parse sub folders for docs
+- [X] Parse sub folders for docs
 - [X] Download Page
 - [X] Contact Us Form
 - [X] Features comparation and FAQ for Pricing Page

@@ -14,13 +14,13 @@ Hybrid cloud is a mixed computing cloud service. It is made of on-premises datac
 
 **AWS**: [A hybrid cloud](https://aws.amazon.com/hybrid/) is a mixture among the cloud, on premises, and at the edge.
 
-**Microsofe Azure**:  [A hybrid cloud—sometimes](https://azure.microsoft.com/en-us/overview/what-is-hybrid-cloud-computing/) called a cloud hybrid—is a computing environment that combines an on-premises datacenter (also called a private cloud) with a public cloud, allowing data and applications to be shared between them. Some people define hybrid cloud to include “multicloud” configurations where an organization uses more than one public cloud in addition to their on-premises datacenter.
+**Microsoft Azure**:  [A hybrid cloud—sometimes](https://azure.microsoft.com/en-us/overview/what-is-hybrid-cloud-computing/) called a cloud hybrid—is a computing environment that combines an on-premises datacenter (also called a private cloud) with a public cloud, allowing data and applications to be shared between them. Some people define hybrid cloud to include “multicloud” configurations where an organization uses more than one public cloud in addition to their on-premises datacenter.
 
 **Google Cloud**: [A hybrid cloud](https://cloud.google.com/learn/what-is-hybrid-cloud) is one in which applications are running in a combination of different environments. Hybrid cloud computing approaches are widespread because almost no one today relies entirely on the public cloud. 
 
 **IBM**: [Hybrid cloud](https://www.ibm.com/cloud/learn/hybrid-cloud) combines and unifies public cloud, private cloud and on-premises infrastructure to create a single, flexible, cost-optimal IT infrastructure.
 
-## What is the benifit to use hybrid cloud ? 
+## benefit 
 
 The most attractive to use hybrid cloud is the great ROI, nearly [76% of Companies are Adopting Multicloud and Hybrid Cloud Approaches](https://www.oracle.com/cloud/oracle-451-research-advisory/) according to Oracle. Besides this, there are benefits like [Effective application governance](https://cloud.google.com/learn/what-is-hybrid-cloud#section-3), Improved performance and reduced latency, Flexible operations. 
 

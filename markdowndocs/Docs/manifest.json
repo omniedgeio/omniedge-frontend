@@ -47,7 +47,12 @@
           "name": "customize supernode",
           "route": "customize-supernode",
           "path": "Docs/install/customize-supernode.md"
-        } 
+        },
+        {
+          "name": "run as a service",
+          "route": "autostart-omniedge",
+          "path": "Docs/install/run-as-a-service.md"
+        }  
       ]
     },
     {

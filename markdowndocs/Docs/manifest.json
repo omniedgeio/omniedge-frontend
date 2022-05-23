@@ -104,22 +104,27 @@
       "path": "Docs/compare/Compare.md",
       "children": [
         {
-          "name": "VPN Vs. OmniEdge",
+          "name": "VPN",
           "route": "vpn-vs-omniedge",
           "path": "Docs/compare/VPN-vs-OmniEdge.md"
         },
         {
-          "name": "frp/ngrok Vs. OmniEdge",
+          "name": "ExpressVPN",
+          "route": "expressvpn-vs-omniedge",
+          "path": "Docs/compare/expressvpn-vs-omniedge.md"
+        },
+        {
+          "name": "frp/ngrok",
           "route": "frp-ngrok-vs-omniedge",
           "path": "Docs/compare/frp-ngrok-vs-OmniEdge.md"
         },
         {
-          "name": "ZeroTier Vs. OmniEdge",
+          "name": "ZeroTier",
           "route": "zerotier-vs-omniedge",
           "path": "Docs/compare/zerotier-OmniEdge.md"
         },
         {
-          "name": "n2n Vs. OmniEdge",
+          "name": "n2n",
           "route": "n2n-vs-omniedge",
           "path": "Docs/compare/n2n-OmniEdge.md"
         }

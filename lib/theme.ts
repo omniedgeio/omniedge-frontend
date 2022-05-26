@@ -1,5 +1,6 @@
-import { extendTheme } from "@chakra-ui/react";
+import { extendTheme, GlobalStyle } from "@chakra-ui/react";
 import { StepsStyleConfig as Steps } from "chakra-ui-steps";
+// import "../public/fonts/lxgw-wenkai";
 
 const theme = extendTheme({
   colors: {
@@ -17,8 +18,8 @@ const theme = extendTheme({
     },
   },
   fonts: {
-    body: "'Poppins', sans-serif",
-    heading: "'Poppins', sans-serif",
+    body: "'Poppins', sans-serif,LXGWWenKai-Regular",
+    heading: "'Poppins', sans-serif,LXGWWenKai-Bold",
   },
   components: {
     Steps,

@@ -9,14 +9,12 @@ thumbnail:
 
 OmniEdge is built on the protocol based on [n2n](https://github.com/omniedgeio/n2n).
 
-+ [OmniEdge Orgnization](https://github.com/omniedgeio)
++ [OmniEdge Android](https://github.com/omniedgeio/omniedge-android)
++ [OmniEdge macOS Gui](https://github.com/omniedgeio/omniedge-macOS)
++ [OmniEdge iOS](https://github.com/omniedgeio/omniedge-iOS)
++ [OmniEdge Windows](https://github.com/omniedgeio/omniedge-windows)
++ [OmniEdge Synology](https://github.com/omniedgeio/omniedge-synology)
 + [OmniEdge App Release](https://github.com/omniedgeio/app-release)
-+ [n2n-Mobile](https://github.com/omniedgeio/n2n-Mobile)
-+ [n2n-macOS](https://github.com/omniedgeio/n2n-macOS)
-+ [n2n-windows](https://github.com/omniedgeio/n2n-windows)
-+ [n2n-linux-cli](https://github.com/omniedgeio/n2n-linux-Cli)
-+ [n2n](https://github.com/omniedgeio/n2n)
-
 -----
 
 If you have more questions, feel free to [contact us](mailto:support@omniedge.io).

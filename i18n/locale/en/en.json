@@ -98,7 +98,7 @@
     "flcr": "Cross-Platform",
     "flcr-desc": "Connect multiple platforms, Windows,macOS, iOS, Android, Linux and more.",
     "flsb": "Sub Router",
-    "flsb-dsec": "Sub router allows you connect your devices which is not with Omniedge installed.",
+    "flsb-desc": "Sub router allows you connect your devices which is not with Omniedge installed.",
     "flbd": "Big Data Transferring",
     "flbd-desc": "Big-data transfer functionality allows international enterprises to exchange data between different sites across their global footprint.",
     "flmu": "Multi-Users",

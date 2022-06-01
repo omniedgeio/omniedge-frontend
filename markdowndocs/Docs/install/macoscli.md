@@ -26,6 +26,8 @@ OmniEdge MacOS Cli is compatible with intel Macbook, macOS 10 or later. Last upd
 
   ![Tuntap installation](/docs/tuntap-by-tunnelblick.jpg)
 
+### Slow but clean installation
+
   - Download `https://github.com/Tunnelblick/Tunnelblick/tree/master/third_party/tap-notarized.kext`
   - Download `https://github.com/Tunnelblick/Tunnelblick/tree/master/third_party/tun-notarized.kext`
   - Change the name to **tap.kext** and **tap.kext**, 

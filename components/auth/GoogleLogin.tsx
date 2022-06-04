@@ -15,7 +15,7 @@ const GoogleLogin: React.FC<IGoogleLoginProps & ButtonProps> = function ({ onSuc
   const [googleLoginLoading, setGoogleLoginLoading] = useState(false);
 
   useEffect(() => {
-    if (typeof gapi != undefined) {
+    if (typeof gapi !== 'undefined') {
       gapi.load("auth2", () => {
         const auth2 = gapi.auth2.init({
           client_id: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,

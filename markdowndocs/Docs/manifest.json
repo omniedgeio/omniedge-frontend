@@ -127,6 +127,11 @@
           "name": "n2n",
           "route": "n2n-vs-omniedge",
           "path": "Docs/compare/n2n-OmniEdge.md"
+        },
+        {
+          "name": "Teamviewer",
+          "route": "Teamviewer-vs-omniedge",
+          "path": "Docs/compare/teamviewer-vs-omniedge.md"
         }
       ]
     },

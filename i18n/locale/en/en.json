@@ -19,6 +19,12 @@
     "opensource": "Open Source",
     "cookie": "OmniEdge uses cookies to enhance the user experience."
   },
+  "about":{
+    "title-1": "Simplifying the usage flow of product​",
+    "subtitle-1": "While people talk about #nocode, we prefer to offer #noconf service to our customers. They deserved to have more time with their families.​ We found OmniEdge totally from Twitter, with a team from 6 countries, in the post-pandemic era, we embrace remote work to create painless, maintenance-less, secure, and affordable products.",
+    "title-2": "Who are OmniEdge Looking For?",
+    "subtitle-2": "We are looking for talented people who are trying to help others to have a great work-life balance by creating great products while enjoying their own work-life balance. We are currently not hiring, but are happy to hear from talents. Send us an email [hi@omniedge.io](mailto:hi@omniedge.io) if you are interested in us.​"
+  },
   "index": {
     "title": "Private Network for Edge Computing, Hybrid Cloud, Industrial IoT, AR, VR, Remote access and more ",
     "description": "OmniEdge reduces the enterprise connectivity deployment from weeks to minutes, helps customers focusing on their core business, connects and manages their devices from anywhere, anytime.",

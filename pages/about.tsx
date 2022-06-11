@@ -16,6 +16,7 @@ import { Page } from "../types";
 import Markdown from "markdown-to-jsx";
 import {Seo} from "../components/Seo";
 import {useTranslation} from "react-i18next";
+import { Heros } from "../components/Features";
 
 const Feature = (props:any) => {
   return (
@@ -89,6 +90,7 @@ const Feature = (props:any) => {
 };
 
 const About: Page = (props) => {
+  const { t } = useTranslation("about");
   return (
     <>
           <Seo title="Simplifying the usage flow of product​." description="No Public IP, No Port Forward 
@@ -105,8 +107,8 @@ Zero Config, Zero Firewall Rules,OmniEdge rebuilds the intranet on the internet 
           lineHeight="shorter"
           textAlign={'center'}
         >
-          Simplifying the usage flow of product​.
-          
+          {t("title-1")}
+        
         </chakra.h1>
         <br></br>
         <chakra.p
@@ -115,7 +117,7 @@ Zero Config, Zero Firewall Rules,OmniEdge rebuilds the intranet on the internet 
           color="gray.500"
           lineHeight="base"
         ><Markdown>
-          While people talk about #nocode, we prefer to offer #noconf service to our customers. They deserved to have more time with their families.​ We found OmniEdge totally from Twitter, with a team from 6 countries, in the post-pandemic era, we embrace remote work to create painless, maintenance-less, secure, and affordable products.</Markdown>
+          {t("subtitle-1")}</Markdown>
         </chakra.p>
 </Box>
     </VStack>
@@ -134,7 +136,7 @@ Zero Config, Zero Firewall Rules,OmniEdge rebuilds the intranet on the internet 
           lineHeight="shorter"
           textAlign={"center" }
         >
-          Who are OmniEdge Looking For?
+          {t("title-2")}
         </chakra.h1>
         <chakra.p
           mb={6}
@@ -142,11 +144,13 @@ Zero Config, Zero Firewall Rules,OmniEdge rebuilds the intranet on the internet 
           color="gray.500"
           lineHeight="base"
         ><Markdown>
-          We are looking for talented people who are trying to help others to have a great work-life balance by creating great products while enjoying their own work-life balance. We are currently not hiring, but are happy to hear from talents. Send us an email [hi@omniedge.io](mailto:hi@omniedge.io) if you are interested in us.​
+          {t("subtitle-2")}
+          
           </Markdown>
         </chakra.p>
 </Box>
     </VStack>
+    <Heros />
       </>
     
   );

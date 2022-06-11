@@ -6,6 +6,7 @@ import Faq from "../components/pricing/Faq";
 import { EnterprisePlan, FreePlan, ProPlan, TeamsPlan } from "../components/pricing/Plans";
 import { Seo } from "../components/Seo";
 import { Page } from "../types";
+import {Heros } from "../components/Features";
 
 const PricingTab = (props: TabProps) => (
   <Tab

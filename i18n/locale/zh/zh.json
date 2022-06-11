@@ -19,6 +19,12 @@
     "opensource": "開源",
     "cookie": "OmniEdge 使用 Cookie 來提供用戶體驗服務。"
   },
+  "about":{
+    "title-1": "簡化產品的使用流程",
+    "subtitle-1": "當人們談論低代碼的時候，我們更願意為客戶提供零配置的服務。我們的理應有更多的時間與家人在一起享受生活。 OmniEdge從 Twitter 上創建，團隊來自6個國家，在疫情大流行時代，我們擁抱遠程工作，創造免維護、安全和經濟的產品。",
+    "title-2": "OmniEdge正在尋找誰？",
+    "subtitle-2": "我們正在尋找那些才華橫溢的人，他們試圖通過創造偉大的產品，去幫助別人，享受自己的工作和生活之間的平衡。我們目前不招人，但很高興可以和您建立聯繫。如果你對我們感興趣，請給我們發送電子郵件[hi@omniedge.io](mailto:hi@omniedge.io)。​"
+  },
   "index": {
     "title": "Unlimited Computers In Private Network With Zero Router.The Power of OmniEdge,High Seurity, High Speed, and High Performance.",
     "description": "OmniEdge 將企業連接部署從幾周縮短到幾分鍾，幫助客戶專註於他們的核心業務，隨時隨地連接和管理他們的設備。",

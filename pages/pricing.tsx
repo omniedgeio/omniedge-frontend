@@ -33,27 +33,14 @@ const PricingPage: Page = () => {
           {t("title")}
         </Text>
         <Text>{t("subtitle")}</Text>
-      </VStack>
-      <Tabs variant="unstyled" mx="auto">
-        <TabList justifyContent="center" columnGap={4}>
-          <PricingTab>{t("personal")}</PricingTab>
-          <PricingTab>{t("business")}</PricingTab>
-        </TabList>
-        <TabPanels>
-          <TabPanel>
-            <Stack justifyContent="center" direction={{ base: "column", sm: "row" }}>
+      
+      <Stack justifyContent="center" direction={{ base: "column", sm: "row" }}>
               <FreePlan maxW={80} />
               <ProPlan maxW={80} />
-            </Stack>
-          </TabPanel>
-          <TabPanel>
-            <Stack justifyContent="center" direction={{ base: "column", sm: "row" }}>
               <TeamsPlan maxW={80} />
               <EnterprisePlan maxW={80} />
             </Stack>
-          </TabPanel>
-        </TabPanels>
-      </Tabs>
+            </VStack>
       <ComparisonTable />
       <Faq />
     </>

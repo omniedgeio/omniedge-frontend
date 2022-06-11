@@ -17,8 +17,16 @@ OmniEdge MacOS Cli is compatible with intel Macbook, macOS 10 or later. Last upd
 
   - Download tuntap driver from [https://sourceforge.net/projects/tuntaposx/files/latest/download](https://sourceforge.net/projects/tuntaposx/files/latest/download) 
   - Extract `tuntap_20150118.tar.gz` and Install tuntap by running **tuntap_20150118.pkg**
+  - Run `sudo kextload /Library/Extensions/tap.kext` in the terminal
 
 ## For M1 Mac user: 
+
+### Fast installation
+  - Download and install [Tunnelblick](https://github.com/Tunnelblick/Tunnelblick/releases), install the tun/tap driver with the built-in script.
+
+  ![Tuntap installation](/docs/tuntap-by-tunnelblick.jpg)
+
+### Slow but clean installation
 
   - Download `https://github.com/Tunnelblick/Tunnelblick/tree/master/third_party/tap-notarized.kext`
   - Download `https://github.com/Tunnelblick/Tunnelblick/tree/master/third_party/tun-notarized.kext`
@@ -72,6 +80,7 @@ OmniEdge MacOS Cli is compatible with intel Macbook, macOS 10 or later. Last upd
     </dict>
     </plist>
   ```
+- Run `sudo kextload /Library/Extensions/tap.kext` in the terminal
 - restart Mac after allowing the security check. 
 
 

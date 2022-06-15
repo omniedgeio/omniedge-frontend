@@ -3,23 +3,54 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 8px;
+  justify-content: center;
+  padding: 4px;
   cursor: pointer;
+  width:108px;
+  height:88px;
+  gap:4px;
 }
 
 .icon svg {
-  width: 40px;
-  height: 40px;
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
+  width: 49px;
+  height: 56px;
+  padding: 0px;
 }
 
 .selected {
-  background-color: #4859ed;
+  background-color: #4859ED;
   display: flex;
   justify-content: center;
 }
 
 .selected .iconText {
-  color: white;
+  color:white;
+}
+
+.selected .iconStatus {
+color:white;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 2px;
+font-size: 14px;
+}
+
+
+.icon .iconText {
+  color:#0F172A;
+  font-weight: 1000;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 2px;
+  gap:3px;
+}
+
+.icon .iconStatus {
+color:#64748B;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 2px;
+font-size: 14px;
 }

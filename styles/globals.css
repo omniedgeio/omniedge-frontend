@@ -337,3 +337,639 @@ pre {
   margin: auto;
   display: block;
 }
+
+
+/* UI2.0 */
+
+/* HOME */
+.button5 {
+  gap: 20px;
+  display: inline-flex;
+  padding: 20px;
+  position: relative;
+  box-sizing: border-box;
+  align-items: flex-start;
+  border-color: rgba(151, 71, 255, 1);
+  border-style: dashed;
+  border-width: 1px;
+  flex-direction: row;
+  justify-content: flex-start;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.button6 {
+  display: inline-flex;
+  box-sizing: border-box;
+  align-items: center;
+  padding-top: 8px;
+  padding-left: 12px;
+  padding-right: 12px;
+  flex-direction: row;
+  padding-bottom: 8px;
+  justify-content: center;
+  background-color: rgba(241, 245, 249, 1);
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.get-started1 {
+  color: rgba(51, 65, 85, 1);
+  display: inline;
+  font-size: 14px;
+  box-sizing: border-box;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: 20px;
+  margin-block-end: 0px;
+  margin-block-start: 0px;
+}
+.button7 {
+  display: inline-flex;
+  box-sizing: border-box;
+  align-items: center;
+  padding-top: 8px;
+  padding-left: 12px;
+  padding-right: 12px;
+  flex-direction: row;
+  padding-bottom: 8px;
+  justify-content: center;
+  background-color: rgba(72, 89, 237, 1);
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.pricing1 {
+  color: white;
+  display: inline;
+  font-size: 14px;
+  box-sizing: border-box;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: 20px;
+  margin-block-end: 0px;
+  margin-block-start: 0px;
+}
+.devices-apple-ipad-air7 {
+  width: 651px;
+  height: 902px;
+  position: relative;
+  box-sizing: border-box;
+}
+.device-surround4 {
+  top: 0.22%;
+  left: 0%;
+  right: -0.92%;
+  bottom: -0.89%;
+  filter: drop-shadow(0px 0px 2px rgba(0, 21, 64, 0.14));
+  position: absolute;
+  box-sizing: border-box;
+}
+.device-bg4 {
+  top: 0.67%;
+  left: 0.61%;
+  right: 0.92%;
+  bottom: 0.44%;
+  position: absolute;
+  box-sizing: border-box;
+}
+.device-buttons2 {
+  top: 0%;
+  left: 83.1%;
+  right: 0%;
+  bottom: 83.04%;
+  position: absolute;
+  box-sizing: border-box;
+}
+.screen8 {
+  top: 4.43%;
+  left: 5.84%;
+  right: 6.14%;
+  bottom: 4.21%;
+  position: absolute;
+  box-sizing: border-box;
+}
+.devices-apple-ipad-air8 {
+  position: relative;
+  box-sizing: border-box;
+}
+.device-surround5 {
+  top: 0.22%;
+  left: 0%;
+  right: -42.79%;
+  bottom: 0%;
+  filter: drop-shadow(0px 0px 2px rgba(0, 21, 64, 0.14));
+  position: absolute;
+  box-sizing: border-box;
+}
+.device-bg5 {
+  top: 0.67%;
+  left: 0.62%;
+  right: -38.43%;
+  bottom: 0.44%;
+  position: absolute;
+  box-sizing: border-box;
+}
+.device-buttons3 {
+  top: 0%;
+  left: 83.1%;
+  right: -6.99%;
+  bottom: 83.04%;
+  position: absolute;
+  box-sizing: border-box;
+}
+.screen9 {
+  top: 4.43%;
+  left: 5.84%;
+  right: -33.2%;
+  bottom: 4.21%;
+  position: absolute;
+  box-sizing: border-box;
+}
+.devices-apple-iphone11pro3 {
+  width: 427px;
+  height: 858px;
+  position: relative;
+  box-sizing: border-box;
+}
+.buttons3 {
+  top: 13.4%;
+  left: 0%;
+  right: 0%;
+  bottom: 62.94%;
+  position: absolute;
+  box-sizing: border-box;
+}
+.device-surround6 {
+  top: 0%;
+  left: 0.7%;
+  right: -1.17%;
+  bottom: -0.93%;
+  filter: drop-shadow(0px 0px 2px rgba(0, 21, 64, 0.14));
+  position: absolute;
+  box-sizing: border-box;
+}
+.device-bg6 {
+  top: 0.58%;
+  left: 1.87%;
+  right: 1.87%;
+  bottom: 0.58%;
+  position: absolute;
+  box-sizing: border-box;
+}
+.camera4 {
+  top: 2.8%;
+  left: 58.78%;
+  right: 37.47%;
+  bottom: 95.34%;
+  position: absolute;
+  box-sizing: border-box;
+}
+.speaker2 {
+  top: 3.38%;
+  left: 44.03%;
+  right: 44.03%;
+  bottom: 95.92%;
+  position: absolute;
+  box-sizing: border-box;
+}
+.screen10 {
+  top: 2.68%;
+  left: 6.09%;
+  right: 6.09%;
+  bottom: 2.68%;
+  position: absolute;
+  box-sizing: border-box;
+}
+.devices-apple-iphone11pro4 {
+  width: 91px;
+  height: 185px;
+  position: relative;
+  box-sizing: border-box;
+}
+.buttons4 {
+  top: 13.41%;
+  left: 0%;
+  right: 0%;
+  bottom: 62.27%;
+  position: absolute;
+  box-sizing: border-box;
+}
+.device-surround7 {
+  top: 0%;
+  left: 0.7%;
+  right: -9.49%;
+  bottom: -4.32%;
+  filter: drop-shadow(0px 0px 2px rgba(0, 21, 64, 0.14));
+  position: absolute;
+  box-sizing: border-box;
+}
+.device-bg7 {
+  top: 0.58%;
+  left: 1.87%;
+  right: 0.33%;
+  bottom: 0.5%;
+  position: absolute;
+  box-sizing: border-box;
+}
+.camera5 {
+  top: 2.79%;
+  left: 58.78%;
+  right: 36.82%;
+  bottom: 95.04%;
+  position: absolute;
+  box-sizing: border-box;
+}
+.speaker3 {
+  top: 3.38%;
+  left: 44.03%;
+  right: 43.88%;
+  bottom: 95.54%;
+  position: absolute;
+  box-sizing: border-box;
+}
+.screen11 {
+  top: 2.68%;
+  left: 6.09%;
+  right: 4.9%;
+  bottom: 1.64%;
+  position: absolute;
+  box-sizing: border-box;
+}
+.devices-macbook-pro3 {
+  width: 2011px;
+  height: 1158px;
+  position: relative;
+  box-sizing: border-box;
+}
+.shadow2 {
+  top: 97.93%;
+  left: 4.28%;
+  right: 2.73%;
+  bottom: -2.25%;
+  position: absolute;
+  box-sizing: border-box;
+}
+.screen12 {
+  top: 0;
+  left: 191px;
+  width: 1629px;
+  height: 1118px;
+  position: absolute;
+  box-sizing: border-box;
+}
+.outside-casing2 {
+  top: 0%;
+  left: 0%;
+  right: -0.49%;
+  bottom: -0.72%;
+  filter: drop-shadow(0px 0px 2px rgba(0, 21, 64, 0.14));
+  position: absolute;
+  box-sizing: border-box;
+}
+.rubber-edging2 {
+  top: 0.36%;
+  left: 0.25%;
+  right: 0.25%;
+  bottom: 0.36%;
+  position: absolute;
+  box-sizing: border-box;
+}
+.screen-black-border2 {
+  top: 0.72%;
+  left: 0.49%;
+  right: 0.49%;
+  bottom: 0.72%;
+  position: absolute;
+  box-sizing: border-box;
+}
+.rectangle6 {
+  top: 94.54%;
+  left: 0.49%;
+  right: 0.49%;
+  bottom: 2.77%;
+  position: absolute;
+  box-sizing: border-box;
+  background-color: rgba(38, 44, 45, 1);
+}
+.screen13 {
+  top: 5.9%;
+  left: 2.58%;
+  right: 2.58%;
+  bottom: 7.69%;
+  position: absolute;
+  box-sizing: border-box;
+}
+.camera6 {
+  top: 3.04%;
+  left: 49.66%;
+  right: 49.66%;
+  bottom: 95.97%;
+  position: absolute;
+  box-sizing: border-box;
+}
+.bottom-casing-space-gray2 {
+  top: 1087px;
+  left: 0;
+  width: 2011px;
+  height: 59px;
+  position: absolute;
+  box-sizing: border-box;
+}
+.group3 {
+  top: 0%;
+  left: 0%;
+  right: 0%;
+  bottom: 47.46%;
+  position: absolute;
+  box-sizing: border-box;
+}
+.rectangle7 {
+  top: 0%;
+  left: 42.86%;
+  right: 42.86%;
+  bottom: 62.71%;
+  position: absolute;
+  box-sizing: border-box;
+}
+.union2 {
+  top: 31px;
+  left: 0;
+  width: 2011px;
+  height: 28px;
+  position: absolute;
+  box-sizing: border-box;
+}
+.devices-macbook-pro4 {
+  width: 435px;
+  height: 251px;
+  position: relative;
+  box-sizing: border-box;
+}
+.shadow3 {
+  top: 97.93%;
+  left: 4.28%;
+  right: -2.9%;
+  bottom: -12.27%;
+  position: absolute;
+  box-sizing: border-box;
+}
+.screen14 {
+  top: 0;
+  left: 41.32px;
+  width: 352.37px;
+  height: 242.33px;
+  position: absolute;
+  box-sizing: border-box;
+}
+.outside-casing3 {
+  top: 0%;
+  left: 0%;
+  right: -2.45%;
+  bottom: -3.58%;
+  filter: drop-shadow(0px 0px 2px rgba(0, 21, 64, 0.14));
+  position: absolute;
+  box-sizing: border-box;
+}
+.rubber-edging3 {
+  top: 0.36%;
+  left: 0.25%;
+  right: 0.14%;
+  bottom: -0.22%;
+  position: absolute;
+  box-sizing: border-box;
+}
+.screen-black-border3 {
+  top: 0.71%;
+  left: 0.49%;
+  right: 0.46%;
+  bottom: 0.25%;
+  position: absolute;
+  box-sizing: border-box;
+}
+.rectangle8 {
+  top: 94.54%;
+  left: 0.49%;
+  right: 0.49%;
+  bottom: 2.77%;
+  position: absolute;
+  box-sizing: border-box;
+  background-color: rgba(38, 44, 45, 1);
+}
+.screen15 {
+  top: 5.91%;
+  left: 2.58%;
+  right: 2.35%;
+  bottom: 7.44%;
+  position: absolute;
+  box-sizing: border-box;
+}
+.camera7 {
+  top: 3.04%;
+  left: 49.66%;
+  right: 49.49%;
+  bottom: 95.72%;
+  position: absolute;
+  box-sizing: border-box;
+}
+.bottom-casing-space-gray3 {
+  top: 235.61px;
+  left: 0;
+  width: 435px;
+  height: 12.79px;
+  position: absolute;
+  box-sizing: border-box;
+}
+.group4 {
+  top: 0%;
+  left: 0%;
+  right: 0%;
+  bottom: 37.45%;
+  position: absolute;
+  box-sizing: border-box;
+}
+.rectangle9 {
+  top: 0%;
+  left: 42.86%;
+  right: 42.65%;
+  bottom: 53.09%;
+  position: absolute;
+  box-sizing: border-box;
+}
+.union3 {
+  top: 6.72px;
+  left: 0;
+  width: 435px;
+  height: 7px;
+  position: absolute;
+  box-sizing: border-box;
+}
+.frame4 {
+  width: 1264px;
+  height: 446px;
+  position: relative;
+  box-sizing: border-box;
+}
+.frame5 {
+  gap: 24px;
+  top: 131px;
+  left: 16px;
+  display: inline-flex;
+  position: absolute;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.bring-intranet-on-th1 {
+  width: 600px;
+  height: 40px;
+  box-sizing: border-box;
+}
+.bring {
+  color: rgba(15, 23, 42, 1);
+  display: inline;
+  font-size: 36px;
+  box-sizing: border-box;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 40px;
+  margin-block-end: 0px;
+  margin-block-start: 0px;
+}
+.on-the-internet {
+  color: rgba(15, 23, 42, 1);
+  display: inline;
+  font-size: 36px;
+  box-sizing: border-box;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 40px;
+  margin-block-end: 0px;
+  margin-block-start: 0px;
+}
+.intranet1 {
+  display: inline;
+  font-size: 36px;
+  background: linear-gradient(183deg, rgba(103, 103, 103, 1), rgba(211, 211, 211, 1));
+  box-sizing: border-box;
+  font-family: Inter;
+  font-weight: 700;
+  line-height: 40px;
+  margin-block-end: 0px;
+  margin-block-start: 0px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.omniedge-speer-to-p1 {
+  color: rgba(100, 116, 139, 1);
+  width: 601px;
+  display: inline;
+  font-size: 14px;
+  box-sizing: border-box;
+  font-family: Inter;
+  font-weight: 500;
+  line-height: 20px;
+  margin-block-end: 0px;
+  margin-block-start: 0px;
+}
+.buttons5 {
+  gap: 8px;
+  display: inline-flex;
+  box-sizing: border-box;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+}
+.button8 {
+  display: inline-flex;
+  box-sizing: border-box;
+  align-items: center;
+  padding-top: 8px;
+  padding-left: 12px;
+  padding-right: 12px;
+  flex-direction: row;
+  padding-bottom: 8px;
+  justify-content: center;
+}
+.button9 {
+  display: inline-flex;
+  box-sizing: border-box;
+  align-items: center;
+  padding-top: 8px;
+  padding-left: 12px;
+  padding-right: 12px;
+  flex-direction: row;
+  padding-bottom: 8px;
+  justify-content: center;
+}
+.group5 {
+  top: 101px;
+  left: 647px;
+  width: 601px;
+  height: 258px;
+  position: absolute;
+  box-sizing: border-box;
+}
+.devices-apple-ipad-air9 {
+  top: -759.3%;
+  left: -2141.93%;
+  right: 2208.49%;
+  bottom: 751.16%;
+  position: absolute;
+  box-sizing: border-box;
+}
+.devices-macbook-pro5 {
+  top: 0;
+  left: 0;
+  width: 435px;
+  height: 251px;
+  position: absolute;
+  box-sizing: border-box;
+}
+.devices-apple-iphone11pro5 {
+  top: 73px;
+  left: 370px;
+  width: 91px;
+  height: 185px;
+  position: absolute;
+  box-sizing: border-box;
+}
+.devices-apple-ipad-air4-device-surround {
+  position: absolute;
+}
+.devices-apple-ipad-air4-device-bg {
+  position: absolute;
+}
+.devices-apple-ipad-air4-device-buttons {
+  position: absolute;
+}
+.devices-apple-ipad-air4-screen {
+  position: absolute;
+}
+
+.devices-apple-iphone11pro-buttons {
+  position: absolute;
+}
+.devices-apple-iphone11pro-device-surround {
+  position: absolute;
+}
+.devices-apple-iphone11pro-device-bg {
+  position: absolute;
+}
+.devices-apple-iphone11pro-camera {
+  position: absolute;
+}
+.devices-apple-iphone11pro-speaker {
+  position: absolute;
+}
+.devices-apple-iphone11pro-screen {
+  position: absolute;
+}
+.devices-macbook-pro-shadow {
+  position: absolute;
+}
+/* Home */

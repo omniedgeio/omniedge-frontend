@@ -342,11 +342,11 @@ const Featurelist = (props: any) => {
 export const FeaturePage: Page = () => {
   const {t, i18n} = useTranslation('features')
   return (
-    <Box py={12} rounded="xl">
-      <Box mx="auto" px={{ base: 4, lg: 8 }}>
-        <Box textAlign={{ lg: "center" }}>
-          <chakra.h2 color="brand.600" fontWeight="semibold" textTransform="uppercase" letterSpacing="wide">
-          {t('FeaturePage-title')}
+
+
+      <VStack width="1264px" height="520px" padding="4" spacing="4" alignItems="center">
+        <chakra.h2 width="118px" fontWeight="semibold" letterSpacing="wide" backgroundColor="brand.50" alignItems="center" justifyContent="center">
+          Enterprise
         
           </chakra.h2>
           <chakra.p
@@ -357,8 +357,8 @@ export const FeaturePage: Page = () => {
             letterSpacing="tight"
             color="gray.900"
           >
-            {t('FeaturePage-subtitle')}
-            
+           
+             {t('FeaturePage-subtitle')}{" "}
           </chakra.p>
           <chakra.p
             mt={4}
@@ -369,7 +369,9 @@ export const FeaturePage: Page = () => {
           >
             {t('FeaturePage-desc')}
           </chakra.p>
-        </Box>
+
+
+    <Box maxW="1264px" py={12} rounded="xl" alignItems="center" justifyContent="center">
 
         <Box mt={10}>
           <Stack
@@ -400,8 +402,9 @@ export const FeaturePage: Page = () => {
             </Feature>
           </Stack>
         </Box>
+
       </Box>
-    </Box>
+      </VStack>
   );
 };
 
@@ -621,20 +624,25 @@ export function Compare() {
   const {t, i18n} = useTranslation('features')
   return (
     <>
-      <VStack padding="4" spacing="4" alignItems="center">
+
+      <VStack width="1264px" height="520px" padding="4" spacing="4" alignItems="center">
         <chakra.h2
-            color="brand.600"
-            textTransform="uppercase"
+            color="#0F172A"
             mt={2}
-            fontSize={{ base: "4xl", sm: "3xl" }}
-            lineHeight="8"
-            fontWeight="extrabold"
+            fontSize={{ base: "3xl", sm: "1xl" }}
+            lineHeight="32px"
+            fontWeight="500"
             letterSpacing="tight"
           >
-          {t('comparetitle')} {" "}
+            {t('comparetitle')}
+          
         </chakra.h2>
-        <Text textAlign="center">{t('comparedesc')}{" "}</Text>
-        <Image width="60%" src="/assets/OmniEdgeComparison.gif" alt="OmniEdge " />
+        <Text 
+        width="599px"
+        font-size="14px"
+        line-height="20px"
+        textAlign="center">{t('comparedesc')}{" "}</Text>
+        <Image width="530px" src="/assets/OmniEdgeComparison.gif" alt="OmniEdge " />
       </VStack>
     </>
   );
@@ -643,16 +651,15 @@ export function Compare() {
 export function Featureslist() {
   const {t, i18n} = useTranslation('features')
   return (
-    <Flex w="auto" justifyContent="center" alignItems="center" >
-      <Box px={4} py={20} mx="auto">
+    <Flex justifyContent="center" alignItems="center" >
+      <Box px={4} py={20}>
         <Box textAlign={{ lg: "center" }}>
           <chakra.p
             mt={2}
-            fontSize={{ base: "3xl", sm: "4xl" }}
-            lineHeight="8"
-            fontWeight="extrabold"
+            fontSize={{ base: "2xl", sm: "3xl" }}
+            lineHeight="32px"
+            fontWeight="700"
             letterSpacing="tight"
-            textTransform="uppercase"
           >
             {t('featureslisttitle')}
             

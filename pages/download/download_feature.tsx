@@ -28,11 +28,36 @@ export const Download_feature: Page = (props) => {
       setClientPlatform('android')
     } else if (platform?.macos) {
       setClientPlatform('macos')
+    }else if (platform?.arm) {
+      setClientPlatform('arm')
     }
   }, [])
 
   return (
       <DownloadPage platform={clientPlatform} />
+  )
+}
+export const Downloadlist: Page = (props) => {
+
+   const {t, i18n} = useTranslation('download')
+  return (
+    <>
+    <Box py={8} maxW='1232px' maxH="204px" border-radius="12px" backgroundColor={"gray.100"} justify-content="center" >
+        <VStack >
+        <chakra.p fontSize="20px" color="gray.900">
+        {t('available')}
+          </chakra.p>
+          <SimpleGrid columns={[3, null, 9]} spacing="16px">
+            {platforms.map((platform, index) => (
+              <Icon
+                key={index}
+                variant={platform}
+              />
+            ))}
+          </SimpleGrid>
+        </VStack>
+        </Box>
+        </>
   )
 }
 
@@ -45,13 +70,11 @@ const DownloadPage: React.FC<realplatform> = function ({ platform: selectedPlatf
   const {t, i18n} = useTranslation('download')
   return (
     <>
-    <Box py={8} rounded="xl" backgroundColor={"gray.100"} >
-      <Center>
-        <chakra.p fontSize="xl" color={useColorModeValue("gray.700", "gray.500")}>
+    <Box py={8} maxW='1232px' maxH="204px" border-radius="12px" backgroundColor={"gray.100"} justify-content="center" >
+        <VStack >
+        <chakra.p fontSize="20px" color="gray.900">
         {t('available')}
           </chakra.p>
-          </Center>
-        <VStack mt={5}>
           <SimpleGrid columns={[3, null, 9]} spacing="16px">
             {platforms.map((platform, index) => (
               <Icon
@@ -63,12 +86,11 @@ const DownloadPage: React.FC<realplatform> = function ({ platform: selectedPlatf
             ))}
           </SimpleGrid>
         </VStack>
-        
         </Box>
-        <Image w="full" rounded="lg"src="/assets/OmniEdgeall.png" alt="OmniEdge" />
         </>
         
   );
 };
+
 
 export default Download_feature;

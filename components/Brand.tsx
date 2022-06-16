@@ -32,27 +32,10 @@ export const Social:React.FC = function () {
         shadow="lg"
         rounded="lg"
         overflow="hidden"
+        Width="768px"
+        height="76px"
       >
-        <Image
-          w="270px"
-          fit="cover"
-          objectPosition="center"
-          src="./background-network.png"
-          alt="avatar"
-        />
-        <Flex alignItems="center" px={6} py={3} bg="brand.500">
-          <chakra.h1 mx={3} color="white" fontWeight="bold" fontSize="lg">
-            {t('keepintouch')}
-          </chakra.h1>
-        </Flex>
-
-        <Box py={4} px={6}>
-        {t('followomniedge')}
-          <Flex
-            alignItems="center"
-            mt={4}
-            color={useColorModeValue("gray.700", "gray.200")}
-          >
+          {t('keepintouch')}
               <a
               className="w-7 mr-4"
               target="_blank"
@@ -93,9 +76,8 @@ export const Social:React.FC = function () {
             >
             <Icon as={FaGithub} h={6} w={6} mr={2} />
             </a>
-          </Flex>
+        
         </Box>
-      </Box>
   );
 };
 

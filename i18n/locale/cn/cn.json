@@ -6,7 +6,8 @@
     "blog": "博客",
     "dashboard": "管理后台",
     "getstarted": "开始使用",
-    "login": "登录"
+    "login": "登录",
+    "opensource":"开源"
   },
   "footer": {
     "copyright": "© 2022 OmniEdge Inc. 版权所有",
@@ -28,13 +29,16 @@
   "index": {
     "title": "Unlimited Computers In Private Network With Zero Router.The Power of OmniEdge,High Seurity, High Speed, and High Performance.",
     "description": "OmniEdge 将企业连接部署从几周缩短到几分钟，帮助客户专注于他们的核心业务，随时随地连接和管理他们的设备。",
-    "slogan": "公网上的私有网络",
+    "slogan-1": "因特网上的",
+    "slogan-2": "私有网络",
+    "slogan-3": "时代",
     "unlimitedcomputers": "为安全互联而生",
     "slogan-desc-1": "无需",
     "slogan-desc-2": "公网 IP，端口转发，反向代理",
     "slogan-desc-3": "等.",
-    "slogan-description": "OmniEdge 的端到端企业 VPN 解决方案，不仅适用于初创业团队、个人，也适用于需要弹性扩张，在世界各地拥有成千上万台电脑的大公司。",
+    "slogan-description": "OmniEdge 的端到端企业 VPN 解决方案，无需公网 IP，无需端口转发，无需反向代理, 零配置，不仅适用于初创业团队、个人，也适用于需要弹性扩张，在世界各地拥有成千上万台电脑的大公司。",
     "getstartedfree": "开始免费使用",
+    "getstart-subtitle": "开始免费使用，无需信用卡信息",
     "contactsalesexpert": "联系销售专家",
     "addvirutalnetwork": "+ 私有网络",
     "name": "名称",
@@ -81,7 +85,7 @@
     "connectin-desc": " 点击您的 OmniEdge 客户端的连接按钮连到到您的设备",
     "comparetitle": "OmniEdge 为何与众不同",
     "comparedesc": "无需公网IP，无需端口转发，零配置，零防火墙规则，及端到端加密通讯",
-    "FeaturePage-title": "OMNIEDGE",
+    "FeaturePage-title": "专为企业用户设计",
     "FeaturePage-subtitle": "将安全连接部署的时间从几周降到几分钟",
     "FeaturePage-desc": "OmniEdge 将企业连接部署从几周缩短到几分钟，帮助客户专注于他们的核心业务，随时随地连接和管理他们的设备。",
     "crossplatform": "跨平台",

@@ -7,7 +7,9 @@ import {FaQrcode} from 'react-icons/fa'
 import QRCode from 'qrcode.react'
 import Markdown from 'markdown-to-jsx';
 export function DownloadButton({ text = 'Download', url = ''}) {
+  if (text!=='') {
   return (
+    <>
     <Link
     mb={6} 
     target="_blank"
@@ -18,7 +20,11 @@ export function DownloadButton({ text = 'Download', url = ''}) {
         {text}
         </Button>
       </Link>
+      </>
   )
+  }else {
+    return(<></>)
+  }
 }
 export function DownloadCaption({ text = 'Download' }) {
   return (<Text color="#aeaeb2">{text}</Text>)}
@@ -100,28 +106,20 @@ export const DownloadDescription: React.FC<{desc:Platforminfo, active?:boolean}>
     if (desc.displayName=='iOS') {
       return(<>
                   <VStack mt={3}>
-    <chakra.h1
-          mb={6}
-          fontSize={{ base: "2xl", md: "4xl" }}
-          fontWeight="bold"
-          lineHeight="none"
-          letterSpacing={{ base: "normal", md: "tight" }}
-        >
-            <DownloadButton text='Get OmniEdge iOS TestFlight Invite' url="https://forms.gle/QNP2VPbRtxKyPWNC7" />
-      </chakra.h1>
-      <Text>
+        <Text fontSize="24px" fontWeight="600" lineHeight="32px" color="gray.900" textAlign="center" paddingTop="40px">
+          Get started on iOS
+        </Text>
+
+ <Text fontSize="14px" fontWeight="500" lineHeight="20px" color="gray.500" textAlign="center" paddingTop="8px">
       Thanks for your interest in OmniEdge iOS. <br></br>
 OmniEdge iOS version is compatible with iOS 15.0 and later version.
         </Text>
-        <chakra.h3
-          mb={6}
-          fontSize={{ base: "xl", md: "2xl" }}
-          fontWeight="bold"
-          lineHeight="none"
-          letterSpacing={{ base: "normal", md: "tight" }}
-        >
-        </chakra.h3>
-      
+
+       <Text fontSize="14px" fontWeight="500" lineHeight="20px" color="gray.500" textAlign="center" paddingTop="36px">
+            <DownloadButton text='Get OmniEdge iOS TestFlight Invite' url="https://forms.gle/QNP2VPbRtxKyPWNC7" />
+      </Text>
+
+
           </VStack>
       </>)
     }
@@ -131,32 +129,9 @@ OmniEdge iOS version is compatible with iOS 15.0 and later version.
   } else if (desc.status=='LIVE') {
     return (<>
                <VStack mt={3}>
-    <chakra.h1
-          mb={6}
-          fontSize={{ base: "2xl", md: "4xl" }}
-          fontWeight="bold"
-          lineHeight="none"
-          letterSpacing={{ base: "normal", md: "tight" }}
-        >
-            <DownloadButton text={desc.buttonText ?? 'Download'} url={desc.link ?? ''} />
-        {desc.showQRCode && (
-          <div className="qrCodeContainer">
-            or scan
-            <button
-              className="qrCodeButton"
-              onClick={() => {
-                setShowingQRCode(!showingQRCode)
-              }}
-            >
-              <code>QR Code</code> <Icon as={FaQrcode} />
-            </button>
-            {showingQRCode && (
-              <QRCode className=".qrCode" value={desc.link} renderAs={'svg'} />
-            )}
-          </div>
-        )}
-      </chakra.h1>
-      <Text>
+        <Text fontSize="24px" fontWeight="600" lineHeight="32px" color="gray.900" textAlign="center" paddingTop="40px">{desc.description.title}
+        </Text>
+<Text fontSize="14px" fontWeight="500" lineHeight="20px" color="gray.500" textAlign="center" paddingTop="8px">
         {desc.captionText && (
           <DownloadCaption
             text={
@@ -165,15 +140,26 @@ OmniEdge iOS version is compatible with iOS 15.0 and later version.
             }
           />
         )}</Text>
-        <chakra.h3
-          mb={6}
-          fontSize={{ base: "xl", md: "2xl" }}
-          fontWeight="bold"
-          lineHeight="none"
-          letterSpacing={{ base: "normal", md: "tight" }}
-        >{desc.description.title}
-        </chakra.h3>
-        <Text>
+    <Text fontSize="14px" fontWeight="500" lineHeight="20px" color="gray.500" textAlign="center" paddingTop="36px">
+            <DownloadButton text={desc.buttonText ?? 'Download'} url={desc.link ?? ''} />
+        {desc.showQRCode && (
+          <div className="qrCodeContainer">
+            <button
+              onClick={() => {
+                setShowingQRCode(!showingQRCode)
+              }}
+            >
+              <code>Scan QR Code</code> <Icon as={FaQrcode} />
+            </button>
+            {showingQRCode && (
+              <QRCode className=".qrCode" value={desc.link} renderAs={'svg'} />
+            )}
+          </div>
+        )}
+      </Text>
+      
+    
+        <Text paddingTop="36px">
         <Description texts={desc.description.instructions} />
         {desc.description.instructionsVideoLink && (
           <VideoPlayer link={desc.description.instructionsVideoLink} />

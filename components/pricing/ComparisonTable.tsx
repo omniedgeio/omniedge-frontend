@@ -5,6 +5,7 @@ import {
   AccordionItem,
   AccordionPanel,
   Box,
+  Heading,
   HStack,
   Icon,
   Table,
@@ -16,6 +17,7 @@ import {
   Thead,
   Tooltip,
   Tr,
+  VStack
 } from "@chakra-ui/react";
 import Markdown from "markdown-to-jsx";
 import React from "react";
@@ -118,7 +120,9 @@ export default function ComparisonTable() {
   const { t } = useTranslation("pricing");
 
   return (
-    <Box px={4} maxW={800} mt={4} mx="auto" border="solid 1px" borderColor="gray.300" borderRadius={4}>
+    <VStack my={10} mx="auto" px={4} spacing={4} paddingTop="60px" paddingBottom="40px">
+    <Heading paddingBottom="36px">Compare features</Heading>
+    <Box px={4} mt={4} mx="auto" border="solid 1px" borderColor="gray.300" borderRadius={4}>
       <TableContainer>
         <Table variant="simple" overflowX="auto">
           <Thead>
@@ -170,5 +174,7 @@ export default function ComparisonTable() {
         </Table>
       </TableContainer>
     </Box>
+
+    </VStack>
   );
 }

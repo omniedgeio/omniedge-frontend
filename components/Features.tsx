@@ -660,25 +660,24 @@ export function Compare() {
   const {t, i18n} = useTranslation('features')
   return (
     <>
-
-      <VStack padding="20" spacing="4" alignItems="center">
+      <VStack maxW={{md: "1264px" }} padding="2" spacing="4" alignItems="center" paddingTop="20">
         <chakra.h2
             color="#0F172A"
             mt={2}
-            fontSize={{ base: "3xl", sm: "1xl" }}
+            fontSize={{ base: "24px", sm: "24px" }}
             lineHeight="32px"
-            fontWeight="500"
+            fontWeight="700"
             letterSpacing="tight"
           >
             {t('comparetitle')}
           
         </chakra.h2>
         <Text 
-        maxW="599px"
+        maxW={{md: "599px" }}
         font-size="14px"
         line-height="20px"
         textAlign="center">{t('comparedesc')}{" "}</Text>
-        <Image width="530px" src="/assets/OmniEdgeComparison.gif" alt="OmniEdge " />
+        <Image maxW={{md: "800px" }} src="/assets/OmniEdgeComparison.gif" alt="OmniEdge " />
       </VStack>
     </>
   );

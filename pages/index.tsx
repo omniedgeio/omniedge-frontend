@@ -1,30 +1,25 @@
 import {
   Box,
   Button,
-  FormControl,
-  FormLabel,
   Heading,
   HStack,
-  Input,
   Link,
   Stack,
   Text,
   VStack,
   chakra,
-  useColorModeValue,
   Image
 } from "@chakra-ui/react";
 import React from "react";
 import { Customersmap } from "../components/Customersmap";
-import { Compare, FeaturePage, Featureslist, Featureheros,Heros, HighFeatures, Users } from "../components/Features";
+import { Compare, FeaturePage, Featureslist, Featureheros,Heros } from "../components/Features";
 import {Downloadlist} from "./download/download_feature";
 import DefaultLayout from "../components/layout/Default";
 import { Seo } from "../components/Seo";
 import { Page } from "../types";
 import {useTranslation} from "react-i18next";
 import {availableLanguages} from "../i18n/i18n";
-import { SocialButton } from "../components/layout/Footer";
-import { FaDiscord, FaGithub, FaMedium, FaTwitter, FaYoutube } from "react-icons/fa";
+
 
 const Home: Page = (props) => {
   const {t, i18n} = useTranslation('index')
@@ -79,6 +74,7 @@ const Home: Page = (props) => {
           </VStack>
           
             <Image maxW={{md: "601px" }} top='1px' src="/assets/OmniEdge-clients.png" alt="OmniEdge" />
+            
           
         </Stack>
         <Box

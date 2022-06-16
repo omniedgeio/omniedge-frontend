@@ -30,7 +30,7 @@ export interface PlanFeaturesProps {
 }
 
 const PlanTitle = ({ title }: { title: string }) => {
-  return <Text fontSize="lg">{title}</Text>;
+  return <Text fontSize="14px" fontWeight="500" lineHeight="20px" color="gray.500">{title}</Text>;
 };
 
 const PlanFeatures = ({ features }: PlanFeaturesProps) => {
@@ -39,8 +39,8 @@ const PlanFeatures = ({ features }: PlanFeaturesProps) => {
       {features.map((feature) => (
         <Tooltip key={feature.label} hasArrow label={feature.hint}>
           <HStack alignItems="flex-start">
-            <Icon mt={1} as={FiCheck} color="green.500"></Icon>
-            <Text>{feature.label}</Text>
+            <Icon mt={1} as={FiCheck} color="blue"></Icon>
+            <Text fontSize="14px" fontWeight="400" lineHeight="20px" color="gray.900">{feature.label}</Text>
           </HStack>
         </Tooltip>
       ))}
@@ -49,7 +49,7 @@ const PlanFeatures = ({ features }: PlanFeaturesProps) => {
 };
 
 const PlanDescription = ({ description }: { description: string }) => {
-  return <Text>{description}</Text>;
+  return <Text fontSize="14px" fontWeight="500" lineHeight="20px" color="gray.900">{description}</Text>;
 };
 
 const PlanPrice = ({ price }: { price: string }) => {
@@ -57,16 +57,16 @@ const PlanPrice = ({ price }: { price: string }) => {
   return (
     <>
       {typeof price != "string" ? (
-        <Text fontSize="3xl" fontWeight="bold">
+        <Text fontSize="24px" fontWeight="700" lineHeight="32px" color="gray.900">
           {" "}
           $ {price}{" "}
-          <Text display="inline" verticalAlign="middle" fontSize="lg" fontWeight="normal">
-            / {t("permonth")}
+          <Text as='sup' display="inline" verticalAlign="middle" fontSize="14px" fontWeight="400" lineHeight="20px" color="gray.500" >
+             {t("permonth")}
           </Text>
         </Text>
       ) : (
         <>
-          <Text fontSize="3xl" fontWeight="bold">
+          <Text fontSize="24px" fontWeight="700" lineHeight="32px" color="gray.900">
             {" "}
             {price}{" "}
           </Text>
@@ -80,7 +80,7 @@ const PlanActionButton: React.FC<{ plan: string } & ButtonProps> = ({ plan, ...p
   const { t } = useTranslation("pricing");
   return (
     <Link href="/dashboard/billing">
-      <Button isFullWidth colorScheme="gray" mt={4} {...props}>
+      <Button isFullWidth colorScheme="gray" fontSize="14px" fontWeight="500" lineHeight="20px" color="gray.500"  mt={4} {...props}>
         {t("getstarted")}
       </Button>
     </Link>
@@ -97,7 +97,7 @@ export const FreePlan: React.FC<PlanProps> = ({ actionButton, ...props }) => {
   return (
     <PlanContainer {...props}>
       <PlanTitle title={t("title")} />
-      <Text fontSize="3xl" fontWeight="bold">
+      <Text fontSize="24px" fontWeight="700" lineHeight="32px" color="gray.900">
         {t("price")}
       </Text>
       <PlanDescription description={t("description")} />
@@ -154,7 +154,7 @@ export const EnterprisePlan: React.FC<PlanProps> = ({ actionButton, ...props }) 
         actionButton
       ) : (
         <Link href="/contactus">
-          <Button isFullWidth variant="outline" mt={4} colorScheme="teal">
+          <Button isFullWidth variant="outline" mt={4} colorScheme="brand" fontSize="14px" fontWeight="700" lineHeight="20px">
             {t2("contact")}
           </Button>
         </Link>

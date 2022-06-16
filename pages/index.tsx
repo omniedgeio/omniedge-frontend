@@ -23,6 +23,8 @@ import { Seo } from "../components/Seo";
 import { Page } from "../types";
 import {useTranslation} from "react-i18next";
 import {availableLanguages} from "../i18n/i18n";
+import { SocialButton } from "../components/layout/Footer";
+import { FaDiscord, FaGithub, FaMedium, FaTwitter, FaYoutube } from "react-icons/fa";
 
 const Home: Page = (props) => {
   const {t, i18n} = useTranslation('index')
@@ -72,14 +74,12 @@ const Home: Page = (props) => {
             <Link href="/contactus" w="full">
               <Button colorScheme="gray"  borderRadius="4px">{t('contactsalesexpert')}</Button>
             </Link>
-            
             </HStack>
             <Featureheros>{t('getstart-subtitle')}</Featureheros>
           </VStack>
           
-          <VStack alignItems="flex-start">
-            <Image maxW='601px' top='1px' src="/assets/OmniEdge-clients.png" alt="OmniEdge" />
-          </VStack>
+            <Image maxW={{md: "601px" }} top='1px' src="/assets/OmniEdge-clients.png" alt="OmniEdge" />
+          
         </Stack>
         <Box
           position="absolute"

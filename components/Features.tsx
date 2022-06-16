@@ -661,7 +661,7 @@ export function Compare() {
   return (
     <>
 
-      <VStack width="1264px" height="520px" padding="4" spacing="4" alignItems="center">
+      <VStack padding="20" spacing="4" alignItems="center">
         <chakra.h2
             color="#0F172A"
             mt={2}
@@ -674,7 +674,7 @@ export function Compare() {
           
         </chakra.h2>
         <Text 
-        width="599px"
+        maxW="599px"
         font-size="14px"
         line-height="20px"
         textAlign="center">{t('comparedesc')}{" "}</Text>

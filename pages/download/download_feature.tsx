@@ -42,7 +42,7 @@ export const Downloadlist: Page = (props) => {
    const {t, i18n} = useTranslation('download')
   return (
     <>
-    <Box py={8} maxW='1232px' maxH="204px" border-radius="12px" backgroundColor={"gray.100"} justify-content="center" >
+    <Box py={8} maxW='1232px' border-radius="12px" backgroundColor={"gray.100"} justify-content="center" >
         <VStack >
         <chakra.p fontSize="20px" color="gray.900">
         {t('available')}

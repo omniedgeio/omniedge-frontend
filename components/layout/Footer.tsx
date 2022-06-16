@@ -9,14 +9,13 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { ReactNode } from "react";
-import { BiMailSend } from "react-icons/bi";
-import { FaGithub, FaMedium, FaTwitter, FaYoutube } from "react-icons/fa";
+import { FaDiscord, FaGithub, FaMedium, FaTwitter, FaYoutube } from "react-icons/fa";
 import { Brand } from "../Brand";
 import Link from "../next/Link";
 import CookieConsent from "react-cookie-consent";
 import {useTranslation} from "react-i18next";
 
-const SocialButton = ({ children, label, href }: { children: ReactNode; label: string; href: string }) => {
+export const SocialButton = ({ children, label, href }: { children: ReactNode; label: string; href: string }) => {
   return (
     <chakra.button
       bg={useColorModeValue("blackAlpha.100", "whiteAlpha.100")}
@@ -76,6 +75,9 @@ export default function Footer() {
               </SocialButton>
               <SocialButton label={"Medium"} href="https://omniedge.medium.com/">
                 <FaMedium />
+              </SocialButton>
+              <SocialButton label={"Discord"} href="https://discord.gg/FY6Yd6jcPu">
+                <FaDiscord />
               </SocialButton>
             </Stack>
           </VStack>

@@ -38,22 +38,16 @@ export const DownloadPage: React.FC<realplatform> = function ({ platform: select
   return (
     <>
       <DefaultLayout>
-        <VStack padding="4" spacing="4" alignItems="center">
+        <VStack padding="4" spacing="4" alignItems="center" paddingTop="40px">
           <Stack spacing="8" direction={["column", "row"]} alignItems="flex-start">
             <VStack mt={10}>
-              <chakra.h1
-                mb={6}
-                fontSize={{ base: "4xl", md: "6xl" }}
-                fontWeight="bold"
-                lineHeight="none"
-                letterSpacing={{ base: "normal", md: "tight" }}
-                color={useColorModeValue("gray.900", "gray.100")}
+              <Text
+                fontSize="36px" fontWeight="700" lineHeight="40px" color="gray.900"
               >
                 {t('title')}
-              </chakra.h1>
-              <Text textAlign="center">{t('subtitle')}</Text>
-              <br></br>
-              <SimpleGrid columns={[3, null, 5]} spacing="16px">
+              </Text>
+              <Text fontSize="14px" fontWeight="500" lineHeight="20px" color="gray.500" textAlign="center" paddingBottom="60px">{t('subtitle')}</Text>
+              <SimpleGrid columns={[3, null, 10]} spacing="16px">
                 {platforms.map((platform, index) => (
                   <Icon
                     key={index}

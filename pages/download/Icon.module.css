@@ -37,7 +37,7 @@ font-size: 14px;
 }
 
 
-.icon .iconText {
+.iconText {
   color:#0F172A;
   font-weight: 1000;
   font-size: 14px;
@@ -46,7 +46,7 @@ font-size: 14px;
   gap:3px;
 }
 
-.icon .iconStatus {
+.iconStatus {
 color:#64748B;
 justify-content: center;
 align-items: center;

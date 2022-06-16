@@ -103,7 +103,7 @@ function getText(variant:string) {
     case 'linuxgui':
       return 'GUI'
     case 'macos':
-      return 'macOS'
+      return 'macOS CLI'
     case 'ios':
       return 'iOS'
     case 'android':
@@ -132,7 +132,7 @@ function getStatus(variant:string) {
     case 'linuxgui':
       return 'Developing >'
     case 'macos':
-      return 'Beta >'
+      return 'Stable >'
     case 'ios':
       return 'TestFlight >'
     case 'android':

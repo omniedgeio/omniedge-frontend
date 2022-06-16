@@ -16,8 +16,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { Customersmap } from "../components/Customersmap";
-import { Compare, FeaturePage, Featureslist, Heros, HighFeatures, How, Users } from "../components/Features";
-import {Frame2 } from "../components/UI2/home";
+import { Compare, FeaturePage, Featureslist, Featureheros,Heros, HighFeatures, Users } from "../components/Features";
 import {Downloadlist} from "./download/download_feature";
 import DefaultLayout from "../components/layout/Default";
 import { Seo } from "../components/Seo";
@@ -50,7 +49,7 @@ const Home: Page = (props) => {
           fontWeight="bold"
           lineHeight="none"
           letterSpacing={{ base: "normal", md: "tight" }}
-        >Bring {" "}
+        >{t('slogan-1')} {" "}
           <Text
             display={{ base: "block", lg: "inline" }}
             w="full"
@@ -58,9 +57,9 @@ const Home: Page = (props) => {
             bgGradient="linear-gradient(183deg, rgba(103, 103, 103, 1), rgba(211, 211, 211, 1));"
             fontWeight="extrabold"
           >
-            intranet {" "}
+            {t('slogan-2')} {" "}
           </Text>
-        on the internet
+        {t('slogan-3')}
           </chakra.h1>
             </Heading>
             <Text maxW="2xl" color="gray.700" py="4" fontSize="14px">
@@ -75,6 +74,7 @@ const Home: Page = (props) => {
             </Link>
             
             </HStack>
+            <Featureheros>{t('getstart-subtitle')}</Featureheros>
           </VStack>
           
           <VStack alignItems="flex-start">

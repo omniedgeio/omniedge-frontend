@@ -8,7 +8,7 @@ export const Customersmap: React.FC<BoxProps> = (props) => {
     <Box padding="4" textAlign={{ lg: "center" }}>
             <chakra.h2
             mt={2}
-            fontSize={{ base: "3xl", sm: "4xl" }}
+            fontSize={{ base: "2xl", sm: "3xl" }}
             lineHeight="8"
             fontWeight="extrabold"
             letterSpacing="tight"

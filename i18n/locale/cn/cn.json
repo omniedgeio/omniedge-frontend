@@ -6,7 +6,8 @@
     "blog": "博客",
     "dashboard": "管理后台",
     "getstarted": "开始使用",
-    "login": "登录"
+    "login": "登录",
+    "opensource":"开源"
   },
   "footer": {
     "copyright": "© 2022 OmniEdge Inc. 版权所有",

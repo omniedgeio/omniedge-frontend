@@ -6,7 +6,8 @@
     "blog": "部落格",
     "dashboard": "管理後臺",
     "getstarted": "開始使用",
-    "login": "登入"
+    "login": "登入",
+    "opensource":"開源" 
   },
   "footer": {
     "copyright": "© 2022 OmniEdge Inc. 版權所有",

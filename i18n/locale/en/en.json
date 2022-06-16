@@ -6,7 +6,8 @@
     "blog": "Blog",
     "dashboard": "Dashboard",
     "getstarted": "Get Started",
-    "login": "Login"
+    "login": "Login",
+    "opensource":"Open Source"
   },
   "footer": {
     "copyright": "© 2022 OmniEdge Inc. All rights reserved",

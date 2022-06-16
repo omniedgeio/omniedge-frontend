@@ -88,15 +88,14 @@ export default function Footer() {
               <HStack spacing="240px" color="gray.600" fontSize="14px" fontWeight="500" lineHeight="20px">
                 <VStack>
                   <Link href="/about">{t('about')}</Link>
-            <Link href="/docs">{t('docs')}</Link>
             <Link href="/contactus">{t('contact')}</Link>
-            <Link href="https://forms.gle/a1h3pYb7H4jvZPQU9"> {t('survey')}</Link>
+            <Link href="/docs">{t('docs')}</Link>
                 </VStack>
                 <VStack>
           
                   <Link href="/terms">{t('tos')}</Link>
             <Link href="/privacy">{t('privacy')}</Link>
-            <Link href="/docs/article/Opensource">{t('opensource')}</Link>
+          <Link href="https://forms.gle/a1h3pYb7H4jvZPQU9"> {t('survey')}</Link>
                 </VStack>
 
               </HStack>

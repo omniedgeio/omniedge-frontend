@@ -6,7 +6,8 @@
     "blog": "Blog",
     "dashboard": "Dashboard",
     "getstarted": "Get Started",
-    "login": "Login"
+    "login": "Login",
+    "opensource":"Open Source"
   },
   "footer": {
     "copyright": "© 2022 OmniEdge Inc. All rights reserved",
@@ -19,16 +20,25 @@
     "opensource": "Open Source",
     "cookie": "OmniEdge uses cookies to enhance the user experience."
   },
+  "about":{
+    "title-1": "Simplifying the usage flow of product​",
+    "subtitle-1": "While people talk about #nocode, we prefer to offer #noconf service to our customers. They deserved to have more time with their families.​ We found OmniEdge totally from Twitter, with a team from 6 countries, in the post-pandemic era, we embrace remote work to create painless, maintenance-less, secure, and affordable products.",
+    "title-2": "Who are OmniEdge Looking For?",
+    "subtitle-2": "We are looking for talented people who are trying to help others to have a great work-life balance by creating great products while enjoying their own work-life balance. We are currently not hiring, but are happy to hear from talents. Send us an email [hi@omniedge.io](mailto:hi@omniedge.io) if you are interested in us.​"
+  },
   "index": {
     "title": "Private Network for Edge Computing, Hybrid Cloud, Industrial IoT, AR, VR, Remote access and more ",
     "description": "OmniEdge reduces the enterprise connectivity deployment from weeks to minutes, helps customers focusing on their core business, connects and manages their devices from anywhere, anytime.",
-    "slogan": "Bring intranet on the internet.",
+    "slogan-1": "Bring",
+    "slogan-2": "intranet",
+    "slogan-3": "on the internet.",
     "unlimitedcomputers": "Unlimited Computers",
     "slogan-desc-1": "In Private Network With",
     "slogan-desc-2": "Zero",
     "slogan-desc-3": "Config",
     "slogan-description": "Omniedge's Peer-to-Peer Layer 2 VPN solutions are not only a great and affordable network solution for a small team but also for big companies with thousands of computers all around the world.",
     "getstartedfree": "Get Started Free",
+    "getstart-subtitle": "Start from free, no credit card required",
     "contactsalesexpert": "Contact Sales Expert",
     "addvirutalnetwork": "+ Virutal Network",
     "name": "Name",
@@ -42,8 +52,8 @@
   },
   "download": {
     "available": "Available for:",
-    "title": "Download",
-    "subtitle": "Click on the preferred icon for download."
+    "title": "Download OmniEdge client",
+    "subtitle": "Choose your platform to see download options."
   },
   "features": {
     "thepowerofomniedge": "The power of Omniedge",
@@ -72,9 +82,9 @@
     "create-desc": "We already created a default virtual network for you. However, you can create your own virtual network in just a minute.",
     "connectin": "Connect in one click",
     "connectin-desc": "Click connect button on our client application",
-    "comparetitle": "What is the difference of OmniEdge",
-    "comparedesc": "No Public IP, No Port Forward, Zero Config, Zero Firewall Rules",
-    "FeaturePage-title": "OMNIEDGE",
+    "comparetitle": "Open-sourced, zero config",
+    "comparedesc": "No public IP. No port forwarding. Zero config. Zero firewall rules. We rebuild the intranet on the internet setup easier and so you can connect your devices in a secure way without concern at anywhere and anytime.",
+    "FeaturePage-title": "For Enterprise",
     "FeaturePage-subtitle": "Makes secure connectivity from weeks to minutes",
     "FeaturePage-desc": "OmniEdge reduces the enterprise connectivity deployment from weeks to minutes, helps customers focusing on their core business, connects and manages their devices from anywhere, anytime.",
     "crossplatform": "Cross Platforms",

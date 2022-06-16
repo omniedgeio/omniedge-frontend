@@ -17,17 +17,18 @@ const BlogLayout: FunctionComponent<IProps> = ({ articles }) => {
 <Seo title="OmniEdge Blog" description="" image="/assets/OmniEdgeall0.5.png" />
 <DefaultLayout>
 <VStack padding="4" alignItems="center">
-<Stack direction={["column", "row"]} alignItems="flex-start">
-<VStack maxW="1000" spacing="4">
+<Stack alignItems="flex-start">
+    <VStack maxW="md" spacing="4" display={["none", "flex"]}>
+          <Social />
+          </VStack>
+<VStack maxW="768px" spacing="4">
       {articles.sort((a:any, b:any) => {
             return (b.date - a.date)
           }).map((article, i) => (
             <Postcard key={i} article={article} />
         ))}
   </VStack>
-  <VStack maxW="md" spacing="4" display={["none", "flex"]}>
-          <Social />
-          </VStack>
+  
       </Stack>
     </VStack>
     </DefaultLayout>

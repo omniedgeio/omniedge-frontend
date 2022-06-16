@@ -6,7 +6,8 @@
     "blog": "部落格",
     "dashboard": "管理後臺",
     "getstarted": "開始使用",
-    "login": "登入"
+    "login": "登入",
+    "opensource":"開源" 
   },
   "footer": {
     "copyright": "© 2022 OmniEdge Inc. 版權所有",
@@ -19,16 +20,25 @@
     "opensource": "開源",
     "cookie": "OmniEdge 使用 Cookie 來提供用戶體驗服務。"
   },
+  "about":{
+    "title-1": "簡化產品的使用流程",
+    "subtitle-1": "當人們談論低代碼的時候，我們更願意為客戶提供零配置的服務。我們的理應有更多的時間與家人在一起享受生活。 OmniEdge從 Twitter 上創建，團隊來自6個國家，在疫情大流行時代，我們擁抱遠程工作，創造免維護、安全和經濟的產品。",
+    "title-2": "OmniEdge正在尋找誰？",
+    "subtitle-2": "我們正在尋找那些才華橫溢的人，他們試圖通過創造偉大的產品，去幫助別人，享受自己的工作和生活之間的平衡。我們目前不招人，但很高興可以和您建立聯繫。如果你對我們感興趣，請給我們發送電子郵件[hi@omniedge.io](mailto:hi@omniedge.io)。​"
+  },
   "index": {
     "title": "Unlimited Computers In Private Network With Zero Router.The Power of OmniEdge,High Seurity, High Speed, and High Performance.",
     "description": "OmniEdge 將企業連接部署從幾周縮短到幾分鍾，幫助客戶專註於他們的核心業務，隨時隨地連接和管理他們的設備。",
-    "slogan": "公網上的私有網路",
+    "slogan-1": "因特網上的",
+    "slogan-2": "私有網路",
+    "slogan-3": "時代",
     "unlimitedcomputers": "為安全互聯而生",
     "slogan-desc-1": "無需",
     "slogan-desc-2": "公網 IP，端口轉發，反嚮代理",
     "slogan-desc-3": "等.",
-    "slogan-description": "OmniEdge 的端到端企業 VPN 解決方案，不僅適用於初創業團隊、個人，也適用於需要彈性擴張，在世界各地擁有成仟上萬臺電腦的大公司。",
+    "slogan-description": "OmniEdge 的端到端企業 VPN 解決方案，無需公網 IP，無需端口轉發，無需反嚮代理, 零配置，不僅適用於初創業團隊、個人，也適用於需要彈性擴張，在世界各地擁有成仟上萬臺電腦的大公司。",
     "getstartedfree": "開始免費使用",
+    "getstart-subtitle": "開始免費使用，無需信用卡信息",
     "contactsalesexpert": "聯係銷售專家",
     "addvirutalnetwork": "+ 私有網路",
     "name": "名稱",
@@ -75,7 +85,7 @@
     "connectin-desc": " 點選您的 OmniEdge 客戶端的連接按鈕連到到您的設備",
     "comparetitle": "OmniEdge 為何與衆不同",
     "comparedesc": "無需公網IP，無需端口轉發，零配置，零防火牆規則，及端到端加密通訊",
-    "FeaturePage-title": "OMNIEDGE",
+    "FeaturePage-title": "專為企業用戶設計",
     "FeaturePage-subtitle": "將安全連接部署的時間從幾周降到幾分鍾",
     "FeaturePage-desc": "OmniEdge 將企業連接部署從幾周縮短到幾分鍾，幫助客戶專註於他們的核心業務，隨時隨地連接和管理他們的設備。",
     "crossplatform": "跨平臺",

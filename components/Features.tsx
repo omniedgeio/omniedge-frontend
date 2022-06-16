@@ -713,8 +713,8 @@ export function Featureslist() {
           </Featurelist>
 <Featurelist color="brand" title={t('flsk')} icon={<svg width="49" height="48" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect x="0.75" width="48" height="48" rx="24" fill="#EDE9FE"/>
-<path d="M28.791 20.456C28.791 20.18 28.567 19.9573 28.291 19.9573C28.015 19.9587 27.791 20.1827 27.791 20.4587C27.791 20.7347 28.015 20.9587 28.291 20.9573C28.567 20.9573 28.791 20.7333 28.791 20.4573" stroke="#4859ED" strokeWidth="2" stroke-miterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
-<path d="M25.4157 27.7133L24.0423 29.0893H21.5997V31.048H19.6463V33.496L17.8143 35.3333H13.417V30.9267L21.0477 23.2787C19.973 20.4867 20.549 17.204 22.7957 14.952C25.8357 11.9053 30.765 11.9053 33.805 14.952C36.845 17.9987 36.845 22.9387 33.805 25.9867C31.5357 28.2587 28.2183 28.832 25.4157 27.7133Z" stroke="#4859ED" strokeWidth="2" stroke-miterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M28.791 20.456C28.791 20.18 28.567 19.9573 28.291 19.9573C28.015 19.9587 27.791 20.1827 27.791 20.4587C27.791 20.7347 28.015 20.9587 28.291 20.9573C28.567 20.9573 28.791 20.7333 28.791 20.4573" stroke="#4859ED" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M25.4157 27.7133L24.0423 29.0893H21.5997V31.048H19.6463V33.496L17.8143 35.3333H13.417V30.9267L21.0477 23.2787C19.973 20.4867 20.549 17.204 22.7957 14.952C25.8357 11.9053 30.765 11.9053 33.805 14.952C36.845 17.9987 36.845 22.9387 33.805 25.9867C31.5357 28.2587 28.2183 28.832 25.4157 27.7133Z" stroke="#4859ED" strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
 </svg>
 }>
           {t('flsk-desc')}

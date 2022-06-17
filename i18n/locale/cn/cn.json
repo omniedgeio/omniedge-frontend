@@ -27,7 +27,7 @@
     "subtitle-2": "我们正在寻找那些才华横溢的人，他们试图通过创造伟大的产品，去帮助别人，享受自己的工作和生活之间的平衡。我们目前不招人，但很高兴可以和您建立联系。如果你对我们感兴趣，请给我们发送电子邮件[hi@omniedge.io](mailto:hi@omniedge.io)。​"
   },
   "index": {
-    "title": "Unlimited Computers In Private Network With Zero Router.The Power of OmniEdge,High Seurity, High Speed, and High Performance.",
+    "title": "专为边缘计算，混合云，工业互联网，物联网，虚拟现实，数字孪生，远程控制，远程服务等打造的私有网络。局域网的事情，就要放在局域网。",
     "description": "OmniEdge 将企业连接部署从几周缩短到几分钟，帮助客户专注于他们的核心业务，随时随地连接和管理他们的设备。",
     "slogan": "因特网上的私有网络时代",
     "slogan-1": "因特网上的",
@@ -37,7 +37,7 @@
     "slogan-desc-1": "无需",
     "slogan-desc-2": "公网 IP，端口转发，反向代理",
     "slogan-desc-3": "等.",
-    "slogan-description": "OmniEdge 的端到端企业 VPN 解决方案，无需公网 IP，无需端口转发，无需反向代理, 零配置，不仅适用于初创业团队、个人，也适用于需要弹性扩张，在世界各地拥有成千上万台电脑的大公司。",
+    "slogan-description": "OmniEdge 的端到端企业 VPN 解决方案，无需公网 IP，无需端口转发，无需反向代理，零配置，不仅适用于初创业团队、个人，也适用于需要弹性扩张，在世界各地拥有成千上万台电脑的大公司。局域网的事情，就要放在局域网。",
     "getstartedfree": "开始免费使用",
     "getstart-subtitle": "开始免费使用，无需信用卡信息",
     "contactsalesexpert": "联系销售专家",
@@ -142,6 +142,7 @@
     "title": "价格",
     "subtitle": " 从免费计划开始使用，和我们一起成长",
     "contact": "联系我们",
+    "compare-title": "订阅计划服务比較表",
     "features": "功能特性",
     "starter": "入门版",
     "professional": "专业版",
@@ -165,7 +166,8 @@
     "whitelable": "贴牌",
     "specialsupport": "特殊支持",
     "emailsupport": "邮件支持",
-    "permonth": "每月每人",
+    "permonth": "每月",
+    "peruser": "每人",
     "personal": "个人用户",
     "business": "企业用户",
     "plans": {

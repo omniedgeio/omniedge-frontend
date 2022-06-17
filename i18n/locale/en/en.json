@@ -27,7 +27,7 @@
     "subtitle-2": "We are looking for talented people who are trying to help others to have a great work-life balance by creating great products while enjoying their own work-life balance. We are currently not hiring, but are happy to hear from talents. Send us an email [hi@omniedge.io](mailto:hi@omniedge.io) if you are interested in us.​"
   },
   "index": {
-    "title": "Private Network for Edge Computing, Hybrid Cloud, Industrial IoT, AR, VR, Remote access and more ",
+    "title": "Private Network for Edge Computing, Hybrid Cloud, Industrial IoT, AR, VR, Remote access and more. What happens in intranet,stays in intranet. ",
     "description": "OmniEdge reduces the enterprise connectivity deployment from weeks to minutes, helps customers focusing on their core business, connects and manages their devices from anywhere, anytime.",
     "slogan": "Bring intranet on the internet",
     "slogan-1": "Bring",
@@ -37,7 +37,7 @@
     "slogan-desc-1": "In Private Network With",
     "slogan-desc-2": "Zero",
     "slogan-desc-3": "Config",
-    "slogan-description": "Omniedge's Peer-to-Peer Layer 2 VPN solutions are not only a great and affordable network solution for a small team but also for big companies with thousands of computers all around the world.",
+    "slogan-description": "Omniedge's Peer-to-Peer and Zero-Config Layer 2 VPN solutions are not only a great and affordable network solution for a small team but also for big companies with thousands of computers all around the world. What happens in intranet, stayin in intranet.",
     "getstartedfree": "Get Started Free",
     "getstart-subtitle": "Start from free, no credit card required",
     "contactsalesexpert": "Contact Sales Expert",
@@ -141,6 +141,7 @@
     "title": "Pricing",
     "subtitle": "Start for free, then grow with us",
     "contact": "Contact us",
+    "compare-title": "Compare features",
     "features": "Features",
     "starter": "Starter",
     "professional": "Professional",
@@ -164,7 +165,8 @@
     "whitelable": " White label",
     "specialsupport": " Special Support",
     "emailsupport": "Email Support",
-    "permonth": "Per Month Per User",
+    "permonth": "Per month",
+    "peruser": "Per user",
     "personal": "Personal",
     "business": "Business",
     "plans": {
@@ -308,7 +310,7 @@
       "enterprise": {
         "title": "Enterprise",
         "price": "Let's talk",
-        "description": "For enterprise or SMEs.",
+        "description": "For enterprise",
         "features": [
           {
             "label": "Unlimited virtual networks, devices and users."

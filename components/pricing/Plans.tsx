@@ -61,7 +61,7 @@ const PlanPrice = ({ price }: { price: string }) => {
           {" "}
           $ {price}{" "}
           <Text as='sup' display="inline" verticalAlign="middle" fontSize="14px" fontWeight="400" lineHeight="20px" color="gray.500" >
-             {t("permonth")}
+             {t("permonth")}/{t("peruser")}
           </Text>
         </Text>
       ) : (

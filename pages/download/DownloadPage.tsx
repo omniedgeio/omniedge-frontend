@@ -2,7 +2,7 @@ import { Center, chakra, Link, SimpleGrid, Stack, Text, useColorModeValue, VStac
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import DefaultLayout from "../../components/layout/Default";
-import { DownloadDescription } from "./Downloadutil";
+import DownloadDescription from "./Downloadutil";
 import Icon from "./Icon";
 import {useTranslation} from "react-i18next";
 const downloadMetaLink = "/assets/download/download-link.json";

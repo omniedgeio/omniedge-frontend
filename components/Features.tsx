@@ -674,7 +674,7 @@ export function Compare() {
         </chakra.h2>
         <Text 
         maxW={{md: "599px" }}
-        font-size="14px"
+        fontSize="14px"
         line-height="20px"
         textAlign="center">{t('comparedesc')}{" "}</Text>
         <Image maxW={{md: "800px" }} src="/assets/OmniEdgeComparison.gif" alt="OmniEdge " />

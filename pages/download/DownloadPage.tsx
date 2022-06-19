@@ -17,6 +17,7 @@ export const DownloadPage: React.FC<realplatform> = function ({ platform: select
   const router = useRouter();
   const [data, setData] = useState({ status: "LOADING" });
   const {t, i18n} = useTranslation('download')
+  
 
   function routePlatform(text?: string) {
     router.push(`/download/${text ?? ""}`);

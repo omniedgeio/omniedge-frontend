@@ -87,7 +87,7 @@ interface descinfo {
 
 interface Platforminfo extends lstupdate, descinfo {
   [status: string]: any;
-  displayName?: string;
+  displayName: string;
   link: string;
   showQRCode: boolean;
   version: string;
@@ -97,9 +97,9 @@ interface Platforminfo extends lstupdate, descinfo {
   description: descinfo;
 }
 
-const DownloadDescription: React.FC<{ desc: Platforminfo, active?: boolean }> = function ({ desc, active }) {
+export const DownloadDescription: React.FC<{ desc: Platforminfo, active?: boolean }> = function ({ desc,active }) {
   const [showingQRCode, setShowingQRCode] = useState(false)
-  const { t } = useTranslation("platforms", { keyPrefix: desc.displayName });
+  const { t } = useTranslation("platforms", { keyPrefix: `${desc.displayName}` })
   if (!active) {
     return null
   }
@@ -129,17 +129,22 @@ const DownloadDescription: React.FC<{ desc: Platforminfo, active?: boolean }> = 
   } else if (desc.status == 'LIVE') {
     return (<>
       <VStack mt={3}>
-        <Text fontSize="24px" fontWeight="600" lineHeight="32px" color="gray.900" textAlign="center" paddingTop="40px">{t("description.title")}
+        <Text fontSize="24px" fontWeight="600" lineHeight="32px" color="gray.900" textAlign="center" paddingTop="40px">{t('description.title')}
         </Text>
         <Text fontSize="14px" fontWeight="500" lineHeight="20px" color="gray.500" textAlign="center" paddingTop="8px">
 
-          {t("captionText") && (
+          {t("captionText") && (<>
             <DownloadCaption
               text={
-                t("captionText") + '\n' +
+                t("captionText")
+              }
+            />
+            <DownloadCaption
+              text={
                 ` ${t("lastUpdate.title")} ${t("version")}, ${t("lastUpdate.month")} ${t("lastUpdate.date")}, ${t("lastUpdate.year")}.`
               }
             />
+            </>
           )}</Text>
 
         {(t("buttonText") != "") &&

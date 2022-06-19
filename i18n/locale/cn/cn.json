@@ -240,7 +240,7 @@
       "showQRCode": false,
       "version": "0.2.3",
       "buttonText": "",
-      "captionText": "兼容树莓派1B, 3B, 3B+",
+      "captionText": "兼容树莓派1B, 3B, 3B+,4B",
       "lastUpdate": {
         "title": "最后更新: 版本",
         "year": 2022,

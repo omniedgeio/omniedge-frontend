@@ -2,7 +2,7 @@ import { Center, chakra, Link, SimpleGrid, Stack, Text, useColorModeValue, VStac
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import DefaultLayout from "../../components/layout/Default";
-import { DownloadDescription } from "./Downloadutil";
+import DownloadDescription from "./Downloadutil";
 import Icon from "./Icon";
 import {useTranslation} from "react-i18next";
 const downloadMetaLink = "/assets/download/download-link.json";
@@ -17,6 +17,7 @@ export const DownloadPage: React.FC<realplatform> = function ({ platform: select
   const router = useRouter();
   const [data, setData] = useState({ status: "LOADING" });
   const {t, i18n} = useTranslation('download')
+  
 
   function routePlatform(text?: string) {
     router.push(`/download/${text ?? ""}`);
@@ -69,7 +70,7 @@ export const DownloadPage: React.FC<realplatform> = function ({ platform: select
                   {data.status === "LOADING" && <div>Loading...</div>}
                   {data.status === "LOADED" && <div>Loaded</div> &&
                     platforms.map((platform, i) => (
-                      <DownloadDescription key={i} desc={data[platform]} active={platform == selectedPlatform} />
+                      <DownloadDescription key={i} desc={data[platform]} displayName={data[platform].displayName} active={platform == selectedPlatform} />
                     ))}
                 </VStack>
               </Center>

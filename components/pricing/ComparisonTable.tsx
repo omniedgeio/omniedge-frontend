@@ -121,7 +121,7 @@ export default function ComparisonTable() {
 
   return (
     <VStack my={10} mx="auto" px={4} spacing={4} paddingTop="60px" paddingBottom="40px" display={["none", "flex"]}>
-    <Heading paddingBottom="36px">Compare features</Heading>
+    <Heading paddingBottom="36px">{t("compare-title")}</Heading>
     <Box px={4} mt={4} mx="auto" border="solid 1px" borderColor="gray.300" borderRadius={4}>
       <TableContainer>
         <Table variant="simple" overflowX="auto">

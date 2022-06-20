@@ -22,7 +22,7 @@ const PlanContainer = ({ children, ...props }: StackProps) => {
 
 export interface PlanFeatures {
   label: string;
-  hint: string;
+  tips: string;
 }
 
 export interface PlanFeaturesProps {
@@ -37,7 +37,7 @@ const PlanFeatures = ({ features }: PlanFeaturesProps) => {
   return (
     <VStack alignItems="flex-start">
       {features.map((feature) => (
-        <Tooltip key={feature.label} hasArrow label={feature.hint}>
+        <Tooltip key={feature.label} hasArrow label={feature.tips}>
           <HStack alignItems="flex-start">
             <Icon mt={1} as={FiCheck} color="blue"></Icon>
             <Text fontSize="14px" fontWeight="400" lineHeight="20px" color="gray.900">{feature.label}</Text>
@@ -94,6 +94,7 @@ interface PlanProps extends StackProps {
 export const FreePlan: React.FC<PlanProps> = ({ actionButton, ...props }) => {
   const { t } = useTranslation("pricing", { keyPrefix: "plans.free" });
 
+  
   return (
     <PlanContainer {...props}>
       <PlanTitle title={t("title")} />

@@ -98,7 +98,7 @@ function getStatus(variant:string) {
     case 'rasp':
       return 'Stable >'
     case 'synology':
-      return 'Beta >'
+      return 'Community >'
     case 'router':
       return 'Developing >'
     case 'embedded':

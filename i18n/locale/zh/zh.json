@@ -63,7 +63,7 @@
   "link": "/install/download/0.2.3/omniedge-setup-0.2.3.exe",
   "showQRCode": false,
   "version": "0.2.3",
-  "buttonText": "下載 OmniEdge Windows",
+  "buttonText": "下載",
   "captionText": "兼容 Windows 7,10(arm) & Windows Server 2016,2019.",
   "lastUpdate": {
     "title": "最後更新: 版本",
@@ -88,7 +88,7 @@
       "link": "/install/download/0.2.2/omniedge-release-v0.2.2.apk",
       "showQRCode":"點選顯示下載二維碼",
       "version": "0.2.2",
-      "buttonText": "下載 OmniEdge Android",
+      "buttonText": "下載",
       "captionText": "兼容 Android 6 及以上版本手機，車機及電視。",
       "lastUpdate": {
         "title": "最後更新: 版本",
@@ -285,7 +285,7 @@
       "link": "https://github.com/omniedgeio/omniedge-synology/releases",
       "showQRCode": false,
       "version": "0.2.3",
-      "buttonText": "下載群暉版本",
+      "buttonText": "下載",
       "captionText": "兼容CPU是 armv7,arm64v8係統群暉",
       "lastUpdate": {
         "title": "最後更新: 版本",

@@ -38,8 +38,11 @@ export const Download_feature: Page = (props) => {
   )
 }
 export const Downloadlist: Page = (props) => {
-
+    const router = useRouter();
    const {t, i18n} = useTranslation('download')
+   function routePlatform(text?: string) {
+    router.push(`/download/${text ?? ""}`);
+  }
   return (
     <>
     <Box py={8} maxW='1232px' border-radius="12px" backgroundColor={"gray.100"} justify-content="center" >
@@ -52,6 +55,7 @@ export const Downloadlist: Page = (props) => {
               <Icon
                 key={index}
                 variant={platform}
+                onClick={() => routePlatform(platform)}
               />
             ))}
           </SimpleGrid>

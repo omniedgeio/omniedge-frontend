@@ -241,11 +241,11 @@
         "status": "COMING_SOON",
         "displayName": "iOS",
         "description": {
-          "title": "Get started on iOS",
+          "title": "Get started on iOS iPhone & M1/M2 MacBook ",
           "sub-title-1": "Thanks for your interest in OmniEdge iOS. ",
-          "sub-title-2": "OmniEdge iOS version is compatible with iOS 15.0 and later version."
+          "sub-title-2": "OmniEdge iOS version is compatible with iOS 15.0 and later versionm, M1/M2 MacBook with macOS 12.0 or later"
         },
-        "ButtonText": "Get OmniEdge iOS TestFlight Invite"
+        "ButtonText": "Get TestFlight Invite"
       },
       "Raspberry": {
         "status": "LIVE",

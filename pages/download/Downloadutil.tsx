@@ -157,16 +157,7 @@ export const DownloadDescription: React.FC<{ displayName: string, desc: Platform
             <DownloadButton text={t("buttonText") ?? 'Download'} url={t("link") ?? ''} />
             {desc.showQRCode && (
               <div className="qrCodeContainer">
-                <button
-                  onClick={() => {
-                    setShowingQRCode(!showingQRCode)
-                  }}
-                >
-                  <code>{t('showQRCode')}</code> <Icon as={FaQrcode} />
-                </button>
-                {showingQRCode && (
                   <QRCode className=".qrCode" value={desc.link} renderAs={'svg'} />
-                )}
               </div>
             )}
           </Text>)

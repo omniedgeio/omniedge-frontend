@@ -7,6 +7,8 @@ import { FaQrcode } from 'react-icons/fa'
 import QRCode from 'qrcode.react'
 import { useTranslation } from "react-i18next";
 import Markdown from 'markdown-to-jsx';
+import { AppProps } from 'next/app';
+import { boolean } from 'yup';
 export function DownloadButton({ text = 'Download', url = '' }) {
   if (text !== '') {
     return (
@@ -97,9 +99,11 @@ interface Platforminfo extends lstupdate, descinfo {
   description: descinfo;
 }
 
-export const DownloadDescription: React.FC<{ desc: Platforminfo, active?: boolean }> = function ({ desc,active }) {
+
+export const DownloadDescription: React.FC<{ displayName: string, desc: Platforminfo, active?: boolean }> = ({ displayName, desc,active }) => {
   const [showingQRCode, setShowingQRCode] = useState(false)
-  const { t } = useTranslation("platforms", { keyPrefix: `${desc.displayName}` })
+  const { t } = useTranslation("platforms", { keyPrefix: displayName })
+  
   if (!active) {
     return null
   }
@@ -127,6 +131,7 @@ export const DownloadDescription: React.FC<{ desc: Platforminfo, active?: boolea
       return (<> <div className="font-bold">{desc.displayName} is coming soon</div></>)
     }
   } else if (desc.status == 'LIVE') {
+    
     return (<>
       <VStack mt={3}>
         <Text fontSize="24px" fontWeight="600" lineHeight="32px" color="gray.900" textAlign="center" paddingTop="40px">{t('description.title')}

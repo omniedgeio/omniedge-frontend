@@ -90,7 +90,7 @@ function getStatus(variant:string) {
     case 'macos':
       return 'Stable >'
     case 'ios':
-      return 'TestFlight >'
+      return 'Stable >'
     case 'android':
       return 'Stable >'
     case 'windows':
@@ -98,7 +98,7 @@ function getStatus(variant:string) {
     case 'rasp':
       return 'Stable >'
     case 'synology':
-      return 'Beta >'
+      return 'Community >'
     case 'router':
       return 'Developing >'
     case 'embedded':

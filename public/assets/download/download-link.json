@@ -38,7 +38,7 @@
       "instructions": [
         ""
       ],
-      "instructionGifLink": "/assets/download/android-installation.gif"
+      "instructionGifLink": ""
     }
   },
   "linuxcli": {
@@ -136,8 +136,25 @@
     }
   },
   "ios": {
-    "status": "COMING_SOON",
-    "displayName": "iOS"
+    "status": "LIVE",
+    "displayName": "iOS",
+    "link": "https://apps.apple.com/us/app/omniedgenew/id1603005893",
+    "showQRCode": true,
+    "version": "1.0.17",
+    "buttonText": "Download",
+    "captionText": "Compatible with iPhone/iPad with iOS 15.0 and later version, M1/M2 MacBook with macOS 12.0 or later",
+    "lastUpdate": {
+      "year": 2022,
+      "month": "June",
+      "date": 22
+    },
+    "description": {
+      "title": "Get started on iOS iPhone & M1/M2 MacBook ",
+      "instructions": [
+        ""
+      ],
+      "instructionGifLink": ""
+    }
   },
   "rasp": {
     "status": "LIVE",

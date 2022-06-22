@@ -84,7 +84,8 @@ a {
 }
 
 .qrCode {
-  margin: 8px auto 0;
+  margin: 8px auto 6;
+  padding-top: 8px;
 }
 
 .description {

@@ -224,14 +224,29 @@
       }
     },
     "iOS": {
-      "status": "COMING_SOON",
+      "status": "LIVE",
       "displayName": "iOS",
+      "link": "https://apps.apple.com/us/app/omniedgenew/id1603005893",
+      "showQRCode": true,
+      "version": "1.0.17",
+      "buttonText": "下载",
+      "captionText": "兼容 iOS 15.0及以上版本 iPhone，macOS 12.0 及上版本 M1/M2 MacBook",
+      "lastUpdate": {
+        "title": "最后更新: 版本",
+        "year": 2022,
+        "month": "六月",
+        "date": 22
+      },
       "description": {
         "title": "在iOS，M1/M2 MacBook 使用 OmniEdge",
-        "sub-title-1": "感谢您使用 OmniEdge iOS 版本。 ",
-        "sub-title-2": "OmniEdge iOS 版本需要使用 iOS 15.0及以上版本 iPhone，macOS 12.0 及上版本 M1/M2 MacBook"
-      },
-      "ButtonText": "申请 OmniEdge iOS 和 M1，M2 TestFlight 邀请"
+        "instructions": [
+          {
+            "step": "null",
+            "code": "null"
+          }
+        ],
+        "instructionGifLink": ""
+      }
     },
     "Raspberry": {
       "status": "LIVE",

@@ -90,7 +90,7 @@ function getStatus(variant:string) {
     case 'macos':
       return 'Stable >'
     case 'ios':
-      return 'TestFlight >'
+      return 'Stable >'
     case 'android':
       return 'Stable >'
     case 'windows':

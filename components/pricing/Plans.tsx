@@ -80,7 +80,7 @@ const PlanActionButton: React.FC<{ plan: string } & ButtonProps> = ({ plan, ...p
   const { t } = useTranslation("pricing");
   return (
     <Link href="/dashboard/billing">
-      <Button isFullWidth colorScheme="gray" fontSize="14px" fontWeight="500" lineHeight="20px" color="gray.500"  mt={4} {...props}>
+      <Button isFullWidth colorScheme="brand" fontSize="14px" fontWeight="700" lineHeight="20px" mt={4} {...props}>
         {t("getstarted")}
       </Button>
     </Link>
@@ -155,7 +155,7 @@ export const EnterprisePlan: React.FC<PlanProps> = ({ actionButton, ...props }) 
         actionButton
       ) : (
         <Link href="/contactus">
-          <Button isFullWidth variant="outline" mt={4} colorScheme="brand" fontSize="14px" fontWeight="700" lineHeight="20px">
+          <Button isFullWidth colorScheme="gray" fontSize="14px" fontWeight="700" lineHeight="20px">
             {t2("contact")}
           </Button>
         </Link>

@@ -1,11 +1,19 @@
 ---
 title: Install Omniedge on MacOS
-description: OmniEdge MacOS Cli is compatible with intel Macbook, macOS 10 or later, connect to private network.
-route: Doc / Install / MacOS Cli
+description: OmniEdge MacOS GUI is compatible with M1/M2 MacBook, Cli is compatible with intel MacBook, macOS 10 or later, connect to private network.
+route: Doc / Install / MacOS
 index: 3
 thumbnail: /assets/OmniEdgeall0.5.png
 ---
 # Installing on MacOS
+
+## For M1/M2 user: 
+
+OmniEdge MacOS GUI is compatible with M1/M2 MacBook, macOS 12 or later. Last update: Version 1.0.17, June,22,2022
+
+[Download from App Store](https://apps.apple.com/us/app/omniedgenew/id1603005893)
+
+## For Intel MacBook or experts who want to use CLi
 
 OmniEdge MacOS Cli is compatible with intel Macbook, macOS 10 or later. Last update: Version 0.2.3, April,25, 2022.
 

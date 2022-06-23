@@ -1,4 +1,4 @@
-import { Center, chakra, Link, SimpleGrid, Stack, Text, useColorModeValue, VStack } from "@chakra-ui/react";
+import { Center, Link,SimpleGrid, Stack, Text, VStack } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import DefaultLayout from "../../components/layout/Default";

@@ -94,6 +94,7 @@ export const DownloadPage: React.FC<realplatform> = function ({ platform: select
                     variant={platform}
                     selected={selectedPlatform}
                     onClick={() => routePlatform(platform)}
+                    displaystatus={false}
                   />
                 ))}
               </SimpleGrid>

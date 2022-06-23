@@ -6,7 +6,6 @@ import DownloadDescription from "./Downloadutil";
 import Icon from "./Icon";
 import { useTranslation } from "react-i18next";
 const platforms = ["macos", "ios", "windows", "android", "linuxcli", "synology", "rasp", "embedded", "nvidia"];
-// const platforms = ['macos', 'ios', 'windows', 'android', 'linuxcli', 'linuxgui','rasp', 'synology','router']
 const data = {
   "windows": {
     "status": "LIVE",

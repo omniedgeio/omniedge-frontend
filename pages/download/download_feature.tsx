@@ -5,7 +5,6 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import Icon from "./Icon";
 const platforms = ["macos", "ios", "windows", "android", "linuxcli","synology","rasp","embedded","nvidia"];
-// const platforms = ['macos', 'ios', 'windows', 'android', 'linuxcli', 'linuxgui','rasp', 'synology','router']
 import {useTranslation} from "react-i18next";
 
 interface realplatform {

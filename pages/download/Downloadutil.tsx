@@ -89,11 +89,6 @@ interface Platforminfo {
   displayName: string;
   link: string;
   showQRCode: boolean;
-  // version: string;
-  // buttonText: string;
-  // captionText: string;
-  // lastUpdate: lstupdate;
-  // description: descinfo;
 }
 
 
@@ -105,26 +100,6 @@ export const DownloadDescription: React.FC<{ displayName: string, desc: Platform
     return null
   }
   if (desc.status == 'COMING_SOON') {
-    // if (desc.displayName == 'iOS') {
-    //   return (<>
-    //     <VStack mt={3}>
-    //       <Text fontSize="24px" fontWeight="600" lineHeight="32px" color="gray.900" textAlign="center" paddingTop="40px">
-    //         {t("description.title")}
-    //       </Text>
-    //       <Text fontSize="14px" fontWeight="500" lineHeight="20px" color="gray.500" textAlign="center" paddingTop="8px">
-    //         {t("description.sub-title-1")}<br></br>
-    //         {t("description.sub-title-2")}<br></br>
-    //       </Text>
-
-    //       <Text fontSize="14px" fontWeight="500" lineHeight="20px" color="gray.500" textAlign="center" paddingTop="36px">
-    //         <DownloadButton text={t("ButtonText")} url="https://forms.gle/QNP2VPbRtxKyPWNC7" />
-    //       </Text>
-
-
-    //     </VStack>
-    //   </>)
-    // }
-    // else {
       return (<> <div className="font-bold">{desc.displayName} is coming soon</div></>)
   } else if (desc.status == 'LIVE') {
     return (<>

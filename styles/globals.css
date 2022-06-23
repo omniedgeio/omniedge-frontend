@@ -50,8 +50,10 @@ body {
   margin: 0;
 }
 
+
 a {
   text-decoration: none;
+  font-weight: 500;
 }
 
 * {
@@ -144,15 +146,15 @@ pre {
 }
 .markdown a {
   color: #162be1;
-  text-shadow: #6a737d;
+  /* text-shadow: #6a737d; */
   font-weight: 600;
-  background-color: #1b1f230d;
+  /* background-color: #1b1f230d; */
   text-decoration: solid;
 }
 .markdown a:active,
 .markdown a:hover {
   outline-width: 0;
-  text-decoration: #011627;
+  text-decoration:underline;
 }
 
 .markdown h1,

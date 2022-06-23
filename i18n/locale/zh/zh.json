@@ -7,20 +7,20 @@
     "dashboard": "管理後臺",
     "getstarted": "開始使用",
     "login": "登入",
-    "opensource":"開源"
+    "opensource": "開源"
   },
   "footer": {
     "copyright": "© 2022 OmniEdge Inc. 版權所有",
     "about": "關於我們",
     "docs": "文檔",
-    "contact": "聯係我們",    
-    "survey": "用戶調查",      
+    "contact": "聯係我們",
+    "survey": "用戶調查",
     "tos": "服務條款",
     "privacy": "用戶隱私",
     "opensource": "開源",
     "cookie": "OmniEdge 使用 Cookie 來提供用戶體驗服務。"
   },
-  "about":{
+  "about": {
     "title-1": "簡化産品的使用流程",
     "subtitle-1": "當人們談論低代碼的時候，我們更願意為客戶提供零配置的服務。我們的理應有更多的時間與家人在一起享受生活。 OmniEdge從 Twitter 上創建，團隊來自6個國家，在疫情大流行時代，我們擁抱遠程工作，創造免維護、安全和經濟的産品。",
     "title-2": "OmniEdge正在尋找誰？",
@@ -44,7 +44,7 @@
     "addvirutalnetwork": "+ 私有網路",
     "name": "名稱",
     "subnet": "子網",
-    "cancel" : "取消",
+    "cancel": "取消",
     "create": "創建",
     "keepintouch": "保持聯絡",
     "followomniedge": " 關註 OMNIEDGE",
@@ -59,36 +59,37 @@
   "platforms": {
     "Windows": {
       "status": "LIVE",
-  "displayName": "Windows",
-  "link": "/install/download/0.2.3/omniedge-setup-0.2.3.exe",
-  "showQRCode": false,
-  "version": "0.2.3",
-  "buttonText": "下載",
-  "captionText": "兼容 Windows 7,10(arm) & Windows Server 2016,2019.",
-  "lastUpdate": {
-    "title": "最後更新: 版本",
-    "year": 2022,
-    "month": "3月",
-    "date": 19
-  },
-  "description": {
-    "title": "開始在 Windows 上使用 OmniEdge",
-    "instructions": [
-      {
-        "step": "null",
-        "code": "null"
-      }
-    ],
-    "instructionGifLink": "/assets/download/win-installation.gif"
-  }
+      "displayName": "Windows",
+      "link": "/install/download/0.2.3/omniedge-setup-0.2.3.exe",
+      "showQRCode": false,
+      "version": "0.2.3",
+      "buttonText": "下載",
+      "captionText": "兼容 Windows 7,10(arm) & Windows Server 2016,2019.",
+      "lastUpdate": {
+        "title": "最後更新: 版本",
+        "year": 2022,
+        "month": "3月",
+        "date": 19
       },
+      "description": {
+        "title": "開始在 Windows 上使用 OmniEdge",
+        "instructions": [
+          {
+            "step": "null",
+            "code": "null"
+          }
+        ],
+        "instructionGifLink": "/assets/download/win-installation.gif",
+        "instructionsVideoLink": ""
+      }
+    },
     "Android": {
       "status": "LIVE",
       "displayName": "Android",
       "link": "/install/download/0.2.2/omniedge-release-v0.2.2.apk",
-      "showQRCode":"點選顯示下載二維碼",
+      "showQRCode": "點選顯示下載二維碼",
       "version": "0.2.2",
-      "buttonText": "下載",
+      "buttonText": "下載 Apk",
       "captionText": "兼容 Android 6 及以上版本手機，車機及電視。",
       "lastUpdate": {
         "title": "最後更新: 版本",
@@ -104,7 +105,8 @@
             "code": "null"
           }
         ],
-        "instructionGifLink": "/assets/download/android-installation.gif"
+        "instructionGifLink": "/assets/download/android-installation.gif",
+        "instructionsVideoLink": ""
       }
     },
     "Linux-cli": {
@@ -114,7 +116,7 @@
       "showQRCode": false,
       "version": "0.2.3",
       "buttonText": "",
-      "captionText": "兼容主流 Linux 發行版及基於Linux的設備，如 Archlinux,Ubuntu,CentOS, Debian,Fedora,Raspberry OS等",
+      "captionText": "兼容macOS 及主流 Linux 發行版及基於Linux的設備，如 Archlinux,Ubuntu,CentOS, Debian,Fedora,Raspberry OS等",
       "lastUpdate": {
         "title": "最後更新: 版本",
         "year": 2022,
@@ -125,11 +127,11 @@
         "title": "開始使用OmniEdge CLi 命令行版本",
         "instructions": [
           {
-            "step":"1. [註冊賬號](https://omniedge.io/register)",
+            "step": "1. [註冊賬號](https://omniedge.io/register)",
             "code": "null"
           },
           {
-            "step":"2. 在終端輸入以下命令下載和安裝 OmniEdge CLI",
+            "step": "2. 在終端輸入以下命令下載和安裝 OmniEdge CLI",
             "code": "curl https://omniedge.io/install/omniedge-install.sh | bash"
           },
           {
@@ -142,7 +144,7 @@
           },
           {
             "step": "5. 稍等一下，你的端到端的設備連接就能建立了",
-            "code": "curl https://omniedge.io/install/omniedge-install.sh | bash"
+            "code": "null"
           },
           {
             "step": "6.如果要讓 OmniEdge 在後臺自動運行，請參考文章：[Run OmniEde as a service](/docs/article/install/autostart-omniedge).",
@@ -184,39 +186,39 @@
     "macOS": {
       "status": "LIVE",
       "displayName": "macOS",
-      "link": "/install/download/0.2.3/omniedgecli-macos-latest.zip",
+      "link": "https://apps.apple.com/us/app/omniedgenew/id1603005893",
       "showQRCode": false,
-      "version": "0.2.3",
-      "buttonText": "",
-      "captionText": "兼容 Intel/M1/M2 MacBook, macOS 10 or later",
+      "version": "1.0.17",
+      "buttonText": "從 App Store 下載",
+      "captionText": "GUI版本兼容 Intel/M1/M2 MacBook, macOS 10 or later，Intel MacBook請使用 CLi",
       "lastUpdate": {
         "title": "最後更新: 版本",
         "year": 2022,
-        "month": "4月",
-        "date": 25
+        "month": "6月",
+        "date": 22
       },
       "description": {
-        "title": "開始使用 OmniEdge macOS Cli 命令行版本",
+        "title": "在MacBook 上使用 OmniEdge macOS 版本",
         "instructions": [
           {
-            "step":"1. [註冊賬號](https://omniedge.io/register)",
+            "step": "如果您是 Intel MacBook 或者想使用 OmniEdge CLi 版本，請在命令行運行：",
+            "code": "curl https://omniedge.io/install/omniedge-install.sh | bash"
+          },
+          {
+            "step": "1. [註冊賬號](https://omniedge.io/register)",
             "code": "null"
           },
           {
-            "step":"2. 在終端輸入以下命令下載和安裝 OmniEdge CLI",
-            "code": "curl https://omniedge.io/install/omniedge-install.sh | bash"
-          },
-          {
-            "step": "3. 使用用戶信箱和密碼或者安全碼登入，安全碼可以在[管理界麵](https://omniedge.io/dashboard)生成.",
+            "step": "2. 使用用戶信箱和密碼或者安全碼登入，安全碼可以在[管理界麵](https://omniedge.io/dashboard)生成.",
             "code": "omniedge login -u yourname@youremail.com \n #or \nomniedge login -s securitykey"
           },
           {
-            "step": "4. Join 你的私有網路，可以在輸出的私有網路列錶中選擇，也可以通過私有網路 ID 指定私有網路",
+            "step": "3. Join 你的私有網路，可以在輸出的私有網路列錶中選擇，也可以通過私有網路 ID 指定私有網路",
             "code": "sudo omniedge join \n #or \nsudo omniedge join -n 'virtual-network-id'"
           },
           {
-            "step": "5. 稍等一下，你的端到端的設備連接就能建立了",
-            "code": "curl https://omniedge.io/install/omniedge-install.sh | bash"
+            "step": "4. 稍等一下，你的端到端的設備連接就能建立了",
+            "code": "null"
           }
         ],
         "instructionGifLink": "",
@@ -229,8 +231,8 @@
       "link": "https://apps.apple.com/us/app/omniedgenew/id1603005893",
       "showQRCode": true,
       "version": "1.0.17",
-      "buttonText": "下載",
-      "captionText": "兼容 iOS 15.0及以上版本 iPhone，macOS 12.0 及上版本 M1/M2 MacBook",
+      "buttonText": "從 App Store 下載",
+      "captionText": "兼容 iOS 15.0及以上版本 iPhone",
       "lastUpdate": {
         "title": "最後更新: 版本",
         "year": 2022,
@@ -238,14 +240,15 @@
         "date": 22
       },
       "description": {
-        "title": "在iOS，M1/M2 MacBook 使用 OmniEdge",
+        "title": "在 iPhone 上使用 OmniEdge",
         "instructions": [
           {
             "step": "null",
             "code": "null"
           }
         ],
-        "instructionGifLink": ""
+        "instructionGifLink": "",
+        "instructionsVideoLink": ""
       }
     },
     "Raspberry": {
@@ -266,11 +269,11 @@
         "title": "開始在樹莓派上使用 OmniEdge",
         "instructions": [
           {
-            "step":"1. [註冊賬號](https://omniedge.io/register)",
+            "step": "1. [註冊賬號](https://omniedge.io/register)",
             "code": "null"
           },
           {
-            "step":"2. 在終端輸入以下命令下載和安裝 OmniEdge CLI",
+            "step": "2. 在終端輸入以下命令下載和安裝 OmniEdge CLI",
             "code": "curl https://omniedge.io/install/omniedge-install.sh | bash"
           },
           {
@@ -283,7 +286,7 @@
           },
           {
             "step": "5. 稍等一下，你的端到端的設備連接就能建立了",
-            "code": "curl https://omniedge.io/install/omniedge-install.sh | bash"
+            "code": "null"
           },
           {
             "step": "6.如果要讓 OmniEdge 在後臺自動運行，請參考文章：[Run OmniEde as a service](/docs/article/install/autostart-omniedge).",
@@ -312,11 +315,11 @@
         "title": "開始在群暉 NAS 上使用 OmniEdge",
         "instructions": [
           {
-            "step":"1. [註冊賬號](https://omniedge.io/register)",
+            "step": "1. [註冊賬號](https://omniedge.io/register)",
             "code": "null"
           },
           {
-            "step":"2. 在終端輸入以下命令下載和安裝 OmniEdge CLI",
+            "step": "2. 在終端輸入以下命令下載和安裝 OmniEdge CLI",
             "code": "curl https://omniedge.io/install/omniedge-install.sh | bash"
           },
           {
@@ -329,7 +332,7 @@
           },
           {
             "step": "5. 稍等一下，你的端到端的設備連接就能建立了",
-            "code": "curl https://omniedge.io/install/omniedge-install.sh | bash"
+            "code": "null"
           }
         ],
         "instructionGifLink": "",
@@ -354,11 +357,11 @@
         "title": "開始在嵌入式係統上使用 OmniEdge",
         "instructions": [
           {
-            "step":"1. [註冊賬號](https://omniedge.io/register)",
+            "step": "1. [註冊賬號](https://omniedge.io/register)",
             "code": "null"
           },
           {
-            "step":"2. 在終端輸入以下命令下載和安裝 OmniEdge CLI",
+            "step": "2. 在終端輸入以下命令下載和安裝 OmniEdge CLI",
             "code": "curl https://omniedge.io/install/omniedge-install.sh | bash"
           },
           {
@@ -371,7 +374,7 @@
           },
           {
             "step": "5. 稍等一下，你的端到端的設備連接就能建立了",
-            "code": "curl https://omniedge.io/install/omniedge-install.sh | bash"
+            "code": "null"
           },
           {
             "step": "6.如果要讓 OmniEdge 在後臺自動運行，請參考文章：[Run OmniEde as a service](/docs/article/install/autostart-omniedge).",
@@ -382,7 +385,7 @@
         "instructionsVideoLink": ""
       }
     },
-     "Nvidia": {
+    "Nvidia": {
       "status": "LIVE",
       "displayName": "Nvidia",
       "link": "https://github.com/omniedgeio/app-release/releases/tag/v0.2.3",
@@ -400,11 +403,11 @@
         "title": "開始在英偉達 JETSON 上使用 OmniEdge",
         "instructions": [
           {
-            "step":"1. [註冊賬號](https://omniedge.io/register)",
+            "step": "1. [註冊賬號](https://omniedge.io/register)",
             "code": "null"
           },
           {
-            "step":"2. 在終端輸入以下命令下載和安裝 OmniEdge CLI",
+            "step": "2. 在終端輸入以下命令下載和安裝 OmniEdge CLI",
             "code": "curl https://omniedge.io/install/omniedge-install.sh | bash"
           },
           {
@@ -417,7 +420,7 @@
           },
           {
             "step": "5. 稍等一下，你的端到端的設備連接就能建立了",
-            "code": "curl https://omniedge.io/install/omniedge-install.sh | bash"
+            "code": "null"
           },
           {
             "step": "6.如果要讓 OmniEdge 在後臺自動運行，請參考文章：[Run OmniEde as a service](/docs/article/install/autostart-omniedge).",
@@ -466,7 +469,7 @@
     "highspeed-desc": "端到端直接連接，與古早 VPN 網路相比，理論延遲可以降低 50%，零配置的設計，允許用戶一鍵部署。",
     "highperformance": "高性能",
     "highperformance-desc": "跨平臺，及良好的係統兼容性，可以連接最廣泛的電腦設備，雲服務器及物聯網設備。在一個管理後臺上管理所有用戶和設備。最大限度地減少設定時間、資源、成本和維護，幫助您專註於您的業務。",
-    "how": "OmniEdge 如何工作?" ,
+    "how": "OmniEdge 如何工作?",
     "how-desc": " 我們在因特網上重建了局域網，讓連接更加容易，以方便您可以將您的設備安全的連接起來，",
     "how-desc-1": "而不用擔心設備在任何時間，在世界的任何地方. ",
     "what": " OmniEdge 為您做了什麼 ?",
@@ -478,12 +481,12 @@
     "try": "現在開始試用",
     "download": "下載 OmniEdge",
     "download-desc": "OmniEdge 目前兼容各種不同的平臺，您可以在此下載.",
-    "login":"登入到 OmniEdge ",
+    "login": "登入到 OmniEdge ",
     "login-desc-1": "OmniEdge 支援",
     "login-desc-2": "郵件登入，安全碼登入及及Google SSO登入",
-    "create":"創建一個私有虛擬網路",
+    "create": "創建一個私有虛擬網路",
     "create-desc": " OmniEdge 會為創建一個預設的私有虛擬網路，當然您也可以自行創建自己的虛擬網路，整個過程不到 1 分鍾.",
-    "connectin":" 一鍵登入",
+    "connectin": " 一鍵登入",
     "connectin-desc": " 點選您的 OmniEdge 客戶端的連接按鈕連到到您的設備",
     "comparetitle": "OmniEdge 為何與衆不同",
     "comparedesc": "無需公網IP，無需端口轉發，零配置，零防火牆規則，及端到端加密通訊",
@@ -494,9 +497,9 @@
     "crossplatform-desc": " 用戶可以在不同的設備上使用 OmniEdge，不論這個設備運行的是 Windows 係統，Android 係統，iOS 係統，macOS 係統，Linux 係統, NAS 係統，路由由器係統或者各類雲服務器係統。",
     "dashboard": "統一的管理後臺",
     "dashboard-desc": " 用戶可以在統一的後臺管理係統內管理所有註冊過的設備，不論在何時何地，可以隨時使用 OmniEdge 的網路，通過端到端加密的通道管理這些設備.",
-    "speed":"高速度，低延時",
-    "speed-desc":" 與古早的 VPN 相比，使用端到端加密的直接連接，理論上可以降低 50% 的延時，而網路的速度依賴與設備本身所在的網路。",
-    "security":"高安全性",
+    "speed": "高速度，低延時",
+    "speed-desc": " 與古早的 VPN 相比，使用端到端加密的直接連接，理論上可以降低 50% 的延時，而網路的速度依賴與設備本身所在的網路。",
+    "security": "高安全性",
     "security-desc": "端到端 P2P 的加密 MESH 網路，網路數據包直接在兩個設備之間通過專用加密通道傳輸，不經過第三者.",
     "setup": "無痛配置",
     "setup-desc": "在不同的設備上配置 OmniEdge 隻需要幾分鍾，你可以使用用戶密碼以及安全碼等相關方式激活設備。",
@@ -504,29 +507,29 @@
     "maintenanceless-desc": " 放棄需要大量人力勞動的企業網路係統，使用 OmniEdge 您將可以專註於自己擅長的業務。",
     "featureslisttitle": "OmniEdge 功能",
     "featureslistsubtitle": " 滿足您需求的解決方案",
-    "flvn":"私有虛擬網路",
-    "flvn-desc":"私有虛擬網路為您和團隊和信任的其他成員，提供一個虛擬的事務室，大家好像坐在同一個房間裏麵交換設備之間的數據。",
-    "flrm":"遠程設備控製",
+    "flvn": "私有虛擬網路",
+    "flvn-desc": "私有虛擬網路為您和團隊和信任的其他成員，提供一個虛擬的事務室，大家好像坐在同一個房間裏麵交換設備之間的數據。",
+    "flrm": "遠程設備控製",
     "flrm-desc": "使用 OmniEdge ，配合VNC，RDP或者SSH，連接到遠端的不同設備，好像這些設備在您的麵前。",
-    "flcr":"跨平臺",
-    "flcr-desc":"連接到不同的操作係統平臺，包括 Windows,macOS, iOS, Android, Linux，NAS等更多.",
-    "flsb":"子路由功能",
+    "flcr": "跨平臺",
+    "flcr-desc": "連接到不同的操作係統平臺，包括 Windows,macOS, iOS, Android, Linux，NAS等更多.",
+    "flsb": "子路由功能",
     "flsb-desc": "子路由功能允許您連接到那些無法安裝 OmniEdge 的設備，比如很多 IoT 設備",
     "flbd": "大數據傳輸",
-    "flbd-desc":" 大數據傳輸功能可以幫助跨國企業在各個分公司之前快速同步大文件，特別是 CAD 等相關敏感的數據。",
+    "flbd-desc": " 大數據傳輸功能可以幫助跨國企業在各個分公司之前快速同步大文件，特別是 CAD 等相關敏感的數據。",
     "flmu": "多用戶",
-    "flmu-desc":" 管理您企業內的多個用戶，連接到不同的設備和資源。",
+    "flmu-desc": " 管理您企業內的多個用戶，連接到不同的設備和資源。",
     "flsk": "安全碼",
     "flsk-desc": " 安全碼允許您在冇有 GUI 的設備上使用 OmniEdge 。",
-    "flp2p":"端到端加密",
+    "flp2p": "端到端加密",
     "flp2p-desc": " 設備之間的通訊使用端到端的方式，用 Twofish/AES128/ChaCha20 等加密算法進行加密",
     "fliot": "物聯網，工業物聯網和硬體集成",
-    "fliot-desc":"將 OmniEdge 集成到您的物聯網，工業物聯網，或者路由器等硬體項目。",
+    "fliot-desc": "將 OmniEdge 集成到您的物聯網，工業物聯網，或者路由器等硬體項目。",
     "flzc": "零配置",
     "flzc-desc": "使用OmniEdge 連接您的設備，無需公網 IP，無需端口轉發，零配置，零防火牆規則。",
     "flokta": "Okta 集成",
     "flokta-desc": "支援企業級的 SSO 登入集成，比如將 OKTA 集成到 OmniEdge",
-    "flapi":"管理 API" ,
+    "flapi": "管理 API",
     "flapi-desc": "管理 API 是專門為管理員開發，用來管理 Dashboard 等設定虛擬網路，設備，網路和安全碼等設定的工具。",
     "herotitle-1": "所有的",
     "herotitle-2": "連接",
@@ -535,7 +538,7 @@
     "getstarted": "馬上開始"
   },
   "customersmap": {
-    "customersmaptitle":" 用戶喜歡我們的服務",
+    "customersmaptitle": " 用戶喜歡我們的服務",
     "customersmapsubtitle": " 我們的用戶來自世界上 26 個國家和地區"
   },
   "pricing": {
@@ -578,15 +581,15 @@
         "description": "專為想要體驗 OmniEdge 或者少量需求的用戶使用",
         "features": [
           {
-            "label":" 無限數據傳輸 ",
+            "label": " 無限數據傳輸 ",
             "tips": " 數據傳輸是指在您自己的虛擬網路中安裝了omniedge的設備之間的安全數據交換。"
           },
           {
-            "label":" 加密的端到端連接 ",
+            "label": " 加密的端到端連接 ",
             "tips": " 通過OmniEdge的流量是由Twofish/AES128/ChaCha20 cipers的加密算法在 P2P MESH 網路進行端到端加密。"
           },
           {
-            "label":" 最多 1 個私有網路 ",
+            "label": " 最多 1 個私有網路 ",
             "tips": " 私有網路是為你的所有設備和用戶提供的一個私有內部網，和物理局域網類似。。"
           },
           {
@@ -771,7 +774,7 @@
       ]
     }
   },
-  "auth":{
+  "auth": {
     "changepassword": "更改密碼",
     "newpassword": "新密碼",
     "oldpassword": "老密碼",
@@ -780,35 +783,34 @@
     "activate": "激活",
     "change": "更改",
     "loginwithgoogle": "使用 Google 登入",
-    "required":"必填",
-    "email":"電子郵件",
+    "required": "必填",
+    "email": "電子郵件",
     "enteremail": "請輸入您的電子郵件",
-    "password":"密碼",
+    "password": "密碼",
     "forgotpassword": "忘記密碼",
-    "login":"登入",
+    "login": "登入",
     "register": "註冊新用戶",
-    "registerinfo":"您還冇有帳號嗎？",
-    "tos":"服務條款",
-    "tosinfo":" 當點選以上按鍵後，您確認您已經閱讀，理解並且同意 OmniEdge （英文版） 的",
+    "registerinfo": "您還冇有帳號嗎？",
+    "tos": "服務條款",
+    "tosinfo": " 當點選以上按鍵後，您確認您已經閱讀，理解並且同意 OmniEdge （英文版） 的",
     "and": "和",
-    "privacy":"隱私條款",
-    "name":"名稱",
+    "privacy": "隱私條款",
+    "name": "名稱",
     "logininfo": "已經有 OmniEdge 帳號了？",
     "minilowercase": "至少一個小寫字母",
-    "minuppercase":"至少一個大寫字母",
-    "minnumbers":"至少一個數字",
-    "minsymbols":"至少一個符號",
-    "min":"至少8個字符",
+    "minuppercase": "至少一個大寫字母",
+    "minnumbers": "至少一個數字",
+    "minsymbols": "至少一個符號",
+    "min": "至少8個字符",
     "max": "最多202上字符",
     "passwordmatch": "密碼必須一緻",
-    "emailexsit":"電子郵件已經被註冊",
-    "displayname":"顯示名稱",
+    "emailexsit": "電子郵件已經被註冊",
+    "displayname": "顯示名稱",
     "enterpasswordagain": "請再次輸入密碼",
     "enterpassword": "輸入您的密碼",
     "email_verify": " 歡迎您使用 OmniEdge 。",
     "resendverifyemail": "重新發送驗證郵件",
     "email_verify_success": "您的電子信箱已經成功驗證。"
-
   },
   "dashboard": {
     "logged": "登入用戶:",
@@ -816,14 +818,14 @@
     "support": "支援",
     "logout": "登出",
     "setting": {
-      "name":"名稱",
+      "name": "名稱",
       "title": "設定",
       "email": "電子信箱",
       "inputemail": "請輸入您的電子信箱",
       "update": "更新",
       "invitations": "邀請",
       "invitation": "邀請",
-      "removevn":"刪除虛擬網路",
+      "removevn": "刪除虛擬網路",
       "removeconfirm": "確定要拒絕邀請嗎？",
       "virtualnetwork": "虛擬網路",
       "invitedat": "邀請於",
@@ -832,14 +834,14 @@
       "accept": "接受",
       "reject": "拒絕",
       "password": "密碼",
-      "changepassword":"更改密碼",
-      "changepassword-desc":"為了安全，請定期更改您的密碼。",
+      "changepassword": "更改密碼",
+      "changepassword-desc": "為了安全，請定期更改您的密碼。",
       "linkgoogle": "連接 Google 帳號",
       "linkgoogle-desc-1": "您的賬號已經",
       "linkgoogle-desc-2": "成功連接",
       "linkgoogle-desc-3": "到 Google 賬號。",
       "linkgoogle-desc": " 使用 Google 賬號登入更安全，馬上連接",
-      "profile":"用戶信息",
+      "profile": "用戶信息",
       "security": "安全"
     },
     "virtualnetwork": {
@@ -856,31 +858,31 @@
       "removebutton": "移除",
       "name": "名稱",
       "iprange": "IP 段",
-      "customizesupernode":"自建 Supernode",
-      "customizesupernodeinfo":"請確認自建的 Supernode 可以訪問。",
-      "customizesupernodefor":" 僅適用於專業版及團隊版訂閱用戶",
-      "customizesupernodehost":" 主機",
-      "customizesupernodeport":" 端口",
+      "customizesupernode": "自建 Supernode",
+      "customizesupernodeinfo": "請確認自建的 Supernode 可以訪問。",
+      "customizesupernodefor": " 僅適用於專業版及團隊版訂閱用戶",
+      "customizesupernodehost": " 主機",
+      "customizesupernodeport": " 端口",
       "upgradeplan": "升級訂閱",
       "upgradeplaninfo": "管理更多虛擬網路",
       "upgradeplaninfo-1": "你可以",
       "upgradeplaninfo-2": "更多虛擬網路。",
-      "create":"創建",
+      "create": "創建",
       "renametitle": "重命名虛擬網路",
       "close": "關閉",
       "submit": "提交",
-      "removevn":"確定要刪除虛擬網路嗎？",
+      "removevn": "確定要刪除虛擬網路嗎？",
       "view": "檢視設備",
       "invitation": "邀請",
-      "invitationsuccessful":"邀請成功",
+      "invitationsuccessful": "邀請成功",
       "success": "成功",
-      "supernodesuccess":"請重新加載 OmniEdge 客戶端以使您自己的 Supernode 生效",
+      "supernodesuccess": "請重新加載 OmniEdge 客戶端以使您自己的 Supernode 生效",
       "createvn": "創建虛擬網路",
       "title": "虛擬網路",
-      "createvnplus":"+ 虛擬網路",
+      "createvnplus": "+ 虛擬網路",
       "usedefaultsupernode": "使用預設 Supernode",
       "usecustomizesupernode": "使用自定義 Supernode",
-      "update":"更新"
+      "update": "更新"
     },
     "securitykey": {
       "title": "安全碼",
@@ -894,12 +896,12 @@
       "new-desc": "安全碼創建成功，請拷貝並且保存下來，這裏隻顯示一次",
       "expirationdate": "失效日期 :",
       "close": "關閉",
-      "permanent":"永久",
-      "permanent-desc":"一年有效的安全碼，您可以在多個不同的設備上使用。",
+      "permanent": "永久",
+      "permanent-desc": "一年有效的安全碼，您可以在多個不同的設備上使用。",
       "once": "單次",
       "once-desc": "僅有幾分鍾有效的安全碼，一旦使用了就即刻失效。",
       "name": "名稱",
-      "create":"創建",
+      "create": "創建",
       "createkey": "創建安全碼"
     },
     "device": {
@@ -918,12 +920,12 @@
       "action": "操作",
       "view": "檢視設備",
       "ip": "IP 地址 :",
-      "manufacturer":"品牌",
+      "manufacturer": "品牌",
       "clicktorename": " 點選重命名",
       "platform": " 平臺",
-      "virtualnetwork":"虛擬網路"
+      "virtualnetwork": "虛擬網路"
     },
-    "invitations":{
+    "invitations": {
       "email": "電子郵件",
       "invite": "邀請",
       "title": "刪除虛擬網路Remove Virtual Network",
@@ -932,7 +934,7 @@
       "remove": "刪除",
       "action": "編輯"
     },
-    "users":{
+    "users": {
       "user": "用戶",
       "email": "電子郵件",
       "invite": "邀請",
@@ -943,7 +945,7 @@
     },
     "billing": {
       "currentplan": "當前訂閱計劃",
-      "backtobilling":" 返回到賬單",
+      "backtobilling": " 返回到賬單",
       "contact": "聯係我們",
       "cancelnotify": "您的訂閱計劃將在本月的賬單結束時取消。",
       "changenotify": "更換訂閱計劃會在下一期賬單中增加額外費用。",
@@ -953,13 +955,11 @@
       "title": "賬單",
       "plan": "訂閱計劃",
       "monthly": "按月付費",
-      "revertnotify":"您的訂閱計劃將退回到免費計劃，截止日期",
+      "revertnotify": "您的訂閱計劃將退回到免費計劃，截止日期",
       "upgrade": "升級訂閱計劃",
       "manage": "管理",
       "features": "功能",
-      "currentusage":"當前用量"
+      "currentusage": "當前用量"
     }
   }
-
-
 }

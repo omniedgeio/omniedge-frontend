@@ -55,11 +55,11 @@ const nvidiaIcon =(isSelected:boolean) => (
 function getText(variant:string) {
   switch (variant) {
     case 'linuxcli':
-      return 'Linux'
+      return 'CLi'
     case 'linuxgui':
       return 'GUI'
     case 'macos':
-      return 'macOS CLI'
+      return 'macOS'
     case 'ios':
       return 'iOS'
     case 'android':

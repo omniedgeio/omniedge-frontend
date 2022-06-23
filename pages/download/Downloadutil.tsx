@@ -1,14 +1,11 @@
 import React, { useState } from 'react'
 import { CopyBlock, nord } from 'react-code-blocks'
 import VideoPlayer from '../../components/VideoPlayer'
-import { Image, chakra, Link, Icon, Button, Text, Heading, Box, VStack, useColorModeValue } from "@chakra-ui/react";
+import { Image, Link, Button, Flex, Center,Text, VStack } from "@chakra-ui/react";
 import { FunctionComponent } from "react";
-import { FaQrcode } from 'react-icons/fa'
 import QRCode from 'qrcode.react'
 import { useTranslation } from "react-i18next";
 import Markdown from 'markdown-to-jsx';
-import { AppProps } from 'next/app';
-import { boolean } from 'yup';
 export function DownloadButton({ text = 'Download', url = '' }) {
   if (text !== '') {
     return (
@@ -150,29 +147,26 @@ export const DownloadDescription: React.FC<{ displayName: string, desc: Platform
             </>
           )}</Text>
 
-        {(t("buttonText") != "") &&
-          (<Text fontSize="14px" fontWeight="500" lineHeight="20px" color="gray.500" textAlign="center" paddingTop="36px">
+        {(t("buttonText") != "") &&(
+          <Text fontSize="14px" fontWeight="500" lineHeight="20px" color="gray.500">
             <DownloadButton text={t("buttonText") ?? 'Download'} url={t("link") ?? ''} />
-            {desc.showQRCode && (
-              <div className="qrCodeContainer">
-                  <QRCode className=".qrCode" value={desc.link} renderAs={'svg'} />
-              </div>
-            )}
+            <Center paddingTop="10px">
+            {t("showQRCode") && (
+                  <QRCode className=".qrCode" value={t("link")}  renderAs={'svg'} /> 
+            )}</Center>
           </Text>)
         }
-
-
         <Text paddingTop="36px">
 
           <Description texts={t("description.instructions", { returnObjects: true })} />
 
-          {desc.description.instructionsVideoLink && (
-            <VideoPlayer link={desc.description.instructionsVideoLink} />
+          {t("description.instructionsVideoLink") && (
+            <VideoPlayer link={t("description.instructionsVideoLink")} />
           )}
-          {!desc.description.instructionsVideoLink &&
-            desc.description.instructionGifLink && (
+          {!t("description.instructionsVideoLink") &&
+            t("description.instructionGifLink") && (
               <Image
-                src={desc.description.instructionGifLink}
+                src={t("description.instructionGifLink")}
                 alt=""
               />
             )}

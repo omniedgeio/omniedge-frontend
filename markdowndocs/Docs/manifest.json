@@ -29,9 +29,9 @@
           "path": "Docs/install/linux-cli.md"
         },
         {
-          "name": "macOS cli",
-          "route": "macoscli",
-          "path": "Docs/install/macoscli.md"
+          "name": "macOS",
+          "route": "macos",
+          "path": "Docs/install/macos.md"
         },        
         {
           "name": "synology",

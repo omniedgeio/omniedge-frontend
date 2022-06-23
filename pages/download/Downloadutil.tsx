@@ -84,16 +84,16 @@ interface descinfo {
   instructionsVideoLink: string;
 }
 
-interface Platforminfo extends lstupdate, descinfo {
+interface Platforminfo {
   [status: string]: any;
   displayName: string;
   link: string;
   showQRCode: boolean;
-  version: string;
-  buttonText: string;
-  captionText: string;
-  lastUpdate: lstupdate;
-  description: descinfo;
+  // version: string;
+  // buttonText: string;
+  // captionText: string;
+  // lastUpdate: lstupdate;
+  // description: descinfo;
 }
 
 

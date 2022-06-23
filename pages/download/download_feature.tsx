@@ -1,13 +1,12 @@
 import platform from 'platform-detect';
 import { Page } from "../../types";
-import { Image,Center, chakra,SimpleGrid,Box,useColorModeValue,VStack } from "@chakra-ui/react";
+import {chakra,SimpleGrid,Box,VStack } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import Icon from "./Icon";
 const platforms = ["macos", "ios", "windows", "android", "linuxcli","synology","rasp","embedded","nvidia"];
 // const platforms = ['macos', 'ios', 'windows', 'android', 'linuxcli', 'linuxgui','rasp', 'synology','router']
 import {useTranslation} from "react-i18next";
-import {availableLanguages} from "../../i18n/i18n";
 
 interface realplatform {
   platform: string;

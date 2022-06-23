@@ -1,40 +1,80 @@
-import { Center, Link,SimpleGrid, Stack, Text, VStack } from "@chakra-ui/react";
+import { Center, Link, SimpleGrid, Stack, Text, VStack } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import DefaultLayout from "../../components/layout/Default";
 import DownloadDescription from "./Downloadutil";
 import Icon from "./Icon";
-import {useTranslation} from "react-i18next";
-const downloadMetaLink = "/assets/download/download-link.json";
+import { useTranslation } from "react-i18next";
 const platforms = ["macos", "ios", "windows", "android", "linuxcli", "synology", "rasp", "embedded", "nvidia"];
 // const platforms = ['macos', 'ios', 'windows', 'android', 'linuxcli', 'linuxgui','rasp', 'synology','router']
+const data = {
+  "windows": {
+    "status": "LIVE",
+    "displayName": "Windows"
+  },
+  "android": {
+    "status": "LIVE",
+    "displayName": "Android"
+  },
+  "linuxcli": {
+    "status": "LIVE",
+    "displayName": "Linux-cli"
+  },
+  "linuxgui": {
+    "status": "COMING_SOON",
+    "displayName": "Linux GUI"
+  },
+  "macos": {
+    "status": "LIVE",
+    "displayName": "macOS"
+  },
+  "ios": {
+    "status": "LIVE",
+    "displayName": "iOS"
+  },
+  "rasp": {
+    "status": "LIVE",
+    "displayName": "Raspberry"
+  },
+  "synology": {
+    "status": "LIVE",
+    "displayName": "Synology"
 
+  },
+  "embedded": {
+    "status": "LIVE",
+    "displayName": "Embedded"
+
+  },
+  "nvidia": {
+    "status": "LIVE",
+    "displayName": "Nvidia"
+
+  },
+  "router": {
+    "status": "COMING_SOON",
+    "displayName": "Router"
+
+  },
+  "template": {
+    "status": "COMING_SOON",
+    "displayName": "Raspberry PI"
+  }
+}
 interface realplatform {
   platform: string;
 }
 
 export const DownloadPage: React.FC<realplatform> = function ({ platform: selectedPlatform }) {
   const router = useRouter();
-  const [data, setData] = useState({ status: "LOADING" });
-  const {t, i18n} = useTranslation('download')
-  
+  const { t, i18n } = useTranslation('download')
+
 
   function routePlatform(text?: string) {
     router.push(`/download/${text ?? ""}`);
   }
 
-  // load data dynamically everytime this page is visited
-  useEffect(() => {
-    fetch(downloadMetaLink)
-      .then((response) => response.json())
-      .then((meta) => {
-        setData({ status: "LOADED", ...meta });
-      })
-      .catch((error) => {
-        console.error(error);
-        setData({ status: "ERROR" });
-      });
-  }, [data]);
+
 
   return (
     <>
@@ -60,18 +100,9 @@ export const DownloadPage: React.FC<realplatform> = function ({ platform: select
               </SimpleGrid>
               <Center>
                 <VStack maxW="1000" spacing="4">
-                  {data.status === "ERROR" && (
-                    <Text>
-                      Could not connect. Please find information manually at
-                      <Link href={downloadMetaLink}>{downloadMetaLink}</Link>
-                      or contact support.
-                    </Text>
-                  )}
-                  {data.status === "LOADING" && <div>Loading...</div>}
-                  {data.status === "LOADED" && <div>Loaded</div> &&
-                    platforms.map((platform, i) => (
-                      <DownloadDescription key={i} desc={data[platform]} displayName={data[platform].displayName} active={platform == selectedPlatform} />
-                    ))}
+                  {platforms.map((platform, i) => (
+                    <DownloadDescription key={i} desc={data[platform]} displayName={data[platform].displayName} active={platform == selectedPlatform} />
+                  ))}
                 </VStack>
               </Center>
             </VStack>

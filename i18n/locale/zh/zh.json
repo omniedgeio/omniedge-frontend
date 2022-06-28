@@ -488,7 +488,7 @@
     "create-desc": " OmniEdge 會為創建一個預設的私有虛擬網路，當然您也可以自行創建自己的虛擬網路，整個過程不到 1 分鍾.",
     "connectin": " 一鍵登入",
     "connectin-desc": " 點選您的 OmniEdge 客戶端的連接按鈕連到到您的設備",
-    "comparetitle": "OmniEdge 為何與衆不同",
+    "comparetitle": "OmniEdge 為何與衆不同: 全開源，零配置",
     "comparedesc": "無需公網IP，無需端口轉發，零配置，零防火牆規則，及端到端加密通訊",
     "FeaturePage-title": "專為企業用戶設計",
     "FeaturePage-subtitle": "將安全連接部署的時間從幾周降到幾分鍾",

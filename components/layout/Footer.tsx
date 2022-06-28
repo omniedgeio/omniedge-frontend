@@ -70,7 +70,7 @@ export default function Footer() {
               <SocialButton label={"YouTube"} href="https://www.youtube.com/channel/UCe6OYOyfWDkSkN7LQ3Rp8_g">
                 <FaYoutube />
               </SocialButton>
-              <SocialButton label={"Github"} href="https://github.com/omniedgeio">
+              <SocialButton label={"Github"} href="https://github.com/omniedgeio/omniedge">
                 <FaGithub />
               </SocialButton>
               <SocialButton label={"Medium"} href="https://omniedge.medium.com/">

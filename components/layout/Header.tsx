@@ -7,21 +7,49 @@ import {
   Stack,
   useBoolean,
   Select,
+  Alert,
+  AlertIcon,
+  useDisclosure,
+  CloseButton,
+  Box,
+  AlertTitle,
+  AlertDescription
 } from "@chakra-ui/react";
 import React from "react";
 import { FiMenu, FiX } from "react-icons/fi";
+import {FaGithub } from "react-icons/fa";
 import { useUser } from "../../lib/hook/useUser";
 import { Brand } from "../Brand";
 import Link from "../next/Link";
 import {useTranslation} from "react-i18next";
 import {availableLanguages} from "../../i18n/i18n";
 
+
 export function Header() {
   const [isNavBarOpen, setNavBarOpen] = useBoolean(false);
   const { user, isLoading, isError } = useUser(null);
   const {t, i18n} = useTranslation("header")
+  const {
+    isOpen: isVisible,
+    onClose,
+    onOpen,
+  } = useDisclosure({ defaultIsOpen: true })
+
   return (
     <>
+   {isVisible && <Alert status='info'>
+      <AlertIcon />
+      <Box width="full">
+        <AlertDescription> First time users only: get <strong>12 months free</strong> with promo code <a href="https://github.com/omniedgeio/omniedge"><strong>OPENSOURCE</strong></a> for 7 days from 1st,July to 7th,July 2022 ! <br></br>Give our <a href="https://github.com/omniedgeio/omniedge">repo</a> a star if you find it useful.</AlertDescription>
+          
+      </Box>
+      <CloseButton
+        alignSelf='right'
+        right={-1}
+        top={-1}
+        onClick={onClose}
+      />
+    </Alert>}
           <nav>
         <Flex
           display={["flex", "none"]}

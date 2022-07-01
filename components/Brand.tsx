@@ -2,12 +2,8 @@ import Logo from "./Logo";
 import React from "react";
 import {
   Heading, HStack,
-  chakra,
   Box,
-  Flex,
   Icon,
-  Image,
-  useColorModeValue,
 } from "@chakra-ui/react";
 
 import {FaTwitter,FaGithub,FaMedium,FaYoutube } from "react-icons/fa";

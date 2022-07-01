@@ -8,7 +8,9 @@ import {
   Text,
   VStack,
   chakra,
-  Image
+  Image,
+  Alert,
+  AlertIcon,
 } from "@chakra-ui/react";
 import React from "react";
 import { Customersmap } from "../components/Customersmap";

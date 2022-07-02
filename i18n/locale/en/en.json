@@ -770,6 +770,10 @@
           "answer": "If you already have an OmniEdge plan, please contact us to change your plan or your billing period, or you can do it by yourself at the dashboard."
         },
         {
+          "question": "How do I change my Google Login password ?",
+          "answer": "You can reset your password by [forgot password](http://omniedge.io/forgot-password). "
+        },
+        {
           "question": "When will I be billed?",
           "answer": "Our plans are generally prepaid, so you pay for them in advance. Annual Enterprise plans can be invoiced with net 30 payment terms upon request."
         },
@@ -824,7 +828,16 @@
     "enterpassword": "Enter your password",
     "email_verify": "Thank you for joining us.",
     "resendverifyemail": "ReSend Verification Email",
-    "email_verify_success": "Your email has verified successfully."
+    "email_verify_success": "Your email has verified successfully.",
+    "sendinstruction": "Send Instruction",
+    "instructionsent": "Instruction is sent",
+    "instructionsentinfo": "Instruction is sent, check your email please.",
+    "back": "Back to Homepage",
+    "success":"Success", 
+    "password_changed":"Password changed successfully",
+    "password_change_failed":"Change Password failed",
+    "reset_password_failed": "Reset password failed",
+    "instructionsendagain":"Please send a request again."
   },
   "dashboard": {
     "logged": "You logged in as:",
@@ -850,6 +863,9 @@
       "password": "Password",
       "changepassword": "Change Password",
       "changepassword-desc": "Changing your password regularly reduces your risk of exposure and avoids a number of dangers.",
+      "forgotpassword": "Forgot Password",
+      "forgotpassword-desc": "If you forgot your password, we will send you an instruction to reset",
+      "setpasswordforgooglelogin-desc": "You login with Google, press Forgot Passsword,we will send you an instruction to reset",
       "linkgoogle": "Link with Google",
       "linkgoogle-desc-1": "Your account has already been",
       "linkgoogle-desc-2": "successfully linked",

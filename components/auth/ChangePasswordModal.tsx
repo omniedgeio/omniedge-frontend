@@ -26,41 +26,41 @@ interface IChangePasswordModalProps {
 }
 
 const ChangePasswordModal: React.FC<IChangePasswordModalProps> = function ({ isOpen, onClose, onSuccess }) {
-  
+  const {t, i18n} = useTranslation('auth')
   const { values, errors, touched, handleChange, handleSubmit, isSubmitting, handleBlur } = useFormik({
     initialValues: { old_password: "", password: "", confirm_password: "" },
     validationSchema: Yup.object().shape({
-      old_password: Yup.string().required("Required"),
+      old_password: Yup.string().required(t('required')),
       password: Yup.string()
         // .required("Required")
         // .minLowercase(1, "At least one lowercase character")
         // .minUppercase(1, "At least one uppercase character")
         // .minNumbers(1, "At least one number")
         // .minSymbols(1, "At least one symbol")
-        .min(8, "At least 8 characters")
-        .max(20, "At most 20 characters"),
+        .min(8, t('min'))
+        .max(20, t('max')),
       confirm_password: Yup.string()
-        .oneOf([Yup.ref("password"), null], "Passwords must match")
-        .required("Required"),
+        .oneOf([Yup.ref(t('password')), null], t('passwordmatch'))
+        .required(t('required')),
     }),
     onSubmit: (values, actions) => {
       changePassword(values)
         .then((res) => {
           actions.setSubmitting(false);
           actions.resetForm();
-          showSuccess("Success", "Password changed successfully");
+          showSuccess(t('success'), t('password_changed'));
           onClose();
           onSuccess && onSuccess();
         })
         .catch((err) => {
           if (err.data) {
-            showError("Change Password failed", err.data.message);
+            showError(t('password_change_failed'), err.data.message);
           }
           actions.setSubmitting(false);
         });
     },
   });
-  const {t, i18n} = useTranslation('auth')
+  
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay></ModalOverlay>
@@ -79,7 +79,7 @@ const ChangePasswordModal: React.FC<IChangePasswordModalProps> = function ({ isO
                   onChange={handleChange}
                   autoComplete=""
                   type="password"
-                  placeholder="secret passphrase"
+                  placeholder={t('oldpassword')}
                 ></Input>
                 <FormErrorMessage>{errors.old_password}</FormErrorMessage>
               </FormControl>
@@ -97,7 +97,7 @@ const ChangePasswordModal: React.FC<IChangePasswordModalProps> = function ({ isO
                 <FormErrorMessage>{errors.password}</FormErrorMessage>
               </FormControl>
               <FormControl isInvalid={!!(touched.confirm_password && errors.confirm_password)}>
-                <FormLabel>{t('confirmassword')}</FormLabel>
+                <FormLabel>{t('confirmpassword')}</FormLabel>
                 <Input
                   name="confirm_password"
                   value={values.confirm_password}
@@ -105,7 +105,7 @@ const ChangePasswordModal: React.FC<IChangePasswordModalProps> = function ({ isO
                   onChange={handleChange}
                   autoComplete=""
                   type="password"
-                  placeholder={t('confirmassword')}
+                  placeholder={t('confirmpassword')}
                 ></Input>
                 <FormErrorMessage>{errors.confirm_password}</FormErrorMessage>
               </FormControl>

@@ -30,14 +30,17 @@ import {
   useBreakpointValue,
   useDisclosure,
   VStack,
+  Link,
 } from "@chakra-ui/react";
 import { formatDistanceToNow } from "date-fns";
 import { useFormik } from "formik";
 import { useEffect, useState } from "react";
 import { FiCheck, FiLock, FiMoreVertical, FiX } from "react-icons/fi";
+import {VscQuestion} from "react-icons/vsc";
 import { useQuery } from "react-query";
 import * as Yup from "yup";
 import ChangePasswordModal from "../../../components/auth/ChangePasswordModal";
+import ForgotPasswordModal from "../../../components/auth/ForgotPasswordModal";
 import GoogleLogin from "../../../components/auth/GoogleLogin";
 import ConfirmModal from "../../../components/ConfirmModal";
 import DashboardLayout from "../../../components/layout/Dashboard";
@@ -261,15 +264,22 @@ const Invitations: React.FC = function (props) {
 const ChangePassword: React.FC = function (props) {
   const { user, refetch } = useUser("/login");
   const changePasswordModal = useDisclosure();
+  const forgotPasswordModal = useDisclosure();
   const activatePasswordModal = useDisclosure();
   const isPasswordEnabled = !!user?.identities.find(({ provider }) => provider == "password")?.enabled;
   const {t, i18n} = useTranslation('dashboard')
+  const provider_google = !!user?.identities.find(({ provider }) => provider == "google")?.enabled;
   return (
     <>
       <ChangePasswordModal
         onSuccess={refetch}
         isOpen={changePasswordModal.isOpen}
         onClose={changePasswordModal.onClose}
+      />
+      <ForgotPasswordModal
+        onSuccess={refetch}
+        isOpen={forgotPasswordModal.isOpen}
+        onClose={forgotPasswordModal.onClose}
       />
       {/* <ActivatePasswordModal
         onSuccess={refetch}
@@ -281,12 +291,25 @@ const ChangePassword: React.FC = function (props) {
           {t('setting.password')}
         </Heading>
         {/* {isPasswordEnabled ? ( */}
+        {!provider_google?(
         <>
           <Text>{t('setting.changepassword-desc')}</Text>
           <Button leftIcon={<FiLock />} onClick={changePasswordModal.onOpen}>
           {t('setting.changepassword')}
           </Button>
-        </>
+          <Text>{t('setting.forgotpassword-desc')}</Text>
+          <Button leftIcon={<VscQuestion />} onClick={forgotPasswordModal.onOpen}>
+          {t('setting.forgotpassword')}
+          </Button>
+        </>):(
+          <>
+          <Text>{t('setting.setpasswordforgooglelogin-desc')}</Text>
+          <Button leftIcon={<VscQuestion />} onClick={forgotPasswordModal.onOpen}>
+          {t('setting.forgotpassword')}
+          </Button>
+          </>
+        )
+        }
         {/* ) : (
           <>
             <Text>Activate Password login if you need a more traditional way to login.</Text>

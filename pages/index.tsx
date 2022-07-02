@@ -8,7 +8,9 @@ import {
   Text,
   VStack,
   chakra,
-  Image
+  Image,
+  Alert,
+  AlertIcon,
 } from "@chakra-ui/react";
 import React from "react";
 import { Customersmap } from "../components/Customersmap";
@@ -19,6 +21,7 @@ import { Seo } from "../components/Seo";
 import { Page } from "../types";
 import {useTranslation} from "react-i18next";
 import {availableLanguages} from "../i18n/i18n";
+import {FaGithub } from "react-icons/fa";
 
 
 const Home: Page = (props) => {
@@ -69,6 +72,12 @@ const Home: Page = (props) => {
             <Link href="/contactus" w="full">
               <Button colorScheme="gray"  borderRadius="4px">{t('contactsalesexpert')}</Button>
             </Link>
+            <Link href="https://github.com/omniedgeio/omniedge" w="full">
+            <FaGithub />
+            </Link>
+            
+            
+            
             </HStack>
             <Featureheros>{t('getstart-subtitle')}</Featureheros>
           </VStack>

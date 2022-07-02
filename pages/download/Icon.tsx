@@ -142,10 +142,11 @@ interface Downloadicon {
   variant: any;
   selected?: any;
   onClick?: () => void;
+  displaystatus: boolean;
   // props:any
 }
 
-const DownloadButton: React.FC<Downloadicon> = function ({variant,selected,onClick}) {
+const DownloadButton: React.FC<Downloadicon> = function ({variant,selected,onClick,displaystatus}) {
   const isSelected = variant === selected
   return (
     <div
@@ -154,7 +155,7 @@ const DownloadButton: React.FC<Downloadicon> = function ({variant,selected,onCli
     >
       {getIcon(variant, isSelected)}
       <p className={`${styles.iconText}`}>{getText(variant)}</p>
-      <p className={`${styles.iconStatus}`}>{getStatus(variant)}</p>
+      {(displaystatus==true) && <p className={`${styles.iconStatus}`}>{getStatus(variant)}</p>}
     </div>
   )
 }

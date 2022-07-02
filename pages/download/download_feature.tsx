@@ -54,6 +54,7 @@ export const Downloadlist: Page = (props) => {
                 key={index}
                 variant={platform}
                 onClick={() => routePlatform(platform)}
+                displaystatus={true}
               />
             ))}
           </SimpleGrid>
@@ -84,6 +85,7 @@ const DownloadPage: React.FC<realplatform> = function ({ platform: selectedPlatf
                 variant={platform}
                 selected={selectedPlatform}
                 onClick={() => routePlatform(platform)}
+                displaystatus={false}
               />
             ))}
           </SimpleGrid>

@@ -488,7 +488,7 @@
     "create-desc": " OmniEdge 會為創建一個預設的私有虛擬網路，當然您也可以自行創建自己的虛擬網路，整個過程不到 1 分鍾.",
     "connectin": " 一鍵登入",
     "connectin-desc": " 點選您的 OmniEdge 客戶端的連接按鈕連到到您的設備",
-    "comparetitle": "OmniEdge 為何與衆不同",
+    "comparetitle": "OmniEdge 為何與衆不同: 全開源，零配置",
     "comparedesc": "無需公網IP，無需端口轉發，零配置，零防火牆規則，及端到端加密通訊",
     "FeaturePage-title": "專為企業用戶設計",
     "FeaturePage-subtitle": "將安全連接部署的時間從幾周降到幾分鍾",
@@ -756,6 +756,10 @@
           "answer": " 如果您已經訂閱了 OmniEdge，請聯係我們或者在您的賬單管理頁麵內更改。"
         },
         {
+          "question": "如何設定我用Google登入的賬號 ?",
+          "answer": " 您可以使用 [忘記密碼](http://omniedge.io/forgot-password) 功能設定密碼. "
+        },
+        {
           "question": " 什麼時間我需要付錢 ?",
           "answer": " OmniEdge 的訂閱是預付模式，所以需要您先付款再使用。"
         },
@@ -810,7 +814,16 @@
     "enterpassword": "輸入您的密碼",
     "email_verify": " 歡迎您使用 OmniEdge 。",
     "resendverifyemail": "重新發送驗證郵件",
-    "email_verify_success": "您的電子信箱已經成功驗證。"
+    "email_verify_success": "您的電子信箱已經成功驗證。",
+    "sendinstruction": "發送設定郵件",
+    "instructionsent": "設定郵件已經發送。",
+    "instructionsentinfo": "設定郵件已經發送，請查收您的信箱。",
+    "back":"回到主頁",
+    "success":"更改成功", 
+    "password_changed":"密碼更改成功",
+    "password_change_failed":"更改密碼失敗",
+    "reset_password_failed": "重置密碼失敗",
+    "instructionsendagain":"請重新發起密碼重置請求。"
   },
   "dashboard": {
     "logged": "登入用戶:",
@@ -836,6 +849,9 @@
       "password": "密碼",
       "changepassword": "更改密碼",
       "changepassword-desc": "為了安全，請定期更改您的密碼。",
+      "forgotpassword": "忘記密碼",
+      "forgotpassword-desc": "如果您忘記了密碼,請重新設定，我們會為您發一封郵件",
+      "setpasswordforgooglelogin-desc": "您當前使用 Google 登入，點選忘記密碼，我們將會為您發一封郵件設定新密碼",
       "linkgoogle": "連接 Google 帳號",
       "linkgoogle-desc-1": "您的賬號已經",
       "linkgoogle-desc-2": "成功連接",

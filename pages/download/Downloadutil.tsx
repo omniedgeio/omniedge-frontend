@@ -48,12 +48,12 @@ export const Description: FunctionComponent<DescriptionProps> = ({ texts }) => {
     {texts.map((text) => {
       if (text.step === "null" || text.code === "null") {
         return (<>
-          {text.step != 'null' && (<Text fontSize="14px" fontWeight="400" color="gray.900" lineHeight="20px" gap="4px" paddingTop="8px" paddingBottom="4px"><Markdown>{text.step}</Markdown></Text>)}
+          {text.step != 'null' && (<Text class="markdown" fontSize="14px" fontWeight="400" color="gray.900" lineHeight="20px" gap="4px" paddingTop="8px" paddingBottom="4px"><Markdown>{text.step}</Markdown></Text>)}
         </>
         )
       } else {
         return (<>
-          {text.step != 'null' && (<Text fontSize="14px" fontWeight="400" color="gray.900" lineHeight="20px" gap="4px" paddingTop="8px" paddingBottom="4px"><Markdown>{text.step}</Markdown></Text>)}
+          {text.step != 'null' && (<Text class="markdown" fontSize="14px" fontWeight="400" color="gray.900" lineHeight="20px" gap="4px" paddingTop="8px" paddingBottom="4px"><Markdown>{text.step}</Markdown></Text>)}
           {text.code != 'null' && (<CopyBlock
             language="bash"
             text={text.code}

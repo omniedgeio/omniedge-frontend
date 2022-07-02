@@ -10,6 +10,13 @@ import {
   Heading,
   Input,
   VStack,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
 } from "@chakra-ui/react";
 import { useFormik } from "formik";
 import { useRouter } from "next/dist/client/router";
@@ -21,10 +28,16 @@ import { resetPassword } from "../../lib/api/auth";
 import { showError } from "../../lib/helpers/toast";
 import { Page } from "../../types";
 import {useTranslation} from "react-i18next";
-
 YupPassword(Yup);
 
-const ForgotPasswordPage: Page = function (props) {
+
+interface IForgotPasswordModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  onSuccess: () => void;
+}
+
+const ForgotPasswordModal: React.FC<IForgotPasswordModalProps> = function ({ isOpen, onClose, onSuccess }) {
   const router = useRouter();
   const {t, i18n} = useTranslation('auth')
   const [success, setSuccess] = useState(false);
@@ -46,9 +59,15 @@ const ForgotPasswordPage: Page = function (props) {
         });
     },
   });
-
+  
   return (
-    <VStack maxW="sm" margin="2rem auto" px={4}>
+    <Modal isOpen={isOpen} onClose={onClose}>
+      <ModalOverlay></ModalOverlay>
+      <ModalContent>
+          <ModalHeader>{t('forgotpassword')}</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+          <VStack maxW="sm" margin="2rem auto" px={4}>
       {!success ? (
         <form style={{ width: "100%" }} onSubmit={handleSubmit}>
           <VStack w="full" spacing={4} alignItems="flex-start">
@@ -67,9 +86,11 @@ const ForgotPasswordPage: Page = function (props) {
               ></Input>
               <FormErrorMessage>{errors.email}</FormErrorMessage>
             </FormControl>
+            <ModalFooter>
             <Button type="submit" isLoading={isSubmitting} colorScheme="brand">
-            {t('sendinstruction')}
+              {t('sendinstruction')}
             </Button>
+            </ModalFooter>
           </VStack>
         </form>
       ) : (
@@ -84,18 +105,23 @@ const ForgotPasswordPage: Page = function (props) {
         >
           <AlertIcon boxSize="40px" mr={0} />
           <AlertTitle mt={4} mb={1} fontSize="lg">
-          {t('instructionsent')}
+            {t('instructionsent')}
           </AlertTitle>
           <AlertDescription maxWidth="sm">
           {t('instructionsentinfo')}
-            <Button colorScheme="green" mt={4}>
-              <Link href="/">{t('back')}</Link>
+            <br></br>
+            <Button colorScheme="green" mt={4} onClick={onClose}>
+            {t('close')}
             </Button>
+            
           </AlertDescription>
         </Alert>
       )}
     </VStack>
+          </ModalBody>
+      </ModalContent>
+    </Modal>
   );
 };
 
-export default ForgotPasswordPage;
+export default ForgotPasswordModal;

@@ -756,6 +756,10 @@
           "answer": " 如果您已经订阅了 OmniEdge，请联系我们或者在您的账单管理页面内更改。"
         },
         {
+          "question": "如何设置我用Google登录的账号 ?",
+          "answer": " 您可以使用 [忘记密码](http://omniedge.io/forgot-password) 功能设置密码. "
+        },
+        {
           "question": " 什么时间我需要付钱 ?",
           "answer": " OmniEdge 的订阅是预付模式，所以需要您先付款再使用。"
         },
@@ -777,7 +781,7 @@
   "auth": {
     "changepassword": "更改密码",
     "newpassword": "新密码",
-    "oldpassword": "老密码",
+    "oldpassword": "旧密码",
     "confirmpassword": "确认密码",
     "cancel": "取消",
     "activate": "激活",
@@ -810,7 +814,17 @@
     "enterpassword": "输入您的密码",
     "email_verify": " 欢迎您使用 OmniEdge 。",
     "resendverifyemail": "重新发送验证邮件",
-    "email_verify_success": "您的电子邮箱已经成功验证。"
+    "email_verify_success": "您的电子邮箱已经成功验证。",
+    "sendinstruction": "发送设置邮件",
+    "instructionsent": "设置邮件已经发送。",
+    "instructionsentinfo": "设置邮件已经发送，请查收您的邮箱。",
+    "close":"关闭窗口",
+    "back":"回到主页",
+    "success":"更改成功", 
+    "password_changed":"密码更改成功",
+    "password_change_failed":"更改密码失败",
+    "reset_password_failed": "重置密码失败",
+    "instructionsendagain":"请重新发起密码重置请求。"
   },
   "dashboard": {
     "logged": "登录用户:",
@@ -836,6 +850,9 @@
       "password": "密码",
       "changepassword": "更改密码",
       "changepassword-desc": "为了安全，请定期更改您的密码。",
+      "forgotpassword": "忘记密码",
+      "forgotpassword-desc": "如果您忘记了密码,请重新设置，我们会为您发一封邮件",
+      "setpasswordforgooglelogin-desc": "您当前使用 Google 登录，点击忘记密码，我们将会为您发一封邮件设置新密码",
       "linkgoogle": "连接 Google 帐号",
       "linkgoogle-desc-1": "您的账号已经",
       "linkgoogle-desc-2": "成功连接",

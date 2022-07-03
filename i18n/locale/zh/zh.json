@@ -854,7 +854,16 @@
       "linkgoogle-desc-3": "到 Google 賬號。",
       "linkgoogle-desc": " 使用 Google 賬號登入更安全，馬上連接",
       "profile": "用戶信息",
-      "security": "安全"
+      "security": "安全",
+      "device":"設備",
+      "referral": "推薦",
+      "enablereferral": "激活推薦碼",
+      "referral-rules": "發送邀請鏈接給有需要的人, 邀請他人註冊時, 請將私人推薦鏈接發給被邀請者，以下是規則:",
+      "referral-rules-1": "邀請 1 位用戶，增加 1 個設備;",
+      "referral-rules-2": "邀請 10 位用戶，增加 10 個設備和 1 個私有網路;",
+      "referral-rules-3": "邀請 20 位用戶，增加 20 個設備和 2 個私有網路。",
+      "referral-rewarded": "當前獲得獎勵",
+      "referral-rules-4": "邀請 100 位用戶，增加 100 個設備和 10 個私有網路。"
     },
     "virtualnetwork": {
       "remove": "刪除私有網路",

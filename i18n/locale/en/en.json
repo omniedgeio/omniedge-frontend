@@ -865,7 +865,16 @@
       "linkgoogle-desc-3": "with google account.",
       "linkgoogle-desc": "Using Google Account to login is more secure and convenient. Link it now",
       "profile": "Profile",
-      "security": "Security"
+      "security": "Security",
+      "device": "device",
+      "referral": "Referral",
+      "enablereferral": "Enable Referral",
+      "referral-rules": "You can invite others with your own link and get rewarded, here is the rules:",
+      "referral-rules-1": "Invite 1 user, get 1 device;",
+      "referral-rules-2": "invite 10 users, get 10 devices and 1 virtual network;",
+      "referral-rules-3": "Invite 20 users, get 20 devices and 2 virtual networks.",
+      "referral-rewarded": "Current rewarded",
+      "referral-rules-4": "Invite 100 users, get 100 devices and 10 virtual networks."
     },
     "virtualnetwork": {
       "remove": "Remove Virtual Network",

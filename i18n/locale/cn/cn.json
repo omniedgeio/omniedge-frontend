@@ -855,7 +855,16 @@
       "linkgoogle-desc-3": "到 Google 账号。",
       "linkgoogle-desc": " 使用 Google 账号登录更安全，马上连接",
       "profile": "用户信息",
-      "security": "安全"
+      "security": "安全",
+      "device":"设备",
+      "referral": "推荐",
+      "enablereferral": "激活推荐码",
+      "referral-rules": "发送邀请链接给有需要的人, 邀请他人注册时, 请将私人推荐链接发给被邀请者，以下是规则:",
+      "referral-rules-1": "邀请 1 位用户，增加 1 个设备;",
+      "referral-rules-2": "邀请 10 位用户，增加 10 个设备和 1 个私有网络;",
+      "referral-rules-3": "邀请 20 位用户，增加 20 个设备和 2 个私有网络。",
+      "referral-rewarded": "当前获得奖励",
+      "referral-rules-4": "邀请 100 位用户，增加 100 个设备和 10 个私有网络。"
     },
     "virtualnetwork": {
       "remove": "删除私有网络",

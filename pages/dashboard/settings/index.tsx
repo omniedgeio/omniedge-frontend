@@ -31,6 +31,12 @@ import {
   useDisclosure,
   VStack,
   Link,
+  ListItem,
+  List,
+  ListIcon,
+  Box,
+  SimpleGrid,
+  OrderedList,
 } from "@chakra-ui/react";
 import { formatDistanceToNow } from "date-fns";
 import { useFormik } from "formik";
@@ -52,6 +58,7 @@ import { showError, showSuccess } from "../../../lib/helpers/toast";
 import { useUser } from "../../../lib/hook/useUser";
 import { Page } from "../../../types";
 import {useTranslation} from "react-i18next";
+import {MdCheckCircle} from "react-icons/md";
 
 const UpdateUserProfileForm: React.FC = function (props) {
   const { user, refetch, isLoading } = useUser("/login");
@@ -382,6 +389,7 @@ const SettingsPage: Page = function (props) {
         <TabList>
           <Tab>{t('setting.profile')}</Tab>
           <Tab>{t('setting.security')}</Tab>
+          <Tab>{t('setting.referral')}</Tab>
         </TabList>
         <TabPanels>
           <TabPanel px={0}>
@@ -393,6 +401,51 @@ const SettingsPage: Page = function (props) {
               <ChangePassword />
               {/* <LinkWithGoogle /> */}
             </VStack>
+          </TabPanel>
+          <TabPanel px={0}>
+          <VStack alignItems="flex-start" spacing="4">
+        <Box w="full" maxW="500px" p={6} border="1px" borderColor="gray.200" borderRadius="xl">
+          <HStack>
+            <Heading size="md">
+            {t('setting.referral')}
+            </Heading>
+          </HStack>
+          <Box mt={4}>
+          <Button onClick={close} colorScheme="brand">
+        {t('setting.enablereferral')}
+          </Button>
+            <Text paddingBottom="10px" paddingTop="10px" fontWeight="medium">{t('setting.referral-rules')}</Text>
+            <OrderedList>
+  <ListItem>
+    {t('setting.referral-rules-1')}
+  </ListItem>
+  <ListItem>
+    {t('setting.referral-rules-2')}
+  </ListItem>
+  <ListItem>
+    {t('setting.referral-rules-3')}
+  </ListItem>
+  <ListItem>
+    {t('setting.referral-rules-4')}
+  </ListItem>
+            </OrderedList>
+          </Box>
+          <Box mt={4}>
+            <Text fontWeight="semibold">{t('setting.referral-rewarded')}</Text>
+            <List>
+            <ListItem>
+    <ListIcon as={MdCheckCircle} color='green.500' />
+    {t('setting.device')}{":"}
+            </ListItem>
+            <ListItem>
+    <ListIcon as={MdCheckCircle} color='green.500' />
+    {t('setting.virtualnetwork')}{":"}
+            </ListItem>
+        
+            </List>
+          </Box>
+        </Box>
+    </VStack>
           </TabPanel>
         </TabPanels>
       </Tabs>

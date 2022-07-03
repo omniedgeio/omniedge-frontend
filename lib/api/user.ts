@@ -4,6 +4,7 @@ import {
   IActivatePasswordLoginRequest,
   IChangePasswordRequest,
   IUpdateProfileRequest,
+  ICreateReferralRequest,
 } from "./request";
 import { IProfileResponse } from "./response";
 
@@ -48,4 +49,13 @@ export function activateGoogleLogin(data: IActivateGoogleLoginRequest) {
     method: "POST",
     data,
   });
+}
+
+export async function createReferralCode() {
+  let res = await request({
+    url: "/referrals",
+    method: "POST",
+  });
+
+  return res.data.data;
 }

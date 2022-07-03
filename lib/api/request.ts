@@ -124,3 +124,7 @@ export interface IUpdateInvitationRequest {
 export interface ICreateCheckoutSessionRequest {
   plan: string;
 }
+
+export interface ICreateReferralRequest {
+  referral_code?: string;
+}

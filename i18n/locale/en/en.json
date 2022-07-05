@@ -837,6 +837,8 @@
     "settings": "Settings",
     "support": "Support",
     "logout": "Logout",
+    "copied": "Copied",
+    "copy":"Copy",
     "setting": {
       "name": "Name",
       "title": "Settings",

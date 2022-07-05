@@ -193,3 +193,20 @@ export interface ISubnetRouteDeviceResponse {
   mac_addr: string;
   manufacturer: string;
 }
+
+
+/* -------------------------------------------------------------------------- */
+/*                                    Referral Code                           */
+/* -------------------------------------------------------------------------- */
+
+export interface IReferralResponse {
+  id: string;
+  updated_at: Date;
+  created_at: Date;
+  name:string;
+  referral_code: string;
+}
+
+export type ICreateReferralResponse = IReferralResponse & {
+  referral_code: string;
+};

@@ -827,6 +827,8 @@
     "settings": "设置",
     "support": "支持",
     "logout": "登出",
+    "copied": "已复制",
+    "copy":"复制",
     "setting": {
       "name": "名称",
       "title": "设置",

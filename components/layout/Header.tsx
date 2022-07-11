@@ -37,7 +37,7 @@ export function Header() {
 
   return (
     <>
-   {isVisible && <Alert status='info'>
+   {!isVisible && <Alert status='info'>
       <AlertIcon />
       <Box width="full">
         <AlertDescription> First time users only: get <strong>12 months free</strong> with promo code <a href="https://github.com/omniedgeio/omniedge"><strong>OPENSOURCE</strong></a> for 7 days from 1st,July to 7th,July 2022 ! <br></br>Give our <a href="https://github.com/omniedgeio/omniedge">repo</a> a star if you find it useful.</AlertDescription>

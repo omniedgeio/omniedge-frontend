@@ -20,7 +20,7 @@ import {
   Tr,
   useBreakpointValue,
   useDisclosure,
-  useClipboard,
+
   VStack,
 } from "@chakra-ui/react";
 import { useState } from "react";
@@ -33,8 +33,8 @@ import { showError, showSuccess } from "../../lib/helpers/toast";
 import { useUser } from "../../lib/hook/useUser";
 import ConfirmModal from "../ConfirmModal";
 import Link from "../next/Link";
-import {useTranslation} from "react-i18next";
-import { FiClipboard } from "react-icons/fi";
+import { useTranslation } from "react-i18next";
+import { CopyBlock, nord } from 'react-code-blocks'
 
 export default function VirtualNetworkListTable() {
   const isPhone = useBreakpointValue({ base: true, sm: false });
@@ -49,7 +49,8 @@ export default function VirtualNetworkListTable() {
   } = useQuery("virtual-networks", () => listVirtualNetworks({}));
 
   const { user } = useUser();
-  const {t, i18n} = useTranslation('dashboard')
+  const { t, i18n } = useTranslation('dashboard')
+
   return (
     <>
       <ConfirmModal
@@ -91,16 +92,20 @@ export default function VirtualNetworkListTable() {
               <Td display={["none", "table-cell"]}>
                 <Skeleton h="4" />
               </Td>
+              <Td display={["none", "table-cell"]}>
+                <Skeleton h="4" />
+              </Td>
             </Tr>
           ) : (
             virtualNetworks?.data?.map((vn: IVirtualNetworkResponse) => {
+
               const Name = (props: TextProps) => (
                 <Link href={`/dashboard/virtual-networks/${vn.id}`} _hover={{ color: "brand.500" }}>
                   <Text {...props}>{vn.name}</Text>
                 </Link>
               );
               const ID = (props: TextProps) => (
-                  <Text {...props}>{vn.id}</Text>
+                <Code fontSize={["xs", "sm"]} px="0" bg="white" {...props}>{vn.id}</Code>
               );
               const IPRange = (props: CodeProps) => (
                 <Code fontSize={["xs", "sm"]} px="0" bg="white" {...props}>
@@ -120,7 +125,7 @@ export default function VirtualNetworkListTable() {
                   <MenuList py="1.5">
                     <Link href={`/dashboard/virtual-networks/${vn.id}`}>
                       <MenuItem display={["flex", "none"]} icon={<FiServer />}>
-                      {t('virtualnetwork.view')}
+                        {t('virtualnetwork.view')}
                       </MenuItem>
                     </Link>
                     <MenuItem
@@ -154,9 +159,14 @@ export default function VirtualNetworkListTable() {
                       </HStack>
                     )}
                   </Td>
-                  <Td display={["none", "table-cell"]}>
-                    <ID />
+                  <Td px="0">
+                    {!isPhone ? (
+                      <ID />
+                    ) : (
+                      <></>
+                    )}
                   </Td>
+
                   <Td display={["none", "table-cell"]}>
                     <IPRange />
                   </Td>
@@ -164,7 +174,7 @@ export default function VirtualNetworkListTable() {
                     <HStack>
                       <Link href={`/dashboard/virtual-networks/${vn.id}`}>
                         <Button size="sm" colorScheme="brand">
-                        {t('virtualnetwork.view')}
+                          {t('virtualnetwork.view')}
                         </Button>
                       </Link>
                       {vn.role === UserRole.Admin && <ActionMenu />}
@@ -177,23 +187,23 @@ export default function VirtualNetworkListTable() {
         </Tbody>
         {((user?.subscription.slug === "free" && Number(virtualNetworks?.data.length) == 1) ||
           (user?.subscription.slug === "pro" && Number(virtualNetworks?.data.length) == 5) ||
-          (user?.subscription.slug === "teams" && Number(virtualNetworks?.data.length)==10)) ? (
+          (user?.subscription.slug === "teams" && Number(virtualNetworks?.data.length) == 10)) ? (
           <TableCaption>
             <Link href="/dashboard/billing/choose-plan" color="brand.700">
-            {t('virtualnetwork.upgradeplan')}
+              {t('virtualnetwork.upgradeplan')}
             </Link>{" "}
             {t('virtualnetwork.upgradeplaninfo')}
           </TableCaption>
-        ):(
-            <TableCaption>
+        ) : (
+          <TableCaption>
             {t('virtualnetwork.upgradeplaninfo-1')} {" "}
-          <Link href="/dashboard/virtual-networks/create" color="brand.700" fontSize="lg">
-          {t('virtualnetwork.create')}
-          </Link>{" "}
-          {t('virtualnetwork.upgradeplaninfo-2')}
+            <Link href="/dashboard/virtual-networks/create" color="brand.700" fontSize="lg">
+              {t('virtualnetwork.create')}
+            </Link>{" "}
+            {t('virtualnetwork.upgradeplaninfo-2')}
           </TableCaption>
         )
-      }
+        }
       </Table>
     </>
   );

@@ -914,7 +914,7 @@
       "expirationdate": "失效日期 :",
       "close": "关闭",
       "permanent": "永久",
-      "permanent-desc": "一个月有效的安全码，您可以在多个不同的设备上使用。",
+      "permanent-desc": "一年有效的安全码，您可以在多个不同的设备上使用。",
       "once": "单次",
       "once-desc": "仅有30分钟有效的安全码，一旦使用了就即刻失效。",
       "name": "名称",

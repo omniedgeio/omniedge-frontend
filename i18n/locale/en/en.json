@@ -927,7 +927,7 @@
       "expirationdate": "Expiration Date :",
       "close": "Close",
       "permanent": "Permanent",
-      "permanent-desc": "A security key with a month expiration. You can use it across multiple devices.",
+      "permanent-desc": "A security key with a year expiration. You can use it across multiple devices.",
       "once": "One Time",
       "once-desc": "A security key with 30 minutes expiration. It will be automatically revoked once used.",
       "name": "Name",

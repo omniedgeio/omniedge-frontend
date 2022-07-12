@@ -913,7 +913,7 @@
       "expirationdate": "失效日期 :",
       "close": "關閉",
       "permanent": "永久",
-      "permanent-desc": "一个月有效的安全碼，您可以在多個不同的設備上使用。",
+      "permanent-desc": "一年有效的安全碼，您可以在多個不同的設備上使用。",
       "once": "單次",
       "once-desc": "僅有30分鍾有效的安全碼，一旦使用了就即刻失效。",
       "name": "名稱",

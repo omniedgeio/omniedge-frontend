@@ -869,6 +869,7 @@
       "rename": "重命名",
       "removebutton": "移除",
       "name": "名稱",
+      "id": "私有網路 ID",
       "iprange": "IP 段",
       "customizesupernode": "自建 Supernode",
       "customizesupernodeinfo": "請確認自建的 Supernode 可以訪問。",

@@ -870,6 +870,7 @@
       "rename": "重命名",
       "removebutton": "移除",
       "name": "名称",
+      "id": "私有网络 ID",
       "iprange": "IP 段",
       "customizesupernode": "自建 Supernode",
       "customizesupernodeinfo": "请确认自建的 Supernode 可以访问。",

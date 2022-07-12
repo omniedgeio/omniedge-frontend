@@ -20,6 +20,7 @@ import {
   Tr,
   useBreakpointValue,
   useDisclosure,
+  useClipboard,
   VStack,
 } from "@chakra-ui/react";
 import { useState } from "react";
@@ -33,13 +34,13 @@ import { useUser } from "../../lib/hook/useUser";
 import ConfirmModal from "../ConfirmModal";
 import Link from "../next/Link";
 import {useTranslation} from "react-i18next";
+import { FiClipboard } from "react-icons/fi";
 
 export default function VirtualNetworkListTable() {
   const isPhone = useBreakpointValue({ base: true, sm: false });
   const variant = useBreakpointValue({ base: "ghost", sm: "solid" });
   const [vnToRemove, setVnToRemove] = useState<IVirtualNetworkResponse>();
   const confirmModal = useDisclosure();
-
   const {
     data: virtualNetworks,
     isLoading,
@@ -73,6 +74,7 @@ export default function VirtualNetworkListTable() {
         <Thead>
           <Tr>
             <Th pl="0">{isPhone ? t('virtualnetwork.title') : t('virtualnetwork.name')}</Th>
+            <Th display={["none", "table-cell"]}>{t('virtualnetwork.id')}</Th>
             <Th display={["none", "table-cell"]}>{t('virtualnetwork.iprange')}</Th>
             <Th display={["none", "table-cell"]}>{t('virtualnetwork.action')}</Th>
           </Tr>
@@ -96,6 +98,9 @@ export default function VirtualNetworkListTable() {
                 <Link href={`/dashboard/virtual-networks/${vn.id}`} _hover={{ color: "brand.500" }}>
                   <Text {...props}>{vn.name}</Text>
                 </Link>
+              );
+              const ID = (props: TextProps) => (
+                  <Text {...props}>{vn.id}</Text>
               );
               const IPRange = (props: CodeProps) => (
                 <Code fontSize={["xs", "sm"]} px="0" bg="white" {...props}>
@@ -148,6 +153,9 @@ export default function VirtualNetworkListTable() {
                         <ActionMenu />
                       </HStack>
                     )}
+                  </Td>
+                  <Td display={["none", "table-cell"]}>
+                    <ID />
                   </Td>
                   <Td display={["none", "table-cell"]}>
                     <IPRange />

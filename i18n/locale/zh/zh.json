@@ -302,14 +302,14 @@
       "displayName": "Synology",
       "link": "https://github.com/omniedgeio/omniedge-synology/releases",
       "showQRCode": false,
-      "version": "0.2.3",
+      "version": "0.2.4",
       "buttonText": "下載",
       "captionText": "兼容CPU是 armv7,arm64v8係統群暉",
       "lastUpdate": {
         "title": "最後更新: 版本",
         "year": 2022,
-        "month": "4月",
-        "date": 25
+        "month": "7月",
+        "date": 12
       },
       "description": {
         "title": "開始在群暉 NAS 上使用 OmniEdge",
@@ -319,23 +319,19 @@
             "code": "null"
           },
           {
-            "step": "2. 在終端輸入以下命令下載和安裝 OmniEdge CLI",
-            "code": "curl https://omniedge.io/install/omniedge-install.sh | bash"
+            "step": "2. 在[管理界麵](https://omniedge.io/dashboard)生成安全碼**Security-key**和獲取**Virtual Network ID** ",
+            "code": "null"
           },
           {
-            "step": "3. 使用用戶信箱和密碼或者安全碼登入，安全碼可以在[管理界麵](https://omniedge.io/dashboard)生成.",
-            "code": "omniedge login -u yourname@youremail.com \n #or \nomniedge login -s securitykey"
+            "step": "3. 下載並且安裝 OmniEdge Synology",
+            "code": "null"
           },
           {
-            "step": "4. Join 你的私有網路，可以在輸出的私有網路列錶中選擇，也可以通過私有網路 ID 指定私有網路.",
-            "code": "sudo omniedge join \n #or \nsudo omniedge join -n 'virtual-network-id'"
-          },
-          {
-            "step": "5. 稍等一下，你的端到端的設備連接就能建立了",
+            "step": "4. 在安裝引導過程中，將安全碼**Security-key**和**Network ID** 輸入",
             "code": "null"
           }
         ],
-        "instructionGifLink": "",
+        "instructionGifLink": "/assets/download/omnedge-synology.png",
         "instructionsVideoLink": ""
       }
     },
@@ -873,6 +869,7 @@
       "rename": "重命名",
       "removebutton": "移除",
       "name": "名稱",
+      "id": "私有網路 ID",
       "iprange": "IP 段",
       "customizesupernode": "自建 Supernode",
       "customizesupernodeinfo": "請確認自建的 Supernode 可以訪問。",

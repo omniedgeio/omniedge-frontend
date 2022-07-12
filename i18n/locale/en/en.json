@@ -282,6 +282,7 @@
       "description": {
         "title": "Get started on Raspberry Pi",
         "instructions": [
+          
           {
             "step": "1. [Sign up](https://omniedge.io/register) your account",
             "code": "null"
@@ -301,10 +302,6 @@
           {
             "step": "5. Wait a second and a secure VPN will be established",
             "code": "curl https://omniedge.io/install/omniedge-install.sh | bash"
-          },
-          {
-            "step": "6.Follow instruction [Run OmniEde as a service](/docs/article/install/autostart-omniedge) to autostart OmniEdge",
-            "code": "null"
           }
         ],
         "instructionGifLink": "",
@@ -316,14 +313,14 @@
       "displayName": "Synology",
       "link": "https://github.com/omniedgeio/omniedge-synology/releases",
       "showQRCode": false,
-      "version": "0.2.3",
+      "version": "0.2.4",
       "buttonText": "Download",
       "captionText": "Compatible with Synology with armv7,arm64v8 CPU",
       "lastUpdate": {
         "title": "Last update: Version",
         "year": 2022,
-        "month": "April",
-        "date": 25
+        "month": "July",
+        "date": 12
       },
       "description": {
         "title": "Get started on Synology",
@@ -333,23 +330,19 @@
             "code": "null"
           },
           {
-            "step": "2. Download and install OmniEdge CLI",
-            "code": "curl https://omniedge.io/install/omniedge-install.sh | bash"
+            "step": "2. Generate **Security-key** and get the **Virtual Network ID** from [Dashboard](https://omniedge.io/dashboard)",
+            "code": "null"
           },
           {
-            "step": "3. Login By Password or secret key. You can generate secret-key on [Dashboard](https://omniedge.io/dashboard)",
-            "code": "omniedge login -u yourname@youremail.com \n #or \nomniedge login -s securitykey"
+            "step": "3. Download and install OmniEdge Synology",
+            "code": "null"
           },
           {
-            "step": "4. Join your network. You will be prompted to choose from the available networks or specify network.",
-            "code": "sudo omniedge join \n #or \nsudo omniedge join -n 'virtual-network-id'"
-          },
-          {
-            "step": "5. Wait a second and a secure VPN will be established",
-            "code": "curl https://omniedge.io/install/omniedge-install.sh | bash"
+            "step": "4. Fill **Security-key** and **Network ID** during the installation wizard",
+            "code": "null"
           }
         ],
-        "instructionGifLink": "",
+        "instructionGifLink": "/assets/download/omnedge-synology.png",
         "instructionsVideoLink": ""
       }
     },

@@ -302,14 +302,14 @@
       "displayName": "Synology",
       "link": "https://github.com/omniedgeio/omniedge-synology/releases",
       "showQRCode": false,
-      "version": "0.2.3",
+      "version": "0.2.4",
       "buttonText": "下载",
       "captionText": "兼容CPU是 armv7,arm64v8系统群晖",
       "lastUpdate": {
         "title": "最后更新: 版本",
         "year": 2022,
-        "month": "4月",
-        "date": 25
+        "month": "7月",
+        "date": 12
       },
       "description": {
         "title": "开始在群晖 NAS 上使用 OmniEdge",
@@ -319,23 +319,19 @@
             "code": "null"
           },
           {
-            "step": "2. 在终端输入以下命令下载和安装 OmniEdge CLI",
-            "code": "curl https://omniedge.io/install/omniedge-install.sh | bash"
+            "step": "2. 在[管理界面](https://omniedge.io/dashboard)生成安全码**Security-key**和获取**Virtual Network ID** ",
+            "code": "null"
           },
           {
-            "step": "3. 使用用户邮箱和密码或者安全码登录，安全码可以在[管理界面](https://omniedge.io/dashboard)生成.",
-            "code": "omniedge login -u yourname@youremail.com \n #or \nomniedge login -s securitykey"
+            "step": "3. 下载并且安装 OmniEdge Synology",
+            "code": "null"
           },
           {
-            "step": "4. Join 你的私有网络，可以在输出的私有网络列表中选择，也可以通过私有网络 ID 指定私有网络.",
-            "code": "sudo omniedge join \n #or \nsudo omniedge join -n 'virtual-network-id'"
-          },
-          {
-            "step": "5. 稍等一下，你的端到端的设备连接就能建立了",
+            "step": "4. 在安装引导过程中，将安全码**Security-key**和**Network ID** 输入",
             "code": "null"
           }
         ],
-        "instructionGifLink": "",
+        "instructionGifLink": "/assets/download/omnedge-synology.png",
         "instructionsVideoLink": ""
       }
     },

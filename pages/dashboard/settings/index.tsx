@@ -30,12 +30,10 @@ import {
   useBreakpointValue,
   useDisclosure,
   VStack,
-  Link,
   ListItem,
   List,
   ListIcon,
   Box,
-  SimpleGrid,
   OrderedList,
   useClipboard,
 } from "@chakra-ui/react";
@@ -53,7 +51,7 @@ import ConfirmModal from "../../../components/ConfirmModal";
 import DashboardLayout from "../../../components/layout/Dashboard";
 import { listInvitations, updateInvitation } from "../../../lib/api/invitations";
 import { InvitationStatus } from "../../../lib/api/request";
-import { ICreateReferralResponse, IInvitationResponse } from "../../../lib/api/response";
+import { IInvitationResponse } from "../../../lib/api/response";
 import { activateGoogleLogin, updateProfile } from "../../../lib/api/user";
 import { showError, showSuccess } from "../../../lib/helpers/toast";
 import { useUser } from "../../../lib/hook/useUser";
@@ -61,7 +59,6 @@ import { Page } from "../../../types";
 import { useTranslation } from "react-i18next";
 import { MdCheckCircle } from "react-icons/md";
 import { createReferralCode } from "../../../lib/api/referral";
-import { useRouter } from "next/dist/client/router";
 import { FiClipboard } from "react-icons/fi";
 
 
@@ -384,19 +381,24 @@ const LinkWithGoogle: React.FC = function (props) {
 };
 
 const CreateReferral: React.FC = function (props) {
+  const { user } = useUser("/login");
   const { t, i18n } = useTranslation('dashboard')
-  const [referral_code] = useState<ICreateReferralResponse | undefined>();
-  const referral_link="";
+  const [referralCode, setReferralCode] = useState<string|undefined>();
   const getReferralCode = async () => {
-    const response = createReferralCode();
-    if (response.code == 200) {
-      const referral_code = response.then;
-      const referral_link="https://omniedge.io?referral_code="+referral_code;
+    const response = await createReferralCode();
+    if (response !== undefined) {
+      const { referral_code } = response;
+      setReferralCode(referral_code);
     }
-  };   
-  // const referral_code="test";
-  // const referral_link="https://omniedge.io?referral_code="+referral_code;
-  const { hasCopied, onCopy } = useClipboard(referral_link || "");
+  };
+
+  useEffect(() => {
+    if (user?.referral_code) {
+      setReferralCode(user.referral_code);
+    }
+  }, [user?.referral_code])
+
+  const { hasCopied, onCopy } = useClipboard(`${window.location.protocol}//${window.location.host}?referral_code=${referralCode}` || "");
   return (
     <>
       <VStack alignItems="flex-start" spacing="4">
@@ -407,7 +409,7 @@ const CreateReferral: React.FC = function (props) {
             </Heading>
           </HStack>
           <Box mt={4}>
-            {!referral_code? (
+            {!referralCode? (
               <Button onClick={() => getReferralCode()} colorScheme="brand">
                 {t('setting.enablereferral')}
               </Button>) : (
@@ -421,7 +423,7 @@ const CreateReferral: React.FC = function (props) {
                 border="solid 1px"
                 borderColor="gray.200"
                 borderRadius="md"
-              >{referral_link}</Text>
+              >{`${window.location.protocol}//${window.location.host}?referral_code=${referralCode}`}</Text>
                 <Button onClick={onCopy} size="sm" colorScheme={hasCopied ? "brand" : "gray"} leftIcon={<FiClipboard />}>
                 {hasCopied ? t('copied') : t('copy')}
                 </Button>
@@ -456,7 +458,6 @@ const CreateReferral: React.FC = function (props) {
                 <ListIcon as={MdCheckCircle} color='green.500' />
                 {t('setting.virtualnetwork')}{":"}
               </ListItem>
-
             </List>
           </Box>
         </Box>

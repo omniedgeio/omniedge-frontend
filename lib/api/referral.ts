@@ -13,3 +13,11 @@ export async function createReferralCode(
 
   return res.data.data;
 }
+
+export async function setReferralCodeCookie(referralCode: string) {
+  await request({
+    url: `/referrals?referral_code=${referralCode}`,
+    method: 'GET',
+  });
+  return;
+}

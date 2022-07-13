@@ -73,6 +73,7 @@ export interface IProfileResponse {
   identities: IIdentityResponse[];
   subscription: ISubscriptionResponse;
   usage_limits: UsageLimits;
+  referral_code: string;
 }
 
 type UsageLimits = Record<UsageKey, IUsageLimitResponse>;

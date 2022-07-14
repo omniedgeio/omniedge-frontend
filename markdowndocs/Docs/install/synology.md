@@ -8,9 +8,9 @@ thumbnail: /assets/download/omnedge-synology.png
 
 # Installing on Synology
 
-OmniEdge Synology is Compatible with ArmV7 and Arm64V8, Last update: **Version 0.2.4, July 12, 2022**.
+OmniEdge Synology is Compatible with ArmV7 and Arm64V8, Last update: **Version 0.2.3.2, July 14, 2022**.
 
-[Download from Github](https://github.com/omniedgeio/omniedge-synology/releases/tag/v0.2.4)
+[Download from Github](https://github.com/omniedgeio/omniedge-synology/releases)
 
 1. Sign up your account
 2. Generate **Security-key** and get the **Virtual Network ID** from [Dashboard](https://omniedge.io/dashboard)

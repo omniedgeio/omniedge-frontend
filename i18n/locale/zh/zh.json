@@ -302,14 +302,14 @@
       "displayName": "Synology",
       "link": "https://github.com/omniedgeio/omniedge-synology/releases",
       "showQRCode": false,
-      "version": "0.2.4",
+      "version": "0.2.3.2",
       "buttonText": "下載",
-      "captionText": "兼容CPU是 armv7,arm64v8係統群暉",
+      "captionText": "兼容CPU是 armv7,arm64v8係統群暉,DSM6.x, DSM7.x",
       "lastUpdate": {
         "title": "最後更新: 版本",
         "year": 2022,
         "month": "7月",
-        "date": 12
+        "date": 14
       },
       "description": {
         "title": "開始在群暉 NAS 上使用 OmniEdge",

@@ -302,7 +302,7 @@
       "displayName": "Synology",
       "link": "https://github.com/omniedgeio/omniedge-synology/releases",
       "showQRCode": false,
-      "version": "0.2.3.2",
+      "version": "0.2.3.3",
       "buttonText": "下载",
       "captionText": "兼容CPU是 AMD64,armv7,arm64v8系统群晖,DSM6.x,DSM7.x",
       "lastUpdate": {
@@ -319,7 +319,7 @@
             "code": "null"
           },
           {
-            "step": "2. 在[管理界面](https://omniedge.io/dashboard)生成安全码**Security-key**和获取私有网络**Virtual Network ID** ",
+            "step": "2. 在[管理界面](https://omniedge.io/dashboard)生成安全码**Security-key**,获取私有网络**Virtual Network ID** 和IP段**IP Range** ",
             "code": "null"
           },
           {
@@ -327,11 +327,11 @@
             "code": "null"
           },
           {
-            "step": "4. 在安装引导过程中，将安全码**Security-key**和私有网络**Network ID** 输入",
+            "step": "4. 在安装引导过程中，将安全码**Security-key**，私有网络**Network ID** 和 IP 段 **IP Range** 输入",
             "code": "null"
           }
         ],
-        "instructionGifLink": "/assets/download/omniedge-synology-cn.jpg",
+        "instructionGifLink": "/assets/download/omniedge-synology-cn.png",
         "instructionsVideoLink": ""
       }
     },

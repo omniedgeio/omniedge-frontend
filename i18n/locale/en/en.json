@@ -313,7 +313,7 @@
       "displayName": "Synology",
       "link": "https://github.com/omniedgeio/omniedge-synology/releases",
       "showQRCode": false,
-      "version": "0.2.3.1",
+      "version": "0.2.3.2",
       "buttonText": "Download",
       "captionText": "Compatible with Synology with AMD64, armv7,arm64v8 CPU,DSM6.x, DSM7.x",
       "lastUpdate": {

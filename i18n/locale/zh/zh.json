@@ -302,7 +302,7 @@
       "displayName": "Synology",
       "link": "https://github.com/omniedgeio/omniedge-synology/releases",
       "showQRCode": false,
-      "version": "0.2.3.1",
+      "version": "0.2.3.2",
       "buttonText": "下載",
       "captionText": "兼容CPU是 armv7,arm64v8係統群暉,DSM6.x, DSM7.x",
       "lastUpdate": {
@@ -319,7 +319,7 @@
             "code": "null"
           },
           {
-            "step": "2. 在[管理界麵](https://omniedge.io/dashboard)生成安全碼**Security-key**和獲取**Virtual Network ID** ",
+            "step": "2. 在[管理界麵](https://omniedge.io/dashboard)生成安全碼**Security-key**和獲取私有網路**Virtual Network ID** ",
             "code": "null"
           },
           {
@@ -327,11 +327,11 @@
             "code": "null"
           },
           {
-            "step": "4. 在安裝引導過程中，將安全碼**Security-key**和**Network ID** 輸入",
+            "step": "4. 在安裝引導過程中，將安全碼**Security-key**和私有網路**Network ID** 輸入",
             "code": "null"
           }
         ],
-        "instructionGifLink": "/assets/download/omnedge-synology.png",
+        "instructionGifLink": "/assets/download/omniedge-synology-cn.jpg",
         "instructionsVideoLink": ""
       }
     },

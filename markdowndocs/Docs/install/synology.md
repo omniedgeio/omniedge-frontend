@@ -3,7 +3,7 @@ title: Installing OmniEdge on Synology
 description: OmniEdge Synology is Compatible with ArmV7 and Arm64V8, connect to private network.
 route: Doc / Install / Synology
 index: 3
-thumbnail: /assets/download/omnedge-synology.png
+thumbnail: /assets/download/omniedge-synology-en.png
 ---
 
 # Installing on Synology
@@ -17,7 +17,7 @@ OmniEdge Synology is Compatible with ArmV7 and Arm64V8, Last update: **Version 0
 3. Download and install OmniEdge Synology
 4. Fill **Security-key**, **Network ID** and **IP Range** during the installation wizard
 
-![](/assets/download/oomniedge-synology-en.png)
+![](/assets/download/omniedge-synology-en.png)
 
 
 

@@ -302,14 +302,14 @@
       "displayName": "Synology",
       "link": "https://github.com/omniedgeio/omniedge-synology/releases",
       "showQRCode": false,
-      "version": "0.2.3.2",
+      "version": "0.2.3.1",
       "buttonText": "下载",
       "captionText": "兼容CPU是 AMD64,armv7,arm64v8系统群晖,DSM6.x,DSM7.x",
       "lastUpdate": {
         "title": "最后更新: 版本",
         "year": 2022,
         "month": "7月",
-        "date": 14
+        "date": 15
       },
       "description": {
         "title": "开始在群晖 NAS 上使用 OmniEdge",

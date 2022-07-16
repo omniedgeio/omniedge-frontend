@@ -313,14 +313,14 @@
       "displayName": "Synology",
       "link": "https://github.com/omniedgeio/omniedge-synology/releases",
       "showQRCode": false,
-      "version": "0.2.4",
+      "version": "0.2.3.3",
       "buttonText": "Download",
-      "captionText": "Compatible with Synology with armv7,arm64v8 CPU",
+      "captionText": "Compatible with Synology with AMD64, armv7,arm64v8 CPU,DSM6.x, DSM7.x",
       "lastUpdate": {
         "title": "Last update: Version",
         "year": 2022,
         "month": "July",
-        "date": 12
+        "date": 15
       },
       "description": {
         "title": "Get started on Synology",
@@ -330,7 +330,7 @@
             "code": "null"
           },
           {
-            "step": "2. Generate **Security-key** and get the **Virtual Network ID** from [Dashboard](https://omniedge.io/dashboard)",
+            "step": "2. Generate **Security-key**, get the **Virtual Network ID** and the **IP Range** from [Dashboard](https://omniedge.io/dashboard)",
             "code": "null"
           },
           {
@@ -338,11 +338,11 @@
             "code": "null"
           },
           {
-            "step": "4. Fill **Security-key** and **Network ID** during the installation wizard",
+            "step": "4. Fill **Security-key**, **Network ID** and **IP Range** during the installation wizard",
             "code": "null"
           }
         ],
-        "instructionGifLink": "/assets/download/omnedge-synology.png",
+        "instructionGifLink": "/assets/download/omniedge-synology-en.png",
         "instructionsVideoLink": ""
       }
     },

@@ -172,14 +172,14 @@ OmniEdge Android is compatible with Android 6 or later mobile phone or TV. Last 
 Run scrcpy in the termial: 
 
 ```bash
-$scrcpy --tcpip=100.100.100.2:5555
+$scrcpy --tcpip=10.100.100.2:5555
 ```
 
 Then you will see the following output, and a popup-window will open to show your android device's screen: 
 
 ```bash
 scrcpy 1.22 <https://github.com/Genymobile/scrcpy>
-2022-02-10 17:03:25.249 scrcpy[41700:1349554] INFO: Connected to 100.100.100.2:5555
+2022-02-10 17:03:25.249 scrcpy[41700:1349554] INFO: Connected to 10.100.100.2:5555
 /opt/homebrew/Cellar/scrcpy/1.22_1/share/scrcpy/scrcpy-server: 1 file pushed, 0 skipped. 15.5 MB/s (40955 bytes in 0.003s)
 [server] INFO: Device: OnePlus HD1900 (Android 11)
 2022-02-10 17:03:34.824 scrcpy[41700:1349549] INFO: Renderer: metal

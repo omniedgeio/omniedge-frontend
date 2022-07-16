@@ -139,7 +139,6 @@ export default function ComparisonTable() {
             <FeatureTextnumber title={t("devices")} free="20" pro="25" team="25" enterprise={t("unlimited")} />
             <FeatureTextnumber title={t("users")} free="1" pro="5" team="10" enterprise={t("unlimited")} />
             <FeatureDesc>{t("securitykey")}</FeatureDesc>
-            <FeatureDesc>{t("subroute")}</FeatureDesc>
             <FeatureDesc>{t("unlimiteddata")}</FeatureDesc>
             <FeatureDesc>{t("p2p")}</FeatureDesc>
             <FeatureDesc>{t("platform")}</FeatureDesc>
@@ -149,6 +148,8 @@ export default function ComparisonTable() {
             <FeatureDesc free={false} pro={true} team={true}>
               {t("customizesupernode")}
             </FeatureDesc>
+            <FeatureDesc free={false} pro={false} team={false}>
+              {t("subroute")}</FeatureDesc>
             <FeatureDesc free={false} pro={false} team={false}>
               {t("sso")}
             </FeatureDesc>

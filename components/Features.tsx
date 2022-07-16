@@ -198,7 +198,7 @@ export function How() {
                 <Box w={["36", "48"]} textAlign="center">
                   <Text>{t('assigning')}</Text>
                   <Skeleton mx="2" my="1" h="0.5" startColor="brand.500" endColor="teal.500"></Skeleton>
-                  <Code backgroundColor="white">100.100.1.111</Code>
+                  <Code backgroundColor="white">10.100.1.111</Code>
                 </Box>
                 <StepVirtualNetwork>
                   <SimpleGrid spacing="2" columns={3}>

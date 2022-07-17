@@ -22,6 +22,7 @@ import { Page } from "../types";
 import {useTranslation} from "react-i18next";
 import {availableLanguages} from "../i18n/i18n";
 import {FaGithub } from "react-icons/fa";
+import Markdown from "markdown-to-jsx";
 
 
 const Home: Page = (props) => {
@@ -63,7 +64,7 @@ const Home: Page = (props) => {
           </chakra.h1>
             </Heading>
             <Text maxW="2xl" color="gray.700" py="4" fontSize="14px">
-              {t('slogan-description')}
+              <Markdown>{t('slogan-description')}</Markdown>
             </Text>
             <HStack>
             <Link href="/register" w="full">

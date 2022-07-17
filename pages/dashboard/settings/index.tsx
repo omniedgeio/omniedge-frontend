@@ -58,7 +58,7 @@ import { useUser } from "../../../lib/hook/useUser";
 import { Page } from "../../../types";
 import { useTranslation } from "react-i18next";
 import { MdCheckCircle } from "react-icons/md";
-import { createReferralCode } from "../../../lib/api/referral";
+import { createReferralCode, getReferralInfo } from "../../../lib/api/referral";
 import { FiClipboard } from "react-icons/fi";
 
 
@@ -383,20 +383,30 @@ const LinkWithGoogle: React.FC = function (props) {
 const CreateReferral: React.FC = function (props) {
   const { user } = useUser("/login");
   const { t, i18n } = useTranslation('dashboard')
-  const [referralCode, setReferralCode] = useState<string|undefined>();
-  const getReferralCode = async () => {
+  const [referralCode, setReferralCode] = useState<string>('');
+  const [bonusDevice, setBonusDevice] = useState<number>(0);
+  const [bonusVirtualNetwork, setBonusVirtualNetwork] = useState<number>(0);
+  const createReferralCode = async () => {
     const response = await createReferralCode();
     if (response !== undefined) {
-      const { referral_code } = response;
+      const { referral_code = ''} = response;
+      setReferralCode(referral_code);
+    }
+  };
+
+  const fetchReferralInfo = async () => {
+    const response = await getReferralInfo();
+    if (response !== undefined) {
+      const { referral_code = '', bonus_device = 0, bonus_virtual_network = 0 } = response;
+      setBonusDevice(bonus_device);
+      setBonusVirtualNetwork(bonus_virtual_network);
       setReferralCode(referral_code);
     }
   };
 
   useEffect(() => {
-    if (user?.referral_code) {
-      setReferralCode(user.referral_code);
-    }
-  }, [user?.referral_code])
+    fetchReferralInfo();
+  }, [])
 
   const { hasCopied, onCopy } = useClipboard(`${window.location.protocol}//${window.location.host}?referral_code=${referralCode}` || "");
   return (
@@ -410,7 +420,7 @@ const CreateReferral: React.FC = function (props) {
           </HStack>
           <Box mt={4}>
             {!referralCode? (
-              <Button onClick={() => getReferralCode()} colorScheme="brand">
+              <Button onClick={() => createReferralCode()} colorScheme="brand">
                 {t('setting.enablereferral')}
               </Button>) : (
               <><Box>
@@ -452,11 +462,11 @@ const CreateReferral: React.FC = function (props) {
             <List>
               <ListItem>
                 <ListIcon as={MdCheckCircle} color='green.500' />
-                {t('setting.device')}{":"}
+                {t('setting.device')}{":"} {bonusDevice}
               </ListItem>
               <ListItem>
                 <ListIcon as={MdCheckCircle} color='green.500' />
-                {t('setting.virtualnetwork')}{":"}
+                {t('setting.virtualnetwork')}{":"} {bonusVirtualNetwork}
               </ListItem>
             </List>
           </Box>

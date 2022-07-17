@@ -211,3 +211,9 @@ export interface IReferralResponse {
 export type ICreateReferralResponse = IReferralResponse & {
   referral_code: string;
 };
+
+export type IGetReferralInfoResponse = {
+  referral_code: string;
+  bonus_device: number;
+  bonus_virtual_network: number;
+};

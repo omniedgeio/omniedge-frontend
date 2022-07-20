@@ -4,7 +4,6 @@ import {
   IActivatePasswordLoginRequest,
   IChangePasswordRequest,
   IUpdateProfileRequest,
-  ICreateReferralRequest,
 } from "./request";
 import { IProfileResponse } from "./response";
 

@@ -386,7 +386,7 @@ const CreateReferral: React.FC = function (props) {
   const [referralCode, setReferralCode] = useState<string>('');
   const [bonusDevice, setBonusDevice] = useState<number>(0);
   const [bonusVirtualNetwork, setBonusVirtualNetwork] = useState<number>(0);
-  const createReferralCode = async () => {
+  const enableReferralCode = async () => {
     const response = await createReferralCode();
     if (response !== undefined) {
       const { referral_code = ''} = response;
@@ -420,7 +420,7 @@ const CreateReferral: React.FC = function (props) {
           </HStack>
           <Box mt={4}>
             {!referralCode? (
-              <Button onClick={() => createReferralCode()} colorScheme="brand">
+              <Button onClick={() => enableReferralCode()} colorScheme="brand">
                 {t('setting.enablereferral')}
               </Button>) : (
               <><Box>

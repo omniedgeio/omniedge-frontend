@@ -124,3 +124,4 @@ export interface IUpdateInvitationRequest {
 export interface ICreateCheckoutSessionRequest {
   plan: string;
 }
+

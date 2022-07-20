@@ -11,7 +11,7 @@ import { IResponse } from "./response";
 const client = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_URL,
   timeout: 10 * 1000,
-  withCredentials: false,
+  withCredentials: true,
 });
 
 function forceLogout() {

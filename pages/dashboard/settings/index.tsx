@@ -30,13 +30,18 @@ import {
   useBreakpointValue,
   useDisclosure,
   VStack,
-  Link,
+  ListItem,
+  List,
+  ListIcon,
+  Box,
+  OrderedList,
+  useClipboard,
 } from "@chakra-ui/react";
 import { formatDistanceToNow } from "date-fns";
 import { useFormik } from "formik";
 import { useEffect, useState } from "react";
 import { FiCheck, FiLock, FiMoreVertical, FiX } from "react-icons/fi";
-import {VscQuestion} from "react-icons/vsc";
+import { VscQuestion } from "react-icons/vsc";
 import { useQuery } from "react-query";
 import * as Yup from "yup";
 import ChangePasswordModal from "../../../components/auth/ChangePasswordModal";
@@ -51,11 +56,15 @@ import { activateGoogleLogin, updateProfile } from "../../../lib/api/user";
 import { showError, showSuccess } from "../../../lib/helpers/toast";
 import { useUser } from "../../../lib/hook/useUser";
 import { Page } from "../../../types";
-import {useTranslation} from "react-i18next";
+import { useTranslation } from "react-i18next";
+import { MdCheckCircle } from "react-icons/md";
+import { createReferralCode, getReferralInfo } from "../../../lib/api/referral";
+import { FiClipboard } from "react-icons/fi";
+
 
 const UpdateUserProfileForm: React.FC = function (props) {
   const { user, refetch, isLoading } = useUser("/login");
-  const {t, i18n} = useTranslation('dashboard')
+  const { t, i18n } = useTranslation('dashboard')
   const { handleChange, handleBlur, handleSubmit, values, setValues, touched, errors, isSubmitting } = useFormik({
     initialValues: {
       name: "",
@@ -109,7 +118,7 @@ const UpdateUserProfileForm: React.FC = function (props) {
           <FormErrorMessage>{errors.email}</FormErrorMessage>
         </FormControl>
         <Button type="submit" isLoading={isSubmitting} colorScheme="brand">
-        {t('setting.update')}
+          {t('setting.update')}
         </Button>
       </VStack>
     </form>
@@ -123,7 +132,7 @@ const Invitations: React.FC = function (props) {
 
   const confirmModal = useDisclosure();
   const [invitationToReject, setInvitationToReject] = useState<IInvitationResponse>();
-  const {t, i18n} = useTranslation('dashboard')
+  const { t, i18n } = useTranslation('dashboard')
   return (
     <>
       <Heading mt={4} fontWeight="medium" size="md">
@@ -267,7 +276,7 @@ const ChangePassword: React.FC = function (props) {
   const forgotPasswordModal = useDisclosure();
   const activatePasswordModal = useDisclosure();
   const isPasswordEnabled = !!user?.identities.find(({ provider }) => provider == "password")?.enabled;
-  const {t, i18n} = useTranslation('dashboard')
+  const { t, i18n } = useTranslation('dashboard')
   const provider_google = !!user?.identities.find(({ provider }) => provider == "google")?.enabled;
   return (
     <>
@@ -291,22 +300,22 @@ const ChangePassword: React.FC = function (props) {
           {t('setting.password')}
         </Heading>
         {/* {isPasswordEnabled ? ( */}
-        {!provider_google?(
-        <>
-          <Text>{t('setting.changepassword-desc')}</Text>
-          <Button leftIcon={<FiLock />} onClick={changePasswordModal.onOpen}>
-          {t('setting.changepassword')}
-          </Button>
-          <Text>{t('setting.forgotpassword-desc')}</Text>
-          <Button leftIcon={<VscQuestion />} onClick={forgotPasswordModal.onOpen}>
-          {t('setting.forgotpassword')}
-          </Button>
-        </>):(
+        {!provider_google ? (
           <>
-          <Text>{t('setting.setpasswordforgooglelogin-desc')}</Text>
-          <Button leftIcon={<VscQuestion />} onClick={forgotPasswordModal.onOpen}>
-          {t('setting.forgotpassword')}
-          </Button>
+            <Text>{t('setting.changepassword-desc')}</Text>
+            <Button leftIcon={<FiLock />} onClick={changePasswordModal.onOpen}>
+              {t('setting.changepassword')}
+            </Button>
+            <Text>{t('setting.forgotpassword-desc')}</Text>
+            <Button leftIcon={<VscQuestion />} onClick={forgotPasswordModal.onOpen}>
+              {t('setting.forgotpassword')}
+            </Button>
+          </>) : (
+          <>
+            <Text>{t('setting.setpasswordforgooglelogin-desc')}</Text>
+            <Button leftIcon={<VscQuestion />} onClick={forgotPasswordModal.onOpen}>
+              {t('setting.forgotpassword')}
+            </Button>
           </>
         )
         }
@@ -328,7 +337,7 @@ const LinkWithGoogle: React.FC = function (props) {
   const showErr = () =>
     showError("Link with Google", "Unexpected error when linked with your google accounts. Please try again later.");
   const provider = user?.identities.find(({ provider }) => provider == "google");
-  const {t, i18n} = useTranslation('dashboard')
+  const { t, i18n } = useTranslation('dashboard')
   return (
     <VStack spacing={2} alignItems="flex-start">
       <Heading fontWeight="medium" size="md">
@@ -338,7 +347,7 @@ const LinkWithGoogle: React.FC = function (props) {
         <Text>
           {t('setting.linkgoogle-desc-1')}{" "}
           <Text as="span" display="inline" color="green.500">
-          {t('setting.linkgoogle-desc-2')}
+            {t('setting.linkgoogle-desc-2')}
           </Text>{" "}
           {t('setting.linkgoogle-desc-3')} <Code>{provider?.metadata?.email}</Code>
         </Text>
@@ -371,8 +380,104 @@ const LinkWithGoogle: React.FC = function (props) {
   );
 };
 
+const CreateReferral: React.FC = function (props) {
+  const { user } = useUser("/login");
+  const { t, i18n } = useTranslation('dashboard')
+  const [referralCode, setReferralCode] = useState<string>('');
+  const [bonusDevice, setBonusDevice] = useState<number>(0);
+  const [bonusVirtualNetwork, setBonusVirtualNetwork] = useState<number>(0);
+  const enableReferralCode = async () => {
+    const response = await createReferralCode();
+    if (response !== undefined) {
+      const { referral_code = ''} = response;
+      setReferralCode(referral_code);
+    }
+  };
+
+  const fetchReferralInfo = async () => {
+    const response = await getReferralInfo();
+    if (response !== undefined) {
+      const { referral_code = '', bonus_device = 0, bonus_virtual_network = 0 } = response;
+      setBonusDevice(bonus_device);
+      setBonusVirtualNetwork(bonus_virtual_network);
+      setReferralCode(referral_code);
+    }
+  };
+
+  useEffect(() => {
+    fetchReferralInfo();
+  }, [])
+
+  const { hasCopied, onCopy } = useClipboard(`${window.location.protocol}//${window.location.host}?referral_code=${referralCode}` || "");
+  return (
+    <>
+      <VStack alignItems="flex-start" spacing="4">
+        <Box w="full" maxW="500px" p={6} border="1px" borderColor="gray.200" borderRadius="xl">
+          <HStack>
+            <Heading size="md">
+              {t('setting.referral')}
+            </Heading>
+          </HStack>
+          <Box mt={4}>
+            {!referralCode? (
+              <Button onClick={() => enableReferralCode()} colorScheme="brand">
+                {t('setting.enablereferral')}
+              </Button>) : (
+              <><Box>
+                <Text
+                w="fit-content"
+                py="3"
+                px="4"
+                bgColor="gray.50"
+                color="gray.700"
+                border="solid 1px"
+                borderColor="gray.200"
+                borderRadius="md"
+              >{`${window.location.protocol}//${window.location.host}?referral_code=${referralCode}`}</Text>
+                <Button onClick={onCopy} size="sm" colorScheme={hasCopied ? "brand" : "gray"} leftIcon={<FiClipboard />}>
+                {hasCopied ? t('copied') : t('copy')}
+                </Button>
+                </Box>
+              </>
+            )}
+
+            <Text paddingBottom="10px" paddingTop="10px" fontWeight="medium">{t('setting.referral-rules')}</Text>
+            <OrderedList>
+              <ListItem>
+                {t('setting.referral-rules-1')}
+              </ListItem>
+              <ListItem>
+                {t('setting.referral-rules-2')}
+              </ListItem>
+              <ListItem>
+                {t('setting.referral-rules-3')}
+              </ListItem>
+              <ListItem>
+                {t('setting.referral-rules-4')}
+              </ListItem>
+            </OrderedList>
+          </Box>
+          <Box mt={4}>
+            <Text fontWeight="semibold">{t('setting.referral-rewarded')}</Text>
+            <List>
+              <ListItem>
+                <ListIcon as={MdCheckCircle} color='green.500' />
+                {t('setting.device')}{":"} {bonusDevice}
+              </ListItem>
+              <ListItem>
+                <ListIcon as={MdCheckCircle} color='green.500' />
+                {t('setting.virtualnetwork')}{":"} {bonusVirtualNetwork}
+              </ListItem>
+            </List>
+          </Box>
+        </Box>
+      </VStack>
+    </>
+  );
+};
+
 const SettingsPage: Page = function (props) {
-  const {t, i18n} = useTranslation('dashboard')
+  const { t, i18n } = useTranslation('dashboard')
   return (
     <>
       <Heading fontWeight="semibold" size="md">
@@ -382,6 +487,7 @@ const SettingsPage: Page = function (props) {
         <TabList>
           <Tab>{t('setting.profile')}</Tab>
           <Tab>{t('setting.security')}</Tab>
+          <Tab>{t('setting.referral')}</Tab>
         </TabList>
         <TabPanels>
           <TabPanel px={0}>
@@ -393,6 +499,9 @@ const SettingsPage: Page = function (props) {
               <ChangePassword />
               {/* <LinkWithGoogle /> */}
             </VStack>
+          </TabPanel>
+          <TabPanel px={0}>
+            <CreateReferral />
           </TabPanel>
         </TabPanels>
       </Tabs>

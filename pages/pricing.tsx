@@ -1,4 +1,4 @@
-import { Stack, Tab, TabList, TabPanel, TabPanels, TabProps, Tabs, Text, VStack } from "@chakra-ui/react";
+import { Stack, Tab, TabProps, Text, VStack } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import DefaultLayout from "../components/layout/Default";
 import ComparisonTable from "../components/pricing/ComparisonTable";
@@ -37,7 +37,7 @@ const PricingPage: Page = () => {
       
       <Stack justifyContent="center" direction={{ base: "column", sm: "row" }} paddingTop="36px">
               <FreePlan maxW={80} />
-              <ProPlan maxW={80} />
+              {/* <ProPlan maxW={80} /> */}
               <TeamsPlan maxW={80} />
               <EnterprisePlan maxW={80} />
             </Stack>

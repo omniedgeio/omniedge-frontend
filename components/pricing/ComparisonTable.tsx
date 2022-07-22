@@ -136,7 +136,7 @@ export default function ComparisonTable() {
           </Thead>
           <Tbody>
             <FeatureTextnumber title={t("virtualnetwork")} free="1" pro="5" team="10" enterprise={t("unlimited")} />
-            <FeatureTextnumber title={t("devices")} free="20" pro="25" team="25" enterprise={t("unlimited")} />
+            <FeatureTextnumber title={t("devices")} free="20" pro="25" team="50" enterprise={t("unlimited")} />
             <FeatureTextnumber title={t("users")} free="1" pro="5" team="10" enterprise={t("unlimited")} />
             <FeatureDesc>{t("securitykey")}</FeatureDesc>
             <FeatureDesc>{t("unlimiteddata")}</FeatureDesc>

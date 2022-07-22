@@ -702,7 +702,7 @@
             "tips": "Virtual network is an virtual intranet for all your devices and users."
           },
           {
-            "label": "Up to 25 devices",
+            "label": "Up to 50 devices",
             "tips": "A device is any desktop,laptop, phone or cloud instance with OmniEdge installed and activated in your own virtual network."
           },
           {
@@ -989,6 +989,10 @@
       "change": "Change plan",
       "title": "Billing",
       "plan": "Plan",
+      "starter": "Starter",
+      "professional": "Professional",
+      "teams": "Teams",
+      "enterprise": "Enterprise",
       "monthly": "Billing Monthly",
       "revertnotify": "Your subscription will revert back to Free Plan on",
       "upgrade": "Upgrade Plan",

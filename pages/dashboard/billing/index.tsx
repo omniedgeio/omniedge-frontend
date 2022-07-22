@@ -44,7 +44,9 @@ const BillingPage: Page = (props) => {
         <Box w="full" maxW="500px" p={6} border="1px" borderColor="gray.200" borderRadius="xl">
           <HStack>
             <Heading size="md">
-              {tFeatures("title")} {t("billing.plan")}
+            {user?.subscription.slug === "free" ? t("billing.starter") : ""}
+            {user?.subscription.slug === "professional" ? t("billing.professional") : ""}
+            {user?.subscription.slug === "teams" ? t("billing.teams") : ""} {t("billing.plan")} 
             </Heading>
             <Badge colorScheme="green">{user?.subscription.slug === "free" ? "Free" : "Paid"}</Badge>
           </HStack>

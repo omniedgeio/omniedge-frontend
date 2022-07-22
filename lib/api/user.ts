@@ -49,3 +49,12 @@ export function activateGoogleLogin(data: IActivateGoogleLoginRequest) {
     data,
   });
 }
+
+export async function createReferralCode() {
+  let res = await request({
+    url: "/referrals",
+    method: "POST",
+  });
+
+  return res.data.data;
+}

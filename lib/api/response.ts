@@ -73,6 +73,7 @@ export interface IProfileResponse {
   identities: IIdentityResponse[];
   subscription: ISubscriptionResponse;
   usage_limits: UsageLimits;
+  referral_code: string;
 }
 
 type UsageLimits = Record<UsageKey, IUsageLimitResponse>;
@@ -193,3 +194,26 @@ export interface ISubnetRouteDeviceResponse {
   mac_addr: string;
   manufacturer: string;
 }
+
+
+/* -------------------------------------------------------------------------- */
+/*                                    Referral Code                           */
+/* -------------------------------------------------------------------------- */
+
+export interface IReferralResponse {
+  id: string;
+  updated_at: Date;
+  created_at: Date;
+  name:string;
+  referral_code: string;
+}
+
+export type ICreateReferralResponse = IReferralResponse & {
+  referral_code: string;
+};
+
+export type IGetReferralInfoResponse = {
+  referral_code: string;
+  bonus_device: number;
+  bonus_virtual_network: number;
+};

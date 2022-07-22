@@ -87,7 +87,7 @@ const CreateSecurityKeyForm: React.FC = function (props) {
                 {securityKey?.key}
               </Text>
               <Button onClick={onCopy} size="sm" colorScheme={hasCopied ? "brand" : "gray"} leftIcon={<FiClipboard />}>
-                {hasCopied ? "Copied" : "Copy"}
+                {hasCopied ? t('copied') : t('copy')}
               </Button>
               <Box pt={2}>
                 <Text fontWeight="medium">

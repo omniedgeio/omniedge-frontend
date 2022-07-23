@@ -30,10 +30,6 @@ export function DownloadCaption({ text = 'Download' }) {
   return (<Text color="#aeaeb2">{text}</Text>)
 }
 
-interface IPropss {
-  texts: string[];
-}
-
 export interface DescriptionText {
   step: string;
   code: string;
@@ -48,12 +44,12 @@ export const Description: FunctionComponent<DescriptionProps> = ({ texts }) => {
     {texts.map((text) => {
       if (text.step === "null" || text.code === "null") {
         return (<>
-          {text.step != 'null' && (<Text class="markdown" fontSize="14px" fontWeight="400" color="gray.900" lineHeight="20px" gap="4px" paddingTop="8px" paddingBottom="4px"><Markdown>{text.step}</Markdown></Text>)}
+          {text.step != 'null' && (<Text key={text.toString()} className="markdown" fontSize="14px" fontWeight="400" color="gray.900" lineHeight="20px" gap="4px" paddingTop="8px" paddingBottom="4px"><Markdown key={text.toString()}>{text.step}</Markdown></Text>)}
         </>
         )
       } else {
         return (<>
-          {text.step != 'null' && (<Text class="markdown" fontSize="14px" fontWeight="400" color="gray.900" lineHeight="20px" gap="4px" paddingTop="8px" paddingBottom="4px"><Markdown>{text.step}</Markdown></Text>)}
+          {text.step != 'null' && (<Text key={text.toString()} className="markdown" fontSize="14px" fontWeight="400" color="gray.900" lineHeight="20px" gap="4px" paddingTop="8px" paddingBottom="4px"><Markdown key={text.toString()}>{text.step}</Markdown></Text>)}
           {text.code != 'null' && (<CopyBlock
             language="bash"
             text={text.code}
@@ -71,21 +67,8 @@ export const Description: FunctionComponent<DescriptionProps> = ({ texts }) => {
   )
 }
 
-interface lstupdate {
-  year: number;
-  month: string;
-  date: number;
-}
-
-interface descinfo {
-  title: string;
-  instructions: string[];
-  instructionGifLink: string;
-  instructionsVideoLink: string;
-}
-
 interface Platforminfo {
-  [status: string]: any;
+  status: string | any;
   displayName: string;
   link: string;
   showQRCode: boolean;

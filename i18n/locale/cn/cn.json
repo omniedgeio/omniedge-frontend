@@ -329,6 +329,10 @@
           {
             "step": "4. 在安装引导过程中，将安全码**Security-key**，私有网络**Network ID** 和 IP 段 **IP Range** 输入",
             "code": "null"
+          },
+          {
+            "step": "5. **DSM7**系统安装后请在命令行输入以下命令允许配置文件写入权限:",
+            "code": "sudo sed -i 's/package/root/g' /var/packages/omniedge/conf/privilege"
           }
         ],
         "instructionGifLink": "/assets/download/omniedge-synology-cn.png",

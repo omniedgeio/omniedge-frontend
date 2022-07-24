@@ -8,9 +8,9 @@ thumbnail: /assets/OmniEdgeall0.5.png
 
 # Installing on Android
 
-OmniEdge Android is compatible with Android 6 or later mobile phone or TV. Last update: Version 0.2.3, July 11,2022.
+OmniEdge Android is compatible with Android 6 or later mobile phone or TV. Last update: Version 0.2.3.1, July 24,2022.
 
-[Download for Android 6 or later](/install/download/0.2.3/omniedge-release-v0.2.3.apk)
+[Download for Android 6 or later](/install/download/0.2.3/OmniEdge-Android-v0.2.3.1.apk)
 
 + Download OmniEdge APK and install it
 + Run OmniEdge and Sign in with your email address

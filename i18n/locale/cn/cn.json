@@ -86,16 +86,16 @@
     "Android": {
       "status": "LIVE",
       "displayName": "Android",
-      "link": "/install/download/0.2.3/omniedge-release-v0.2.3.apk",
+      "link": "/install/download/0.2.3/OmniEdge-Android-v0.2.3.1.apk",
       "showQRCode": "点击显示下载二维码",
-      "version": "0.2.3",
+      "version": "0.2.3.1",
       "buttonText": "下载 Apk",
       "captionText": "兼容 Android 6 及以上版本手机，车机及电视。",
       "lastUpdate": {
         "title": "最后更新: 版本",
         "year": 2022,
         "month": "7月",
-        "date": 11
+        "date": 24
       },
       "description": {
         "title": "开始在安卓手机，车机及电视上使用 OmniEdge",

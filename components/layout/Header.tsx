@@ -92,7 +92,7 @@ export function Header() {
             <Link href="/pricing">{t('pricing')}</Link>
             <Link href="/download">{t('download')}</Link>
             <Link href="/docs">{t('docs')}</Link>
-            <Link href="/docs/article/Opensource">{t('opensource')}</Link>
+            <Link href="https://github.com/omniedgeio/omniedge">{t('opensource')}</Link>
             {/* <Link href="/blog">{t('blog')}</Link> */}
           </Stack>
           <HStack>

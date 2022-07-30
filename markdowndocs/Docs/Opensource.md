@@ -7,15 +7,9 @@ thumbnail:
 ---
 # Open Source
 
-OmniEdge is built on the protocol based on [n2n](https://github.com/omniedgeio/n2n).
+OmniEdge is an Open Source project. We welcome any kind of support: star, submit issues, submit PRs, write blogs talk about us, tweet about us, etc.
 
-+ [OmniEdge Android](https://github.com/omniedgeio/omniedge-android)
-+ [OmniEdge macOS Gui](https://github.com/omniedgeio/omniedge-macOS)
-+ [OmniEdge iOS](https://github.com/omniedgeio/omniedge-iOS)
-+ [OmniEdge Windows](https://github.com/omniedgeio/omniedge-windows)
-+ [OmniEdge Synology](https://github.com/omniedgeio/omniedge-synology)
-+ [OmniEdge App Release](https://github.com/omniedgeio/app-release)
-
++ [https://github.com/omniedgeio/omniedge](https://github.com/omniedgeio/omniedge)
 
 -----
 

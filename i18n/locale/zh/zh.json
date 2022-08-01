@@ -86,16 +86,16 @@
     "Android": {
       "status": "LIVE",
       "displayName": "Android",
-      "link": "/install/download/0.2.3/omniedge-release-v0.2.3.apk",
+      "link": "/install/download/0.2.3/OmniEdge-Android-v0.2.3.1.apk",
       "showQRCode": "點選顯示下載二維碼",
-      "version": "0.2.3",
+      "version": "0.2.3.1",
       "buttonText": "下載 Apk",
       "captionText": "兼容 Android 6 及以上版本手機，車機及電視。",
       "lastUpdate": {
         "title": "最後更新: 版本",
         "year": 2022,
         "month": "7月",
-        "date": 11
+        "date": 24
       },
       "description": {
         "title": "開始在安卓手機，車機及電視上使用 OmniEdge",
@@ -329,6 +329,10 @@
           {
             "step": "4. 在安裝引導過程中，將安全碼**Security-key**，私有網路**Network ID** 和 IP 段 **IP Range** 輸入",
             "code": "null"
+          },
+          {
+            "step": "5. **DSM7**係統安裝後請在命令行輸入以下命令允許配置文件寫入權限:",
+            "code": "sudo sed -i 's/package/root/g' /var/packages/omniedge/conf/privilege"
           }
         ],
         "instructionGifLink": "/assets/download/omniedge-synology-cn.png",

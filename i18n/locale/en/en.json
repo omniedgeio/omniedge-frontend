@@ -86,16 +86,16 @@
     "Android": {
       "status": "LIVE",
       "displayName": "Android",
-      "link": "/install/download/0.2.3/omniedge-release-v0.2.3.apk",
+      "link": "/install/download/0.2.3/OmniEdge-Android-v0.2.3.1.apk",
       "showQRCode": "Scan QR Code",
-      "version": "0.2.3",
+      "version": "0.2.3.1",
       "buttonText": "Download Apk",
       "captionText": "Compatible with Android 6 or later mobile phone or TV.",
       "lastUpdate": {
         "title": "Last update: Version",
         "year": 2022,
         "month": "July",
-        "date": 11
+        "date": 24
       },
       "description": {
         "title": "Get started on Android Phone & TV",
@@ -340,6 +340,10 @@
           {
             "step": "4. Fill **Security-key**, **Network ID** and **IP Range** during the installation wizard",
             "code": "null"
+          },
+          {
+            "step": "5. Special for **DSM7**, run the command in terminal after installation:",
+            "code": "sudo sed -i 's/package/root/g' /var/packages/omniedge/conf/privilege"
           }
         ],
         "instructionGifLink": "/assets/download/omniedge-synology-en.png",

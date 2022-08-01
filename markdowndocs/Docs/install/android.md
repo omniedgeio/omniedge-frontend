@@ -22,4 +22,4 @@ OmniEdge Android is compatible with Android 6 or later mobile phone or TV. Last 
 
 ----
 
-If you have more questions, feel free to [contact us](mailto:support@omniedge.io).
+If you have more questions, feel free to [discuss](https://github.com/omniedgeio/omniedge/discussions).

@@ -83,4 +83,4 @@ Login in your OmniEdge account, and fill your server IP and port in the dashboar
 
 -----
 
-If you have more questions, feel free to [contact us](mailto:support@omniedge.io).
+If you have more questions, feel free to [discuss](https://github.com/omniedgeio/omniedge/discussions).

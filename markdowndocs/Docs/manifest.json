@@ -131,6 +131,53 @@
       ]
     },
     {
+      "name": "Development",
+      "route": "development",
+      "path": "Docs/development/Build.md",
+      "children": [
+        {
+          "name": "linux",
+          "route": "linux",
+          "path": "Docs/development/linux.md"
+        },
+        {
+          "name": "windows",
+          "route": "windows",
+          "path": "Docs/development/windows.md"
+        },
+        {
+          "name": "android",
+          "route": "android",
+          "path": "Docs/development/android.md"
+        },
+        {
+          "name": "macOS",
+          "route": "macos",
+          "path": "Docs/development/macOS.md"
+        },        
+        {
+          "name": "ios",
+          "route": "ios",
+          "path": "Docs/development/iOS.md"
+        },
+        {
+          "name": "FreeBSD",
+          "route": "freebsd",
+          "path": "Docs/development/freebsd.md"
+        },
+        {
+          "name": "Synology",
+          "route": "synology",
+          "path": "Docs/development/synology.md"
+        },
+        {
+          "name": "Cross Compile",
+          "route": "crosscompile",
+          "path": "Docs/development/cross-compile.md"
+        }
+      ]
+    },
+    {
       "name": "Architecture",
       "route": "architecture",
       "path": "Docs/Architecture.md"

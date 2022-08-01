@@ -131,4 +131,4 @@ with a speicified virtual network.
 ![](/assets/download/OmniEdge-CLI-0.2.0.gif)
 
 
-If you have more questions, feel free to [contact us](mailto:support@omniedge.io).
+If you have more questions, feel free to [discuss](https://github.com/omniedgeio/omniedge/discussions).

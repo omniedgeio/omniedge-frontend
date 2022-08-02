@@ -62,6 +62,19 @@ chmod +x internal/make
 BUILD_ENV=prod make build
 ```
 
+## Build for OpenSuse
+
+```bash
+sudo zypper update 
+sudo zypper install unzip git gcc curl wget zip make pkg-config openssl net-tools automake autoconf make tar
+git clone https://github.com/omniedgeio/omniedge-cli
+cd omniedge-cli
+go mod download
+go generate
+chmod +x internal/make
+BUILD_ENV=prod make build
+```
+
 
 
 The compiled omniedge-cli will be found in **/out/**

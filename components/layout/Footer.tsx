@@ -53,33 +53,36 @@ export default function Footer() {
     <>
     <Box>
       <HStack spacing='270px'>
-    <Box w='275px' gap="16px">
+    <Box w='400px' gap="16px">
         <VStack textAlign="center">
             <Link href="/" _hover={{ color: "inherit" }}>
               <Brand />
             </Link>
             <Text fontSize="sm">
               {t('copyright')}<br />
-              {/* Presented from<br /> */}
-              {/* US | AU | CN | DE | MY */}
+              </Text>
+              <Text fontSize="sm">
+            {"Started from US, build globally"}<br />
+              {"US | AU | CN | DE | MY | CA"}
             </Text>
             <Stack direction={"row"} spacing={3}>
               <SocialButton label={"Twitter"} href="https://twitter.com/omniedgeio">
                 <FaTwitter />
               </SocialButton>
-              <SocialButton label={"YouTube"} href="https://www.youtube.com/channel/UCe6OYOyfWDkSkN7LQ3Rp8_g">
+              {/* <SocialButton label={"YouTube"} href="https://www.youtube.com/channel/UCe6OYOyfWDkSkN7LQ3Rp8_g">
                 <FaYoutube />
-              </SocialButton>
+              </SocialButton> */}
               <SocialButton label={"Github"} href="https://github.com/omniedgeio/omniedge">
                 <FaGithub />
               </SocialButton>
-              <SocialButton label={"Medium"} href="https://omniedge.medium.com/">
+              {/* <SocialButton label={"Medium"} href="https://omniedge.medium.com/">
                 <FaMedium />
-              </SocialButton>
+              </SocialButton> */}
               <SocialButton label={"Discord"} href="https://discord.gg/FY6Yd6jcPu">
                 <FaDiscord />
               </SocialButton>
             </Stack>
+            
           </VStack>
       </Box>
     <Box gap="240px" w='687px' display={{ base: "none", md: "flex" }}>

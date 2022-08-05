@@ -52,7 +52,6 @@ const Home: Page = (props) => {
           spacing='24px'
         >
           <VStack alignItems="flex-start" paddingTop='31px'>
-
             <Heading maxW="full" as="h1" size="xl" lineHeight="1.5em" >
               <chakra.h1
                 fontSize={{ base: "3xl", md: "4xl" }}

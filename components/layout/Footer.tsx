@@ -62,7 +62,7 @@ export default function Footer() {
               {t('copyright')}<br />
               </Text>
               <Text fontSize="sm">
-            {"Started from US, build globally"}<br />
+            {" Built by a global remote team."}<br />
               {"US | AU | CN | DE | MY | CA"}
             </Text>
             <Stack direction={"row"} spacing={3}>

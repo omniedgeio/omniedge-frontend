@@ -28,6 +28,7 @@ thumbnail: /assets/OmniEdgeall0.5.png
 - [MacOS Cli](/docs/article/Install/macoscli)
 - [Synology](/docs/article/Install/synology)
 - [iOS](/docs/article/Install/ios)
+- [Docker](/docs/article/Install/docker)
 - [Setup custom supernode](/docs/article/Install/customize-supernode)
 
 

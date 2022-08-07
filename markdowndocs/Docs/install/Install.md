@@ -29,6 +29,7 @@ thumbnail: /assets/OmniEdgeall0.5.png
 - [Synology](/docs/article/Install/synology)
 - [iOS](/docs/article/Install/ios)
 - [Docker](/docs/article/Install/docker)
+- [Github Action](/docs/article/Install/github-action)
 - [Setup custom supernode](/docs/article/Install/customize-supernode)
 
 

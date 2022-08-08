@@ -32,7 +32,17 @@
           "name": "macOS",
           "route": "macos",
           "path": "Docs/install/macos.md"
-        },        
+        },
+        {
+          "name": "docker",
+          "route": "docker",
+          "path": "Docs/install/docker.md"
+        },
+        {
+          "name": "github action",
+          "route": "github-action",
+          "path": "Docs/install/github-action.md"
+        },
         {
           "name": "synology",
           "route": "synology",

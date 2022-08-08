@@ -5,7 +5,7 @@ import DefaultLayout from "../../components/layout/Default";
 import DownloadDescription from "./Downloadutil";
 import Icon from "./Icon";
 import { useTranslation } from "react-i18next";
-const platforms = ["macos", "ios", "windows", "android", "linuxcli", "synology", "rasp", "embedded", "nvidia"];
+const platforms = ["macos", "ios", "windows", "android", "linuxcli", "synology","docker"];
 const data = {
   "windows": {
     "status": "LIVE",
@@ -40,20 +40,9 @@ const data = {
     "displayName": "Synology"
 
   },
-  "embedded": {
+  "docker": {
     "status": "LIVE",
-    "displayName": "Embedded"
-
-  },
-  "nvidia": {
-    "status": "LIVE",
-    "displayName": "Nvidia"
-
-  },
-  "router": {
-    "status": "COMING_SOON",
-    "displayName": "Router"
-
+    "displayName": "Docker"
   },
   "template": {
     "status": "COMING_SOON",
@@ -87,7 +76,7 @@ export const DownloadPage: React.FC<realplatform> = function ({ platform: select
                 {t('title')}
               </Text>
               <Text fontSize="14px" fontWeight="500" lineHeight="20px" color="gray.500" textAlign="center" paddingBottom="60px">{t('subtitle')}</Text>
-              <SimpleGrid columns={[3, null, 10]} spacing="16px">
+              <SimpleGrid columns={[3, null, 7]} spacing="16px">
                 {platforms.map((platform, index) => (
                   <Icon
                     key={index}

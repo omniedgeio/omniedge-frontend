@@ -5,15 +5,12 @@ import {Image } from "@chakra-ui/react";
 
 const macOSIcon = (isSelected:boolean) => (
   <Image width="9"  alt="macOS" src={isSelected ? '/assets/download/macosiconwhite.png' : '/assets/download/macosicon.png'} />
-
 )
 const iOSIcon = (isSelected:boolean) => (
   <Image width="9"  alt="iOS" src={isSelected ? '/assets/download/iosiconwhite.png' : '/assets/download/iosicon.png'} />
-
 )
 const winIcon = (isSelected:boolean) => (
   <Image width="9"  alt="windows" src={isSelected ? '/assets/download/windowsiconwhite.png' : '/assets/download/windowsicon.png'} />
-
 )
 const androidIcon = (isSelected:boolean) => (
   <Image width="9"  alt="android" src={isSelected ? '/assets/download/androidiconwhite.png' : '/assets/download/androidicon.png'} />
@@ -24,7 +21,6 @@ const linuxguiIcon = (isSelected:boolean) => (
 <path d="M16.5 19.5H22.5" stroke={isSelected ? 'white' : 'black'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
 <path d="M9 12L12 15L9 18" stroke={isSelected ? 'white' : 'black'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
 </svg>
-
 )
 const linuxcliIcon =(isSelected:boolean) =>(
 <Image width="9"  alt="linux cli" src={isSelected ? '/assets/download/linuxiconwhite.png' : '/assets/download/linuxicon.png'} />
@@ -34,7 +30,6 @@ const raspIcon = (isSelected:boolean) => (
 )
 const synologyIcon = (isSelected:boolean) => (
 <Image width="9"  alt="synology" src={isSelected ? '/assets/download/synologyiconwhite.png' : '/assets/download/synologyicon.png'} />
-
 )
 
 const routerIcon = (isSelected:boolean) => (
@@ -42,14 +37,14 @@ const routerIcon = (isSelected:boolean) => (
 )
 
 const emeddedIcon = (isSelected:boolean) => (
-
 <Image width="9"  alt="embeded system" src={isSelected ? '/assets/download/armiconwhite.png' : '/assets/download/armicon.png'} />
-
-
 )
 const nvidiaIcon =(isSelected:boolean) => (
 <Image width="9"  alt="nvidia" src={isSelected ? '/assets/download/armiconwhite.png' : '/assets/download/armicon.png'} />
 )
+const dockerIcon =(isSelected:boolean) => (
+  <Image width="9"  alt="docker" src={isSelected ? '/assets/download/dockericonwhite.png' : '/assets/download/dockericon.png'} />
+  )
 
 
 function getText(variant:string) {
@@ -66,16 +61,10 @@ function getText(variant:string) {
       return 'Android'
     case 'windows':
       return 'Windows'
-    case 'rasp':
-      return 'Raspberry'
     case 'synology':
       return 'Synology'
-    case 'router':
-      return 'Router'
-    case 'embedded':
-      return 'ARM'
-    case 'nvidia':
-      return 'Nvidia'  
+    case 'docker':
+        return 'Docker'
     default:
       return ''
   }
@@ -95,16 +84,10 @@ function getStatus(variant:string) {
       return 'Stable >'
     case 'windows':
       return 'Stable >'
-    case 'rasp':
-      return 'Stable >'
     case 'synology':
       return 'Community >'
-    case 'router':
-      return 'Developing >'
-    case 'embedded':
-      return 'Stable >'
-    case 'nvidia':
-      return 'Stable >'  
+    case 'docker':
+        return 'Stable >' 
     default:
       return ''
   }
@@ -124,16 +107,10 @@ function getIcon(variant:string, isSelected:boolean) {
       return androidIcon(isSelected)
     case 'windows':
       return winIcon(isSelected)
-    case 'rasp':
-      return raspIcon(isSelected)
     case 'synology':
       return synologyIcon(isSelected)
-    case 'router':
-      return routerIcon(isSelected)
-    case 'embedded':
-      return emeddedIcon(isSelected)
-    case 'nvidia':
-      return nvidiaIcon(isSelected)  
+    case 'docker':
+        return dockerIcon(isSelected)
     default:
   }
 }

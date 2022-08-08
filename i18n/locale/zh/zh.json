@@ -251,6 +251,41 @@
         "instructionsVideoLink": ""
       }
     },
+    "Docker": {
+      "status": "LIVE",
+      "displayName": "Docker",
+      "link": "",
+      "showQRCode": false,
+      "version": "0.2.3",
+      "buttonText": "",
+      "captionText": "兼容架構: 386,AMD64,ARM,ARM64",
+      "lastUpdate": {
+        "title": "最近更新版本：",
+        "year": 2022,
+        "month": "8月",
+        "date": 6
+      },
+      "description": {
+        "title": "開始在 Docker 上使用OmniEdge",
+        "instructions": [
+          
+          {
+            "step": "1. [註冊賬號](https://omniedge.io/register)",
+            "code": "null"
+          },
+          {
+            "step": "2. 在[管理界麵](https://omniedge.io/dashboard)生成安全碼：**Security-key**, 以及獲取私有網路ID號： **Virtual Network ID**",
+            "code": "null"
+          },
+          {
+            "step": "3. 填個您的個人安全碼：**Security-key** 和 私有網路ID號：**Virtual Network ID**到以下命令，運行即可。",
+            "code": "sudo docker run -d \\ \n -e OMNIEDGE_SECURITYKEY=Security-key \\ \n -e OMNIEDGE_VIRUTALNETWORK_ID=\"Virtual Network ID\" \\ \n --network host \\ \n --privileged \\ \n omniedge/omniedge:latest"
+          }
+        ],
+        "instructionGifLink": "",
+        "instructionsVideoLink": ""
+      }
+    },
     "Raspberry": {
       "status": "LIVE",
       "displayName": "Raspberry",

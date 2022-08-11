@@ -4,7 +4,7 @@ import {chakra,SimpleGrid,Box,VStack } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import Icon from "./Icon";
-const platforms = ["macos", "ios", "windows", "android", "linuxcli","synology","rasp","embedded","nvidia"];
+const platforms = ["macos", "ios", "windows", "android", "linuxcli","synology","docker"];
 import {useTranslation} from "react-i18next";
 
 interface realplatform {
@@ -48,7 +48,7 @@ export const Downloadlist: Page = (props) => {
         <chakra.p fontSize="20px" color="gray.900">
         {t('available')}
           </chakra.p>
-          <SimpleGrid columns={[3, null, 9]} spacing="16px">
+          <SimpleGrid columns={[3, null, 7]} spacing="16px">
             {platforms.map((platform, index) => (
               <Icon
                 key={index}

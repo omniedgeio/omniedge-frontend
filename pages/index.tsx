@@ -75,15 +75,10 @@ const Home: Page = (props) => {
               <Markdown>{t('slogan-description')}</Markdown>
             </Text>
             <HStack>
-              <Link href="/register" w="full">
-                <Button colorScheme="brand" borderRadius="4px" >{t('getstartedfree')} </Button>
+              <Link href="/register">
+                <Button colorScheme="blue" borderRadius="4px" >{t('getstartedfree')} </Button>
               </Link>
-              <Link href="/contactus" w="full">
-                <Button colorScheme="gray" borderRadius="4px">{t('contactsalesexpert')}</Button>
-              </Link>
-              <Link href="https://github.com/omniedgeio/omniedge" w="full">
-                <FaGithub />
-              </Link>
+              <Button color="white" borderRadius="4px" backgroundColor="black"> <Text color="orange" fontSize="20px" paddingRight="7px">></Text> docker pull omniedge/omniedge:latest</Button>
             </HStack>
             <Featureheros>{t('getstart-subtitle')}</Featureheros>
           </VStack>

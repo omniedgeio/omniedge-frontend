@@ -37,7 +37,7 @@ const PricingPage: Page = () => {
       
       <Stack justifyContent="center" direction={{ base: "column", sm: "row" }} paddingTop="36px">
               <FreePlan maxW={80} />
-              {/* <ProPlan maxW={80} /> */}
+              <ProPlan maxW={80} />
               <TeamsPlan maxW={80} />
               <EnterprisePlan maxW={80} />
             </Stack>

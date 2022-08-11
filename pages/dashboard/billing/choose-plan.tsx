@@ -80,7 +80,7 @@ const ChoosePlanPage: Page = (props) => {
           {/* <StartProPlan>
             <ChoosePlanButton plan="free" />
           </StartProPlan> */}
-          {/* <ProPlan actionButton={<ChoosePlanButton plan="pro" colorScheme="cyan" color="white" />}></ProPlan> */}
+          <ProPlan actionButton={<ChoosePlanButton plan="pro" colorScheme="cyan" color="white" />}></ProPlan>
           <TeamsPlan actionButton={<ChoosePlanButton plan="teams" />}></TeamsPlan>
           <EnterprisePlan
             actionButton={

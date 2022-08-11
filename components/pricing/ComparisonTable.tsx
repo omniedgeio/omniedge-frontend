@@ -76,12 +76,12 @@ const FeatureText: React.FC<{ active?: boolean; tooltip?: string }> = (props) =>
   );
 };
 
-const FeatureTextnumber: React.FC<FeatureTextnumber> = ({ title, free, team, enterprise }) => {
+const FeatureTextnumber: React.FC<FeatureTextnumber> = ({ title, free, pro, team, enterprise }) => {
   return (
     <Tr>
       <Td>{title}</Td>
       <Td align="center">{free}</Td>
-      {/* <Td align="center">{pro}</Td> */}
+      <Td align="center">{pro}</Td>
       <Td align="center">{team}</Td>
       <Td align="center">{enterprise}</Td>
     </Tr>
@@ -91,7 +91,7 @@ const FeatureTextnumber: React.FC<FeatureTextnumber> = ({ title, free, team, ent
 const FeatureDesc: React.FC<{ free?: boolean; pro?: boolean; team?: boolean; enterprise?: boolean }> = (props) => {
   let free = props.free || props.free === undefined;
   // let startpro = props.startpro || props.startpro === undefined;
-  // let pro = props.pro || props.pro === undefined;
+  let pro = props.pro || props.pro === undefined;
   let team = props.team || props.team === undefined;
   let enterprise = props.enterprise || props.enterprise === undefined;
   return (
@@ -103,9 +103,9 @@ const FeatureDesc: React.FC<{ free?: boolean; pro?: boolean; team?: boolean; ent
       {/* <Td>
 		  <Icon color={startpro ? "brand.700" : "gray.300"} as={startpro ? FiCheck : FiX}></Icon>
 		</Td> */}
-      {/* <Td>
+      <Td>
         <Icon color={pro ? "brand.700" : "gray.300"}  as={pro ? FiCheck : FiX}></Icon>
-      </Td> */}
+      </Td>
       <Td>
         <Icon color={team ? "brand.700" : "gray.300"}  as={team ? FiCheck : FiX}></Icon>
       </Td>
@@ -129,7 +129,7 @@ export default function ComparisonTable() {
             <Tr>
               <Th>{t("features")}</Th>
               <Th>{t("starter")}</Th>
-              {/* <Th>{t("professional")}</Th> */}
+              <Th>{t("professional")}</Th>
               <Th>{t("team")}</Th>
               <Th>{t("enterprise")}</Th>
             </Tr>

@@ -142,6 +142,8 @@ export default function ComparisonTable() {
             <FeatureDesc>{t("unlimiteddata")}</FeatureDesc>
             <FeatureDesc>{t("p2p")}</FeatureDesc>
             <FeatureDesc>{t("platform")}</FeatureDesc>
+            <FeatureDesc>Docker/Kubernetes</FeatureDesc>
+            <FeatureDesc>Github Action</FeatureDesc>
             <FeatureDesc free={false} pro={true} team={true}>
               {t("sharing")}
             </FeatureDesc>

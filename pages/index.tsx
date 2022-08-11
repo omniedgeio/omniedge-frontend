@@ -78,7 +78,7 @@ const Home: Page = (props) => {
               <Link href="/register">
                 <Button colorScheme="blue" borderRadius="4px" >{t('getstartedfree')} </Button>
               </Link>
-              <Button color="white" borderRadius="4px" backgroundColor="black"> <Text color="orange" fontSize="20px" paddingRight="7px">></Text> docker pull omniedge/omniedge:latest</Button>
+              <Button color="white" borderRadius="4px" backgroundColor="black"> <Text color="orange" fontSize="20px" paddingRight="7px">{">"}</Text> docker pull omniedge/omniedge:latest</Button>
             </HStack>
             <Featureheros>{t('getstart-subtitle')}</Featureheros>
           </VStack>

@@ -9,6 +9,7 @@ import {
   VStack,
   chakra,
   Image,
+  Code,
 } from "@chakra-ui/react";
 import React from "react";
 import { useRouter } from 'next/router'
@@ -21,7 +22,6 @@ import { Page } from "../types";
 
 import {useTranslation} from "react-i18next";
 import {availableLanguages} from "../i18n/i18n";
-import { FaGithub } from "react-icons/fa";
 import Markdown from "markdown-to-jsx";
 import { setReferralCodeCookie } from '../lib/api/referral';
 
@@ -76,9 +76,9 @@ const Home: Page = (props) => {
             </Text>
             <HStack>
               <Link href="/register">
-                <Button colorScheme="blue" borderRadius="4px" >{t('getstartedfree')} </Button>
+              <Code borderRadius="2px" backgroundColor="brand.600"  textAlign="center"><Text align="center" paddingLeft="1px" color="white" fontSize="md" fontWeight="extrabold">{t('getstartedfree')} </Text></Code>
               </Link>
-              <Button color="white" borderRadius="4px" backgroundColor="black"> <Text color="orange" fontSize="20px" paddingRight="7px">{">"}</Text> docker pull omniedge/omniedge:latest</Button>
+              <Code borderRadius="2px" backgroundColor="black" textAlign="center"><Text align="center" paddingLeft="1px" color="white" fontSize="md" fontWeight="extrabold">{">"} docker pull omniedge/omniedge:latest</Text></Code>
             </HStack>
             <Featureheros>{t('getstart-subtitle')}</Featureheros>
           </VStack>

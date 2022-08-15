@@ -93,8 +93,7 @@ const About: Page = (props) => {
   const { t } = useTranslation("about");
   return (
     <>
-          <Seo title="Simplifying the usage flow of product​." description="No Public IP, No Port Forward 
-Zero Config, Zero Firewall Rules,OmniEdge rebuilds the intranet on the internet setup easier, without concern." image="/assets/OmniEdgeall0.5.png" />
+          <Seo title="About OmniEdge" description="Bring intranet on the internet, bring everything into intranet." image="/assets/OmniEdgeall0.5.png" />
     <VStack padding="4" mt={10}>
     <Box
         textAlign={{ base: "left", md: "left" }}

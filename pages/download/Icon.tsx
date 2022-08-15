@@ -46,6 +46,9 @@ const dockerIcon =(isSelected:boolean) => (
   <Image width="9"  alt="docker" src={isSelected ? '/assets/download/dockericonwhite.png' : '/assets/download/dockericon.png'} />
   )
 
+const githubactionIcon =(isSelected:boolean) => (
+    <Image width="9"  alt="githubaction" src={isSelected ? '/assets/download/githubactioniconwhite.png' : '/assets/download/githubactionicon.png'} />
+    )
 
 function getText(variant:string) {
   switch (variant) {
@@ -65,6 +68,8 @@ function getText(variant:string) {
       return 'Synology'
     case 'docker':
         return 'Docker'
+    case 'githubaction':
+        return 'Github Action'
     default:
       return ''
   }
@@ -88,6 +93,8 @@ function getStatus(variant:string) {
       return 'Community >'
     case 'docker':
         return 'Stable >' 
+    case 'githubaction':
+      return 'Stable >' 
     default:
       return ''
   }
@@ -111,6 +118,8 @@ function getIcon(variant:string, isSelected:boolean) {
       return synologyIcon(isSelected)
     case 'docker':
         return dockerIcon(isSelected)
+    case 'githubaction':
+      return githubactionIcon(isSelected)
     default:
   }
 }

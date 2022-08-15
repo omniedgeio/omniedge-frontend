@@ -135,12 +135,12 @@
             "code": "curl https://omniedge.io/install/omniedge-install.sh | bash"
           },
           {
-            "step": "3. 使用用戶信箱和密碼或者安全碼登入，安全碼可以在[管理界麵](https://omniedge.io/dashboard)生成.",
-            "code": "omniedge login -u yourname@youremail.com \n #or \nomniedge login -s securitykey"
+            "step": "3. 使用安全碼登入，安全碼可以在[管理界麵](https://omniedge.io/dashboard)生成.",
+            "code": "omniedge login -s securitykey"
           },
           {
-            "step": "4. Join 你的私有網路，可以在輸出的私有網路列錶中選擇，也可以通過私有網路 ID 指定私有網路",
-            "code": "sudo omniedge join \n #or \nsudo omniedge join -n 'virtual-network-id'"
+            "step": "4. Join 你的私有網路，可以在輸出的私有網路列錶中選擇",
+            "code": "sudo omniedge join "
           },
           {
             "step": "5. 稍等一下，你的端到端的設備連接就能建立了",
@@ -209,12 +209,12 @@
             "code": "null"
           },
           {
-            "step": "2. 使用用戶信箱和密碼或者安全碼登入，安全碼可以在[管理界麵](https://omniedge.io/dashboard)生成.",
-            "code": "omniedge login -u yourname@youremail.com \n #or \nomniedge login -s securitykey"
+            "step": "2. 使用安全碼登入，安全碼可以在[管理界麵](https://omniedge.io/dashboard)生成.",
+            "code": "omniedge login -s securitykey"
           },
           {
-            "step": "3. Join 你的私有網路，可以在輸出的私有網路列錶中選擇，也可以通過私有網路 ID 指定私有網路",
-            "code": "sudo omniedge join \n #or \nsudo omniedge join -n 'virtual-network-id'"
+            "step": "3. Join 你的私有網路，可以在輸出的私有網路列錶中選擇",
+            "code": "sudo omniedge join "
           },
           {
             "step": "4. 稍等一下，你的端到端的設備連接就能建立了",
@@ -286,6 +286,41 @@
         "instructionsVideoLink": ""
       }
     },
+    "GithubAction": {
+      "status": "LIVE",
+      "displayName": "OmniEdge for Github Action",
+      "link": "https://github.com/marketplace/actions/omniedge-for-github-action",
+      "showQRCode": false,
+      "version": "0.2.3",
+      "buttonText": "在 Github Marketplace 查看",
+      "captionText": "连接 Github Action 到私有局域网, 从 CI 工作流中访问节点.",
+      "lastUpdate": {
+        "title": "最近更新版本：",
+        "year": 2022,
+        "month": "8月",
+        "date": 6
+      },
+      "description": {
+        "title": "开始在 Github Action 使用",
+        "instructions": [
+          
+          {
+            "step": "1. [註冊賬號](https://omniedge.io/register)",
+            "code": "null"
+          },
+          {
+            "step": "2.在[管理界麵](https://omniedge.io/dashboard)生成安全碼：**Security-key**, 以及獲取私有網路ID號： **Virtual Network ID**",
+            "code": "null"
+          },
+          {
+            "step": "3. 在以下调用命令中填入個人安全碼：**Security-key** 和 私有網路ID號：**Virtual Network ID**",
+            "code": "- name: OmniEdge for Github Action \n   uses: omniedgeio\/github-action@v1 \n   with: \n       securitykey: ${{ secrets.OMNIEDGE_SECURITY_KEY }} \n       virtualnetworkid: ${{ secrets.OMNIEDGE_VIRTUALNETWORK_ID }}"
+          }
+        ],
+        "instructionGifLink": "",
+        "instructionsVideoLink": ""
+      }
+    },
     "Raspberry": {
       "status": "LIVE",
       "displayName": "Raspberry",
@@ -312,12 +347,12 @@
             "code": "curl https://omniedge.io/install/omniedge-install.sh | bash"
           },
           {
-            "step": "3. 使用用戶信箱和密碼或者安全碼登入，安全碼可以在[管理界麵](https://omniedge.io/dashboard)生成.",
-            "code": "omniedge login -u yourname@youremail.com \n #or \nomniedge login -s securitykey"
+            "step": "3. 使用安全碼登入，安全碼可以在[管理界麵](https://omniedge.io/dashboard)生成.",
+            "code": "omniedge login -s securitykey"
           },
           {
-            "step": "4. Join 你的私有網路，可以在輸出的私有網路列錶中選擇，也可以通過私有網路 ID 指定私有網路",
-            "code": "sudo omniedge join \n #or \nsudo omniedge join -n 'virtual-network-id'"
+            "step": "4. Join 你的私有網路，可以在輸出的私有網路列錶中選擇",
+            "code": "sudo omniedge join"
           },
           {
             "step": "5. 稍等一下，你的端到端的設備連接就能建立了",

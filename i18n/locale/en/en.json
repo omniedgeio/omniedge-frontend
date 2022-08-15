@@ -135,16 +135,16 @@
             "code": "curl https://omniedge.io/install/omniedge-install.sh | bash"
           },
           {
-            "step": "3. Login By Password or secret key. You can generate secret-key on [Dashboard](https://omniedge.io/dashboard)",
-            "code": "omniedge login -u yourname@youremail.com \n #or \nomniedge login -s securitykey"
+            "step": "3. Login by secret key. You can generate secret-key on [Dashboard](https://omniedge.io/dashboard)",
+            "code": "omniedge login -s securitykey"
           },
           {
-            "step": "4. Join your network. You will be prompted to choose from the available networks or specify network.",
-            "code": "sudo omniedge join \n #or \nsudo omniedge join -n 'virtual-network-id'"
+            "step": "4. Join your network. You will be prompted to choose from the available networks.",
+            "code": "sudo omniedge join"
           },
           {
             "step": "5. Wait a second and a secure VPN will be established",
-            "code": "curl https://omniedge.io/install/omniedge-install.sh | bash"
+            "code": "null"
           },
           {
             "step": "6.Follow instruction [Run OmniEde as a service](/docs/article/install/autostart-omniedge) to autostart OmniEdge",
@@ -190,7 +190,7 @@
           },
           {
             "step": "5. Wait a second and a secure VPN will be established",
-            "code": "curl https://omniedge.io/install/omniedge-install.sh | bash"
+            "code": "null"
           }
         ],
         "instructionGifLink": "/assets/download/linux-cli-installation.gif",
@@ -223,12 +223,12 @@
             "code": "null"
           },
           {
-            "step": "2. Login By Password or secret key. You can generate secret-key on [Dashboard](https://omniedge.io/dashboard)",
-            "code": "omniedge login -u yourname@youremail.com \n #or \nomniedge login -s securitykey"
+            "step": "2. Login by secret key. You can generate secret-key on [Dashboard](https://omniedge.io/dashboard)",
+            "code": "omniedge login -s securitykey"
           },
           {
-            "step": "3. Join your network. You will be prompted to choose from the available networks or specify network.",
-            "code": "sudo omniedge join \n #or \nsudo omniedge join -n 'virtual-network-id'"
+            "step": "3. Join your network. You will be prompted to choose from the available networks.",
+            "code": "sudo omniedge join"
           },
           {
             "step": "4. Wait a second and a secure VPN will be established",
@@ -294,6 +294,41 @@
           {
             "step": "3. Run the command with your own **Security-key** and **Virtual Network ID**:",
             "code": "sudo docker run -d \\ \n -e OMNIEDGE_SECURITYKEY=Security-key \\ \n -e OMNIEDGE_VIRUTALNETWORK_ID=\"Virtual Network ID\" \\ \n --network host \\ \n --privileged \\ \n omniedge/omniedge:latest"
+          }
+        ],
+        "instructionGifLink": "",
+        "instructionsVideoLink": ""
+      }
+    },
+    "GithubAction": {
+      "status": "LIVE",
+      "displayName": "OmniEdge for Github Action",
+      "link": "https://github.com/marketplace/actions/omniedge-for-github-action",
+      "showQRCode": false,
+      "version": "0.2.3",
+      "buttonText": "View on Marketplace",
+      "captionText": "Bring Github Action into intranet, access nodes/devices from CI workflows.",
+      "lastUpdate": {
+        "title": "Last update: Version",
+        "year": 2022,
+        "month": "August",
+        "date": 6
+      },
+      "description": {
+        "title": "Get started on Github Action",
+        "instructions": [
+          
+          {
+            "step": "1. [Sign up](https://omniedge.io/register) your account",
+            "code": "null"
+          },
+          {
+            "step": "2. Generate **Security-key**, and get the **Virtual Network ID** from [Dashboard](https://omniedge.io/dashboard)",
+            "code": "null"
+          },
+          {
+            "step": "3. Fill github action environment variable with your own **Security-key** and **Virtual Network ID**:",
+            "code": "- name: OmniEdge for Github Action \n   uses: omniedgeio\/github-action@v1 \n   with: \n       securitykey: ${{ secrets.OMNIEDGE_SECURITY_KEY }} \n       virtualnetworkid: ${{ secrets.OMNIEDGE_VIRTUALNETWORK_ID }}"
           }
         ],
         "instructionGifLink": "",

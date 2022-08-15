@@ -28,7 +28,7 @@ export const Social:React.FC = function () {
         shadow="lg"
         rounded="lg"
         overflow="hidden"
-        Width="768px"
+        width="768px"
         height="76px"
       >
           {t('keepintouch')}

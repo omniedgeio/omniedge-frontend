@@ -82,7 +82,7 @@ const Home: Page = (props) => {
             </HStack>
             <Featureheros>{t('getstart-subtitle')}</Featureheros>
           </VStack>
-          <Image maxW={{ md: "601px" }} top='1px' src="/assets/OmniEdge-clients.png" alt="OmniEdge" />
+          <Image maxW={{ md: "601px" }} top='1px' src="/assets/OmniEdgeall0.5.png" alt="OmniEdge" />
         </Stack>
         <Box
           position="absolute"

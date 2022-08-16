@@ -93,6 +93,7 @@ export default function Footer() {
                   <Link href="/about">{t('about')}</Link>
             <Link href="/contactus">{t('contact')}</Link>
             <Link href="/docs">{t('docs')}</Link>
+            <Link href="https://www.figma.com/file/2wuYjRDfOZwB6TAJpbxlL8/Omniedge-V2?node-id=1439%3A3202">{t('presskit')}</Link>
                 </VStack>
                 <VStack>
           

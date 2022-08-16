@@ -96,10 +96,11 @@ export default function Footer() {
             <Link href="https://www.figma.com/file/2wuYjRDfOZwB6TAJpbxlL8/Omniedge-V2?node-id=1439%3A3202">{t('presskit')}</Link>
                 </VStack>
                 <VStack>
-          
+
                   <Link href="/terms">{t('tos')}</Link>
             <Link href="/privacy">{t('privacy')}</Link>
           <Link href="https://forms.gle/a1h3pYb7H4jvZPQU9"> {t('survey')}</Link>
+          <Link href="/screenshot">ScreenShot</Link>
                 </VStack>
 
               </HStack>

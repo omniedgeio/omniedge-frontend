@@ -963,7 +963,7 @@
       "id": "私有网络 ID",
       "iprange": "IP 段",
       "customizesupernode": "自建 Supernode",
-      "customizesupernodeinfo": "请确认自建的 Supernode 可以访问。",
+      "customizesupernodeinfo": "请确认自建的 Supernode 可以访问,点击我可以查阅自建文档。",
       "customizesupernodefor": " 仅适用于专业版及团队版订阅用户",
       "customizesupernodehost": " 主机",
       "customizesupernodeport": " 端口",

@@ -973,7 +973,7 @@
       "id": "Network ID",
       "iprange": "IP Range",
       "customizesupernode": "Customize Supernode",
-      "customizesupernodeinfo": "Please make sure your custom Supernode is reachable.",
+      "customizesupernodeinfo": "Please make sure your custom Supernode is reachable, click me to read the supernode setup instruction.",
       "customizesupernodefor": "Only available for Pro and Team plan,",
       "customizesupernodehost": "Host",
       "customizesupernodeport": "Port",

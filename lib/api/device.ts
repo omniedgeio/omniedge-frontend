@@ -12,7 +12,7 @@ export async function listDevices(
   let res = await request<IPaginatedResponse<IDeviceResponse>>({
     url: "/devices",
     method: "GET",
-    params,
+    params: true,
   });
 
   if (res.data.data?.data) {
@@ -22,6 +22,7 @@ export async function listDevices(
   }
 
   return res.data.data;
+
 }
 
 export async function removeDevice(id: string) {

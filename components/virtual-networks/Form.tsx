@@ -110,14 +110,6 @@ const VirtualNetworkForm: React.FC<VirtualNetworkFormProps> = ({ defaultValues, 
           </FormHelperText>
         </FormControl>
         <FormLabel>{t('virtualnetwork.customizesupernode')}</FormLabel>
-        {isFreePlan ? (
-          <Text fontSize="sm" color="gray.500">
-            {t('virtualnetwork.customizesupernodefor')} {" "}
-            <Link href="/dashboard/billing/choose-plan" color="brand.700">
-            {t('virtualnetwork.upgradeplan')}
-            </Link>
-          </Text>
-        ) : (
           <Button
             isLoading={isLoading}
             onClick={() => {
@@ -126,8 +118,6 @@ const VirtualNetworkForm: React.FC<VirtualNetworkFormProps> = ({ defaultValues, 
           >
             {useCustomSupernode ? t('virtualnetwork.usedefaultsupernode'): t('virtualnetwork.usecustomizesupernode')}
           </Button>
-        )}
-
         {useCustomSupernode && (
           <Stack w="full">
             <Alert status="warning">

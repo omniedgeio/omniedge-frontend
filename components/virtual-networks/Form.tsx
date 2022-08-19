@@ -122,7 +122,7 @@ const VirtualNetworkForm: React.FC<VirtualNetworkFormProps> = ({ defaultValues, 
           <Stack w="full">
             <Alert status="warning">
               <AlertIcon />
-              {t('virtualnetwork.customizesupernodeinfo')}
+              <a href="/docs/article/install/customize-supernode">{t('virtualnetwork.customizesupernodeinfo')}</a>
             </Alert>
             <FormControl isInvalid={!!(getIn(touched, "server.host") && getIn(errors, "server.host"))} isRequired>
               <FormLabel>{t('virtualnetwork.customizesupernodehost')}</FormLabel>

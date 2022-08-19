@@ -293,8 +293,8 @@
       "link": "https://github.com/marketplace/actions/omniedge-for-github-action",
       "showQRCode": false,
       "version": "0.2.3",
-      "buttonText": "在 Github Marketplace 查看",
-      "captionText": "连接 Github Action 到私有局域网, 从 CI 工作流中访问节点.",
+      "buttonText": "在 Github Marketplace 檢視",
+      "captionText": "連接 Github Action 到私有局域網, 從 CI 工作流中訪問節點.",
       "lastUpdate": {
         "title": "最近更新版本：",
         "year": 2022,
@@ -302,7 +302,7 @@
         "date": 6
       },
       "description": {
-        "title": "开始在 Github Action 使用",
+        "title": "開始在 Github Action 使用",
         "instructions": [
           
           {
@@ -314,7 +314,7 @@
             "code": "null"
           },
           {
-            "step": "3. 在以下调用命令中填入個人安全碼：**Security-key** 和 私有網路ID號：**Virtual Network ID**",
+            "step": "3. 在以下調用命令中填入個人安全碼：**Security-key** 和 私有網路ID號：**Virtual Network ID**",
             "code": "- name: OmniEdge for Github Action \n   uses: omniedgeio\/github-action@v1 \n   with: \n       securitykey: ${{ secrets.OMNIEDGE_SECURITY_KEY }} \n       virtualnetworkid: ${{ secrets.OMNIEDGE_VIRTUALNETWORK_ID }}"
           }
         ],
@@ -962,7 +962,7 @@
       "id": "私有網路 ID",
       "iprange": "IP 段",
       "customizesupernode": "自建 Supernode",
-      "customizesupernodeinfo": "請確認自建的 Supernode 可以訪問。",
+      "customizesupernodeinfo": "請確認自建的 Supernode 可以訪問,點選我可以查閱設定自建文檔。",
       "customizesupernodefor": " 僅適用於專業版及團隊版訂閱用戶",
       "customizesupernodehost": " 主機",
       "customizesupernodeport": " 端口",

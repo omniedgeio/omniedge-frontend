@@ -142,13 +142,11 @@ export default function ComparisonTable() {
             <FeatureDesc>{t("unlimiteddata")}</FeatureDesc>
             <FeatureDesc>{t("p2p")}</FeatureDesc>
             <FeatureDesc>{t("platform")}</FeatureDesc>
+            <FeatureDesc>{t("customizesupernode")}</FeatureDesc>
             <FeatureDesc>Docker/Kubernetes</FeatureDesc>
             <FeatureDesc>Github Action</FeatureDesc>
             <FeatureDesc free={false} pro={true} team={true}>
               {t("sharing")}
-            </FeatureDesc>
-            <FeatureDesc free={false} pro={true} team={true}>
-              {t("customizesupernode")}
             </FeatureDesc>
             <FeatureDesc free={false} pro={false} team={false}>
               {t("subroute")}</FeatureDesc>

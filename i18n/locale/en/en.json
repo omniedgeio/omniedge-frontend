@@ -681,6 +681,10 @@
           {
             "label": "Single user",
             "tips": "Virtual network only can have devices from same user."
+          },
+          {
+            "label": "Customize Supernode",
+            "tips": "You can use your own Supernode for your virtual network."
           }
         ]
       },
@@ -711,12 +715,12 @@
             "tips": "Virtual network only can have devices from same user."
           },
           {
-            "label": "Sharing Virtual Network",
-            "tips": "Invite people who you trust to join your private network"
-          },
-          {
             "label": "Customize Supernode",
             "tips": "You can use your own Supernode for your virtual network."
+          },
+          {
+            "label": "Sharing Virtual Network",
+            "tips": "Invite people who you trust to join your private network"
           }
         ]
       },
@@ -748,12 +752,12 @@
             "tips": "Virtual network only can have devices from maximum of 5 users."
           },
           {
-            "label": "Sharing Virtual Network",
-            "tips": "Invite people who you trust to join your private network"
-          },
-          {
             "label": "Customize Supernode",
             "tips": "You can use your own Supernode for your virtual network."
+          },
+          {
+            "label": "Sharing Virtual Network",
+            "tips": "Invite people who you trust to join your private network"
           }
         ]
       },
@@ -785,12 +789,12 @@
             "tips": "Virtual network only can have devices from maximum of 5 users."
           },
           {
-            "label": "Sharing Virtual Network",
-            "tips": "Invite people who you trust to join your private network"
-          },
-          {
             "label": "Customize Supernode",
             "tips": "You can use your own Supernode for your virtual network."
+          },
+          {
+            "label": "Sharing Virtual Network",
+            "tips": "Invite people who you trust to join your private network"
           }
         ]
       },

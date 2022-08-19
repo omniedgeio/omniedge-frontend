@@ -15,7 +15,7 @@ OmniEdge runs default supernode servers to help connect your nodes. However, Omn
 OmniEdge runs Supernode servers distributed around the world to 
 coordinates the communication between nodes within the virtual network, help your omniedge nodes connect peer-to-peer, and as a fallback to relay traffic between nodes in case NAT traversal fails and a direct connection can not be established. 
 
-We offer free public supernodes you are using for starter plans, allocated automatically by your registered IP address via GeoIP. You network may be slow if your IP location is different from your devices. But you can [use your own supernode](https://omniedge.io/docs/article/install/customize-supernode) with [pro & team plans](https://omniedge.io/pricing). 
+We offer free public supernodes you are using for starter plans, allocated automatically by your registered IP address via GeoIP. You network may be slow if your IP location is different from your devices. But you can [use your own supernode](https://omniedge.io/docs/article/install/customize-supernode) with [free, pro & team plans](https://omniedge.io/pricing). 
 
 |Location|Cloud Vendor|Specification|Version|
 |--|--|--|--|

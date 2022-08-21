@@ -10,6 +10,10 @@ thumbnail: /assets/docs/OmniEdge-CustomizeAuthServer.png
 
 OmniEdge runs default supernode servers to help connect your nodes. However, OmniEdge also offers customize supernode, you can run your own. 
 
+```bash
+sudo docker run -d -p 443:443/udp omniedge/supernode:latest
+```
+
 # What are the supernode servers ? 
 
 OmniEdge runs Supernode servers distributed around the world to 
@@ -29,6 +33,9 @@ We offer free public supernodes you are using for starter plans, allocated autom
 |Frankfurt,DE|AWS|1vCPU / 0.5GB RAM|2.6-stable-omni|
 |Milan,IT|AWS|1vCPU / 0.5GB RAM|2.6-stable-omni|
 |Sydney,AU|AWS|1vCPU / 0.5GB RAM|2.6-stable-omni|
+
+
+We use [OmniEdge for Github Action](https://github.com/marketplace/actions/omniedge-for-github-action) to build a system to check the status of all supernodes, you can find it here: [https://github.com/omniedgeio/server-status](https://github.com/omniedgeio/server-status). 
 
 # Why run your own Supernode Server? 
 

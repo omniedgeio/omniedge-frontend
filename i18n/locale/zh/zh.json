@@ -904,7 +904,15 @@
       "referral-rules-2": "邀請 10 位用戶，增加 10 個設備和 1 個私有網路;",
       "referral-rules-3": "邀請 20 位用戶，增加 20 個設備和 2 個私有網路。",
       "referral-rewarded": "當前獲得獎勵",
-      "referral-rules-4": "邀請 100 位用戶，增加 100 個設備和 10 個私有網路。"
+      "referral-rules-4": "邀請 100 位用戶，增加 100 個設備和 10 個私有網路。",
+      "two-factor-auth": "二因素认证",
+      "two-factor-enable": "开启二因素认证"
+    },
+    "twofactor": {
+      "verify-two-factor": "二因素验证",
+      "cancel": "取消",
+      "verify": "验证",
+      "request-token": "验证码已发送到邮箱"
     },
     "virtualnetwork": {
       "remove": "刪除私有網路",

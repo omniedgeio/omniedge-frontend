@@ -9,7 +9,6 @@ import {
   Link,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { FaLinkedin,FaGithub,FaTwitter} from "react-icons/fa";
 import React from "react";
 import DefaultLayout from "../components/layout/Default";
 import { Page } from "../types";

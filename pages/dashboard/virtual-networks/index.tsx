@@ -1,15 +1,12 @@
-import { Button, Heading, HStack, VStack, SimpleGrid, Box, Text } from "@chakra-ui/react";
-import { useMemo } from "react";
+import { Button, Heading, HStack, VStack } from "@chakra-ui/react";
 import DashboardLayout from "../../../components/layout/Dashboard";
 import Link from "../../../components/next/Link";
 import VirtualNetworksTable from "../../../components/virtual-networks/Table";
-import { UsageKey } from "../../../lib/api/enum";
 import { useUser } from "../../../lib/hook/useUser";
 import { Page } from "../../../types";
 import { listVirtualNetworks } from "../../../lib/api/virtualNetwork";
 import { useQuery } from "react-query";
 import { useTranslation } from "react-i18next";
-import { startCase } from "lodash";
 
 const VirtualNetworkPage: Page = () => {
   const { user, isLoading } = useUser("/login");

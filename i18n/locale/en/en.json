@@ -955,7 +955,17 @@
       "referral-rules-2": "invite 10 users, get 10 devices and 1 virtual network;",
       "referral-rules-3": "Invite 20 users, get 20 devices and 2 virtual networks.",
       "referral-rewarded": "Current rewarded",
-      "referral-rules-4": "Invite 100 users, get 100 devices and 10 virtual networks."
+      "referral-rules-4": "Invite 100 users, get 100 devices and 10 virtual networks.",
+      "two-factor-auth": "2FA",
+      "two-factor-auth-method": "Two-factor methods",
+      "two-factor-enable-email": "Enable 2FA with email",
+      "two-factor-auth-description": "Two-factor authentication(2FA) adds an additional layer of security to your account by requiring more than just a password."
+    },
+    "twofactor": {
+      "verify-two-factor": "Two-factor verify",
+      "cancel": "cancel",
+      "verify": "verify",
+      "request-token": "Two-factor token has been sent to your email"
     },
     "virtualnetwork": {
       "remove": "Remove Virtual Network",

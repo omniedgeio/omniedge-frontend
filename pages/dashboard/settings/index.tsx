@@ -36,6 +36,12 @@ import {
   Box,
   OrderedList,
   useClipboard,
+  Switch,
+  SimpleGrid,
+  Center,
+  TableContainer,
+  TableCaption,
+  Tfoot
 } from "@chakra-ui/react";
 import { formatDistanceToNow } from "date-fns";
 import { useFormik } from "formik";
@@ -43,23 +49,29 @@ import { useEffect, useState } from "react";
 import { FiCheck, FiLock, FiMoreVertical, FiX } from "react-icons/fi";
 import { VscQuestion } from "react-icons/vsc";
 import { useQuery } from "react-query";
-import * as Yup from "yup";
-import ChangePasswordModal from "../../../components/auth/ChangePasswordModal";
-import ForgotPasswordModal from "../../../components/auth/ForgotPasswordModal";
-import GoogleLogin from "../../../components/auth/GoogleLogin";
-import ConfirmModal from "../../../components/ConfirmModal";
-import DashboardLayout from "../../../components/layout/Dashboard";
-import { listInvitations, updateInvitation } from "../../../lib/api/invitations";
-import { InvitationStatus } from "../../../lib/api/request";
-import { IInvitationResponse } from "../../../lib/api/response";
-import { activateGoogleLogin, updateProfile } from "../../../lib/api/user";
-import { showError, showSuccess } from "../../../lib/helpers/toast";
-import { useUser } from "../../../lib/hook/useUser";
-import { Page } from "../../../types";
 import { useTranslation } from "react-i18next";
 import { MdCheckCircle } from "react-icons/md";
-import { createReferralCode, getReferralInfo } from "../../../lib/api/referral";
 import { FiClipboard } from "react-icons/fi";
+import * as Yup from "yup";
+
+import ChangePasswordModal from "@/components/auth/ChangePasswordModal";
+import ForgotPasswordModal from "@/components/auth/ForgotPasswordModal";
+import GoogleLogin from "@/components/auth/GoogleLogin";
+import ConfirmModal from "@/components/ConfirmModal";
+import DashboardLayout from "@/components/layout/Dashboard";
+
+import { listInvitations, updateInvitation } from "@/lib/api/invitations";
+import { InvitationStatus } from "@/lib/api/request";
+import { createReferralCode, getReferralInfo } from "@/lib/api/referral";
+import { disableTwoFactor, enableTwoFactor, getTwoFactorStatus } from "@/lib/api/twoFactor";
+
+import { IInvitationResponse } from "@/lib/api/response";
+import { activateGoogleLogin, updateProfile } from "@/lib/api/user";
+import { showError, showSuccess } from "@/lib/helpers/toast";
+
+import { useUser } from "@/lib/hook/useUser";
+import { Page } from "../../../types";
+
 
 
 const UpdateUserProfileForm: React.FC = function (props) {
@@ -381,7 +393,6 @@ const LinkWithGoogle: React.FC = function (props) {
 };
 
 const CreateReferral: React.FC = function (props) {
-  const { user } = useUser("/login");
   const { t, i18n } = useTranslation('dashboard')
   const [referralCode, setReferralCode] = useState<string>('');
   const [bonusDevice, setBonusDevice] = useState<number>(0);
@@ -389,7 +400,7 @@ const CreateReferral: React.FC = function (props) {
   const enableReferralCode = async () => {
     const response = await createReferralCode();
     if (response !== undefined) {
-      const { referral_code = ''} = response;
+      const { referral_code = '' } = response;
       setReferralCode(referral_code);
     }
   };
@@ -419,25 +430,25 @@ const CreateReferral: React.FC = function (props) {
             </Heading>
           </HStack>
           <Box mt={4}>
-            {!referralCode? (
+            {!referralCode ? (
               <Button onClick={() => enableReferralCode()} colorScheme="brand">
                 {t('setting.enablereferral')}
               </Button>) : (
               <><Box>
                 <Text
-                w="fit-content"
-                py="3"
-                px="4"
-                bgColor="gray.50"
-                color="gray.700"
-                border="solid 1px"
-                borderColor="gray.200"
-                borderRadius="md"
-              >{`${window.location.protocol}//${window.location.host}?referral_code=${referralCode}`}</Text>
+                  w="fit-content"
+                  py="3"
+                  px="4"
+                  bgColor="gray.50"
+                  color="gray.700"
+                  border="solid 1px"
+                  borderColor="gray.200"
+                  borderRadius="md"
+                >{`${window.location.protocol}//${window.location.host}?referral_code=${referralCode}`}</Text>
                 <Button onClick={onCopy} size="sm" colorScheme={hasCopied ? "brand" : "gray"} leftIcon={<FiClipboard />}>
-                {hasCopied ? t('copied') : t('copy')}
+                  {hasCopied ? t('copied') : t('copy')}
                 </Button>
-                </Box>
+              </Box>
               </>
             )}
 
@@ -476,6 +487,71 @@ const CreateReferral: React.FC = function (props) {
   );
 };
 
+const TwoFactorAuthenticationPanel: React.FC = function (props) {
+  const { t, i18n } = useTranslation('dashboard')
+  const [enable2FA, setEnable2FA] = useState<boolean>(false);
+
+  const fetchTwoFactorStatus = async () => {
+    const response = await getTwoFactorStatus();
+    if (response !== undefined) {
+      const { enable = false } = response;
+      setEnable2FA(enable);
+    }
+  };
+
+  const on2FAEnableChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const isChecked = event.currentTarget.checked;
+    if (isChecked) {
+      await enableTwoFactor();
+    } else {
+      await disableTwoFactor();
+    }
+    setEnable2FA(isChecked);
+  }
+
+  useEffect(() => {
+    fetchTwoFactorStatus();
+  }, [])
+
+  return (
+    <>
+      <VStack alignItems="flex-start" spacing="4">
+        <Box w="full" maxW="500px" p={6} border="1px" borderColor="gray.200" borderRadius="xl">
+          <HStack>
+            <Heading size="md">
+              {t('setting.two-factor-auth')}
+            </Heading>
+          </HStack>
+          <Text paddingBottom="10px" paddingTop="10px" fontWeight="medium">{t('setting.two-factor-auth-description')}</Text>
+          <Box mt={4}>
+          <Heading size="md">{t('setting.two-factor-auth-method')}</Heading>
+            <TableContainer display="block">
+              <Table variant='striped' >
+                <Thead>
+                  <Tr>
+                    <Th></Th>
+                    <Th></Th>
+                  </Tr>
+                </Thead>
+                <Tbody>
+                  <Tr>
+                    <Td><FormControl display='block'>
+                      <FormLabel htmlFor='enable-2fa' mb='0'>
+                        {t('setting.two-factor-enable-email')}
+                      </FormLabel>
+                    </FormControl></Td>
+                    <Td><Switch size='md' id='enable-2fa' isChecked={enable2FA} onChange={on2FAEnableChange} /></Td>
+                  </Tr>
+                </Tbody>
+              </Table>
+            </TableContainer>
+          </Box>
+        </Box>
+      </VStack>
+    </>
+  );
+};
+
 const SettingsPage: Page = function (props) {
   const { t, i18n } = useTranslation('dashboard')
   return (
@@ -488,6 +564,7 @@ const SettingsPage: Page = function (props) {
           <Tab>{t('setting.profile')}</Tab>
           <Tab>{t('setting.security')}</Tab>
           <Tab>{t('setting.referral')}</Tab>
+          <Tab>{t('setting.two-factor-auth')}</Tab>
         </TabList>
         <TabPanels>
           <TabPanel px={0}>
@@ -502,6 +579,9 @@ const SettingsPage: Page = function (props) {
           </TabPanel>
           <TabPanel px={0}>
             <CreateReferral />
+          </TabPanel>
+          <TabPanel px={0}>
+            <TwoFactorAuthenticationPanel />
           </TabPanel>
         </TabPanels>
       </Tabs>

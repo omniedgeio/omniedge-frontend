@@ -945,7 +945,17 @@
       "referral-rules-2": "邀请 10 位用户，增加 10 个设备和 1 个私有网络;",
       "referral-rules-3": "邀请 20 位用户，增加 20 个设备和 2 个私有网络。",
       "referral-rewarded": "当前获得奖励",
-      "referral-rules-4": "邀请 100 位用户，增加 100 个设备和 10 个私有网络。"
+      "referral-rules-4": "邀请 100 位用户，增加 100 个设备和 10 个私有网络。",
+      "two-factor-auth": "二次认证",
+      "two-factor-auth-method": "二次认证方法",
+      "two-factor-enable-email": "开启 Email 二次认证",
+      "two-factor-auth-description": "双重身份验证 (2FA) 为您的帐户增加了除了密码之外额外的安全层。"
+    },
+    "twofactor": {
+      "verify-two-factor": "二次验证",
+      "cancel": "取消",
+      "verify": "验证",
+      "request-token": "验证码已发送到邮箱"
     },
     "virtualnetwork": {
       "remove": "删除私有网络",

@@ -1,37 +1,100 @@
-import { Button, Heading, HStack, VStack } from "@chakra-ui/react";
-import DashboardLayout from "../../../components/layout/Dashboard";
-import Link from "../../../components/next/Link";
-import VirtualNetworksTable from "../../../components/virtual-networks/Table";
-import { useUser } from "../../../lib/hook/useUser";
+import {
+  Button, Heading, HStack, VStack, Modal, ModalOverlay,
+  ModalContent, ModalFooter, ModalCloseButton, ModalHeader, ModalBody,
+  useToast, Input
+} from "@chakra-ui/react";
+import React from "react";
+import { useRouter } from "next/dist/client/router";
+import DashboardLayout from "@/components/layout/Dashboard";
+import Link from "@/components/next/Link";
+import VirtualNetworksTable from "@/components/virtual-networks/Table";
+import { useUser } from "@/lib/hook/useUser";
+import { listVirtualNetworks } from "@/lib/api/virtualNetwork";
+import { getTwoFactorStatus, requestToken, verifyTwoFactor } from "@/lib/api/twoFactor";
 import { Page } from "../../../types";
-import { listVirtualNetworks } from "../../../lib/api/virtualNetwork";
+
 import { useQuery } from "react-query";
 import { useTranslation } from "react-i18next";
 
 const VirtualNetworkPage: Page = () => {
+  const [showTwoFactorModal, setTwoFactorModal] = React.useState<boolean>(false);
+  const [isTwoFactorVerified, setIsTwoFactorVerified] = React.useState<boolean>(false);
+  const [token, setToken] = React.useState<string | undefined>(undefined);
   const { user, isLoading } = useUser("/login");
+  const toast = useToast();
+  const router = useRouter();
   const { data: virtualNetworks } = useQuery("virtual-networks", () => listVirtualNetworks({}));
   const { t, i18n } = useTranslation('dashboard')
+  const checkTwoFactor = async (e: React.SyntheticEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const link = e.currentTarget.href;
+    if (link.indexOf('/dashboard/virtual-networks/create') >= 0 && !isTwoFactorVerified) {
+      const res = await getTwoFactorStatus();
+      if (res && res.enable) {
+        const innerRes = await requestToken();
+        if (innerRes) {
+          toast({
+            title: t('twofactor.request-token'),
+            description: innerRes.message
+          })
+          setTwoFactorModal(true);
+        }
+      }
+    } else {
+      router.push(link);
+    }
+  };
 
-  return (
-    <VStack w="full" alignItems="flex-start" spacing="4">
-      <HStack w="full" justifyContent="space-between">
-        <Heading size="md" fontWeight="semibold">
-          {t('virtualnetwork.title')}
-        </Heading>
-        {user?.usage_limits &&
-          Object.entries(user?.usage_limits).map(([key, value]) => (
-            (key==="devices" || key==="virtual-networks")? (
-            <><Link href={( Number(value.limit - value.usage > 0)) ? "/dashboard/virtual-networks/create" : "/dashboard/billing/choose-plan"}>
-                <Button isLoading={isLoading} size="sm" _hover={{ textDecoration: "none" }}>
-                {t('virtualnetwork.createvnplus')}
-                </Button>
-              </Link></>):(<></>)
-          ))}
-      </HStack>
-      <VirtualNetworksTable />
-    </VStack>
-  );
+  const onTokenChange = (e: React.SyntheticEvent<HTMLInputElement>) => {
+    setToken(e.currentTarget.value);
+  }
+  const onClose = () => {
+    setTwoFactorModal(!showTwoFactorModal);
+    setToken('');
+  }
+
+  const verifyTwoFactorToken = async () => {
+    if (token) {
+      const res = await verifyTwoFactor(token);
+      if (res?.is_valid) {
+        setTwoFactorModal(false);
+        setIsTwoFactorVerified(true);
+        router.push('/dashboard/virtual-networks/create');
+      }
+    }
+  }
+return (
+  <VStack w="full" alignItems="flex-start" spacing="4">
+    <HStack w="full" justifyContent="space-between">
+      <Heading size="md" fontWeight="semibold">
+        {t('virtualnetwork.title')}
+      </Heading>
+      <Link href="/dashboard/virtual-networks/create">
+        <Button size="sm" _hover={{ textDecoration: "none" }}>
+          {t('virtualnetwork.createvnplus')}
+        </Button>
+      </Link>
+    </HStack>
+    <VirtualNetworksTable />
+    <Modal isOpen={showTwoFactorModal} onClose={onClose}>
+      <ModalOverlay />
+      <ModalContent>
+        <ModalHeader>{t('twofactor.verify-two-factor')}</ModalHeader>
+        <ModalCloseButton />
+        <ModalBody>
+          <Input type='nubmer' placeholder="token" value={token} onChange={onTokenChange} />
+        </ModalBody>
+        <ModalFooter>
+          <Button colorScheme='blue' mr={3} onClick={onClose}>
+            {t('twofactor.cancel')}
+          </Button>
+          <Button variant='ghost' onClick={verifyTwoFactorToken} disabled={!token}>{t('twofactor.verify')}</Button>
+        </ModalFooter>
+      </ModalContent>
+    </Modal>
+  </VStack>
+);
 };
 
 VirtualNetworkPage.layout = DashboardLayout;

@@ -20,21 +20,24 @@ import {
   Tr,
   useBreakpointValue,
   useDisclosure,
-
+  Modal, ModalOverlay,
+  ModalContent, ModalFooter, ModalCloseButton, ModalHeader, ModalBody,
+  Input,
   VStack,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { FiMoreVertical, FiServer, FiX } from "react-icons/fi";
 import { useQuery } from "react-query";
-import { UserRole } from "../../lib/api/enum";
-import { IVirtualNetworkResponse } from "../../lib/api/response";
-import { deleteVirtualNetwork, listVirtualNetworks } from "../../lib/api/virtualNetwork";
-import { showError, showSuccess } from "../../lib/helpers/toast";
-import { useUser } from "../../lib/hook/useUser";
+import { UserRole } from "@/lib/api/enum";
+import { IVirtualNetworkResponse } from "@/lib/api/response";
+import { getTwoFactorStatus, requestToken, verifyTwoFactor } from "@/lib/api/twoFactor";
+import { deleteVirtualNetwork, listVirtualNetworks } from "@/lib/api/virtualNetwork";
+import { showError, showSuccess } from "@/lib/helpers/toast";
+import { useUser } from "@/lib/hook/useUser";
 import ConfirmModal from "../ConfirmModal";
 import Link from "../next/Link";
 import { useTranslation } from "react-i18next";
-import { CopyBlock, nord } from 'react-code-blocks'
+
 
 export default function VirtualNetworkListTable() {
   const isPhone = useBreakpointValue({ base: true, sm: false });
@@ -50,6 +53,45 @@ export default function VirtualNetworkListTable() {
 
   const { user } = useUser();
   const { t, i18n } = useTranslation('dashboard')
+
+  const [showTwoFactorModal, setTwoFactorModal] = useState<boolean>(false);
+  const [isTwoFactorVerified, setIsTwoFactorVerified] = useState<boolean>(false);
+  const [token, setToken] = useState<string|undefined>(undefined);
+
+  const checkTwoFactor = async (vn: IVirtualNetworkResponse) => {
+    setVnToRemove(vn);
+    if (!isTwoFactorVerified) {
+      const res = await getTwoFactorStatus();
+      if (res && res.enable) {
+        const innerRes = await requestToken();
+        if (innerRes) {
+          showSuccess(t('twofactor.request-token'), innerRes.message)
+          setTwoFactorModal(true);
+        }
+      }
+    } else {
+      confirmModal.onOpen();
+    }
+  };
+
+  const onTokenChange = (e: React.SyntheticEvent<HTMLInputElement>) => {
+    setToken(e.currentTarget.value);
+  }
+  const onClose = () => {
+    setTwoFactorModal(!showTwoFactorModal);
+    setToken('');
+  }
+
+  const verifyTwoFactorToken = async () => {
+    if (token) {
+      const res = await verifyTwoFactor(token);
+      if (res?.is_valid) {
+        setTwoFactorModal(false);
+        setIsTwoFactorVerified(true);
+        confirmModal.onOpen();
+      }
+    }
+  };
 
   return (
     <>
@@ -132,8 +174,7 @@ export default function VirtualNetworkListTable() {
                       color="red.500"
                       icon={<FiX />}
                       onClick={() => {
-                        setVnToRemove(vn);
-                        confirmModal.onOpen();
+                        checkTwoFactor(vn)
                       }}
                     >
                       {t('virtualnetwork.removebutton')}
@@ -205,6 +246,22 @@ export default function VirtualNetworkListTable() {
         )
         }
       </Table>
+      <Modal isOpen={showTwoFactorModal} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>{t('twofactor.verify-two-factor')}</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <Input type='nubmer' placeholder="token" value={token} onChange={onTokenChange}/>
+          </ModalBody>
+          <ModalFooter>
+            <Button colorScheme='blue' mr={3} onClick={onClose}>
+              {t('twofactor.cancel')}
+            </Button>
+            <Button variant='ghost' onClick={verifyTwoFactorToken} disabled={!token}>{t('twofactor.verify')}</Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
     </>
   );
 }

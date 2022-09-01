@@ -201,16 +201,16 @@
     "macOS": {
       "status": "LIVE",
       "displayName": "macOS",
-      "link": "https://apps.apple.com/us/app/omniedgenew/id1603005893",
+      "link": "/install/download/0.2.3/omniedge-0.2.3-macOS.dmg",
       "showQRCode": false,
-      "version": "1.0.17",
-      "buttonText": "Download from App Store",
-      "captionText": "GUI version is compatible with M1/M2 MacBook, macOS 10 or later, Intel MacBook please use Cli",
+      "version": "0.2.3",
+      "buttonText": "Download macOS GUI app",
+      "captionText": "GUI version is compatible with Intel, M1/M2 MacBook, macOS 10 or later",
       "lastUpdate": {
         "title": "Last update: Version",
         "year": 2022,
-        "month": "June",
-        "date": 25
+        "month": "September",
+        "date": 1
       },
       "description": {
         "title": "Get started on macOS",

@@ -187,16 +187,16 @@
     "macOS": {
       "status": "LIVE",
       "displayName": "macOS",
-      "link": "https://apps.apple.com/us/app/omniedgenew/id1603005893",
+      "link": "/install/download/0.2.3/omniedge-0.2.3-macOS.dmg",
       "showQRCode": false,
-      "version": "1.0.17",
-      "buttonText": "从 App Store 下载",
-      "captionText": "GUI版本兼容 Intel/M1/M2 MacBook, macOS 10 or later，Intel MacBook请使用 CLi",
+      "version": "0.2.3",
+      "buttonText": " 下载 macOS GUI ",
+      "captionText": "兼容 Intel/M1/M2 MacBook, macOS 10 or later",
       "lastUpdate": {
         "title": "最后更新: 版本",
         "year": 2022,
-        "month": "6月",
-        "date": 22
+        "month": "9月",
+        "date": 1
       },
       "description": {
         "title": "在 MacBook 上使用 OmniEdge macOS 版本",

@@ -113,16 +113,16 @@
     "Linux-cli": {
       "status": "LIVE",
       "displayName": "Linux-cli",
-      "link": "https://github.com/omniedgeio/omniedge/releases/tag/v0.2.3",
+      "link": "https://github.com/omniedgeio/omniedge/releases/tag/v0.2.4",
       "showQRCode": false,
-      "version": "0.2.3",
+      "version": "0.2.4",
       "buttonText": "Download from Github",
       "captionText": "Compatible with OS: macOS, FreeBSD, Linux; ARCH: 386,AMD64,ARM,ARM4,RISC-V64",
       "lastUpdate": {
         "title": "Last update: Version",
         "year": 2022,
-        "month": "April",
-        "date": 25
+        "month": "September",
+        "date": 6
       },
       "description": {
         "title": "Get started on CLI",
@@ -271,13 +271,13 @@
       "displayName": "Docker",
       "link": "",
       "showQRCode": false,
-      "version": "0.2.3",
+      "version": "0.2.4",
       "buttonText": "",
       "captionText": "Compatible with ARCH: 386,AMD64,ARM,ARM64",
       "lastUpdate": {
         "title": "Last update: Version",
         "year": 2022,
-        "month": "August",
+        "month": "September",
         "date": 6
       },
       "description": {
@@ -384,14 +384,14 @@
       "displayName": "Synology",
       "link": "https://github.com/omniedgeio/omniedge-synology/releases",
       "showQRCode": false,
-      "version": "0.2.3.3",
+      "version": "0.2.4",
       "buttonText": "Download",
       "captionText": "Compatible with Synology with AMD64, armv7,arm64v8 CPU,DSM6.x, DSM7.x",
       "lastUpdate": {
         "title": "Last update: Version",
         "year": 2022,
-        "month": "July",
-        "date": 15
+        "month": "September",
+        "date": 6
       },
       "description": {
         "title": "Get started on Synology",

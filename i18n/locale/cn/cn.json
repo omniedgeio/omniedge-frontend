@@ -113,16 +113,16 @@
     "Linux-cli": {
       "status": "LIVE",
       "displayName": "Linux-cli",
-      "link": "https://github.com/omniedgeio/app-release/releases/tag/v0.2.3",
+      "link": "https://github.com/omniedgeio/app-release/releases/tag/v0.2.4",
       "showQRCode": false,
-      "version": "0.2.3",
+      "version": "0.2.4",
       "buttonText": "",
       "captionText": "兼容 MacOS 及主流 Linux 发行版及基于Linux的设备，如 Arch,Ubuntu,CentOS, Debian,Fedora,Raspberry OS等",
       "lastUpdate": {
         "title": "最后更新: 版本",
         "year": 2022,
-        "month": "4月",
-        "date": 25
+        "month": "9月",
+        "date": 6
       },
       "description": {
         "title": "开始使用OmniEdge CLi 命令行版本",
@@ -257,13 +257,13 @@
       "displayName": "Docker",
       "link": "",
       "showQRCode": false,
-      "version": "0.2.3",
+      "version": "0.2.4",
       "buttonText": "",
       "captionText": "兼容架构: 386,AMD64,ARM,ARM64",
       "lastUpdate": {
         "title": "最近更新版本：",
         "year": 2022,
-        "month": "8月",
+        "month": "9月",
         "date": 6
       },
       "description": {
@@ -373,14 +373,14 @@
       "displayName": "Synology",
       "link": "https://github.com/omniedgeio/omniedge-synology/releases",
       "showQRCode": false,
-      "version": "0.2.3.3",
+      "version": "0.2.4",
       "buttonText": "下载",
       "captionText": "兼容CPU是 AMD64,armv7,arm64v8系统群晖,DSM6.x,DSM7.x",
       "lastUpdate": {
         "title": "最后更新: 版本",
         "year": 2022,
-        "month": "7月",
-        "date": 15
+        "month": "9月",
+        "date": 6
       },
       "description": {
         "title": "开始在群晖 NAS 上使用 OmniEdge",

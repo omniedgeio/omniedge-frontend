@@ -3,9 +3,9 @@
 set -e
 #set -n noglob
 
-STORAGE_URL=https://github.com/omniedgeio/app-release/releases/download
-PKG_NAME="omniedgecli"
-VERSION="v0.2.3"
+STORAGE_URL=https://github.com/omniedgeio/omniedge/releases/download
+PKG_NAME="omniedge"
+VERSION="v0.2.4"
 
 BIN_DIR="/usr/local/bin"
 
@@ -51,9 +51,9 @@ download_binary() {
     OS=$(uname)
     BIN_URL=""
     if [ $OS == 'Darwin' ]; then
-        BIN_URL=${STORAGE_URL}/${VERSION}/${PKG_NAME}-macos-latest.zip
+        BIN_URL=${STORAGE_URL}/${VERSION}/${PKG_NAME}-${VERSION}-macos-latest.zip
     else
-        BIN_URL=${STORAGE_URL}/${VERSION}/${PKG_NAME}-${SUFFIX}.zip
+        BIN_URL=${STORAGE_URL}/${VERSION}/${PKG_NAME}-${VERSION}-${SUFFIX}.zip
     fi
     info "Downloading binary zip ${BIN_URL}"
     download ${TMP_ZIP} ${BIN_URL}
@@ -93,6 +93,14 @@ setup_verify_arch() {
     arm*)
         ARCH=arm
         SUFFIX=armv7
+        ;;
+    ppc64le)
+        ARCH=ppc64le
+        SUFFIX=ppc64le
+        ;;
+    s390x)
+        ARCH=s390x
+        SUFFIX=s390x
         ;;
     *)
         fatal "Unsupported architecture $ARCH"

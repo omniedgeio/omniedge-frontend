@@ -63,6 +63,7 @@ const CreateSecurityKeyForm: React.FC = function (props) {
     },
   });
   const {t, i18n} = useTranslation('dashboard')
+  const expiresAt = securityKey?.expires_at ? format(new Date(securityKey?.expires_at), "dd/MM/yyy hh:mm:ss b") : '-'
   return (
     <>
       <Modal isOpen={isOpen} onClose={onClose}>
@@ -93,7 +94,7 @@ const CreateSecurityKeyForm: React.FC = function (props) {
                 <Text fontWeight="medium">
                 {t('securitykey.expirationdate')}{" "}
                   <Text pr={1} as="span">
-                    <Code>{format(new Date(securityKey?.expires_at || Date.now()), "dd/MM/yyy hh:mm:ss b")}</Code>
+                    <Code>{expiresAt}</Code>
                   </Text>
                 </Text>
               </Box>

@@ -11,7 +11,9 @@ thumbnail: /assets/OmniEdgeall0.5.png
 
 OmniEdge MacOS GUI is compatible with M1/M2 MacBook, macOS 12 or later. Last update: Version 0.2.3, September,01,2022
 
-[Download](/install/download/0.2.3/omniedge-0.2.3-macOS.dmg)
+[Download macOS GUI](/install/download/0.2.3/omniedge-0.2.3-macOS.dmg)
+
+![](/assets/download/OmniEdge-macOS-GUI.gif)
 
 ## For experts who want to use CLi
 

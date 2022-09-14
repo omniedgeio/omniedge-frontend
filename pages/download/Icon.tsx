@@ -70,6 +70,8 @@ function getText(variant:string) {
         return 'Docker'
     case 'githubaction':
         return 'Github Action'
+    case 'router':
+        return 'router'
     default:
       return ''
   }
@@ -95,6 +97,8 @@ function getStatus(variant:string) {
         return 'Stable >' 
     case 'githubaction':
       return 'Stable >' 
+    case 'router':
+        return 'Stable >' 
     default:
       return ''
   }
@@ -120,6 +124,8 @@ function getIcon(variant:string, isSelected:boolean) {
         return dockerIcon(isSelected)
     case 'githubaction':
       return githubactionIcon(isSelected)
+    case 'router':
+      return routerIcon(isSelected)
     default:
   }
 }

@@ -503,7 +503,7 @@
       }
     },
     "Router": {
-      "status": "COMING_SOON",
+      "status": "LIVE",
       "displayName": "Router",
       "link": "",
       "showQRCode": false,
@@ -517,17 +517,30 @@
         "date": 25
       },
       "description": {
-        "title": "Get started on ...",
+        "title": "Get started on Synology",
         "instructions": [
-          "1. Download ...",
-          "2. Install ...",
-          "#CODE sudo omniedge login -u user@email.com &&\nsudo omniedge join",
-          "3. Drop Omniedge to Applications folder",
-          "4. Run OmniEdge ...",
-          "5. Sign in with your email address ",
-          "6. Click the button near 'off' to connect, then a secure VPN connection is initialized."
+          {
+            "step": "1. [Sign up](https://omniedge.io/register) your account",
+            "code": "null"
+          },
+          {
+            "step": "2. Generate **Security-key**, get the **Virtual Network ID** and the **IP Range** from [Dashboard](https://omniedge.io/dashboard)",
+            "code": "null"
+          },
+          {
+            "step": "3. Download and install OmniEdge Synology",
+            "code": "null"
+          },
+          {
+            "step": "4. Fill **Security-key**, **Network ID** and **IP Range** during the installation wizard",
+            "code": "null"
+          },
+          {
+            "step": "5. Special for **DSM7**, run the command in terminal after installation:",
+            "code": "sudo sed -i 's/package/root/g' /var/packages/omniedge/conf/privilege"
+          }
         ],
-        "instructionGifLink": "",
+        "instructionGifLink": "/assets/download/omniedge-synology-en.png",
         "instructionsVideoLink": ""
       }
     }

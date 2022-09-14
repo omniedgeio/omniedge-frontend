@@ -48,7 +48,7 @@ export const Downloadlist: Page = (props) => {
         <chakra.p fontSize="20px" color="gray.900">
         {t('available')}
           </chakra.p>
-          <SimpleGrid columns={[3, null, 8]} spacing="16px">
+          <SimpleGrid columns={[3, null, 9]} spacing="16px">
             {platforms.map((platform, index) => (
               <Icon
                 key={index}

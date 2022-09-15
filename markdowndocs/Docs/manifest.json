@@ -54,6 +54,11 @@
           "path": "Docs/install/ios.md"
         },
         {
+          "name": "openwrt",
+          "route": "openwrt",
+          "path": "Docs/install/openwrt.md"
+        },
+        {
           "name": "customize supernode",
           "route": "customize-supernode",
           "path": "Docs/install/customize-supernode.md"

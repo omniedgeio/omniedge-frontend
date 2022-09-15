@@ -30,6 +30,7 @@ thumbnail: /assets/OmniEdgeall0.5.png
 - [iOS](/docs/article/Install/ios)
 - [Docker](/docs/article/Install/docker)
 - [Github Action](/docs/article/Install/github-action)
+- [openwrt](/docs/article/Install/openwrt)
 - [Setup custom supernode](/docs/article/Install/customize-supernode)
 
 

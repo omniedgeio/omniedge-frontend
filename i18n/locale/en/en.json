@@ -421,122 +421,43 @@
         "instructionsVideoLink": ""
       }
     },
-    "Embedded": {
-      "status": "COMING_SOON",
-      "displayName": "Embedded",
-      "link": "https://github.com/omniedgeio/omniedge/releases/tag/v0.2.3",
+    "OpenWrt": {
+      "status": "LIVE",
+      "displayName": "OpenWrt",
+      "link": "https://github.com/omniedgeio/omniedge/releases/tag/v0.2.4",
       "showQRCode": false,
-      "version": "0.2.3",
-      "buttonText": "",
-      "captionText": "Compatible with ARM/ARM64 Embedded System",
+      "version": "0.2.4",
+      "buttonText": "Download",
+      "captionText": "Compatible with OpenWrt Routers with 386, x86_64(AMD64), armv7,arm64v8，mips, misple CPU",
       "lastUpdate": {
         "title": "Last update: Version",
         "year": 2022,
-        "month": "April",
-        "date": 25
+        "month": "September",
+        "date": 11
       },
       "description": {
-        "title": "Get started on Embedded System",
+        "title": "Get started on OpenWrt",
         "instructions": [
           {
             "step": "1. [Sign up](https://omniedge.io/register) your account",
             "code": "null"
           },
           {
-            "step": "2. Download and install OmniEdge CLI",
-            "code": "curl https://omniedge.io/install/omniedge-install.sh | bash"
-          },
-          {
-            "step": "3. Login By Password or secret key. You can generate secret-key on [Dashboard](https://omniedge.io/dashboard)",
-            "code": "omniedge login -u yourname@youremail.com \n #or \nomniedge login -s securitykey"
-          },
-          {
-            "step": "4. Join your network. You will be prompted to choose from the available networks or specify network.",
-            "code": "sudo omniedge join \n #or \nsudo omniedge join -n 'virtual-network-id'"
-          },
-          {
-            "step": "5. Wait a second and a secure VPN will be established",
-            "code": "curl https://omniedge.io/install/omniedge-install.sh | bash"
-          },
-          {
-            "step": "6.Follow instruction [Run OmniEde as a service](/docs/article/install/autostart-omniedge) to autostart OmniEdge",
+            "step": "2. Generate **Security-key** and get the **Virtual Network ID** from [Dashboard](https://omniedge.io/dashboard)",
             "code": "null"
+          },
+          {
+            "step": "3. Download ipk related to your arch, and copy it to your router",
+            "code": "opkg install omniedge*.ipk"
+          },
+          {
+            "step": "4. Add your Security key and virtual network id to **/etc/init.d/omniedge**",
+            "code": "security_key=OMNIEDGE_SECURITY_KEY \n virtual_network_id=OMNIEDGE_VIRUTALNETWORK_ID"
+          },
+          {
+            "step": "5. Enable and run Omniedge",
+            "code": "/etc/init.d/omniedge enable \n /etc/init.d/omniedge start"
           }
-        ],
-        "instructionGifLink": "",
-        "instructionsVideoLink": ""
-      }
-    },
-    "Nvidia": {
-      "status": "COMING_SOON",
-      "displayName": "Nvidia",
-      "link": "https://github.com/omniedgeio/omniedge/releases/tag/v0.2.3",
-      "showQRCode": false,
-      "version": "0.2.3",
-      "buttonText": "",
-      "captionText": "Compatible with Nvidia JETSON",
-      "lastUpdate": {
-        "title": "Last update: Version",
-        "year": 2022,
-        "month": "April",
-        "date": 25
-      },
-      "description": {
-        "title": "Get started on Nvidia JETSON",
-        "instructions": [
-          {
-            "step": "1. [Sign up](https://omniedge.io/register) your account",
-            "code": "null"
-          },
-          {
-            "step": "2. Download and install OmniEdge CLI",
-            "code": "curl https://omniedge.io/install/omniedge-install.sh | bash"
-          },
-          {
-            "step": "3. Login By Password or secret key. You can generate secret-key on [Dashboard](https://omniedge.io/dashboard)",
-            "code": "omniedge login -u yourname@youremail.com \n #or \nomniedge login -s securitykey"
-          },
-          {
-            "step": "4. Join your network. You will be prompted to choose from the available networks or specify network.",
-            "code": "sudo omniedge join \n #or \nsudo omniedge join -n 'virtual-network-id'"
-          },
-          {
-            "step": "5. Wait a second and a secure VPN will be established",
-            "code": "curl https://omniedge.io/install/omniedge-install.sh | bash"
-          },
-          {
-            "step": "6.Follow instruction [Run OmniEde as a service](/docs/article/install/autostart-omniedge) to autostart OmniEdge",
-            "code": "null"
-          }
-        ],
-        "instructionGifLink": "",
-        "instructionsVideoLink": ""
-      }
-    },
-    "Router": {
-      "status": "COMING_SOON",
-      "displayName": "Router",
-      "link": "",
-      "showQRCode": false,
-      "version": "",
-      "buttonText": "Download for routers",
-      "captionText": "Compatible with..",
-      "lastUpdate": {
-        "title": "Last update: Version",
-        "year": 2021,
-        "month": "April",
-        "date": 25
-      },
-      "description": {
-        "title": "Get started on ...",
-        "instructions": [
-          "1. Download ...",
-          "2. Install ...",
-          "#CODE sudo omniedge login -u user@email.com &&\nsudo omniedge join",
-          "3. Drop Omniedge to Applications folder",
-          "4. Run OmniEdge ...",
-          "5. Sign in with your email address ",
-          "6. Click the button near 'off' to connect, then a secure VPN connection is initialized."
         ],
         "instructionGifLink": "",
         "instructionsVideoLink": ""

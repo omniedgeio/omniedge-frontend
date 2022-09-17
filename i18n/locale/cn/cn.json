@@ -502,45 +502,45 @@
         "instructionsVideoLink": ""
       }
     },
-    "Router": {
+    "OpenWrt": {
       "status": "LIVE",
-      "displayName": "Router",
-      "link": "",
+      "displayName": "OpenWrt",
+      "link": "https://github.com/omniedgeio/omniedge/releases/tag/v0.2.4",
       "showQRCode": false,
-      "version": "",
-      "buttonText": "Download for routers",
-      "captionText": "Compatible with..",
+      "version": "0.2.4",
+      "buttonText": "下载",
+      "captionText": "兼容使用 386, x86_64(AMD64), armv7,arm64v8，mips, misple 等架构 CPU 的 OpenWrt 路由器",
       "lastUpdate": {
         "title": "最后更新: 版本",
         "year": 2021,
-        "month": "4月",
-        "date": 25
+        "month": "9月",
+        "date": 11
       },
       "description": {
-        "title": "Get started on Synology",
+        "title": "开始在 OpenWrt 路由器上使用",
         "instructions": [
           {
-            "step": "1. [Sign up](https://omniedge.io/register) your account",
+            "step": "1. [注册账号](https://omniedge.io/register)",
             "code": "null"
           },
           {
-            "step": "2. Generate **Security-key**, get the **Virtual Network ID** and the **IP Range** from [Dashboard](https://omniedge.io/dashboard)",
+            "step": "2. 在[管理界面](https://omniedge.io/dashboard)生成安全码**Security-key**,获取私有网络**Virtual Network ID** ",
             "code": "null"
           },
           {
-            "step": "3. Download and install OmniEdge Synology",
-            "code": "null"
+            "step": "3. 按照路由器的CPU下载相应的 ipk 安装包",
+            "code": "opkg install omniedge*.ipk"
           },
           {
-            "step": "4. Fill **Security-key**, **Network ID** and **IP Range** during the installation wizard",
-            "code": "null"
+            "step": "4. 将安全码和虚拟网络ID加入到 **/etc/init.d/omniedge**",
+            "code": "security_key=OMNIEDGE_SECURITY_KEY \n virtual_network_id=OMNIEDGE_VIRUTALNETWORK_ID"
           },
           {
-            "step": "5. Special for **DSM7**, run the command in terminal after installation:",
-            "code": "sudo sed -i 's/package/root/g' /var/packages/omniedge/conf/privilege"
+            "step": "5. 自动运行及运行 Omniedge",
+            "code": "/etc/init.d/omniedge enable \n /etc/init.d/omniedge start"
           }
         ],
-        "instructionGifLink": "/assets/download/omniedge-synology-en.png",
+        "instructionGifLink": "",
         "instructionsVideoLink": ""
       }
     }

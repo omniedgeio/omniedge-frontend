@@ -17,8 +17,8 @@ Here we collect some OmniEdge use cases for your reference, if you have posted s
 - [Keep connection with your AI based Project on Jetson](/docs/article/Cases/jetson)
 - [Display and control your Android device with Omniedge from anywhere on MacOS, Windows and Linux](/docs/article/Cases/android-remote)
 - [Talk to your family and share photos in a LAN on the internet](/docs/article/Cases/lan-messenger)
-- [Air Drop Any Files between MacOS, Windows, Routers, Linux and Android with Omniedge from anywhere](docs/article/Cases/landrop)
-- [Remote access to sub router devices](docs/article/Cases/subroute)
+- [Air Drop Any Files between MacOS, Windows, Routers, Linux and Android with Omniedge from anywhere](/docs/article/Cases/landrop)
+- [Remote access to sub router devices](/docs/article/cases/subroute)
 
 -----
 

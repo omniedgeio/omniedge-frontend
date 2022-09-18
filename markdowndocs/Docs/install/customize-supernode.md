@@ -11,7 +11,7 @@ thumbnail: /assets/docs/OmniEdge-CustomizeAuthServer.png
 OmniEdge runs default supernode servers to help connect your nodes. However, OmniEdge also offers customize supernode, you can run your own. 
 
 ```bash
-sudo docker run -d -p 443:443/udp omniedge/supernode:latest
+sudo docker run -d -p 7787:7787/udp omniedge/supernode:latest
 ```
 
 # What are the supernode servers ? 
@@ -65,7 +65,7 @@ If you care more abut the traffic, run your own supernode will be the great solu
 OmniEdge offers customize supernode, You can setup your own Supernode server to increase security and speed for your Virtual Network, here you can setup a supernode server with docker.
 
 ```bash
-sudo docker run -d -p 443:443/udp omniedge/supernode:latest
+sudo docker run -d -p 7787:7787/udp omniedge/supernode:latest
 ```
 
 # Setting in the Omniedge Dashboard
@@ -73,6 +73,8 @@ sudo docker run -d -p 443:443/udp omniedge/supernode:latest
 Login in your OmniEdge account, and fill your server IP and port in the dashboard.
 
 ![](/assets/docs/OmniEdge-CustomizeAuthServer.png)
+
+>If you use the default port, the port is **7787** not *5565* in the picture. 
 
 
 -----

@@ -109,6 +109,11 @@
           "name": "LAN Drop",
           "route": "landrop",
           "path": "Docs/cases/OmniEdge-Landrop.md"
+        },
+        {
+          "name": "Sub Route",
+          "route": "subroute",
+          "path": "Docs/cases/Remote-access-subroute-devices.md"
         }
 
       ]

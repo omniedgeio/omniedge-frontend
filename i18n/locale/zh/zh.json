@@ -957,7 +957,17 @@
       "referral-rules-2": "邀請 10 位用戶，增加 10 個設備和 1 個私有網路;",
       "referral-rules-3": "邀請 20 位用戶，增加 20 個設備和 2 個私有網路。",
       "referral-rewarded": "當前獲得獎勵",
-      "referral-rules-4": "邀請 100 位用戶，增加 100 個設備和 10 個私有網路。"
+      "referral-rules-4": "邀請 100 位用戶，增加 100 個設備和 10 個私有網路。",
+      "two-factor-auth": "二次認證",
+      "two-factor-auth-method": "二次認證方法",
+      "two-factor-enable-email": "開啓 Email 二次認證",
+      "two-factor-auth-description": "雙重身份驗證 (2FA) 為您的帳戶增加了除了密碼之外額外的安全層。"
+    },
+    "twofactor": {
+      "verify-two-factor": "二次驗證",
+      "cancel": "取消",
+      "verify": "驗證",
+      "request-token": "驗證碼已發送到信箱"
     },
     "virtualnetwork": {
       "remove": "刪除私有網路",

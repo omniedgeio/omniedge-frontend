@@ -217,3 +217,15 @@ export type IGetReferralInfoResponse = {
   bonus_device: number;
   bonus_virtual_network: number;
 };
+
+export type IGetTwoFactorStatus = {
+  enable: boolean
+}
+
+export type ICommonTwoFactorResponse = {
+  message: string
+}
+
+export type IVerifyTwoFactorResponse = {
+  is_valid: boolean
+}

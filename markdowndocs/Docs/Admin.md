@@ -44,6 +44,12 @@ You can setup your own Supernode server to increase security and speed for your 
 
 ![](/assets/docs/OmniEdge-CustomizeAuthServer.png)
 
+## 7. Two Factor Authentication
+
+Two-factor authentication(2FA) adds an additional layer of security to your account by requiring more than just a password. You will need your 2FA code to modify your virtual network and more in the future. 
+
+![](/assets/docs/2FA.png)
+
 
 
 -----

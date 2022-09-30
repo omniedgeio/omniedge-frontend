@@ -68,6 +68,8 @@ export default function VirtualNetworkListTable() {
           showSuccess(t('twofactor.request-token'), innerRes.message)
           setTwoFactorModal(true);
         }
+      } else {
+        confirmModal.onOpen();
       }
     } else {
       confirmModal.onOpen();

@@ -91,6 +91,7 @@ OmniEdge MacOS Cli is compatible with intel Macbook, macOS 10 or later. Last upd
     </plist>
   ```
 - Run `sudo kextload /Library/Extensions/tap.kext` in the terminal
+- Open 'Preferences -> Security & Privacy -> General', and allow the installation of the kext.
 - restart Mac after allowing the security check. 
 
 

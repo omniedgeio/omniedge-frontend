@@ -40,6 +40,8 @@ const VirtualNetworkPage: Page = () => {
           })
           setTwoFactorModal(true);
         }
+      } else {
+        router.push(link);
       }
     } else {
       router.push(link);
@@ -70,7 +72,7 @@ return (
       <Heading size="md" fontWeight="semibold">
         {t('virtualnetwork.title')}
       </Heading>
-      <Link href="/dashboard/virtual-networks/create">
+      <Link href="/dashboard/virtual-networks/create" onClick={checkTwoFactor}>
         <Button size="sm" _hover={{ textDecoration: "none" }}>
           {t('virtualnetwork.createvnplus')}
         </Button>

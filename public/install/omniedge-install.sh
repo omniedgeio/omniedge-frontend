@@ -84,11 +84,11 @@ setup_verify_arch() {
         ;;
     arm64)
         ARCH=arm64
-        SUFFIX=arm64v8
+        SUFFIX=arm64
         ;;
     aarch64)
         ARCH=arm64
-        SUFFIX=arm64v8
+        SUFFIX=arm64
         ;;
     arm*)
         ARCH=arm

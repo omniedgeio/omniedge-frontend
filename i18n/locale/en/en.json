@@ -1,6 +1,6 @@
 {
   "header": {
-    "pricing": "Pricing",
+    "pricing": "Plans",
     "download": "Download",
     "docs": "Docs",
     "blog": "Blog",
@@ -546,14 +546,15 @@
   },
   "pricing": {
     "getstarted": "Get Started",
-    "title": "Pricing",
-    "subtitle": "Start for free, then grow with us",
+    "title": "Plans",
+    "subtitle": "Start from [free](/register) plan, then grow with us",
     "contact": "Contact us",
     "compare-title": "Compare features",
     "features": "Features",
     "starter": "Starter",
     "professional": "Professional",
     "team": "Team",
+	"enterprisesmall": "Enterprise Small",
     "enterprise": "Enterprise",
     "virtualnetwork": "Virtual Network",
     "devices": "Devices",
@@ -568,6 +569,7 @@
     "customizesupernode": "Customize Supernode",
     "sso": " Identity provider integration",
     "iot": "  Hardware and Iot integration",
+	"selfhosted": "Self-hosted dashboard",
     "api": " API",
     "adminapi": " Admin API",
     "whitelable": " White label",
@@ -719,11 +721,48 @@
           }
         ]
       },
+      "enterprisesmall": {
+        "title": "SME",
+        "price": "$999 Lifetime",
+        "description": "For small and medium-sized enterprises",
+        "features": [
+          {
+            "label": "Self-hosted Dashboard"
+          },
+          {
+            "label": "Unlimited data transfer",
+            "tips": "Data transfer refers to the secure exchange of data between your devices in your own virtual network with omniedge installed."
+          },
+          {
+            "label": "Unlimited virtual networks",
+            "tips": "Virtual network is an virtual intranet for all your devices and users."
+          },
+          {
+            "label": "Unlimited devices",
+            "tips": "A device is any desktop,laptop, phone or cloud instance with OmniEdge installed and activated in your own virtual network."
+          },
+          {
+            "label": "Unlimited users",
+            "tips": "Virtual network only can have devices from Unlimited users."
+          },
+          {
+            "label": "Customize Supernode",
+            "tips": "You can use your own Supernode for your virtual network."
+          },
+          {
+            "label": "Sharing Virtual Network",
+            "tips": "Invite people who you trust to join your private network"
+          }
+        ]
+      },
       "enterprise": {
         "title": "Enterprise",
         "price": "Let's talk",
         "description": "For enterprise",
         "features": [
+		  {
+			"label": "Self-hosted Dashboard"
+		  },
           {
             "label": "Unlimited virtual networks, devices and users."
           },

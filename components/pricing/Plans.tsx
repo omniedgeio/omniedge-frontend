@@ -56,7 +56,7 @@ const PlanPrice = ({ price }: { price: string }) => {
   const { t, i18n } = useTranslation("pricing");
   return (
     <>
-      {typeof price != "string" ? (
+      {typeof price != "string" && price < 100 ? (
         <Text fontSize="24px" fontWeight="700" lineHeight="32px" color="gray.900">
           {" "}
           $ {price}{" "}
@@ -138,6 +138,30 @@ export const TeamsPlan: React.FC<PlanProps> = ({ actionButton, ...props }) => {
     </PlanContainer>
   );
 };
+
+export const EnterprisesmallPlan: React.FC<PlanProps> = ({ actionButton, ...props }) => {
+  const { t } = useTranslation("pricing", { keyPrefix: "plans.enterprisesmall" });
+  const { t: t2 } = useTranslation("pricing");
+  return (
+    <PlanContainer {...props}>
+      <PlanTitle title={t("title")} />
+      <PlanPrice price={t("price")} />
+      <PlanDescription description={t("description")} />
+      <PlanFeatures features={t("features", { returnObjects: true })} />
+      <Spacer />
+      {actionButton ? (
+        actionButton
+      ) : (
+        <Link href="/contactus">
+          <Button isFullWidth colorScheme="gray" fontSize="14px" fontWeight="700" lineHeight="20px">
+            {t2("contact")}
+          </Button>
+        </Link>
+      )}
+    </PlanContainer>
+  );
+};
+
 
 export const EnterprisePlan: React.FC<PlanProps> = ({ actionButton, ...props }) => {
   const { t } = useTranslation("pricing", { keyPrefix: "plans.enterprise" });

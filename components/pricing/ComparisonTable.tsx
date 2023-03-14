@@ -34,6 +34,7 @@ interface FeatureTextnumber {
   // startpro:string;
   pro: string;
   team: string;
+  enterprisesmall: string;
   enterprise: string;
 }
 
@@ -76,23 +77,25 @@ const FeatureText: React.FC<{ active?: boolean; tooltip?: string }> = (props) =>
   );
 };
 
-const FeatureTextnumber: React.FC<FeatureTextnumber> = ({ title, free, pro, team, enterprise }) => {
+const FeatureTextnumber: React.FC<FeatureTextnumber> = ({ title, free, pro, team, enterprisesmall, enterprise }) => {
   return (
     <Tr>
       <Td>{title}</Td>
       <Td align="center">{free}</Td>
       <Td align="center">{pro}</Td>
       <Td align="center">{team}</Td>
+      <Td align="center">{enterprisesmall}</Td>
       <Td align="center">{enterprise}</Td>
     </Tr>
   );
 };
 
-const FeatureDesc: React.FC<{ free?: boolean; pro?: boolean; team?: boolean; enterprise?: boolean }> = (props) => {
+const FeatureDesc: React.FC<{ free?: boolean; pro?: boolean; team?: boolean; enterprisesmall?: boolean; enterprise?: boolean }> = (props) => {
   let free = props.free || props.free === undefined;
   // let startpro = props.startpro || props.startpro === undefined;
   let pro = props.pro || props.pro === undefined;
   let team = props.team || props.team === undefined;
+  let enterprisesmall = props.enterprisesmall || props.enterprisesmall === undefined;
   let enterprise = props.enterprise || props.enterprise === undefined;
   return (
     <Tr>
@@ -108,6 +111,9 @@ const FeatureDesc: React.FC<{ free?: boolean; pro?: boolean; team?: boolean; ent
       </Td>
       <Td>
         <Icon color={team ? "brand.700" : "gray.300"}  as={team ? FiCheck : FiX}></Icon>
+      </Td>
+      <Td>
+        <Icon color={enterprisesmall ? "brand.700" : "gray.300"}  as={enterprisesmall ? FiCheck : FiX}></Icon>
       </Td>
       <Td>
         <Icon color={enterprise ? "brand.700" : "gray.300"}  as={enterprise ? FiCheck : FiX}></Icon>
@@ -131,13 +137,14 @@ export default function ComparisonTable() {
               <Th>{t("starter")}</Th>
               <Th>{t("professional")}</Th>
               <Th>{t("team")}</Th>
+              <Th>{t("enterprisesmall")}</Th>
               <Th>{t("enterprise")}</Th>
             </Tr>
           </Thead>
           <Tbody>
-            <FeatureTextnumber title={t("virtualnetwork")} free="1" pro="5" team="10" enterprise={t("unlimited")} />
-            <FeatureTextnumber title={t("devices")} free="20" pro="25" team="50" enterprise={t("unlimited")} />
-            <FeatureTextnumber title={t("users")} free="1" pro="5" team="10" enterprise={t("unlimited")} />
+            <FeatureTextnumber title={t("virtualnetwork")} free="1" pro="5" team="10" enterprisesmall={t("unlimited")} enterprise={t("unlimited")} />
+            <FeatureTextnumber title={t("devices")} free="20" pro="25" team="50"enterprisesmall={t("unlimited")} enterprise={t("unlimited")} />
+            <FeatureTextnumber title={t("users")} free="1" pro="5" team="10" enterprisesmall={t("unlimited")} enterprise={t("unlimited")} />
             <FeatureDesc>{t("securitykey")}</FeatureDesc>
             <FeatureDesc>{t("unlimiteddata")}</FeatureDesc>
             <FeatureDesc>{t("p2p")}</FeatureDesc>
@@ -149,23 +156,26 @@ export default function ComparisonTable() {
               {t("sharing")}
             </FeatureDesc>
             <FeatureDesc free={false} pro={false} team={false}>
-              {t("subroute")}</FeatureDesc>
-            <FeatureDesc free={false} pro={false} team={false}>
-              {t("sso")}
-            </FeatureDesc>
-            <FeatureDesc free={false} pro={false} team={false}>
-              {t("iot")}
-            </FeatureDesc>
-            <FeatureDesc free={false} pro={false} team={false}>
               {t("api")}
             </FeatureDesc>
             <FeatureDesc free={false} pro={false} team={false}>
+              {t("selfhosted")}
+            </FeatureDesc>
+            <FeatureDesc free={false} pro={false} team={false} enterprisesmall={false}>
+              {t("subroute")}</FeatureDesc>
+            <FeatureDesc free={false} pro={false} team={false} enterprisesmall={false}>
+              {t("sso")}
+            </FeatureDesc>
+            <FeatureDesc free={false} pro={false} team={false} enterprisesmall={false}>
+              {t("iot")}
+            </FeatureDesc>
+            <FeatureDesc free={false} pro={false} team={false} enterprisesmall={false}>
               {t("adminapi")}
             </FeatureDesc>
-            <FeatureDesc free={false} pro={false} team={false}>
+            <FeatureDesc free={false} pro={false} team={false} enterprisesmall={false}>
               {t("whitelable")}
             </FeatureDesc>
-            <FeatureDesc free={false} pro={false} team={false}>
+            <FeatureDesc free={false} pro={false} team={false} enterprisesmall={true}>
               {t("specialsupport")}
             </FeatureDesc>
             <FeatureDesc free={false} pro={true}>

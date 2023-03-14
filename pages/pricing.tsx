@@ -3,10 +3,11 @@ import { useTranslation } from "react-i18next";
 import DefaultLayout from "../components/layout/Default";
 import ComparisonTable from "../components/pricing/ComparisonTable";
 import Faq from "../components/pricing/Faq";
-import { EnterprisePlan, FreePlan, ProPlan, TeamsPlan } from "../components/pricing/Plans";
+import { EnterprisePlan, FreePlan, ProPlan, TeamsPlan, EnterprisesmallPlan } from "../components/pricing/Plans";
 import { Seo } from "../components/Seo";
 import { Page } from "../types";
 import {Heros } from "../components/Features";
+import Markdown from "markdown-to-jsx";
 
 const PricingTab = (props: TabProps) => (
   <Tab
@@ -33,12 +34,13 @@ const PricingPage: Page = () => {
         <Text fontSize={{ base: "36px", md: "36px" }} fontWeight="700" lineHeight="40px">
           {t("title")}
         </Text>
-        <Text fontSize={{ base: "14x", md: "14px" }} fontWeight="500" lineHeight="20px">{t("subtitle")}</Text>
+        <Text fontSize={{ base: "14x", md: "14px" }} fontWeight="500" lineHeight="20px"><Markdown>{t("subtitle")}</Markdown></Text>
       
       <Stack justifyContent="center" direction={{ base: "column", sm: "row" }} paddingTop="36px">
-              <FreePlan maxW={80} />
+              {/* <FreePlan maxW={80} /> */}
               <ProPlan maxW={80} />
               <TeamsPlan maxW={80} />
+              <EnterprisesmallPlan maxW={80} />
               <EnterprisePlan maxW={80} />
             </Stack>
             </VStack>

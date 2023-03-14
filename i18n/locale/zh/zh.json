@@ -1,6 +1,6 @@
 {
   "header": {
-    "pricing": "價格",
+    "pricing": "訂閱計畫",
     "download": "下載",
     "docs": "文檔",
     "blog": "部落格",
@@ -627,15 +627,16 @@
   },
   "pricing": {
     "getstarted": "馬上使用",
-    "title": "價格",
-    "subtitle": " 從免費計畫開始使用，和我們一起成長",
+    "title": "訂閱計畫",
+    "subtitle": " 從[免費計畫](/register)開始使用，和我們一起成長",
     "contact": "聯係我們",
     "compare-title": "訂閱計劃服務比較錶",
     "features": "功能特性",
     "starter": "入門版",
     "professional": "專業版",
     "team": "團隊版",
-    "enterprise": "企業版",
+    "enterprisesmall": "中小企業版",
+    "enterprise": "大型企業版",
     "virtualnetwork": "虛擬私有網路數目",
     "devices": "設備數目",
     "users": "用戶數目",
@@ -649,6 +650,7 @@
     "customizesupernode": "私有化 Supernode 服務器",
     "sso": " 用戶認證係統集成",
     "iot": "硬體和物聯網集成",
+    "selfhosted": "私有化部署",
     "api": "API",
     "adminapi": "管理員 API",
     "whitelable": "貼牌",
@@ -800,8 +802,42 @@
           }
         ]
       },
+      "enterprisesmall": {
+        "title": "中小企業版",
+        "price": "$999 永久授權",
+        "description": "專為有安全互聯需求的中小企業定製",
+        "features": [
+          {
+            "label": "私有化部署"
+          },
+          {
+            "label": "無限數據傳輸",
+            "tips": "數據傳輸是指在您自己的虛擬網路中安裝了omniedge的設備之間的安全數據交換。."
+          },
+          {
+            "label": "無限的私有網路",
+            "tips": "私有網路是為你的所有設備和用戶提供的一個私有內部網，和物理局域網類似。。"
+          },
+          {
+            "label": "無限的連接設備",
+            "tips": "設備是指在您自己的虛擬網路中安裝並激活了OmniEdge的任何臺式機、筆記型電腦、電話或雲實例。"
+          },
+          {
+            "label": "無限用戶",
+            "tips": "虛擬網路允許無限用戶加入。"
+          },
+          {
+            "label": "私有服務器",
+            "tips": "您可以使用您自己的私有服務器，為您的私有網路做認證"
+          },
+          {
+            "label": "共享私有網路",
+            "tips": "邀請你信任的人加入你的私有網路"
+          }
+        ]
+      },
       "enterprise": {
-        "title": "企業版",
+        "title": "大型企業版",
         "price": "聯係我們",
         "description": "專為企業定製",
         "features": [

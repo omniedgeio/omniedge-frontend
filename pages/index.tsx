@@ -80,7 +80,7 @@ const Home: Page = (props) => {
               </Link>
               <Code borderRadius="2px" backgroundColor="black" textAlign="center"><Text align="center" paddingLeft="1px" color="white" fontSize="md" fontWeight="extrabold">{">"} docker pull omniedge/omniedge:latest</Text></Code>
             </HStack>
-            <Featureheros>{t('getstart-subtitle')}</Featureheros>
+            <Featureheros><Markdown>{t('getstart-subtitle')}</Markdown></Featureheros>
           </VStack>
           <Image maxW={{ md: "601px" }} top='1px' src="/assets/OmniEdgeall0.5.png" alt="OmniEdge" />
         </Stack>

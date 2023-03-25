@@ -21,18 +21,20 @@ coordinates the communication between nodes within the virtual network, help you
 
 We offer free public supernodes you are using for starter plans, allocated automatically by your registered IP address via GeoIP. You network may be slow if your IP location is different from your devices. But you can [use your own supernode](https://omniedge.io/docs/article/install/customize-supernode) with [free, pro & team plans](https://omniedge.io/pricing). 
 
+<h2>Notice:</h2> **We only keep one supernode only for test, you will need to build your own supernode for production to have a faster speed, higher security.**
+
+
 |Location|Cloud Vendor|Specification|Version|
 |--|--|--|--|
-|Hong Kong,CN|AWS| 2vCPUs / 1GB RAM|2.6-stable-omni|
-|Singapore,SG|AWS|1vCPU / 0.5GB RAM|2.6-stable-omni|
-|Tokyo,JP|AWS|1vCPU / 0.5GB RAM|2.6-stable-omni|
-|Oregon,US|AWS|1vCPU / 0.5GB RAM|2.6-stable-omni|
-|Ohio,US|AWS|1vCPU / 0.5GB RAM|2.6-stable-omni|
-|Mumbai,IN|AWS|1vCPU / 0.5GB RAM|2.6-stable-omni|
-|Sao Paulo,BR|AWS|1vCPU / 0.5GB RAM|2.6-stable-omni|
-|Frankfurt,DE|AWS|1vCPU / 0.5GB RAM|2.6-stable-omni|
-|Milan,IT|AWS|1vCPU / 0.5GB RAM|2.6-stable-omni|
-|Sydney,AU|AWS|1vCPU / 0.5GB RAM|2.6-stable-omni|
+|<del>Ohio</del>|<del>AWS</del>|<del>1vCPU</del> / <del>0.5 GB RAM</del>|<del>	2.6-stable-omni</del>|
+|Oregon|AWS|1vCPUs / 0.5 GB RAM|	2.6-stable-omni|
+|<del>Frankfurt</del>|<del>AWS</del>|<del>1vCPU</del> / <del>0.5 GB RAM</del>|<del>	2.6-stable-omni</del>|
+|<del>Tokyo</del>|<del>AWS</del>|<del>1vCPU</del> / <del>0.5 GB RAM</del>|<del>	2.6-stable-omni</del>|
+|<del>Sydney</del>|<del>AWS</del>|<del>1vCPU</del> / <del>0.5 GB RAM</del>|<del>	2.6-stable-omni</del>|
+|<del>Mumbai</del>|<del>AWS</del>|<del>1vCPU</del> / <del>0.5 GB RAM</del>|<del>	2.6-stable-omni</del>|
+|<del>SaoPaulo</del>|<del>AWS</del>|<del>1vCPU</del> / <del>0.5 GB RAM</del>|<del>	2.6-stable-omni</del>|
+|<del>Milan</del>|<del>AWS</del>|<del>1vCPU</del> / <del>0.5 GB RAM</del>|<del>	2.6-stable-omni</del>|
+|<del>Singapore</del>|<del>AWS</del>|<del>1vCPU</del> / <del>0.5 GB RAM</del>|<del>	2.6-stable-omni</del>|
 
 
 We use [OmniEdge for Github Action](https://github.com/marketplace/actions/omniedge-for-github-action) to build a system to check the status of all supernodes, you can find it here: [https://github.com/omniedgeio/server-status](https://github.com/omniedgeio/server-status). 

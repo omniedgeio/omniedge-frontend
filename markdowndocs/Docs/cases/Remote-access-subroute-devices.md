@@ -72,5 +72,20 @@ iptables -I FORWARD 1 -i $LAN_DEV -d 100.100.100.0/24 -j ACCEPT
 Here:
 - **100.100.100.0/24**: your virtual network IP range
 
+7. Add all after the network started to hotplug
+
+```bash
+#vim /etc/hotplug.d/iface/99-omniedge
+[ "${ACTION}" = "ifup" ] && {
+    logger -t hotplug "Device: ${DEVICE} / Action: ${ACTION}"
+    /etc/init.d/omniedge start &>/dev/null &
+    wait 5
+    iptables -t nat -A POSTROUTING -s 100.100.100.0/24 -j MASQUERADE
+    iptables -A forwarding_rule -s 100.100.100.0/24 -j ACCEPT
+    LAN_DEV=`ubus call network.interface.lan status | jsonfilter -e
+'@["device"]'`
+    iptables -I FORWARD 1 -i $LAN_DEV -d 100.100.100.0/24 -j ACCEPT
+}
+```
 
 ![image](https://user-images.githubusercontent.com/93888/190896588-96007623-cabe-42f0-a49c-ef873ef29480.png)

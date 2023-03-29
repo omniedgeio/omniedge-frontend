@@ -19,7 +19,7 @@ Last update: Version 0.2.4, September,15, 2022.
 1. [Download](https://github.com/omniedgeio/omniedge/releases/tag/v0.2.4) omnedge ipks related to your routers arch, and copy it to your router
 2. Install it by running `opkg install omniedge*.ipk`
 3. Generate Security-key, and get the Virtual Network ID from [Dashboard](https://omniedge.io/dashboard)
-4. Add your Security key and virtual network id to `/etc/init.d/omniedge`:
+4. Add your Security key and virtual network id to `/etc/init.d/omniedge`, run `chmod +x /etc/init.d/omniedge` if you system missing the script:
 
 ```bash
 security_key=OMNIEDGE_SECURITY_KEY

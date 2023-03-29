@@ -532,7 +532,7 @@
             "code": "opkg install omniedge*.ipk"
           },
           {
-            "step": "4. 將安全碼和虛擬網路ID加入到 **/etc/init.d/omniedge**",
+            "step": "4. 將安全碼和虛擬網路ID加入到 **/etc/init.d/omniedge**, 如果係統提示找不到 omniedge 腳本，你可能需要運行 **chmod +x /etc/init.d/omniedge**",
             "code": "security_key=OMNIEDGE_SECURITY_KEY \n virtual_network_id=OMNIEDGE_VIRUTALNETWORK_ID"
           },
           {

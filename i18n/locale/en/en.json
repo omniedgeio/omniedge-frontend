@@ -783,6 +783,19 @@
             "label": "White label"
           }
         ]
+      },
+      "Company": {
+        "title": "OmniEdge Inc",
+        "price": "$499,999.99",
+        "description": "For people who want to accquire OmniEdge",
+        "features": [
+          {
+            "label": "C-Corp in Delware, USA"
+          },
+          {
+            "label": "Source Code"
+          }
+        ]
       }
     },
     "faq": {

@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import DefaultLayout from "../components/layout/Default";
 import ComparisonTable from "../components/pricing/ComparisonTable";
 import Faq from "../components/pricing/Faq";
-import { EnterprisePlan, FreePlan, ProPlan, TeamsPlan, EnterprisesmallPlan } from "../components/pricing/Plans";
+import { EnterprisePlan, FreePlan, ProPlan, TeamsPlan, EnterprisesmallPlan, CompanyPlan } from "../components/pricing/Plans";
 import { Seo } from "../components/Seo";
 import { Page } from "../types";
 import {Heros } from "../components/Features";
@@ -41,7 +41,7 @@ const PricingPage: Page = () => {
               <ProPlan maxW={80} />
               <TeamsPlan maxW={80} />
               <EnterprisesmallPlan maxW={80} />
-              <EnterprisePlan maxW={80} />
+              <CompanyPlan maxW={80} />
             </Stack>
             </VStack>
       <ComparisonTable />

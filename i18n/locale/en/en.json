@@ -40,7 +40,7 @@
     "slogan-desc-3": "Config",
     "slogan-description": "Bring intranet on the internet, bring everything from anywhere into intranet and access it fast with OmniEdge's next-gen Mesh VPN architecture.",
     "getstartedfree": "Get Started Free",
-    "getstart-subtitle": "Start from [free](/register) or [$999](/contactus) with SME self-hosted Plan.",
+    "getstart-subtitle": "Start from [free](/register) or [$999](https://buy.stripe.com/5kAfZKaoR3TFeys7st) with SME self-hosted Plan.",
     "contactsalesexpert": "Contact Sales Expert",
     "addvirutalnetwork": "+ Virutal Network",
     "name": "Name",
@@ -787,7 +787,7 @@
       "Company": {
         "title": "OmniEdge Inc",
         "price": "$499,999.99",
-        "description": "For people who want to accquire OmniEdge",
+        "description": "For people who want to acquire OmniEdge",
         "features": [
           {
             "label": "C-Corp in Delware, USA"

@@ -152,9 +152,9 @@ export const EnterprisesmallPlan: React.FC<PlanProps> = ({ actionButton, ...prop
       {actionButton ? (
         actionButton
       ) : (
-        <Link href="/contactus">
-          <Button isFullWidth colorScheme="gray" fontSize="14px" fontWeight="700" lineHeight="20px">
-            {t2("contact")}
+        <Link href="https://buy.stripe.com/5kAfZKaoR3TFeys7st">
+          <Button isFullWidth colorScheme="brand" fontSize="14px" fontWeight="700" lineHeight="20px">
+          {t2("getstarted")}
           </Button>
         </Link>
       )}

@@ -187,3 +187,28 @@ export const EnterprisePlan: React.FC<PlanProps> = ({ actionButton, ...props }) 
     </PlanContainer>
   );
 };
+
+export const CompanyPlan: React.FC<PlanProps> = ({ actionButton, ...props }) => {
+  const { t } = useTranslation("pricing", { keyPrefix: "plans.Company" });
+  const { t: t2 } = useTranslation("pricing");
+
+  return (
+    <PlanContainer {...props}>
+      <PlanTitle title={t("title")} />
+      <PlanPrice price={t("price")} />
+      <PlanDescription description={t("description")} />
+      <PlanFeatures features={t("features", { returnObjects: true })} />
+      <Spacer />
+
+      {actionButton ? (
+        actionButton
+      ) : (
+        <Link href="https://buy.stripe.com/28ofZK7cF2PB1LG3ce">
+          <Button isFullWidth colorScheme="brand" fontSize="14px" fontWeight="700" lineHeight="20px">
+          {t2("getstarted")}
+          </Button>
+        </Link>
+      )}
+    </PlanContainer>
+  );
+};

@@ -861,7 +861,21 @@
             "label": " 贴牌 "
           }
         ]
+      },
+      "Company": {
+        "title": "OmniEdge 公司",
+        "price": "$499,999.99",
+        "description": "专为想要收购 OmniEdge 的用户组织",
+        "features": [
+          {
+            "label": "OmniEdge 注册在美国 Delware 的 C-Corp"
+          },
+          {
+            "label": "全部源代码"
+          }
+        ]
       }
+      
     },
     "faq": {
       "title": "FAQ",

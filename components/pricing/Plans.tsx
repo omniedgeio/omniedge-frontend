@@ -178,7 +178,7 @@ export const EnterprisePlan: React.FC<PlanProps> = ({ actionButton, ...props }) 
       {actionButton ? (
         actionButton
       ) : (
-        <Link href="/contactus">
+        <Link href="mailto:hi@omniedge.io?subject=Mail from OmniEdge website">
           <Button isFullWidth colorScheme="gray" fontSize="14px" fontWeight="700" lineHeight="20px">
             {t2("contact")}
           </Button>

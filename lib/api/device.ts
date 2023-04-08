@@ -9,10 +9,20 @@ import { IDeviceResponse, IPaginatedResponse } from "./response";
 export async function listDevices(
   params: IListDevicesRequest
 ): Promise<IPaginatedResponse<IDeviceResponse> | undefined> {
+   // Set default pagination values
+   const page = params.page || 1;
+   const perPage = params.per_page || 200;
+ 
+   // Modify request parameters to include pagination values
+   const requestParams = {
+     ...params,
+     page,
+     per_page: perPage,
+   };
   let res = await request<IPaginatedResponse<IDeviceResponse>>({
     url: "/devices",
     method: "GET",
-    params,
+    params:requestParams,
   });
 
   if (res.data.data?.data) {

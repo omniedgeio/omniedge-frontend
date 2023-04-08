@@ -123,8 +123,8 @@ const DevicesTable: React.FC = function (props) {
         <TableCaption>
           <Box display="flex" justifyContent="center">
             <HStack mt="4">
-              {currentPage == 1 ? <></> : <><Button onClick={handleFirstPage}>1</Button><Button onClick={handlePrevPage}>Prev</Button></>}
-              {currentPage === totalPages ? <><Button onClick={handleLastPage}>{totalPages}</Button></> : <><Button onClick={handleCurrentPage}>{currentPage}</Button><Button onClick={handleNextPage}>Next</Button> <Button onClick={handleLastPage}>{totalPages}</Button></>}
+              {currentPage == 1 ? <></> : <><Button onClick={handleFirstPage}>1</Button><Button onClick={handlePrevPage}>{t('prev')}</Button></>}
+              {currentPage === totalPages ? <><Button onClick={handleLastPage}>{t('last')}</Button></> : <><Button onClick={handleCurrentPage}>{currentPage}</Button><Button onClick={handleNextPage}>{t('next')}</Button> <Button onClick={handleLastPage}>{t('last')}</Button></>}
             </HStack>
           </Box>
         </TableCaption>

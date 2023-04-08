@@ -891,6 +891,9 @@
     "logout": "Logout",
     "copied": "Copied",
     "copy":"Copy",
+    "prev":"Prev",
+    "next":"Next",
+    "last":"Last",
     "setting": {
       "name": "Name",
       "title": "Settings",

@@ -1,4 +1,6 @@
 import {
+  Button,
+  Box,
   Code,
   HStack,
   IconButton,
@@ -31,22 +33,68 @@ import { showSuccess } from "../../lib/helpers/toast";
 import ConfirmModal from "../ConfirmModal";
 import Link from "../next/Link";
 import RenameModal from "./RenameModal";
-import {useTranslation} from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 interface IDevicesTableProps {
   params?: IListDevicesRequest;
 }
 
+interface response {
+  data?: IDevicesTableProps
+}
+
 const DevicesTable: React.FC = function (props) {
   const isPhone = useBreakpointValue({ base: true, sm: false });
-  const { data, isLoading, isError, refetch } = useQuery("devices", () => listDevices({}));
+  const [currentPage, setCurrentPage] = useState<number>(1); // track current page
+  const [totalPages, setTotalPages] = useState(1);
+  const [totalDataLength, setTotalDataLength] = useState<number>(0);
+  const { data, isLoading, isError, refetch } = useQuery(
+    ["devices", currentPage],
+    async () => {
+      const response = await listDevices({ page: currentPage, per_page: 10 });
+      if (response) {
+        setTotalPages(response.meta.last_page);
+        setTotalDataLength(response.meta.total);
+      }
+      return response;
+    }
+  );
+  const handleCurrentPage = () => {
+    setCurrentPage(currentPage);
+  };
+
+  const handleFirstPage = () => {
+    setCurrentPage(1);
+  };
+
+  const handleNextPage = () => {
+    setCurrentPage((prev) => Math.min(prev + 1, totalPages)); // increment current page
+  };
+
+  const handlePrevPage = () => {
+    setCurrentPage((prev) => Math.max(prev - 1, 1)); // decrement current page, but don't go below 1
+  };
+
+  const handleLastPage = async () => {
+    setCurrentPage(totalPages);
+    const allData = [];
+    for (let page = 1; page <= totalPages; page++) {
+      const response = await listDevices({ page, per_page: 10 });
+      if (response) {
+        allData.push(...response.data);
+      }
+    }
+    // setData(allData);
+  };
+
 
   const confirmModal = useDisclosure();
   const [deviceToRemove, setDeviceToRemove] = useState<IDeviceResponse>();
 
   const renameModal = useDisclosure();
   const [deviceToRename, setDeviceToRename] = useState<IDeviceResponse>();
-  const {t, i18n} = useTranslation('dashboard')
+  const { t, i18n } = useTranslation('dashboard')
+
   return (
     <>
       <RenameModal
@@ -69,16 +117,16 @@ const DevicesTable: React.FC = function (props) {
         }}
         onCancel={confirmModal.onClose}
       >{t('device.removeconfirm')}
-         <Code>{deviceToRemove?.name}</Code> ?
+        <Code>{deviceToRemove?.name}</Code> ?
       </ConfirmModal>
       <Table w="full">
         <TableCaption>
-        <span>{t('device.total')} {data?.data?.length}  </span><br/>
-          <Link href="/download" color="brand.500">
-            {t('device.download')}
-          </Link>{" "}
-          {t('device.download-desc')}
-          
+          <Box display="flex" justifyContent="center">
+            <HStack mt="4">
+              {currentPage == 1 ? <></> : <><Button onClick={handleFirstPage}>1</Button><Button onClick={handlePrevPage}>{t('prev')}</Button></>}
+              {currentPage === totalPages ? <><Button onClick={handleLastPage}>{t('last')}</Button></> : <><Button onClick={handleCurrentPage}>{currentPage}</Button><Button onClick={handleNextPage}>{t('next')}</Button> <Button onClick={handleLastPage}>{t('last')}</Button></>}
+            </HStack>
+          </Box>
         </TableCaption>
         <Thead>
           <Tr>
@@ -185,6 +233,7 @@ const DevicesTable: React.FC = function (props) {
             })
           )}
         </Tbody>
+
       </Table>
     </>
   );

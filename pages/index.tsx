@@ -72,7 +72,7 @@ const Home: Page = (props) => {
               </chakra.h1>
             </Heading>
             <Text maxW="2xl" color="gray.700" py="4" fontSize="14px">
-              <Markdown>{t('slogan-description')}</Markdown>
+              <Markdown>{t('slogan-description_v2')}</Markdown>
             </Text>
             <HStack>
               <Link href="/register">

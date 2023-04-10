@@ -14,7 +14,7 @@ import {
 import React from "react";
 import { useRouter } from 'next/router'
 import { Customersmap } from "../components/Customersmap";
-import { Compare, FeaturePage, Featureslist, Featureheros, Heros } from "../components/Features";
+import { Compare,Remotecollaboration, FeaturePage, Featureslist, Featureheros, Heros } from "../components/Features";
 import { Downloadlist } from "./download/download_feature";
 import DefaultLayout from "../components/layout/Default";
 import { Seo } from "../components/Seo";
@@ -98,7 +98,7 @@ const Home: Page = (props) => {
         ></Box>
       </Box>
       <Downloadlist />
-      <Compare />
+      <Remotecollaboration />
       <Featureslist />
       <FeaturePage />
       <Customersmap />

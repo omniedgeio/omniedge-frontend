@@ -620,7 +620,16 @@
     "herotitle-2": "連接",
     "herotitle-3": "隻需要一條命令",
     "herosubtitle": "我們的使命是為那些希望隨時隨地訪問其設備的人提供可靠、安全和無痛的連接解決方案。",
-    "getstarted": "馬上開始"
+    "getstarted": "馬上開始",
+    "remotecollaboration": {
+      "title": "OmniEdge讓遠程協作變得更容易。",
+      "virtualnetworktitle": "虛擬網路隔離。",
+      "virtualnetwork": "使用我們的虛擬網路解決方案隔離您的團隊和項目，為客戶分配虛擬網路以進行遠程支援。",
+      "devicetitle": "無縫設備連接。",
+      "device": "輕鬆將所有設備連接到您的內部網路中，從虛擬機到筆記型電腦、MacBook、手機、Github Action和服務器。",
+      "backuptitle": "安全遠程備份",
+      "backup": "通過點對點連接輕鬆備份和訪問您的數據，使用我們無憂、易用的解決方案實現遠程備份。"
+      }
   },
   "customersmap": {
     "customersmaptitle": " 用戶喜歡我們的服務",

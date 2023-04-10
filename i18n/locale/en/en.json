@@ -539,7 +539,16 @@
     "herotitle-2": "connectivity",
     "herotitle-3": "in one single click.",
     "herosubtitle": "We’re on a mission to provide reliable, secure, and painless connectivity solutions for anyone who wants to have access to their devices, anywhere, anytime.",
-    "getstarted": "Get Started"
+    "getstarted": "Get Started",
+    "remotecollaboration": {
+      "title": "OmniEdge helps remote collaboration easy. ",
+      "virtualnetworktitle": "Virtual network isolation.",
+      "virtualnetwork": "Isolate your teams and projects with our virtual network solution.Assign virtual networks to customers for remote support.",
+      "devicetitle":"Seamless device connectivity.",
+      "device":"Connect all your devices - from VMs to laptops, MacBooks, Mobile Phones,Github Action and servers - to your intranet seamlessly.",
+      "backuptitle":"Securely remote backup",
+      "backup":"Effortlessly backup and access your data remotely through peer-to-peer connectivity with our worry-free and easy-to-use solution."
+    }
   },
   "customersmap": {
     "customersmaptitle": "Customers like our service.",

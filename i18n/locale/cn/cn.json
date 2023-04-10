@@ -620,7 +620,16 @@
     "herotitle-2": "连接",
     "herotitle-3": "只需要一条命令",
     "herosubtitle": "我们的使命是为那些希望随时随地访问其设备的人提供可靠、安全和无痛的连接解决方案。",
-    "getstarted": "马上开始"
+    "getstarted": "马上开始",
+    "remotecollaboration": {
+      "title": "OmniEdge让远程协作变得更容易。",
+      "virtualnetworktitle": "虚拟网络隔离。",
+      "virtualnetwork": "使用我们的虚拟网络解决方案隔离您的团队和项目，为客户分配虚拟网络以进行远程支持。",
+      "devicetitle": "无缝设备连接。",
+      "device": "轻松将所有设备连接到您的内部网络中，从虚拟机到笔记本电脑、MacBook、手机、Github Action和服务器。",
+      "backuptitle": "安全远程备份",
+      "backup": "通过点对点连接轻松备份和访问您的数据，使用我们无忧、易用的解决方案实现远程备份。"
+      }
   },
   "customersmap": {
     "customersmaptitle": " 用户喜欢我们的服务",

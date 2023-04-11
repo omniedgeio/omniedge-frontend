@@ -8,9 +8,6 @@ const DevicePage: Page = function (props) {
   const {t, i18n} = useTranslation('dashboard')
   return (
     <VStack alignItems="flex-start" spacing="4">
-      <Heading size="md" fontWeight="semibold">
-        {t('device.title')}
-      </Heading>
       <DevicesTable />
     </VStack>
   );

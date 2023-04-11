@@ -1,5 +1,6 @@
 import {
   Button,
+  Heading,
   Box,
   Code,
   HStack,
@@ -119,12 +120,16 @@ const DevicesTable: React.FC = function (props) {
       >{t('device.removeconfirm')}
         <Code>{deviceToRemove?.name}</Code> ?
       </ConfirmModal>
+      <Heading size="md" fontWeight="semibold">
+        {t('device.title')}:  {(totalDataLength < 1)?<><Link href="/dashboard/virtual-networks/create" color="brand.700" fontSize="lg">{t('virtualnetwork.create')}{t('device.virtualnetworkcreate')}</Link></>:<>{totalDataLength} </>}
+      </Heading>
+
       <Table w="full">
         <TableCaption>
           <Box display="flex" justifyContent="center">
             <HStack mt="4">
-              {currentPage == 1 ? <></> : <><Button onClick={handleFirstPage}>1</Button><Button onClick={handlePrevPage}>{t('prev')}</Button></>}
-              {currentPage === totalPages ? <><Button onClick={handleLastPage}>{t('last')}</Button></> : <><Button onClick={handleCurrentPage}>{currentPage}</Button><Button onClick={handleNextPage}>{t('next')}</Button> <Button onClick={handleLastPage}>{t('last')}</Button></>}
+            {(currentPage == 1) ? <></> : <><Button onClick={handleFirstPage}>1</Button><Button onClick={handlePrevPage}>{t('prev')}</Button></>}
+              {(totalPages>1) ? <><Button onClick={handleCurrentPage}>{currentPage}</Button><Button onClick={handleNextPage}>{t('next')}</Button> <Button onClick={handleLastPage}>{t('last')}</Button></>:<></> }
             </HStack>
           </Box>
         </TableCaption>

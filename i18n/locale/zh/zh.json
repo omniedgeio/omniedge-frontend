@@ -1072,7 +1072,8 @@
       "createvnplus": "+ 虛擬網路",
       "usedefaultsupernode": "使用預設 Supernode",
       "usecustomizesupernode": "使用自定義 Supernode",
-      "update": "更新"
+      "update": "更新",
+      "createreminder": "虛擬網路，隔離不同團隊"
     },
     "securitykey": {
       "title": "安全碼",
@@ -1113,7 +1114,8 @@
       "manufacturer": "品牌",
       "clicktorename": " 點選重命名",
       "platform": " 平臺",
-      "virtualnetwork": "虛擬網路"
+      "virtualnetwork": "虛擬網路",
+      "virtualnetworkcreate": "虛擬網路連接設備"
     },
     "invitations": {
       "email": "電子郵件",

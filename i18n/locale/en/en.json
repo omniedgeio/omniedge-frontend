@@ -547,7 +547,9 @@
       "devicetitle":"Seamless device connectivity.",
       "device":"Connect all your devices - from VMs to laptops, MacBooks, Mobile Phones,Github Action and servers - to your intranet seamlessly.",
       "backuptitle":"Securely remote backup",
-      "backup":"Effortlessly backup and access your data remotely through peer-to-peer connectivity with our worry-free and easy-to-use solution."
+      "backup":"Effortlessly backup and access your data remotely through peer-to-peer connectivity with our worry-free and easy-to-use solution.",
+      "plctitle": "Industrial remote accessibility",
+      "plc": "Unlock the power of industrial remote access and gain access to all of your equipment - including PLCs, HMIs, robots, servo drives and IP cameras - from anywhere in the world. "
     }
   },
   "customersmap": {

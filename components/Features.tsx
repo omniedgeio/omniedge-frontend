@@ -696,17 +696,24 @@ export function Remotecollaboration() {
 
             </chakra.p>
           </Box>
-          <SimpleGrid columns={[1, null, 3]} spacing="16px">
+          
+          <SimpleGrid columns={[1, null, 2]} spacing="16px">
+          
             <Box><chakra.h3 mb={7} fontWeight="semibold" lineHeight="shorter">{t('remotecollaboration.virtualnetworktitle')}{" "}</chakra.h3><Text fontSize="14px" line-height="20px" mb={7}  >{t('remotecollaboration.virtualnetwork')}{" "}</Text>
-              <Image maxW={{ md: "400px" }} src="/assets/remote-collaboration.png" alt="Remote collaboration like in the same office " />
+            <Center><Image maxW={{ md: "400px" }} src="/assets/remote-collaboration.png" alt={t('remotecollaboration.virtualnetwork')} /></Center>
             </Box>
             <Box><chakra.h3 mb={7} fontWeight="semibold" lineHeight="shorter">{t('remotecollaboration.devicetitle')}{" "}</chakra.h3><Text fontSize="14px" line-height="20px" mb={7}  >{t('remotecollaboration.device')}{" "}</Text>
-              <Image maxW={{ md: "400px" }} src="/assets/devices-connection.png" alt="bring VMs, Laptops, macbooks, servers into intranet" />
+            <Center><Image maxW={{ md: "400px" }} src="/assets/devices-connection.png" alt={t('remotecollaboration.device')} /></Center>
             </Box>
             <Box><chakra.h3 mb={7} fontWeight="semibold" lineHeight="shorter">{t('remotecollaboration.backuptitle')}{" "}</chakra.h3><Text fontSize="14px" line-height="20px" mb={7}  >{t('remotecollaboration.backup')}{" "}</Text>
-              <Image maxW={{ md: "400px" }} src="/assets/remote-backup.png" alt="Remote backup through private address " />
+            <Center><Image maxW={{ md: "400px" }} src="/assets/remote-backup.png" alt={t('remotecollaboration.backup')} /></Center>
             </Box>
+            <Box><chakra.h3 mb={7} fontWeight="semibold" lineHeight="shorter">{t('remotecollaboration.plctitle')}{" "}</chakra.h3><Text fontSize="14px" line-height="20px" mb={7}  >{t('remotecollaboration.plc')}{" "}</Text>
+            <Center><Image maxW={{ md: "400px" }} src="/assets/plc-remote-access.png" alt={t('remotecollaboration.plc')} /></Center>
+            </Box>
+            
           </SimpleGrid>
+          
         </Box>
       </Flex>
     </>

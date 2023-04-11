@@ -1,5 +1,7 @@
 import {
+  Heading,
   Button,
+  Box,
   Code,
   CodeProps,
   HStack,
@@ -44,19 +46,69 @@ export default function VirtualNetworkListTable() {
   const variant = useBreakpointValue({ base: "ghost", sm: "solid" });
   const [vnToRemove, setVnToRemove] = useState<IVirtualNetworkResponse>();
   const confirmModal = useDisclosure();
+  // const {
+  //   data: virtualNetworks,
+  //   isLoading,
+  //   isError,
+  //   refetch,
+  // } = useQuery("virtual-networks", () => listVirtualNetworks({}));
+
+  //
+  const [currentPage, setCurrentPage] = useState<number>(1); // track current page
+  const [totalPages, setTotalPages] = useState(1);
+  const [totalDataLength, setTotalDataLength] = useState<number>(0);
   const {
     data: virtualNetworks,
     isLoading,
     isError,
     refetch,
-  } = useQuery("virtual-networks", () => listVirtualNetworks({}));
+  } = useQuery(
+    ["virtual-networks", currentPage],
+    async () => {
+      const response = await listVirtualNetworks({ page: currentPage, per_page: 10 });
+      if (response) {
+        setTotalPages(response.meta.last_page);
+        setTotalDataLength(response.meta.total);
+      }
+      return response;
+    }
+  );
+  const handleCurrentPage = () => {
+    setCurrentPage(currentPage);
+  };
+
+  const handleFirstPage = () => {
+    setCurrentPage(1);
+  };
+
+  const handleNextPage = () => {
+    setCurrentPage((prev) => Math.min(prev + 1, totalPages)); // increment current page
+  };
+
+  const handlePrevPage = () => {
+    setCurrentPage((prev) => Math.max(prev - 1, 1)); // decrement current page, but don't go below 1
+  };
+
+  const handleLastPage = async () => {
+    setCurrentPage(totalPages);
+    const allData = [];
+    for (let page = 1; page <= totalPages; page++) {
+      const response = await listVirtualNetworks({ page, per_page: 10 });
+      if (response) {
+        allData.push(...response.data);
+      }
+    }
+    // setData(allData);
+  };
+
+  //
 
   const { user } = useUser();
   const { t, i18n } = useTranslation('dashboard')
 
   const [showTwoFactorModal, setTwoFactorModal] = useState<boolean>(false);
   const [isTwoFactorVerified, setIsTwoFactorVerified] = useState<boolean>(false);
-  const [token, setToken] = useState<string|undefined>(undefined);
+  const [token, setToken] = useState<string | undefined>(undefined);
 
   const checkTwoFactor = async (vn: IVirtualNetworkResponse) => {
     setVnToRemove(vn);
@@ -115,6 +167,17 @@ export default function VirtualNetworkListTable() {
       >
         {t('virtualnetwork.removevn')}<Code>{vnToRemove?.name}</Code> ?
       </ConfirmModal>
+      <HStack w="full" justifyContent="space-between">
+      <Heading size="md" fontWeight="semibold">
+        {t('virtualnetwork.title')}: {totalDataLength} 
+      </Heading>
+      <Link href="/dashboard/virtual-networks/create" onClick={checkTwoFactor}>
+        <Button size="sm" _hover={{ textDecoration: "none" }}>
+          {t('virtualnetwork.createvnplus')}
+        </Button>
+      </Link>
+    </HStack>
+
       <Table w="full">
         <Thead>
           <Tr>
@@ -228,25 +291,14 @@ export default function VirtualNetworkListTable() {
             })
           )}
         </Tbody>
-        {((user?.subscription.slug === "free" && Number(virtualNetworks?.data.length) == 1) ||
-          (user?.subscription.slug === "pro" && Number(virtualNetworks?.data.length) == 5) ||
-          (user?.subscription.slug === "teams" && Number(virtualNetworks?.data.length) == 10)) ? (
-          <TableCaption>
-            <Link href="/dashboard/billing/choose-plan" color="brand.700">
-              {t('virtualnetwork.upgradeplan')}
-            </Link>{" "}
-            {t('virtualnetwork.upgradeplaninfo')}
-          </TableCaption>
-        ) : (
-          <TableCaption>
-            {t('virtualnetwork.upgradeplaninfo-1')} {" "}
-            <Link href="/dashboard/virtual-networks/create" color="brand.700" fontSize="lg">
-              {t('virtualnetwork.create')}
-            </Link>{" "}
-            {t('virtualnetwork.upgradeplaninfo-2')}
-          </TableCaption>
-        )
-        }
+        <TableCaption>
+          <Box display="flex" justifyContent="center">
+            <HStack mt="4">
+              {(currentPage == 1) ? <></> : <><Button onClick={handleFirstPage}>1</Button><Button onClick={handlePrevPage}>{t('prev')}</Button></>}
+              {(totalPages > 1) ? <><Button onClick={handleCurrentPage}>{currentPage}</Button><Button onClick={handleNextPage}>{t('next')}</Button> <Button onClick={handleLastPage}>{t('last')}</Button></> : <></>}
+            </HStack>
+          </Box>
+        </TableCaption>
       </Table>
       <Modal isOpen={showTwoFactorModal} onClose={onClose}>
         <ModalOverlay />
@@ -254,7 +306,7 @@ export default function VirtualNetworkListTable() {
           <ModalHeader>{t('twofactor.verify-two-factor')}</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Input type='nubmer' placeholder="token" value={token} onChange={onTokenChange}/>
+            <Input type='nubmer' placeholder="token" value={token} onChange={onTokenChange} />
           </ModalBody>
           <ModalFooter>
             <Button colorScheme='blue' mr={3} onClick={onClose}>

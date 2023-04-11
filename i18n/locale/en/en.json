@@ -994,7 +994,8 @@
       "createvnplus": "+ Network",
       "usedefaultsupernode": "Use default supernode",
       "usecustomizesupernode": "Use customized supernode",
-      "update": "Update"
+      "update": "Update",
+      "createreminder": "Virtual Network for different team"
     },
     "securitykey": {
       "title": "Security Key",
@@ -1035,7 +1036,8 @@
       "manufacturer": "Manufacturer",
       "clicktorename": "Click to rename",
       "platform": "Platform",
-      "virtualnetwork": "Virtual Networks"
+      "virtualnetwork": "Virtual Networks",
+      "virtualnetworkcreate": "Virtual Networks to connect devices"
     },
     "invitations": {
       "email": "Email",

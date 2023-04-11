@@ -1074,7 +1074,8 @@
       "createvnplus": "+ 虚拟网络",
       "usedefaultsupernode": "使用默认 Supernode",
       "usecustomizesupernode": "使用自定义 Supernode",
-      "update": "更新"
+      "update": "更新",
+      "createreminder": "虚拟网络，隔离不同团队"
     },
     "securitykey": {
       "title": "安全码",
@@ -1115,7 +1116,8 @@
       "manufacturer": "品牌",
       "clicktorename": " 点击重命名",
       "platform": " 平台",
-      "virtualnetwork": "虚拟网络"
+      "virtualnetwork": "虚拟网络",
+      "virtualnetworkcreate": "虚拟网络连接设备"
     },
     "invitations": {
       "email": "电子邮件",

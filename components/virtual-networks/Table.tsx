@@ -169,7 +169,9 @@ export default function VirtualNetworkListTable() {
       </ConfirmModal>
       <HStack w="full" justifyContent="space-between">
       <Heading size="md" fontWeight="semibold">
-        {t('virtualnetwork.title')}: {totalDataLength} 
+        {t('virtualnetwork.title')}: {(totalDataLength < 1)?<><Link href="/dashboard/virtual-networks/create" color="brand.700" fontSize="lg">{t('virtualnetwork.create')}{t('virtualnetwork.createreminder')}</Link></>:<>{totalDataLength} </>
+      }
+
       </Heading>
       <Link href="/dashboard/virtual-networks/create" onClick={checkTwoFactor}>
         <Button size="sm" _hover={{ textDecoration: "none" }}>

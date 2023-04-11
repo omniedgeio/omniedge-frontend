@@ -1,5 +1,6 @@
 import {
   Button,
+  Heading,
   Box,
   Code,
   HStack,
@@ -119,6 +120,10 @@ const DevicesTable: React.FC = function (props) {
       >{t('device.removeconfirm')}
         <Code>{deviceToRemove?.name}</Code> ?
       </ConfirmModal>
+      <Heading size="md" fontWeight="semibold">
+        {t('device.title')}:  {(totalDataLength < 1)?<><Link href="/dashboard/virtual-networks/create" color="brand.700" fontSize="lg">{t('virtualnetwork.create')}{t('device.virtualnetworkcreate')}</Link></>:<>{totalDataLength} </>}
+      </Heading>
+
       <Table w="full">
         <TableCaption>
           <Box display="flex" justifyContent="center">

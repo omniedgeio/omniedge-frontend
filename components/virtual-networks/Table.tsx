@@ -173,7 +173,7 @@ export default function VirtualNetworkListTable() {
       }
 
       </Heading>
-      <Link href="/dashboard/virtual-networks/create" onClick={checkTwoFactor}>
+      <Link href="/dashboard/virtual-networks/create" >
         <Button size="sm" _hover={{ textDecoration: "none" }}>
           {t('virtualnetwork.createvnplus')}
         </Button>

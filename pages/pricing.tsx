@@ -41,7 +41,7 @@ const PricingPage: Page = () => {
               <ProPlan maxW={80} />
               <TeamsPlan maxW={80} />
               <EnterprisesmallPlan maxW={80} />
-              <CompanyPlan maxW={80} />
+              <EnterprisePlan maxW={80} />
             </Stack>
             </VStack>
       <ComparisonTable />

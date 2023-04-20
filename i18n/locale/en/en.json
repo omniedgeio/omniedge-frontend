@@ -606,15 +606,15 @@
             "tips": "Traffic over OmniEdge is end-to-end encrypted by Twofish/AES128/ChaCha20 cipers' P2P MESH network."
           },
           {
-            "label": "Up to 1 virtual network",
+            "label": "Up to 10 virtual network",
             "tips": "Virtual network is an virtual intranet for all your devices and users."
           },
           {
-            "label": "Up to 20 devices",
+            "label": "Up to 200 devices",
             "tips": "A device is any desktop,laptop, phone or cloud instance with OmniEdge installed and activated in your own virtual network."
           },
           {
-            "label": "Single user",
+            "label": "10 users",
             "tips": "Virtual network only can have devices from same user."
           },
           {
@@ -675,15 +675,15 @@
             "tips": "Traffic over OmniEdge is end-to-end encrypted by Twofish/AES128/ChaCha20 cipers' P2P MESH network."
           },
           {
-            "label": "Up to 5 virtual networks",
+            "label": "Up to 20 virtual networks",
             "tips": "Virtual network is an virtual intranet for all your devices and users."
           },
           {
-            "label": "Up to 25 devices",
+            "label": "Up to 500 devices",
             "tips": "A device is any desktop,laptop, phone or cloud instance with OmniEdge installed and activated in your own virtual network."
           },
           {
-            "label": "Up to 5 users",
+            "label": "Up to 20 users",
             "tips": "Virtual network only can have devices from maximum of 5 users."
           },
           {
@@ -712,15 +712,15 @@
             "tips": "Traffic over OmniEdge is end-to-end encrypted by Twofish/AES128/ChaCha20 cipers' P2P MESH network."
           },
           {
-            "label": "Up to 10 virtual networks",
+            "label": "Up to 50 virtual networks",
             "tips": "Virtual network is an virtual intranet for all your devices and users."
           },
           {
-            "label": "Up to 50 devices",
+            "label": "Up to 1000 devices",
             "tips": "A device is any desktop,laptop, phone or cloud instance with OmniEdge installed and activated in your own virtual network."
           },
           {
-            "label": "Up to 10 users",
+            "label": "Up to 50 users",
             "tips": "Virtual network only can have devices from maximum of 5 users."
           },
           {

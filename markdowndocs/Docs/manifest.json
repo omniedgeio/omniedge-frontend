@@ -115,6 +115,12 @@
           "route": "subroute",
           "path": "Docs/cases/Remote-access-subroute-devices.md"
         }
+        ,
+        {
+          "name": "PLC Remote",
+          "route": "plcremote",
+          "path": "Docs/cases/PLC-Remote.md"
+        }
 
       ]
     },

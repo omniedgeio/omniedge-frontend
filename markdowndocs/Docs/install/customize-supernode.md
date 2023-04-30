@@ -14,7 +14,7 @@ OmniEdge runs default supernode servers to help connect your nodes. However, Omn
 sudo docker run -d -p 7787:7787/udp omniedge/supernode:latest
 ```
 
-You can [pay](https://buy.stripe.com/eVadRC8gJduf1LGcMP) to get service to let us setup supernode for you, send an email with your VPS login information to support@omniedge.io after paid. 
+You can [pay $199](https://buy.stripe.com/eVadRC8gJduf1LGcMP) to get service to let us setup supernode for you, send an email with your VPS login information to **support@omniedge.io** after paid. 
 
 
 # What are the supernode servers ? 

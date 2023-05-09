@@ -62,9 +62,9 @@
     "Windows": {
       "status": "LIVE",
       "displayName": "Windows",
-      "link": "/install/download/0.2.5/omniedge-setup-0.2.5.exe",
+      "link": "/install/download/0.2.6/omniedge-setup-0.2.6.exe",
       "showQRCode": false,
-      "version": "0.2.5",
+      "version": "0.2.6",
       "buttonText": "Download",
       "captionText": "Compatible with Windows 7,10(arm) & Windows Server 2016,2019.",
       "lastUpdate": {

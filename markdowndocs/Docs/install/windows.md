@@ -8,9 +8,9 @@ thumbnail: /assets/OmniEdgeall0.5.png
 
 # Installing on Windows
 
-OmniEdge Windows is compatible with Windows 7,10(arm) & Windows Server 2016,2019. `Last update: Version 0.2.5, May 02,2023.`
+OmniEdge Windows is compatible with Windows 7,10(arm) & Windows Server 2016,2019. `Last update: Version 0.2.6, May 09,2023.`
 
-[Download OmniEdge Windows for 7 or later](/install/download/0.2.5/omniedge-setup-0.2.5.exe)
+[Download OmniEdge Windows for 7 or later](/install/download/0.2.6/omniedge-setup-0.2.6.exe)
 
 + Download and run the Windows installer
 
